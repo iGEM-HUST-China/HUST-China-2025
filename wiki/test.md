@@ -2,9 +2,9 @@
 title: Test Page
 feature_text: |
   ## Test Page
-  Welcome to iGEM HUST-China 2024 wiki! It's still under construction. Please stay tuned for more information.
+  Welcome to iGEM HUST-China 2025 wiki! It's still under construction. Please stay tuned for more information.
 feature_image: "https://static.igem.wiki/teams/5175/test-resources/test-image-1300x400.jpg"
-excerpt: "Welcome to iGEM HUST-China 2024 wiki! It's still under construction. Please stay tuned for more information."
+excerpt: "Welcome to iGEM HUST-China 2025 wiki! It's still under construction. Please stay tuned for more information."
 permalink: /test/
 
 # Multiple Figures
