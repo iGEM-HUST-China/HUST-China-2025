@@ -1,0 +1,105 @@
+<nav class="nav">
+  <ul class="list list--nav">
+    {% for item in site.navigation_header %}
+      {% unless item.title == false or item.url contains "/page" or item.url contains "/404.html" %}
+        <li class="item  item--nav{% if item.url == page.url %}  item--current{% endif %}">
+
+          {% if item.url %}
+            {% if item.url contains '://' %}
+              {% assign url = item.url %}
+            {% else %}
+              {% assign url = item.url | relative_url %}
+            {% endif %}
+          {% endif %}
+
+          {% if item.collectionpage %}
+            {% assign collectiondata = site.collections | where: "label", item.collectionpage | first %}
+            <a href="{{ url }}">{{ collectiondata.title }}</a>
+          {% else %}
+            {% if item.url %}
+              <a href="{{ url }}">{{ item.title }}</a>
+            {% else %}
+              <span>{{ item.title }}</span>
+            {% endif %}
+          {% endif %}
+
+          {% if item.sub_navigation %}
+            <ul class="list list--sub-nav">
+              {% for sub_item in item.sub_navigation %}
+                {% if sub_item.url contains '://' %}
+                  {% assign sub_url = sub_item.url %}
+                {% else %}
+                  {% assign sub_url = sub_item.url | relative_url %}
+                {% endif %}
+                <li class="item item--sub-nav">
+                  <a href="{{ sub_url }}">{{ sub_item.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endunless %}
+    {% endfor %}
+  </ul>
+</nav>
+
+<style>
+  /* 仅针对此导航栏的样式 */
+  main.container ul.list--nav {
+      display: grid;
+      gap: 10px; /* 设置每个块之间的空隙 */
+      padding: 20px;
+  }
+  
+  main.container ul.list--nav li {
+      padding: 10px; /* 设置每个子块的内边距 */
+      border-radius: 10px; /* 设置每个子块的圆角 */
+      background-color: #fff; /* 设置子块的背景颜色 */
+      border: 1px solid #ddd; /* 设置子块的边框 */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  main.container ul.list--nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  main.container li.item--nav {
+    margin: auto;
+    min-height: 150px; /* 设置一个最小高度 */
+    min-width: 250px; /* 设置一个最小宽度 */
+  }
+
+  main.container ul.list--nav li a {
+    text-decoration: none; /* 去掉链接的下划线 */
+  }
+
+  main.container ul.list--nav li a:hover {
+    cursor: pointer;
+  }
+
+  /* 640px 以下分 1 栏 */
+  @media (max-width: 640px) {
+    main.container ul.list--nav {
+      grid-template-columns: 1fr; /* 定义一列布局 */
+    }
+  }
+
+  /* 960px 以下分 2 栏 */
+  @media (min-width: 641px) and (max-width: 960px) {
+    main.container ul.list--nav {
+      grid-template-columns: repeat(2, 1fr); /* 定义两列布局 */
+    }
+  }
+
+  /* 960px 以上分 3 栏 */
+  @media (min-width: 961px) {
+    main.container ul.list--nav {
+      grid-template-columns: repeat(3, 1fr); /* 定义三列布局 */
+    }
+  }
+</style>

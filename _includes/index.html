@@ -1,0 +1,956 @@
+<!-- 去除页面默认样式 -->
+<style>
+  main.main {
+    max-width: 100% !important;
+    width: 100% !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  main.main article.article {
+    width: 100% !important;
+  }
+
+  body.layout-page {
+    background-color: transparent !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  header.header .container-wrapper {
+    position: static !important;
+  }
+
+  header.header .feature {
+    /* 去除标题图片上下边距 */
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  #back-to-top {
+    z-index: 9999 !important;
+  }
+
+  .box .text p {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .box .img img,
+  .pet img,
+  .bottom img {
+    cursor: default;
+  }
+
+  /* 不显示目录 */
+  aside.aside {
+    display: none;
+  }
+
+  /* 顶部feature图上下padding统一 */
+  .feature .feature_bg h2 {
+    padding-bottom: 0.6rem !important;
+  }
+</style>
+<!-- 展示盒子基本结构 -->
+<style>
+  /* 背景色 */
+  .wrapper {
+    background-image: linear-gradient(to top, #92B2BE 0%, #5e4d38 100%);
+    /* transition: background-image 0.4s; */
+    /* 渐变背景不支持animate/transition过渡 qwq */
+  }
+
+  /* 展示图片和文字 */
+  .wrapper {
+    padding-top: 3rem;
+    width: 100%;
+  }
+
+  .box {
+    z-index: 1000;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .box:last-child {
+    margin-bottom: 0;
+    padding-bottom: 3rem;
+  }
+
+  .box .left,
+  .box .right {
+    flex: 1;
+    margin-bottom: 2rem;
+  }
+
+  .box .left .img,
+  .box .left .text {
+    /* 要显示的CSS */
+    /* margin: 0 auto; */
+    /* 默认状态下（未显示时）的CSS */
+    /* margin-right: auto; */
+  }
+
+  .box .right .img,
+  .box .right .text {
+    /* 要显示的CSS */
+    /* margin: 0 auto; */
+    /* 默认状态下（未显示时）的CSS */
+    /* margin-left: auto; */
+  }
+
+  .box .img,
+  .box .text {
+    opacity: 0;
+    width: 32rem;
+    height: 20rem;
+    max-width: 90vw;
+  }
+
+  .box .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box .img img {
+    text-align: center;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: transparent;
+  }
+
+  .box .img div {
+    width: 100%;
+    height: 100%;
+  }
+
+  .box .img img,
+  .box .text p {
+    z-index: 1000;
+  }
+
+  .box .text {
+    display: flex;
+    align-items: center;
+  }
+</style>
+<!-- 不滑动的盒子 -->
+<style>
+  .wrapper .noslide {
+    margin-bottom: 0;
+    display: block;
+  }
+
+  .wrapper .noslide .text,
+  .wrapper .noslide .img {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .wrapper .noslide .text p {
+    padding: 0.5rem 5rem !important;
+    width: auto;
+    height: auto;
+  }
+
+  .wrapper .noslide .title p {
+    font-size: 1.5rem !important;
+  }
+</style>
+<!-- 主页各box具体样式 -->
+<style>
+  .box .text {
+    padding: 0 !important;
+  }
+
+  .box .img img {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .box .img figcaption {
+    text-align: center;
+    line-height: 1rem;
+    padding-top: 0rem !important;
+    margin-bottom: 0rem !important;
+  }
+
+  .box .text p {
+    padding: 0.5rem 0 !important;
+    width: 100%;
+    height: 100%;
+    /* 字号 */
+    font-size: 1rem !important;
+    color: #fff;
+  }
+</style>
+<!-- pet/rha小图片 -->
+<style>
+  :root {
+    --pet-opacity: 0.3;
+  }
+
+  .pet {
+    z-index: 900;
+    /* display: none; */
+    /* 透明度 */
+    opacity: var(--pet-opacity);
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
+  }
+
+  /*.bottom .rha {
+    z-index: 901;
+    opacity: 0;
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .pet img,
+  .bottom .rha img {
+    width: 100%;
+    height: 100%;
+  }*/
+  .pet img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .pet .rha {
+    object-fit: contain;
+  }
+</style>
+<!-- 轮播图 -->
+<style>
+  .box .img .swiper {
+    /* 展示窗口 */
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+  }
+
+  .box .img .swiper-content {
+    /* 图片存放 */
+    display: flex;
+    width: 300%;
+    height: 100%;
+    /*有几张图片就是几百 */
+    background-color: transparent;
+    animation: swiper 6s infinite ease;
+  }
+
+  .box .img .swiper-content:hover {
+    animation-play-state: paused;
+  }
+
+  .box .img .swiper-content div {
+    width: calc(100%/3);
+  }
+
+  .box .img .swiper-content img {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  @keyframes swiper {
+
+    /* 动画 */
+    0%,
+    43% {
+      transform: translateX(0);
+    }
+
+    50%,
+    93% {
+      transform: translateX(-33.333333%);
+    }
+
+    100% {
+      transform: translateX(-66.666666%);
+    }
+  }
+</style>
+<!-- 底部图片 -->
+<style>
+  .bottom {
+    position: relative;
+    width: 100%;
+    height: 400px;
+  }
+
+  .bottom img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+  }
+</style>
+<!-- 顶部进度条 -->
+<style>
+  .scroll {
+    z-index: 8000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #97d2af;
+    transform: translateX(-100%);
+  }
+</style>
+<div class="scroll"></div>
+<div class="pet">
+  <img src="https://static.igem.wiki/teams/5175/test-resources/test-pet.png" alt="" class="pet_img">
+  <img src="https://static.igem.wiki/teams/5175/resources/homepage/rha.png" alt="" class="rha">
+  <img src="https://static.igem.wiki/teams/5175/resources/homepage/tpa.png" alt="" class="tpa">
+</div>
+<div class="wrapper">
+  <div class="box">
+    <div class="left">
+      <div class="text">
+        <p style="font-size: 1.2rem !important; padding-top:1.2rem !important;">From 1950 to 2015, approximately 83
+          billion tons of plastic were
+          produced worldwide, among which 79% of the
+          discarded plastic accumulated in landfills or leaked into the environment. These large plastic materials
+          gradually break down into microplastics, tiny particles ranging from 100 nm to 5 mm in diameter. Microplastic
+          have now infiltrated nearly every aspect of our daily lives.</p>
+      </div>
+    </div>
+    <div class="right">
+      <div class="img">
+        <div style="z-index: 1000;">
+          <img src="https://static.igem.wiki/teams/5175/resources/homepage/index1.jpg" alt="">
+          <figcaption class="caption" style="width: 30rem; line-height:1.1rem;">
+            Cumulative plastic waste generation and disposal (in
+            million metric tons)
+          </figcaption>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="left">
+      <div class="img">
+        <div style="z-index: 1000;">
+          <div style="max-width: 100%; max-height:100%; text-align:center; margin-bottom:0.5rem;">
+            <img src="https://static.igem.wiki/teams/5175/resources/homepage/2.png" alt="">
+          </div>
+          <figcaption class="caption" style="line-height:1.1rem;">
+            The abundance and characteristics of MPs in human tissues and organs
+          </figcaption>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="text">
+        <p style="font-size: 1.2rem !important;">Once microplastics enter the human body through the food chain,
+          they
+          can penetrate critical biological
+          barriers such as cell membranes, the blood-brain barrier, and the placenta. This could lead to severe
+          consequences like DNA damage, tissue necrosis, and potentially an increased risk of malignant tumors.
+          These
+          invisible threats lurk in the crops we consume, entering our bodies with every bite. And the source of
+          these
+          microplastics could be the contaminated soils of the farmland where these crops are grown.</p>
+      </div>
+    </div>
+  </div>
+  <div class="box" style="margin-bottom: 0 !important;">
+    <div class="left">
+      <div class="text">
+        <p style="font-size: 1.1rem !important; padding-top:0rem !important;">Organic fertilizers, plastic
+          mulches,
+          and irrigation water are the
+          inevitable and primary culprits behind the
+          presence of microplastics in agricultural soils. Irrigation water, in particular, is often sourced from
+          rivers, lakes, and other surface water bodies, where the presence of microplastics is already widespread.
+          The
+          continued use of microplastic-contaminated irrigation water only worsens the problem, increasing
+          microplastic
+          accumulation in farmland, which in turn threatens crop yields and poses serious health risks to humans.
+        </p>
+      </div>
+    </div>
+    <div class="right">
+      <div class="img">
+        <div class="swiper" style="z-index: 1000;">
+          <div class="swiper-content">
+            <div>
+              <img src="https://static.igem.wiki/teams/5175/resources/homepage/index3.jpg" alt="">
+              <figcaption class="caption" style="font-size: 0.7rem; line-height:1.5rem;">Occurrence of microplastics
+                in
+                global raw water,
+                tap water, groundwater and
+                bottled</figcaption>
+            </div>
+            <div>
+              <img src="https://static.igem.wiki/teams/5175/resources/homepage/index4.jpg" alt="">
+              <figcaption class="caption" style="font-size: 0.8rem; line-height:1.1rem;">Geographic locations,
+                sampling
+                sites and microplastic abundance in surface
+                waters and sediments of parts of the Yangtze River</figcaption>
+            </div>
+            <div>
+              <img src="https://static.igem.wiki/teams/5175/resources/homepage/index3.jpg" alt="">
+              <figcaption class="caption" style="font-size: 0.7rem; line-height:1.5rem;">Occurrence of microplastics
+                in
+                global raw water,
+                tap water, groundwater and
+                bottled</figcaption>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box noslide" style="height: 15rem;">
+    <div class="text">
+      <p style="font-size: 1.4rem !important;line-height: 2.7rem; padding-top:1rem !important;">In the face of this
+        growing crisis, our
+        team has focused on one of
+        the
+        most common plastics—polyethylene
+        terephthalate (PET)—and designed an innovative solution that not only degrades PET microplastics but also
+        improves soil health.</p>
+    </div>
+  </div>
+  <div class="box noslide" style="height: 17rem;">
+    <div class="text title">
+      <p style="font-size: 2rem !important;">How It Works:</p>
+    </div>
+  </div>
+  <div class="box">
+    <div class="left">
+      <div class="img"><img src="https://static.igem.wiki/teams/5175/resources/homepage/index5.gif" alt="">
+      </div>
+    </div>
+    <div class="right">
+      <div class="text">
+        <p style="font-size: 1.2rem !important; padding-top:1rem !important;">E.coli BL21 is capable of efficiently
+          expressing proteins. We have
+          genetically engineered it to express high
+          levels of PET-degrading dual-enzymes system for degrading PET and to break down ethylene glycol(EG), a
+          byproduct of PET degradation. This process helps reduce the amount of microplastics in irrigation water,
+          ultimately decreasing soil contamination and mitigating the potential health risks to humans.</p>
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="left">
+      <div class="text">
+        <p style="font-size: 1.2rem !important; padding-top:1.8rem !important;">Pseudomonas putida KT2440 possesses
+          a
+          unique set of pathways for
+          phenol
+          and lipid metabolism. It has been
+          further modified by us to absorb and metabolize TPA, another byproduct of PET degradation, producing
+          rhamnolipids in the process. These biosurfactants not only help further eliminate microplastics from the
+          soil
+          but also enhance the soil’s physical structure and chemical properties.</p>
+      </div>
+    </div>
+    <div class="right">
+      <div class="img"><img src="https://static.igem.wiki/teams/5175/resources/homepage/index6.gif" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="box">
+    <div class="left">
+      <div class="img"><img src="https://static.igem.wiki/teams/5175/resources/homepage/index7new.png" alt=""
+          style="background-color: white;">
+      </div>
+    </div>
+    <div class="right">
+      <div class="text">
+        <p style="font-size: 1.3rem !important; padding-top:3rem !important;">By harnessing the synergistic power of
+          these two strains, we aim to
+          significantly reduce PET microplastic
+          accumulation in soils, restore soil health, and effectively tackle the growing threat of soil microplastic
+          pollution—a danger that looms large over our environment and human well-being.</p>
+      </div>
+    </div>
+  </div>
+  {% include below_index.html %}
+  <div class="bottom">
+    <img src="https://static.igem.wiki/teams/5175/resources/homepage/bottom-start.png" alt="" class="start">
+    <img src="https://static.igem.wiki/teams/5175/resources/homepage/bottom.png" alt="" class="end"
+      style="display: none;">
+  </div>
+</div>
+<!-- 展示盒子 -->
+<script>
+  (function () {
+    let imgs = $(".box .left .img, .box .left .text, .box .right .img, .box .right .text");
+    let left_imgs = $(".box .left .img, .box .left .text");
+    let right_imgs = $(".box .right .img, .box .right .text");
+    const noslides = $(".noslide .img, .noslide .text");
+    if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) { //手机不添加动画
+      imgs.css("opacity", 0);
+      if (!$(".box").eq(1).children().eq(0).hasClass("right")) { //调换偶数位置的box
+        $(".box").each((index, box) => {
+          if (index % 2 === 0) return;
+          box = $(box);
+          const left = box.children(".left");
+          const right = box.children(".right");
+          right.insertBefore(left);
+        });
+        right_imgs = $(".box:odd .left .img, .box:even .right .img, .box:odd .left .text, .box:even .right .text");
+        left_imgs = $(".box:even .left .img, .box:odd .right .img, .box:even .left .text, .box:odd .right .text");
+        imgs = $(".box .left .img, .box .left .text, .box .right .img, .box .right .text");
+      }
+      left_imgs.css("margin", "0 auto");
+      right_imgs.css("margin", "0 auto");
+      $(".box").eq(1).children(".left").css("margin-top", "4rem");
+      $(".box").eq(2).children(".right").css("margin-top", "3rem");
+      $(".box").eq(3).css("margin-top", "3rem");
+      $(".box").eq(4).css("margin-top", "8rem");
+      imgs.css("opacity", 1);
+      noslides.css("opacity", 1);
+      return;
+    }
+    const imgs_position_start = new Array(imgs.length);
+    const imgs_position = new Array(imgs.length);
+    function clear_imgs_style() { //清除imgs的css
+      imgs.each((index, img) => {
+        img.removeAttribute("style");
+      });
+    }
+    function get_img_position() { //得到各元素移动前后的位置
+      imgs.css("opacity", 0);
+      clear_imgs_style();
+      if ($(".box").height() >= $(".left").height() + $(".right").height()) { //box换行，上图下文字
+        if (!$(".box").eq(1).children().eq(0).hasClass("right")) { //调换偶数位置的box
+          $(".box").each((index, box) => {
+            if (index % 2 === 0) return;
+            box = $(box);
+            const left = box.children(".left");
+            const right = box.children(".right");
+            right.insertBefore(left);
+          });
+          right_imgs = $(".box:odd .left .img, .box:even .right .img, .box:odd .left .text, .box:even .right .text");
+          left_imgs = $(".box:even .left .img, .box:odd .right .img, .box:even .left .text, .box:odd .right .text");
+          imgs = $(".box .left .img, .box .left .text, .box .right .img, .box .right .text");
+        }
+      } else {
+        if ($(".box").eq(1).children().eq(0).hasClass("right")) {
+          $(".box").each((index, box) => {
+            if (index % 2 === 0) return;
+            box = $(box);
+            const left = box.children(".left");
+            const right = box.children(".right");
+            left.insertBefore(right);
+          });
+          imgs = $(".box .left .img, .box .left .text, .box .right .img, .box .right .text");
+          left_imgs = $(".box .left .img, .box .left .text");
+          right_imgs = $(".box .right .img, .box .right .text");
+        }
+      }
+      //要显示的CSS
+      left_imgs.css("margin", "0 auto");
+      right_imgs.css("margin", "0 auto");
+      imgs.each((index, img) => {
+        imgs_position[index] = img.getBoundingClientRect().left;
+      });
+      clear_imgs_style();
+      //默认状态下（未显示时）的CSS
+      left_imgs.css("margin-right", "auto");
+      right_imgs.css("margin-left", "auto");
+      imgs.each((index, img) => {
+        imgs_position_start[index] = img.getBoundingClientRect().left;
+      });
+      clear_imgs_style();
+      imgs.css("opacity", 1);
+    }
+    function get_opacity(pos_percent) { //计算透明度
+      const res = pos_percent;
+      return res;
+    }
+    function get_opacity2(pos_percent) { //计算透明度
+      const res = pos_percent ** 2;
+      return res;
+    }
+    function get_xpos(pos_percent, index) { //计算左/右边距
+      const start = imgs_position_start[index];
+      const end = imgs_position[index];
+      let res;
+      if (end > start) { //在左面
+        res = pos_percent * (end - start);
+      } else { //在右面
+        res = pos_percent * (start - end);
+      }
+      return res;
+    }
+    function img_animate(index, pos_percent) { //改变左/右边距和透明度
+      const dom = imgs.eq(index);
+      const xpos = get_xpos(pos_percent, index);
+      const opacity = get_opacity(pos_percent);
+      dom.css("margin", "0 auto");
+      if (left_imgs.index(dom) !== -1) { //在左面
+        dom.animate({
+          marginLeft: xpos,
+          opacity: opacity
+        }, 0);
+      } else { //在右面
+        dom.animate({
+          marginRight: xpos,
+          opacity: opacity
+        }, 0);
+      }
+    }
+    function img_animate2(index, pos_percent) { //改变左/右边距和透明度（不滑动）
+      const dom = noslides.eq(index);
+      const opacity = get_opacity2(pos_percent);
+      dom.animate({
+        opacity: opacity
+      }, 0);
+    }
+    function find_img_toshow(scroll_distance_bottom, scroll_distance_top) { //遍历所有元素，计算现位置
+      imgs.each((index, img) => {
+        const img_height = img.clientHeight;
+        const img_distance = {
+          "top": img.offsetTop,
+          "bottom": img.offsetTop + img_height
+        };
+        //5种情况
+        if (img_distance.bottom < scroll_distance_top || img_distance.top > scroll_distance_bottom) {
+          //在屏幕上方/下方，不作处理
+          img.removeAttribute("style");
+        }
+        else if (img_distance.top > scroll_distance_top && img_distance.bottom < scroll_distance_bottom) {
+          //在视口中，全部展示
+          img_animate(index, 1);
+        }
+        else {
+          //即将进入/离开视口
+          const height = img_distance.bottom > scroll_distance_bottom ? scroll_distance_bottom - img_distance.top : img_distance.bottom - scroll_distance_top;
+          //在视口中的高度
+          img_animate(index, height / img_height);
+        }
+      });
+      noslides.each((index, noslide) => {
+        const img_height = noslide.clientHeight;
+        const img_distance = {
+          "top": noslide.offsetTop,
+          "bottom": noslide.offsetTop + img_height
+        };
+        //5种情况
+        if (img_distance.bottom < scroll_distance_top || img_distance.top > scroll_distance_bottom) {
+          //在屏幕上方/下方，不作处理
+          noslide.removeAttribute("style");
+        }
+        else if (img_distance.top > scroll_distance_top && img_distance.bottom < scroll_distance_bottom) {
+          //在视口中，全部展示
+          img_animate2(index, 1);
+        }
+        else {
+          //即将进入/离开视口
+          const height = img_distance.bottom > scroll_distance_bottom ? scroll_distance_bottom - img_distance.top : img_distance.bottom - scroll_distance_top;
+          //在视口中的高度
+          img_animate2(index, height / img_height);
+        }
+      });
+    }
+    function scroll_func() {
+      const clientHeight = document.documentElement.clientHeight;
+      const scrollTop = document.documentElement.scrollTop;
+      const scroll_distance = clientHeight + scrollTop;
+      find_img_toshow(scroll_distance, scrollTop);
+    }
+    $(window).resize(() => {
+      get_img_position();
+      scroll_func();
+    });
+    $(window).on("scroll", () => scroll_func());
+    window.addEventListener('load', function () {
+      get_img_position();
+      $(window).scrollTop(1);
+      $(window).scrollTop(0); //解决：刷新页面第一张位置不变
+      scroll_func();
+    });
+  })();
+</script>
+<!-- pet小图标 -->
+<script>
+  (function () {
+    let pet = $(".pet");
+    const start = $(".bottom .start");
+    const end = $(".bottom .end");
+    const wrapper = $(".wrapper");
+    const opacity = +pet.eq(0).css("opacity");
+    const bottom = $(".bottom");
+    const show_tpa_box = $(".box").eq(5); //从这个盒子下面开始变成tpa
+    const show_rha_box = $(".box").eq(6); //从这个盒子下面开始变成rha
+    const rha_opacity = 1; //rha图片完全显示时的透明度（实际完全显示的透明度会略小于该设置值）
+    //const difference_width = 5; //rha图片与pet图片的宽度差，单位rem
+    const ypos = 0.6; //pet/tpa/rha图片距窗口顶部的距离 占整个窗口的比例
+    const pet_hide = 0.1; //rha图片距展示区域底部百分之多少时完全消失
+    const bg_animate_time = 200; //切换底部图片的动画时间（一张图消失/另一张图显示动画的时间）
+    const show_animate_time = 400; //切换pet/tpa/rha图片的动画时间
+    const pet_hide_animate_time = 200; //到达页面顶部后，pet图片消失的动画时间
+    const is_mobile = /Mobi|Android|iPhone/i.test(navigator.userAgent); //手机不添加除了底部之外的动画
+    function show_start() { //显示开始的背景图
+      end.fadeOut(bg_animate_time, () => {
+        start.fadeIn(bg_animate_time);
+        wrapper.css("background-image", "linear-gradient(to top, #92B2BE 0%, #5e4d38 100%)");
+      });
+    }
+    function show_end() { //显示结尾的背景图
+      start.fadeOut(bg_animate_time, () => {
+        end.fadeIn(bg_animate_time);
+        wrapper.css("background-image", "linear-gradient(to top, #83A6FF 0%, #5e4d38 100%)");
+      });
+    }
+    function show_pet() {
+      pet.fadeIn(show_animate_time);
+      pet.children(".rha, .tpa").stop().hide();
+      pet.css({
+        "width": "5rem",
+        "height": "5rem"
+      });
+      pet.children(".pet_img").fadeIn(show_animate_time);
+    }
+    function show_tpa() {
+      pet.fadeIn(show_animate_time);
+      pet.children(".rha, .pet_img").stop().hide();
+      pet.css({
+        "width": "5rem",
+        "height": "5rem"
+      });
+      pet.children(".tpa").fadeIn(show_animate_time);
+    }
+    function show_rha() {
+      pet.fadeIn(show_animate_time);
+      pet.children(".tpa, .pet_img").stop().hide();
+      pet.css({
+        "width": "10rem",
+        "height": "10rem"
+      });
+      pet.children(".rha").fadeIn(show_animate_time);
+    }
+    /*function create_rha(pets) { //根据pet图片位置更改rha图片样式，如果没有rha图片就创建
+      pets.each((index, pet) => {
+        pet = $(pet);
+        const now_opacity = rha_opacity * (opacity - pet.css("opacity")) / opacity;
+        const x = pet.offset().left;
+        const y = bottom.height() * pet_hide;
+        let rha = $(`.rha[data-id="${index}"]`);
+        if (rha.length === 0) {
+          rha = $(`
+          <div class="rha" data-id="${index}">
+            <img src="https://static.igem.wiki/teams/5175/resources/homepage/rha.png" alt="">
+          </div>
+          `);
+          bottom.append(rha);
+        }
+        rha.animate({
+          opacity: now_opacity,
+          left: x,
+          bottom: y
+        }, 0);
+      });
+      if ($(".rha").length === 1) $(".rha").css("transform", `translateX(-${difference_width / 2}rem)`); //如果只有一个rha，使其居中
+      else $(".rha").eq(1).css("transform", `translateX(-${difference_width}rem)`); //如果有两个就让第二个向左移使完全显示
+    }
+    function hide_rha() { //隐藏rha图片
+      const rha = $(".rha");
+      rha.fadeOut(400, () => rha.remove()); //"fast"是200
+    }*/
+    function update_pet() { //更新pet/背景图的样式和位置
+      const bottom_height = bottom.height();
+      const bottom_distance = bottom_height * pet_hide;
+      const wrapper_top = wrapper.offset().top;
+      const wrapper_bottom = wrapper_top + wrapper.outerHeight();
+      const clientHeight = document.documentElement.clientHeight;
+      const scrollTop = document.documentElement.scrollTop;
+      const scroll_distance = clientHeight * ypos + scrollTop;
+      const show_tpa_distance = show_tpa_box.offset().top + show_tpa_box.height();
+      const show_rha_distance = show_rha_box.offset().top + show_rha_box.height();
+      if (scroll_distance < wrapper_top + parseFloat(wrapper.css("padding-top"))) { //超出上界
+        show_start();
+        //hide_rha();
+        pet.fadeOut(pet_hide_animate_time);
+        return;
+      }
+      if (scroll_distance + pet[0].offsetHeight > wrapper_bottom - bottom_distance) { //超出下界
+        show_end();
+        //hide_rha();
+        pet.animate({
+          opacity: 0,
+          top: wrapper_bottom - bottom_distance - pet[0].offsetHeight
+        }, 0);
+        return;
+      }
+      if (scroll_distance + pet[0].offsetHeight > wrapper_bottom - bottom_height * 0.5) { //进入底部图片区域
+        show_start();
+        show_rha();
+        //create_rha(pet);
+        const enter_distance = pet.offset().top + pet[0].offsetHeight - (bottom.offset().top + bottom_height * 0.5);
+        const pos_percent = enter_distance / (bottom_height * 0.5 - bottom_distance);
+        //const new_opacity = opacity * (1 - pos_percent); //越进入opacity越小
+        const new_opacity = opacity + (rha_opacity - opacity) * pos_percent; //越进入opacity越大
+        pet.animate({
+          opacity: new_opacity,
+          top: scroll_distance
+        }, 0);
+        return;
+      }
+      if (is_mobile && scroll_distance > wrapper_bottom - bottom_height) { //手机端进入底部图片区域就开始显示
+        show_start();
+        show_rha();
+        return;
+      }
+      if (is_mobile) {
+        show_start();
+        pet.hide();
+        return;
+      }
+      if (scroll_distance + pet[0].offsetHeight > show_rha_distance) { //显示rha
+        show_start();
+        show_rha();
+        pet.animate({
+          opacity: opacity,
+          top: scroll_distance
+        }, 5);
+        return;
+      }
+      if (scroll_distance + pet[0].offsetHeight > show_tpa_distance) { //显示tpa
+        show_start();
+        pet.show();
+        show_tpa();
+        pet.animate({
+          opacity: opacity,
+          top: scroll_distance
+        }, 5);
+        return;
+      }
+      //在页面中滑动
+      show_start();
+      show_pet();
+      //hide_rha();
+      pet.animate({
+        opacity: opacity,
+        top: scroll_distance
+      }, 5);
+    }
+    function get_pet() { //pet显示在两侧还是中间、rha数量是否与pet相同
+      (function () {
+        if ($(".box").height() >= $(".left").height() + $(".right").height()) { //box换行，显示在两侧
+          if (pet.length === 2) return;
+          const pet2 = pet.clone(true);
+          pet.after(pet2);
+          pet = $(".pet");
+          pet.css("transform", 'none');
+          pet.eq(0).css("left", "1%");
+          pet[1].style.removeProperty('left');
+          pet.eq(1).css("right", "1%");
+        } else { //box图文在一行，显示在中间
+          if (pet.length === 2) {
+            pet.eq(1).remove();
+            pet = pet.eq(0);
+          }
+          pet.css("left", "50%");
+          pet.css("transform", 'translateX(-50%)');
+        }
+      })();
+      //if ($(".rha").length !== $(".pet").length) hide_rha(); //如果rha与pet数量不同，就重新创建
+    }
+    window.addEventListener('load', function () {
+      get_pet();
+      update_pet();
+    });
+    $(window).on("scroll", () => update_pet());
+    $(window).on("resize", () => {
+      get_pet();
+      update_pet();
+    });
+  })();
+</script>
+<!-- 顶部进度条 -->
+<script>
+  (function () {
+    const scroll = $(".scroll");
+    function update_scroll() {
+      const all_height = document.body.scrollHeight - document.body.clientHeight;
+      const scrollTop = document.documentElement.scrollTop;
+      const percent = (1 - scrollTop / all_height) * 100;
+      scroll.css("transform", `translateX(-${percent}%)`);
+    }
+    window.addEventListener('load', () => update_scroll());
+    $(window).on("scroll", () => update_scroll());
+    $(window).on("resize", () => update_scroll());
+  })();
+</script>
+
+<!-- 底部按钮 -->
+<script>
+  (function () {
+    const btns = $(".below_index_title, .below_index");
+    const btn_box = $(".below_index");
+    btn_box.css("display", "flex");
+    btn_box.css("display", "none");
+    const wrapper = document.querySelector(".below_index_wrapper");
+    const distance = 10; //距页面顶部多少px时显示按钮
+    const distance_top = -50; //距页面顶部多少px时隐藏按钮
+    const animate_time = 50; //动画时长
+    function show_btn(btn) {
+      btn.stop().fadeIn(animate_time);
+    }
+    function hide_btn(btn) {
+      btn.stop().fadeOut(animate_time);
+    }
+    function update_btn(index, btn) {
+      const clientHeight = document.documentElement.clientHeight;
+      const scroll_distance_top = document.documentElement.scrollTop;
+      const scroll_distance_bottom = clientHeight + scroll_distance_top;
+      const btn_distance = {
+        "top": wrapper.offsetTop,
+        "bottom": wrapper.offsetTop + wrapper.clientHeight
+      };
+      if (btn_distance.bottom < scroll_distance_top || btn_distance.top > scroll_distance_bottom) {
+        return;
+      }
+      else if (btn_distance.top > scroll_distance_top + distance_top && btn_distance.bottom < scroll_distance_bottom - distance) {
+        show_btn($(btn));
+      }
+      else {
+        if ($(btn).css("display") === "none") show_btn($(btn));
+        else hide_btn($(btn));
+      }
+    }
+    function scroll_func() {
+      btns.each((index, btn) => {
+        update_btn(index, btn);
+      });
+    }
+    $(window).resize(() => scroll_func());
+    $(window).on("scroll", () => scroll_func());
+    window.addEventListener('load', () => scroll_func());
+  })();
+</script>
+
+<!-- Alert the user if using mobile devices -->
+<script>
+  (function () {
+    if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+      alert("Due to some restrictions, homepage is not fully optimized for some specific mobile devices. Some of the animations and effects may not work properly. For the best experience, please view this page on a desktop or laptop. However, you can still browse the content and learn about our project. All the other pages in our wiki are fully optimized for mobile devices. Thank you for your understanding!");
+    }
+  })();
+</script>

@@ -1,0 +1,84 @@
+<style>
+    .section#members {
+        display: flex;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .section#members.reverse {
+        flex-direction: row-reverse;
+    }
+
+    .section#members img {
+        cursor: default;
+        width: 60%;
+        object-fit: cover;
+    }
+
+    .info {
+        text-align: center;
+        align-content: center;
+        padding: 20px;
+        width: 40%;
+    }
+
+    .name {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .description {
+        color: #555;
+    }
+
+    @media (max-width: 960px) {
+        .section {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .section#members img {
+            width: 100%;
+        }
+
+        .info {
+            width: 100%;
+        }
+    }
+</style>
+<!-- 如果图文在同一行，左图右文字与右图左文字交替；如果换行，都是上图下文字 -->
+<script>
+    (function () {
+        $(document).ready(function () {
+            const right_members = $(".right");
+            function update_members() {
+                const clientWidth = window.innerWidth;
+                if (clientWidth <= 960) {
+                    if (right_members.eq(0).children().eq(0).hasClass("info")) {
+                        right_members.each((index, right_member) => {
+                            right_member = $(right_member);
+                            const info = right_member.children(".info");
+                            const img = right_member.children("img");
+                            img.insertBefore(info);
+                        });
+                    }
+                } else {
+                    if (!right_members.eq(0).children().eq(0).hasClass("info")) {
+                        right_members.each((index, right_member) => {
+                            right_member = $(right_member);
+                            const info = right_member.children(".info");
+                            const img = right_member.children("img");
+                            info.insertBefore(img);
+                        });
+                    }
+                }
+            }
+            update_members();
+            $(window).on("resize", () => update_members());
+        });
+    })();
+</script>

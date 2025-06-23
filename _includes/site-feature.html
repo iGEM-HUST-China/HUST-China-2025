@@ -1,0 +1,53 @@
+{% assign feature_text = page.feature_text %}
+{% assign feature_image = page.feature_image %}
+{% if page.collectionpage %}
+{% assign collectiondata = site.collections | where: "label", page.collectionpage | first %}
+{% assign feature_text = collectiondata.feature_text %}
+{% assign feature_image = collectiondata.feature_image %}
+{% endif %}
+
+{% if feature_text or feature_image %}
+<!-- <div class="feature"{% if feature_image %} style="background-image: url({{ feature_image }})"{% endif %}>
+    <div class="container  typeset">
+      {{ feature_text | markdownify }}
+    </div>
+  </div> -->
+<div class="feature" {% if feature_image %} style="background-image: url({{ feature_image }})" {% endif %}>
+  <div class="feature_bg typeset">
+    {{ feature_text | markdownify }}
+  </div>
+</div>
+{% endif %}
+<style>
+  .feature {
+    position: relative;
+    width: 100%;
+    height: 400px;
+  }
+
+  .feature .feature_bg {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .feature .feature_bg p,
+  .feature .feature_bg h2 {
+    color: white;
+  }
+
+  .feature .feature_bg h2 {
+    padding-top: 0.8rem;
+    padding-bottom: 0.4rem;
+    margin: 0;
+  }
+
+  .feature .feature_bg p {
+    padding-top: 0rem;
+    /* padding-top: 0.8rem; */
+    padding-bottom: 0.8rem;
+    margin: 0;
+  }
+</style>

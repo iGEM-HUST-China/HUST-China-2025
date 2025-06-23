@@ -1,0 +1,237 @@
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const section = document.querySelector("#about-this-page");
+
+        // Check if the section contains multiple nav elements
+        const navElements = section.querySelectorAll("nav");
+        if (navElements.length > 1) {
+            // Remove the last nav element if multiple exist
+            navElements[navElements.length - 1].remove();
+        } else if (navElements.length === 0) {
+            // If no nav element exists, create one
+            const headers = document.querySelectorAll("article h2, article h3, article h4, article h5, article h6");
+            const nav = document.createElement("nav");
+            section.appendChild(nav);
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = "header-" + index;
+                }
+                const link = document.createElement("a");
+                link.href = "#" + header.id;
+                //link.textContent = header.textContent;
+                link.innerHTML = header.innerHTML;
+                link.classList.add(header.tagName.toLowerCase());
+                nav.appendChild(link);
+            });
+        }
+        if (navElements.length > 1) {
+            // Remove the last nav element if multiple exist
+            navElements[navElements.length - 1].remove();
+        }
+    });
+</script>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .section.page--description nav {
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: #f9f9f9;
+        padding: 10px;
+        margin-top: 10px;
+        max-height: 80vh;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .section.page--description nav a {
+        display: block;
+        font-size: medium;
+        margin-bottom: 5px;
+    }
+
+    .section.page--description nav a.h2 {
+        padding-left: 0;
+    }
+
+    .section.page--description nav a.h3 {
+        padding-left: 30px;
+    }
+
+    .section.page--description nav a.h4 {
+        padding-left: 60px;
+    }
+
+    .section.page--description nav a.h5 {
+        padding-left: 90px;
+    }
+
+    .section.page--description nav a.h6 {
+        padding-left: 120px;
+    }
+
+    /* 滚动条样式 */
+    .section.page--description nav::-webkit-scrollbar {
+        /*滚动条整体样式*/
+        width: 7px;
+        /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+    }
+
+    .section.page--description nav::-webkit-scrollbar-thumb {
+        /*滚动条里面小方块*/
+        border-radius: 10px;
+        box-shadow: inset 0 0 5px rgba(178, 176, 176, 0.1);
+        background: #535353;
+    }
+
+    .section.page--description nav::-webkit-scrollbar-track {
+        /*滚动条里面轨道*/
+        box-shadow: inset 0 0 5px rgba(228, 226, 226, 0.1);
+        border-radius: 10px;
+        background: #ededed;
+    }
+</style>
+
+<!-- 点击目录标签跳转、目录显示当前页面位置 -->
+<style>
+    /* 去掉链接、按钮等点击后出现的边框以及下划线 */
+    a,
+    a:focus,
+    a:hover:focus,
+    button:focus,
+    button:hover:focus,
+    .button:focus,
+    .button:hover:focus,
+    input:focus,
+    input:hover:focus,
+    textarea:focus,
+    textarea:hover:focus,
+    select:focus,
+    select:hover:focus {
+        outline: none !important;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0) !important;
+        background-image: none !important;
+    }
+
+    /* 去掉a标签点击的颜色残留 */
+    a:focus {
+        color: #05bf85;
+    }
+
+    a:focus:hover {
+        color: green;
+    }
+
+    /* 当前正处于的目录标签 */
+    .section.page--description nav a.current {
+        color: red;
+    }
+</style>
+
+<!-- 代码框显示行数--行数样式 -->
+<style>
+    article .highlighter-rouge pre .code-number {
+        position: absolute;
+        width: 48px;
+        background-color: #fafafa;
+        top: 0;
+        left: 0;
+        padding: 8px 0 6px 0;
+        margin: 0;
+        list-style: none;
+        text-align: right;
+        font-size: 16px;
+        overflow: hidden;
+        overflow-x: auto;
+        font-weight: normal;
+        line-height: 22px;
+        color: #000;
+    }
+
+    article .highlighter-rouge pre .code-number li {
+        color: #383a42;
+        border-right: 1px solid #c5c5c5;
+        padding: 0 8px;
+        list-style: none;
+        margin: 0;
+        font-weight: normal;
+        /* 字体 */
+        font-family: Cascadia Code;
+        /* font-family: Source Code Pro, DejaVu Sans Mono, Ubuntu Mono, Anonymous Pro, Droid Sans Mono, Menlo, Monaco, Consolas, Inconsolata, Courier, monospace, PingFang SC, Microsoft YaHei, sans-serif; */
+        font-feature-settings: normal;
+    }
+</style>
+
+<!-- 代码框样式 -->
+<style>
+    /* 初始配置 */
+    article .highlighter-rouge {
+        position: relative;
+    }
+
+    article .highlighter-rouge .highlight {
+        overflow-x: auto;
+    }
+
+    /* 代码框内文字 */
+    article .highlighter-rouge pre {
+        font-size: 14px;
+        line-height: 22px;
+        margin: 0 0 24px;
+        padding: 8px 16px 6px 56px;
+    }
+
+    article .highlighter-rouge code span {
+        font-size: 14px;
+    }
+
+    article .highlighter-rouge code,
+    article .highlighter-rouge code span {
+        line-height: 22px;
+        font-size: 14px;
+        /* 字体 */
+        font-family: Cascadia Code;
+        /* font-family: Source Code Pro, DejaVu Sans Mono, Ubuntu Mono, Anonymous Pro, Droid Sans Mono, Menlo, Monaco, Consolas, Inconsolata, Courier, monospace, PingFang SC, Microsoft YaHei, sans-serif; */
+        font-feature-settings: normal;
+    }
+
+    /* 设置代码框内滚动条在code框上 */
+    article .highlighter-rouge pre {
+        overflow-x: hidden;
+    }
+
+    article .highlighter-rouge pre code {
+        display: block;
+        overflow-x: auto;
+    }
+
+    /* 用单个`括起来的代码 */
+    article code.highlighter-rouge {
+        padding: 2px 4px;
+        font-size: 14px;
+        line-height: 22px;
+        color: #c7254e;
+        background-color: #f9f2f4;
+        border-radius: 2px;
+        /* 字体 */
+        font-family: Cascadia Code;
+        /* font-family: Source Code Pro, DejaVu Sans Mono, Ubuntu Mono, Anonymous Pro, Droid Sans Mono, Menlo, Monaco, Consolas, Inconsolata, Courier, monospace, PingFang SC, Microsoft YaHei, sans-serif; */
+        font-feature-settings: normal;
+    }
+
+    /* 滚动条样式 */
+    article .highlighter-rouge pre code::-webkit-scrollbar {
+        height: 8px;
+        width: 138px;
+    }
+
+    article .highlighter-rouge pre code::-webkit-scrollbar-thumb {
+        background: #C2C2C2;
+        border-radius: 4px;
+    }
+</style>

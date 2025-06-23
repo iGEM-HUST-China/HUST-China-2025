@@ -1,0 +1,566 @@
+<!-- Overwrite this file with code you want before the closing body tag -->
+
+<!-- Prohibit right-clicking, copying and selecting -->
+<script>
+  // Prevent the default right-click action
+  document.addEventListener('contextmenu', function (event) {
+    event.preventDefault();
+  });
+  // Prevent the default select action
+  var element = document.body;
+  element.style.userSelect = 'none'; // Standard
+  element.style.webkitUserSelect = 'none'; // Chrome, Safari, Opera
+  element.style.MozUserSelect = 'none'; // Firefox
+  element.style.msUserSelect = 'none'; // IE 10+
+  element.style['-ms-user-select'] = 'none'; // IE 10+
+  // Prevent the default copy action
+  var element = document.body;
+  element.style.userSelect = 'none'; // Standard
+  element.style.webkitUserSelect = 'none'; // Chrome, Safari, Opera
+  element.style.MozUserSelect = 'none'; // Firefox
+  element.style.msUserSelect = 'none'; // IE 10+
+  element.style['-ms-user-select'] = 'none'; // IE 10+
+  // Add the copy event listener
+  document.addEventListener('copy', function (event) {
+    var selection = window.getSelection();
+    var selectedText = selection.toString();
+    var sourceElement = selection.anchorNode.parentNode;
+    // Set the forbidden text to the clipboard
+    event.clipboardData.setData('text/plain', 'This text is protected from copying.');
+    // Prevent the default copy action
+    event.preventDefault();
+
+  });
+</script>
+
+
+<!-- 清除可能重复的左侧目录 -->
+<script>
+  $(document).ready(function () {
+    const nav_list = $("#about-this-page nav");
+    if (nav_list.length > 1)
+      for (let i = 1; i < nav_list.length; i++)
+        nav_list[i].remove();
+  });
+</script>
+
+<!-- 字体图标 -->
+<link rel="stylesheet" href="https://static.igem.wiki/teams/5175/static/iconfont.css">
+
+<!-- 代码框字体 -->
+<style>
+  @font-face {
+    font-family: "Cascadia Code";
+    src: url(https://static.igem.wiki/teams/5175/static/cascadiacode.ttf) format('truetype'),
+      url(https://static.igem.wiki/teams/5175/static/cascadiacode.woff2) format('woff2');
+  }
+</style>
+
+<!-- 顶部导航中的下拉菜单 -->
+<script>
+  const debounce = (fn, delay) => {
+    let timer;
+    return function () {
+      if (timer) {
+        clearTimeout(timer);
+      }
+      timer = setTimeout(() => {
+        fn();
+      }, delay);
+    }
+  };
+  function is_mobile() { //是不是移动设备
+    if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+      return true;
+    }
+  }
+
+  $(document).ready(function () {
+    const down_ul = $("nav ul.sub_nav"); //全部的下拉菜单ul
+    if (!down_ul) return; //如果没有下拉菜单就退出
+    //计算ul应该在的位置↓
+    const ul_widths = new Array(down_ul.length);
+    function update_ul_width() {
+      down_ul.each((index, ul) => {
+        $(ul).css("display", "flex");
+        ul_widths[index] = $(ul).outerWidth();
+        $(ul).css("display", "none");
+      });
+    }
+    function update_position(ul, parent) { //更新ul位置
+      let { top, left } = parent[0].getBoundingClientRect();
+      const ul_width = ul_widths[down_ul.index(ul)];
+      const parent_height = parent.height();
+      const parent_width = parent.width();
+      ul.css("top", top + parent_height * 2 / 3);
+      if ($("button.button--nav").css("display") === "none") { //宽屏--居中对齐
+        ul.css("left", left - (ul_width - parent_width) / 2);
+        ul[0].style.removeProperty('right');
+      }
+      else { //窄屏--右对齐
+        const body_width = document.body.clientWidth;
+        const right = body_width - left - parent_width;
+        ul.css("right", right);
+        ul[0].style.removeProperty('left');
+      }
+    }
+    down_ul.each(function (index, dom) {
+      $(dom).css("display", "flex"); //给ul设置默认display样式为flex
+      $(dom).hide(); //ul默认隐藏
+      const parent = $(dom).parent()[0];  //下拉子菜单的父级li
+      const parent_a = $(parent).children("a.no-hover");  //父级li中的a
+      const down_point = $(parent).children("a.no-hover").children("span.icon-down-line-free"); //向下箭头
+      const down_li = $(dom).children("li.sub_nav"); //子级li
+      const down_a = $(dom).children("li.sub_nav").children("a.sub_nav"); //子级li中的a
+      const other_parent = $(parent).siblings("li.item--nav"); //其它父级li
+      const other_parent_a = $(parent).siblings("li.item--nav").children("a.no-hover"); //其它父级li中的a
+      const other_ul = $(parent).siblings("li.item--nav").children("ul.sub_nav"); //其它下拉子菜单
+      const other_ul_li = $(parent).siblings("li.item--nav").children("li.sub_nav"); //其它下拉子菜单中的li
+      const other_ul_a = $(parent).siblings("li.item--nav").children("a.sub_nav"); //其它下拉子菜单中的a
+      const update_position_resize_func = () => update_position($(dom), $(parent)); //更新ul位置
+      function update_resize_func() { //更新ul位置及宽度
+        down_ul.css("height", " fit-content");
+        update_position($(dom), $(parent));
+      }
+      //窄屏展开/关闭时调整zindex↓
+      function mouse_on_mobile() {
+        $(parent).css("z-index", "1002");
+        parent_a.css("z-index", "1002"); //当前展开的父级li和其中的a，它们优先级最高
+        $(dom).css("z-index", "1001");
+        down_li.css("z-index", "1001");
+        down_a.css("z-index", "1001"); //当前展开的下拉子菜单和其中的a，它们优先级第二
+        other_parent.css("z-index", "1000");
+        other_parent_a.css("z-index", "1000"); //其它父级li和其中的a，它们优先级第三
+        other_ul.css("z-index", "999");
+        other_ul_li.css("z-index", "999");
+        other_ul_a.css("z-index", "999"); //其它下拉子菜单和其中的a，它们优先级最低
+      }
+      //宽屏展开/关闭时调整zindex↓
+      function mouse_on_pc() {
+        other_ul.css("z-index", "999");
+        other_ul_li.css("z-index", "999");
+        other_ul_a.css("z-index", "999");
+        $(dom).css("z-index", "1000");
+        down_li.css("z-index", "1000");
+        down_a.css("z-index", "1000");
+        $(parent).css("z-index", "1002");
+        parent_a.css("z-index", "1002");
+        other_parent.css("z-index", "1001");
+        other_parent_a.css("z-index", "1001");
+      }
+      //重置zindex↓
+      function reset_zindex() {
+        $(dom).css("z-index", "999");
+        down_li.css("z-index", "999");
+        down_a.css("z-index", "999");
+        $(parent).css("z-index", "1000");
+        parent_a.css("z-index", "1000");
+      }
+      //为下拉菜单初始化位置，并添加hover事件
+      const add_event = () => {
+        update_position_resize_func();
+        if (!is_mobile()) { //pc端
+          parent_a.mouseenter(() => { //鼠标移入就显示
+            update_position_resize_func();
+            if ($("button.button--nav").css("display") === "none") { //宽屏
+              mouse_on_pc();
+              down_point.css("transform", "rotate(0)");
+              $(dom).stop().slideDown("fast", "swing", () => {
+                $(dom).css("z-index", "1002");
+                down_li.css("z-index", "1002");
+                down_a.css("z-index", "1002");
+              });
+            }
+            else { //窄屏
+              mouse_on_mobile();
+              down_point.css("transform", "rotate(0)");
+              $(dom).stop().slideDown("fast", "swing");
+            }
+          });
+          $(parent).mouseleave(() => { //鼠标移出时隐藏
+            $(dom).css("z-index", "1000");
+            down_li.css("z-index", "1000");
+            down_a.css("z-index", "1000");
+            down_point.css("transform", "rotate(-90deg)");
+            $(dom).stop().slideUp("fast", "swing", reset_zindex);
+          });
+        }
+        else { //移动端
+          parent_a[0].addEventListener('touchstart', () => {
+            update_position_resize_func();
+            if ($(dom).css('display') !== 'none') { //如果显示就隐藏
+              down_point.css("transform", "rotate(-90deg)");
+              $(dom).stop().slideUp("fast", "swing", reset_zindex);
+            }
+            else { //如果隐藏就显示
+              mouse_on_mobile();
+              down_point.css("transform", "rotate(0)");
+              $(dom).stop().slideDown("fast", "swing");
+            }
+          });
+          parent.addEventListener('mouseleave', () => { //移开时隐藏
+            down_point.css("transform", "rotate(-90deg)");
+            $(dom).stop().slideUp(0, "swing", reset_zindex);
+          });
+        }
+      }
+      if ($("a.logo img")[0]) { //如果有头像框就等待它加载完成后添加hover事件
+        let timer = setInterval(function () {
+          if ($("a.logo img")[0].complete) {
+            clearInterval(timer);
+            setTimeout(add_event, 0);
+          }
+        }, 100);
+      }
+      else { //没有就直接添加
+        setTimeout(add_event, 200);
+      }
+      //页面尺寸变化时更新top/left
+      window.addEventListener('resize', () => {
+        update_ul_width();
+        update_resize_func();
+      });
+      window.addEventListener('load', () => {
+        update_ul_width();
+        update_resize_func();
+      });
+      //点击后更改样式
+      down_a.on("click", function () {
+        $(this).addClass("current").siblings().removeClass("current");
+      });
+    });
+    //获取网站标题
+    const url_list = location.href.split('/');
+    const title = url_list[4];
+    //const title = url_list[url_list.length - 2];
+    //根据网站标题更改对应a的样式
+    $("nav ul.sub_nav li.sub_nav a.sub_nav").each(function (index, dom) {
+      const href_list = $(dom).prop("href").split('/');
+      const a_title = href_list[href_list.length - 2];
+      if (a_title == title) {
+        $(dom).addClass("current").siblings().removeClass("current");
+        $(dom).parent("li.sub_nav").parent("ul.sub_nav").parent("li.item--nav").children("a.no-hover").addClass("current").siblings().removeClass("current");
+        return;
+      }
+    });
+  });
+</script>
+
+<!-- 点击目录标签跳转、目录显示当前页面位置 -->
+<script>
+  $(document).ready(function () {
+    //初始配置
+    $("body,html").css("cssText", "scroll-behavior: auto !important;"); //禁用HTML平滑滚动
+    const h_list = $('article.article').find("h2, h3, h4, h5, h6"); //所有的标题
+    const a_list = $('#about-this-page nav a'); //所有的目录a标签
+    if (a_list.length == 0) return; //如果没有目录就退出
+    a_list.prop('href', 'javascript:;'); //禁用a标签锚点跳转
+    a_list.off("click"); //清除默认点击事件
+    const toc = $("#about-this-page nav"); //目录
+    //let nav_height = $("header.header .container-wrapper").outerHeight() + 1; //顶部导航栏高度，用于调节滚动距离
+    let nav_height = $("header.header .container-wrapper").outerHeight(); //顶部导航栏高度，用于调节滚动距离
+
+    //根据页面滚动距离更改目录div标签滚动距离
+    function update_div_scroll_distance(i) {
+      const top_distance = a_list.eq(i).position().top - a_list.eq(0).position().top; //指定a标签距顶端距离
+      const improve_distance = parseInt(a_list.eq(i).height()) / 2; //修正值，让标签更加居中
+      let scroll_height = top_distance - parseInt(toc.height()) / 2 + improve_distance; //应滚动的距离（让指定a标签居中）
+      if (scroll_height <= 0) scroll_height = 0;
+      toc.stop().animate({
+        scrollTop: scroll_height
+      });
+    }
+
+    //点击目录a标签跳转到对应标题
+    let is_click = false; //添加判断条件--是否是因为点击了按钮而滚动
+    a_list.on("click", function () {
+      is_click = true; //点击了按钮，进行上锁的操作
+      const a_index = a_list.index(this); //点击的是第几个li
+      const scroll_distance = h_list.eq(a_index).offset().top; //它对应的h标签距页面顶端距离
+      $("body,html").stop().animate({ //进行滚动
+        scrollTop: scroll_distance - nav_height
+      }, function () { //animate回调函数，当动画播放完执行
+        is_click = false; //滚动完了就把锁打开
+      });
+      a_list.removeClass("current");
+      $(this).addClass("current");
+      update_div_scroll_distance(a_index);
+    });
+
+    //回到顶部
+    const backtotop = $("#back-to-top"); //回到顶部按钮
+    backtotop.off("click");
+    backtotop.on('click', function () { //点击后滚动回顶部
+      is_click = true; //点击了按钮，进行上锁的操作
+      a_list.removeClass("current");
+      $("body,html").stop().animate({ //进行滚动
+        scrollTop: 0
+      }, function () { //animate回调函数，当动画播放完执行
+        is_click = false; //滚动完了就把锁打开
+      });
+      toc.stop().animate({
+        scrollTop: 0
+      });
+    });
+
+    //根据页面滚动距离更改目录a标签
+    function update_classname() { //根据页面滚动距离更改目录a标签
+      const scroll_distance = $(document).scrollTop(); //当前页面滚动的距离
+      for (let i = h_list.length - 1; i >= 0; i--) {
+        if (scroll_distance + nav_height + 1 >= h_list.eq(i).offset().top) { //找到滚动到了哪个h标签
+          a_list.removeClass("current");
+          a_list.eq(i).addClass('current'); //让对应的a标签改变
+          update_div_scroll_distance(i);
+          break;
+        }
+        if (i == 0) { //页面不在任何一个目录标签内，所有目录标签清空样式
+          a_list.removeClass("current");
+        }
+      }
+    }
+
+    //为页面添加滚动事件
+    $(window).scroll(function () {
+      if (!is_click) { //只有不是点击了目录标签而滚动时才触发
+        update_classname();
+      }
+    });
+    update_classname();
+    //页面尺寸变化时更新
+    $(window).resize(function () {
+      //nav_height = $("header.header .container-wrapper").outerHeight() + 1;
+      nav_height = $("header.header .container-wrapper").outerHeight();
+      update_classname();
+    });
+    //window.addEventListener("load", () => nav_height = $("header.header .container-wrapper").outerHeight() + 1); //加载完成时更新nav_height
+    window.addEventListener("load", () => nav_height = $("header.header .container-wrapper").outerHeight()); //加载完成时更新nav_height
+
+    //双击标题事件
+    h_list.off("click"); //清除默认点击事件
+    h_list.on("dblclick", function () { //双击标题，滑到它的位置
+      //$("html,body").animate({ scrollTop: $(this).offset().top });
+      const h_index = h_list.index(this); //双击的是第几个标题
+      a_list.eq(h_index).click(); //调用目录a标签的点击事件，双击标题就相当于点击了目录中对应a标签
+    });
+
+    //显示边框后消失
+    const show_time = 1000; //保留时间
+    const hide_time = 200; //消失经过的时间
+    function emphasize(dom) {
+      dom.css("border", "dashed rgba(255, 0, 0, 1)");
+      setTimeout(() => {
+        let opacity = 1;
+        let timer = setInterval(() => {
+          opacity -= 0.1;
+          dom.css("border", `dashed rgba(255, 0, 0, ${opacity})`);
+          if (opacity.toFixed(1) == 0) clearInterval(timer);
+        }, hide_time / 10);
+      }, show_time);
+    }
+    //点击文章中引用文献链接跳转
+    const footnotes = $("a.footnote");
+    footnotes.each((index, footnote) => {
+      footnote = $(footnote);
+      const href_list = footnote.prop("href").split('/');
+      const des_href = href_list[href_list.length - 1];
+      footnote.attr("data-href", des_href.slice(4));
+      footnote.prop("href", "javascript:;");
+      const des = $(document.getElementById(des_href.slice(1)));
+      footnote.on('click', function () {
+        is_click = true;
+        $("html").stop().animate({
+          scrollTop: des.offset().top - nav_height - (document.documentElement.clientHeight - nav_height * 2 - des.height()) / 2
+        }, function () {
+          is_click = false;
+          update_classname();
+          emphasize(des);
+        });
+      });
+    });
+    //点击引用文献的back链接跳转
+    const reverse_footnotes = $("a.reversefootnote");
+    reverse_footnotes.each((index, reverse_footnote) => {
+      reverse_footnote = $(reverse_footnote);
+      const href_list = reverse_footnote.prop("href").split('/');
+      const des_href = href_list[href_list.length - 1].slice(7);
+      reverse_footnote.prop("href", "javascript:;");
+      const des = $(`a.footnote[data-href="${des_href}"]`);
+      reverse_footnote.on('click', function () {
+        is_click = true;
+        $("html").stop().animate({
+          scrollTop: des.offset().top - nav_height - (document.documentElement.clientHeight - nav_height * 2 - des.height() * 3) / 2
+        }, function () {
+          is_click = false;
+          update_classname();
+          emphasize(des);
+        });
+      });
+    });
+  });
+</script>
+
+<!-- 代码框显示行数 -->
+<script>
+  $(document).ready(function () {
+    function get_count(code_text) { //计算代码行数
+      const regex = /\n/g;
+      const match = code_text.match(regex);
+      const count = match ? match.length : 0;
+      return count;
+    }
+    function create_ul(code_text) { //根据行数生成ul标签
+      const code_count = get_count(code_text);
+      const res_ul = $('<ul class="code-number"></ul>');
+      for (let i = 1; i <= code_count; i++) {
+        const li = $(`<li>${i}</li>`);
+        res_ul.append(li);
+      }
+      return res_ul;
+    }
+    const code_pre = $(".highlighter-rouge pre.highlight"); //代码框
+    code_pre.each(function (index, dom) {
+      if ($(dom).parents(".language-plaintext")[0]) { //如果是普通文本框
+        $(dom).css("cssText", "padding-left: 16px !important;");
+        return; //不显示行数
+      }
+      const code_text = $(dom).children('code').text(); //文本内容
+      $(dom).append(create_ul(code_text)); //循环添加
+    });
+  });
+</script>
+
+<!-- Fullscreen image -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // 处理单张图片的全屏显示
+    const singleImages = document.querySelectorAll('.flex-container-single .image'); // 选择单张图片
+    const singleFullscreenContainer = document.getElementById('fullscreen-container');
+    const singleFullscreenImage = document.getElementById('fullscreen-image');
+    $(singleFullscreenContainer).css("display", "flex"); //设置默认display样式为flex
+    $(singleFullscreenContainer).hide(); //先隐藏
+    let is_first_click = true;
+    if (singleImages) {
+      singleImages.forEach(singleImage => {
+        singleImage.addEventListener('click', function () {
+          singleFullscreenImage.src = this.src; // 设置全屏图像的 src
+          if (is_first_click) {
+            singleFullscreenContainer.style.display = 'flex'; // 显示全屏容器
+            is_first_click = false;
+          }
+          else
+            $(singleFullscreenContainer).stop().fadeIn(150); // 显示全屏容器
+          // 使用 setTimeout 确保容器显示后再添加放大类
+          setTimeout(() => {
+            singleFullscreenImage.classList.add('zoom-in'); // 添加放大类
+          }, 150); // 使用小的延迟确保容器已经显示
+        });
+
+        // 点击全屏容器时隐藏
+        singleFullscreenContainer.addEventListener('click', function () {
+          singleFullscreenImage.classList.add('zoom-out'); // 添加缩小类
+          $(singleFullscreenContainer).stop().fadeOut(300);
+          setTimeout(() => {
+            //singleFullscreenContainer.style.display = 'none'; // 隐藏全屏容器
+            singleFullscreenImage.classList.remove('zoom-out'); // 移除缩小类
+          }, 300); // 持续时间与 CSS 中的过渡时间相同
+        });
+      });
+
+      // 定义函数来隐藏全屏容器
+      function hideFullscreenContainerOnScroll() {
+        if (!singleFullscreenContainer) return;
+        // 如果全屏容器是可见的（display 不为 'none'）
+        if (singleFullscreenContainer.style.display !== 'none') {
+          singleFullscreenImage.classList.add('zoom-out'); // 添加缩小类
+          setTimeout(() => {
+            //singleFullscreenContainer.style.display = 'none'; // 隐藏全屏容器
+            $(singleFullscreenContainer).stop().fadeOut(300);
+            singleFullscreenImage.classList.remove('zoom-out'); // 移除缩小类
+          }, 300); // 持续时间与 CSS 中的过渡时间相同
+        }
+      }
+
+      // 监听滚动事件
+      window.addEventListener('scroll', hideFullscreenContainerOnScroll);
+    }
+
+    // 处理多张图片的全屏显示
+    const images = document.querySelectorAll('.flex-container .image'); // 选择所有多张图片
+    const fullscreenContainers = document.querySelectorAll('.fullscreen-container'); // 选择所有全屏容器
+    const fullscreenImages = Array.from(fullscreenContainers).map(container => container.querySelector('img')); // 获取每个全屏容器中的图片
+    $(fullscreenContainers).css("display", "flex"); //设置默认display样式为flex
+    $(fullscreenContainers).hide(); //先隐藏
+    images.forEach((image, index) => {
+      image.addEventListener('click', function () {
+        fullscreenImages[index].src = this.src; // 设置对应全屏图像的 src
+        if (is_first_click) {
+          fullscreenContainers[index].style.display = 'flex'; // 显示全屏容器
+          is_first_click = false;
+        }
+        else
+          $(fullscreenContainers[index]).stop().fadeIn(150); // 显示全屏容器
+        // 使用 setTimeout 确保容器显示后再添加放大类
+        setTimeout(() => {
+          fullscreenImages[index].classList.add('zoom-in'); // 添加放大类
+        }, 150); // 使用小的延迟确保容器已经显示
+      });
+    });
+
+    // 点击全屏容器时隐藏
+    fullscreenContainers.forEach((container, index) => {
+      container.addEventListener('click', function () {
+        fullscreenImages[index].classList.add('zoom-out'); // 添加缩小类
+        $(this).fadeOut(300);
+        setTimeout(() => {
+          //this.style.display = 'none'; // 隐藏对应全屏容器
+          fullscreenImages[index].classList.remove('zoom-out'); // 移除缩小类
+        }, 300); // 持续时间与 CSS 中的过渡时间相同
+      });
+    });
+
+    // 定义函数来隐藏全屏容器
+    function hideFullscreenContainersOnScroll() {
+      if (fullscreenContainers.length === 0) return;
+      fullscreenContainers.forEach((container, index) => {
+        // 如果全屏容器是可见的（display 不为 'none'）
+        if (container.style.display !== 'none') {
+          fullscreenImages[index].classList.add('zoom-out'); // 添加缩小类
+          $(container).fadeOut(300);
+          setTimeout(() => {
+            //container.style.display = 'none'; // 隐藏对应全屏容器
+            fullscreenImages[index].classList.remove('zoom-out'); // 移除缩小类
+          }, 300); // 持续时间与 CSS 中的过渡时间相同
+        }
+      });
+    }
+
+    // 监听滚动事件
+    window.addEventListener('scroll', hideFullscreenContainersOnScroll);
+  });
+</script>
+
+<!-- aside disappear when below 640px -->
+<script>
+  // 定义函数来检查窗口宽度并显示或隐藏 aside
+  function toggleAside() {
+    const aside = document.querySelector('aside.aside'); // 选择 aside 元素
+    if (aside) {
+      if (window.innerWidth < 640) {
+        aside.style.display = 'none'; // 小于 640px 时隐藏
+      } else {
+        // 大于或等于 640px 时，检查当前状态
+        if (aside.style.display === 'none') {
+          aside.style.display = ''; // 恢复到默认状态
+        }
+      }
+    }
+  }
+
+  // 初始检查
+  toggleAside();
+
+  // 监听窗口大小变化事件
+  window.addEventListener('resize', toggleAside);
+</script>
+
+{% include lottie.html %}

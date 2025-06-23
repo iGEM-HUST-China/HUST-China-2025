@@ -1,0 +1,13 @@
+<center>
+  <a class="button" href="{{ include.link | default: '#' }}"{% if include.color %} style="background: {{ include.color }}"{% endif %}>{{ include.text | default: "Button" }}{% if include.icon %}&nbsp; {% include icon.html id=include.icon title=include.icon %}{% endif %}</a>
+</center>
+
+<style>
+  .button {
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .button:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+</style>

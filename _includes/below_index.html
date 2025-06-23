@@ -1,0 +1,73 @@
+<style>
+  .below_index_wrapper {
+    padding: 0.5rem 0 !important;
+    width: 100%;
+    height: 8rem;
+    margin-bottom: 100px !important;
+    text-align: center;
+    /* 字号 */
+    font-size: 1.5rem !important;
+    color: #fff;
+  }
+
+  .below_index_wrapper .below_index_title {
+    height: 4rem;
+    margin: 10px;
+  }
+
+  .below_index_wrapper .below_index_title,
+  .below_index_wrapper .below_index {
+    display: none;
+  }
+
+  .below_index_wrapper .below_index_title p {
+    position: relative;
+    z-index: 9000;
+    height: fit-content !important;
+    font-size: 2rem !important;
+  }
+
+  .below_index_wrapper .below_index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+  }
+
+  .below_index_wrapper .below_index .button_wrapper {
+    height: 2rem;
+    margin: 20px;
+  }
+
+  .below_index_wrapper .below_index .button_wrapper a {
+    position: relative;
+    z-index: 9000;
+  }
+</style>
+
+<div class="below_index_wrapper">
+
+  <div class="below_index_title title">
+    <p>Want to know more? Click here!</p>
+  </div>
+
+  <div class="below_index">
+    <div class="button_wrapper">
+      {% include button.html text="Project Description" link="./description" %}
+    </div>
+    <div class="button_wrapper">
+      {% include button.html text="Wet Lab" link="./design" %}
+    </div>
+    <div class="button_wrapper">
+      {% include button.html text="Hardware" link="./hardware" %}
+    </div>
+  </div>
+  <div class="below_index">
+    <div class="button_wrapper">
+      {% include button.html text="Human Practices" link="./human-practices" %}
+    </div>
+    <div class="button_wrapper">
+      {% include button.html text="Team" link="./members" %}
+    </div>
+  </div>
+</div>

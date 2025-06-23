@@ -1,0 +1,19 @@
+<!-- _includes/members-people.html -->
+{% if include.image_position == 'left' %}
+<div class="section left" id="members">
+  <img src="{{ include.image }}" alt="{{ include.name }}" id="members">
+  <div class="info">
+    <div class="name">{{ include.name }}</div>
+    <div class="description">{{ include.description }}</div>
+  </div>
+</div>
+{% endif %}
+{% if include.image_position == 'right' %}
+<div class="section right" id="members">
+  <div class="info">
+    <div class="name">{{ include.name }}</div>
+    <div class="description">{{ include.description }}</div>
+  </div>
+  <img src="{{ include.image }}" alt="{{ include.name }}" id="members">
+</div>
+{% endif %}

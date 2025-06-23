@@ -1,0 +1,8 @@
+<div class="video">
+  <iframe title="{{ include.title }}" src="{{ include.url }}" frameborder="10px" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+  {% if include.caption %}<figcaption class="caption">{{ include.caption }}</figcaption>{% endif %}
+  <br>
+  <figcaption>Loading the video...</figcaption>
+  <br>
+  <figcaption>If the section doesn't response, try to refresh the page.</figcaption>
+</div>

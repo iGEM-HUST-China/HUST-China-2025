@@ -1,0 +1,100 @@
+<style>
+  .table_caption {
+    display: inline-block;
+    width: 94%;
+    padding: 5px;
+    text-align: center;
+  }
+
+  .table_caption p {
+    display: inline-block;
+    text-align: left;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .table-parent {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .table-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .table-container .caption {
+    margin-bottom: 0px !important;
+    font-size: large !important;
+  }
+
+  .table-container .table-div {
+    width: 94%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: center;
+  }
+
+  .table-container table {
+    /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
+    margin-top: 0%;
+    margin-bottom: 3%;
+    width: 100%;
+    font-family: 'Merriweather', 'MiSans', 'Cascadia Code', monospace;
+    border-collapse: collapse;
+    border-radius: 8px;
+    justify-content: center;
+  }
+
+  .table-container th,
+  td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  .table-container th {
+    background-color: #f5f5f5;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .table-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .table-container th:hover,
+  td:hover {
+    background-color: #f0f0f0;
+    /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);*/
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+</style>
+<script>
+  $(document).ready(function () {
+    const table_captions = $(".table_caption");
+    const tables = $(table_captions).next();
+    table_captions.each((index) => {
+      const table_caption = table_captions.eq(index);
+      const table = tables.eq(index);
+      const tb_parent = $('<div class="table-parent"><tb class="table-container"></tb></div>');
+      table_caption.before(tb_parent);
+      const tb_container = tb_parent.children(".table-container");
+      tb_container.append(table_caption);
+      const tb_div = $("<div class='table-div'></div>");
+      tb_container.append(tb_div);
+      tb_div.append(table);
+      table_caption.html(`<p>${table_caption.html()}</p>`);
+    });
+  });
+</script>

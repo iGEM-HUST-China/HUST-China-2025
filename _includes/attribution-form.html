@@ -1,0 +1,23 @@
+<style>
+  aside.aside {
+    display: none;
+  }
+  iframe#igem-attribution-form {
+    border: none;
+    width: 100%;
+  }
+</style>
+
+<iframe
+  id="igem-attribution-form"
+  src="https://teams.igem.org/wiki/5175/attributions"
+>
+</iframe>
+
+<script>
+  window.onload = function() {
+    var iframe = document.getElementById('igem-attribution-form');
+    var pageHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+    iframe.height = pageHeight + 'px';
+  }
+</script>

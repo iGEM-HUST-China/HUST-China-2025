@@ -1,0 +1,276 @@
+{% if site.navigation_header %}
+<nav class="nav  nav--header">
+  <ul class="list  list--nav">
+    {% for item in site.navigation_header %}
+
+    {% if item.url contains '://' %}
+    {% assign url = item.url %}
+    {% else %}
+    {% assign url = item.url | relative_url %}
+    {% endif %}
+
+    <li class="item  item--nav{% if item.url == page.url %}  item--current{% endif %}">
+      {% if item.sub_navigation %}
+      <a href="javascript:;" class="no-hover">{{ item.title }} <span
+          class="icon iconfont icon-down-line-free"></span></a>
+      {% else %}
+      <a href="{{ url }}">{{ item.title }}</a>
+      {% endif %}
+      {% if item.sub_navigation %}
+      <ul class="sub_nav" style="display: none; position: absolute;">
+        {% for sub_nav in item.sub_navigation %}
+        <li class="sub_nav item--nav">
+          <a href="{{ site.baseurl }}{{ sub_nav.url }}" class="sub_nav">{{ sub_nav.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  <button class="button  button--nav" aria-label="Menu toggle">
+    {% include icon.html id="nav" title="Menu" %}
+  </button>
+</nav>
+{% else %}
+{% include nav-default.html %}
+{% endif %}
+
+<style>
+  header.header {
+    width: 100%;
+  }
+
+  header.header .container-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9000;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  /* 小屏 */
+  button.button--nav {
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 640px) {
+    div.container-wrapper {
+      display: flex;
+    }
+
+    nav.nav button.button--nav {
+      box-shadow: none !important;
+    }
+
+    nav.nav--header {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    /*nav.nav--header ul.list--nav {
+      align-items: center;
+      justify-content: center;
+    }*/
+
+    /*nav.nav ul.list {
+      margin-right: 40%;
+    }*/
+
+    /*nav.nav ul.list--nav li.item {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }*/
+  }
+
+  /* 大屏 */
+
+  @media screen and (min-width: 640px) {
+    button.button--nav {
+      display: none;
+    }
+  }
+
+  header.header div.container-wrapper {
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+
+  nav.nav {
+    align-items: center;
+  }
+
+  nav.nav ul.list--nav li ul.sub_nav {
+    /*align-items: center;*/
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+
+
+  nav.nav--header li.item a {
+    position: relative;
+  }
+
+  /*
+  nav.nav ul.list--nav li.item--nav {
+    cursor: pointer;
+  }
+  */
+  nav.nav ul.list--nav li.item--nav a {
+    z-index: 1000;
+  }
+
+  nav.nav ul.list--nav li.item--nav a.no-hover {
+    font-size: 1.2rem;
+  }
+
+  nav.nav ul.list--nav li.item--nav span.icon-down-line-free {
+    display: inline-block;
+    vertical-align: middle;
+    /* 箭头默认向右 */
+    transform: rotate(-90deg);
+    /* 旋转原点 */
+    transform-origin: center center;
+    /* 旋转时间 */
+    transition: transform 0.5s;
+  }
+
+  ul.sub_nav {
+    /* background-color: #F9F9F9; */
+    background-color: white;
+    flex-direction: column;
+    height: fit-content;
+    z-index: 999;
+    margin-top: 0.6rem;
+    border-radius: 0.2rem;
+    padding: 0 10px;
+    padding-bottom: 5px;
+  }
+
+  ul.sub_nav li.sub_nav {
+    z-index: 999;
+    /* 清除li左边默认的点 */
+    list-style-type: none;
+    /* 小屏右对齐 */
+    text-align: right !important;
+    padding-top: 0.2rem;
+    margin: 0;
+  }
+
+  /* 大屏居中对齐 */
+  @media screen and (min-width: 40em) {
+    ul.sub_nav li.sub_nav {
+      text-align: center !important;
+    }
+  }
+
+  ul.sub_nav li.sub_nav a.sub_nav {
+    z-index: 999;
+    /* 强制不换行 */
+    white-space: nowrap;
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 0 0.2rem;
+    margin: 0;
+  }
+
+  nav.nav a:hover {
+    color: green;
+  }
+
+  nav.nav a.current {
+    color: #a8adac;
+  }
+
+  nav.nav a.current:hover {
+    color: green;
+  }
+
+  /* Prevent the rotating animation becomes strange */
+  nav.nav a .icon {
+    height: fit-content;
+  }
+</style>
+<script>
+  $(document).ready(function () {
+    const nav = $(".header .container-wrapper");
+    const feature = $(".header .feature");
+    const aside = $("aside.aside section#about-this-page");
+    function update_feature() {
+      if (nav.css("position") !== "fixed") return;
+      const nav_height = nav.outerHeight();
+      feature.css("margin-top", `${nav_height}px`);
+      aside.css("cssText", `top: ${nav_height}px !important`);
+    }
+    window.addEventListener('load', () => update_feature());
+    $(window).on("resize", () => update_feature());
+  });
+</script>
+<script type="text/javascript">
+  // Get list and button
+  const navList = document.querySelector('.header .list--nav')
+  const button = document.querySelector('.header .button--nav')
+
+  // Hide nav and apply toggle
+  const collapseNav = () => {
+    if (document.body.clientWidth < 625) {
+      navList.style.setProperty('--listHeight', `-${navList.offsetHeight}px`)
+      button.style.display = 'inline-block'
+    }
+    else {
+      navList.removeAttribute('style')
+      button.style.display = 'none'
+    }
+
+    button.onclick = () => {
+      navList.style.setProperty('transition', `margin .1s`)
+      if (navList.style.getPropertyValue('--listHeight')) {
+        navList.style.removeProperty('--listHeight')
+      } else {
+        navList.style.setProperty('--listHeight', `-${navList.offsetHeight}px`)
+      }
+    }
+  }
+  window.addEventListener("load", () => collapseNav()); //加载完成时更新nav_height
+
+  // Check on resize if to collapse nav
+  window.addEventListener('resize', () => {
+    collapseNav()
+  })
+</script>
+
+<script>
+  // Set the margin-top of div.feature to the height of div.container-wrapper
+  function setFeatureMarginTop() {
+    // Get height of div.container-wrapper
+    const navHeight = document.querySelector('.header .container-wrapper').offsetHeight
+    document.querySelector('.header .feature').style.setProperty('margin-top', `${navHeight}px`)
+  }
+
+  // Add event listener when the page loads successfully
+  window.addEventListener('load', () => {
+    setFeatureMarginTop()
+  })
+
+  // Add event listener when click button.button--nav
+  document.querySelector('.header .button--nav').addEventListener('click', () => {
+    // Proceed after the animation to finish and the height of nav is set
+    setTimeout(() => {
+      setFeatureMarginTop()
+    }, 100)
+
+    // Double check after 0.2s, if not set to the correct height, set it again for 5 times
+    const recursiveSetFeatureMarginTop = (attempts) => {
+      if (attempts <= 0) return;
+      setTimeout(() => {
+        setFeatureMarginTop();
+        recursiveSetFeatureMarginTop(attempts - 1);
+      }, 200);
+    };
+
+    recursiveSetFeatureMarginTop(5);
+
+  })
+</script>

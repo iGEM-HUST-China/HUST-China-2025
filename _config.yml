@@ -1,0 +1,179 @@
+# Site configuration
+# 1. Files excluded from Jekyll builds
+# 2. Installed Gems
+# 3. Gem settings
+# 4. Jekyll settings
+# 5. Collections
+# 6. Jekyll collections settings
+# 7. Site settings
+# 8. Site favicons & manifest icons
+# 9. Site navigation
+
+# 1. Files excluded from Jekyll builds
+exclude:
+  - README.md
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
+  - screenshot.png
+  - LICENSE
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - alembic-jekyll-theme.gemspec
+  - .jekyll-cache
+  - unused_files
+
+# 2. Installed Gems
+plugins:
+  - jekyll-sitemap
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-commonmark
+  - jekyll-include-cache
+  - jekyll-remote-theme
+  - jemoji
+
+# 3. Gem settings
+remote_theme: daviddarnes/alembic@main
+paginate: 2 # jekyll-paginate > items per page
+paginate_path: blog/page:num # jekyll-paginate > blog page
+author: iGEM HUST-China # jekyll-seo-tag > default author
+# markdown: CommonMark # Markdown parse settings, CommonMark performs slightly better an others in build time
+# commonmark:
+#   options: ["SMART", "FOOTNOTES"]
+#   extensions: ["strikethrough", "autolink", "table"]
+
+# 4. Jekyll settings
+sass:
+  style: compressed # Style compression
+  permalink: /:basename/ # Permalink style (/page-name/)
+excerpt_separator: <!-- more --> # Marks end of excerpt in posts
+timezone: Asia/Shanghai # Timezone for blog posts and alike
+
+# 5. Collections
+collections:
+  posts:
+    title: Posts # Needed for Siteleaf
+    output: true
+    description: "My thoughts and ideas" # The post list page content
+    feature_text: |
+      Welcome to the blog
+    feature_image: "https://picsum.photos/2560/600?image=866"
+
+# 6. Jekyll collections settings
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: "/assets/default-social-image.png" # Default image for sharing
+      layout: page # Set the default layout for pages
+      # aside: true # Set the default aside for pages
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post # Set the default layout for posts
+      aside: true # Set the default aside for posts
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page # Set the default layout for pages
+      aside: true # Set the default aside for pages
+      indexing: false # Set the default indexing for pages
+      sitemap: false # Set the default sitemap for pages
+
+# 7. Site settings
+encoding: utf-8 # Make sure the encoding is right
+lang: en-US # Set the site language
+title: "iGEM HUST-China 2024" # Site name or title, also used in jekyll-seo-tag
+logo: "/assets/logos/logo.svg" # Site logo, also used in jekyll-seo-tag
+description: "Welcome to iGEM HUST-China 2024 wiki! It's still under construction. Please stay tuned for more information." # Site description and default description, also used in jekyll-seo-tag
+url: "https://2024.igem.wiki/" # Site url, also used in jekyll-seo-tag
+baseurl: "/hust-china"
+# disqus: "alembic-1" # Blog post comments, uncomment the option and set the site ID from your Disqus account
+date_format: "%-d %B %Y" # Blog post date formatting using placeholder formatting
+# google_analytics: ""
+# google_analytics_anonymize_ip: ""
+# service_worker: false # Will turn off the service worker if set to false
+# short_name: "Al" # The web application short name, defaults to the site title
+css_inline: false # Will insert all styles into a single <style> block in the <head> element and remove the style <link> reference
+
+# 8. Site favicons & manifest icons
+favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
+  16: "/assets/logos/logo@16px.png"
+  32: "/assets/logos/logo@32px.png"
+  96: "/assets/logos/logo@96px.png"
+  120: "/assets/logos/logo@120px.png"
+  144: "/assets/logos/logo@144px.png"
+  180: "/assets/logos/logo@180px.png"
+  512: "/assets/logos/logo@512px.png"
+  1024: "/assets/logos/logo@1024px.png"
+
+# 9. Site navigation
+navigation_header:
+  - title: Home
+    url: /
+  - title: Project
+    sub_navigation:
+      - title: Description
+        url: /description/
+      - title: Safety
+        url: /safety/
+      - title: Proposed Implementation
+        url: /proposed-implementation/
+  - title: Wet Lab
+    sub_navigation:
+      - title: Design
+        url: /design/
+      - title: Engineering
+        url: /engineering/
+      - title: Protocol
+        url: /protocol/
+      - title: Results
+        url: /results/
+      - title: Notebook
+        url: /notebook/
+      - title: Parts
+        url: /parts/
+  - title: Dry Lab
+    sub_navigation:
+      - title: Model
+        url: /model/
+      - title: Hardware
+        url: /hardware/
+  - title: HP
+    sub_navigation:
+      - title: Human Practices
+        url: /human-practices/
+      - title: Education & Communication
+        url: /education/
+  - title: Team
+    sub_navigation:
+      - title: Members
+        url: /members/
+      - title: Contribution
+        url: /contribution/
+      - title: Attributions
+        url: /attributions/
+      # - title: Prize
+      #   url: /prize/
+
+navigation_footer:
+  - title: iGEM HUST-China
+    url: https://2024.igem.wiki/hust-china
+
+sharing_links: # Appear at the bottom of single blog posts, add as desired. The value can be 'true' or the desired button colour
+  Email: true
+
+# Load custom fonts from fonts.google.com etc
+#
+# TIP: Try to keep the number of urls as low to reduce the performance cost
+#      If multiple fonts can be requested in a single url opt for this
+fonts:
+  font_urls:
+    - https://static.igem.wiki/teams/5175/static/mainfont-v2.css
+

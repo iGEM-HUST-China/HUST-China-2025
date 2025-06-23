@@ -1,0 +1,141 @@
+<footer class="footer">
+  <!-- <div class="container">
+    <div class="copyright  typeset">
+      <small class="small">&copy; {{ site.title }}</small>
+    </div>
+    {% include nav-footer.html %}
+  </div> -->
+  <div class="container">
+    <div class="footer_pic">
+      <img src="https://static.igem.wiki/teams/4595/wiki/home/qiming.png" alt="Qiming">
+      <img src="https://static.igem.wiki/teams/4595/wiki/home/school.png" alt="HUST">
+      <img src="https://static.igem.wiki/teams/4595/wiki/home/college.png" alt="LifeST">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="footer_text">
+      <h5>Contact us</h5>
+      <p>Address</p>
+      <small>Huazhong University of Science and Technology</small>
+      <br>
+      <small>1037 Luoyu Road, Hongshan District, Wuhan</small>
+      <br>
+      <small>Hubei Province, P.R. China 430074</small>
+      <p>E-mail</p>
+      <a href="mailto:igemhustchina@163.com" target="_blank"><small>igemhustchina@163.com</small></a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="footer_copyright">
+      <p>&copy; iGEM HUST-China 2024</p>
+      <p>Licenced under <a href="https://creativecommons.org/licenses/by/4.0/" , target="_blank">CC BY 4.0</a></p>
+    </div>
+  </div>
+  <div id="footer_gitlab_bg">
+    <div class="container" id="gitlab">
+      <div class="footer_gitlab">
+        <p>You can find our project on <a href="https://gitlab.igem.org/2024/hust-china" target="_blank">iGEM
+            GitLab</a>.
+        </p>
+        <p>
+          Pipeline status: <a href="https://gitlab.igem.org/2024/hust-china/-/pipelines" target="_blank"><img src="https://gitlab.igem.org/2024/hust-china/badges/main/pipeline.svg"></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    color: #0c0c0c !important;
+    background-color: #aadec3 !important;
+    padding: 20px 0;
+    padding-bottom: 0;
+  }
+
+  footer div.container div.footer_pic {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 40%;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  footer div.container div.footer_pic img {
+    width: 100%;
+    height: auto;
+    margin: 5px auto;
+  }
+
+  footer div.container div.footer_text {
+    text-align: center;
+    margin: auto;
+    width: 60%;
+  }
+
+  footer div.container div.footer_text h5,
+  footer div.container div.footer_text p {
+    font-weight: bold;
+  }
+
+  footer div.container div.footer_text a {
+    text-decoration: none;
+    color: #0c0c0c !important;
+  }
+
+  footer div.container div.footer_text a:hover {
+    color: #498554 !important;
+  }
+
+
+  footer div.container div.footer_copyright {
+    margin: auto;
+    text-align: center;
+    display: block;
+    margin: 5px auto;
+  }
+
+  footer div.container div.footer_copyright a {
+    text-decoration: none;
+    color: #0c0c0c !important;
+  }
+
+  footer div.container div.footer_copyright a:hover {
+    color: #498554 !important;
+  }
+
+  footer div.container#gitlab {
+    background-color: #90bda6;
+    display: flex;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+
+  footer div#footer_gitlab_bg {
+    background-color: #90bda6;
+  }
+
+  footer div.container div.footer_gitlab {
+    display: inline-block;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: left;
+  }
+
+  footer div.container div.footer_gitlab a {
+    text-decoration: none;
+    color: #0c0c0c !important;
+  }
+
+  footer div.container div.footer_gitlab a:hover {
+    color: #498554 !important;
+  }
+
+  footer div.container div.footer_gitlab img {
+    margin: 0 10px;
+  }
+</style>
