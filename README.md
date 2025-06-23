@@ -89,3 +89,9 @@ pip install -r dependencies.txt
 ```bash
 python app.py
 ```
+
+---
+
+## More information
+
+To be continued...
