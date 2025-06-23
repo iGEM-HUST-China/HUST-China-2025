@@ -72,7 +72,7 @@ jobs:
           GITLAB_REPO: $GITLAB_REPO
           GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
-          git remote add gitlab $GITLAB_REPO
+          git remote add gitlab ${{ secrets.GITLAB_REPO_URL }}
           git fetch gitlab
           git merge -X theirs --allow-unrelated-histories --no-ff gitlab/main
 
@@ -119,6 +119,5 @@ jobs:
             GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
             git config pull.rebase true
-            git remote add gitlab https://gitlab.igem.org/2024/hust-china.git
-            git remote set-url gitlab ${{ secrets.GITLAB_REPO_URL }}
+            git remote add gitlab ${{ secrets.GITLAB_REPO_URL }}
             git push --no-verify gitlab main

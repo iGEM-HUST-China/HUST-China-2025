@@ -37,16 +37,12 @@ jobs:
         run: |
           git fetch origin ${{ github.ref }}
           git merge -X theirs --allow-unrelated-histories --no-ff origin/main
-
+          
       - name: Pull from GitLab
         run: |
-          git remote add gitlab $GITLAB_REPO
+          git remote add gitlab ${{ secrets.GITLAB_REPO_URL }}
           git fetch gitlab
           git merge -X theirs --allow-unrelated-histories --no-ff gitlab/main
-
-      - name: Set Git Configurations
-        run: |
-          
 
       - name: Push to GitHub
         run: |
