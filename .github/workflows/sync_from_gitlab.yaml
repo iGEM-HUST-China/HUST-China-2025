@@ -1,20 +1,16 @@
 name: Sync GitLab to GitHub
 
 on:
+  schedule:
+    - cron: '0 16 * * *' # Runs daily at midnight UTC+8
+  push:
+    branches:
+      - main
   workflow_dispatch:
-  workflow_run:
-    workflows:
-      - Auto Create Merge Request
-    types:
-      - completed
+
 permissions:
   contents: write
-  pull-requests: write
-  issues: write
-  checks: write
-  statuses: write
   actions: write
-  deployments: write
 
 jobs:
   Pull_from_GitLab:
