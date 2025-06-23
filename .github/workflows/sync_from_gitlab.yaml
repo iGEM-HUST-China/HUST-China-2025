@@ -1,6 +1,11 @@
 name: Sync GitLab to GitHub
 
 on:
+  schedule:
+    - cron: '0 16 * * *' # Runs daily at midnight CST
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
