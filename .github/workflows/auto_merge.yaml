@@ -72,8 +72,8 @@ jobs:
           commit-message: "Merge develop into main"
           title: "Merge develop into main"
           body: "This is an auto-generated pull request to merge develop into main."
-          branch: main
-          base: develop
+          branch: develop
+          base: main
           labels: auto-merge
           assignees: github-actions[bot]
           reviewers: Lucas04-nhr
