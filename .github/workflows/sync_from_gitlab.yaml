@@ -1,0 +1,54 @@
+name: Sync GitLab to GitHub
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Auto Create Merge Request
+    types:
+      - completed
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  checks: write
+  statuses: write
+  actions: write
+  deployments: write
+
+jobs:
+  Pull_from_GitLab:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@main
+        with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            fetch-depth: 0
+
+      - name: Set up Git
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git config pull.rebase true
+      
+      - name: Pull the latest change
+        run: |
+          git fetch origin ${{ github.ref }}
+          git merge -X theirs --allow-unrelated-histories --no-ff origin/main
+
+      - name: Pull from GitLab
+        run: |
+          git remote add gitlab $GITLAB_REPO
+          git fetch gitlab
+          git merge -X theirs --allow-unrelated-histories --no-ff gitlab/main
+
+      - name: Set Git Configurations
+        run: |
+          
+
+      - name: Push to GitHub
+        run: |
+          git fetch origin
+          git push origin main

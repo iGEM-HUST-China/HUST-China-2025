@@ -1,0 +1,124 @@
+name: Sync GitHub to GitLab
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Sync GitLab to GitHub
+    types:
+      - completed
+      
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  checks: write
+  statuses: write
+  actions: write
+  deployments: write
+
+jobs:
+    
+  Check_Git_Status:
+    runs-on: ubuntu-latest
+    outputs:
+      repo_synced: ${{ steps.check_git_status.outputs.repo_synced }}
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@main
+        with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            fetch-depth: 0
+
+      - name: Set up Git
+        run: |
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git config --global user.token ${{ secrets.GITLAB_TOKEN }}
+
+      - name: Set up GitLab
+        run: |
+            git remote add gitlab ${{ secrets.GITLAB_REPO_URL }}
+
+      - name: Check Git Status
+        id: check_git_status
+        run: |
+          git fetch gitlab main
+          if git diff --quiet main gitlab/main; then
+              echo "repo_synced=true" >> $GITHUB_OUTPUT
+          else
+              echo "repo_synced=false" >> $GITHUB_OUTPUT
+          fi
+  
+  Pull_from_GitLab:
+    needs: Check_Git_Status
+    runs-on: ubuntu-latest
+    if: ${{ needs.Check_Git_Status.outputs.repo_synced == 'false' }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@main
+        with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            fetch-depth: 0
+
+      - name: Set up GitLab
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Pull from GitLab
+        env:
+          GITLAB_REPO: $GITLAB_REPO
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+          git remote add gitlab $GITLAB_REPO
+          git fetch gitlab
+          git merge -X theirs --allow-unrelated-histories --no-ff gitlab/main
+
+      - name: Set up GitHub
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Set Git Configurations
+        run: |
+          git config pull.rebase false
+
+      - name: Push to GitHub
+        run: |
+          git fetch origin
+          git pull --rebase
+          git push origin main
+          
+  
+  Push_to_GitLab:
+    runs-on: ubuntu-latest
+    needs: [Check_Git_Status,Pull_from_GitLab]
+    if: always() && (needs.Check_Git_Status.outputs.repo_synced == 'true' || needs.Check_Git_Status.result == 'success')
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@main
+        with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            fetch-depth: 0
+
+      - name: Set up Git
+        run: |
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Pull the latest change
+        run: |
+            git fetch origin ${{ github.ref }}
+            git merge -X theirs --allow-unrelated-histories --no-ff origin/main
+    
+    
+      - name: Push to GitLab
+        env:
+            GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+        run: |
+            git config pull.rebase true
+            git remote add gitlab https://gitlab.igem.org/2024/hust-china.git
+            git remote set-url gitlab ${{ secrets.GITLAB_REPO_URL }}
+            git push --no-verify gitlab main
