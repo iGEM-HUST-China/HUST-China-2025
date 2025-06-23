@@ -2,23 +2,28 @@
 
 <!-- Prohibit right-clicking, copying and selecting -->
 <script>
-  // 禁止右键，除白名单
+  // 判断目标及其所有父元素是否属于指定白名单
+  function isInWhitelist(target, className) {
+    return target.closest && target.closest('.' + className);
+  }
+
+  // 禁止右键，除白名单及其所有子元素
   document.addEventListener('contextmenu', function (event) {
-    if (!(event.target.closest && event.target.closest('.allow-contextmenu'))) {
+    if (!isInWhitelist(event.target, 'allow-contextmenu')) {
       event.preventDefault();
     }
   });
 
-  // 禁止选择，除白名单
+  // 禁止选择，除白名单及其所有子元素
   document.addEventListener('selectstart', function (event) {
-    if (!(event.target.closest && event.target.closest('.allow-select'))) {
+    if (!isInWhitelist(event.target, 'allow-select')) {
       event.preventDefault();
     }
   });
 
-  // 禁止复制，除白名单
+  // 禁止复制，除白名单及其所有子元素
   document.addEventListener('copy', function (event) {
-    if (!(event.target.closest && event.target.closest('.allow-copy'))) {
+    if (!isInWhitelist(event.target, 'allow-copy')) {
       event.clipboardData.setData('text/plain', 'This text is protected from copying.');
       event.preventDefault();
     }
@@ -553,5 +558,14 @@
   // 监听窗口大小变化事件
   window.addEventListener('resize', toggleAside);
 </script>
+
+<style>
+  .allow-select, .allow-select * {
+    user-select: auto !important;
+    -webkit-user-select: auto !important;
+    -moz-user-select: auto !important;
+    -ms-user-select: auto !important;
+  }
+</style>
 
 {% include lottie.html %}

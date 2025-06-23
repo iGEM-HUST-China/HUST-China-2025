@@ -87,7 +87,7 @@
     table_captions.each((index) => {
       const table_caption = table_captions.eq(index);
       const table = tables.eq(index);
-      const tb_parent = $('<div class="table-parent allow-copy allow-select allow-contextmenu"><tb class="table-container"></tb></div>');
+      const tb_parent = $('<div class="table-parent allow-copy allow-select allow-contextmenu"><tb class="table-container allow-copy allow-select allow-contextmenu"></tb></div>');
       table_caption.before(tb_parent);
       const tb_container = tb_parent.children(".table-container");
       tb_container.append(table_caption);
