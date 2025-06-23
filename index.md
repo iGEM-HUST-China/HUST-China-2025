@@ -1,7 +1,7 @@
 ---
 title: Home
 feature_text: |
-  ## HUST-China 2025"
+  ## HUST-China 2025
 feature_image: "https://static.igem.wiki/teams/5175/resources/background/bg-04.png"
 excerpt: "Welcome to iGEM HUST-China 2025 wiki!"
 ---
