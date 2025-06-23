@@ -1,3 +1,13 @@
+---
+title: Description
+permalink: /description/
+feature_text: |
+  ## Description
+  This page contains the description of the wet-lab part of our project.
+feature_image: "https://static.igem.wiki/teams/5175/resources/background/bg-design.webp"
+excerpt: "This page contains the description of the wet-lab part of our project."
+---
+
 #### Bronze Medal Criterion \#1: Wiki
 
 Describe how and why you chose your iGEM project.
