@@ -50,4 +50,4 @@ Your contribution will be reviewed, and feedback may be provided. Thank you for 
 
 ---
 
-See [GitHub Contributing Graph](https://github.com/Lucas04-nhr/HUST-China_2024/graphs/contributors) for more details of our contributors.
+See [GitHub Contributing Graph](https://github.com/Lucas04-nhr/HUST-China_2025/graphs/contributors) for more details of our contributors.

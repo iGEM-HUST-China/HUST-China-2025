@@ -15,7 +15,7 @@ excerpt: "Meet the team behind our project."
 {% include figure.html 
    image="https://static.igem.wiki/teams/5175/resources/members/team-full.webp" 
    alt="Our Team" 
-   caption="All HUST-China 2024 iGEMers " %}
+   caption="All HUST-China 2025 iGEMers " %}
 
 
 ## Principal Investigators
@@ -301,7 +301,7 @@ excerpt: "Meet the team behind our project."
 {% include figure.html 
    image="https://static.igem.wiki/teams/5175/resources/members/team.webp" 
    alt="Our Team" 
-   caption="HUST-China 2024: \"PETilizer\"" %}
+   caption="HUST-China 2025: \"PETilizer\"" %}
 
 {% include figure.html 
    image="https://static.igem.wiki/teams/5175/resources/members/team-logo.webp" 
