@@ -94,4 +94,4 @@ python app.py
 
 ## More information
 
-To be continued...
+Don't push to the `main` branch directly, use a merge request instead.
