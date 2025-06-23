@@ -1,15 +1,34 @@
-image: python:3.6
+# .gitlab-ci.yml
+image: ruby:3.3
+
+stages:
+  - deploy
+  - cleanup
 
 pages:
-  stage: build
+  stage: deploy
   script:
-    - pip install --no-cache-dir -r dependencies.txt
-    - FLASK_APP=app.py flask freeze
+    - gem install bundler
+    - gem install jekyll
+    - bundle install
+    - bundle update
+    - bundle exec jekyll build
+    - mv _site public
+    - gem cleanup
+    - gem env gemdir
+    - export GEM_PATH=$(gem env gemdir)
+    - rm -rf $GEM_PATH
   artifacts:
     paths:
       - public
-  rules:
-    - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH
-      when: never # No runners will run on branches other than main
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      when: always
+  only:
+    - main
+  
+cleanup:
+  stage: cleanup
+  script:
+    - gem env gemdir
+    - export GEM_PATH=$(gem env gemdir)
+    - rm -rf $GEM_PATH
+  only:
+    - main

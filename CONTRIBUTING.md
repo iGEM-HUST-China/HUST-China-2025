@@ -29,4 +29,25 @@ To contribute to this project, please follow these steps:
 
 Your contribution will be reviewed, and feedback may be provided. Thank you for contributing!
 
-See [GitHub Contributing Graph](https://github.com/Lucas04-nhr/HUST-China_2024/graphs/contributors) for more details.
+> [!NOTE]
+> 
+> Please use the following commit message format when contributing:
+> 
+> ```
+> <type>(<scope>): <short description>
+> ```
+> 
+> - **type**: The type of change (e.g., `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, etc.).
+> - **scope**: The scope of the change (e.g., `ci`, `docs`, `core`, etc.).
+> - **short description**: A brief description of the change.
+>
+> For example:
+> ```
+> refactor(ci): update CI configuration to use Ruby for Jekyll deployment
+> ```
+>
+> This format helps maintain a consistent commit history and improves readability.
+
+---
+
+See [GitHub Contributing Graph](https://github.com/Lucas04-nhr/HUST-China_2024/graphs/contributors) for more details of our contributors.
