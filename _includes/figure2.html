@@ -14,24 +14,3 @@
   <img id="fullscreen-image-{{ forloop.index }}" src="{{ image.src }}" alt="{{ image.alt | default: image.caption }}" />
 </div>
 {% endfor %}
-
-<style>
-  @keyframes clickAnimation {
-    0% {
-      transform: scale(1); /* 开始时大小为 1 */
-    }
-    30% {
-      transform: scale(0.9);
-    }
-    60% {
-      transform: scale(1.05);
-    }
-    100% {
-      transform: scale(1); /* 最后恢复到原始大小 */
-    }
-  }
-
-  img:active {
-    animation: clickAnimation 0.5s cubic-bezier(0.56, -0.37, 0.46, 1.58);
-  }
-</style>
