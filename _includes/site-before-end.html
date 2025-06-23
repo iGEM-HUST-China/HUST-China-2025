@@ -2,37 +2,48 @@
 
 <!-- Prohibit right-clicking, copying and selecting -->
 <script>
-  // Prevent the default right-click action
+  // 禁止右键，除白名单
   document.addEventListener('contextmenu', function (event) {
-    event.preventDefault();
+    if (!(event.target.closest && event.target.closest('.allow-contextmenu'))) {
+      event.preventDefault();
+    }
   });
-  // Prevent the default select action
-  var element = document.body;
-  element.style.userSelect = 'none'; // Standard
-  element.style.webkitUserSelect = 'none'; // Chrome, Safari, Opera
-  element.style.MozUserSelect = 'none'; // Firefox
-  element.style.msUserSelect = 'none'; // IE 10+
-  element.style['-ms-user-select'] = 'none'; // IE 10+
-  // Prevent the default copy action
-  var element = document.body;
-  element.style.userSelect = 'none'; // Standard
-  element.style.webkitUserSelect = 'none'; // Chrome, Safari, Opera
-  element.style.MozUserSelect = 'none'; // Firefox
-  element.style.msUserSelect = 'none'; // IE 10+
-  element.style['-ms-user-select'] = 'none'; // IE 10+
-  // Add the copy event listener
-  document.addEventListener('copy', function (event) {
-    var selection = window.getSelection();
-    var selectedText = selection.toString();
-    var sourceElement = selection.anchorNode.parentNode;
-    // Set the forbidden text to the clipboard
-    event.clipboardData.setData('text/plain', 'This text is protected from copying.');
-    // Prevent the default copy action
-    event.preventDefault();
 
+  // 禁止选择，除白名单
+  document.addEventListener('selectstart', function (event) {
+    if (!(event.target.closest && event.target.closest('.allow-select'))) {
+      event.preventDefault();
+    }
+  });
+
+  // 禁止复制，除白名单
+  document.addEventListener('copy', function (event) {
+    if (!(event.target.closest && event.target.closest('.allow-copy'))) {
+      event.clipboardData.setData('text/plain', 'This text is protected from copying.');
+      event.preventDefault();
+    }
+  });
+
+  // 设置全局样式，白名单元素允许选中
+  document.body.style.userSelect = 'none';
+  document.body.style.webkitUserSelect = 'none';
+  document.body.style.MozUserSelect = 'none';
+  document.body.style.msUserSelect = 'none';
+  document.body.style['-ms-user-select'] = 'none';
+
+  // 允许白名单元素选中
+  document.addEventListener('DOMContentLoaded', function () {
+    const whitelistEls = document.querySelectorAll('.' + WHITELIST_CLASS);
+    whitelistEls.forEach(function (el) {
+      el.style.userSelect = 'auto';
+      el.style.webkitUserSelect = 'auto';
+      el.style.MozUserSelect = 'auto';
+      el.style.msUserSelect = 'auto';
+      el.style['-ms-user-select'] = 'auto';
+    });
   });
 </script>
-
+<!-- 其他代码... -->
 
 <!-- 清除可能重复的左侧目录 -->
 <script>

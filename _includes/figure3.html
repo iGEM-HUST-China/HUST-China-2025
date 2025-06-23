@@ -1,5 +1,5 @@
 
-<div class="figure flex-container">
+<div class="figure flex-container allow-contextmenu">
   {% for image in include.images %}
   <figure3 class="figure figure--auto-width">
       <img class="image" src="{{ image.src }}" alt="{{ image.alt | default: image.caption }}" style="width: auto;">
