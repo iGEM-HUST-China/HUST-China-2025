@@ -11,6 +11,8 @@ You can choose to contribute to this project in two ways:
 > - Due to the low-speed of the iGEM GitLab, we recommend using the [GitHub Dev](https://github.dev/Lucas04-nhr/HUST-China-2025) web interface for editing files.
 > - You can also enter the iGEM GitLab Web IDE by clicking the "Edit" button on the top right corner of any file in this repository, then click the "Open in Web IDE" button.
 
+## Detailed Steps
+
 ### Contribute Locally
 
 You should probably only edit the files inside the folder `wiki`. To contribute to this project locally, please follow these steps:

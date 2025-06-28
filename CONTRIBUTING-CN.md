@@ -11,6 +11,10 @@
 > - 由于 iGEM GitLab 速度较慢，我们推荐使用 [GitHub Dev](https://github.dev/Lucas04-nhr/HUST-China-2025) Web 界面进行文件编辑。
 > - 你也可以在任意文件页面右上角点击“Edit”，然后点击“Open in Web IDE”进入 iGEM GitLab Web IDE。
 
+## 详细步骤
+
+
+
 ### 本地贡献
 
 你应该主要编辑 `wiki` 文件夹内的文件。要在本地进行贡献，请按照以下步骤操作：
