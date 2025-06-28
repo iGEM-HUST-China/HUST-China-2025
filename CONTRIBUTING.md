@@ -1,4 +1,19 @@
-To contribute to this project, please follow these steps:
+# Contributing to HUST-China-2025
+
+## Getting started
+
+You can choose to contribute to this project in two ways:
+
+- [Contribute online](#contribute-online): Make changes directly in the [GitHub Dev](https://github.dev/Lucas04-nhr/HUST-China-2025) or [iGEM GitLab Web IDE](https://gitlab.igem.org/-/ide/project/2025/hust-china/edit/main/-/) web interface.
+- [Contribute locally](#contribute-locally): Clone the repository to your local machine, make changes, and push them back to GitHub.
+
+> [!TIP]
+> - Due to the low-speed of the iGEM GitLab Web IDE, we recommend using the [GitHub Dev](https://github.dev/Lucas04-nhr/HUST-China-2025) web interface for editing files.
+> - You can also enter the iGEM GitLab Web IDE by clicking the "Edit" button on the top right corner of any file in this repository, then click the "Open in Web IDE" button.
+
+### Contribute Locally
+
+You should probably only edit the files inside the folder `wiki`. To contribute to this project locally, please follow these steps:
 
 1. **Fork the Repository**: Click the "Fork" button at the top right of this repository to create your own copy.
 
@@ -11,6 +26,9 @@ To contribute to this project, please follow these steps:
   ```bash
   git checkout -b <branch-name>
   ```
+
+> [!WARNING]
+> Don't push to the `main` branch directly, use a merge request instead. All changes pushed to the `main` branch will be abandoned.
 
 4. **Make Your Changes**: Implement your changes or additions.
 
@@ -47,6 +65,14 @@ Your contribution will be reviewed, and feedback may be provided. Thank you for 
 > ```
 >
 > This format helps maintain a consistent commit history and improves readability.
+
+### Contribute online
+
+You should probably only edit the files inside the folder `wiki`. To contribute to this project locally, please follow these steps:
+
+1. Open the Web IDE
+
+2. Follow the instructions in [Contribute locally](#contribute-locally) to use `main` branch and make your changes.
 
 ---
 
