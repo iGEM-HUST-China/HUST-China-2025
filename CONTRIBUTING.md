@@ -4,7 +4,7 @@
 
 You can choose to contribute to this project in two ways:
 
-- [Contribute online](#contribute-online): Make changes directly in the [GitHub Dev](https://github.dev/Lucas04-nhr/HUST-China-2025) or [iGEM GitLab Web IDE](https://gitlab.igem.org/-/ide/project/2025/hust-china/edit/main/-/) web interface.
+- [Contribute online](#contribute-online): Make changes directly in the [GitHub Dev](https://github.dev/) or [iGEM GitLab Web IDE](https://gitlab.igem.org/-/ide/project/2025/hust-china/edit/main/-/) web interface.
 - [Contribute locally](#contribute-locally): Clone the repository to your local machine, make changes, and push them back to GitHub.
 
 > [!TIP]
@@ -73,6 +73,9 @@ You should probably only edit the files inside the folder `wiki`. To contribute 
 1. Open the Web IDE
 
 2. Follow the instructions in [Contribute locally](#contribute-locally) to use `main` branch and make your changes.
+
+> [!NOTE]
+> If you are using GitHub Dev, you should also follow the steps in [Contribute locally](#contribute-locally) to fork the repository and create a new branch for your changes. All changes pushed to the `main` branch will be abandoned.
 
 ---
 
