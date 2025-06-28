@@ -8,7 +8,7 @@
 - [本地贡献](#本地贡献)：将仓库克隆到本地，进行修改，然后推送到 GitHub。
 
 > [!TIP]
-> - 由于 iGEM GitLab Web IDE 速度较慢，我们推荐使用 [GitHub Dev](https://github.dev/Lucas04-nhr/HUST-China-2025) Web 界面进行文件编辑。
+> - 由于 iGEM GitLab 速度较慢，我们推荐使用 [GitHub Dev](https://github.dev/Lucas04-nhr/HUST-China-2025) Web 界面进行文件编辑。
 > - 你也可以在任意文件页面右上角点击“Edit”，然后点击“Open in Web IDE”进入 iGEM GitLab Web IDE。
 
 ### 本地贡献
