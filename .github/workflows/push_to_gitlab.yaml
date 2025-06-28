@@ -57,10 +57,11 @@ jobs:
             token: ${{ secrets.GITHUB_TOKEN }}
             fetch-depth: 0
 
-      - name: Set up GitLab
+      - name: Set up Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config pull.rebase false
 
       - name: Pull from GitLab
         env:
@@ -70,15 +71,6 @@ jobs:
           git remote add gitlab ${{ secrets.GITLAB_REPO_URL }}
           git fetch gitlab
           git merge -X theirs --allow-unrelated-histories --no-ff gitlab/main
-
-      - name: Set up GitHub
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
-
-      - name: Set Git Configurations
-        run: |
-          git config pull.rebase false
 
       - name: Push to GitHub
         run: |
@@ -102,17 +94,17 @@ jobs:
         run: |
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-      
+            git config pull.rebase true
+     
       - name: Pull the latest change
         run: |
-            git fetch origin ${{ github.ref }}
-            git merge -X theirs --allow-unrelated-histories --no-ff origin/main
-    
-    
+            git fetch origin ${{ github.ref_name }}
+            git checkout ${{ github.ref_name }}
+            git merge -X theirs --allow-unrelated-histories --no-ff origin/${{ github.ref_name }}
+
       - name: Push to GitLab
         env:
             GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
-            git config pull.rebase true
             git remote add gitlab ${{ secrets.GITLAB_REPO_URL }}
-            git push --no-verify gitlab main
+            git push --no-verify gitlab ${{ github.ref_name }}
