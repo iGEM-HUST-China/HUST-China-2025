@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main
+      - develop
   workflow_dispatch:
 
 permissions:
@@ -31,16 +32,16 @@ jobs:
       
       - name: Pull the latest change
         run: |
-          git fetch origin ${{ github.ref }}
-          git merge -X theirs --allow-unrelated-histories --no-ff origin/main
-          
+          git fetch origin ${{ github.ref_name }}
+          git checkout ${{ github.ref_name }}
+          git merge -X theirs --allow-unrelated-histories --no-ff origin/${{ github.ref_name }}
+
       - name: Pull from GitLab
         run: |
           git remote add gitlab ${{ secrets.GITLAB_REPO_URL }}
           git fetch gitlab
-          git merge -X theirs --allow-unrelated-histories --no-ff gitlab/main
+          git merge -X theirs --allow-unrelated-histories --no-ff gitlab/${{ github.ref_name }}
 
       - name: Push to GitHub
         run: |
-          git fetch origin
-          git push origin main
+          git push origin ${{ github.ref_name }}
