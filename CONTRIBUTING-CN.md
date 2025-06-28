@@ -70,6 +70,9 @@
 
 2. 按照 [本地贡献](#本地贡献) 中的说明在 `main` 分支进行更改。
 
+> [!NOTE]
+> 如果你使用 GitHub Dev，也需要按照 [本地贡献](#本地贡献) 中的步骤 Fork 仓库并创建新分支进行更改。所有推送到 `main` 分支的更改都将被忽略。
+
 ---
 
 更多贡献者详情，请参见 [GitHub 贡献图](https://github.com/Lucas04-nhr/HUST-China_2025/graphs/contributors)。
