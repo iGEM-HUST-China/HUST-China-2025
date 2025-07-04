@@ -36,23 +36,13 @@ jobs:
           git checkout main
           git merge -X theirs --allow-unrelated-histories --no-ff origin/main
 
-      - name: Pull the latest change in develop branch
-        run: |
-          git fetch origin develop
-          git checkout develop
-          git merge -X theirs --allow-unrelated-histories --no-ff origin/develop
-
       - name: Pull from GitLab
         run: |
           git fetch gitlab
           git checkout main
           git merge -X theirs --allow-unrelated-histories --no-ff gitlab/main
-          git checkout develop
-          git merge -X theirs --allow-unrelated-histories --no-ff gitlab/develop
 
       - name: Push to GitHub
         run: |
           git checkout main
           git push origin main
-          git checkout develop
-          git push origin develop

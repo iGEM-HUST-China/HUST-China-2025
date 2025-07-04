@@ -103,17 +103,9 @@ jobs:
             git checkout main
             git merge -X theirs --allow-unrelated-histories --no-ff origin/main
 
-      - name: Pull the latest change from develop branch
-        run: |
-            git fetch origin develop
-            git checkout develop
-            git merge -X theirs --allow-unrelated-histories --no-ff origin/develop
-
       - name: Push to GitLab
         env:
             GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
         run: |
             git checkout main
             git push --no-verify gitlab main
-            git checkout develop
-            git push --no-verify gitlab develop
