@@ -19,10 +19,18 @@ jobs:
           const title = context.payload.issue?.title || context.payload.pull_request?.title || '';
           const body = context.payload.issue?.body || context.payload.pull_request?.body || '';
           core.setOutput('has_bug', /bug/i.test(title + ' ' + body));
+          core.setOutput('has_feature', /feature/i.test(title + ' ' + body));
     - name: 'Auto-assign issue if bug'
       if: steps.check_bug.outputs.has_bug == 'true'
       uses: pozil/auto-assign-issue@v1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        assignees: Lucas04-nhr
-        numOfAssignee: 1
+        assignees: Lucas04-nhr, Serenifizz
+        numOfAssignee: 2
+    - name: 'Auto-assign issue if feature request'
+      if: steps.check_bug.outputs.has_feature == 'true'
+      uses: pozil/auto-assign-issue@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        assignees: xie-stack, Serenifizz
+        numOfAssignee: 2
