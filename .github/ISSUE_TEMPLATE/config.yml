@@ -1,0 +1,10 @@
+blank_issues_enabled: false
+defaults:
+  - name: bug_report
+    title: "[BUG]"
+    labels: [bug]
+    description: "Report a bug to help us improve."
+  - name: feature_request
+    title: "[FEATURE]"
+    labels: [enhancement]
+    description: "Suggest an idea for this project."
