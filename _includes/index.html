@@ -1,956 +1,1641 @@
-<!-- 去除页面默认样式 -->
-<style>
-  main.main {
-    max-width: 100% !important;
-    width: 100% !important;
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squalene Rescue Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'light-green': '#d4edda', 
+                        'nav-color': '#343a40',   
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-green: #2E5D32;    /* 深绿色 - 主色调 */
+            --secondary-green: #4A7C51;  /* 中绿色 */
+            --light-green: #81C784;      /* 浅绿色 */
+            --gold: #D4AF37;             /* 金色 */
+            --light-gold: #F0E68C;       /* 浅金色 */
+            --cream: #F5F5DC;            /* 奶油色 */
+            --dark: #333333;             /* 深灰色 */
+            --light-gray: #F5F5F5;       /* 浅灰色 */
+            --transition: all 0.3s ease;
+            --nav-width: 280px;
+            --card-radius: 12px;         /* 适中的圆角 */
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        body {
+            font-family: 'Comic Neue', cursive;
+            overflow-x: hidden;
+            color: #4a5568;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            position: relative;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(120, 119, 198, 0.03) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(120, 119, 198, 0.03) 0%, transparent 20%),
+                linear-gradient(45deg, rgba(120, 119, 198, 0.05) 25%, transparent 25%, transparent 75%, rgba(120, 119, 198, 0.05) 75%, rgba(120, 119, 198, 0.05)),
+                linear-gradient(45deg, rgba(120, 119, 198, 0.05) 25%, transparent 25%, transparent 75%, rgba(120, 119, 198, 0.05) 75%, rgba(120, 119, 198, 0.05));
+            background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
+            background-position: 0 0, 0 0, 0 0, 10px 10px;
+            z-index: -1;
+        }
+        
+        /* 加载动画样式 */
+        .loading-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.7s;
+            animation: backgroundTransition 3s ease-in-out infinite;
+            background-color: hsl(0, 0%, 99%);
+        }
+        
+        .loading-gif {
+            width: 70vw;
+            height: 70vw;
+            max-width: 800px;
+            max-height: 800px;
+            object-fit: contain;
+        }
+        
+        .loading-text {
+            margin-top: 2rem;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+        
+        @media (min-width: 768px) {
+            .loading-text {
+                font-size: 1.875rem;
+            }
+        }
+        
+        @keyframes backgroundTransition {
+            0% { background-color: hsl(0, 0%, 99%); }
+            50% { background-color: hsl(0, 0%, 99%); }
+            100% { background-color: hsl(0, 0%, 99%); }
+        }
+        
+        /* 导航按钮样式 */
+        .nav-toggle {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            background: transparent;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid var(--gold);
+            overflow: hidden;
+        }
 
-  main.main article.article {
-    width: 100% !important;
-  }
+        .nav-toggle img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
 
-  body.layout-page {
-    background-color: transparent !important;
-    display: block !important;
-    width: 100% !important;
-  }
+        .nav-toggle:hover img {
+            transform: scale(1.1);
+        }
 
-  header.header .container-wrapper {
-    position: static !important;
-  }
+        .nav-hint {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 0.8rem;
+            color: var(--gold);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
 
-  header.header .feature {
-    /* 去除标题图片上下边距 */
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
+        .nav-toggle:hover .nav-hint {
+            opacity: 1;
+        }
 
-  #back-to-top {
-    z-index: 9999 !important;
-  }
+        .nav-toggle::after {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+            transform: scale(0);
+            transition: transform 0.6s ease;
+        }
 
-  .box .text p {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
+        .nav-toggle:active::after {
+            transform: scale(1);
+        }
 
-  .box .img img,
-  .pet img,
-  .bottom img {
-    cursor: default;
-  }
+        .nav-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
 
-  /* 不显示目录 */
-  aside.aside {
-    display: none;
-  }
+        .nav-toggle i {
+            transition: transform 0.4s ease;
+        }
 
-  /* 顶部feature图上下padding统一 */
-  .feature .feature_bg h2 {
-    padding-bottom: 0.6rem !important;
-  }
-</style>
-<!-- 展示盒子基本结构 -->
-<style>
-  /* 背景色 */
-  .wrapper {
-    background-image: linear-gradient(to top, #92B2BE 0%, #5e4d38 100%);
-    /* transition: background-image 0.4s; */
-    /* 渐变背景不支持animate/transition过渡 qwq */
-  }
+        .nav-toggle.active i {
+            transform: rotate(135deg);
+        }
 
-  /* 展示图片和文字 */
-  .wrapper {
-    padding-top: 3rem;
-    width: 100%;
-  }
+        /* 导航菜单样式 */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--nav-width);
+            height: 100vh;
+            background: white;
+            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.08);
+            z-index: 999;
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            padding: 80px 0 30px;
+            display: flex;
+            flex-direction: column;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232E5D32' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+            border-right: 1px solid rgba(46, 93, 50, 0.1);
+            overflow-y: auto;
+        }
 
-  .box {
-    z-index: 1000;
-    width: 100%;
-    margin: 0;
-    margin-bottom: 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+        .nav-menu.active {
+            transform: translateX(0);
+        }
 
-  .box:last-child {
-    margin-bottom: 0;
-    padding-bottom: 3rem;
-  }
+        /* 菜单项样式 */
+        .nav-item {
+            position: relative;
+            overflow: hidden;
+        }
 
-  .box .left,
-  .box .right {
-    flex: 1;
-    margin-bottom: 2rem;
-  }
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--primary-green);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
 
-  .box .left .img,
-  .box .left .text {
-    /* 要显示的CSS */
-    /* margin: 0 auto; */
-    /* 默认状态下（未显示时）的CSS */
-    /* margin-right: auto; */
-  }
+        .nav-item:hover::before {
+            transform: scaleY(1);
+        }
 
-  .box .right .img,
-  .box .right .text {
-    /* 要显示的CSS */
-    /* margin: 0 auto; */
-    /* 默认状态下（未显示时）的CSS */
-    /* margin-left: auto; */
-  }
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 15px 25px;
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            gap: 15px;
+            border-left: 3px solid transparent;
+            position: relative;
+        }
 
-  .box .img,
-  .box .text {
-    opacity: 0;
-    width: 32rem;
-    height: 20rem;
-    max-width: 90vw;
-  }
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(46, 93, 50, 0.03);
+            color: var(--primary-green);
+            padding-left: 30px;
+        }
 
-  .box .img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+        .nav-link i {
+            width: 24px;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary-green);
+            transition: transform 0.3s ease;
+        }
 
-  .box .img img {
-    text-align: center;
-    max-width: 100%;
-    max-height: 100%;
-    background-color: transparent;
-  }
+        .nav-link:hover i {
+            transform: scale(1.2);
+        }
 
-  .box .img div {
-    width: 100%;
-    height: 100%;
-  }
+        /* 下拉子菜单样式 */
+        .dropdown {
+            display: none;
+            background-color: rgba(46, 93, 50, 0.02);
+            padding-left: 20px;
+            border-left: 3px solid rgba(46, 93, 50, 0.2);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
 
-  .box .img img,
-  .box .text p {
-    z-index: 1000;
-  }
+        .nav-item:hover .dropdown {
+            display: block;
+            max-height: 500px;
+        }
 
-  .box .text {
-    display: flex;
-    align-items: center;
-  }
-</style>
-<!-- 不滑动的盒子 -->
-<style>
-  .wrapper .noslide {
-    margin-bottom: 0;
-    display: block;
-  }
+        .dropdown .nav-link {
+            padding: 10px 25px;
+            font-size: 1rem;
+            color: #555;
+            border-left: none;
+        }
 
-  .wrapper .noslide .text,
-  .wrapper .noslide .img {
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    margin: 0 auto;
-    width: 100%;
-    justify-content: center;
-  }
+        .dropdown .nav-link:hover {
+            color: var(--primary-green);
+            padding-left: 35px;
+            background-color: rgba(46, 93, 50, 0.05);
+        }
 
-  .wrapper .noslide .text p {
-    padding: 0.5rem 5rem !important;
-    width: auto;
-    height: auto;
-  }
+        /* 下拉箭头动画 */
+        .dropdown-toggle::after {
+            content: "\f078";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-left: auto;
+            transition: transform 0.3s ease;
+        }
 
-  .wrapper .noslide .title p {
-    font-size: 1.5rem !important;
-  }
-</style>
-<!-- 主页各box具体样式 -->
-<style>
-  .box .text {
-    padding: 0 !important;
-  }
+        .nav-item:hover .dropdown-toggle::after {
+            transform: rotate(180deg) scale(1.1);
+        }
 
-  .box .img img {
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
+        /* 滚动条美化 */
+        .nav-menu::-webkit-scrollbar {
+            width: 6px;
+        }
 
-  .box .img figcaption {
-    text-align: center;
-    line-height: 1rem;
-    padding-top: 0rem !important;
-    margin-bottom: 0rem !important;
-  }
+        .nav-menu::-webkit-scrollbar-track {
+            background: rgba(46, 93, 50, 0.03);
+        }
 
-  .box .text p {
-    padding: 0.5rem 0 !important;
-    width: 100%;
-    height: 100%;
-    /* 字号 */
-    font-size: 1rem !important;
-    color: #fff;
-  }
-</style>
-<!-- pet/rha小图片 -->
-<style>
-  :root {
-    --pet-opacity: 0.3;
-  }
+        .nav-menu::-webkit-scrollbar-thumb {
+            background: rgba(46, 93, 50, 0.3);
+            border-radius: 3px;
+        }
 
-  .pet {
-    z-index: 900;
-    /* display: none; */
-    /* 透明度 */
-    opacity: var(--pet-opacity);
-    position: absolute;
-    width: 5rem;
-    height: 5rem;
-    overflow: hidden;
-  }
-
-  /*.bottom .rha {
-    z-index: 901;
-    opacity: 0;
-    position: absolute;
-    width: 10rem;
-    height: 10rem;
-  }
-
-  .pet img,
-  .bottom .rha img {
-    width: 100%;
-    height: 100%;
-  }*/
-  .pet img {
-    width: 100%;
-    height: 100%;
-  }
-
-  .pet .rha {
-    object-fit: contain;
-  }
-</style>
-<!-- 轮播图 -->
-<style>
-  .box .img .swiper {
-    /* 展示窗口 */
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    background-color: transparent;
-  }
-
-  .box .img .swiper-content {
-    /* 图片存放 */
-    display: flex;
-    width: 300%;
-    height: 100%;
-    /*有几张图片就是几百 */
-    background-color: transparent;
-    animation: swiper 6s infinite ease;
-  }
-
-  .box .img .swiper-content:hover {
-    animation-play-state: paused;
-  }
-
-  .box .img .swiper-content div {
-    width: calc(100%/3);
-  }
-
-  .box .img .swiper-content img {
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  @keyframes swiper {
-
-    /* 动画 */
-    0%,
-    43% {
-      transform: translateX(0);
-    }
-
-    50%,
-    93% {
-      transform: translateX(-33.333333%);
-    }
-
-    100% {
-      transform: translateX(-66.666666%);
-    }
-  }
-</style>
-<!-- 底部图片 -->
-<style>
-  .bottom {
-    position: relative;
-    width: 100%;
-    height: 400px;
-  }
-
-  .bottom img {
-    position: absolute;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-  }
-</style>
-<!-- 顶部进度条 -->
-<style>
-  .scroll {
-    z-index: 8000;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 10px;
-    background-color: #97d2af;
-    transform: translateX(-100%);
-  }
-</style>
-<div class="scroll"></div>
-<div class="pet">
-  <img src="https://static.igem.wiki/teams/5175/test-resources/test-pet.png" alt="" class="pet_img">
-  <img src="https://static.igem.wiki/teams/5175/resources/homepage/rha.png" alt="" class="rha">
-  <img src="https://static.igem.wiki/teams/5175/resources/homepage/tpa.png" alt="" class="tpa">
-</div>
-<div class="wrapper">
-  <div class="box">
-    <div class="left">
-      <div class="text">
-        <p style="font-size: 1.2rem !important; padding-top:1.2rem !important;">From 1950 to 2015, approximately 83
-          billion tons of plastic were
-          produced worldwide, among which 79% of the
-          discarded plastic accumulated in landfills or leaked into the environment. These large plastic materials
-          gradually break down into microplastics, tiny particles ranging from 100 nm to 5 mm in diameter. Microplastic
-          have now infiltrated nearly every aspect of our daily lives.</p>
-      </div>
+        .nav-menu::-webkit-scrollbar-thumb:hover {
+            background: rgba(46, 93, 50, 0.5);
+        }
+        
+        /* 封面区域样式 */
+        .cover-section {
+            height: 100vh;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cover-content {
+            text-align: center;
+            color: white;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .cover-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        
+        .cover-title {
+            font-family: 'Comic Neue', cursive;
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .cover-subtitle {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+            color: var(--light-gold);
+        }
+        
+        .cover-tagline {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+        }
+        
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1rem;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0.8;
+        }
+        
+        .scroll-hint span {
+            margin-top: 8px;
+            letter-spacing: 0.5px;
+        }
+        
+        .scroll-hint .arrow {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        /* 全屏滚动区域样式 */
+        .scroll-container {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .scroll-section {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .scroll-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: -1;
+        }
+        
+        .scroll-section.active {
+            opacity: 1;
+            z-index: 10;
+        }
+        
+        /* 内容框样式 - 金色鎏金边框 */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1000px;
+            padding: 50px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            margin: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.8s ease-out;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+        
+        .content::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            padding: 3px;
+            background: linear-gradient(45deg, var(--gold), #f8de7e, var(--gold), #daa520, var(--gold));
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+        }
+        
+        .content::after {
+            content: "✦";
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 30px;
+            height: 30px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .content-left, .content-right {
+            width: 48%;
+            position: relative;
+            z-index: 1;
+            transform: translateX(0);
+            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+        }
+        
+        /* 初始位置 - 激活前 */
+        .scroll-section:not(.active) .content-left {
+            transform: translateX(-150%);
+        }
+        
+        .scroll-section:not(.active) .content-right {
+            transform: translateX(150%);
+        }
+        
+        .active .content {
+            transform: translateY(0);
+        }
+        
+        h1 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 3.5rem;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            border-radius: 2px;
+        }
+        
+        h2 {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2.2rem;
+            color: #4a5568;
+            margin-bottom: 1.8rem;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+        
+        p {
+            font-family: 'Comic Neue', cursive;
+            font-size: 1.2rem;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 1.8rem;
+            max-width: 700px;
+        }
+        
+        .highlight {
+            color: var(--gold);
+            font-weight: 600;
+            position: relative;
+            padding: 0 4px;
+        }
+        
+        .highlight::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: rgba(212, 175, 55, 0.15);
+            z-index: -1;
+            border-radius: 2px;
+        }
+        
+        .indicator {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .dot {
+            width: 16px;
+            height: 16px;
+            background: transparent;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .dot.active {
+            background: var(--gold);
+            transform: scale(1.3);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        .dot::before {
+            content: attr(data-title);
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--gold);
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            white-space: nowrap;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dot:hover::before {
+            opacity: 1;
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), #f8de7e);
+            width: 0%;
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+            min-width: 160px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        
+        .stat-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), #f8de7e);
+        }
+        
+        .stat-value {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2.2rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+        
+        .stat-label {
+            font-family: 'Comic Neue', cursive;
+            font-size: 0.9rem;
+            color: #718096;
+            margin-top: 8px;
+        }
+        
+        .action-btn {
+            background: linear-gradient(135deg, var(--gold), #f8de7e);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .action-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.4);
+        }
+        
+        .action-btn:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .footer-note {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Comic Neue', cursive;
+            font-size: 0.9rem;
+            color: #718096;
+            z-index: 100;
+            width: 100%;
+            text-align: center;
+        }
+        
+        /* 数字动画 */
+        .counter {
+            font-family: 'Comic Neue', cursive;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: inline-block;
+        }
+        
+        /* 饼图容器 */
+        .pie-chart-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        /* 饼图样式 */
+        .pie-chart {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: conic-gradient(
+                var(--gold) 0% 40%,
+                #f6ad55 40% 70%,
+                #4fd1c5 70% 90%,
+                #fc8181 90% 100%
+            );
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pie-chart::before {
+            content: '';
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            background: white;
+            border-radius: 50%;
+            top: 25px;
+            left: 25px;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pie-legend {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-family: 'Comic Neue', cursive;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 8px 12px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            margin-right: 8px;
+            border-radius: 3px;
+        }
+        
+        /* 装饰字符 */
+        .decoration-icon {
+            font-size: 2rem;
+            color: rgba(212, 175, 55, 0.2);
+            margin: 10px;
+            position: absolute;
+            animation: float 6s infinite ease-in-out;
+            z-index: 0;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        /* 柱状图 */
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            height: 160px;
+            margin: 20px 0;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .bar {
+            width: 35px;
+            background: linear-gradient(to top, var(--gold), #f8de7e);
+            border-radius: 6px 6px 0 0;
+            position: relative;
+            transition: height 1s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .bar-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Comic Neue', cursive;
+            font-size: 0.8rem;
+            color: #718096;
+            white-space: nowrap;
+        }
+        
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Comic Neue', cursive;
+            font-size: 0.9rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+        
+        /* 花纹装饰 */
+        .ornament {
+            position: absolute;
+            opacity: 0.05;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .ornament-1 {
+            top: 10%;
+            left: 5%;
+            font-size: 120px;
+            transform: rotate(-15deg);
+        }
+        
+        .ornament-2 {
+            bottom: 15%;
+            right: 5%;
+            font-size: 150px;
+            transform: rotate(10deg);
+        }
+        
+        /* 图片网格 */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .grid-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .grid-image:hover {
+            transform: scale(1.05);
+        }
+        
+        /* 里程碑时间线 */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gold);
+            transform: translateX(-50%);
+        }
+        
+        .milestone {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .milestone:nth-child(odd) {
+            flex-direction: row;
+        }
+        
+        .milestone:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        
+        .milestone-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .milestone-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
+            border-radius: 50%;
+            margin: 0 20px;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.2);
+        }
+        
+        .milestone-title {
+            font-family: 'Comic Neue', cursive;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+        
+        .milestone-desc {
+            font-family: 'Comic Neue', cursive;
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; margin-bottom: 1.2rem; }
+            h2 { font-size: 1.8rem; margin-bottom: 1.5rem; }
+            p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem; }
+            .content { 
+                flex-direction: column;
+                padding: 30px 20px; 
+                width: 92%; 
+            }
+            .content-left, .content-right {
+                width: 100%;
+                transform: none !important;
+            }
+            .indicator { right: 15px; gap: 15px; }
+            .dot { width: 12px; height: 12px; }
+            .dot::before { display: none; }
+            .scroll-hint { bottom: 30px; }
+            .stats-container { flex-direction: column; gap: 15px; align-items: center; }
+            .stat-card { width: 80%; }
+            .pie-chart { width: 130px; height: 130px; }
+            .pie-chart::before { width: 90px; height: 90px; top: 20px; left: 20px; }
+            .ornament { display: none; }
+            .cover-title { font-size: 2.5rem; }
+            .cover-subtitle { font-size: 1.2rem; }
+            .cover-tagline { font-size: 1.1rem; }
+            .image-grid { grid-template-columns: 1fr; }
+            .timeline::before { left: 20px; }
+            .milestone, .milestone:nth-child(odd), .milestone:nth-child(even) {
+                flex-direction: row;
+            }
+            .milestone-dot { margin-left: 0; margin-right: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <img src="c:\Users\18142\Desktop\igem网页\image\jiazai.gif" 
+             alt="Loading animation" 
+             class="loading-gif"
+             id="loadingGif">
     </div>
-    <div class="right">
-      <div class="img">
-        <div style="z-index: 1000;">
-          <img src="https://static.igem.wiki/teams/5175/resources/homepage/index1.jpg" alt="">
-          <figcaption class="caption" style="width: 30rem; line-height:1.1rem;">
-            Cumulative plastic waste generation and disposal (in
-            million metric tons)
-          </figcaption>
+
+    <!-- 导航按钮 -->
+    <div class="nav-toggle" id="navToggle">
+        <!-- 替换为您自己的图片路径 -->
+        <img src="path/to/your/nav-image.png" alt="Navigation">
+        <div class="nav-hint">Click to expand menu</div>
+    </div>
+    
+    <!-- 导航菜单 -->
+    <nav class="nav-menu" id="navMenu">
+        <div class="nav-item">
+            <a href="index.html" class="nav-link active"><i class="fa fa-home"></i> Home</a>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="box">
-    <div class="left">
-      <div class="img">
-        <div style="z-index: 1000;">
-          <div style="max-width: 100%; max-height:100%; text-align:center; margin-bottom:0.5rem;">
-            <img src="https://static.igem.wiki/teams/5175/resources/homepage/2.png" alt="">
-          </div>
-          <figcaption class="caption" style="line-height:1.1rem;">
-            The abundance and characteristics of MPs in human tissues and organs
-          </figcaption>
+        
+        <div class="nav-item">
+            <a href="#" class="nav-link dropdown-toggle"><i class="fa fa-project-diagram"></i> Project</a>
+            <div class="dropdown" id="projectDropdown">
+                <a href="project-description.html" class="nav-link"><i class="fa fa-angle-right"></i> Description</a>
+                <a href="project-safety.html" class="nav-link"><i class="fa fa-angle-right"></i> Safety</a>
+                <a href="project-implementation.html" class="nav-link"><i class="fa fa-angle-right"></i> Proposed Implementation</a>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="right">
-      <div class="text">
-        <p style="font-size: 1.2rem !important;">Once microplastics enter the human body through the food chain,
-          they
-          can penetrate critical biological
-          barriers such as cell membranes, the blood-brain barrier, and the placenta. This could lead to severe
-          consequences like DNA damage, tissue necrosis, and potentially an increased risk of malignant tumors.
-          These
-          invisible threats lurk in the crops we consume, entering our bodies with every bite. And the source of
-          these
-          microplastics could be the contaminated soils of the farmland where these crops are grown.</p>
-      </div>
-    </div>
-  </div>
-  <div class="box" style="margin-bottom: 0 !important;">
-    <div class="left">
-      <div class="text">
-        <p style="font-size: 1.1rem !important; padding-top:0rem !important;">Organic fertilizers, plastic
-          mulches,
-          and irrigation water are the
-          inevitable and primary culprits behind the
-          presence of microplastics in agricultural soils. Irrigation water, in particular, is often sourced from
-          rivers, lakes, and other surface water bodies, where the presence of microplastics is already widespread.
-          The
-          continued use of microplastic-contaminated irrigation water only worsens the problem, increasing
-          microplastic
-          accumulation in farmland, which in turn threatens crop yields and poses serious health risks to humans.
-        </p>
-      </div>
-    </div>
-    <div class="right">
-      <div class="img">
-        <div class="swiper" style="z-index: 1000;">
-          <div class="swiper-content">
-            <div>
-              <img src="https://static.igem.wiki/teams/5175/resources/homepage/index3.jpg" alt="">
-              <figcaption class="caption" style="font-size: 0.7rem; line-height:1.5rem;">Occurrence of microplastics
-                in
-                global raw water,
-                tap water, groundwater and
-                bottled</figcaption>
+        
+        <div class="nav-item">
+            <a href="#" class="nav-link dropdown-toggle"><i class="fa fa-users"></i> Human Practices</a>
+            <div class="dropdown" id="humanPracticesDropdown">
+                <a href="human-practices.html" class="nav-link"><i class="fa fa-angle-right"></i> Human Practices</a>
+                <a href="education-communication.html" class="nav-link"><i class="fa fa-angle-right"></i> Education & Communication</a>
             </div>
-            <div>
-              <img src="https://static.igem.wiki/teams/5175/resources/homepage/index4.jpg" alt="">
-              <figcaption class="caption" style="font-size: 0.8rem; line-height:1.1rem;">Geographic locations,
-                sampling
-                sites and microplastic abundance in surface
-                waters and sediments of parts of the Yangtze River</figcaption>
-            </div>
-            <div>
-              <img src="https://static.igem.wiki/teams/5175/resources/homepage/index3.jpg" alt="">
-              <figcaption class="caption" style="font-size: 0.7rem; line-height:1.5rem;">Occurrence of microplastics
-                in
-                global raw water,
-                tap water, groundwater and
-                bottled</figcaption>
-            </div>
-          </div>
         </div>
-      </div>
+        
+        <div class="nav-item">
+            <a href="#" class="nav-link dropdown-toggle"><i class="fa fa-flask"></i> Wet Lab</a>
+            <div class="dropdown" id="wetLabDropdown">
+                <a href="wetlab-design.html" class="nav-link"><i class="fa fa-angle-right"></i> Design</a>
+                <a href="wetlab-engineering.html" class="nav-link"><i class="fa fa-angle-right"></i> Engineering</a>
+                <a href="wetlab-protocol.html" class="nav-link"><i class="fa fa-angle-right"></i> Protocol</a>
+                <a href="wetlab-results.html" class="nav-link"><i class="fa fa-angle-right"></i> Results</a>
+                <a href="wetlab-notebook.html" class="nav-link"><i class="fa fa-angle-right"></i> Notebook</a>
+                <a href="wetlab-parts.html" class="nav-link"><i class="fa fa-angle-right"></i> Parts</a>
+            </div>
+        </div>
+        
+        <div class="nav-item">
+            <a href="#" class="nav-link dropdown-toggle"><i class="fa fa-laptop"></i> Dry Lab</a>
+            <div class="dropdown" id="dryLabDropdown">
+                <a href="drylab-model.html" class="nav-link"><i class="fa fa-angle-right"></i> Model</a>
+                <a href="drylab-hardware.html" class="nav-link"><i class="fa fa-angle-right"></i> Hardware</a>
+            </div>
+        </div>
+        
+        <div class="nav-item">
+            <a href="#" class="nav-link dropdown-toggle"><i class="fa fa-users"></i> Team</a>
+            <div class="dropdown" id="teamDropdown">
+                <a href="team-members.html" class="nav-link"><i class="fa fa-angle-right"></i> Members</a>
+                <a href="team-contributions.html" class="nav-link"><i class="fa fa-angle-right"></i> Contribution</a>
+                <a href="team-attributions.html" class="nav-link"><i class="fa fa-angle-right"></i> Attributions</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 封面区域 -->
+    <section class="cover-section" id="cover" style="background-image: url('c:\\Users\\18142\\Desktop\\igem网页\\image\\fengmian.jpg');">
+        <div class="cover-content">
+            <h1 class="cover-title">Squoilene</h1>
+            <p class="cover-subtitle">From Waste Oil to Sustainable Squalane</p>
+            <p class="cover-tagline">Transforming "Waste Oil" into Green Squalane</p>
+        </div>
+        <div class="scroll-hint">
+            <div class="arrow">▼</div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- 全屏滚动区域 -->
+    <div class="progress-bar"></div>
+    
+    <div class="scroll-container">
+        <!-- 动态生成装饰元素 -->
+        <div id="decorations"></div>
+        
+        <!-- 花纹装饰 -->
+        <div class="ornament ornament-1">❀</div>
+        <div class="ornament ornament-2">♡</div>
+        
+        <!-- 场景1: 介绍 -->
+        <div id="scene1" class="scroll-section">
+            <div class="content">
+                <div class="content-left">
+                    <h1>Our Innovation</h1>
+                    <h2>Upcycling Waste to Beauty</h2>
+                    <p>We use <span class="highlight">synthetic biology</span> to upgrade waste cooking oil (WCO) into cosmetic-grade squalane, protecting marine ecosystems while enabling low-carbon supply chains.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-value"><span class="counter" data-target="100">0</span>%</div>
+                            <div class="stat-label">Sustainable source</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value"><span class="counter" data-target="80">0</span>%</div>
+                            <div class="stat-label">Reduced carbon footprint</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <h3>Key Advantages</h3>
+                    <p><span class="highlight">Upcycling:</span> Using waste cooking oil as raw material reduces costs and carbon footprint.</p>
+                    <p><span class="highlight">Green Alternative:</span> Replaces traditional shark liver sources, protecting marine biodiversity.</p>
+                    <p><span class="highlight">Efficient Chassis:</span> Engineered Yarrowia lipolytica for targeted squalane synthesis.</p>
+                    <p><span class="highlight">Industry Integration:</span> Connects with cosmetics and vaccine adjuvant applications.</p>
+                    
+                    <button class="action-btn">
+                        <i class="fas fa-leaf"></i> Learn More
+                    </button>
+                </div>
+            </div>
+            <div class="scroll-hint">
+                <div class="arrow">▼</div>
+                <span>Scroll to continue</span>
+            </div>
+        </div>
+        
+        <!-- 场景2: 角鲨烷功效 -->
+        <div id="scene2" class="scroll-section">
+            <div class="content">
+                <div class="content-left">
+                    <h2>Squalane Benefits</h2>
+                    <p><span class="highlight">Deep Moisturization:</span> Squalane closely resembles human sebum, allowing for quick absorption and strengthening the skin barrier.</p>
+                    <p><span class="highlight">Gentle & Non-irritating:</span> Suitable for sensitive skin and infant care products.</p>
+                    <p><span class="highlight">Lightweight Texture:</span> Non-greasy feel that helps improve dryness and roughness.</p>
+                    <p><span class="highlight">Versatile Applications:</span> Widely used in skincare, makeup, sun protection, and haircare.</p>
+                </div>
+                <div class="content-right">
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-value"><span class="counter" data-target="24">0</span>h</div>
+                            <div class="stat-label">Long lasting hydration</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value"><span class="counter" data-target="100">0</span>%</div>
+                            <div class="stat-label">Skin compatibility</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value"><span class="counter" data-target="40">0</span>%</div>
+                            <div class="stat-label">Reduction in water loss</div>
+                        </div>
+                    </div>
+                    
+                    <div class="pie-chart-container">
+                        <div class="pie-chart" style="background: conic-gradient(var(--gold) 0% 85%, rgba(212, 175, 55, 0.2) 85% 100%);">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.5rem; color: var(--gold); font-weight: bold;">
+                                85%
+                            </div>
+                        </div>
+                    </div>
+                    <p style="font-size: 1rem;">User satisfaction rate</p>
+                </div>
+            </div>
+            <div class="scroll-hint">
+                <div class="arrow">▼</div>
+                <span>Scroll to continue</span>
+            </div>
+        </div>
+        
+        <!-- 场景3: 市场需求 -->
+        <div id="scene3" class="scroll-section">
+            <div class="content">
+                <div class="content-left">
+                    <h2>Market Potential</h2>
+                    <p>The global skincare and cosmetics industry's demand for green ingredients continues to grow, with sustainable and low-carbon supply chains becoming industry consensus and trend.</p>
+                    
+                    <div class="bar-chart">
+                        <div class="bar" style="height: 70px;">
+                            <span class="bar-value">$120B</span>
+                            <span class="bar-label">2022</span>
+                        </div>
+                        <div class="bar" style="height: 90px;">
+                            <span class="bar-value">$140B</span>
+                            <span class="bar-label">2024</span>
+                        </div>
+                        <div class="bar" style="height: 110px;">
+                            <span class="bar-value">$170B</span>
+                            <span class="bar-label">2026</span>
+                        </div>
+                        <div class="bar" style="height: 140px;">
+                            <span class="bar-value">$200.6B</span>
+                            <span class="bar-label">2032</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <p>The global squalane market is expected to reach <span class="highlight">$200.6 billion</span> by 2032, with a compound annual growth rate of 5.65%. The skincare and cosmetics industry is the main driver of the squalane market.</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-value">$<span class="counter" data-target="200.6">0</span>B</div>
+                            <div class="stat-label">Market by 2032</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value"><span class="counter" data-target="5.65">0</span>%</div>
+                            <div class="stat-label">CAGR</div>
+                        </div>
+                    </div>
+                    
+                    <p>The shift toward sustainable and natural ingredients in cosmetics is accelerating market growth for eco-friendly squalane alternatives.</p>
+                </div>
+            </div>
+            <div class="scroll-hint">
+                <div class="arrow">▼</div>
+                <span>Scroll to continue</span>
+            </div>
+        </div>
+        
+        <!-- 场景4: 来源分析 -->
+        <div id="scene4" class="scroll-section">
+            <div class="content">
+                <div class="content-left">
+                    <h2>Squalene Sources</h2>
+                    <p><span class="highlight">Traditional Source:</span> Shark liver → High ecological cost, limited availability</p>
+                    <p><span class="highlight">Plant Sources:</span> Olive, sugarcane → Limitations in yield, cost and seasonality</p>
+                    <p><span class="highlight">Synthetic Biology:</span> Using microbial factories, green, efficient, and scalable</p>
+                    
+                    <!-- 三张图片网格 -->
+                    <div class="image-grid">
+                        <img src="path/to/shark-image.jpg" alt="Shark Source" class="grid-image">
+                        <img src="path/to/plant-image.jpg" alt="Plant Source" class="grid-image">
+                        <img src="path/to/microbial-image.jpg" alt="Microbial Factory" class="grid-image">
+                    </div>
+                </div>
+                <div class="content-right">
+                    <!-- 饼图 -->
+                    <div class="pie-chart-container">
+                        <div class="pie-chart"></div>
+                    </div>
+                    <div class="pie-legend">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: var(--gold);"></div>
+                            <span>Shark (40%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #f6ad55;"></div>
+                            <span>Olive (30%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #4fd1c5;"></div>
+                            <span>Sugarcane (20%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background-color: #fc8181;"></div>
+                            <span>Other (10%)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-value"><span class="counter" data-target="3000">0</span></div>
+                            <div class="stat-label">Sharks needed for 1 ton</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value"><span class="counter" data-target="60">0</span>%</div>
+                            <div class="stat-label">Plant-based market share</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-hint">
+                <div class="arrow">▼</div>
+                <span>Scroll to continue</span>
+            </div>
+        </div>
+        
+        <!-- 场景5: 废油污染 -->
+        <div id="scene5" class="scroll-section">
+            <div class="content">
+                <div class="content-left">
+                    <h2>Waste Oil Crisis</h2>
+                    <p>China produces approximately <span class="highlight">11-12 million tons</span> of waste cooking oil annually. Improper handling not only causes serious food safety risks (illegal re-entry into the food chain) but also leads to environmental pollution (water eutrophication, odorous gas emissions) and public health risks.</p>
+                    
+                    <div class="bar-chart">
+                        <div class="bar" style="height: 120px;">
+                            <span class="bar-value">75%</span>
+                            <span class="bar-label">Water pollution</span>
+                        </div>
+                        <div class="bar" style="height: 90px;">
+                            <span class="bar-value">60%</span>
+                            <span class="bar-label">Soil degradation</span>
+                        </div>
+                        <div class="bar" style="height: 60px;">
+                            <span class="bar-value">40%</span>
+                            <span class="bar-label">Marine life impact</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-right">
+                    <h3>Current Disposal Methods</h3>
+                    <p><span class="highlight">Incineration/Power Generation:</span> High energy consumption, pollutant emissions</p>
+                    <p><span class="highlight">Conversion to Biodiesel:</span> Relatively mature technology but with high industry concentration and cost pressures</p>
+                    <p><span class="highlight">Simple Physical Recovery/Landfilling:</span> Prone to secondary pollution, poor economic benefits</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-value"><span class="counter" data-target="12">0</span>M</div>
+                            <div class="stat-label">Tons of waste oil/year</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">$<span class="counter" data-target="500">0</span>M</div>
+                            <div class="stat-label">Annual disposal cost</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-hint">
+                <div class="arrow">▼</div>
+                <span>Scroll to continue</span>
+            </div>
+        </div>
+        
+        <!-- 场景6: 项目简述 -->
+        <div id="scene6" class="scroll-section">
+            <div class="content">
+                <div class="content-left">
+                    <h2>Our Solution</h2>
+                    <p><span class="highlight">Chassis:</span> Engineered Yarrowia lipolytica, lipid metabolism friendly, strong tolerance</p>
+                    <p><span class="highlight">Raw Material Processing:</span> Expressing lipases to decompose oils, releasing free fatty acids (FFA) and glycerol into the metabolic network</p>
+                    <p><span class="highlight">Flux Redirection:</span></p>
+                    <ul style="text-align: left; margin-left: 20px; margin-bottom: 20px;">
+                        <li>MVA pathway enhancement: Upregulation of key nodes like HMG-CoA reductase</li>
+                        <li>Compartmentalization strategy: Anchoring key enzymes/pathway components in peroxisomes and lipid droplets</li>
+                        <li>Energy and reducing power optimization: Enhancing NADPH/ATP supply</li>
+                        <li>Stress resistance and homeostasis: Enhancing solvent/lipid load tolerance</li>
+                    </ul>
+                </div>
+                <div class="content-right">
+                    <h3>Supporting Work</h3>
+                    <p><span class="highlight">Modeling:</span> Flux balance and key parameter sensitivity analysis</p>
+                    <p><span class="highlight">Hardware:</span> Pretreatment modules, online monitoring and cost assessment</p>
+                    <p><span class="highlight">Human Practices & Education:</span> Dialogue and科普 with industry, public and regulators</p>
+                    
+                    <h3 style="margin-top: 30px;">Project Milestones</h3>
+                    <div class="timeline">
+                        <div class="milestone">
+                            <div class="milestone-content">
+                                <div class="milestone-title">M1</div>
+                                <div class="milestone-desc">Pathway component cloning and chassis modification</div>
+                            </div>
+                            <div class="milestone-dot"></div>
+                        </div>
+                        <div class="milestone">
+                            <div class="milestone-content">
+                                <div class="milestone-title">M2</div>
+                                <div class="milestone-desc">Lipolysis-carbon supply module coordination</div>
+                            </div>
+                            <div class="milestone-dot"></div>
+                        </div>
+                        <div class="milestone">
+                            <div class="milestone-content">
+                                <div class="milestone-title">M3</div>
+                                <div class="milestone-desc">Compartmentalized expression verification and phenotype testing</div>
+                            </div>
+                            <div class="milestone-dot"></div>
+                        </div>
+                        <div class="milestone">
+                            <div class="milestone-content">
+                                <div class="milestone-title">M4</div>
+                                <div class="milestone-desc">Shake flask to pilot scale process exploration</div>
+                            </div>
+                            <div class="milestone-dot"></div>
+                        </div>
+                        <div class="milestone">
+                            <div class="milestone-content">
+                                <div class="milestone-title">M5</div>
+                                <div class="milestone-desc">Squalane extraction, purification and performance verification</div>
+                            </div>
+                            <div class="milestone-dot"></div>
+                        </div>
+                        <div class="milestone">
+                            <div class="milestone-content">
+                                <div class="milestone-title">M6</div>
+                                <div class="milestone-desc">Application scenario sample evaluation and standard alignment</div>
+                            </div>
+                            <div class="milestone-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-hint">
+                <span>Thank you for exploring</span>
+            </div>
+        </div>
+        
+        <!-- 导航指示器 -->
+        <div class="indicator">
+            <div class="dot active" data-target="0" data-title="Introduction"></div>
+            <div class="dot" data-target="1" data-title="Benefits"></div>
+            <div class="dot" data-target="2" data-title="Market"></div>
+            <div class="dot" data-target="3" data-title="Sources"></div>
+            <div class="dot" data-target="4" data-title="Waste Oil"></div>
+            <div class="dot" data-target="5" data-title="Our Solution"></div>
+        </div>
     </div>
-  </div>
-  <div class="box noslide" style="height: 15rem;">
-    <div class="text">
-      <p style="font-size: 1.4rem !important;line-height: 2.7rem; padding-top:1rem !important;">In the face of this
-        growing crisis, our
-        team has focused on one of
-        the
-        most common plastics—polyethylene
-        terephthalate (PET)—and designed an innovative solution that not only degrades PET microplastics but also
-        improves soil health.</p>
+    
+    <div class="footer-note">
+        Sustainable Squalene Solution | Protecting Ecology Without Compromising Beauty
     </div>
-  </div>
-  <div class="box noslide" style="height: 17rem;">
-    <div class="text title">
-      <p style="font-size: 2rem !important;">How It Works:</p>
-    </div>
-  </div>
-  <div class="box">
-    <div class="left">
-      <div class="img"><img src="https://static.igem.wiki/teams/5175/resources/homepage/index5.gif" alt="">
-      </div>
-    </div>
-    <div class="right">
-      <div class="text">
-        <p style="font-size: 1.2rem !important; padding-top:1rem !important;">E.coli BL21 is capable of efficiently
-          expressing proteins. We have
-          genetically engineered it to express high
-          levels of PET-degrading dual-enzymes system for degrading PET and to break down ethylene glycol(EG), a
-          byproduct of PET degradation. This process helps reduce the amount of microplastics in irrigation water,
-          ultimately decreasing soil contamination and mitigating the potential health risks to humans.</p>
-      </div>
-    </div>
-  </div>
-  <div class="box">
-    <div class="left">
-      <div class="text">
-        <p style="font-size: 1.2rem !important; padding-top:1.8rem !important;">Pseudomonas putida KT2440 possesses
-          a
-          unique set of pathways for
-          phenol
-          and lipid metabolism. It has been
-          further modified by us to absorb and metabolize TPA, another byproduct of PET degradation, producing
-          rhamnolipids in the process. These biosurfactants not only help further eliminate microplastics from the
-          soil
-          but also enhance the soil’s physical structure and chemical properties.</p>
-      </div>
-    </div>
-    <div class="right">
-      <div class="img"><img src="https://static.igem.wiki/teams/5175/resources/homepage/index6.gif" alt="">
-      </div>
-    </div>
-  </div>
-  <div class="box">
-    <div class="left">
-      <div class="img"><img src="https://static.igem.wiki/teams/5175/resources/homepage/index7new.png" alt=""
-          style="background-color: white;">
-      </div>
-    </div>
-    <div class="right">
-      <div class="text">
-        <p style="font-size: 1.3rem !important; padding-top:3rem !important;">By harnessing the synergistic power of
-          these two strains, we aim to
-          significantly reduce PET microplastic
-          accumulation in soils, restore soil health, and effectively tackle the growing threat of soil microplastic
-          pollution—a danger that looms large over our environment and human well-being.</p>
-      </div>
-    </div>
-  </div>
-  {% include below_index.html %}
-  <div class="bottom">
-    <img src="https://static.igem.wiki/teams/5175/resources/homepage/bottom-start.png" alt="" class="start">
-    <img src="https://static.igem.wiki/teams/5175/resources/homepage/bottom.png" alt="" class="end"
-      style="display: none;">
-  </div>
-</div>
-<!-- 展示盒子 -->
-<script>
-  (function () {
-    let imgs = $(".box .left .img, .box .left .text, .box .right .img, .box .right .text");
-    let left_imgs = $(".box .left .img, .box .left .text");
-    let right_imgs = $(".box .right .img, .box .right .text");
-    const noslides = $(".noslide .img, .noslide .text");
-    if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) { //手机不添加动画
-      imgs.css("opacity", 0);
-      if (!$(".box").eq(1).children().eq(0).hasClass("right")) { //调换偶数位置的box
-        $(".box").each((index, box) => {
-          if (index % 2 === 0) return;
-          box = $(box);
-          const left = box.children(".left");
-          const right = box.children(".right");
-          right.insertBefore(left);
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 加载动画控制
+            const loadingGif = document.getElementById('loadingGif');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            
+            // GIF 加载完成后，立即隐藏加载层
+            loadingGif.onload = function() {
+                loadingOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    loadingOverlay.style.display = 'none';
+                }, 700);
+            };
+            
+            // 兜底：3 秒后不管怎样都隐藏
+            setTimeout(() => {
+                loadingOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    loadingOverlay.style.display = 'none';
+                }, 700);
+            }, 3000);
+            
+            // 导航菜单控制
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+            
+            // 全屏滚动控制
+            const scrollSections = document.querySelectorAll('.scroll-section');
+            const dots = document.querySelectorAll('.dot');
+            const progressBar = document.querySelector('.progress-bar');
+            const decorationsContainer = document.getElementById('decorations');
+            let currentIndex = 0;
+            let isAnimating = false;
+            
+            // 生成装饰元素
+            function generateDecorations() {
+                const containerWidth = document.querySelector('.scroll-container').offsetWidth;
+                const containerHeight = document.querySelector('.scroll-container').offsetHeight;
+                
+                // 清除现有装饰
+                decorationsContainer.innerHTML = '';
+                
+                // 创建装饰字符
+                const icons = ['✦', '❀', '♡', '❁', '✿', '♣', '♦', '♥', '♠', '☘', '☙', '❧'];
+                for (let i = 0; i < 15; i++) {
+                    const icon = document.createElement('div');
+                    icon.classList.add('decoration-icon');
+                    icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+                    
+                    // 随机位置
+                    const left = Math.random() * containerWidth;
+                    const top = Math.random() * containerHeight;
+                    
+                    icon.style.left = `${left}px`;
+                    icon.style.top = `${top}px`;
+                    icon.style.animationDelay = `${Math.random() * 4}s`;
+                    icon.style.fontSize = `${Math.random() * 20 + 15}px`;
+                    icon.style.color = `rgba(212, 175, 55, ${Math.random() * 0.2 + 0.1})`;
+                    
+                    decorationsContainer.appendChild(icon);
+                }
+            }
+            
+            // 数字计数动画
+            function animateCounters() {
+                const counters = document.querySelectorAll('.counter');
+                const speed = 200; // 数值越大速度越慢
+                
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    let count = 0;
+                    
+                    const updateCount = () => {
+                        const increment = target / speed;
+                        
+                        if (count < target) {
+                            count += increment;
+                            if (counter.parentElement.classList.contains('stat-value')) {
+                                counter.innerText = Math.ceil(count).toLocaleString();
+                            } else {
+                                counter.innerText = Math.ceil(count);
+                            }
+                            setTimeout(updateCount, 1);
+                        } else {
+                            if (counter.parentElement.classList.contains('stat-value')) {
+                                counter.innerText = target.toLocaleString();
+                            } else {
+                                counter.innerText = target;
+                            }
+                        }
+                    };
+                    
+                    updateCount();
+                });
+            }
+            
+            // 切换section函数
+            function goToSection(index) {
+                if (isAnimating || index < 0 || index >= scrollSections.length) return;
+                
+                isAnimating = true;
+                
+                // 更新进度条
+                const progressPercentage = (index / (scrollSections.length - 1)) * 100;
+                progressBar.style.width = `${progressPercentage}%`;
+                
+                // 移除当前活动section的active类
+                scrollSections[currentIndex].classList.remove('active');
+                dots[currentIndex].classList.remove('active');
+                
+                // 添加新section的active类
+                scrollSections[index].classList.add('active');
+                dots[index].classList.add('active');
+                
+                currentIndex = index;
+                
+                // 当切换到新section时，触发数字动画
+                setTimeout(() => {
+                    animateCounters();
+                }, 500);
+                
+                // 动画完成后解锁
+                setTimeout(() => {
+                    isAnimating = false;
+                }, 1200);
+            }
+            
+            // 导航点点击事件
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const targetIndex = parseInt(dot.getAttribute('data-target'));
+                    goToSection(targetIndex);
+                });
+            });
+            
+            // 鼠标滚轮事件
+            let lastScrollTime = 0;
+            window.addEventListener('wheel', (e) => {
+                const currentTime = new Date().getTime();
+                
+                // 限制滚动频率
+                if (currentTime - lastScrollTime < 1000) return;
+                
+                if (e.deltaY > 50 && currentIndex < scrollSections.length - 1) {
+                    // 向下滚动
+                    goToSection(currentIndex + 1);
+                    lastScrollTime = currentTime;
+                } else if (e.deltaY < -50 && currentIndex > 0) {
+                    // 向上滚动
+                    goToSection(currentIndex - 1);
+                    lastScrollTime = currentTime;
+                }
+            });
+            
+            // 键盘事件
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowDown' && currentIndex < scrollSections.length - 1) {
+                    goToSection(currentIndex + 1);
+                } else if (e.key === 'ArrowUp' && currentIndex > 0) {
+                    goToSection(currentIndex - 0);
+                }
+            });
+            
+            // 触摸滑动事件（移动设备）
+            let touchStartY = 0;
+            
+            document.addEventListener('touchstart', (e) => {
+                touchStartY = e.touches[0].clientY;
+            });
+            
+            document.addEventListener('touchend', (e) => {
+                const touchEndY = e.changedTouches[0].clientY;
+                const diffY = touchStartY - touchEndY;
+                
+                if (diffY > 50 && currentIndex < scrollSections.length - 1) {
+                    // 向上滑动
+                    goToSection(currentIndex + 1);
+                } else if (diffY < -50 && currentIndex > 0) {
+                    // 向下滑动
+                    goToSection(currentIndex - 1);
+                }
+            });
+            
+            // 初始化
+            generateDecorations();
+            animateCounters();
+            
+            // 窗口大小调整时重新生成装饰
+            window.addEventListener('resize', generateDecorations);
         });
-        right_imgs = $(".box:odd .left .img, .box:even .right .img, .box:odd .left .text, .box:even .right .text");
-        left_imgs = $(".box:even .left .img, .box:odd .right .img, .box:even .left .text, .box:odd .right .text");
-        imgs = $(".box .left .img, .box .left .text, .box .right .img, .box .right .text");
-      }
-      left_imgs.css("margin", "0 auto");
-      right_imgs.css("margin", "0 auto");
-      $(".box").eq(1).children(".left").css("margin-top", "4rem");
-      $(".box").eq(2).children(".right").css("margin-top", "3rem");
-      $(".box").eq(3).css("margin-top", "3rem");
-      $(".box").eq(4).css("margin-top", "8rem");
-      imgs.css("opacity", 1);
-      noslides.css("opacity", 1);
-      return;
-    }
-    const imgs_position_start = new Array(imgs.length);
-    const imgs_position = new Array(imgs.length);
-    function clear_imgs_style() { //清除imgs的css
-      imgs.each((index, img) => {
-        img.removeAttribute("style");
-      });
-    }
-    function get_img_position() { //得到各元素移动前后的位置
-      imgs.css("opacity", 0);
-      clear_imgs_style();
-      if ($(".box").height() >= $(".left").height() + $(".right").height()) { //box换行，上图下文字
-        if (!$(".box").eq(1).children().eq(0).hasClass("right")) { //调换偶数位置的box
-          $(".box").each((index, box) => {
-            if (index % 2 === 0) return;
-            box = $(box);
-            const left = box.children(".left");
-            const right = box.children(".right");
-            right.insertBefore(left);
-          });
-          right_imgs = $(".box:odd .left .img, .box:even .right .img, .box:odd .left .text, .box:even .right .text");
-          left_imgs = $(".box:even .left .img, .box:odd .right .img, .box:even .left .text, .box:odd .right .text");
-          imgs = $(".box .left .img, .box .left .text, .box .right .img, .box .right .text");
-        }
-      } else {
-        if ($(".box").eq(1).children().eq(0).hasClass("right")) {
-          $(".box").each((index, box) => {
-            if (index % 2 === 0) return;
-            box = $(box);
-            const left = box.children(".left");
-            const right = box.children(".right");
-            left.insertBefore(right);
-          });
-          imgs = $(".box .left .img, .box .left .text, .box .right .img, .box .right .text");
-          left_imgs = $(".box .left .img, .box .left .text");
-          right_imgs = $(".box .right .img, .box .right .text");
-        }
-      }
-      //要显示的CSS
-      left_imgs.css("margin", "0 auto");
-      right_imgs.css("margin", "0 auto");
-      imgs.each((index, img) => {
-        imgs_position[index] = img.getBoundingClientRect().left;
-      });
-      clear_imgs_style();
-      //默认状态下（未显示时）的CSS
-      left_imgs.css("margin-right", "auto");
-      right_imgs.css("margin-left", "auto");
-      imgs.each((index, img) => {
-        imgs_position_start[index] = img.getBoundingClientRect().left;
-      });
-      clear_imgs_style();
-      imgs.css("opacity", 1);
-    }
-    function get_opacity(pos_percent) { //计算透明度
-      const res = pos_percent;
-      return res;
-    }
-    function get_opacity2(pos_percent) { //计算透明度
-      const res = pos_percent ** 2;
-      return res;
-    }
-    function get_xpos(pos_percent, index) { //计算左/右边距
-      const start = imgs_position_start[index];
-      const end = imgs_position[index];
-      let res;
-      if (end > start) { //在左面
-        res = pos_percent * (end - start);
-      } else { //在右面
-        res = pos_percent * (start - end);
-      }
-      return res;
-    }
-    function img_animate(index, pos_percent) { //改变左/右边距和透明度
-      const dom = imgs.eq(index);
-      const xpos = get_xpos(pos_percent, index);
-      const opacity = get_opacity(pos_percent);
-      dom.css("margin", "0 auto");
-      if (left_imgs.index(dom) !== -1) { //在左面
-        dom.animate({
-          marginLeft: xpos,
-          opacity: opacity
-        }, 0);
-      } else { //在右面
-        dom.animate({
-          marginRight: xpos,
-          opacity: opacity
-        }, 0);
-      }
-    }
-    function img_animate2(index, pos_percent) { //改变左/右边距和透明度（不滑动）
-      const dom = noslides.eq(index);
-      const opacity = get_opacity2(pos_percent);
-      dom.animate({
-        opacity: opacity
-      }, 0);
-    }
-    function find_img_toshow(scroll_distance_bottom, scroll_distance_top) { //遍历所有元素，计算现位置
-      imgs.each((index, img) => {
-        const img_height = img.clientHeight;
-        const img_distance = {
-          "top": img.offsetTop,
-          "bottom": img.offsetTop + img_height
-        };
-        //5种情况
-        if (img_distance.bottom < scroll_distance_top || img_distance.top > scroll_distance_bottom) {
-          //在屏幕上方/下方，不作处理
-          img.removeAttribute("style");
-        }
-        else if (img_distance.top > scroll_distance_top && img_distance.bottom < scroll_distance_bottom) {
-          //在视口中，全部展示
-          img_animate(index, 1);
-        }
-        else {
-          //即将进入/离开视口
-          const height = img_distance.bottom > scroll_distance_bottom ? scroll_distance_bottom - img_distance.top : img_distance.bottom - scroll_distance_top;
-          //在视口中的高度
-          img_animate(index, height / img_height);
-        }
-      });
-      noslides.each((index, noslide) => {
-        const img_height = noslide.clientHeight;
-        const img_distance = {
-          "top": noslide.offsetTop,
-          "bottom": noslide.offsetTop + img_height
-        };
-        //5种情况
-        if (img_distance.bottom < scroll_distance_top || img_distance.top > scroll_distance_bottom) {
-          //在屏幕上方/下方，不作处理
-          noslide.removeAttribute("style");
-        }
-        else if (img_distance.top > scroll_distance_top && img_distance.bottom < scroll_distance_bottom) {
-          //在视口中，全部展示
-          img_animate2(index, 1);
-        }
-        else {
-          //即将进入/离开视口
-          const height = img_distance.bottom > scroll_distance_bottom ? scroll_distance_bottom - img_distance.top : img_distance.bottom - scroll_distance_top;
-          //在视口中的高度
-          img_animate2(index, height / img_height);
-        }
-      });
-    }
-    function scroll_func() {
-      const clientHeight = document.documentElement.clientHeight;
-      const scrollTop = document.documentElement.scrollTop;
-      const scroll_distance = clientHeight + scrollTop;
-      find_img_toshow(scroll_distance, scrollTop);
-    }
-    $(window).resize(() => {
-      get_img_position();
-      scroll_func();
-    });
-    $(window).on("scroll", () => scroll_func());
-    window.addEventListener('load', function () {
-      get_img_position();
-      $(window).scrollTop(1);
-      $(window).scrollTop(0); //解决：刷新页面第一张位置不变
-      scroll_func();
-    });
-  })();
-</script>
-<!-- pet小图标 -->
-<script>
-  (function () {
-    let pet = $(".pet");
-    const start = $(".bottom .start");
-    const end = $(".bottom .end");
-    const wrapper = $(".wrapper");
-    const opacity = +pet.eq(0).css("opacity");
-    const bottom = $(".bottom");
-    const show_tpa_box = $(".box").eq(5); //从这个盒子下面开始变成tpa
-    const show_rha_box = $(".box").eq(6); //从这个盒子下面开始变成rha
-    const rha_opacity = 1; //rha图片完全显示时的透明度（实际完全显示的透明度会略小于该设置值）
-    //const difference_width = 5; //rha图片与pet图片的宽度差，单位rem
-    const ypos = 0.6; //pet/tpa/rha图片距窗口顶部的距离 占整个窗口的比例
-    const pet_hide = 0.1; //rha图片距展示区域底部百分之多少时完全消失
-    const bg_animate_time = 200; //切换底部图片的动画时间（一张图消失/另一张图显示动画的时间）
-    const show_animate_time = 400; //切换pet/tpa/rha图片的动画时间
-    const pet_hide_animate_time = 200; //到达页面顶部后，pet图片消失的动画时间
-    const is_mobile = /Mobi|Android|iPhone/i.test(navigator.userAgent); //手机不添加除了底部之外的动画
-    function show_start() { //显示开始的背景图
-      end.fadeOut(bg_animate_time, () => {
-        start.fadeIn(bg_animate_time);
-        wrapper.css("background-image", "linear-gradient(to top, #92B2BE 0%, #5e4d38 100%)");
-      });
-    }
-    function show_end() { //显示结尾的背景图
-      start.fadeOut(bg_animate_time, () => {
-        end.fadeIn(bg_animate_time);
-        wrapper.css("background-image", "linear-gradient(to top, #83A6FF 0%, #5e4d38 100%)");
-      });
-    }
-    function show_pet() {
-      pet.fadeIn(show_animate_time);
-      pet.children(".rha, .tpa").stop().hide();
-      pet.css({
-        "width": "5rem",
-        "height": "5rem"
-      });
-      pet.children(".pet_img").fadeIn(show_animate_time);
-    }
-    function show_tpa() {
-      pet.fadeIn(show_animate_time);
-      pet.children(".rha, .pet_img").stop().hide();
-      pet.css({
-        "width": "5rem",
-        "height": "5rem"
-      });
-      pet.children(".tpa").fadeIn(show_animate_time);
-    }
-    function show_rha() {
-      pet.fadeIn(show_animate_time);
-      pet.children(".tpa, .pet_img").stop().hide();
-      pet.css({
-        "width": "10rem",
-        "height": "10rem"
-      });
-      pet.children(".rha").fadeIn(show_animate_time);
-    }
-    /*function create_rha(pets) { //根据pet图片位置更改rha图片样式，如果没有rha图片就创建
-      pets.each((index, pet) => {
-        pet = $(pet);
-        const now_opacity = rha_opacity * (opacity - pet.css("opacity")) / opacity;
-        const x = pet.offset().left;
-        const y = bottom.height() * pet_hide;
-        let rha = $(`.rha[data-id="${index}"]`);
-        if (rha.length === 0) {
-          rha = $(`
-          <div class="rha" data-id="${index}">
-            <img src="https://static.igem.wiki/teams/5175/resources/homepage/rha.png" alt="">
-          </div>
-          `);
-          bottom.append(rha);
-        }
-        rha.animate({
-          opacity: now_opacity,
-          left: x,
-          bottom: y
-        }, 0);
-      });
-      if ($(".rha").length === 1) $(".rha").css("transform", `translateX(-${difference_width / 2}rem)`); //如果只有一个rha，使其居中
-      else $(".rha").eq(1).css("transform", `translateX(-${difference_width}rem)`); //如果有两个就让第二个向左移使完全显示
-    }
-    function hide_rha() { //隐藏rha图片
-      const rha = $(".rha");
-      rha.fadeOut(400, () => rha.remove()); //"fast"是200
-    }*/
-    function update_pet() { //更新pet/背景图的样式和位置
-      const bottom_height = bottom.height();
-      const bottom_distance = bottom_height * pet_hide;
-      const wrapper_top = wrapper.offset().top;
-      const wrapper_bottom = wrapper_top + wrapper.outerHeight();
-      const clientHeight = document.documentElement.clientHeight;
-      const scrollTop = document.documentElement.scrollTop;
-      const scroll_distance = clientHeight * ypos + scrollTop;
-      const show_tpa_distance = show_tpa_box.offset().top + show_tpa_box.height();
-      const show_rha_distance = show_rha_box.offset().top + show_rha_box.height();
-      if (scroll_distance < wrapper_top + parseFloat(wrapper.css("padding-top"))) { //超出上界
-        show_start();
-        //hide_rha();
-        pet.fadeOut(pet_hide_animate_time);
-        return;
-      }
-      if (scroll_distance + pet[0].offsetHeight > wrapper_bottom - bottom_distance) { //超出下界
-        show_end();
-        //hide_rha();
-        pet.animate({
-          opacity: 0,
-          top: wrapper_bottom - bottom_distance - pet[0].offsetHeight
-        }, 0);
-        return;
-      }
-      if (scroll_distance + pet[0].offsetHeight > wrapper_bottom - bottom_height * 0.5) { //进入底部图片区域
-        show_start();
-        show_rha();
-        //create_rha(pet);
-        const enter_distance = pet.offset().top + pet[0].offsetHeight - (bottom.offset().top + bottom_height * 0.5);
-        const pos_percent = enter_distance / (bottom_height * 0.5 - bottom_distance);
-        //const new_opacity = opacity * (1 - pos_percent); //越进入opacity越小
-        const new_opacity = opacity + (rha_opacity - opacity) * pos_percent; //越进入opacity越大
-        pet.animate({
-          opacity: new_opacity,
-          top: scroll_distance
-        }, 0);
-        return;
-      }
-      if (is_mobile && scroll_distance > wrapper_bottom - bottom_height) { //手机端进入底部图片区域就开始显示
-        show_start();
-        show_rha();
-        return;
-      }
-      if (is_mobile) {
-        show_start();
-        pet.hide();
-        return;
-      }
-      if (scroll_distance + pet[0].offsetHeight > show_rha_distance) { //显示rha
-        show_start();
-        show_rha();
-        pet.animate({
-          opacity: opacity,
-          top: scroll_distance
-        }, 5);
-        return;
-      }
-      if (scroll_distance + pet[0].offsetHeight > show_tpa_distance) { //显示tpa
-        show_start();
-        pet.show();
-        show_tpa();
-        pet.animate({
-          opacity: opacity,
-          top: scroll_distance
-        }, 5);
-        return;
-      }
-      //在页面中滑动
-      show_start();
-      show_pet();
-      //hide_rha();
-      pet.animate({
-        opacity: opacity,
-        top: scroll_distance
-      }, 5);
-    }
-    function get_pet() { //pet显示在两侧还是中间、rha数量是否与pet相同
-      (function () {
-        if ($(".box").height() >= $(".left").height() + $(".right").height()) { //box换行，显示在两侧
-          if (pet.length === 2) return;
-          const pet2 = pet.clone(true);
-          pet.after(pet2);
-          pet = $(".pet");
-          pet.css("transform", 'none');
-          pet.eq(0).css("left", "1%");
-          pet[1].style.removeProperty('left');
-          pet.eq(1).css("right", "1%");
-        } else { //box图文在一行，显示在中间
-          if (pet.length === 2) {
-            pet.eq(1).remove();
-            pet = pet.eq(0);
-          }
-          pet.css("left", "50%");
-          pet.css("transform", 'translateX(-50%)');
-        }
-      })();
-      //if ($(".rha").length !== $(".pet").length) hide_rha(); //如果rha与pet数量不同，就重新创建
-    }
-    window.addEventListener('load', function () {
-      get_pet();
-      update_pet();
-    });
-    $(window).on("scroll", () => update_pet());
-    $(window).on("resize", () => {
-      get_pet();
-      update_pet();
-    });
-  })();
-</script>
-<!-- 顶部进度条 -->
-<script>
-  (function () {
-    const scroll = $(".scroll");
-    function update_scroll() {
-      const all_height = document.body.scrollHeight - document.body.clientHeight;
-      const scrollTop = document.documentElement.scrollTop;
-      const percent = (1 - scrollTop / all_height) * 100;
-      scroll.css("transform", `translateX(-${percent}%)`);
-    }
-    window.addEventListener('load', () => update_scroll());
-    $(window).on("scroll", () => update_scroll());
-    $(window).on("resize", () => update_scroll());
-  })();
-</script>
-
-<!-- 底部按钮 -->
-<script>
-  (function () {
-    const btns = $(".below_index_title, .below_index");
-    const btn_box = $(".below_index");
-    btn_box.css("display", "flex");
-    btn_box.css("display", "none");
-    const wrapper = document.querySelector(".below_index_wrapper");
-    const distance = 10; //距页面顶部多少px时显示按钮
-    const distance_top = -50; //距页面顶部多少px时隐藏按钮
-    const animate_time = 50; //动画时长
-    function show_btn(btn) {
-      btn.stop().fadeIn(animate_time);
-    }
-    function hide_btn(btn) {
-      btn.stop().fadeOut(animate_time);
-    }
-    function update_btn(index, btn) {
-      const clientHeight = document.documentElement.clientHeight;
-      const scroll_distance_top = document.documentElement.scrollTop;
-      const scroll_distance_bottom = clientHeight + scroll_distance_top;
-      const btn_distance = {
-        "top": wrapper.offsetTop,
-        "bottom": wrapper.offsetTop + wrapper.clientHeight
-      };
-      if (btn_distance.bottom < scroll_distance_top || btn_distance.top > scroll_distance_bottom) {
-        return;
-      }
-      else if (btn_distance.top > scroll_distance_top + distance_top && btn_distance.bottom < scroll_distance_bottom - distance) {
-        show_btn($(btn));
-      }
-      else {
-        if ($(btn).css("display") === "none") show_btn($(btn));
-        else hide_btn($(btn));
-      }
-    }
-    function scroll_func() {
-      btns.each((index, btn) => {
-        update_btn(index, btn);
-      });
-    }
-    $(window).resize(() => scroll_func());
-    $(window).on("scroll", () => scroll_func());
-    window.addEventListener('load', () => scroll_func());
-  })();
-</script>
-
-<!-- Alert the user if using mobile devices -->
-<script>
-  (function () {
-    if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
-      alert("Due to some restrictions, homepage is not fully optimized for some specific mobile devices. Some of the animations and effects may not work properly. For the best experience, please view this page on a desktop or laptop. However, you can still browse the content and learn about our project. All the other pages in our wiki are fully optimized for mobile devices. Thank you for your understanding!");
-    }
-  })();
-</script>
+    </script>
+</body>
+</html>
