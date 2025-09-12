@@ -12,6 +12,8 @@
       {% include nav-social.html %}
     </section>
     
+  {% elsif page.layout == "blank" %}
+    <!-- No aside content for blank layout -->
 
   {% elsif page.layout == "page" or page.layout == "blog" %}
     <section id="about-this-page" class="section page--description">
