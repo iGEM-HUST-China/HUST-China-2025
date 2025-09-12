@@ -1,9 +1,21 @@
+# Environment files
 env
 venv
 .vscode
 __pycache__
 public
 
+# Build output
+dist
+build
 node_modules
 
+# Static files
 .DS_Store
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.webp
