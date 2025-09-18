@@ -1,7 +1,9 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | iGEM HUST-China 2025</title>
+    <title>Squalene Rescue Plan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -43,14 +45,10 @@
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
         
-        #about-this-page,
-        .header {
-            display: none;
-        }
         body {
-            /* font-family: 'Comic Neue', cursive; */
+            font-family: 'Comic Neue', cursive;
             overflow-x: hidden;
-            color: #4a5568;
+            color: #ffffff;
             background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
             position: relative;
         }
@@ -63,10 +61,10 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 20% 30%, rgba(120, 119, 198, 0.03) 0%, transparent 20%),
-                radial-gradient(circle at 80% 70%, rgba(120, 119, 198, 0.03) 0%, transparent 20%),
-                linear-gradient(45deg, rgba(120, 119, 198, 0.05) 25%, transparent 25%, transparent 75%, rgba(120, 119, 198, 0.05) 75%, rgba(120, 119, 198, 0.05)),
-                linear-gradient(45deg, rgba(120, 119, 198, 0.05) 25%, transparent 25%, transparent 75%, rgba(120, 119, 198, 0.05) 75%, rgba(120, 119, 198, 0.05));
+                radial-gradient(circle at 20% 30%, rgb(255, 255, 255) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgb(255, 255, 255) 0%, transparent 20%),
+                linear-gradient(45deg, rgb(255, 255, 255) 25%, transparent 25%, transparent 75%, rgb(255, 255, 255) 75%, rgb(255, 255, 255)),
+                linear-gradient(45deg, rgb(255, 255, 255) 25%, transparent 25%, transparent 75%, rgb(255, 255, 255) 75%, rgb(255, 255, 255));
             background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
             background-position: 0 0, 0 0, 0 0, 10px 10px;
             z-index: -1;
@@ -118,7 +116,7 @@
             position: fixed;
             top: 25px;
             left: 25px;
-            background: transparent;
+            background: white;
             color: white;
             width: 60px;
             height: 60px;
@@ -132,7 +130,7 @@
             z-index: 1000;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid var(--gold);
+            border: 2px solid var(--white);
             overflow: hidden;
         }
 
@@ -154,7 +152,7 @@
             transform: translateX(-50%);
             white-space: nowrap;
             font-size: 0.8rem;
-            color: var(--gold);
+            color: var(--white);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -197,7 +195,7 @@
             left: 0;
             width: var(--nav-width);
             height: 100vh;
-            background: white;
+            background: #F5F5DC;
             box-shadow: 2px 0 15px rgba(0, 0, 0, 0.08);
             z-index: 999;
             transform: translateX(-100%);
@@ -356,7 +354,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            background: transparent;
             z-index: 1;
         }
         
@@ -413,35 +411,26 @@
             60% { transform: translateY(-5px); }
         }
         
-        /* 全屏滚动区域样式 */
-        .scroll-container {
-            height: 100vh;
-            width: 100%;
+        /* 主要内容区域样式 */
+        .main-content {
             position: relative;
-            overflow: hidden;
+            width: 100%;
         }
         
-        .scroll-section {
-            height: 100%;
+        /* 内容区域样式 */
+        .content-section {
+            min-height: 100vh;
             width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 20px;
-            background-size: cover;
-            background-position: center;
+            padding: 80px 20px;
+            position: relative;
             overflow: hidden;
-            z-index: 1;
         }
         
-        .scroll-section::before {
+        .content-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -450,11 +439,6 @@
             height: 100%;
             background: rgba(255, 255, 255, 0.85);
             z-index: -1;
-        }
-        
-        .scroll-section.active {
-            opacity: 1;
-            z-index: 10;
         }
         
         /* 内容框样式 - 金色鎏金边框 */
@@ -512,21 +496,6 @@
             width: 48%;
             position: relative;
             z-index: 1;
-            transform: translateX(0);
-            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
-        }
-        
-        /* 初始位置 - 激活前 */
-        .scroll-section:not(.active) .content-left {
-            transform: translateX(-150%);
-        }
-        
-        .scroll-section:not(.active) .content-right {
-            transform: translateX(150%);
-        }
-        
-        .active .content {
-            transform: translateY(0);
         }
         
         h1 {
@@ -598,57 +567,6 @@
             background: rgba(212, 175, 55, 0.15);
             z-index: -1;
             border-radius: 2px;
-        }
-        
-        .indicator {
-            position: fixed;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .dot {
-            width: 16px;
-            height: 16px;
-            background: transparent;
-            border: 2px solid var(--gold);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            position: relative;
-        }
-        
-        .dot.active {
-            background: var(--gold);
-            transform: scale(1.3);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-        }
-        
-        .dot::before {
-            content: attr(data-title);
-            position: absolute;
-            right: 25px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--gold);
-            padding: 8px 15px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            white-space: nowrap;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .dot:hover::before {
-            opacity: 1;
         }
         
         .progress-bar {
@@ -995,6 +913,144 @@
             color: #4a5568;
         }
         
+        /* 角鲨烯来源横屏滚动区域 */
+        .horizontal-scroll-section {
+            min-height: 100vh;
+            width: 100%;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .horizontal-scroll-container {
+            display: flex;
+            width: 300vw; /* 三倍宽度，容纳三个面板 */
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .horizontal-panel {
+            width: 100vw;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+        
+        .horizontal-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: -1;
+        }
+        
+        .horizontal-content {
+            max-width: 800px;
+            text-align: center;
+            padding: 40px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .horizontal-content::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            padding: 3px;
+            background: linear-gradient(45deg, var(--gold), #f8de7e, var(--gold), #daa520, var(--gold));
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+        }
+        
+        .horizontal-image {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s ease;
+        }
+        
+        .horizontal-image:hover {
+            transform: scale(1.03);
+        }
+        
+        .horizontal-indicators {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+        
+        .horizontal-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .horizontal-dot.active {
+            background: var(--gold);
+            transform: scale(1.3);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .horizontal-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 30px;
+            z-index: 100;
+            pointer-events: none;
+        }
+        
+        .horizontal-nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            pointer-events: auto;
+        }
+        
+        .horizontal-nav-btn:hover {
+            background: var(--gold);
+            color: white;
+            transform: scale(1.1);
+        }
+        
         /* 响应式设计 */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; margin-bottom: 1.2rem; }
@@ -1007,11 +1063,7 @@
             }
             .content-left, .content-right {
                 width: 100%;
-                transform: none !important;
             }
-            .indicator { right: 15px; gap: 15px; }
-            .dot { width: 12px; height: 12px; }
-            .dot::before { display: none; }
             .scroll-hint { bottom: 30px; }
             .stats-container { flex-direction: column; gap: 15px; align-items: center; }
             .stat-card { width: 80%; }
@@ -1027,6 +1079,17 @@
                 flex-direction: row;
             }
             .milestone-dot { margin-left: 0; margin-right: 15px; }
+            .horizontal-content {
+                padding: 25px 20px;
+            }
+            .horizontal-image {
+                height: 200px;
+            }
+            .horizontal-nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -1041,8 +1104,8 @@
 
     <!-- 导航按钮 -->
     <div class="nav-toggle" id="navToggle">
-        <!-- 替换为您自己的图片路径 -->
-        <img src="path/to/your/nav-image.png" alt="Navigation">
+        <!-- 替换为的图片路径 -->
+        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Navigation">
         <div class="nav-hint">Click to expand menu</div>
     </div>
     
@@ -1100,11 +1163,11 @@
     </nav>
 
     <!-- 封面区域 -->
-    <section class="cover-section" id="cover" style="background-image: url('c:\\Users\\18142\\Desktop\\igem网页\\image\\fengmian.jpg');">
+    <section class="cover-section" id="cover" style="background-image: url('https://static.igem.wiki/teams/5569/index/fengmian.webp');">
         <div class="cover-content">
-            <h1 class="cover-title">Squoilene</h1>
-            <p class="cover-subtitle">From Waste Oil to Sustainable Squalane</p>
-            <p class="cover-tagline">Transforming "Waste Oil" into Green Squalane</p>
+            <h1 class="cover-title"></h1>
+            <p class="cover-subtitle"></p>
+            <p class="cover-tagline"></p>
         </div>
         <div class="scroll-hint">
             <div class="arrow">▼</div>
@@ -1112,10 +1175,10 @@
         </div>
     </section>
 
-    <!-- 全屏滚动区域 -->
+    <!-- 主要内容区域 -->
     <div class="progress-bar"></div>
     
-    <div class="scroll-container">
+    <div class="main-content">
         <!-- 动态生成装饰元素 -->
         <div id="decorations"></div>
         
@@ -1124,7 +1187,7 @@
         <div class="ornament ornament-2">♡</div>
         
         <!-- 场景1: 介绍 -->
-        <div id="scene1" class="scroll-section">
+        <section id="scene1" class="content-section">
             <div class="content">
                 <div class="content-left">
                     <h1>Our Innovation</h1>
@@ -1154,14 +1217,10 @@
                     </button>
                 </div>
             </div>
-            <div class="scroll-hint">
-                <div class="arrow">▼</div>
-                <span>Scroll to continue</span>
-            </div>
-        </div>
+        </section>
         
         <!-- 场景2: 角鲨烷功效 -->
-        <div id="scene2" class="scroll-section">
+        <section id="scene2" class="content-section">
             <div class="content">
                 <div class="content-left">
                     <h2>Squalane Benefits</h2>
@@ -1174,7 +1233,7 @@
                     <div class="stats-container">
                         <div class="stat-card">
                             <div class="stat-value"><span class="counter" data-target="24">0</span>h</div>
-                            <div class="stat-label">Long lasting hydration</div>
+                            <div class="stat-label">Long-lasting hydration</div>
                         </div>
                         <div class="stat-card">
                             <div class="stat-value"><span class="counter" data-target="100">0</span>%</div>
@@ -1196,14 +1255,10 @@
                     <p style="font-size: 1rem;">User satisfaction rate</p>
                 </div>
             </div>
-            <div class="scroll-hint">
-                <div class="arrow">▼</div>
-                <span>Scroll to continue</span>
-            </div>
-        </div>
+        </section>
         
         <!-- 场景3: 市场需求 -->
-        <div id="scene3" class="scroll-section">
+        <section id="scene3" class="content-section">
             <div class="content">
                 <div class="content-left">
                     <h2>Market Potential</h2>
@@ -1245,72 +1300,94 @@
                     <p>The shift toward sustainable and natural ingredients in cosmetics is accelerating market growth for eco-friendly squalane alternatives.</p>
                 </div>
             </div>
-            <div class="scroll-hint">
-                <div class="arrow">▼</div>
-                <span>Scroll to continue</span>
-            </div>
-        </div>
+        </section>
         
-        <!-- 场景4: 来源分析 -->
-        <div id="scene4" class="scroll-section">
-            <div class="content">
-                <div class="content-left">
-                    <h2>Squalene Sources</h2>
-                    <p><span class="highlight">Traditional Source:</span> Shark liver → High ecological cost, limited availability</p>
-                    <p><span class="highlight">Plant Sources:</span> Olive, sugarcane → Limitations in yield, cost and seasonality</p>
-                    <p><span class="highlight">Synthetic Biology:</span> Using microbial factories, green, efficient, and scalable</p>
-                    
-                    <!-- 三张图片网格 -->
-                    <div class="image-grid">
-                        <img src="path/to/shark-image.jpg" alt="Shark Source" class="grid-image">
-                        <img src="path/to/plant-image.jpg" alt="Plant Source" class="grid-image">
-                        <img src="path/to/microbial-image.jpg" alt="Microbial Factory" class="grid-image">
+        <!-- 场景4: 来源分析 - 横屏滚动部分 -->
+        <section id="scene4" class="horizontal-scroll-section">
+            <div class="horizontal-scroll-container" id="horizontalScrollContainer">
+                <!-- 面板1: 鲨鱼来源 -->
+                <div class="horizontal-panel">
+                    <div class="horizontal-content">
+                        <h2>Traditional Source: Shark Liver</h2>
+                        <p>For decades, squalene was primarily sourced from shark liver oil, particularly from deep-sea sharks. This practice has significant ecological consequences.</p>
+                        <div class="placeholder-image" style="width: 100%; height: 300px; background: linear-gradient(45deg, #6b7280, #9ca3af); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; margin: 20px 0;">
+                            Shark Liver Image
+                        </div>
+                        <div class="stats-container">
+                            <div class="stat-card">
+                                <div class="stat-value"><span class="counter" data-target="3000">0</span></div>
+                                <div class="stat-label">Sharks needed for 1 ton</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value"><span class="counter" data-target="40">0</span>%</div>
+                                <div class="stat-label">Market share</div>
+                            </div>
+                        </div>
+                        <p>This unsustainable practice threatens deep-sea shark populations and disrupts marine ecosystems.</p>
                     </div>
                 </div>
-                <div class="content-right">
-                    <!-- 饼图 -->
-                    <div class="pie-chart-container">
-                        <div class="pie-chart"></div>
+                
+                <!-- 面板2: 植物来源 -->
+                <div class="horizontal-panel">
+                    <div class="horizontal-content">
+                        <h2>Plant-Based Sources</h2>
+                        <p>Plant-based squalene is extracted from sources like olives, sugarcane, and rice bran. While more sustainable than shark-derived squalene, these sources have limitations.</p>
+                        <div class="placeholder-image" style="width: 100%; height: 300px; background: linear-gradient(45deg, #84cc16, #a3e635); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; margin: 20px 0;">
+                            Plant Sources Image
+                        </div>
+                        <div class="stats-container">
+                            <div class="stat-card">
+                                <div class="stat-value"><span class="counter" data-target="60">0</span>%</div>
+                                <div class="stat-label">Plant-based market share</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value"><span class="counter" data-target="30">0</span>%</div>
+                                <div class="stat-label">From olive oil</div>
+                            </div>
+                        </div>
+                        <p>Plant-based production competes with food sources, requires large land areas, and is subject to seasonal variations and price fluctuations.</p>
                     </div>
-                    <div class="pie-legend">
-                        <div class="legend-item">
-                            <div class="legend-color" style="background-color: var(--gold);"></div>
-                            <span>Shark (40%)</span>
+                </div>
+                
+                <!-- 面板3: 合成生物学 -->
+                <div class="horizontal-panel">
+                    <div class="horizontal-content">
+                        <h2>Synthetic Biology Solution</h2>
+                        <p>Our approach uses engineered Yarrowia lipolytica to convert waste cooking oil into high-purity squalane through fermentation.</p>
+                        <div class="placeholder-image" style="width: 100%; height: 300px; background: linear-gradient(45deg, #3b82f6, #60a5fa); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; margin: 20px 0;">
+                            Microbial Factory Image
                         </div>
-                        <div class="legend-item">
-                            <div class="legend-color" style="background-color: #f6ad55;"></div>
-                            <span>Olive (30%)</span>
+                        <div class="stats-container">
+                            <div class="stat-card">
+                                <div class="stat-value"><span class="counter" data-target="80">0</span>%</div>
+                                <div class="stat-label">Carbon reduction</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">$<span class="counter" data-target="500">0</span></div>
+                                <div class="stat-label">Cost saving per ton</div>
+                            </div>
                         </div>
-                        <div class="legend-item">
-                            <div class="legend-color" style="background-color: #4fd1c5;"></div>
-                            <span>Sugarcane (20%)</span>
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color" style="background-color: #fc8181;"></div>
-                            <span>Other (10%)</span>
-                        </div>
-                    </div>
-                    
-                    <div class="stats-container">
-                        <div class="stat-card">
-                            <div class="stat-value"><span class="counter" data-target="3000">0</span></div>
-                            <div class="stat-label">Sharks needed for 1 ton</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value"><span class="counter" data-target="60">0</span>%</div>
-                            <div class="stat-label">Plant-based market share</div>
-                        </div>
+                        <p>This method provides a sustainable, scalable, and cost-effective alternative that doesn't compete with food resources or harm marine ecosystems.</p>
                     </div>
                 </div>
             </div>
-            <div class="scroll-hint">
-                <div class="arrow">▼</div>
-                <span>Scroll to continue</span>
+            
+            <!-- 横屏导航按钮 -->
+            <div class="horizontal-nav">
+                <div class="horizontal-nav-btn" id="prevPanel">❮</div>
+                <div class="horizontal-nav-btn" id="nextPanel">❯</div>
             </div>
-        </div>
+            
+            <!-- 横屏指示器 -->
+            <div class="horizontal-indicators">
+                <div class="horizontal-dot active" data-index="0"></div>
+                <div class="horizontal-dot" data-index="1"></div>
+                <div class="horizontal-dot" data-index="2"></div>
+            </div>
+        </section>
         
         <!-- 场景5: 废油污染 -->
-        <div id="scene5" class="scroll-section">
+        <section id="scene5" class="content-section">
             <div class="content">
                 <div class="content-left">
                     <h2>Waste Oil Crisis</h2>
@@ -1349,14 +1426,10 @@
                     </div>
                 </div>
             </div>
-            <div class="scroll-hint">
-                <div class="arrow">▼</div>
-                <span>Scroll to continue</span>
-            </div>
-        </div>
+        </section>
         
         <!-- 场景6: 项目简述 -->
-        <div id="scene6" class="scroll-section">
+        <section id="scene6" class="content-section">
             <div class="content">
                 <div class="content-left">
                     <h2>Our Solution</h2>
@@ -1423,24 +1496,11 @@
                     </div>
                 </div>
             </div>
-            <div class="scroll-hint">
-                <span>Thank you for exploring</span>
-            </div>
-        </div>
-        
-        <!-- 导航指示器 -->
-        <div class="indicator">
-            <div class="dot active" data-target="0" data-title="Introduction"></div>
-            <div class="dot" data-target="1" data-title="Benefits"></div>
-            <div class="dot" data-target="2" data-title="Market"></div>
-            <div class="dot" data-target="3" data-title="Sources"></div>
-            <div class="dot" data-target="4" data-title="Waste Oil"></div>
-            <div class="dot" data-target="5" data-title="Our Solution"></div>
-        </div>
+        </section>
     </div>
     
     <div class="footer-note">
-        Sustainable Squalene Solution | Protecting Ecology Without Compromising Beauty
+        from waste oil to sustainable squalane
     </div>
 
     <script>
@@ -1474,40 +1534,76 @@
                 navToggle.classList.toggle('active');
             });
             
-            // 全屏滚动控制
-            const scrollSections = document.querySelectorAll('.scroll-section');
-            const dots = document.querySelectorAll('.dot');
-            const progressBar = document.querySelector('.progress-bar');
-            const decorationsContainer = document.getElementById('decorations');
-            let currentIndex = 0;
-            let isAnimating = false;
+            // 横屏滚动控制
+            const horizontalContainer = document.getElementById('horizontalScrollContainer');
+            const horizontalDots = document.querySelectorAll('.horizontal-dot');
+            const prevBtn = document.getElementById('prevPanel');
+            const nextBtn = document.getElementById('nextPanel');
+            let currentPanel = 0;
             
-            // 生成装饰元素
-            function generateDecorations() {
-                const containerWidth = document.querySelector('.scroll-container').offsetWidth;
-                const containerHeight = document.querySelector('.scroll-container').offsetHeight;
+            function updateHorizontalNavigation() {
+                // 更新容器位置
+                horizontalContainer.style.transform = `translateX(-${currentPanel * 100}vw)`;
                 
-                // 清除现有装饰
-                decorationsContainer.innerHTML = '';
+                // 更新指示器
+                horizontalDots.forEach((dot, index) => {
+                    if (index === currentPanel) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            // 导航按钮事件
+            prevBtn.addEventListener('click', () => {
+                if (currentPanel > 0) {
+                    currentPanel--;
+                    updateHorizontalNavigation();
+                }
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                if (currentPanel < horizontalDots.length - 1) {
+                    currentPanel++;
+                    updateHorizontalNavigation();
+                }
+            });
+            
+            // 指示器点击事件
+            horizontalDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentPanel = index;
+                    updateHorizontalNavigation();
+                });
+            });
+            
+            // 横屏触摸滑动支持
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            horizontalContainer.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            horizontalContainer.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                const diffX = touchStartX - touchEndX;
                 
-                // 创建装饰字符
-                const icons = ['✦', '❀', '♡', '❁', '✿', '♣', '♦', '♥', '♠', '☘', '☙', '❧'];
-                for (let i = 0; i < 15; i++) {
-                    const icon = document.createElement('div');
-                    icon.classList.add('decoration-icon');
-                    icon.textContent = icons[Math.floor(Math.random() * icons.length)];
-                    
-                    // 随机位置
-                    const left = Math.random() * containerWidth;
-                    const top = Math.random() * containerHeight;
-                    
-                    icon.style.left = `${left}px`;
-                    icon.style.top = `${top}px`;
-                    icon.style.animationDelay = `${Math.random() * 4}s`;
-                    icon.style.fontSize = `${Math.random() * 20 + 15}px`;
-                    icon.style.color = `rgba(212, 175, 55, ${Math.random() * 0.2 + 0.1})`;
-                    
-                    decorationsContainer.appendChild(icon);
+                // 左滑 - 下一面板
+                if (diffX > 50 && currentPanel < horizontalDots.length - 1) {
+                    currentPanel++;
+                    updateHorizontalNavigation();
+                }
+                
+                // 右滑 - 上一面板
+                if (diffX < -50 && currentPanel > 0) {
+                    currentPanel--;
+                    updateHorizontalNavigation();
                 }
             }
             
@@ -1544,99 +1640,95 @@
                 });
             }
             
-            // 切换section函数
-            function goToSection(index) {
-                if (isAnimating || index < 0 || index >= scrollSections.length) return;
+            // 滚动进度条
+            const progressBar = document.querySelector('.progress-bar');
+            
+            function updateProgressBar() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight - windowHeight;
+                const scrollPosition = window.scrollY;
+                const progress = (scrollPosition / documentHeight) * 100;
                 
-                isAnimating = true;
+                progressBar.style.width = `${progress}%`;
                 
-                // 更新进度条
-                const progressPercentage = (index / (scrollSections.length - 1)) * 100;
-                progressBar.style.width = `${progressPercentage}%`;
-                
-                // 移除当前活动section的active类
-                scrollSections[currentIndex].classList.remove('active');
-                dots[currentIndex].classList.remove('active');
-                
-                // 添加新section的active类
-                scrollSections[index].classList.add('active');
-                dots[index].classList.add('active');
-                
-                currentIndex = index;
-                
-                // 当切换到新section时，触发数字动画
-                setTimeout(() => {
-                    animateCounters();
-                }, 500);
-                
-                // 动画完成后解锁
-                setTimeout(() => {
-                    isAnimating = false;
-                }, 1200);
+                // 检测元素是否进入视口并触发动画
+                document.querySelectorAll('.content-section').forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
+                        section.querySelectorAll('.counter').forEach(counter => {
+                            if (!counter.classList.contains('animated')) {
+                                counter.classList.add('animated');
+                                const target = +counter.getAttribute('data-target');
+                                let count = 0;
+                                
+                                const updateCount = () => {
+                                    const increment = target / 100;
+                                    
+                                    if (count < target) {
+                                        count += increment;
+                                        if (counter.parentElement.classList.contains('stat-value')) {
+                                            counter.innerText = Math.ceil(count).toLocaleString();
+                                        } else {
+                                            counter.innerText = Math.ceil(count);
+                                        }
+                                        setTimeout(updateCount, 10);
+                                    } else {
+                                        if (counter.parentElement.classList.contains('stat-value')) {
+                                            counter.innerText = target.toLocaleString();
+                                        } else {
+                                            counter.innerText = target;
+                                        }
+                                    }
+                                };
+                                
+                                updateCount();
+                            }
+                        });
+                    }
+                });
             }
             
-            // 导航点点击事件
-            dots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    const targetIndex = parseInt(dot.getAttribute('data-target'));
-                    goToSection(targetIndex);
-                });
-            });
-            
-            // 鼠标滚轮事件
-            let lastScrollTime = 0;
-            window.addEventListener('wheel', (e) => {
-                const currentTime = new Date().getTime();
+            // 生成装饰元素
+            function generateDecorations() {
+                const container = document.querySelector('.main-content');
+                const containerWidth = container.offsetWidth;
+                const containerHeight = container.offsetHeight;
                 
-                // 限制滚动频率
-                if (currentTime - lastScrollTime < 1000) return;
+                // 清除现有装饰
+                const decorationsContainer = document.getElementById('decorations');
+                decorationsContainer.innerHTML = '';
                 
-                if (e.deltaY > 50 && currentIndex < scrollSections.length - 1) {
-                    // 向下滚动
-                    goToSection(currentIndex + 1);
-                    lastScrollTime = currentTime;
-                } else if (e.deltaY < -50 && currentIndex > 0) {
-                    // 向上滚动
-                    goToSection(currentIndex - 1);
-                    lastScrollTime = currentTime;
+                // 创建装饰字符
+                const icons = ['✦', '❀', '♡', '❁', '✿', '♣', '♦', '♥', '♠', '☘', '☙', '❧'];
+                for (let i = 0; i < 15; i++) {
+                    const icon = document.createElement('div');
+                    icon.classList.add('decoration-icon');
+                    icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+                    
+                    // 随机位置
+                    const left = Math.random() * containerWidth;
+                    const top = Math.random() * containerHeight;
+                    
+                    icon.style.left = `${left}px`;
+                    icon.style.top = `${top}px`;
+                    icon.style.animationDelay = `${Math.random() * 4}s`;
+                    icon.style.fontSize = `${Math.random() * 20 + 15}px`;
+                    icon.style.color = `rgba(212, 175, 55, ${Math.random() * 0.2 + 0.1})`;
+                    
+                    decorationsContainer.appendChild(icon);
                 }
-            });
-            
-            // 键盘事件
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowDown' && currentIndex < scrollSections.length - 1) {
-                    goToSection(currentIndex + 1);
-                } else if (e.key === 'ArrowUp' && currentIndex > 0) {
-                    goToSection(currentIndex - 0);
-                }
-            });
-            
-            // 触摸滑动事件（移动设备）
-            let touchStartY = 0;
-            
-            document.addEventListener('touchstart', (e) => {
-                touchStartY = e.touches[0].clientY;
-            });
-            
-            document.addEventListener('touchend', (e) => {
-                const touchEndY = e.changedTouches[0].clientY;
-                const diffY = touchStartY - touchEndY;
-                
-                if (diffY > 50 && currentIndex < scrollSections.length - 1) {
-                    // 向上滑动
-                    goToSection(currentIndex + 1);
-                } else if (diffY < -50 && currentIndex > 0) {
-                    // 向下滑动
-                    goToSection(currentIndex - 1);
-                }
-            });
+            }
             
             // 初始化
             generateDecorations();
             animateCounters();
+            
+            // 监听滚动事件
+            window.addEventListener('scroll', updateProgressBar);
             
             // 窗口大小调整时重新生成装饰
             window.addEventListener('resize', generateDecorations);
         });
     </script>
 </body>
+</html>
