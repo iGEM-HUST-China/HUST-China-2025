@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -410,162 +411,84 @@
             60% { transform: translateY(-5px); }
         }
         
-        /* 主要内容区域样式 */
-        .main-content {
-            position: relative;
-            width: 100%;
-        }
-        
-        /* 内容区域样式 */
-        .content-section {
-            min-height: 100vh;
+        /* 全屏滚动区域样式 */
+        .fullscreen-scroll-section {
+            height: 100vh;
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 80px 20px;
             position: relative;
             overflow: hidden;
+            padding: 0 5%;
         }
         
-        .content-section::before {
-            content: '';
+        .scroll-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.85);
             z-index: -1;
+            transition: background 0.8s ease;
         }
         
-        /* 内容框样式 - 金色鎏金边框 */
-        .content {
-            display: flex;
-            justify-content: space-between;
+        .scroll-content {
             width: 100%;
-            max-width: 1000px;
-            padding: 50px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            margin: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            position: relative;
-            transform: translateY(20px);
-            transition: transform 0.8s ease-out;
-            border: 2px solid transparent;
-            background-clip: padding-box;
-        }
-        
-        .content::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 12px;
-            padding: 3px;
-            background: linear-gradient(45deg, var(--gold), #f8de7e, var(--gold), #daa520, var(--gold));
-            -webkit-mask: 
-                linear-gradient(#fff 0 0) content-box, 
-                linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            z-index: -1;
-        }
-        
-        .content::after {
-            content: "✦";
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            width: 30px;
-            height: 30px;
-            background: var(--gold);
-            border-radius: 50%;
+            max-width: 1200px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            justify-content: space-between;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s ease;
+            margin: 20px 0;
         }
         
-        .content-left, .content-right {
-            width: 48%;
-            position: relative;
-            z-index: 1;
+        .scroll-content.visible {
+            opacity: 1;
+            transform: translateX(0);
         }
         
-        h1 {
+        .scroll-content.reverse {
+            flex-direction: row-reverse;
+            transform: translateX(100px);
+        }
+        
+        .scroll-content.reverse.visible {
+            transform: translateX(0);
+        }
+        
+        .scroll-image {
+            flex: 1;
+            max-width: 45%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .scroll-text {
+            flex: 1;
+            padding: 0 40px;
+            text-align: left;
+        }
+        
+        .scroll-text h2 {
             font-family: 'Comic Neue', cursive;
-            font-size: 3.5rem;
-            color: #2d3748;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-            letter-spacing: 1px;
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 25%;
-            width: 50%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            border-radius: 2px;
-        }
-        
-        h2 {
-            font-family: 'Comic Neue', cursive;
-            font-size: 2.2rem;
-            color: #4a5568;
-            margin-bottom: 1.8rem;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 70px;
-            height: 3px;
-            background: var(--gold);
-            border-radius: 2px;
-        }
-        
-        p {
+        .scroll-text p {
             font-family: 'Comic Neue', cursive;
             font-size: 1.2rem;
-            color: #4a5568;
-            line-height: 1.8;
-            margin-bottom: 1.8rem;
-            max-width: 700px;
-        }
-        
-        .highlight {
-            color: var(--gold);
-            font-weight: 600;
-            position: relative;
-            padding: 0 4px;
-        }
-        
-        .highlight::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30%;
-            background: rgba(212, 175, 55, 0.15);
-            z-index: -1;
-            border-radius: 2px;
+            color: #fff;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
         
         .progress-bar {
@@ -577,89 +500,6 @@
             width: 0%;
             z-index: 1000;
             transition: width 0.3s ease;
-        }
-        
-        .stats-container {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-            max-width: 600px;
-            margin: 2rem auto;
-        }
-        
-        .stat-card {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 12px;
-            padding: 20px;
-            min-width: 160px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-        }
-        
-        .stat-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--gold), #f8de7e);
-        }
-        
-        .stat-value {
-            font-family: 'Comic Neue', cursive;
-            font-size: 2.2rem;
-            color: var(--gold);
-            font-weight: 700;
-        }
-        
-        .stat-label {
-            font-family: 'Comic Neue', cursive;
-            font-size: 0.9rem;
-            color: #718096;
-            margin-top: 8px;
-        }
-        
-        .action-btn {
-            background: linear-gradient(135deg, var(--gold), #f8de7e);
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 25px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .action-btn::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
-            transform: translateX(-100%);
-            transition: transform 0.6s ease;
-        }
-        
-        .action-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(212, 175, 55, 0.4);
-        }
-        
-        .action-btn:hover::before {
-            transform: translateX(100%);
         }
         
         .footer-note {
@@ -675,427 +515,46 @@
             text-align: center;
         }
         
-        /* 数字动画 */
-        .counter {
-            font-family: 'Comic Neue', cursive;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--gold);
-            display: inline-block;
-        }
-        
-        /* 饼图容器 */
-        .pie-chart-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-        }
-        
-        /* 饼图样式 */
-        .pie-chart {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            background: conic-gradient(
-                var(--gold) 0% 40%,
-                #f6ad55 40% 70%,
-                #4fd1c5 70% 90%,
-                #fc8181 90% 100%
-            );
-            position: relative;
-            margin: 0 auto;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .pie-chart::before {
-            content: '';
-            position: absolute;
-            width: 110px;
-            height: 110px;
-            background: white;
-            border-radius: 50%;
-            top: 25px;
-            left: 25px;
-            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .pie-legend {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 15px;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            font-family: 'Comic Neue', cursive;
-            font-size: 0.9rem;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 8px 12px;
-            border-radius: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .legend-color {
-            width: 15px;
-            height: 15px;
-            margin-right: 8px;
-            border-radius: 3px;
-        }
-        
-        /* 装饰字符 */
-        .decoration-icon {
-            font-size: 2rem;
-            color: rgba(212, 175, 55, 0.2);
-            margin: 10px;
-            position: absolute;
-            animation: float 6s infinite ease-in-out;
-            z-index: 0;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
-        }
-        
-        /* 柱状图 */
-        .bar-chart {
-            display: flex;
-            align-items: flex-end;
-            height: 160px;
-            margin: 20px 0;
-            gap: 20px;
-            justify-content: center;
-        }
-        
-        .bar {
-            width: 35px;
-            background: linear-gradient(to top, var(--gold), #f8de7e);
-            border-radius: 6px 6px 0 0;
-            position: relative;
-            transition: height 1s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .bar-label {
-            position: absolute;
-            bottom: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Comic Neue', cursive;
-            font-size: 0.8rem;
-            color: #718096;
-            white-space: nowrap;
-        }
-        
-        .bar-value {
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Comic Neue', cursive;
-            font-size: 0.9rem;
-            color: var(--gold);
-            font-weight: 600;
-        }
-        
-        /* 花纹装饰 */
-        .ornament {
-            position: absolute;
-            opacity: 0.05;
-            z-index: 0;
-            pointer-events: none;
-        }
-        
-        .ornament-1 {
-            top: 10%;
-            left: 5%;
-            font-size: 120px;
-            transform: rotate(-15deg);
-        }
-        
-        .ornament-2 {
-            bottom: 15%;
-            right: 5%;
-            font-size: 150px;
-            transform: rotate(10deg);
-        }
-        
-        /* 图片网格 */
-        .image-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .grid-image {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .grid-image:hover {
-            transform: scale(1.05);
-        }
-        
-        /* 里程碑时间线 */
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            margin: 20px 0;
-            position: relative;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--gold);
-            transform: translateX(-50%);
-        }
-        
-        .milestone {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        .milestone:nth-child(odd) {
-            flex-direction: row;
-        }
-        
-        .milestone:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        
-        .milestone-content {
-            flex: 1;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .milestone-dot {
-            width: 20px;
-            height: 20px;
-            background: var(--gold);
-            border-radius: 50%;
-            margin: 0 20px;
-            flex-shrink: 0;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 0 0 5px rgba(212, 175, 55, 0.2);
-        }
-        
-        .milestone-title {
-            font-family: 'Comic Neue', cursive;
-            font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 5px;
-        }
-        
-        .milestone-desc {
-            font-family: 'Comic Neue', cursive;
-            font-size: 0.9rem;
-            color: #4a5568;
-        }
-        
-        /* 角鲨烯来源横屏滚动区域 */
-        .horizontal-scroll-section {
-            min-height: 100vh;
-            width: 100%;
-            padding: 80px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .horizontal-scroll-container {
-            display: flex;
-            width: 300vw; /* 三倍宽度，容纳三个面板 */
-            height: 100%;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .horizontal-panel {
-            width: 100vw;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-            position: relative;
-        }
-        
-        .horizontal-panel::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            z-index: -1;
-        }
-        
-        .horizontal-content {
-            max-width: 800px;
-            text-align: center;
-            padding: 40px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .horizontal-content::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 12px;
-            padding: 3px;
-            background: linear-gradient(45deg, var(--gold), #f8de7e, var(--gold), #daa520, var(--gold));
-            -webkit-mask: 
-                linear-gradient(#fff 0 0) content-box, 
-                linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            z-index: -1;
-        }
-        
-        .horizontal-image {
-            width: 100%;
-            max-width: 500px;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin: 20px 0;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            transition: transform 0.5s ease;
-        }
-        
-        .horizontal-image:hover {
-            transform: scale(1.03);
-        }
-        
-        .horizontal-indicators {
-            position: fixed;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 15px;
-            z-index: 100;
-        }
-        
-        .horizontal-dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: rgba(212, 175, 55, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .horizontal-dot.active {
-            background: var(--gold);
-            transform: scale(1.3);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-        }
-        
-        .horizontal-nav {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 30px;
-            z-index: 100;
-            pointer-events: none;
-        }
-        
-        .horizontal-nav-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            pointer-events: auto;
-        }
-        
-        .horizontal-nav-btn:hover {
-            background: var(--gold);
-            color: white;
-            transform: scale(1.1);
-        }
-        
         /* 响应式设计 */
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; margin-bottom: 1.2rem; }
-            h2 { font-size: 1.8rem; margin-bottom: 1.5rem; }
-            p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem; }
-            .content { 
+            .scroll-content {
                 flex-direction: column;
-                padding: 30px 20px; 
-                width: 92%; 
+                text-align: center;
+                margin: 10px 0;
             }
-            .content-left, .content-right {
-                width: 100%;
+            
+            .scroll-content.reverse {
+                flex-direction: column;
             }
-            .scroll-hint { bottom: 30px; }
-            .stats-container { flex-direction: column; gap: 15px; align-items: center; }
-            .stat-card { width: 80%; }
-            .pie-chart { width: 130px; height: 130px; }
-            .pie-chart::before { width: 90px; height: 90px; top: 20px; left: 20px; }
-            .ornament { display: none; }
+            
+            .scroll-image {
+                max-width: 100%;
+                height: 250px;
+                margin-bottom: 20px;
+            }
+            
+            .scroll-text {
+                padding: 0 20px;
+            }
+            
+            .scroll-text h2 {
+                font-size: 2rem;
+            }
+            
+            .scroll-text p {
+                font-size: 1.1rem;
+            }
+            
             .cover-title { font-size: 2.5rem; }
             .cover-subtitle { font-size: 1.2rem; }
             .cover-tagline { font-size: 1.1rem; }
-            .image-grid { grid-template-columns: 1fr; }
-            .timeline::before { left: 20px; }
-            .milestone, .milestone:nth-child(odd), .milestone:nth-child(even) {
-                flex-direction: row;
-            }
-            .milestone-dot { margin-left: 0; margin-right: 15px; }
-            .horizontal-content {
-                padding: 25px 20px;
-            }
-            .horizontal-image {
-                height: 200px;
-            }
-            .horizontal-nav-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
         }
     </style>
 </head>
 <body>
     <!-- 加载动画 -->
     <div class="loading-overlay" id="loadingOverlay">
-        <img src="assets/your_loading_gif.svg" 
+        <img src="_includes/your_loading_gif.gif" 
              alt="Loading animation" 
              class="loading-gif"
              id="loadingGif">
@@ -1174,329 +633,80 @@
         </div>
     </section>
 
-    <!-- 主要内容区域 -->
+    <!-- 全屏滚动区域 -->
     <div class="progress-bar"></div>
     
-    <div class="main-content">
-        <!-- 动态生成装饰元素 -->
-        <div id="decorations"></div>
-        
-        <!-- 花纹装饰 -->
-        <div class="ornament ornament-1">❀</div>
-        <div class="ornament ornament-2">♡</div>
-        
-        <!-- 场景1: 介绍 -->
-        <section id="scene1" class="content-section">
-            <div class="content">
-                <div class="content-left">
-                    <h1>Our Innovation</h1>
-                    <h2>Upcycling Waste to Beauty</h2>
-                    <p>We use <span class="highlight">synthetic biology</span> to upgrade waste cooking oil (WCO) into cosmetic-grade squalane, protecting marine ecosystems while enabling low-carbon supply chains.</p>
-                    
-                    <div class="stats-container">
-                        <div class="stat-card">
-                            <div class="stat-value"><span class="counter" data-target="100">0</span>%</div>
-                            <div class="stat-label">Sustainable source</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value"><span class="counter" data-target="80">0</span>%</div>
-                            <div class="stat-label">Reduced carbon footprint</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-right">
-                    <h3>Key Advantages</h3>
-                    <p><span class="highlight">Upcycling:</span> Using waste cooking oil as raw material reduces costs and carbon footprint.</p>
-                    <p><span class="highlight">Green Alternative:</span> Replaces traditional shark liver sources, protecting marine biodiversity.</p>
-                    <p><span class="highlight">Efficient Chassis:</span> Engineered Yarrowia lipolytica for targeted squalane synthesis.</p>
-                    <p><span class="highlight">Industry Integration:</span> Connects with cosmetics and vaccine adjuvant applications.</p>
-                    
-                    <button class="action-btn">
-                        <i class="fas fa-leaf"></i> Learn More
-                    </button>
-                </div>
+    <!-- 场景1: 介绍 -->
+    <section class="fullscreen-scroll-section" id="scene1">
+        <div class="scroll-bg" style="background: linear-gradient(to bottom, #D4AF37, #E5D9B6);"></div>
+        <div class="scroll-content">
+            <img src="https://static.igem.wiki/teams/5569/description/image1.webp" alt="Our Innovation" class="scroll-image">
+            <div class="scroll-text">
+                <h2>Our Innovation</h2>
+                <p>We use synthetic biology to upgrade waste cooking oil (WCO) into cosmetic-grade squalane, protecting marine ecosystems while enabling low-carbon supply chains.</p>
             </div>
-        </section>
-        
-        <!-- 场景2: 角鲨烷功效 -->
-        <section id="scene2" class="content-section">
-            <div class="content">
-                <div class="content-left">
-                    <h2>Squalane Benefits</h2>
-                    <p><span class="highlight">Deep Moisturization:</span> Squalane closely resembles human sebum, allowing for quick absorption and strengthening the skin barrier.</p>
-                    <p><span class="highlight">Gentle & Non-irritating:</span> Suitable for sensitive skin and infant care products.</p>
-                    <p><span class="highlight">Lightweight Texture:</span> Non-greasy feel that helps improve dryness and roughness.</p>
-                    <p><span class="highlight">Versatile Applications:</span> Widely used in skincare, makeup, sun protection, and haircare.</p>
-                </div>
-                <div class="content-right">
-                    <div class="stats-container">
-                        <div class="stat-card">
-                            <div class="stat-value"><span class="counter" data-target="24">0</span>h</div>
-                            <div class="stat-label">Long-lasting hydration</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value"><span class="counter" data-target="100">0</span>%</div>
-                            <div class="stat-label">Skin compatibility</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value"><span class="counter" data-target="40">0</span>%</div>
-                            <div class="stat-label">Reduction in water loss</div>
-                        </div>
-                    </div>
-                    
-                    <div class="pie-chart-container">
-                        <div class="pie-chart" style="background: conic-gradient(var(--gold) 0% 85%, rgba(212, 175, 55, 0.2) 85% 100%);">
-                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 1.5rem; color: var(--gold); font-weight: bold;">
-                                85%
-                            </div>
-                        </div>
-                    </div>
-                    <p style="font-size: 1rem;">User satisfaction rate</p>
-                </div>
+        </div>
+    </section>
+    
+    <!-- 场景2: 角鲨烷功效 -->
+    <section class="fullscreen-scroll-section" id="scene2">
+        <div class="scroll-bg" style="background: linear-gradient(to bottom, #DBC98F, #E8E1CA);"></div>
+        <div class="scroll-content reverse">
+            <img src="https://static.igem.wiki/teams/5569/description/image2.webp" alt="Squalane Benefits" class="scroll-image">
+            <div class="scroll-text">
+                <h2>Squalane Benefits</h2>
+                <p>Squalane closely resembles human sebum, allowing for quick absorption and strengthening the skin barrier. It's gentle, non-irritating, and suitable for sensitive skin and infant care products.</p>
             </div>
-        </section>
-        
-        <!-- 场景3: 市场需求 -->
-        <section id="scene3" class="content-section">
-            <div class="content">
-                <div class="content-left">
-                    <h2>Market Potential</h2>
-                    <p>The global skincare and cosmetics industry's demand for green ingredients continues to grow, with sustainable and low-carbon supply chains becoming industry consensus and trend.</p>
-                    
-                    <div class="bar-chart">
-                        <div class="bar" style="height: 70px;">
-                            <span class="bar-value">$120B</span>
-                            <span class="bar-label">2022</span>
-                        </div>
-                        <div class="bar" style="height: 90px;">
-                            <span class="bar-value">$140B</span>
-                            <span class="bar-label">2024</span>
-                        </div>
-                        <div class="bar" style="height: 110px;">
-                            <span class="bar-value">$170B</span>
-                            <span class="bar-label">2026</span>
-                        </div>
-                        <div class="bar" style="height: 140px;">
-                            <span class="bar-value">$200.6B</span>
-                            <span class="bar-label">2032</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-right">
-                    <p>The global squalane market is expected to reach <span class="highlight">$200.6 billion</span> by 2032, with a compound annual growth rate of 5.65%. The skincare and cosmetics industry is the main driver of the squalane market.</p>
-                    
-                    <div class="stats-container">
-                        <div class="stat-card">
-                            <div class="stat-value">$<span class="counter" data-target="200.6">0</span>B</div>
-                            <div class="stat-label">Market by 2032</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value"><span class="counter" data-target="5.65">0</span>%</div>
-                            <div class="stat-label">CAGR</div>
-                        </div>
-                    </div>
-                    
-                    <p>The shift toward sustainable and natural ingredients in cosmetics is accelerating market growth for eco-friendly squalane alternatives.</p>
-                </div>
+        </div>
+    </section>
+    
+    <!-- 场景3: 市场需求 -->
+    <section class="fullscreen-scroll-section" id="scene3">
+        <div class="scroll-bg" style="background: linear-gradient(to bottom, #E1D6B4, #EDE9DE);"></div>
+        <div class="scroll-content">
+            <img src="https://static.igem.wiki/teams/5569/description/image3.webp" alt="Market Potential" class="scroll-image">
+            <div class="scroll-text">
+                <h2>Market Potential</h2>
+                <p>The global skincare and cosmetics industry's demand for green ingredients continues to grow, with sustainable and low-carbon supply chains becoming industry consensus and trend.</p>
             </div>
-        </section>
-        
-        <!-- 场景4: 来源分析 - 横屏滚动部分 -->
-        <section id="scene4" class="horizontal-scroll-section">
-            <div class="horizontal-scroll-container" id="horizontalScrollContainer">
-                <!-- 面板1: 鲨鱼来源 -->
-                <div class="horizontal-panel">
-                    <div class="horizontal-content">
-                        <h2>Traditional Source: Shark Liver</h2>
-                        <p>For decades, squalene was primarily sourced from shark liver oil, particularly from deep-sea sharks. This practice has significant ecological consequences.</p>
-                        <div class="placeholder-image" style="width: 100%; height: 300px; background: linear-gradient(45deg, #6b7280, #9ca3af); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; margin: 20px 0;">
-                            Shark Liver Image
-                        </div>
-                        <div class="stats-container">
-                            <div class="stat-card">
-                                <div class="stat-value"><span class="counter" data-target="3000">0</span></div>
-                                <div class="stat-label">Sharks needed for 1 ton</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-value"><span class="counter" data-target="40">0</span>%</div>
-                                <div class="stat-label">Market share</div>
-                            </div>
-                        </div>
-                        <p>This unsustainable practice threatens deep-sea shark populations and disrupts marine ecosystems.</p>
-                    </div>
-                </div>
-                
-                <!-- 面板2: 植物来源 -->
-                <div class="horizontal-panel">
-                    <div class="horizontal-content">
-                        <h2>Plant-Based Sources</h2>
-                        <p>Plant-based squalene is extracted from sources like olives, sugarcane, and rice bran. While more sustainable than shark-derived squalene, these sources have limitations.</p>
-                        <div class="placeholder-image" style="width: 100%; height: 300px; background: linear-gradient(45deg, #84cc16, #a3e635); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; margin: 20px 0;">
-                            Plant Sources Image
-                        </div>
-                        <div class="stats-container">
-                            <div class="stat-card">
-                                <div class="stat-value"><span class="counter" data-target="60">0</span>%</div>
-                                <div class="stat-label">Plant-based market share</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-value"><span class="counter" data-target="30">0</span>%</div>
-                                <div class="stat-label">From olive oil</div>
-                            </div>
-                        </div>
-                        <p>Plant-based production competes with food sources, requires large land areas, and is subject to seasonal variations and price fluctuations.</p>
-                    </div>
-                </div>
-                
-                <!-- 面板3: 合成生物学 -->
-                <div class="horizontal-panel">
-                    <div class="horizontal-content">
-                        <h2>Synthetic Biology Solution</h2>
-                        <p>Our approach uses engineered Yarrowia lipolytica to convert waste cooking oil into high-purity squalane through fermentation.</p>
-                        <div class="placeholder-image" style="width: 100%; height: 300px; background: linear-gradient(45deg, #3b82f6, #60a5fa); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; margin: 20px 0;">
-                            Microbial Factory Image
-                        </div>
-                        <div class="stats-container">
-                            <div class="stat-card">
-                                <div class="stat-value"><span class="counter" data-target="80">0</span>%</div>
-                                <div class="stat-label">Carbon reduction</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-value">$<span class="counter" data-target="500">0</span></div>
-                                <div class="stat-label">Cost saving per ton</div>
-                            </div>
-                        </div>
-                        <p>This method provides a sustainable, scalable, and cost-effective alternative that doesn't compete with food resources or harm marine ecosystems.</p>
-                    </div>
-                </div>
+        </div>
+    </section>
+    
+    <!-- 场景4: 来源分析 -->
+    <section class="fullscreen-scroll-section" id="scene4">
+        <div class="scroll-bg" style="background: linear-gradient(to bottom, #E8E3CF, #F1EEE3);"></div>
+        <div class="scroll-content reverse">
+            <img src="https://static.igem.wiki/teams/5569/description/image4.webp" alt="Squalane Sources" class="scroll-image">
+            <div class="scroll-text">
+                <h2>Sustainable Sources</h2>
+                <p>Our approach uses engineered Yarrowia lipolytica to convert waste cooking oil into high-purity squalane through fermentation, providing a sustainable alternative to shark-derived squalane.</p>
             </div>
-            
-            <!-- 横屏导航按钮 -->
-            <div class="horizontal-nav">
-                <div class="horizontal-nav-btn" id="prevPanel">❮</div>
-                <div class="horizontal-nav-btn" id="nextPanel">❯</div>
+        </div>
+    </section>
+    
+    <!-- 场景5: 废油污染 -->
+    <section class="fullscreen-scroll-section" id="scene5">
+        <div class="scroll-bg" style="background: linear-gradient(to bottom, #EFECE1, #F7F5F0);"></div>
+        <div class="scroll-content">
+            <img src="https://static.igem.wiki/teams/5569/description/image5.webp" alt="Waste Oil Crisis" class="scroll-image">
+            <div class="scroll-text">
+                <h2>Waste Oil Crisis</h2>
+                <p>China produces approximately 11-12 million tons of waste cooking oil annually. Improper handling causes serious food safety risks and environmental pollution.</p>
             </div>
-            
-            <!-- 横屏指示器 -->
-            <div class="horizontal-indicators">
-                <div class="horizontal-dot active" data-index="0"></div>
-                <div class="horizontal-dot" data-index="1"></div>
-                <div class="horizontal-dot" data-index="2"></div>
+        </div>
+    </section>
+    
+    <!-- 场景6: 项目简述 -->
+    <section class="fullscreen-scroll-section" id="scene6">
+        <div class="scroll-bg" style="background: linear-gradient(to bottom, #F5F3EC, white);"></div>
+        <div class="scroll-content reverse">
+            <img src="https://static.igem.wiki/teams/5569/description/image6.webp" alt="Our Solution" class="scroll-image">
+            <div class="scroll-text">
+                <h2>Our Solution</h2>
+                <p>Using engineered Yarrowia lipolytica as chassis, we process waste oil through lipase expression and flux redirection to produce high-quality squalane through fermentation.</p>
             </div>
-        </section>
-        
-        <!-- 场景5: 废油污染 -->
-        <section id="scene5" class="content-section">
-            <div class="content">
-                <div class="content-left">
-                    <h2>Waste Oil Crisis</h2>
-                    <p>China produces approximately <span class="highlight">11-12 million tons</span> of waste cooking oil annually. Improper handling not only causes serious food safety risks (illegal re-entry into the food chain) but also leads to environmental pollution (water eutrophication, odorous gas emissions) and public health risks.</p>
-                    
-                    <div class="bar-chart">
-                        <div class="bar" style="height: 120px;">
-                            <span class="bar-value">75%</span>
-                            <span class="bar-label">Water pollution</span>
-                        </div>
-                        <div class="bar" style="height: 90px;">
-                            <span class="bar-value">60%</span>
-                            <span class="bar-label">Soil degradation</span>
-                        </div>
-                        <div class="bar" style="height: 60px;">
-                            <span class="bar-value">40%</span>
-                            <span class="bar-label">Marine life impact</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-right">
-                    <h3>Current Disposal Methods</h3>
-                    <p><span class="highlight">Incineration/Power Generation:</span> High energy consumption, pollutant emissions</p>
-                    <p><span class="highlight">Conversion to Biodiesel:</span> Relatively mature technology but with high industry concentration and cost pressures</p>
-                    <p><span class="highlight">Simple Physical Recovery/Landfilling:</span> Prone to secondary pollution, poor economic benefits</p>
-                    
-                    <div class="stats-container">
-                        <div class="stat-card">
-                            <div class="stat-value"><span class="counter" data-target="12">0</span>M</div>
-                            <div class="stat-label">Tons of waste oil/year</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">$<span class="counter" data-target="500">0</span>M</div>
-                            <div class="stat-label">Annual disposal cost</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 场景6: 项目简述 -->
-        <section id="scene6" class="content-section">
-            <div class="content">
-                <div class="content-left">
-                    <h2>Our Solution</h2>
-                    <p><span class="highlight">Chassis:</span> Engineered Yarrowia lipolytica, lipid metabolism friendly, strong tolerance</p>
-                    <p><span class="highlight">Raw Material Processing:</span> Expressing lipases to decompose oils, releasing free fatty acids (FFA) and glycerol into the metabolic network</p>
-                    <p><span class="highlight">Flux Redirection:</span></p>
-                    <ul style="text-align: left; margin-left: 20px; margin-bottom: 20px;">
-                        <li>MVA pathway enhancement: Upregulation of key nodes like HMG-CoA reductase</li>
-                        <li>Compartmentalization strategy: Anchoring key enzymes/pathway components in peroxisomes and lipid droplets</li>
-                        <li>Energy and reducing power optimization: Enhancing NADPH/ATP supply</li>
-                        <li>Stress resistance and homeostasis: Enhancing solvent/lipid load tolerance</li>
-                    </ul>
-                </div>
-                <div class="content-right">
-                    <h3>Supporting Work</h3>
-                    <p><span class="highlight">Modeling:</span> Flux balance and key parameter sensitivity analysis</p>
-                    <p><span class="highlight">Hardware:</span> Pretreatment modules, online monitoring and cost assessment</p>
-                    <p><span class="highlight">Human Practices & Education:</span> Dialogue and科普 with industry, public and regulators</p>
-                    
-                    <h3 style="margin-top: 30px;">Project Milestones</h3>
-                    <div class="timeline">
-                        <div class="milestone">
-                            <div class="milestone-content">
-                                <div class="milestone-title">M1</div>
-                                <div class="milestone-desc">Pathway component cloning and chassis modification</div>
-                            </div>
-                            <div class="milestone-dot"></div>
-                        </div>
-                        <div class="milestone">
-                            <div class="milestone-content">
-                                <div class="milestone-title">M2</div>
-                                <div class="milestone-desc">Lipolysis-carbon supply module coordination</div>
-                            </div>
-                            <div class="milestone-dot"></div>
-                        </div>
-                        <div class="milestone">
-                            <div class="milestone-content">
-                                <div class="milestone-title">M3</div>
-                                <div class="milestone-desc">Compartmentalized expression verification and phenotype testing</div>
-                            </div>
-                            <div class="milestone-dot"></div>
-                        </div>
-                        <div class="milestone">
-                            <div class="milestone-content">
-                                <div class="milestone-title">M4</div>
-                                <div class="milestone-desc">Shake flask to pilot scale process exploration</div>
-                            </div>
-                            <div class="milestone-dot"></div>
-                        </div>
-                        <div class="milestone">
-                            <div class="milestone-content">
-                                <div class="milestone-title">M5</div>
-                                <div class="milestone-desc">Squalane extraction, purification and performance verification</div>
-                            </div>
-                            <div class="milestone-dot"></div>
-                        </div>
-                        <div class="milestone">
-                            <div class="milestone-content">
-                                <div class="milestone-title">M6</div>
-                                <div class="milestone-desc">Application scenario sample evaluation and standard alignment</div>
-                            </div>
-                            <div class="milestone-dot"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+        </div>
+    </section>
     
     <div class="footer-note">
         from waste oil to sustainable squalane
@@ -1533,116 +743,13 @@
                 navToggle.classList.toggle('active');
             });
             
-            // 横屏滚动控制
-            const horizontalContainer = document.getElementById('horizontalScrollContainer');
-            const horizontalDots = document.querySelectorAll('.horizontal-dot');
-            const prevBtn = document.getElementById('prevPanel');
-            const nextBtn = document.getElementById('nextPanel');
-            let currentPanel = 0;
-            
-            function updateHorizontalNavigation() {
-                // 更新容器位置
-                horizontalContainer.style.transform = `translateX(-${currentPanel * 100}vw)`;
-                
-                // 更新指示器
-                horizontalDots.forEach((dot, index) => {
-                    if (index === currentPanel) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
-            }
-            
-            // 导航按钮事件
-            prevBtn.addEventListener('click', () => {
-                if (currentPanel > 0) {
-                    currentPanel--;
-                    updateHorizontalNavigation();
-                }
-            });
-            
-            nextBtn.addEventListener('click', () => {
-                if (currentPanel < horizontalDots.length - 1) {
-                    currentPanel++;
-                    updateHorizontalNavigation();
-                }
-            });
-            
-            // 指示器点击事件
-            horizontalDots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentPanel = index;
-                    updateHorizontalNavigation();
-                });
-            });
-            
-            // 横屏触摸滑动支持
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            horizontalContainer.addEventListener('touchstart', e => {
-                touchStartX = e.changedTouches[0].screenX;
-            });
-            
-            horizontalContainer.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            });
-            
-            function handleSwipe() {
-                const diffX = touchStartX - touchEndX;
-                
-                // 左滑 - 下一面板
-                if (diffX > 50 && currentPanel < horizontalDots.length - 1) {
-                    currentPanel++;
-                    updateHorizontalNavigation();
-                }
-                
-                // 右滑 - 上一面板
-                if (diffX < -50 && currentPanel > 0) {
-                    currentPanel--;
-                    updateHorizontalNavigation();
-                }
-            }
-            
-            // 数字计数动画
-            function animateCounters() {
-                const counters = document.querySelectorAll('.counter');
-                const speed = 200; // 数值越大速度越慢
-                
-                counters.forEach(counter => {
-                    const target = +counter.getAttribute('data-target');
-                    let count = 0;
-                    
-                    const updateCount = () => {
-                        const increment = target / speed;
-                        
-                        if (count < target) {
-                            count += increment;
-                            if (counter.parentElement.classList.contains('stat-value')) {
-                                counter.innerText = Math.ceil(count).toLocaleString();
-                            } else {
-                                counter.innerText = Math.ceil(count);
-                            }
-                            setTimeout(updateCount, 1);
-                        } else {
-                            if (counter.parentElement.classList.contains('stat-value')) {
-                                counter.innerText = target.toLocaleString();
-                            } else {
-                                counter.innerText = target;
-                            }
-                        }
-                    };
-                    
-                    updateCount();
-                });
-            }
-            
             // 滚动进度条
             const progressBar = document.querySelector('.progress-bar');
             
-            function updateProgressBar() {
+            // 滚动动画效果
+            const scrollContents = document.querySelectorAll('.scroll-content');
+            
+            function handleScroll() {
                 const windowHeight = window.innerHeight;
                 const documentHeight = document.documentElement.scrollHeight - windowHeight;
                 const scrollPosition = window.scrollY;
@@ -1651,82 +758,29 @@
                 progressBar.style.width = `${progress}%`;
                 
                 // 检测元素是否进入视口并触发动画
-                document.querySelectorAll('.content-section').forEach(section => {
-                    const rect = section.getBoundingClientRect();
+                scrollContents.forEach(content => {
+                    const rect = content.getBoundingClientRect();
                     if (rect.top < windowHeight * 0.8 && rect.bottom > 0) {
-                        section.querySelectorAll('.counter').forEach(counter => {
-                            if (!counter.classList.contains('animated')) {
-                                counter.classList.add('animated');
-                                const target = +counter.getAttribute('data-target');
-                                let count = 0;
-                                
-                                const updateCount = () => {
-                                    const increment = target / 100;
-                                    
-                                    if (count < target) {
-                                        count += increment;
-                                        if (counter.parentElement.classList.contains('stat-value')) {
-                                            counter.innerText = Math.ceil(count).toLocaleString();
-                                        } else {
-                                            counter.innerText = Math.ceil(count);
-                                        }
-                                        setTimeout(updateCount, 10);
-                                    } else {
-                                        if (counter.parentElement.classList.contains('stat-value')) {
-                                            counter.innerText = target.toLocaleString();
-                                        } else {
-                                            counter.innerText = target;
-                                        }
-                                    }
-                                };
-                                
-                                updateCount();
-                            }
-                        });
+                        content.classList.add('visible');
+                    }
+                });
+                
+                // 更新背景渐变
+                const sections = document.querySelectorAll('.fullscreen-scroll-section');
+                const scrollPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+                
+                sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                        // 当前激活的部分
                     }
                 });
             }
             
-            // 生成装饰元素
-            function generateDecorations() {
-                const container = document.querySelector('.main-content');
-                const containerWidth = container.offsetWidth;
-                const containerHeight = container.offsetHeight;
-                
-                // 清除现有装饰
-                const decorationsContainer = document.getElementById('decorations');
-                decorationsContainer.innerHTML = '';
-                
-                // 创建装饰字符
-                const icons = ['✦', '❀', '♡', '❁', '✿', '♣', '♦', '♥', '♠', '☘', '☙', '❧'];
-                for (let i = 0; i < 15; i++) {
-                    const icon = document.createElement('div');
-                    icon.classList.add('decoration-icon');
-                    icon.textContent = icons[Math.floor(Math.random() * icons.length)];
-                    
-                    // 随机位置
-                    const left = Math.random() * containerWidth;
-                    const top = Math.random() * containerHeight;
-                    
-                    icon.style.left = `${left}px`;
-                    icon.style.top = `${top}px`;
-                    icon.style.animationDelay = `${Math.random() * 4}s`;
-                    icon.style.fontSize = `${Math.random() * 20 + 15}px`;
-                    icon.style.color = `rgba(212, 175, 55, ${Math.random() * 0.2 + 0.1})`;
-                    
-                    decorationsContainer.appendChild(icon);
-                }
-            }
-            
-            // 初始化
-            generateDecorations();
-            animateCounters();
-            
-            // 监听滚动事件
-            window.addEventListener('scroll', updateProgressBar);
-            
-            // 窗口大小调整时重新生成装饰
-            window.addEventListener('resize', generateDecorations);
+            // 初始化滚动效果
+            window.addEventListener('scroll', handleScroll);
+            // 初始触发一次
+            handleScroll();
         });
     </script>
 </body>
