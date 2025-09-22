@@ -90,7 +90,7 @@ defaults:
 encoding: utf-8 # Make sure the encoding is right
 lang: en-US # Set the site language
 title: "iGEM HUST-China 2025" # Site name or title, also used in jekyll-seo-tag
-logo: "/assets/logos/logo.svg" # Site logo, also used in jekyll-seo-tag
+logo: "https://static.igem.wiki/teams/5569/index/logopic.webp" # Site logo, also used in jekyll-seo-tag
 description: "Welcome to iGEM HUST-China 2025 wiki! It's still under construction. Please stay tuned for more information." # Site description and default description, also used in jekyll-seo-tag
 url: "https://2025.igem.wiki/" # Site url, also used in jekyll-seo-tag
 baseurl: "/hust-china"
@@ -104,14 +104,11 @@ css_inline: false # Will insert all styles into a single <style> block in the <h
 
 # 8. Site favicons & manifest icons
 favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
-  16: "/assets/logos/logo@16px.png"
-  32: "/assets/logos/logo@32px.png"
-  96: "/assets/logos/logo@96px.png"
-  120: "/assets/logos/logo@120px.png"
-  144: "/assets/logos/logo@144px.png"
-  180: "/assets/logos/logo@180px.png"
-  512: "/assets/logos/logo@512px.png"
-  1024: "/assets/logos/logo@1024px.png"
+  16: "https://static.igem.wiki/teams/5569/logo/logo-16px.webp"
+  32: "https://static.igem.wiki/teams/5569/logo/logo-32px.webp"
+  96: "https://static.igem.wiki/teams/5569/logo/logo-96px.webp"
+  120: "https://static.igem.wiki/teams/5569/logo/logo-120px.webp"
+  144: "https://static.igem.wiki/teams/5569/logo/logo-144px.webp"
 
 # 9. Site navigation
 navigation_header:
