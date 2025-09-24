@@ -117,7 +117,9 @@ The formula $E=mc^2$ is well-known.
 
 其它文字234
 
-<iframe title="Grand Jamboree 2024 | Keynotes" width="560" height="315" src="https://video.igem.org/video-playlists/embed/rC8gBRRXYLypxdqne7JgH6" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
+<center>
+  <iframe title="Grand Jamboree 2024 | Keynotes" width="560" height="315" src="https://video.igem.org/video-playlists/embed/rC8gBRRXYLypxdqne7JgH6" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
+</center>
 
 ## Members
 
