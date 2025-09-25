@@ -60,13 +60,13 @@ excerpt: "Meet the team behind our project."
 
 {% include members-people.html 
    name="Haoran Nie" 
-   description="Per aspera, ad astra." 
+   description="Ad astra abyssosque." 
    image="https://static.igem.wiki/teams/4595/wiki/members/7.jpg" 
    image_position="right" %}
 
 {% include members-people.html 
    name="Zhengdong Wu" 
-   description="Dream big, stay focus." 
+   description="actions speak louder than words." 
    image="https://static.igem.wiki/teams/4595/wiki/members/10.jpg" 
    image_position="left" %}
 
@@ -89,127 +89,127 @@ excerpt: "Meet the team behind our project."
 
 {% include members-people.html
    name="Yuhan Huang"
-   description="Carpe diem."
+   description="Not all those who wander are lost. It's just wanderlust."
    image="https://static.igem.wiki/teams/5175/resources/members/yingying-he.webp"
    image_position="right" %}
 
 {% include members-people.html
    name="Longcheng Sun"
-   description="Thank God it's finally over."
+   description="peace&love."
    image="https://static.igem.wiki/teams/5175/resources/members/shuo-yan.webp"
    image_position="left" %}
 
 {% include members-people.html
    name="He Wu"
-   description="It must be exhausting always rooting for the anti-hero."
+   description="Once iGEMer，always iGEMer."
    image="https://static.igem.wiki/teams/5175/resources/members/yuhan-zou.webp"
    image_position="right" %}
 
 {% include members-people.html
    name="Jiarui Wu"
-   description="In every lost soul there's the bone of a miracle."
+   description="Au milieu de l'hiver, j'apprenais enfin qu'il y avait en moi un été invincible."
    image="https://static.igem.wiki/teams/5175/resources/members/suyuan-jiang.webp"
    image_position="left" %}
 
 {% include members-people.html
    name="Ziheng Yu"
-   description="Love the life you live, and live the life you love."
+   description="Don’t fear detours — if waste oil can turn into squalane, imagine what your life can become."
    image="https://static.igem.wiki/teams/5175/resources/members/shaoheng-lyu.webp"
    image_position="right" %}
 
 {% include members-people.html
    name="Haixi Zhao"
-   description="Dream about the future."
+   description="And miles to go before I sleep."
    image="https://static.igem.wiki/teams/5175/resources/members/zeyu-miao.webp"
    image_position="left" %}
 
 {% include members-people.html
    name="Leyan Zheng"
-   description="When your heart is set on something, you get closer to your goal with each passing day."
+   description="iGEM has polished me."
    image="https://static.igem.wiki/teams/5175/resources/members/haoran-nie.webp"
    image_position="right" %}
 
 {% include members-people.html
    name="Yilong Chen"
-   description="The world opens itself before those with noble hearts."
+   description="Response = f(stimulus, Charles)."
    image="https://static.igem.wiki/teams/5175/resources/members/xinghao-xiong.webp"
    image_position="left" %}
 
 {% include members-people.html
    name="Jiayi Gao"
-   description="It's no problem of you to have no lofty aspirations and goals, but as long as you step by step to do what needs to be done every day and strive for something you have never tried before, you will reach the end of blooming flowers for thousands of miles."
+   description="This will be a romantic story like none that has come before."
    image="https://static.igem.wiki/teams/5175/resources/members/jiayin-zhang.webp"
    image_position="right" %}
 
 {% include members-people.html
    name="Duoduo Li"
-   description="What is lost cannot be retrieved, but the place where it was lost can be revisited. Don’t be afraid to step into the unknown, for that is the meaning of our adventure. Who I become, my future, is for me to decide."
+   description="Live and Learn."
    image="https://static.igem.wiki/teams/5175/resources/members/jiayue-su.webp"
    image_position="left" %}
 
 {% include members-people.html
    name="Yichuan Ma"
-   description="The 21st century is the century of biology！"
+   description="Though the winds of adversity blow strong, never give up on life."
    image="https://static.igem.wiki/teams/5175/resources/members/leyan-zheng.webp"
    image_position="right" %}
 
 {% include members-people.html
    name="Zexuan Song"
-   description="Live, laugh,and dream. It is because we are together that we have the courage to go on,which is already the most precious thing."
+   description="it is not the beginning of the end, but the end of the beginning."
    image="https://static.igem.wiki/teams/5175/resources/members/liting-feng.webp"
    image_position="left" %}
 
 {% include members-people.html
    name="Hanjing Wen"
-   description="Inspired by Nature Driven by Science"
+   description="Always on the road, always moving forward."
    image="https://static.igem.wiki/teams/5175/resources/members/longcheng-sun.webp"
    image_position="right" %}
 
 {% include members-people.html
    name="Yixuan Wang"
-   description="Give me your best shot."
+   description="Working hard is important,but there's something that matters even more:believing in yourself."
    image="https://static.igem.wiki/teams/5175/resources/members/nanxi-yi.webp"
    image_position="left" %}
 
 {% include members-people.html
    name="Huangpeng Xie"
-   description="O gentlemen, the time of life is short; To spend that shortness basely were too long"
+   description="Just do it！"
    image="https://static.igem.wiki/teams/5175/resources/members/yifeng-xiong.webp"
    image_position="right" %}
 
 {% include members-people.html
    name="Aoru Yang"
-   description="just do it"
+   description="Our true output wasn't just a wiki and a poster; it was the number of times Adobe crashed at 3 a.m. (It was worth it.)"
    image="https://static.igem.wiki/teams/4595/wiki/members/33.jpg"
    image_position="left" %}
 
 {% include members-people.html
    name="Yiting Yang"
-   description="Always be curious and be in awe of the universe."
+   description="A journey of a thousand miles begins with a single step."
    image="https://static.igem.wiki/teams/5175/resources/members/pinrong-qian.webp"
    image_position="right" %}
 
 {% include members-people.html
    name="Shijing Zhao"
-   description="Do not go gentle into that good night."
+   description="Cleave the darkness and seize the light."
    image="https://static.igem.wiki/teams/5175/resources/members/jiarui-wu.webp"
    image_position="left" %}
 
 {% include members-people.html
    name="Shengzhe Zou"
-   description="Hello world!"
+   description="Every story’s ending is bound to be good; and if it isn’t, that simply means the final chapter hasn’t come yet."
    image="https://static.igem.wiki/teams/5175/resources/members/tianhao-wang.webp"
    image_position="right" %}
 
 {% include members-people.html
    name="Wenhui Zhao"
-   description="Do everything sincerely，think like Descartes，and fight windmills like Don Quixote."
+   description="Growth is a long process."
    image="https://static.igem.wiki/teams/5175/resources/members/tianxi-kang.webp"
    image_position="left" %}
 
 {% include members-people.html
    name="Yuyao Zhou"
-   description="Grow in silence"
+   description="Every cloud has a silver lining."
    image="https://static.igem.wiki/teams/5175/resources/members/tianxu-yuan.webp"
    image_position="right" %}
 
