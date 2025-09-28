@@ -74,15 +74,15 @@
             z-index: -1;
         }
         
-        /* 导航按钮样式 */
+        /* 导航按钮样式 - 调整图标大小 */
         .nav-toggle {
             position: fixed;
             top: 25px;
             left: 25px;
             background: white;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 70px; /* 增加宽度 */
+            height: 70px; /* 增加高度 */
             border-radius: 50%;
             display: flex;
             flex-direction: column;
@@ -98,14 +98,19 @@
         }
 
         .nav-toggle img {
-            width: 40px;
-            height: 40px;
+            width: 50px; /* 增加图标大小 */
+            height: 50px; /* 增加图标大小 */
             object-fit: contain;
-            transition: transform 0.3s ease;
+            transition: transform 0.6s ease; /* 增加过渡时间使旋转更平滑 */
+        }
+
+        /* 添加旋转动画类 - 修复版本 */
+        .nav-toggle.rotate img {
+            transform: rotate(360deg);
         }
 
         .nav-toggle:hover img {
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(0deg); /* 确保悬停时不干扰旋转 */
         }
 
         .nav-hint {
@@ -1117,196 +1122,270 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // 导航菜单功能
-            const navToggle = document.getElementById('navToggle');
-            const navMenu = document.getElementById('navMenu');
+    document.addEventListener('DOMContentLoaded', function() {
+        // 导航菜单功能
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navIcon = navToggle.querySelector('img');
+        
+        // 旋转相关变量
+        let rotationAngle = 0;
+        let rotationSpeed = 0;
+        let isRotating = false;
+        let lastScrollTime = 0;
+        let rotationAnimationId = null;
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+        
+        // 全屏滚动功能
+        const container = document.getElementById('fullpageContainer');
+        const sections = document.querySelectorAll('.fullpage-section');
+        const dots = document.querySelectorAll('.dot');
+        let currentSection = 0;
+        let isScrolling = false;
+        const scrollCooldown = 300; // 防抖时间（毫秒）
+        
+        // 初始化位置
+        updateSectionPositions();
+        
+        // 鼠标滚轮事件 - 添加旋转效果
+        document.addEventListener('wheel', function(e) {
+            const now = Date.now();
+            if (isScrolling || now - lastScrollTime < scrollCooldown) return;
             
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
+            lastScrollTime = now;
+            
+            // 计算旋转速度（基于滚轮速度）
+            const delta = Math.abs(e.deltaY);
+            rotationSpeed = Math.min(delta * 0.5, 30); // 限制最大速度
+            
+            // 开始旋转
+            if (!isRotating) {
+                isRotating = true;
+                startRotation();
+            }
+            
+            // 重置旋转停止计时器
+            clearTimeout(window.rotationStopTimer);
+            window.rotationStopTimer = setTimeout(stopRotation, 200);
+            
+            if (e.deltaY > 0) {
+                // 向下滚动
+                if (currentSection < sections.length - 1) {
+                    currentSection++;
+                    scrollToSection(currentSection);
+                }
+            } else {
+                // 向上滚动
+                if (currentSection > 0) {
+                    currentSection--;
+                    scrollToSection(currentSection);
+                }
+            }
+        });
+        
+        // 旋转动画函数
+        function startRotation() {
+            function rotate() {
+                rotationAngle += rotationSpeed;
+                navIcon.style.transform = `rotate(${rotationAngle}deg)`;
+                rotationAnimationId = requestAnimationFrame(rotate);
+            }
+            rotate();
+        }
+        
+        // 停止旋转函数
+        function stopRotation() {
+            isRotating = false;
+            if (rotationAnimationId) {
+                cancelAnimationFrame(rotationAnimationId);
+                rotationAnimationId = null;
+            }
+            
+            // 平滑减速效果
+            function gradualStop() {
+                if (rotationSpeed > 0) {
+                    rotationSpeed *= 0.9; // 减速因子
+                    rotationAngle += rotationSpeed;
+                    navIcon.style.transform = `rotate(${rotationAngle}deg)`;
+                    
+                    if (rotationSpeed > 0.1) {
+                        requestAnimationFrame(gradualStop);
+                    } else {
+                        rotationSpeed = 0;
+                    }
+                }
+            }
+            
+            gradualStop();
+        }
+        
+        // 导航点点击事件 - 添加旋转效果
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                // 添加导航栏图片旋转效果
+                const targetIndex = parseInt(dot.getAttribute('data-target'));
+                currentSection = targetIndex;
+                scrollToSection(currentSection);
+                
+                // 点击时也触发旋转
+                rotationSpeed = 15; // 中等速度
+                if (!isRotating) {
+                    isRotating = true;
+                    startRotation();
+                }
+                
+                // 设置停止计时器
+                clearTimeout(window.rotationStopTimer);
+                window.rotationStopTimer = setTimeout(stopRotation, 500);
             });
+        });
+        
+        // 滚动到指定部分
+        function scrollToSection(index) {
+            isScrolling = true;
             
-            // 全屏滚动功能 - 修改为渐变式切换
-            const container = document.getElementById('fullpageContainer');
-            const sections = document.querySelectorAll('.fullpage-section');
-            const dots = document.querySelectorAll('.dot');
-            let currentSection = 0;
-            let isScrolling = false;
+            // 更新导航点
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
             
-            // 初始化位置
+            // 更新部分位置
             updateSectionPositions();
             
-            // 鼠标滚轮事件
-            document.addEventListener('wheel', function(e) {
-                if (isScrolling) return;
-                
-                if (e.deltaY > 0) {
-                    // 向下滚动
-                    if (currentSection < sections.length - 1) {
-                        currentSection++;
-                        scrollToSection(currentSection);
-                    }
+            // 重置滚动状态
+            setTimeout(() => {
+                isScrolling = false;
+            }, 800);
+        }
+        
+        // 更新部分位置 - 修改为渐变式切换
+        function updateSectionPositions() {
+            sections.forEach((section, index) => {
+                if (index === currentSection) {
+                    section.classList.add('active');
                 } else {
-                    // 向上滚动
-                    if (currentSection > 0) {
-                        currentSection--;
-                        scrollToSection(currentSection);
-                    }
+                    section.classList.remove('active');
                 }
             });
-            
-            // 导航点点击事件
-            dots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    const targetIndex = parseInt(dot.getAttribute('data-target'));
-                    currentSection = targetIndex;
-                    scrollToSection(currentSection);
-                });
+        }
+        
+        // 图片切换功能
+        const faceSwitcher = document.getElementById('faceSwitcher');
+        if (faceSwitcher) {
+            faceSwitcher.addEventListener('click', function() {
+                this.classList.toggle('active');
             });
-            
-            // 滚动到指定部分
-            function scrollToSection(index) {
-                isScrolling = true;
-                
-                // 更新导航点
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[index].classList.add('active');
-                
-                // 更新部分位置
-                updateSectionPositions();
-                
-                // 重置滚动状态
-                setTimeout(() => {
-                    isScrolling = false;
-                }, 800);
-            }
-            
-            // 更新部分位置 - 修改为渐变式切换
-            function updateSectionPositions() {
-                sections.forEach((section, index) => {
-                    if (index === currentSection) {
-                        section.classList.add('active');
-                    } else {
-                        section.classList.remove('active');
-                    }
-                });
-            }
-            
-            // 图片切换功能
-            const faceSwitcher = document.getElementById('faceSwitcher');
-            if (faceSwitcher) {
-                faceSwitcher.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                });
-            }
-            
-            // 横向滚动功能
-            const sourcesCarousel = document.getElementById('sourcesCarousel');
-            if (sourcesCarousel) {
-                const scrollContent = sourcesCarousel.querySelector('.horizontal-scroll-content');
-                let currentScroll = 0;
-                let isHorizontalScrolling = false;
-                
-                // 鼠标滚轮事件
-                sourcesCarousel.addEventListener('wheel', function(e) {
-                    if (isHorizontalScrolling) return;
-                    
-                    if (e.deltaX > 0 || e.deltaY > 0) {
-                        // 向右滚动
-                        if (currentScroll < 2) {
-                            currentScroll++;
-                            scrollToItem(currentScroll);
-                        }
-                    } else {
-                        // 向左滚动
-                        if (currentScroll > 0) {
-                            currentScroll--;
-                            scrollToItem(currentScroll);
-                        }
-                    }
-                    
-                    // 阻止事件冒泡，避免触发全屏滚动
-                    e.stopPropagation();
-                });
-                
-                // 滚动到指定项目
-                function scrollToItem(index) {
-                    isHorizontalScrolling = true;
-                    scrollContent.style.transform = `translateX(-${index * 33.33}%)`;
-                    
-                    setTimeout(() => {
-                        isHorizontalScrolling = false;
-                    }, 800);
-                }
-            }
-            
-            // 横屏滚动功能
-            const horizontalPageContainer = document.getElementById('horizontalPageContainer');
-            const horizontalPages = document.getElementById('horizontalPages');
-            const horizontalDots = document.querySelectorAll('.horizontal-dot');
-            const openHorizontalBtn = document.getElementById('openHorizontal');
-            const closeHorizontalBtn = document.getElementById('closeHorizontal');
-            let currentHorizontalPage = 0;
+        }
+        
+        // 横向滚动功能
+        const sourcesCarousel = document.getElementById('sourcesCarousel');
+        if (sourcesCarousel) {
+            const scrollContent = sourcesCarousel.querySelector('.horizontal-scroll-content');
+            let currentScroll = 0;
             let isHorizontalScrolling = false;
             
-            // 打开横屏滚动页面
-            openHorizontalBtn.addEventListener('click', () => {
-                horizontalPageContainer.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-            
-            // 关闭横屏滚动页面
-            closeHorizontalBtn.addEventListener('click', () => {
-                horizontalPageContainer.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-            
-            // 横屏滚动页面鼠标滚轮事件
-            horizontalPageContainer.addEventListener('wheel', function(e) {
+            // 鼠标滚轮事件
+            sourcesCarousel.addEventListener('wheel', function(e) {
                 if (isHorizontalScrolling) return;
                 
                 if (e.deltaX > 0 || e.deltaY > 0) {
                     // 向右滚动
-                    if (currentHorizontalPage < 2) {
-                        currentHorizontalPage++;
-                        scrollToHorizontalPage(currentHorizontalPage);
+                    if (currentScroll < 2) {
+                        currentScroll++;
+                        scrollToItem(currentScroll);
                     }
                 } else {
                     // 向左滚动
-                    if (currentHorizontalPage > 0) {
-                        currentHorizontalPage--;
-                        scrollToHorizontalPage(currentHorizontalPage);
+                    if (currentScroll > 0) {
+                        currentScroll--;
+                        scrollToItem(currentScroll);
                     }
                 }
                 
-                // 阻止事件冒泡
+                // 阻止事件冒泡，避免触发全屏滚动
                 e.stopPropagation();
             });
             
-            // 横屏滚动页面导航点点击事件
-            horizontalDots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    const targetIndex = parseInt(dot.getAttribute('data-target'));
-                    currentHorizontalPage = targetIndex;
-                    scrollToHorizontalPage(currentHorizontalPage);
-                });
-            });
-            
-            // 滚动到指定横屏页面
-            function scrollToHorizontalPage(index) {
+            // 滚动到指定项目
+            function scrollToItem(index) {
                 isHorizontalScrolling = true;
-                horizontalPages.style.transform = `translateX(-${index * 33.33}%)`;
-                
-                // 更新导航点
-                horizontalDots.forEach(dot => dot.classList.remove('active'));
-                horizontalDots[index].classList.add('active');
+                scrollContent.style.transform = `translateX(-${index * 33.33}%)`;
                 
                 setTimeout(() => {
                     isHorizontalScrolling = false;
                 }, 800);
             }
+        }
+        
+        // 横屏滚动功能
+        const horizontalPageContainer = document.getElementById('horizontalPageContainer');
+        const horizontalPages = document.getElementById('horizontalPages');
+        const horizontalDots = document.querySelectorAll('.horizontal-dot');
+        const openHorizontalBtn = document.getElementById('openHorizontal');
+        const closeHorizontalBtn = document.getElementById('closeHorizontal');
+        let currentHorizontalPage = 0;
+        let isHorizontalScrolling = false;
+        
+        // 打开横屏滚动页面
+        openHorizontalBtn.addEventListener('click', () => {
+            horizontalPageContainer.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
-    </script>
+        
+        // 关闭横屏滚动页面
+        closeHorizontalBtn.addEventListener('click', () => {
+            horizontalPageContainer.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // 横屏滚动页面鼠标滚轮事件
+        horizontalPageContainer.addEventListener('wheel', function(e) {
+            if (isHorizontalScrolling) return;
+            
+            if (e.deltaX > 0 || e.deltaY > 0) {
+                // 向右滚动
+                if (currentHorizontalPage < 2) {
+                    currentHorizontalPage++;
+                    scrollToHorizontalPage(currentHorizontalPage);
+                }
+            } else {
+                // 向左滚动
+                if (currentHorizontalPage > 0) {
+                    currentHorizontalPage--;
+                    scrollToHorizontalPage(currentHorizontalPage);
+                }
+            }
+            
+            // 阻止事件冒泡
+            e.stopPropagation();
+        });
+        
+        // 横屏滚动页面导航点点击事件
+        horizontalDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const targetIndex = parseInt(dot.getAttribute('data-target'));
+                currentHorizontalPage = targetIndex;
+                scrollToHorizontalPage(currentHorizontalPage);
+            });
+        });
+        
+        // 滚动到指定横屏页面
+        function scrollToHorizontalPage(index) {
+            isHorizontalScrolling = true;
+            horizontalPages.style.transform = `translateX(-${index * 33.33}%)`;
+            
+            // 更新导航点
+            horizontalDots.forEach(dot => dot.classList.remove('active'));
+            horizontalDots[index].classList.add('active');
+            
+            setTimeout(() => {
+                isHorizontalScrolling = false;
+            }, 800);
+        }
+    });
+</script>
 </body>
 </html>
