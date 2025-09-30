@@ -72,6 +72,133 @@
             background-position: 0 0, 0 0, 0 0, 10px 10px;
             z-index: -1;
         }
+
+        /* 自定义鼠标样式 - 圆形简约版 */
+        .custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cursor-visible {
+            opacity: 1;
+        }
+
+        .oil-drop {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #f9ffaa, #ffd900);
+            border-radius: 50%;
+            animation: oilFloat 4s infinite ease-in-out;
+            box-shadow: 
+                0 0 0 2px rgba(255, 255, 255, 0.9),
+                0 0 20px rgb(249, 229, 2);
+            transition: all 0.3s ease;
+        }
+
+        .text-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 90px;
+            animation: rotateRing 12s infinite linear;
+        }
+
+        .ring-text {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform-origin: 0 45px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #2E5D32;
+            letter-spacing: 0.8px;
+            font-family: 'Comic Neue', cursive;
+            opacity: 0.8;
+        }
+
+        .hust-text {
+            transform: rotate(0deg);
+        }
+
+        .squalene-text {
+            transform: rotate(180deg);
+        }
+
+        /* 油滴浮动动画 */
+        @keyframes oilFloat {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -52%) scale(1.05);
+            }
+        }
+
+        /* 文字环绕动画 */
+        @keyframes rotateRing {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* 悬停时的效果 */
+        .hover-effect .oil-drop {
+            transform: translate(-50%, -50%) scale(1.4);
+            background: linear-gradient(135deg, #6d4b00, #ffe683);
+            animation-duration: 2s;
+        }
+
+        .hover-effect .text-ring {
+            animation-duration: 6s;
+        }
+
+        .hover-effect .ring-text {
+            opacity: 1;
+            font-weight: 700;
+            font-size: 11px;
+        }
+
+        /* 点击效果 */
+        .custom-cursor:active .oil-drop {
+            transform: translate(-50%, -50%) scale(0.8);
+            background: linear-gradient(135deg, #2E5D32, #4a90e2);
+        }
+
+        /* 确保默认鼠标隐藏 */
+        * {
+            cursor: none !important;
+        }
+
+        /* 为可点击元素添加悬停效果 */
+        a, button, .nav-toggle, .dot, .horizontal-dot, .close-horizontal {
+            position: relative;
+        }
+
+        /* 响应式设计：在小屏幕上恢复默认鼠标 */
+        @media (max-width: 768px) {
+            .custom-cursor {
+                display: none;
+            }
+            * {
+                cursor: auto !important;
+            }
+        }
         
         /* 导航按钮样式 - 调整图标大小 */
         .nav-toggle {
@@ -532,14 +659,6 @@
             margin-bottom: 15px;
             max-width: 700px;
             font-weight:bold;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-        
-        .section-p.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
         
         .highlight {
@@ -911,6 +1030,15 @@
 </head>
 <body>
 
+    <!-- 自定义鼠标光标 -->
+    <div class="custom-cursor">
+        <div class="oil-drop"></div>
+        <div class="text-ring">
+            <div class="ring-text hust-text">HUST-China</div>
+            <div class="ring-text squalene-text">Squoilene</div>
+        </div>
+    </div>
+
     <!-- 导航按钮 -->
     <div class="nav-toggle" id="navToggle">
         <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Navigation">
@@ -1189,6 +1317,48 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // 自定义鼠标光标功能
+        const customCursor = document.querySelector('.custom-cursor');
+        
+        // 鼠标移动事件
+        document.addEventListener('mousemove', (e) => {
+            customCursor.style.left = e.clientX + 'px';
+            customCursor.style.top = e.clientY + 'px';
+            customCursor.classList.add('cursor-visible');
+        });
+
+        // 鼠标离开窗口事件
+        document.addEventListener('mouseleave', () => {
+            customCursor.classList.remove('cursor-visible');
+        });
+
+        // 鼠标进入窗口事件
+        document.addEventListener('mouseenter', () => {
+            customCursor.classList.add('cursor-visible');
+        });
+
+        // 为可交互元素添加悬停效果
+        const interactiveElements = document.querySelectorAll('a, button, .nav-toggle, .dot, .horizontal-dot, .close-horizontal, .image-switcher');
+
+        interactiveElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                customCursor.classList.add('hover-effect');
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                customCursor.classList.remove('hover-effect');
+            });
+        });
+
+        // 点击时的效果
+        document.addEventListener('mousedown', () => {
+            customCursor.style.transform = 'scale(0.8)';
+        });
+
+        document.addEventListener('mouseup', () => {
+            customCursor.style.transform = 'scale(1)';
+        });
+
         // 导航菜单功能
         const navToggle = document.getElementById('navToggle');
         const navMenu = document.getElementById('navMenu');
@@ -1332,28 +1502,9 @@
             sections.forEach((section, index) => {
                 if (index === currentSection) {
                     section.classList.add('active');
-                    
-                    // 延迟触发文字逐行动画
-                    setTimeout(() => {
-                        animateTextLines(section);
-                    }, 500);
                 } else {
                     section.classList.remove('active');
                 }
-            });
-        }
-        
-        // 文字逐行动画函数
-        function animateTextLines(section) {
-            const paragraphs = section.querySelectorAll('.section-p');
-            paragraphs.forEach((paragraph, index) => {
-                // 重置状态
-                paragraph.classList.remove('visible');
-                
-                // 延迟显示每一行
-                setTimeout(() => {
-                    paragraph.classList.add('visible');
-                }, index * 400); // 每行间隔400ms
             });
         }
         
@@ -1418,14 +1569,6 @@
         openHorizontalBtn.addEventListener('click', () => {
             horizontalPageContainer.classList.add('active');
             document.body.style.overflow = 'hidden';
-            
-            // 触发横屏页面的文字动画
-            setTimeout(() => {
-                const currentPage = document.querySelector('.horizontal-page.active');
-                if (currentPage) {
-                    animateTextLines(currentPage);
-                }
-            }, 500);
         });
         
         // 关闭横屏滚动页面
@@ -1474,26 +1617,10 @@
             horizontalDots.forEach(dot => dot.classList.remove('active'));
             horizontalDots[index].classList.add('active');
             
-            // 触发文字动画
-            setTimeout(() => {
-                const currentPage = document.querySelectorAll('.horizontal-page')[index];
-                if (currentPage) {
-                    animateTextLines(currentPage);
-                }
-            }, 500);
-            
             setTimeout(() => {
                 isHorizontalScrolling = false;
             }, 800);
         }
-        
-        // 初始化第一部分的文字动画
-        setTimeout(() => {
-            const activeSection = document.querySelector('.fullpage-section.active');
-            if (activeSection) {
-                animateTextLines(activeSection);
-            }
-        }, 1000);
     });
 </script>
 </body>
