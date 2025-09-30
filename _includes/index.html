@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -532,6 +533,14 @@
             margin-bottom: 15px;
             max-width: 700px;
             font-weight:bold;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .section-p.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .highlight {
@@ -1324,9 +1333,28 @@
             sections.forEach((section, index) => {
                 if (index === currentSection) {
                     section.classList.add('active');
+                    
+                    // 延迟触发文字逐行动画
+                    setTimeout(() => {
+                        animateTextLines(section);
+                    }, 500);
                 } else {
                     section.classList.remove('active');
                 }
+            });
+        }
+        
+        // 文字逐行动画函数
+        function animateTextLines(section) {
+            const paragraphs = section.querySelectorAll('.section-p');
+            paragraphs.forEach((paragraph, index) => {
+                // 重置状态
+                paragraph.classList.remove('visible');
+                
+                // 延迟显示每一行
+                setTimeout(() => {
+                    paragraph.classList.add('visible');
+                }, index * 400); // 每行间隔400ms
             });
         }
         
@@ -1391,6 +1419,14 @@
         openHorizontalBtn.addEventListener('click', () => {
             horizontalPageContainer.classList.add('active');
             document.body.style.overflow = 'hidden';
+            
+            // 触发横屏页面的文字动画
+            setTimeout(() => {
+                const currentPage = document.querySelector('.horizontal-page.active');
+                if (currentPage) {
+                    animateTextLines(currentPage);
+                }
+            }, 500);
         });
         
         // 关闭横屏滚动页面
@@ -1439,10 +1475,26 @@
             horizontalDots.forEach(dot => dot.classList.remove('active'));
             horizontalDots[index].classList.add('active');
             
+            // 触发文字动画
+            setTimeout(() => {
+                const currentPage = document.querySelectorAll('.horizontal-page')[index];
+                if (currentPage) {
+                    animateTextLines(currentPage);
+                }
+            }, 500);
+            
             setTimeout(() => {
                 isHorizontalScrolling = false;
             }, 800);
         }
+        
+        // 初始化第一部分的文字动画
+        setTimeout(() => {
+            const activeSection = document.querySelector('.fullpage-section.active');
+            if (activeSection) {
+                animateTextLines(activeSection);
+            }
+        }, 1000);
     });
 </script>
 </body>
