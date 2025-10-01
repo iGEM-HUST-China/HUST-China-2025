@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGEM HUST-China | Squalene Biosynthesis Project</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -182,34 +183,6 @@
             font-size: 0.9rem;
         }
         
-        .strategy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .strategy-card {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid var(--secondary);
-            transition: transform 0.3s ease;
-            height: 100%;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e8e6df;
-        }
-        
-        .strategy-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        }
-        
-        .strategy-card h3 {
-            color: var(--primary);
-            margin-top: 0;
-        }
-        
         .reference-list {
             background: var(--light);
             padding: 20px;
@@ -306,10 +279,6 @@
                 width: calc(100% - 240px);
             }
             
-            .strategy-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .content-section {
                 padding: 25px;
             }
@@ -326,7 +295,7 @@
             <div class="logo">
                 <i class="fas fa-dna"></i>
             </div>
-            <h1>design</h1>
+            <h1>Design</h1>
             <p class="subtitle">Squalene Biosynthesis in Yarrowia lipolytica</p>
         </div>
         
@@ -365,15 +334,15 @@
     <div class="main-content">
         <section id="overview" class="content-section">
             <h2>Overview</h2>
-            <p><span class="highlight" data-target="strain">Squalene</span> is a C<sub>30</sub>H<sub>50</sub> triterpene with six isoprene units. Due to its excellent bioactivity and safety profile, it is widely used in food, cosmetics, and health supplements.</p>
+            <p><span class="highlight" data-target="strain">Squalene</span> is a chemical compound with the formula C<sub>30</sub>H<sub>50</sub>, a triterpene containing six isoprene double bonds. Due to its excellent bioactivity and safety profile, it is widely used in food, cosmetics, health products, and other fields.</p>
             
-            <p>However, traditional sources of squalene face significant challenges: animal sources are constrained by species protection and ethical concerns, while plant sources contain high levels of similar hydrocarbon impurities, making separation and purification costly. Additionally, improper disposal of waste cooking oils poses environmental and food safety risks, and current processing methods are energy-intensive, prone to secondary pollution, and economically inefficient.</p>
+            <p>However, traditional sources of squalene face significant bottlenecks: animal sources are constrained by species protection and ethical concerns, while plant sources contain high levels of similar hydrocarbon impurities, making separation and purification costly. Additionally, improper disposal of large amounts of waste cooking oils poses environmental and food safety risks, and existing processes suffer from high energy consumption, susceptibility to secondary pollution, and poor overall economic efficiency.</p>
             
-            <p>To address these issues, we engineered <span class="highlight" data-target="strain">Yarrowia lipolytica PO1h</span> as a chassis to construct a peroxisome-centric metabolic coupling system for biosynthesis. We selected the robust exogenous lipase TLL and enhanced extracellular enzyme activity through <span class="highlight" data-target="strategy1">promoter optimization and co-expression of accessory factors</span>, enabling efficient hydrolysis of waste oil triglycerides into glycerol and free fatty acids (FFA). After activation, fatty acids are imported into peroxisomes where they generate acetyl-CoA and reducing power (NADH) via a reinforced β-oxidation pathway with key nodes at <span class="highlight" data-target="strategy2">POX2, MFE1, and POT1</span>. This is coupled with the MVA pathway and squalene synthase ERG9 precisely targeted to the same compartment via <span class="highlight" data-target="strategy4">PTS1 (SKL) sequences</span>, enabling spatiotemporal coupling of substrate supply, cofactor cycling, and product synthesis within peroxisomes while effectively avoiding competition from the ER-localized ERG1 sterol branch and its feedback inhibition.</p>
+            <p>To address these issues, we used <span class="highlight" data-target="strain">Yarrowia lipolytica PO1h</span> as a chassis to construct a metabolic coupling biomanufacturing system centered on peroxisomes: we selected the robust exogenous lipase TLL and enhanced extracellular enzyme activity through <span class="highlight" data-target="strategy1">promoter optimization and co-expression of accessory factors</span>, enabling efficient hydrolysis of waste oil triglycerides into glycerol and free fatty acids (FFA). After activation, fatty acids are imported into peroxisomes where they generate acetyl-CoA and reducing power (NADH) via a reinforced β-oxidation pathway with key nodes at <span class="highlight" data-target="strategy2">POX2, MFE1, and POT1</span>. This is coupled with the MVA pathway and squalene synthase ERG9 precisely targeted to the same compartment via <span class="highlight" data-target="strategy4">PTS1 (SKL) sequences</span>, enabling spatiotemporal coupling of substrate supply, cofactor cycling, and product synthesis within peroxisomes while effectively avoiding competition from the ER-localized ERG1 sterol branch and its feedback inhibition.</p>
             
             <div class="image-container">
-                <img src="https://via.placeholder.com/800x450/4a7c59/ffffff?text=Squalene+Biosynthesis+Mechanism" alt="Squalene Biosynthesis Mechanism">
-                <p class="image-caption">Figure 1: Squalene Biosynthesis Mechanism</p>
+                <img src="https://static.igem.wiki/teams/5569/description/designpic1.webp" alt="Mechanism and Gene Diagram">
+                <p class="image-caption">Figure 1: Mechanism and Gene Diagram</p>
             </div>
             
             <p>Within this framework, we further screened rate-limiting enzyme HMGR for efficient homologs (including truncated tHMGR) based on catalytic efficiency and compartment compatibility. We increased peroxisome number and volume through genetic manipulation by <span class="highlight" data-target="strategy3">upregulating PEX10 and knocking out PEX23</span>, enhancing compartmentalized synthesis capacity. Combined with systematic optimization of fermentation parameters—including phased carbon supply and nitrogen control, coordinated dissolved oxygen and agitation, pH and temperature trajectories, and induction and feeding timing—we achieved a dynamic balance between high cell density and high squalene yield, ultimately realizing the integrated goal of waste oil valorization and sustainable squalene production.</p>
@@ -381,7 +350,7 @@
         
         <section id="strain" class="content-section">
             <h2>Chassis Strain: Yarrowia Lipolytica PO1h</h2>
-            <p><span class="highlight" data-target="overview">Yarrowia lipolytica</span>, belonging to the Ascomycota phylum of fungi, is a Generally Recognized as Safe (GRAS) non-conventional yeast. It is an obligate aerobic microorganism with an optimal growth temperature of 25-30°C and exhibits industry-friendly characteristics such as broad pH and salinity tolerance. It is widely distributed in natural environments and lipid/protein-rich niches, including water, soil, petroleum-contaminated areas, cheese, and meat products.</p>
+            <p><span class="highlight" data-target="overview">Yarrowia lipolytica</span>, belonging to the Ascomycota phylum of fungi, is a Generally Recognized as Safe (GRAS) non-conventional yeast. It is an obligate aerobic microorganism with an optimal growth temperature of 25-30°C and exhibits industry-friendly characteristics such as broad pH and salinity tolerance. It is widely distributed in natural environments and lipid/protein-rich niches, including water bodies, soil, petroleum-contaminated areas, cheese, and meat products.</p>
             
             <p>Yarrowia lipolytica possesses a rich enzymatic repertoire including esterases, proteases, and lipases, giving it strong substrate metabolic capabilities. It can utilize not only various hydrophilic substrates like sucrose, glucose, fructose, polyols, and organic acids but also hydrophobic substrates such as lipids, alkanes, and alkenes. Its cytoplasm is rich in lipid droplets and features a well-developed peroxisome system, making it inherently adept at lipid uptake, storage, and breakdown, and suitable for producing high-value molecules.</p>
             
@@ -403,15 +372,15 @@
         
         <section id="strategy2" class="content-section">
             <h2>Strategy 2: Pathway Optimization for Squalene Production</h2>
-            <p>Yarrowia lipolytica naturally possesses the squalene synthesis pathway, known as the mevalonate (MVA) pathway. The MVA pathway begins with the condensation of acetyl-CoA to form 3-hydroxy-3-methylglutaryl-CoA (HMG-CoA), catalyzed by acetyl-CoA acetyltransferase (ERG10) and HMG-CoA synthase (HMGS). HMG-CoA is then enzymatically converted to mevalonate (MVA) by HMG-CoA reductase (HMGR). Subsequently, MVA undergoes a two-step phosphorylation process to form mevalonate-5-diphosphate. Finally, mevalonate-5-diphosphate is decarboxylated in an ATP-dependent manner to generate isopentenyl pyrophosphate (IPP). IPP isomerase (IDI) then converts IPP to dimethylallyl pyrophosphate (DMAPP). Farnesyl diphosphate (FPP), synthesized by farnesyl diphosphate synthase (ERG20), is converted to squalene by squalene synthase (ERG9). Squalene then serves as a yeast intermediate, converted to ergosterol by cyclases near the endoplasmic reticulum for cholesterol synthesis.</p>
+            <p>Yarrowia lipolytica naturally possesses the squalene synthesis pathway, known as the mevalonate (MVA) pathway. The MVA pathway begins with the condensation of acetyl-CoA to form 3-hydroxy-3-methylglutaryl-CoA (HMG-CoA), catalyzed by acetyl-CoA acetyltransferase (ERG10) and HMG-CoA synthase (HMGS). HMG-CoA is then enzymatically converted to mevalonate (MVA) by HMG-CoA reductase (HMGR). Subsequently, MVA undergoes a two-step phosphorylation process to form MVA-5-diphosphate. Finally, MVA-5-diphosphate is decarboxylated in an ATP-dependent manner to generate IPP. Then, IPP isomerase (IDI) converts IPP to DMAPP. Farnesyl diphosphate (FPP), synthesized by farnesyl diphosphate synthase (ERG20), is converted to squalene by squalene synthase (ERG9). Squalene then serves as a yeast intermediate, converted to ergosterol by cyclases near the endoplasmic reticulum for cholesterol synthesis.</p>
             
             <p>The MVA pathway starts with acetyl-CoA as the initial substrate. In Yarrowia lipolytica, free fatty acids (FFA) are first activated to acyl-CoA by acyl-CoA synthetases on the peroxisomal membrane, then acetyl-CoA is produced via β-oxidation. Therefore, to produce squalene from fatty acids, enhancing β-oxidation can strengthen the supply of MVA pathway precursors. We overexpressed genes encoding key enzymes in the first and last steps of the β-oxidation pathway, POX2 and POT1. POX2 catalyzes the oxidation of acyl-CoA to trans-2-enoyl-CoA within peroxisomes, directly determining the rate at which FFAs enter β-oxidation. POT1 cleaves 3-ketoacyl-CoA into acetyl-CoA and an acyl-CoA shortened by two carbons, directly determining acetyl-CoA output. We also overexpressed the multifunctional enzyme MFE1 of the intermediate β-oxidation pathway to ensure smooth reaction progression.</p>
             
             <p>However, excessive NADH production from β-oxidation created a redox imbalance issue. We observed that the rate-limiting step of the MVA pathway—the conversion of HMG-CoA to MVA catalyzed by HMG-CoA reductase (HMGR)—has high demands for reducing power, but HMGR utilizes NADPH as its reductant. We sought an HMGR isozyme that uses NADH as the reductant to improve utilization of NADH generated from β-oxidation and ameliorate the redox imbalance. Coincidentally, heterologous HMGRs found in certain microorganisms (such as archaea and Propionibacterium groups) use NADH as an electron donor. Therefore, we introduced an exogenous NADH-dependent HMGR from S. pomeroyi, adding an alternative reaction route. By simultaneously introducing two different cofactor-dependent HMGRs, we aim to address the aforementioned issues from a cofactor utilization perspective and accelerate the conversion of HMG-CoA to MVA.</p>
             
             <div class="image-container">
-                <img src="https://via.placeholder.com/700x500/4a7c59/ffffff?text=Metabolic+Pathway+Optimization" alt="Metabolic Pathway Optimization">
-                <p class="image-caption">Figure 2: Metabolic Pathway Optimization</p>
+                <img src="https://static.igem.wiki/teams/5569/description/designpic2.webp" alt="Metabolic Pathway Diagram">
+                <p class="image-caption">Figure 2: Metabolic Pathway Diagram</p>
             </div>
             
             <p>To accelerate MVA synthesis, we made several other attempts. HMGR is typically a membrane-bound enzyme with multiple transmembrane domains at the N-terminus anchoring the enzyme to biological membranes, while the C-terminus contains the catalytic domain. This type of HMGR has limited catalytic efficiency and is subject to multiple regulations, such as feedback inhibition. We attempted to engineer HMGR by removing the N-terminal transmembrane region, retaining only the soluble C-terminal catalytic domain (tHMGR). This modification releases the enzyme from membrane anchoring, making it cytosolic-soluble, relieving feedback inhibition, and resulting in a stable, soluble, and highly active catalytic unit. Additionally, we introduced exogenous enzymes MvaE and MvaS as isozymes for part of the existing MVA pathway enzymes, catalyzing the first three steps of the MVA pathway to accelerate the series of conversions from acetyl-CoA to MVA, enhancing MVA generation from the perspective of metabolic optimization starting from acetyl-CoA.</p>
@@ -426,21 +395,21 @@
             <p>After establishing peroxisomes as the site for squalene synthesis, we sought to increase peroxisome number and size to expand the reaction space. We learned that PEX23 is a negative regulator that limits excessive peroxisome proliferation by regulating ER-peroxisome contact sites, membrane structure formation, and lipid influx. We plan to knock it out. However, an abundance of "empty shell" peroxisomes with only membranes but no matrix enzymes would be ineffective. Therefore, we plan to overexpress PEX10, a positive regulator directly involved in protein import, to promote matrix protein import.</p>
             
             <div class="image-container">
-                <img src="https://via.placeholder.com/600x600/4a7c59/ffffff?text=Compartmentalized+Synthesis+in+Peroxisomes" alt="Compartmentalized Synthesis in Peroxisomes">
-                <p class="image-caption">Figure 3: Compartmentalized Synthesis in Peroxisomes</p>
+                <img src="https://static.igem.wiki/teams/5569/description/designpic3.webp" alt="Compartmentalized Synthesis Diagram">
+                <p class="image-caption">Figure 3: Compartmentalized Synthesis Diagram</p>
             </div>
         </section>
         
         <section id="strategy4" class="content-section">
             <h2>Strategy 4: Signal Peptide Optimization</h2>
-            <p>We aim to import all MVA pathway-related enzymes into peroxisomes through compartmentalization engineering, thus requiring selection of the optimal signal peptide sequence. The peroxisomal import system has two main signal types, PTS1 and PTS2 families, with PTS1 being the most mature, versatile, and easily designable signal peptide. Therefore, we plan to screen for the best PTS1 as the signal peptide for importing MVA pathway-related proteins into peroxisomes. We download target protein Fasta files from NCBI, use AlphaFold3 with our target linker for protein 3D modeling, predict the three-dimensional structure of target proteins connected to different signal peptides, upload these along with peroxisomal receptor protein PEX5 structure to HADDOCK for docking, and analyze and screen based on relevant binding score data. We select the signal peptide with the lowest binding energy to the active binding domain as the signal peptide for our wet lab experiments, achieving precise targeting and localization of MVA pathway enzymes.</p>
+            <p>We aim to import all MVA pathway-related enzymes into peroxisomes through compartmentalization engineering, thus requiring selection of the optimal signal peptide sequence. The peroxisomal import system has two main signal types, PTS1 family and PTS2 family, with PTS1 being the most mature, versatile, and easily designable signal peptide. Therefore, we plan to screen for the best PTS1 as the signal peptide for importing MVA pathway-related proteins into peroxisomes. We download target protein Fasta files from NCBI, use AlphaFold3, add our target linker for protein 3D modeling, predict the three-dimensional structure of target proteins connected to different signal peptides, upload these along with peroxisomal receptor protein PEX5 structure to HADDOCK for docking, and analyze and screen based on relevant binding score data. We select the signal peptide with the lowest binding energy to the active binding domain as the signal peptide for our wet lab experiments, achieving precise targeting and localization of MVA pathway enzymes.</p>
         </section>
         
         <section id="strategy5" class="content-section">
             <h2>Strategy 5: Metabolic Flux Optimization</h2>
-            <p>In the engineered Yarrowia lipolytica strain, due to the introduction of new pathways and modification of some enzymes, we plan to remodel Yarrowia lipolytica's metabolic pathways using computational modeling methods. We input sequences of target proteins related to the MVA pathway into CarveMe to construct a genome-scale metabolic model, then input this model into COBRApy to identify reactions and products of interest, such as IPP and squalene. By continuously adjusting our reaction conditions and utilizing COBRApy's flux balance analysis (FBA), optimal product analysis, flux variability analysis (FVA), and gene/reaction knockout simulation functions, we computationally determine conditions under which IPP levels are higher, MVA reactions are more active, and squalene (terpenoid) levels are higher. We then use Escher to visualize the metabolic pathways.</p>
+            <p>In the engineered Yarrowia lipolytica strain, due to the introduction of new pathways and modification of some enzymes, we plan to remodel Yarrowia lipolytica's metabolic pathways using computational modeling methods. We input sequences of target proteins related to the MVA pathway into CarveMe, construct a genome-scale metabolic system, then input this system model into COBRApy, find reactions and products of interest, such as IPP and squalene, continuously adjust our reaction conditions, utilize COBRApy's flux balance analysis (FBA), optimal product analysis, flux variability analysis (FVA), gene/reaction knockout simulation functions, analyze and calculate under what conditions IPP levels are higher; under what conditions MVA reactions are more active; under what conditions squalene (terpenoid) levels are higher. Then use Escher to visualize the metabolic pathways.</p>
             
-            <p>In summary, by inputting different growth conditions, we solve for the optimal substrate concentration, pH, temperature, and other parameters corresponding to the optimal growth curve. We also investigate the impact of different HMGRs on final IPP accumulation in the presence of MvaE and MvaS, using computational modeling to determine the optimal enzyme, thereby reducing the workload for wet lab experiments.</p>
+            <p>In summary, by inputting different growth conditions, we solve for the optimal substrate concentration, pH, temperature, and other parameters corresponding to the optimal growth curve. And investigate the impact of different HMGRs on final IPP accumulation in the presence of MvaE and MvaS, using computational modeling methods to solve for the optimal enzyme, thereby reducing the workload for wet lab experiments.</p>
         </section>
         
         <section id="references" class="content-section">
@@ -455,6 +424,31 @@
                     <li>Xue, Y., Chen, L., Zhao, X., et al. (2025). NADH-dependent HMGR enhances mevalonate pathway flux for terpene production. Metabolic Engineering Communications, 15, e102223.</li>
                     <li>Beopoulos A, Chardot T, Nicaud J M. Control of lipid accumulation in the yeast Yarrowia lipolytica. Applied and Environmental Microbiology, 2009, 75(19): 5723-5731.</li>
                     <li>Ma Y, et al. Engineering peroxisomal biosynthetic pathways for compartmentalized squalene production in Yarrowia lipolytica. Proceedings of the National Academy of Sciences of the USA, 2024, 121(18): e2314798121.</li>
+                    <li>Haddouche R, et al. Roles of multiple acyl-CoA oxidases in routing carbon flow to β-oxidation or PHA biosynthesis in Yarrowia lipolytica. FEMS Yeast Research, 2010, 10(7): 917-927.</li>
+                    <li>UniProtKB. POT1_YARLI, 3-ketoacyl-CoA thiolase, peroxisomal---function/annotation page.</li>
+                    <li>Park Y K, et al. Metabolic engineering for unusual lipid production in Yarrowia lipolytica. Biotechnology for Biofuels, 2020, 13: 113.</li>
+                    <li>Al-Saryi N A, et al. Two NAD-linked redox shuttles maintain the peroxisomal redox balance in Saccharomyces cerevisiae. Scientific Reports, 2017, 7: 11868.</li>
+                    <li>Friesen J A, Rodwell V W. The HMG-CoA reductase reaction and its regulation. Genome Biology, 2004, 5(11): 248.</li>
+                    <li>Istvan E S, Deisenhofer J. Bacterial and mammalian HMG-CoA reductases. Current Opinion in Structural Biology, 2001, 11(6): 746-753.</li>
+                    <li>Xue H, et al. Improving cofactor promiscuity of HMG-CoA reductase from Ruegeria pomeroyi through rational design. ACS Synthetic Biology, 2025, online ahead of print.</li>
+                    <li>Burg J S, Espenshade P J. Regulation of HMG-CoA reductase in mammals and yeast. Progress in Lipid Research, 2011, 50(4): 403-410.</li>
+                    <li>DeBose-Boyd R A. Feedback regulation of cholesterol synthesis: sterol-accelerated ubiquitination and degradation of HMG-CoA reductase. Cell Research, 2008, 18(6): 609-621.</li>
+                    <li>Wei L J, et al. Increased accumulation of squalene in engineered yeasts: Advances, challenges, and opportunities. Biotechnology Journal, 2021, 16(8): 2000583.</li>
+                    <li>Hedl M, et al. Enterococcus faecalis acetoacetyl-CoA thiolase/3-hydroxy-3-methylglutaryl-CoA reductase (MvaE): a dual-function enzyme. Journal of Bacteriology, 2002, 184(9): 2116-2122.</li>
+                    <li>J. M. Nicaud. Yarrowia lipolytica. Yeast, 2012, 29(10): 409-418 A. M. Abdel-Mawgoud, K.</li>
+                    <li>A. Markham, C. M. Palmer, N. Liu, G. Stephanopoulos, H. S. Alper. Metabolic engineering in the host Yarrowia lipolytica. Metabolic Engineering, 2018, 50: 192-208</li>
+                    <li>A. V. Bankar, A. R. Kumar, S. S. Zinjarde. Environmental and industrial applications of Yarrowia lipolytica. Applied Microbiology and Biotechnology, 2009, 84(5): 847 865</li>
+                    <li>M. Hassanshahian, H. Tebyanian, S. Cappello. Isolation and characterization of two crude oil-degrading yeast strains, Yarrowia lipolytica PG-20 and PG-32, from the Persian Gulf. Marine Pollution Bulletin, 2012, 64(7): 1386-1391</li>
+                    <li>P. Fickers, P. H. Benetti, Y. Waché, A. Marty, S. Mauersberger, M. S. Smit, et al. Hydrophobic substrate utilisation by the yeast Yarrowia lipolytica, and its potential applications. FEMS Yeast Reserch, 2005, 5(6-7): 527-543</li>
+                    <li>A. Abghari, S. Chen. Yarrowia lipolytica as an oleaginous cell factory platform for production of fatty acid-based biofuel and bioproducts. Frontiers in Energy Research, 2014, 2: 21</li>
+                    <li>D. Swennen, J-M. Beckerich. Yarrowia lipolytica vesicle-mediated protein transport pathways. BMC Evolutionary Biology, 2007, 7(1): 1-19</li>
+                    <li>R. Liu, L. Liu, X. Li, D. Liu, Y. Yuan. Engineering yeast artificial core promoter with designated base motifs. Microbial Cell Factories, 2020, 19(1): 38</li>
+                    <li>C. Madzak, B. Tréton, S. Blanchin-Roland. Strong hybrid promoters and integrative expression/secretion vectors for quasi-constitutive expression of heterologous proteins in the yeast Yarrowia lipolytica. Journal of Molecular Microbiology and Biotechnology, 2000, 2(2): 207-216</li>
+                    <li>J. Blazeck, L. Liu, H. Redden, H. Alper. Tuning gene expression in Yarrowia lipolytica by a hybrid promoter approach. Applied and Environmental Microbiology, 2011, 77(22): 7905-7914</li>
+                    <li>M.-T. Le Dall, J.-M. Nicaud, C. Gaillardin. Multiple-copy integration in the yeast Yarrowia lipolytica. Current Genetics, 1994, 26(1): 38-44</li>
+                    <li>Q. Zhou, L. Jiao, Y. Qiao, Y. Wang, L. Xu, J. Yan, et al. Overexpression of GRAS Rhizomucor miehei lipase in Yarrowia lipolytica via optimizing promoter, gene dosage and fermentation parameters. Journal of Biotechnology, 2019, 306: 16-23</li>
+                    <li>P. Korpys-Woźniak, P. Kubiak, E. Celińska. Secretory helpers for enhanced production of heterologous proteins in Yarrowia lipolytica. Biotechnology Reports, 2021, 32: e00669</li>
+                    <li>Zhou Qinghua. Efficient expression of Rhizomucor miehei lipase in Yarrowia lipolytica based on new gene integration tools [PhD dissertation]. Wuhan: Huazhong University of Science and Technology, 2021</li>
                 </ol>
             </div>
         </section>
