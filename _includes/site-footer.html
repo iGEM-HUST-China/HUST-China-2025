@@ -1,180 +1,185 @@
-<footer class="footer">
-  <!-- 背景图 -->
-  <div class="footer-bg"></div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .footer-container {
+            width: 100%;
+            margin-top: auto;
+        }
+        
+        footer {
+            color: #0c0c0c;
+            background-color: #aadec3;
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh; /* 高度足够大，确保背景图显示 */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* 背景图样式 - 横向铺满，无左右边距 */
+        .footer-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://static.igem.wiki/teams/5569/description/ditu.webp');
+            background-size: cover; /* 铺满宽度，可能裁切上下 */
+            background-position: top center; /* 顶部居中 */
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-grow: 1;
+            padding: 40px 0 60px; /* 去掉左右 padding，避免背景留白 */
+            font-weight: bold;
+        }
+        
+        .logos {
+            display: flex;
+            gap: 40px;
+            align-items: flex-end;
+            padding-left: 20vw; /* 只给内容加左侧间距 */
+        }
+        
+        .logos img {
+            height: auto;
+            max-height: 120px;
+            width: auto;
+            max-width: 150px;
+            object-fit: contain;
+        }
+        
+        .contact-info {
+            text-align: right;
+            color: #0c0c0c;
+            padding-right: 2vw; /* 只给内容加右侧间距 */
+        }
+        
+        .contact-info h3 {
+            color: #2d5a3c;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+        
+        .contact-info p {
+            margin-bottom: 8px;
+            line-height: 1.5;
+            font-size: 1.5rem;
+        }
+        
+        .contact-info a {
+            color: #2d5a3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .footer-bottom {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px 0;
+            background: rgba(144, 189, 166, 0.8);
+        }
+        
+        .footer-bottom p {
+            margin: 5px 0;
+            font-size: 1.4rem;
+            color:#0c0c0c;
+        }
+        
+        .footer-bottom a {
+            color: #2d5a3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            footer {
+                min-height: 70vh;
+            }
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+                padding: 40px 0 60px;
+            }
+            .logos {
+                order: 2;
+                justify-content: center;
+                width: 100%;
+                padding-left: 0;
+                gap: 30px;
+            }
+            .contact-info {
+                order: 1;
+                text-align: center;
+                width: 100%;
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
 
-  <!-- Logo 区域 -->
-  <div class="container">
-    <div class="footer_pic">
-      <img src="https://static.igem.wiki/teams/5569/description/qiming1.webp" alt="Qiming">
-      <img src="https://static.igem.wiki/teams/5569/description/xiaohui.webp" alt="HUST">
-      <img src="https://static.igem.wiki/teams/5569/description/xueyuan.webp" alt="LifeST">
+    <div class="footer-container">
+        <footer class="footer">
+            <div class="footer-bg"></div>
+            
+            <div class="footer-content">
+                <div class="logos">
+                    <img src="https://static.igem.wiki/teams/5569/description/qiming1.webp" alt="Qiming">
+                    <img src="https://static.igem.wiki/teams/5569/description/xiaohui.webp" alt="HUST">
+                    <img src="https://static.igem.wiki/teams/5569/description/xueyuan.webp" alt="LifeST">
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>Huazhong University of Science and Technology</p>
+                    <p>1037 Luoyu Road, Hongshan District, Wuhan</p>
+                    <p>Hubei Province, P.R. China 430074</p>
+                    <p><a href="mailto:igemhustchina@163.com">igemhustchina@163.com</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; iGEM HUST-China 2025</p>
+                <p>Licenced under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></p>
+            </div>
+        </footer>
     </div>
-  </div>
-
-  <!-- 联系信息 -->
-  <div class="container">
-    <div class="footer_text">
-      <h5>Contact us</h5>
-      <p>Address</p>
-      <small>Huazhong University of Science and Technology</small>
-      <br>
-      <small>1037 Luoyu Road, Hongshan District, Wuhan</small>
-      <br>
-      <small>Hubei Province, P.R. China 430074</small>
-      <p>E-mail</p>
-      <a href="mailto:igemhustchina@163.com" target="_blank"><small>igemhustchina@163.com</small></a>
-    </div>
-  </div>
-
-  <!-- 版权信息 -->
-  <div class="container">
-    <div class="footer_copyright">
-      <p>&copy; iGEM HUST-China 2025</p>
-      <p>Licenced under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></p>
-    </div>
-  </div>
-
-  <!-- GitLab 信息 -->
-  <div id="footer_gitlab_bg">
-    <div class="container" id="gitlab">
-      <div class="footer_gitlab">
-        <p>You can find our project on <a href="https://gitlab.igem.org/2025/hust-china" target="_blank">iGEM GitLab</a>.</p>
-        <p style="display: flex;">
-          Pipeline status: <a href="https://gitlab.igem.org/2025/hust-china/-/pipelines" target="_blank">
-            <img src="https://gitlab.igem.org/2025/hust-china/badges/main/pipeline.svg">
-          </a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 样式 -->
-  <style>
-    footer {
-      color: #0c0c0c !important;
-      background-color: #aadec3 !important;
-      padding: 20px 0;
-      padding-bottom: 0;
-      position: relative;
-      overflow: hidden;
-      min-height: 80vh; /* 背景图高度 */
-    }
-
-    /* 背景图铺满横向，无左右边距 */
-    .footer-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('https://static.igem.wiki/teams/5569/description/ditu.webp');
-      background-size: cover;
-      background-position: top center;
-      background-repeat: no-repeat;
-      z-index: 0;
-    }
-
-    /* Logo 区域 - 右移效果 */
-    footer div.container div.footer_pic {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      width: 40%;
-      max-width: 600px;
-      margin: 0 0 0 auto; /* 整体右移 */
-      padding-right: 16vw; /* 控制右移距离 */
-    }
-
-    footer div.container div.footer_pic img {
-      width: 100%;
-      height: auto;
-      margin: 5px auto;
-    }
-
-    footer div.container div.footer_text {
-      text-align: center;
-      margin: auto;
-      width: 60%;
-      position: relative;
-      z-index: 1;
-    }
-
-    footer div.container div.footer_text h5,
-    footer div.container div.footer_text p {
-      font-weight: bold;
-    }
-
-    footer div.container div.footer_text a {
-      text-decoration: none;
-      color: #0c0c0c !important;
-    }
-
-    footer div.container div.footer_text a:hover {
-      color: #498554 !important;
-    }
-
-    footer div.container div.footer_copyright {
-      margin: auto;
-      text-align: center;
-      display: block;
-      margin: 5px auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    footer div.container div.footer_copyright a {
-      text-decoration: none;
-      color: #0c0c0c !important;
-    }
-
-    footer div.container div.footer_copyright a:hover {
-      color: #498554 !important;
-    }
-
-    footer div.container#gitlab {
-      background-color: #90bda6;
-      display: flex;
-      width: 100%;
-      margin: auto;
-      text-align: center;
-    }
-
-    footer div#footer_gitlab_bg {
-      background-color: #90bda6;
-    }
-
-    footer div.container div.footer_gitlab {
-      display: inline-block;
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      text-align: left;
-      position: relative;
-      z-index: 1;
-    }
-
-    footer div.container div.footer_gitlab a {
-      text-decoration: none;
-      color: #0c0c0c !important;
-    }
-
-    footer div.container div.footer_gitlab a:hover {
-      color: #498554 !important;
-    }
-
-    footer div.container div.footer_gitlab img {
-      margin: 0 10px;
-    }
-
-    /* 响应式 */
-    @media (max-width: 768px) {
-      footer {
-        min-height: 70vh;
-      }
-      footer div.container div.footer_pic {
-        width: 80%;
-        padding-right: 0;
-        margin: auto;
-      }
-    }
-  </style>
-</footer>
+</body>
+</html>
