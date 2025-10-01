@@ -1,0 +1,564 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #2c5530;
+            --secondary: #27ae60;
+            --accent: #4a7c59;
+            --light: #f8f6f0;
+            --dark: #333333;
+            --highlight: #a9dfbf;
+            --sidebar-bg: #f5f3ee;
+            --sidebar-width: 280px;
+        }
+        
+        body {
+            background-color: #fefefe;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+        }
+        
+        .sidebar {
+            width: var(--sidebar-width);
+            background: var(--sidebar-bg);
+            color: var(--dark);
+            height: 100vh;
+            position: fixed;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+            z-index: 100;
+            border-right: 1px solid #e8e6df;
+        }
+        
+        .logo-container {
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e8e6df;
+            background: white;
+        }
+        
+        .logo {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo i {
+            font-size: 35px;
+            color: white;
+        }
+        
+        .sidebar h1 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .sidebar .subtitle {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .toc {
+            padding: 20px 0;
+        }
+        
+        .toc-item {
+            padding: 12px 25px;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            color: #555;
+        }
+        
+        .toc-item i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+            color: var(--accent);
+        }
+        
+        .toc-item:hover {
+            background-color: rgba(0, 0, 0, 0.03);
+            color: var(--primary);
+        }
+        
+        .toc-item.active {
+            background-color: white;
+            border-left-color: var(--secondary);
+            color: var(--primary);
+            font-weight: 500;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.03);
+        }
+        
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 0;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 50px;
+            margin-bottom: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .content-section:nth-child(even) {
+            background-color: var(--light);
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e8e6df;
+            font-size: 2rem;
+        }
+        
+        h3 {
+            color: var(--accent);
+            margin: 25px 0 15px;
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, var(--highlight) 60%);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 0 3px;
+            border-radius: 3px;
+        }
+        
+        .highlight:hover {
+            background: linear-gradient(transparent 60%, var(--secondary) 60%);
+            color: white;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e8e6df;
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .reference-list {
+            background: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border: 1px solid #e8e6df;
+        }
+        
+        .reference-list ol {
+            padding-left: 20px;
+        }
+        
+        .reference-list li {
+            margin-bottom: 10px;
+        }
+        
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: var(--sidebar-width);
+            width: calc(100% - var(--sidebar-width));
+            height: 4px;
+            background: #e8e6df;
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: var(--secondary);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--secondary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 99;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 1024px) {
+            .sidebar {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: var(--sidebar-width);
+            }
+            
+            .progress-container {
+                left: var(--sidebar-width);
+                width: calc(100% - var(--sidebar-width));
+            }
+            
+            .content-section {
+                padding: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 240px;
+            }
+            
+            .main-content {
+                margin-left: 240px;
+            }
+            
+            .progress-container {
+                left: 240px;
+                width: calc(100% - 240px);
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="logo-container">
+            <div class="logo">
+                <i class="fas fa-dna"></i>
+            </div>
+            <h1>Design</h1>
+            <p class="subtitle">Squalene Biosynthesis in Yarrowia lipolytica</p>
+        </div>
+        
+        <div class="toc">
+            <div class="toc-item active" data-target="overview">
+                <i class="fas fa-home"></i> Overview
+            </div>
+            <div class="toc-item" data-target="strain">
+                <i class="fas fa-microscope"></i> Chassis Strain
+            </div>
+            <div class="toc-item" data-target="strategy1">
+                <i class="fas fa-vial"></i> Lipase Degradation
+            </div>
+            <div class="toc-item" data-target="strategy2">
+                <i class="fas fa-project-diagram"></i> Pathway Optimization
+            </div>
+            <div class="toc-item" data-target="strategy3">
+                <i class="fas fa-box"></i> Compartmentalized Synthesis
+            </div>
+            <div class="toc-item" data-target="strategy4">
+                <i class="fas fa-arrows-alt-h"></i> Signal Peptide Optimization
+            </div>
+            <div class="toc-item" data-target="strategy5">
+                <i class="fas fa-stream"></i> Metabolic Flux Optimization
+            </div>
+            <div class="toc-item" data-target="references">
+                <i class="fas fa-book"></i> References
+            </div>
+        </div>
+    </div>
+    
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <div class="main-content">
+        <section id="overview" class="content-section">
+            <h2>Overview</h2>
+            <p><span class="highlight" data-target="strain">Squalene</span> is a chemical compound with the formula C<sub>30</sub>H<sub>50</sub>, a triterpene containing six isoprene double bonds. Due to its excellent bioactivity and safety profile, it is widely used in food, cosmetics, health products, and other fields.</p>
+            
+            <p>However, traditional sources of squalene face significant bottlenecks: animal sources are constrained by species protection and ethical concerns, while plant sources contain high levels of similar hydrocarbon impurities, making separation and purification costly. Additionally, improper disposal of large amounts of waste cooking oils poses environmental and food safety risks, and existing processes suffer from high energy consumption, susceptibility to secondary pollution, and poor overall economic efficiency.</p>
+            
+            <p>To address these issues, we used <span class="highlight" data-target="strain">Yarrowia lipolytica PO1h</span> as a chassis to construct a metabolic coupling biomanufacturing system centered on peroxisomes: we selected the robust exogenous lipase TLL and enhanced extracellular enzyme activity through <span class="highlight" data-target="strategy1">promoter optimization and co-expression of accessory factors</span>, enabling efficient hydrolysis of waste oil triglycerides into glycerol and free fatty acids (FFA). After activation, fatty acids are imported into peroxisomes where they generate acetyl-CoA and reducing power (NADH) via a reinforced β-oxidation pathway with key nodes at <span class="highlight" data-target="strategy2">POX2, MFE1, and POT1</span>. This is coupled with the MVA pathway and squalene synthase ERG9 precisely targeted to the same compartment via <span class="highlight" data-target="strategy4">PTS1 (SKL) sequences</span>, enabling spatiotemporal coupling of substrate supply, cofactor cycling, and product synthesis within peroxisomes while effectively avoiding competition from the ER-localized ERG1 sterol branch and its feedback inhibition.</p>
+            
+            <div class="image-container">
+                <img src="https://static.igem.wiki/teams/5569/description/designpic1.webp" alt="Mechanism and Gene Diagram">
+                <p class="image-caption">Figure 1: Mechanism and Gene Diagram</p>
+            </div>
+            
+            <p>Within this framework, we further screened rate-limiting enzyme HMGR for efficient homologs (including truncated tHMGR) based on catalytic efficiency and compartment compatibility. We increased peroxisome number and volume through genetic manipulation by <span class="highlight" data-target="strategy3">upregulating PEX10 and knocking out PEX23</span>, enhancing compartmentalized synthesis capacity. Combined with systematic optimization of fermentation parameters—including phased carbon supply and nitrogen control, coordinated dissolved oxygen and agitation, pH and temperature trajectories, and induction and feeding timing—we achieved a dynamic balance between high cell density and high squalene yield, ultimately realizing the integrated goal of waste oil valorization and sustainable squalene production.</p>
+        </section>
+        
+        <section id="strain" class="content-section">
+            <h2>Chassis Strain: Yarrowia Lipolytica PO1h</h2>
+            <p><span class="highlight" data-target="overview">Yarrowia lipolytica</span>, belonging to the Ascomycota phylum of fungi, is a Generally Recognized as Safe (GRAS) non-conventional yeast. It is an obligate aerobic microorganism with an optimal growth temperature of 25-30°C and exhibits industry-friendly characteristics such as broad pH and salinity tolerance. It is widely distributed in natural environments and lipid/protein-rich niches, including water bodies, soil, petroleum-contaminated areas, cheese, and meat products.</p>
+            
+            <p>Yarrowia lipolytica possesses a rich enzymatic repertoire including esterases, proteases, and lipases, giving it strong substrate metabolic capabilities. It can utilize not only various hydrophilic substrates like sucrose, glucose, fructose, polyols, and organic acids but also hydrophobic substrates such as lipids, alkanes, and alkenes. Its cytoplasm is rich in lipid droplets and features a well-developed peroxisome system, making it inherently adept at lipid uptake, storage, and breakdown, and suitable for producing high-value molecules.</p>
+            
+            <p>In terms of bioprocessing, Yarrowia lipolytica exhibits strong aerobic metabolism, high tolerance, and enables high-density fermentation, facilitating scale-up and continuous production. In synthetic biology, it has a relatively mature and versatile genetic toolbox, including homologous recombination-based gene integration, marker recycling strategies, CRISPR/Cas systems, modular vectors, promoter/terminator libraries, multi-copy integration, and genomic "landing pads," providing high portability and scalability for metabolic pathway construction and optimization.</p>
+            
+            <p>Additionally, Yarrowia lipolytica has efficient secretion pathways and protein folding capacity, with a post-translational modification system similar to higher eukaryotes. It primarily employs co-translational translocation rather than post-translational translocation for protein secretion, meaning polypeptides are simultaneously synthesized and transported into the ER containing various accessory proteins, making it more suitable for expressing larger molecular weight proteins and facilitating recombinant enzyme expression and extracellular product recovery. Overall, Yarrowia lipolytica combines the three major advantages of broad substrate spectrum, well-developed compartmentalization, and mature engineering tools, making it an ideal general chassis microorganism for green manufacturing and resource utilization applications.</p>
+        </section>
+        
+        <section id="strategy1" class="content-section">
+            <h2>Strategy 1: Efficient Waste Oil Degradation by Secreted Lipase</h2>
+            <p>To promote lipase secretion and enhance enzymatic activity, we plan to optimize promoter strength, gene copy number, and co-express accessory proteins to improve heterologous expression of Thermomyces lanuginosus lipase (TLL) in Yarrowia lipolytica.</p>
+            
+            <p>As a key transcriptional regulatory element, promoter activity directly affects the expression level of foreign genes. Therefore, we first consider selecting and optimizing strong promoters to drive efficient transcription of the TLL gene. The enolase promoter (pENO) in Yarrowia lipolytica is known for high abundance expression and is promising for driving high-level expression of target genes. Furthermore, to further enhance promoter strength, we adopt a hybrid promoter strategy: constructing high-strength promoters by fusing upstream activating sequences (UAS) from strong inducible promoters with suitable core promoter elements. For example, inserting multiple copies of UAS1 elements can significantly boost the transcriptional activity of endogenous promoters, enabling quasi-constitutive high-level expression. Based on this approach, we plan to use the Yarrowia lipolytica enolase promoter as a foundation, fused with UAS elements from the XPR2 gene, to construct a powerful hybrid promoter for driving TLL expression.</p>
+            
+            <p>Gene copy number is an important factor influencing foreign protein yield. Appropriately increasing the copy number of the target gene typically helps enhance expression levels. Yarrowia lipolytica can achieve stable high-copy expression through multi-copy gene integration. Previous studies have shown that increasing gene copy number while optimizing the promoter can synergistically increase the production of recombinant enzymes like lipases. Therefore, we plan to employ a marker-free multi-copy gene integration strategy to introduce multiple TLL gene copies into the host genome, further increasing enzyme production.</p>
+            
+            <p>After enhancing transcriptional levels and gene dosage, the secretion efficiency of the target enzyme may still be limited by the host secretion pathway. To address this, we consider co-expressing key accessory proteins in the secretion pathway to promote proper folding and secretion of TLL. Co-expression of chaperones and foldases has proven to be an effective strategy for improving heterologous protein expression. Recent research comparing various accessory factors' effects on secretory protein expression in Yarrowia lipolytica showed that proteins assisting in synthesis, folding, and processing had the most significant impact. Additionally, co-expression of ER chaperone Kar2 (BiP) and protein disulfide isomerase Pdi significantly promoted the secretory expression of Rhizomucor miehei lipase. Based on these findings, we will introduce appropriate folding and secretion accessory factors in TLL-expressing strains to alleviate secretion pathway bottlenecks, thereby further enhancing TLL secretion yield.</p>
+        </section>
+        
+        <section id="strategy2" class="content-section">
+            <h2>Strategy 2: Pathway Optimization for Squalene Production</h2>
+            <p>Yarrowia lipolytica naturally possesses the squalene synthesis pathway, known as the mevalonate (MVA) pathway. The MVA pathway begins with the condensation of acetyl-CoA to form 3-hydroxy-3-methylglutaryl-CoA (HMG-CoA), catalyzed by acetyl-CoA acetyltransferase (ERG10) and HMG-CoA synthase (HMGS). HMG-CoA is then enzymatically converted to mevalonate (MVA) by HMG-CoA reductase (HMGR). Subsequently, MVA undergoes a two-step phosphorylation process to form MVA-5-diphosphate. Finally, MVA-5-diphosphate is decarboxylated in an ATP-dependent manner to generate IPP. Then, IPP isomerase (IDI) converts IPP to DMAPP. Farnesyl diphosphate (FPP), synthesized by farnesyl diphosphate synthase (ERG20), is converted to squalene by squalene synthase (ERG9). Squalene then serves as a yeast intermediate, converted to ergosterol by cyclases near the endoplasmic reticulum for cholesterol synthesis.</p>
+            
+            <p>The MVA pathway starts with acetyl-CoA as the initial substrate. In Yarrowia lipolytica, free fatty acids (FFA) are first activated to acyl-CoA by acyl-CoA synthetases on the peroxisomal membrane, then acetyl-CoA is produced via β-oxidation. Therefore, to produce squalene from fatty acids, enhancing β-oxidation can strengthen the supply of MVA pathway precursors. We overexpressed genes encoding key enzymes in the first and last steps of the β-oxidation pathway, POX2 and POT1. POX2 catalyzes the oxidation of acyl-CoA to trans-2-enoyl-CoA within peroxisomes, directly determining the rate at which FFAs enter β-oxidation. POT1 cleaves 3-ketoacyl-CoA into acetyl-CoA and an acyl-CoA shortened by two carbons, directly determining acetyl-CoA output. We also overexpressed the multifunctional enzyme MFE1 of the intermediate β-oxidation pathway to ensure smooth reaction progression.</p>
+            
+            <p>However, excessive NADH production from β-oxidation created a redox imbalance issue. We observed that the rate-limiting step of the MVA pathway—the conversion of HMG-CoA to MVA catalyzed by HMG-CoA reductase (HMGR)—has high demands for reducing power, but HMGR utilizes NADPH as its reductant. We sought an HMGR isozyme that uses NADH as the reductant to improve utilization of NADH generated from β-oxidation and ameliorate the redox imbalance. Coincidentally, heterologous HMGRs found in certain microorganisms (such as archaea and Propionibacterium groups) use NADH as an electron donor. Therefore, we introduced an exogenous NADH-dependent HMGR from S. pomeroyi, adding an alternative reaction route. By simultaneously introducing two different cofactor-dependent HMGRs, we aim to address the aforementioned issues from a cofactor utilization perspective and accelerate the conversion of HMG-CoA to MVA.</p>
+            
+            <div class="image-container">
+                <img src="https://static.igem.wiki/teams/5569/description/designpic2.webp" alt="Metabolic Pathway Diagram">
+                <p class="image-caption">Figure 2: Metabolic Pathway Diagram</p>
+            </div>
+            
+            <p>To accelerate MVA synthesis, we made several other attempts. HMGR is typically a membrane-bound enzyme with multiple transmembrane domains at the N-terminus anchoring the enzyme to biological membranes, while the C-terminus contains the catalytic domain. This type of HMGR has limited catalytic efficiency and is subject to multiple regulations, such as feedback inhibition. We attempted to engineer HMGR by removing the N-terminal transmembrane region, retaining only the soluble C-terminal catalytic domain (tHMGR). This modification releases the enzyme from membrane anchoring, making it cytosolic-soluble, relieving feedback inhibition, and resulting in a stable, soluble, and highly active catalytic unit. Additionally, we introduced exogenous enzymes MvaE and MvaS as isozymes for part of the existing MVA pathway enzymes, catalyzing the first three steps of the MVA pathway to accelerate the series of conversions from acetyl-CoA to MVA, enhancing MVA generation from the perspective of metabolic optimization starting from acetyl-CoA.</p>
+        </section>
+        
+        <section id="strategy3" class="content-section">
+            <h2>Strategy 3: Compartmentalized Squalene Synthesis</h2>
+            <p>However, the natural MVA pathway's efficiency is limited because its metabolic location is the cytosol, where acetyl-CoA faces numerous competing pathways, with much being converted to ethanol. Additionally, squalene is cytotoxic, and its accumulation in the cytosol can lead to yeast cell death. Furthermore, cholesterol is essential for cell growth, so simply knocking out genes downstream of ERG9 to accumulate squalene is not feasible. Therefore, large-scale squalene synthesis requires encapsulation within membranes, leading us to consider compartmentalized squalene synthesis—that is, adding signal peptides to MVA pathway-related enzymes to direct them to specific organelles, where squalene synthesis is completed. This approach both encapsulates the squalene product and prevents its conversion by cyclases in the cytosol, while preserving the natural cytosolic MVA pathway to produce cholesterol for normal cellular physiological activities.</p>
+            
+            <p>When selecting organelles for compartmentalized synthesis, we compared mitochondria and peroxisomes. Both can effectively address the issues of low squalene yield from the cytosolic MVA pathway and interference from downstream pathways, but the former has a critical flaw: mitochondria are crucial sites for oxidative metabolism in eukaryotes, and importing the MVA pathway for squalene synthesis severely interferes with numerous metabolic pathways closely related to cell growth, causing significant disruption. Additionally, Yarrowia lipolytica's β-oxidation pathway occurs in peroxisomes, and when using fatty acids as carbon sources, peroxisomal acetyl-CoA content is higher than in mitochondria, effectively supplying the MVA pathway with precursor acetyl-CoA. Therefore, we ultimately determined peroxisomes as the site for compartmentalized synthesis.</p>
+            
+            <p>After establishing peroxisomes as the site for squalene synthesis, we sought to increase peroxisome number and size to expand the reaction space. We learned that PEX23 is a negative regulator that limits excessive peroxisome proliferation by regulating ER-peroxisome contact sites, membrane structure formation, and lipid influx. We plan to knock it out. However, an abundance of "empty shell" peroxisomes with only membranes but no matrix enzymes would be ineffective. Therefore, we plan to overexpress PEX10, a positive regulator directly involved in protein import, to promote matrix protein import.</p>
+            
+            <div class="image-container">
+                <img src="https://static.igem.wiki/teams/5569/description/designpic3.webp" alt="Compartmentalized Synthesis Diagram">
+                <p class="image-caption">Figure 3: Compartmentalized Synthesis Diagram</p>
+            </div>
+        </section>
+        
+        <section id="strategy4" class="content-section">
+            <h2>Strategy 4: Signal Peptide Optimization</h2>
+            <p>We aim to import all MVA pathway-related enzymes into peroxisomes through compartmentalization engineering, thus requiring selection of the optimal signal peptide sequence. The peroxisomal import system has two main signal types, PTS1 family and PTS2 family, with PTS1 being the most mature, versatile, and easily designable signal peptide. Therefore, we plan to screen for the best PTS1 as the signal peptide for importing MVA pathway-related proteins into peroxisomes. We download target protein Fasta files from NCBI, use AlphaFold3, add our target linker for protein 3D modeling, predict the three-dimensional structure of target proteins connected to different signal peptides, upload these along with peroxisomal receptor protein PEX5 structure to HADDOCK for docking, and analyze and screen based on relevant binding score data. We select the signal peptide with the lowest binding energy to the active binding domain as the signal peptide for our wet lab experiments, achieving precise targeting and localization of MVA pathway enzymes.</p>
+        </section>
+        
+        <section id="strategy5" class="content-section">
+            <h2>Strategy 5: Metabolic Flux Optimization</h2>
+            <p>In the engineered Yarrowia lipolytica strain, due to the introduction of new pathways and modification of some enzymes, we plan to remodel Yarrowia lipolytica's metabolic pathways using computational modeling methods. We input sequences of target proteins related to the MVA pathway into CarveMe, construct a genome-scale metabolic system, then input this system model into COBRApy, find reactions and products of interest, such as IPP and squalene, continuously adjust our reaction conditions, utilize COBRApy's flux balance analysis (FBA), optimal product analysis, flux variability analysis (FVA), gene/reaction knockout simulation functions, analyze and calculate under what conditions IPP levels are higher; under what conditions MVA reactions are more active; under what conditions squalene (terpenoid) levels are higher. Then use Escher to visualize the metabolic pathways.</p>
+            
+            <p>In summary, by inputting different growth conditions, we solve for the optimal substrate concentration, pH, temperature, and other parameters corresponding to the optimal growth curve. And investigate the impact of different HMGRs on final IPP accumulation in the presence of MvaE and MvaS, using computational modeling methods to solve for the optimal enzyme, thereby reducing the workload for wet lab experiments.</p>
+        </section>
+        
+        <section id="references" class="content-section">
+            <h2>References</h2>
+            <div class="reference-list">
+                <ol>
+                    <li>Ashour, H., ... (2010). Metabolic pathways in Yarrowia lipolytica. Journal of Industrial Microbiology and Biotechnology, 37(5), 447-458.</li>
+                    <li>Wei, L., Li, S., Zheng, Y., Sun, T., et al. (2021). Engineering Yarrowia lipolytica for squalene production. Applied and Environmental Microbiology, 87(17), e00481-21.</li>
+                    <li>Ma, C., Ning, Y., Zhou, Y., et al. (2024). Compartmentalized metabolic engineering of Yarrowia lipolytica peroxisome for high-level squalene production. Proceedings of the National Academy of Sciences of the USA, 121(5), e2314798121.</li>
+                    <li>Zhu, Q., Jackson, M., Gao, P., et al. (2021). Engineering subcellular compartments for isoprenoid biosynthesis in yeast mitochondria. Metabolic Engineering, 68, 71-82.</li>
+                    <li>Ning, Y., Ma, C., Zhang, H., et al. (2024). Enhancing peroxisomal acetyl-CoA supply improves squalene biosynthesis in Yarrowia lipolytica. Bioresource Technology, 395, 130379.</li>
+                    <li>Xue, Y., Chen, L., Zhao, X., et al. (2025). NADH-dependent HMGR enhances mevalonate pathway flux for terpene production. Metabolic Engineering Communications, 15, e102223.</li>
+                    <li>Beopoulos A, Chardot T, Nicaud J M. Control of lipid accumulation in the yeast Yarrowia lipolytica. Applied and Environmental Microbiology, 2009, 75(19): 5723-5731.</li>
+                    <li>Ma Y, et al. Engineering peroxisomal biosynthetic pathways for compartmentalized squalene production in Yarrowia lipolytica. Proceedings of the National Academy of Sciences of the USA, 2024, 121(18): e2314798121.</li>
+                    <li>Haddouche R, et al. Roles of multiple acyl-CoA oxidases in routing carbon flow to β-oxidation or PHA biosynthesis in Yarrowia lipolytica. FEMS Yeast Research, 2010, 10(7): 917-927.</li>
+                    <li>UniProtKB. POT1_YARLI, 3-ketoacyl-CoA thiolase, peroxisomal---function/annotation page.</li>
+                    <li>Park Y K, et al. Metabolic engineering for unusual lipid production in Yarrowia lipolytica. Biotechnology for Biofuels, 2020, 13: 113.</li>
+                    <li>Al-Saryi N A, et al. Two NAD-linked redox shuttles maintain the peroxisomal redox balance in Saccharomyces cerevisiae. Scientific Reports, 2017, 7: 11868.</li>
+                    <li>Friesen J A, Rodwell V W. The HMG-CoA reductase reaction and its regulation. Genome Biology, 2004, 5(11): 248.</li>
+                    <li>Istvan E S, Deisenhofer J. Bacterial and mammalian HMG-CoA reductases. Current Opinion in Structural Biology, 2001, 11(6): 746-753.</li>
+                    <li>Xue H, et al. Improving cofactor promiscuity of HMG-CoA reductase from Ruegeria pomeroyi through rational design. ACS Synthetic Biology, 2025, online ahead of print.</li>
+                    <li>Burg J S, Espenshade P J. Regulation of HMG-CoA reductase in mammals and yeast. Progress in Lipid Research, 2011, 50(4): 403-410.</li>
+                    <li>DeBose-Boyd R A. Feedback regulation of cholesterol synthesis: sterol-accelerated ubiquitination and degradation of HMG-CoA reductase. Cell Research, 2008, 18(6): 609-621.</li>
+                    <li>Wei L J, et al. Increased accumulation of squalene in engineered yeasts: Advances, challenges, and opportunities. Biotechnology Journal, 2021, 16(8): 2000583.</li>
+                    <li>Hedl M, et al. Enterococcus faecalis acetoacetyl-CoA thiolase/3-hydroxy-3-methylglutaryl-CoA reductase (MvaE): a dual-function enzyme. Journal of Bacteriology, 2002, 184(9): 2116-2122.</li>
+                    <li>J. M. Nicaud. Yarrowia lipolytica. Yeast, 2012, 29(10): 409-418 A. M. Abdel-Mawgoud, K.</li>
+                    <li>A. Markham, C. M. Palmer, N. Liu, G. Stephanopoulos, H. S. Alper. Metabolic engineering in the host Yarrowia lipolytica. Metabolic Engineering, 2018, 50: 192-208</li>
+                    <li>A. V. Bankar, A. R. Kumar, S. S. Zinjarde. Environmental and industrial applications of Yarrowia lipolytica. Applied Microbiology and Biotechnology, 2009, 84(5): 847 865</li>
+                    <li>M. Hassanshahian, H. Tebyanian, S. Cappello. Isolation and characterization of two crude oil-degrading yeast strains, Yarrowia lipolytica PG-20 and PG-32, from the Persian Gulf. Marine Pollution Bulletin, 2012, 64(7): 1386-1391</li>
+                    <li>P. Fickers, P. H. Benetti, Y. Waché, A. Marty, S. Mauersberger, M. S. Smit, et al. Hydrophobic substrate utilisation by the yeast Yarrowia lipolytica, and its potential applications. FEMS Yeast Reserch, 2005, 5(6-7): 527-543</li>
+                    <li>A. Abghari, S. Chen. Yarrowia lipolytica as an oleaginous cell factory platform for production of fatty acid-based biofuel and bioproducts. Frontiers in Energy Research, 2014, 2: 21</li>
+                    <li>D. Swennen, J-M. Beckerich. Yarrowia lipolytica vesicle-mediated protein transport pathways. BMC Evolutionary Biology, 2007, 7(1): 1-19</li>
+                    <li>R. Liu, L. Liu, X. Li, D. Liu, Y. Yuan. Engineering yeast artificial core promoter with designated base motifs. Microbial Cell Factories, 2020, 19(1): 38</li>
+                    <li>C. Madzak, B. Tréton, S. Blanchin-Roland. Strong hybrid promoters and integrative expression/secretion vectors for quasi-constitutive expression of heterologous proteins in the yeast Yarrowia lipolytica. Journal of Molecular Microbiology and Biotechnology, 2000, 2(2): 207-216</li>
+                    <li>J. Blazeck, L. Liu, H. Redden, H. Alper. Tuning gene expression in Yarrowia lipolytica by a hybrid promoter approach. Applied and Environmental Microbiology, 2011, 77(22): 7905-7914</li>
+                    <li>M.-T. Le Dall, J.-M. Nicaud, C. Gaillardin. Multiple-copy integration in the yeast Yarrowia lipolytica. Current Genetics, 1994, 26(1): 38-44</li>
+                    <li>Q. Zhou, L. Jiao, Y. Qiao, Y. Wang, L. Xu, J. Yan, et al. Overexpression of GRAS Rhizomucor miehei lipase in Yarrowia lipolytica via optimizing promoter, gene dosage and fermentation parameters. Journal of Biotechnology, 2019, 306: 16-23</li>
+                    <li>P. Korpys-Woźniak, P. Kubiak, E. Celińska. Secretory helpers for enhanced production of heterologous proteins in Yarrowia lipolytica. Biotechnology Reports, 2021, 32: e00669</li>
+                    <li>Zhou Qinghua. Efficient expression of Rhizomucor miehei lipase in Yarrowia lipolytica based on new gene integration tools [PhD dissertation]. Wuhan: Huazhong University of Science and Technology, 2021</li>
+                </ol>
+            </div>
+        </section>
+    </div>
+
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Table of contents navigation
+            const tocItems = document.querySelectorAll('.toc-item');
+            const sections = document.querySelectorAll('.content-section');
+            const progressBar = document.getElementById('progressBar');
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            function updateActiveTOC() {
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    if (window.scrollY >= sectionTop) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                tocItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('data-target') === currentSection) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+            
+            tocItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Update URL without refreshing
+                        history.pushState(null, null, `#${targetId}`);
+                    }
+                });
+            });
+            
+            // Progress bar
+            function updateProgressBar() {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight - windowHeight;
+                const scrollTop = window.scrollY;
+                const progress = (scrollTop / documentHeight) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+            
+            // Highlight text interaction
+            const highlights = document.querySelectorAll('.highlight');
+            
+            highlights.forEach(highlight => {
+                highlight.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Visual feedback
+                        this.style.backgroundColor = '#27ae60';
+                        this.style.color = 'white';
+                        
+                        setTimeout(() => {
+                            this.style.backgroundColor = '';
+                            this.style.color = '';
+                        }, 1000);
+                    }
+                });
+            });
+            
+            // Back to top button
+            window.addEventListener('scroll', function() {
+                updateActiveTOC();
+                updateProgressBar();
+                
+                // Show/hide back to top button
+                if (window.scrollY > 500) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Initialize
+            updateActiveTOC();
+            updateProgressBar();
+        });
+    </script>
+</body>
+</html>
