@@ -2,25 +2,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | iGEM HUST-China 2025</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
-    <title>Home | iGEM HUST-China 2025</title>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'light-green': '#d4edda', 
-                        'nav-color': '#343a40',   
-                    },
-                }
-            }
-        }
-    </script>
-    
     <style>
         * {
             margin: 0;
@@ -29,59 +16,35 @@
         }
         
         :root {
-            --primary-green: #2E5D32;    /* 深绿色 - 主色调 */
-            --secondary-green: #4A7C51;  /* 中绿色 */
-            --light-green: #81C784;      /* 浅绿色 */
-            --gold: #D4AF37;             /* 金色 */
-            --light-gold: #F0E68C;       /* 浅金色 */
-            --cream: #F5F5DC;            /* 奶油色 */
-            --dark: #333333;             /* 深灰色 */
-            --light-gray: #F5F5F5;       /* 浅灰色 */
-            --transition: all 0.3s ease;
-            --nav-width: 280px;
-            --card-radius: 12px;         /* 适中的圆角 */
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-        
-        body, html {
-            width: 100%;
-            height: 100%;
-            overflow-x: hidden;
-        }
-        
-        body {
-            font-family: 'Arial', cursive;
-            color: #000000;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
-            position: relative;
-        }
-        
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgb(255, 255, 255) 0%, transparent 20%),
-                radial-gradient(circle at 80% 70%, rgb(255, 255, 255) 0%, transparent 20%),
-                linear-gradient(45deg, rgb(255, 255, 255) 25%, transparent 25%, transparent 75%, rgb(255, 255, 255) 75%, rgb(255, 255, 255)),
-                linear-gradient(45deg, rgb(255, 255, 255) 25%, transparent 25%, transparent 75%, rgb(255, 255, 255) 75%, rgb(255, 255, 255));
-            background-size: 100% 100%, 100% 100%, 20px 20px, 20px 20px;
-            background-position: 0 0, 0 0, 0 0, 10px 10px;
-            z-index: -1;
+            --primary-green: #2E5D32;
+            --secondary-green: #4A7C51;
+            --light-green: #81C784;
+            --cream: #F5F5DC;
+            --light-cream: #FDFDF6;
+            --warm-beige: #F8F4E9;
+            --warm-brown: #8B7355;
+            --transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* 自定义鼠标样式 - 优化版 */
+        body {
+            font-family: 'Raleway', sans-serif;
+            background: var(--light-cream);
+            color: #333;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* 自定义鼠标指针 - 已调整大小和形状 */
         .custom-cursor {
             position: fixed;
             top: 0;
             left: 0;
-            width: 80px;
-            height: 80px;
+            width: 40px; /* 缩小尺寸 */
+            height: 40px; /* 缩小尺寸 */
             pointer-events: none;
             z-index: 9999;
+            transition: transform 0.1s ease;
+            transform-origin: center;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -90,635 +53,412 @@
             opacity: 1;
         }
 
-        .oil-drop {
+        .cursor-inner {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 30px;
-            height: 30px;
-            background: linear-gradient(135deg, #f9ffaa, #ffd900);
-            border-radius: 50%;
-            animation: oilFloat 4s infinite ease-in-out;
-            box-shadow: 
-                0 0 0 2px rgba(255, 255, 255, 0.9),
-                0 0 20px rgba(249, 229, 2, 0.7);
-            transition: all 0.3s ease;
-            z-index: 2;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+            animation: oilDrip 3s infinite alternate;
         }
 
         .cursor-text {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, 15px);
-            font-size: 12px;
-            font-weight: 700;
+            transform: translate(-50%, -50%);
+            font-size: 5px; /* 减小字体大小 */
+            font-weight: bold;
             color: #2E5D32;
-            letter-spacing: 0.8px;
-            font-family: 'Comic Neue', cursive;
-            opacity: 0.8;
             text-align: center;
             width: 100%;
-            transition: all 0.3s ease;
-            text-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+            line-height: 1.2;
         }
 
-        /* 油滴浮动动画 */
-        @keyframes oilFloat {
-            0%, 100% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-            50% {
-                transform: translate(-50%, -52%) scale(1.05);
-            }
+        @keyframes oilDrip {
+            0% { transform: rotate(-45deg) scale(1); }
+            50% { transform: rotate(-45deg) scale(1.1); }
+            100% { transform: rotate(-45deg) scale(1); }
         }
 
-        /* 悬停时的效果 */
-        .hover-effect .oil-drop {
-            transform: translate(-50%, -50%) scale(1.4);
-            background: linear-gradient(135deg, #6d4b00, #ffe683);
-            animation-duration: 2s;
-            box-shadow: 
-                0 0 0 3px rgba(255, 255, 255, 0.9),
-                0 0 30px rgba(249, 229, 2, 0.9);
-        }
-
-        .hover-effect .cursor-text {
-            opacity: 1;
-            font-weight: 800;
-            font-size: 13px;
-            transform: translate(-50%, 20px);
-            color: #1a4720;
-        }
-
-        /* 点击效果 */
-        .custom-cursor:active .oil-drop {
-            transform: translate(-50%, -50%) scale(0.8);
-            background: linear-gradient(135deg, #2E5D32, #4a90e2);
-        }
-
-        /* 确保默认鼠标隐藏 */
-        * {
-            cursor: none !important;
-        }
-
-        /* 为可点击元素添加悬停效果 */
-        a, button, .nav-toggle, .dot, .horizontal-dot, .close-horizontal {
-            position: relative;
-        }
-
-        /* 响应式设计：在小屏幕上恢复默认鼠标 */
-        @media (max-width: 768px) {
-            .custom-cursor {
-                display: none;
-            }
-            * {
-                cursor: auto !important;
-            }
-        }
-        
-        /* 导航按钮样式 - 调整图标大小 */
-        .nav-toggle {
+        /* 导航栏 */
+        .navbar {
             position: fixed;
-            top: 25px;
-            left: 25px;
-            background: white;
-            color: white;
-            width: 70px; /* 增加宽度 */
-            height: 70px; /* 增加高度 */
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            cursor: pointer;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(248, 244, 233, 0.9);
+            backdrop-filter: blur(20px);
             z-index: 1000;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid var(--white);
-            overflow: hidden;
-        }
-
-        .nav-toggle img {
-            width: 50px; /* 增加图标大小 */
-            height: 50px; /* 增加图标大小 */
-            object-fit: contain;
-            transition: transform 0.6s ease; /* 增加过渡时间使旋转更平滑 */
-        }
-
-        /* 添加旋转动画类 - 修复版本 */
-        .nav-toggle.rotate img {
-            transform: rotate(360deg);
-        }
-
-        .nav-toggle:hover img {
-            transform: scale(1.1) rotate(0deg); /* 确保悬停时不干扰旋转 */
-        }
-
-        .nav-hint {
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            white-space: nowrap;
-            font-size: 0.8rem;
-            color: var(--white);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .nav-toggle:hover .nav-hint {
-            opacity: 1;
-        }
-
-        .nav-toggle::after {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 150%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
-            transform: scale(0);
-            transition: transform 0.6s ease;
-        }
-
-        .nav-toggle:active::after {
-            transform: scale(1);
-        }
-
-        .nav-toggle:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .nav-toggle i {
-            transition: transform 0.4s ease;
-        }
-
-        .nav-toggle.active i {
-            transform: rotate(135deg);
-        }
-
-        /* 导航菜单样式 */
-        .nav-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: var(--nav-width);
-            height: 100vh;
-            background: #F5F5DC;
-            box-shadow: 2px 0 15px rgba(0, 0, 0, 0.08);
-            z-index: 999;
-            transform: translateX(-100%);
-            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-            padding: 80px 0 30px;
-            display: flex;
-            flex-direction: column;
-            background-image: 
-                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232E5D32' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-            border-right: 1px solid rgba(46, 93, 50, 0.1);
-            overflow-y: auto;
-        }
-
-        .nav-menu.active {
-            transform: translateX(0);
-        }
-
-        /* 菜单项样式 */
-        .nav-item {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background: var(--primary-green);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-        }
-
-        .nav-item:hover::before {
-            transform: scaleY(1);
-        }
-
-        .nav-link {
-            display: flex;
-            align-items: center;
-            padding: 15px 25px;
-            color: var(--dark);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            gap: 15px;
-            border-left: 3px solid transparent;
-            position: relative;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            background-color: rgba(46, 93, 50, 0.03);
-            color: var(--primary-green);
-            padding-left: 30px;
-        }
-
-        .nav-link i {
-            width: 24px;
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--primary-green);
-            transition: transform 0.3s ease;
-        }
-
-        .nav-link:hover i {
-            transform: scale(1.2);
-        }
-
-        /* 下拉子菜单样式 */
-        .dropdown {
-            display: none;
-            background-color: rgba(46, 93, 50, 0.02);
-            padding-left: 20px;
-            border-left: 3px solid rgba(46, 93, 50, 0.2);
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
-        }
-
-        .nav-item:hover .dropdown {
-            display: block;
-            max-height: 500px;
-        }
-
-        .dropdown .nav-link {
-            padding: 10px 25px;
-            font-size: 1rem;
-            color: #555;
-            border-left: none;
-        }
-
-        .dropdown .nav-link:hover {
-            color: var(--primary-green);
-            padding-left: 35px;
-            background-color: rgba(46, 93, 50, 0.05);
-        }
-
-        /* 下拉箭头动画 */
-        .dropdown-toggle::after {
-            content: "\f078";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            margin-left: auto;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-item:hover .dropdown-toggle::after {
-            transform: rotate(180deg) scale(1.1);
-        }
-
-        /* 滚动条美化 */
-        .nav-menu::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .nav-menu::-webkit-scrollbar-track {
-            background: rgba(46, 93, 50, 0.03);
-        }
-
-        .nav-menu::-webkit-scrollbar-thumb {
-            background: rgba(46, 93, 50, 0.3);
-            border-radius: 3px;
-        }
-
-        .nav-menu::-webkit-scrollbar-thumb:hover {
-            background: rgba(46, 93, 50, 0.5);
-        }
-        
-        /* 全屏滚动容器 - 修改为渐变式切换 */
-        .fullpage-container {
-            height: 100vh;
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .fullpage-section {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            opacity: 0;
-            visibility: hidden;
-            background-color: #F5F5F5;
-        }
-        
-        .fullpage-section.active {
-            opacity: 1;
-            visibility: visible;
-            z-index: 1;
-        }
-        
-        /* 背景模糊效果（封面除外） */
-        .fullpage-section:not(#cover)::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            filter: blur(15px);
-            z-index: -1;
-            opacity: 1;
-        }
-        
-        /* 各场景背景 */
-        #cover {
-            background-image: url('https://static.igem.wiki/teams/5569/description/fengmiannew.webp');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        /* 场景1背景 */
-        #scene1::before {
-            background-image: url('https://static.igem.wiki/teams/5569/description/huazhuangpin2.webp');
-            opacity: 0.4;
-        }
-        
-        /* 场景2背景 */
-        #scene2::before {
-            background-image: url('https://static.igem.wiki/teams/5569/description/baidi.webp');
-        }
-        
-        /* 场景3背景 */
-        #scene3::before {
-            background-image: url('https://static.igem.wiki/teams/5569/description/baidi.webp');
-        }
-        
-        /* 场景4背景 */
-        #scene4::before {
-            background-image: url('https://static.igem.wiki/teams/5569/description/shark.webp');
-        }
-        
-        /* 场景5背景 */
-        #scene5::before {
-            background-image: url('https://static.igem.wiki/teams/5569/description/feiyou.webp');
-        }
-        
-        /* 场景6背景 */
-        #scene6::before {
-            background-image: url('https://static.igem.wiki/teams/5569/description/youwu.webp');
-        }
-        
-        /* 内容区域 */
-        .section-content {
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+            transform: translateY(0);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.hidden {
+            transform: translateY(-100%);
+        }
+
+        .navbar.scrolled {
+            background: rgba(248, 244, 233, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+            transition: transform 0.6s ease;
+        }
+
+        .nav-logo.rotate img {
+            transform: rotate(360deg);
+        }
+
+        .nav-logo-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #4A7C51, #2E5D32);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem; /* 减小间距 */
+            position: relative;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .nav-link:hover {
+            color: #4A7C51;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #4A7C51, #2E5D32);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
             width: 100%;
-            max-width: 1200px;
-            padding: 40px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
-        
-        .section-left, .section-right {
-            width: 48%;
-            position: relative;
-            transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
-        }
-        
-        /* 初始位置 - 激活前 */
-        .fullpage-section:not(.active) .section-left {
-            transform: translateX(-100px);
+
+        /* 下拉菜单样式 */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 200px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 0;
             opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
         }
-        
-        .fullpage-section:not(.active) .section-right {
-            transform: translateX(100px);
-            opacity: 0;
-        }
-        
-        .fullpage-section.active .section-left,
-        .fullpage-section.active .section-right {
-            transform: translateX(0);
+
+        .nav-item:hover .dropdown {
             opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
-        
-        /* 封面内容样式 */
-        .cover-content {
+
+        .dropdown-link {
+            display: block;
+            padding: 0.6rem 1.5rem;
+            color: #555;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(74, 124, 81, 0.1);
+            color: #4A7C51;
+            padding-left: 1.8rem;
+        }
+
+        .dropdown-link i {
+            margin-right: 0.5rem;
+            width: 15px;
             text-align: center;
-            color: white;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 20px;
         }
-        
-        .cover-title {
-            font-family: 'Comic Neue', cursive;
-            font-size: 4.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-            font-weight: 700;
-            color: #fff;
+
+        /* 滚动容器 */
+        .scroll-container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
         }
-        
-        .cover-subtitle {
-            font-family: 'Comic Neue', cursive;
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-            color: var(--light-gold);
-        }
-        
-        .cover-tagline {
-            font-family: 'Comic Neue', cursive;
-            font-size: 1.5rem;
-            margin-bottom: 2.5rem;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-        }
-        
-        /* 磨砂玻璃容器样式 */
-        .glass-container {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 
-                0 8px 32px rgba(0, 0, 0, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.4);
-            padding: 40px;
+
+        /* 竖屏滚动部分 */
+        .vertical-section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
             overflow: hidden;
+        }
+
+        /* 背景模糊效果 */
+        .vertical-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        
-        /* 背景装饰效果 */
-        .glass-container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
             z-index: -1;
+            opacity: 0.7;
         }
-        
-        /* 文字样式 */
-        .section-h1 {
-            font-size: 3.2rem;
-            color: #000000;
-            margin-bottom: 1.5rem;
+
+        /* 各场景背景 */
+        #cover::before {
+            background-image: url('https://static.igem.wiki/teams/5569/description/fengmiannew.webp');
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        #intro::before {
+            background-image: url('https://static.igem.wiki/teams/5569/description/huazhuangpin2.webp');
+        }
+
+        #benefits::before {
+            background-image: url('https://static.igem.wiki/teams/5569/description/baidi.webp');
+        }
+
+        #market::before {
+            background-image: url('https://static.igem.wiki/teams/5569/description/baidi.webp');
+        }
+
+        #sources::before {
+            background-image: url('https://static.igem.wiki/teams/5569/description/shark.webp');
+        }
+
+        #technology::before {
+            background-image: url('https://static.igem.wiki/teams/5569/description/feiyou.webp');
+        }
+
+        #solution::before {
+            background-image: url('https://static.igem.wiki/teams/5569/description/youwu.webp');
+        }
+
+        #navigation::before {
+            background-image: url('https://static.igem.wiki/teams/5569/description/fengmiannew.webp');
+        }
+
+        /* 横屏滚动部分 */
+        .horizontal-scroll-section {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .horizontal-pages {
+            display: flex;
+            width: 300vw;
+            height: 100vh;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .horizontal-page {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        /* 内容样式 */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            align-items: center;
+        }
+
+        .text-content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .text-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .image-content {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.8s ease;
+        }
+
+        .image-content.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 3rem;
+            border: 1px solid rgba(139, 115, 85, 0.1);
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-title {
+            font-size: 2.5rem;
             font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #4A7C51, #2E5D32);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             position: relative;
             display: inline-block;
-            letter-spacing: 1px;
         }
-        
-        .section-h1::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 25%;
-            width: 50%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #F5F5F5, transparent);
-            border-radius: 2px;
-        }
-        
-        .section-h2 {
-            font-size: 2.4rem;
-            font-weight:bold;
-            color: rgb(0, 122, 162);
-            background-color: rgba(173, 216, 230, 0.3);
-            margin-bottom: 20px;
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 8px;
-            line-height:1.5;
-        }
-        
-        .section-h2::after {
+
+        .card-title::after {
             content: '';
             position: absolute;
             bottom: -10px;
             left: 0;
-            width: 70px;
+            width: 60px;
             height: 3px;
-            background: #022c5b;
+            background: linear-gradient(90deg, #4A7C51, transparent);
             border-radius: 2px;
         }
-        
-        .section-p {
-            font-size: 1.8rem;
-            color: #333333;
+
+        .card-text {
+            font-size: 1.1rem;
+            color: #555;
             line-height: 1.8;
-            margin-bottom: 15px;
-            max-width: 700px;
-            font-weight:bold;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
         }
-        
+
+        .card-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .highlight {
-            color: rgb(240, 86, 86);
+            color: #4A7C51;
             font-weight: 600;
             position: relative;
-            padding: 0 4px;
+            display: inline-block;
         }
-        
-        /* 图片样式 */
+
+        .highlight::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: rgba(74, 124, 81, 0.2);
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .highlight:hover::before {
+            transform: scaleX(1);
+        }
+
         .section-image {
             width: 100%;
-            max-width: 600px;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.5s ease;
+            max-width: 500px;
+            border-radius: 16px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease; /* 添加阴影过渡 */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
+        /* 修改图片悬停效果 - 移除左右晃动 */
         .section-image:hover {
             transform: scale(1.03);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
-        
-        /* 滚动提示 */
-        .scroll-hint {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #4a90e2;
-            font-size: 1rem;
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            opacity: 0.8;
-        }
-        
-        .scroll-hint span {
-            margin-top: 8px;
-            letter-spacing: 0.5px;
-        }
-        
-        .scroll-hint .arrow {
-            animation: bounce 2s infinite;
-        }
-        
-        /* 动画定义 */
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-        
-        .footer-note {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.9rem;
-            color: #718096;
-            z-index: 100;
-            width: 100%;
-            text-align: center;
-        }
-        
+
         /* 图片切换器样式 */
         .image-switcher {
             position: relative;
             width: 100%;
             height: 100%;
             cursor: pointer;
+            overflow: hidden;
+            border-radius: 16px;
         }
         
         .image-switcher img {
             position: absolute;
-            top: 50%;
+            top: 0;
             left: 0;
             width: 100%;
-            height: auto;
-            border-radius: 10px;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
             transition: opacity 0.5s ease;
-            transform: translateY(-50%);
         }
         
         .image-switcher .image-front {
@@ -736,867 +476,1070 @@
         .image-switcher.active .image-back {
             opacity: 1;
         }
-        
-        /* 横向滚动容器 */
-        .horizontal-scroll-container {
+
+        /* 解决方案页面 */
+        .solution-section {
+            background: var(--warm-beige);
+            padding: 4rem 0;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .solution-card {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(139, 115, 85, 0.1);
+            transition: var(--transition);
+            cursor: pointer;
+            transform: translateY(50px);
+            opacity: 0;
             position: relative;
-            width: 100%;
-            height: 100%;
             overflow: hidden;
         }
-        
-        .horizontal-scroll-content {
-            display: flex;
-            width: 300%;
-            height: 100%;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+        .solution-card.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
-        
-        .horizontal-scroll-item {
-            width: 33.33%;
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
             height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 115, 85, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .solution-card:hover::before {
+            left: 100%;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .nav-boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .nav-box {
+            aspect-ratio: 1;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid rgba(139, 115, 85, 0.1);
+            overflow: hidden;
+            position: relative;
+            transform: scale(0.8);
+            opacity: 0;
         }
-        
-        .horizontal-scroll-item img {
-            width: 100%;
-            height: 100%;
+
+        .nav-box.visible {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .nav-box:hover {
+            transform: scale(1.03);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .nav-box img {
+            width: 80%;
+            height: 80%;
             object-fit: cover;
             border-radius: 8px;
+            transition: var(--transition);
         }
-        
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .section-h1 { font-size: 2.2rem; margin-bottom: 1.2rem; }
-            .section-h2 { font-size: 1.8rem; margin-bottom: 1.5rem; }
-            .section-p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.2rem; }
-            .section-content { 
-                flex-direction: column;
-                padding: 20px; 
-                width: 92%; 
-            }
-            .section-left, .section-right {
-                width: 100%;
-                transform: none !important;
-            }
-            .scroll-hint { bottom: 30px; }
-            .cover-title { font-size: 3rem; }
-            .cover-subtitle { font-size: 2.5rem; }
-            .glass-container {
-                padding: 25px;
-                min-height: 300px;
-            }
+
+        .nav-box:hover img {
+            transform: scale(1.05);
         }
-        
-        /* 导航指示器 */
-        .indicator {
+
+        /* 扩展内容部分 */
+        .extended-content {
+            background: var(--warm-beige);
+            padding: 6rem 0;
+        }
+
+        .extended-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .extended-card {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid rgba(139, 115, 85, 0.1);
+            transition: var(--transition);
+            transform: translateY(30px);
+            opacity: 0;
+        }
+
+        .extended-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .extended-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .extended-card h3 {
+            color: #4A7C51;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .extended-card p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        /* 页脚 */
+        .footer {
+            background: linear-gradient(rgba(248, 244, 233, 0.9), rgba(248, 244, 233, 0.9)), 
+                        url('https://static.igem.wiki/teams/5569/description/fengmiannew.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 2rem;
+            position: relative;
+            border-top: 1px solid rgba(139, 115, 85, 0.1);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .logo-item {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .logo-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .footer-text {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .text-column h3 {
+            color: #4A7C51;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .text-column p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .text-column p:hover {
+            color: #4A7C51;
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(139, 115, 85, 0.1);
+            color: #777;
+        }
+
+        /* 滚动指示器 */
+        .scroll-indicator {
             position: fixed;
-            right: 30px;
+            right: 2rem;
             top: 50%;
             transform: translateY(-50%);
             z-index: 100;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 1rem;
         }
-        
-        .dot {
-            width: 16px;
-            height: 16px;
-            background: transparent;
-            border: 2px solid #4a90e2;
+
+        .indicator-dot {
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
+            background: rgba(139, 115, 85, 0.3);
             cursor: pointer;
-            transition: all 0.4s ease;
+            transition: var(--transition);
             position: relative;
         }
-        
-        .dot.active {
-            background: #4a90e2;
+
+        .indicator-dot.active {
+            background: #4A7C51;
             transform: scale(1.3);
-            box-shadow: 0 0 20px rgba(74, 144, 226, 0.4);
         }
-        
-        .dot::before {
+
+        .indicator-dot::before {
             content: attr(data-title);
             position: absolute;
-            right: 25px;
+            right: 20px;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.95);
-            color: #4a90e2;
-            padding: 8px 15px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 0.5rem 1rem;
             border-radius: 6px;
             font-size: 0.9rem;
             opacity: 0;
             transition: opacity 0.3s ease;
             pointer-events: none;
             white-space: nowrap;
-            border: 1px solid rgba(74, 144, 226, 0.2);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
-        .dot:hover::before {
+
+        .indicator-dot:hover::before {
             opacity: 1;
         }
-        
-        /* 横屏滚动页面样式 */
-        .horizontal-page-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #F5F5F5;
-            z-index: 2000;
-            display: none;
-            overflow: hidden;
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-text {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .card-title {
+                font-size: 2rem;
+            }
+            
+            .navbar {
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .custom-cursor {
+                display: none;
+            }
+            
+            .scroll-indicator {
+                right: 1rem;
+            }
         }
-        
-        .horizontal-page-container.active {
-            display: block;
+
+        /* 动画效果 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
-        
-        .horizontal-pages {
-            display: flex;
-            width: 300%;
-            height: 100%;
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
         }
-        
-        .horizontal-page {
-            width: 33.33%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(74, 124, 81, 0.2); }
+            50% { box-shadow: 0 0 30px rgba(74, 124, 81, 0.4); }
         }
-        
-        .horizontal-page::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            filter: blur(15px);
-            z-index: -1;
-            opacity: 1;
+
+        .glowing {
+            animation: glow 3s ease-in-out infinite;
         }
-        
-        .horizontal-page-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 1200px;
-            padding: 40px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
+
+        /* 封面特殊样式 */
+        .cover-content {
+            text-align: center;
+            z-index: 2;
         }
-        
-        .horizontal-page-left, .horizontal-page-right {
-            width: 48%;
-            position: relative;
+
+        .cover-title {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #4A7C51, #2E5D32);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
-        .horizontal-page-image {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: 10px;
-            transition: transform 0.5s ease;
-        }
-        
-        .horizontal-page-image:hover {
-            transform: scale(1.03);
-        }
-        
-        /* 横屏滚动指示器 */
-        .horizontal-indicator {
-            position: fixed;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2001;
-            display: flex;
-            gap: 15px;
-        }
-        
-        .horizontal-dot {
-            width: 12px;
-            height: 12px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .horizontal-dot.active {
-            background: white;
-            transform: scale(1.3);
-        }
-        
-        /* 关闭按钮 */
-        .close-horizontal {
-            position: fixed;
-            top: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+
+        .cover-subtitle {
             font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 2001;
-            transition: all 0.3s ease;
+            color: #555;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
-        
-        .close-horizontal:hover {
-            background: rgba(0, 0, 0, 0.5);
-            transform: scale(1.1);
+
+        /* 解决方案标题 */
+        .solution-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #4A7C51, #2E5D32);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
-        /* 横屏滚动提示 */
-        .horizontal-scroll-hint {
-            position: fixed;
-            bottom: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 1rem;
-            z-index: 2001;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            opacity: 0.8;
-        }
-        
-        .horizontal-scroll-hint span {
-            margin-top: 8px;
-            letter-spacing: 0.5px;
-        }
-        
-        .horizontal-scroll-hint .arrow {
-            animation: bounce 2s infinite;
-        }
-        
-        /* 横屏页面背景 */
-        #horizontal-page1::before {
-            background-image: url('https://static.igem.wiki/teams/5569/description/shark.webp');
-        }
-        
-        #horizontal-page2::before {
-            background-image: url('https://static.igem.wiki/teams/5569/description/plant.webp');
-        }
-        
-        #horizontal-page3::before {
-            background-image: url('https://static.igem.wiki/teams/5569/description/factory.webp');
+
+        .solution-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
 <body>
-
-    <!-- 自定义鼠标光标 - 优化版 -->
+    <!-- 自定义鼠标指针 - 已调整大小和形状 -->
     <div class="custom-cursor">
-        <div class="oil-drop"></div>
-        <div class="cursor-text">HUST-China</div>
+        <div class="cursor-inner"></div>
+        <div class="cursor-text">HUST-China<br>SQUALENE</div>
     </div>
 
-    <!-- 导航按钮 -->
-    <div class="nav-toggle" id="navToggle">
-        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Navigation">
-        <div class="nav-hint">Click to expand menu</div>
-    </div>
-    
-    <!-- 导航菜单 -->
-    <nav class="nav-menu" id="navMenu">
-        <div class="nav-item">
-            <a href="index.html" class="nav-link active"><i class="fa fa-home"></i> Home</a>
+    <!-- 导航栏 - 添加了下拉菜单 -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="iGEM HUST-China">
+            <div class="nav-logo-text">iGEM HUST-China 2025</div>
         </div>
-        
-        <div class="nav-item">
-            <a href="#" class="nav-link dropdown-toggle"><i class="fa fa-project-diagram"></i> Project</a>
-            <div class="dropdown" id="projectDropdown">
-                <a href="description" class="nav-link"><i class="fa fa-angle-right"></i> Description</a>
-                <a href="safety" class="nav-link"><i class="fa fa-angle-right"></i> Safety</a>
-                <a href="proposed-implementation" class="nav-link"><i class="fa fa-angle-right"></i> Proposed Implementation</a>
+        <div class="nav-links">
+            <a href="#" class="nav-link">Home</a>
+            
+            <div class="nav-item">
+                <a href="#" class="nav-link">Project</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-link"><i class="fas fa-file-alt"></i> Description</a>
+                    <a href="#" class="dropdown-link"><i class="fas fa-shield-alt"></i> Safety</a>
+                    <a href="#" class="dropdown-link"><i class="fas fa-cogs"></i> Proposed Implementation</a>
+                </div>
             </div>
-        </div>
-        
-        <div class="nav-item">
-            <a href="#" class="nav-link dropdown-toggle"><i class="fa fa-search"></i> Human Practices</a>
-            <div class="dropdown" id="humanPracticesDropdown">
-                <a href="human-practices" class="nav-link"><i class="fa fa-angle-right"></i> Human Practices</a>
-                <a href="education" class="nav-link"><i class="fa fa-angle-right"></i> Education</a>
+            
+            <div class="nav-item">
+                <a href="#" class="nav-link">Wet Lab</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-link"><i class="fas fa-pencil-ruler"></i> Design</a>
+                    <a href="#" class="dropdown-link"><i class="fas fa-microscope"></i> Engineering</a>
+                    <a href="#" class="dropdown-link"><i class="fas fa-flask"></i> Protocol</a>
+                    <a href="#" class="dropdown-link"><i class="fas fa-chart-line"></i> Results</a>
+                    <a href="#" class="dropdown-link"><i class="fas fa-book"></i> Notebook</a>
+                    <a href="#" class="dropdown-link"><i class="fas fa-puzzle-piece"></i> Parts</a>
+                </div>
             </div>
-        </div>
-        
-        <div class="nav-item">
-            <a href="#" class="nav-link dropdown-toggle"><i class="fa fa-flask"></i> Wet Lab</a>
-            <div class="dropdown" id="wetLabDropdown">
-                <a href="design.html" class="nav-link"><i class="fa fa-angle-right"></i> Design</a>
-                <a href="engineering" class="nav-link"><i class="fa fa-angle-right"></i> Engineering</a>
-                <a href="protocol" class="nav-link"><i class="fa fa-angle-right"></i> Protocol</a>
-                <a href="results" class="nav-link"><i class="fa fa-angle-right"></i> Results</a>
-                <a href="notebook" class="nav-link"><i class="fa fa-angle-right"></i> Notebook</a>
-                <a href="parts" class="nav-link"><i class="fa fa-angle-right"></i> Parts</a>
+            
+            <div class="nav-item">
+                <a href="#" class="nav-link">Dry Lab</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-link"><i class="fas fa-cubes"></i> Model</a>
+                    <a href="#" class="dropdown-link"><i class="fas fa-microchip"></i> Hardware</a>
+                </div>
             </div>
-        </div>
-        
-        <div class="nav-item">
-            <a href="#" class="nav-link dropdown-toggle"><i class="fa fa-laptop"></i> Dry Lab</a>
-            <div class="dropdown" id="dryLabDropdown">
-                <a href="model" class="nav-link"><i class="fa fa-angle-right"></i> Model</a>
-                <a href="hardware" class="nav-link"><i class="fa fa-angle-right"></i> Hardware</a>
+            
+            <div class="nav-item">
+                <a href="#" class="nav-link">Human Practices</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-link"><i class="fas fa-users"></i> Human Practices</a>
+                    <a href="#" class="dropdown-link"><i class="fas fa-graduation-cap"></i> Education & Communication</a>
+                </div>
             </div>
-        </div>
-        
-        <div class="nav-item">
-            <a href="#" class="nav-link dropdown-toggle"><i class="fa fa-users"></i> Team</a>
-            <div class="dropdown" id="teamDropdown">
-                <a href="members" class="nav-link"><i class="fa fa-angle-right"></i> Members</a>
-                <a href="contribution" class="nav-link"><i class="fa fa-angle-right"></i> Contribution</a>
-                <a href="attributions" class="nav-link"><i class="fa fa-angle-right"></i> Attributions</a>
+            
+            <div class="nav-item">
+                <a href="#" class="nav-link">Team</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-link"><i class="fas fa-user-friends"></i> Members</a>
+                    <a href="#" class="dropdown-link"><i class="fas fa-hands-helping"></i> Contribution</a>
+                    <a href="#" class="dropdown-link"><i class="fas fa-award"></i> Attributions</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- 全屏滚动容器 -->
-    <div class="fullpage-container" id="fullpageContainer">
+    <!-- 滚动指示器 -->
+    <div class="scroll-indicator">
+        <div class="indicator-dot active" data-title="Cover" data-target="0"></div>
+        <div class="indicator-dot" data-title="Introduction" data-target="1"></div>
+        <div class="indicator-dot" data-title="Benefits" data-target="2"></div>
+        <div class="indicator-dot" data-title="Market" data-target="3"></div>
+        <div class="indicator-dot" data-title="Sources" data-target="4"></div>
+        <div class="indicator-dot" data-title="Technology" data-target="5"></div>
+        <div class="indicator-dot" data-title="Solution" data-target="6"></div>
+        <div class="indicator-dot" data-title="Navigation" data-target="7"></div>
+        <div class="indicator-dot" data-title="Extended" data-target="8"></div>
+    </div>
+
+    <!-- 滚动容器 -->
+    <div class="scroll-container">
         <!-- 封面 -->
-        <div id="cover" class="fullpage-section active">
-            <div class="scroll-hint">
-                <div class="arrow">▼</div>
-                <span>Scroll to explore</span>
-            </div>
-        </div>
-        
-        <!-- 场景1: 引子 -->
-        <div id="scene1" class="fullpage-section">
-            <div class="section-content">
-                <div class="section-left">
-                    <img src="https://static.igem.wiki/teams/5569/index/huazhuangpin1.webp" alt="Squalene Science" class="section-image">
+        <section id="cover" class="vertical-section">
+            <div class="cover-content floating">
+                <h1 class="cover-title">Squalene Revolution</h1>
+                <p class="cover-subtitle">Sustainable Beauty Through Synthetic Biology</p>
+                <p class="cover-subtitle">Transforming Waste Oil into Premium Skincare</p>
+            </极>
+        </section>
+
+        <!-- 介绍 -->
+        <section id="intro" class="vertical-section">
+            <div class="content-wrapper">
+                <div class="image-content">
+                    <img src="https://static.igem.wiki/teams/5569/index/huazhuangpin1.webp" alt="Squalene" class="section-image glowing">
                 </div>
-                <div class="section-right">
-                    <div class="glass-container">
-                        <h1 class="section-h1">Squalene</h1>
-                        <h2 class="section-h2">Precursor to Skincare Miracle</h2>
-                        <p class="section-p"><span class="highlight">Squalene</span> is a naturally occurring lipid compound and the precursor to <span class="highlight">squalane</span>, widely used in cosmetics.</p>
-                        <p class="section-p">Its unique molecular structure makes it a prized ingredient in skincare products.</p>
+                <div class="text-content">
+                    <div class="content-card">
+                        <h2 class="card-title">The Squalene Story</h2>
+                        <p class="card-text"><span class="highlight">Squalene</span> is a natural lipid compound found in shark liver and some plants.</p>
+                        <p class="card-text">When hydrogenated, it becomes <span class="highlight">squalane</span> - a prized ingredient in premium skincare.</p>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- 场景2: 角鲨烷功能 -->
-        <div id="scene2" class="fullpage-section">
-            <div class="section-content">
-                <div class="section-left">
-                    <div class="glass-container">
-                        <h2 class="section-h2">Moisture-Locking Mechanism</h2>
-                        <p class="section-p">Squalane forms a <span class="highlight">protective barrier</span> on the skin's surface that prevents moisture loss.</p>
-                        <p class="section-p">This "lock-in rather than soak-in" property makes squalane an exceptional moisturizer.</p>
+        </section>
+
+        <!-- 益处 -->
+        <section id="benefits" class="vertical-section">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <div class极="content-card">
+                        <h2 class="card-title">Perfect Moisturization</h2>
+                        <p class="card-text">Squalane creates a <span class="highlight">protective barrier</span> that locks in moisture while allowing skin to breathe.</p>
+                        <p class="card-text">Exceptional compatibility with all skin types.</p>
                     </div>
                 </div>
-                <div class="section-right">
+                <div class="image-content">
                     <!-- 图片切换器 -->
                     <div class="image-switcher" id="faceSwitcher">
-                        <img src="https://static.igem.wiki/teams/5569/description/face11.webp" alt="Moisture-Locking Mechanism" class="image-front">
-                        <img src="https://static.igem.wiki/teams/5569/description/face2.webp" alt="Moisture-Locking Mechanism Alternative" class="image-back">
+                        <img src="https://static.igem.wiki/teams/5569/description/face11.webp" alt="Benefits" class="image-front section-image">
+                        <img src="https://static.igem.wiki/teams/5569/description/face2.web极" alt="Benefits Alternative" class="image-back section-image">
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- 场景3: 市场需求 -->
-        <div id="scene3" class="fullpage-section">
-            <div class="section-content">
-                <div class="section-left">
-                    <img src="https://static.igem.wiki/teams/5569/description/jiaoshaxishuju.webp" alt="Market Demand Data" class="section-image">
+        </section>
+
+        <!-- 市场 -->
+        <section id="market" class="vertical-section">
+            <div class="content-wrapper">
+                <div class="image-content">
+                    <img src="https://static.igem.wiki/teams/5569/description/jiaoshaxishuju.webp" alt="Market" class="section-image">
                 </div>
-                <div class="section-right">
-                    <div class="glass-container">
-                        <h2 class="section-h2">Growing Market Demand</h2>
-                        <p class="section-p">The global squalene market continues to expand with an <span class="highlight">annual growth rate exceeding 7.5%</span>.</p>
-                        <p class="section-p">Used in premium cosmetics and pharmaceutical applications.</p>
+                <div class="text-content">
+                    <div class="content-card">
+                        <h2 class="card-title">Growing Demand</h2>
+                        <p class="card-text">The global squalene market is expanding at <span class="highlight">7.5% annually</span>.</p>
+                        <p class="card-text">Driven by rising demand for natural skincare products.</p>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- 场景4: 来源分析 -->
-        <div id="scene4" class="fullpage-section">
-            <div class="section-content">
-                <div class="section-left">
-                    <div class="glass-container">
-                        <h2 class="section-h2">Squalene Sources</h2>
-                        <p class="section-p">Traditionally extracted from <span class="highlight">deep-sea shark livers</span>, placing pressure on marine ecosystems.</p>
-                        <p class="section-p">Plant-based sources have emerged as sustainable alternatives.</p>
-                        <button id="openHorizontal" style="margin-top: 20px; padding: 10px 20px; background: #4a90e2; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem;">
-                            Explore Sources in Detail
-                        </button>
-                    </div>
-                </div>
-                <div class="section-right">
-                    <!-- 横向滚动容器 -->
-                    <div class="horizontal-scroll-container" id="sourcesCarousel">
-                        <div class="horizontal-scroll-content">
-                            <div class="horizontal-scroll-item">
-                                <img src="https://static.igem.wiki/teams/5569/index/shark.webp" alt="Shark Source">
-                            </div>
-                            <div class="horizontal-scroll-item">
-                                <img src="https://static.igem.wiki/teams/5569/index/plant.webp" alt="Plant Source">
-                            </div>
-                            <div class="horizontal-scroll-item">
-                                <img src="https://static.igem.wiki/teams/5569/index/gongchang.webp" alt="Factory Source">
+        </section>
+
+        <!-- 横屏滚动部分 - 来源分析 -->
+        <section id="sources" class="horizontal-scroll-section">
+            <div class="horizontal-pages">
+                <!-- 页面1: 鲨鱼来源 -->
+                <div class="horizontal-page">
+                    <div class="content-wrapper">
+                        <div class="image-content">
+                            <img src="https://static.igem.wiki/teams/5569/index/shark.webp" alt="Shark Source" class="section-image">
+                        </div>
+                        <div class="text-content">
+                            <div class="content-card">
+                                <h2 class="card-title">Shark Liver Source</h2>
+                                <p class="card-text">Traditional but unsustainable source from <span class="highlight">deep-sea shark livers</span>.</p>
+                                <p class="card-text">Threatens marine ecosystems and shark populations.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- 场景5: 废油污染 -->
-        <div id="scene5" class="fullpage-section">
-            <div class="section-content">
-                <div class="section-left">
-                    <img src="https://static.igem.wiki/teams/5569/description/feiyou.webp" alt="Waste Oil Pollution" class="section-image">
-                </div>
-                <div class="section-right">
-                    <div class="glass-container">
-                        <h2 class="section-h2">Waste Oil Pollution Crisis</h2>
-                        <p class="section-p">Globally, over <span class="highlight">30 million tons</span> of used cooking oil are produced annually.</p>
-                        <p class="section-p">Causes severe water and soil pollution when improperly handled.</p>
+
+                <!-- 页面2: 植物来源 -->
+                <div class="horizontal-page">
+                    <div class="content-wrapper">
+                        <div class="text-content">
+                            <div class="content-card">
+                                <h2 class="card-title">Plant-Based Sources</h2>
+                                <p class="card-text">Sustainable alternatives from <span class="highlight">olive oil, amaranth, and rice bran</span>.</p>
+                                <p class="card-text">Renewable but limited by yield and costs.</p>
+                            </div>
+                        </div>
+                        <div class="image-content">
+                            <img src="https://static.igem.wiki/teams/5569/index/plant.webp" alt="Plant Source" class="section-image">
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- 场景6: 创新解决方案 -->
-        <div id="scene6" class="fullpage-section">
-            <div class="section-content">
-                <div class="section-left">
-                    <div class="glass-container">
-                        <h2 class="section-h2">Squalene from Waste Oil</h2>
-                        <p class="section-p">Our innovative project utilizes <span class="highlight">synthetic biology technology</span>.</p>
-                        <p class="section-p">We convert waste oil into high-purity squalene using engineered microorganisms.</p>
-                    </div>
-                </div>
-                <div class="section-right">
-                    <img src="https://static.igem.wiki/teams/5569/description/youwu.webp" alt="Squalene from Waste Oil" class="section-image">
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 横屏滚动页面 -->
-    <div class="horizontal-page-container" id="horizontalPageContainer">
-        <div class="close-horizontal" id="closeHorizontal">
-            <i class="fa fa-times"></i>
-        </div>
-        
-        <div class="horizontal-scroll-hint">
-            <div class="arrow">◄ ►</div>
-            <span>Scroll horizontally to explore</span>
-        </div>
-        
-        <div class="horizontal-indicator" id="horizontalIndicator">
-            <div class="horizontal-dot active" data-target="0"></div>
-            <div class="horizontal-dot" data-target="1"></div>
-            <div class="horizontal-dot" data-target="2"></div>
-        </div>
-        
-        <div class="horizontal-pages" id="horizontalPages">
-            <!-- 页面1: 鲨鱼来源 -->
-            <div class="horizontal-page" id="horizontal-page1">
-                <div class="horizontal-page-content">
-                    <div class="horizontal-page-left">
-                        <img src="https://static.igem.wiki/teams/5569/index/shark.webp" alt="Shark Source" class="horizontal-page-image">
-                    </div>
-                    <div class="horizontal-page-right">
-                        <div class="glass-container">
-                            <h1 class="section-h1">Shark Liver Source</h1>
-                            <h2 class="section-h2">Traditional but Unsustainable</h2>
-                            <p class="section-p">For decades, squalene was primarily sourced from <span class="highlight">deep-sea shark livers</span>.</p>
-                            <p class="section-p">This practice has led to the decline of shark populations and threatens marine ecosystems.</p>
-                            <p class="section-p">Approximately <span class="highlight">3 million sharks</span> are killed annually for squalene production.</p>
+
+                <!-- 页面3: 生物技术 -->
+                <div class="horizontal-page">
+                    <div class="content-wrapper">
+                        <div class="image-content">
+                            <img src="https://static.igem.wiki/teams/5569/index/gongchang.webp" alt="Biotech" class="section-image">
+                        </div>
+                        <div class="text-content">
+                            <div class="content-card">
+                                <h2 class="card-title">Biotechnological Production</h2>
+                                <p class="card-text">Modern <span class="highlight">fermentation technology</span> enables sustainable production.</p>
+                                <p class="card-text">Engineered microorganisms convert renewable resources.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- 页面2: 植物来源 -->
-            <div class="horizontal-page" id="horizontal-page2">
-                <div class="horizontal-page-content">
-                    <div class="horizontal-page-left">
-                        <div class="glass-container">
-                            <h1 class="section-h1">Plant-Based Sources</h1>
-                            <h2 class="section-h2">Sustainable Alternatives</h2>
-                            <p class="section-p">Plant sources like <span class="highlight">olive oil, amaranth, and rice bran</span> offer sustainable alternatives.</p>
-                            <p class="section-p">These sources are renewable but face challenges with yield and production costs.</p>
-                            <p class="section-p">Plant-based squalene accounts for about <span class="highlight">30%</span> of the global market.</p>
-                        </div>
+        </section>
+
+        <!-- 新增竖屏页面 - 技术 -->
+        <section id="technology" class="vertical-section">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <div class="content-card">
+                        <h2 class="card-title">Our Technology</h2>
+                        <p class="card-text">We've developed a <span class="highlight">revolutionary process</span> that transforms waste cooking oil into high-purity squalene.</p>
+                        <p class="card-text">Using advanced <span class="highlight">synthetic biology</span> and <span class="highlight">metabolic engineering</span>, we've optimized microbial strains for maximum efficiency.</p>
+                        <p class="card-text">Our approach reduces production costs by <span class="highlight">40%</span> while maintaining exceptional product quality.</p>
                     </div>
-                    <div class="horizontal-page-right">
-                        <img src="https://static.igem.wiki/teams/5569/index/plant.webp" alt="Plant Source" class="horizontal-page-image">
+                </div>
+                <div class="image-content">
+                    <img src="https://static.igem.wiki/teams/5569/index/gongchang.webp" alt="Technology" class="section-image glowing">
+                </div>
+            </div>
+        </section>
+
+        <!-- 解决方案 -->
+        <section id="solution" class="vertical-section solution-section">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+                <div class="content-card" style="max-width: 100%; margin-bottom: 3rem; text-align: center;">
+                    <h2 class="solution-title">Our Innovative Solution</h2>
+                    <p class="solution-subtitle">Transforming waste oil into high-value squalene through synthetic biology</p>
+                </div>
+
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h3 style="color: #4A7C51; margin-bottom: 1rem;">Waste Collection</h3>
+                        <p style="color: #555;">Efficient collection of used cooking oil from restaurants and food industries</p>
+                    </div>
+                    <div class="solution-card">
+                        <h3 style="color: #4A7C51; margin-bottom: 1rem;">Microbial Conversion</h3>
+                        <p style="color: #555;">Engineered microorganisms transform waste oil into squalene</p>
+                    </div>
+                    <div class="solution-card">
+                        <h3 style="color: #4A7C51; margin-bottom: 1rem;">Purification</h3>
+                        <p style="color: #555;">High-purity squalene extraction and refinement process</p>
+                    </div>
+                    <div class="solution-card">
+                        <h3 style="color: #4A7C51; margin-bottom: 1rem;">Sustainability</h3>
+                        <p style="color: #555;">Environmentally friendly process with minimal waste</p>
+                    </div>
+                    <div class="solution-card">
+                        <h3 style="color: #4A7C51; margin-bottom: 1rem;">Cost-Effective</h3>
+                        <p style="极#555;">Lower production costs compared to traditional methods</p>
+                    </div>
+                    <div class="solution-card">
+                        <h3 style="color: #4A7C51; margin-bottom: 1rem;">Scalability</h3>
+                        <p style="color: #555;">Easily scalable production to meet global demand</p>
                     </div>
                 </div>
             </div>
-            
-            <!-- 页面3: 生物技术来源 -->
-            <div class="horizontal-page" id="horizontal-page3">
-                <div class="horizontal-page-content">
-                    <div class="horizontal-page-left">
-                        <img src="https://static.igem.wiki/teams/5569/index/gongchang.webp" alt="Factory Source" class="horizontal-page-image">
+        </section>
+
+        <!-- 导航盒子部分 -->
+        <section id="navigation" class="vertical-section">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+                <div class="content-card" style="max-width: 100%; margin-bottom: 3rem; text-align: center;">
+                    <h2 class="solution-title">Explore Our Project</h2>
+                    <p class="solution-subtitle">Click on the boxes below to navigate through different sections of our project</p>
+                </div>
+
+                <div class="nav-boxes">
+                    <div class="nav-box" data-target="project">
+                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Project">
                     </div>
-                    <div class="horizontal-page-right">
-                        <div class="glass-container">
-                            <h1 class="section-h1">Biotechnological Production</h1>
-                            <h2 class="section-h2">The Future of Squalene</h2>
-                            <p class="section-p">Modern biotechnology enables squalene production through <span class="highlight">fermentation</span>.</p>
-                            <p class="section-p">Engineered microorganisms can convert renewable resources into high-purity squalene.</p>
-                            <p class="section-p">This approach offers <span class="highlight">scalability, sustainability, and purity</span> advantages.</p>
-                        </div>
+                    <div class="nav-box" data-target="lab">
+                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Lab">
+                    </div>
+                    <div class="nav-box" data-target="team">
+                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Team">
+                    </div>
+                    <div class="nav-box" data-target="human-practices">
+                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Human Practices">
+                    </div>
+                    <div class="nav-box" data-target="dry-lab">
+                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Dry Lab">
+                    </div>
+                    <div class="nav-box" data-target="collaborations">
+                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Collaborations">
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    
-    <!-- 导航指示器 -->
-    <div class="indicator">
-        <div class="dot active" data-target="0" data-title="Cover"></div>
-        <div class="dot" data-target="1" data-title="Squalene"></div>
-        <div class="dot" data-target="2" data-title="Moisture-Locking"></div>
-        <div class="dot" data-target="3" data-title="Market Demand"></div>
-        <div class="dot" data-target="4" data-title="Sources"></div>
-        <div class="dot" data-target="5" data-title="Waste Oil"></div>
-        <div class="dot" data-target="6" data-title="Solution"></div>
-    </div>
-    
-    <div class="footer-note">
-        Squalene
+        </section>
+
+        <!-- 扩展内容部分 -->
+        <section id="extended" class="extended-content">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+                <div class="content-card" style="max-width: 100%; margin-bottom: 3rem; text-align: center;">
+                    <h2 class="solution-title">Our Impact & Future Vision</h2>
+                    <p class="solution-subtitle">Creating sustainable solutions for a better tomorrow</p>
+                </div>
+
+                <div class="extended-grid">
+                    <div class="extended-card">
+                        <h3>Environmental Impact</h3>
+                        <p>Our technology reduces the environmental footprint of squalene production by up to 70% compared to traditional methods.</p>
+                        <p>By utilizing waste cooking oil, we prevent water pollution and reduce landfill waste.</p>
+                    </div>
+                    <div class="extended-card">
+                        <h3>Economic Benefits</h3>
+                        <p>Our process creates new economic opportunities in waste management and biotechnology sectors.</p>
+                        <p>Lower production costs make sustainable squalene more accessible to cosmetic manufacturers.</p>
+                    </div>
+                    <div class="extended-card">
+                        <h3>Research & Development</h3>
+                        <p>We continue to optimize our microbial strains for higher yield and efficiency.</p>
+                        <p>Our team is exploring applications of our technology in pharmaceutical and industrial sectors.</p>
+                    </div>
+                    <div class="extended-card">
+                        <h3>Educational Outreach</h3>
+                        <p>We conduct workshops and seminars to educate the public about synthetic biology and sustainability.</p>
+                        <p>Our project serves as an educational platform for students interested in biotechnology.</p>
+                    </div>
+                    <div class="extended-card">
+                        <h3>Global Collaboration</h3>
+                        <p>We partner with research institutions worldwide to advance sustainable biotechnology.</p>
+                        <p>Our open-source approach encourages innovation and knowledge sharing.</p>
+                    </div>
+                    <div class="extended-card">
+                        <h3>Future Roadmap</h3>
+                        <p>Scale up production to industrial levels within the next two years.</p>
+                        <p>Explore new applications for our waste-to-value technology in other industries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="logo-section">
+                    <div class="logo-grid">
+                        <div class="logo-item">
+                            <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Logo 1">
+                        </div>
+                        <div class="logo-item">
+                            <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Logo 2">
+                        </div>
+                        <div class="logo-item">
+                            <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Logo 3">
+                        </极>
+                    </div>
+                </div>
+                
+                <div class="footer-text">
+                    <div class="text-column">
+                        <h3>About Us</h3>
+                        <p>iGEM HUST-China 2025</p>
+                        <p>Squalene Revolution Project</p>
+                        <p>Transforming waste into beauty</p>
+                        <p>Innovative synthetic biology</p>
+                        <p>Sustainable solutions</p>
+                    </div>
+                    <div class="text-column">
+                        <h3>Contact</h3>
+                        <p>Email: contact@igem-hust.com</p>
+                        <p>University: HUST</p>
+                        <p>Location: Wuhan, China</p>
+                        <p>Phone: +86 XXX XXXX XXXX</p>
+                        <p>Social Media: @iGEM_HUST</p>
+                    </div>
+                    <div class="text-column">
+                        <h3>Links</h3>
+                        <p>Project Description</p>
+                        <p>Team Members</p>
+                        <p>Human Practices</p>
+                        <p>Wet Lab Results</p>
+                        <p>Dry Lab Models</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 iGEM HUST-China. All rights reserved.</p>
+                <p>Part of the International Genetically Engineered Machine competition</p>
+            </div>
+        </footer>
     </div>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // 自定义鼠标光标功能
-        const customCursor = document.querySelector('.custom-cursor');
-        
-        // 鼠标移动事件
-        document.addEventListener('mousemove', (e) => {
-            customCursor.style.left = e.clientX + 'px';
-            customCursor.style.top = e.clientY + 'px';
-            customCursor.classList.add('cursor-visible');
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.scroll-container');
+            const sections = document.querySelectorAll('.vertical-section, .horizontal-scroll-section, .extended-content');
+            const verticalSections = document.querySelectorAll('.vertical-section');
+            const horizontalSection = document.querySelector('.horizontal-scroll-section');
+            const horizontalPages = document.querySelector('.horizontal-pages');
+            const indicators = document.querySelectorAll('.indicator-dot');
+            const navBoxes = document.querySelectorAll('.nav-box');
+            const solutionCards = document.querySelectorAll('.solution-card');
+            const extendedCards = document.querySelectorAll('.extended-card');
+            const navbar = document.querySelector('.navbar');
+            const navLogo = document.querySelector('.nav-logo');
+            const customCursor = document.querySelector('.custom-cursor');
+            const faceSwitcher = document.getElementById('faceSwitcher');
+            
+            let currentSection = 0;
+            let currentHorizontalPage = 0;
+            let isScrolling = false;
+            let isHorizontalScrolling = false;
+            const scrollCooldown = 800;
+            let lastScrollY = window.scrollY;
+            let lastScrollTime = 0;
+            
+            // 旋转相关变量
+            let rotationAngle = 0;
+            let rotationSpeed = 0;
+            let isRotating = false;
+            let rotationAnimationId = null;
 
-        // 鼠标离开窗口事件
-        document.addEventListener('mouseleave', () => {
-            customCursor.classList.remove('cursor-visible');
-        });
-
-        // 鼠标进入窗口事件
-        document.addEventListener('mouseenter', () => {
-            customCursor.classList.add('cursor-visible');
-        });
-
-        // 为可交互元素添加悬停效果
-        const interactiveElements = document.querySelectorAll('a, button, .nav-toggle, .dot, .horizontal-dot, .close-horizontal, .image-switcher');
-
-        interactiveElements.forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                customCursor.classList.add('hover-effect');
+            // 自定义鼠标指针移动
+            document.addEventListener('mousemove', function(e) {
+                customCursor.style.left = e.clientX + 'px';
+                customCursor.style.top = e.clientY + 'px';
+                customCursor.classList.add('cursor-visible');
             });
-            
-            element.addEventListener('mouseleave', () => {
-                customCursor.classList.remove('hover-effect');
+
+            // 鼠标离开窗口事件
+            document.addEventListener('mouseleave', () => {
+                customCursor.classList.remove('cursor-visible');
             });
-        });
 
-        // 点击时的效果
-        document.addEventListener('mousedown', () => {
-            customCursor.style.transform = 'scale(0.8)';
-        });
+            // 鼠标进入窗口事件
+            document.addEventListener('mouseenter', () => {
+                customCursor.classList.add('cursor-visible');
+            });
 
-        document.addEventListener('mouseup', () => {
-            customCursor.style.transform = 'scale(1)';
-        });
+            // 为可交互元素添加悬停效果
+            const interactiveElements = document.querySelectorAll('a, button, .indicator-dot, .nav-box, .image-switcher');
 
-        // 导航菜单功能
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
-        const navIcon = navToggle.querySelector('img');
-        
-        // 旋转相关变量
-        let rotationAngle = 0;
-        let rotationSpeed = 0;
-        let isRotating = false;
-        let lastScrollTime = 0;
-        let rotationAnimationId = null;
-        
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
-        
-        // 全屏滚动功能
-        const container = document.getElementById('fullpageContainer');
-        const sections = document.querySelectorAll('.fullpage-section');
-        const dots = document.querySelectorAll('.dot');
-        let currentSection = 0;
-        let isScrolling = false;
-        const scrollCooldown = 300; // 防抖时间（毫秒）
-        
-        // 初始化位置
-        updateSectionPositions();
-        
-        // 鼠标滚轮事件 - 添加旋转效果
-        document.addEventListener('wheel', function(e) {
-            const now = Date.now();
-            if (isScrolling || now - lastScrollTime < scrollCooldown) return;
-            
-            lastScrollTime = now;
-            
-            // 计算旋转速度（基于滚轮速度）
-            const delta = Math.abs(e.deltaY);
-            rotationSpeed = Math.min(delta * 0.5, 30); // 限制最大速度
-            
-            // 开始旋转
-            if (!isRotating) {
-                isRotating = true;
-                startRotation();
-            }
-            
-            // 重置旋转停止计时器
-            clearTimeout(window.rotationStopTimer);
-            window.rotationStopTimer = setTimeout(stopRotation, 200);
-            
-            if (e.deltaY > 0) {
-                // 向下滚动
-                if (currentSection < sections.length - 1) {
-                    currentSection++;
-                    scrollToSection(currentSection);
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    customCursor.classList.add('hover-effect');
+                });
+                
+                element.addEventListener('mouseleave', () => {
+                    customCursor.classList.remove('hover-effect');
+                });
+            });
+
+            // 点击时的效果
+            document.addEventListener('mousedown', () => {
+                customCursor.style.transform = 'scale(0.8)';
+            });
+
+            document.addEventListener('mouseup', () => {
+                customCursor.style.transform = 'scale(1)';
+            });
+
+            // 导航栏滚动效果
+            function handleNavbarScroll() {
+                const currentScrollY = window.scrollY;
+                
+                if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                    // 向下滚动，隐藏导航栏
+                    navbar.classList.add('hidden');
+                } else {
+                    // 向上滚动，显示导航栏
+                    navbar.classList.remove('hidden');
                 }
-            } else {
-                // 向上滚动
-                if (currentSection > 0) {
-                    currentSection--;
-                    scrollToSection(currentSection);
+                
+                if (currentScrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
                 }
+                
+                lastScrollY = currentScrollY;
             }
-        });
-        
-        // 旋转动画函数
-        function startRotation() {
-            function rotate() {
-                rotationAngle += rotationSpeed;
-                navIcon.style.transform = `rotate(${rotationAngle}deg)`;
-                rotationAnimationId = requestAnimationFrame(rotate);
-            }
-            rotate();
-        }
-        
-        // 停止旋转函数
-        function stopRotation() {
-            isRotating = false;
-            if (rotationAnimationId) {
-                cancelAnimationFrame(rotationAnimationId);
-                rotationAnimationId = null;
-            }
-            
-            // 平滑减速效果
-            function gradualStop() {
-                if (rotationSpeed > 0) {
-                    rotationSpeed *= 0.9; // 减速因子
+
+            // 旋转动画函数
+            function startRotation() {
+                function rotate() {
                     rotationAngle += rotationSpeed;
-                    navIcon.style.transform = `rotate(${rotationAngle}deg)`;
-                    
-                    if (rotationSpeed > 0.1) {
-                        requestAnimationFrame(gradualStop);
-                    } else {
-                        rotationSpeed = 0;
+                    navLogo.querySelector('img').style.transform = `rotate(${rotationAngle}deg)`;
+                    rotationAnimationId = requestAnimationFrame(rotate);
+                }
+                rotate();
+            }
+            
+            // 停止旋转函数
+            function stopRotation() {
+                isRotating = false;
+                if (rotationAnimationId) {
+                    cancelAnimationFrame(rotationAnimationId);
+                    rotationAnimationId = null;
+                }
+                
+                // 平滑减速效果
+                function gradualStop() {
+                    if (rotationSpeed > 0) {
+                        rotationSpeed *= 0.9; // 减速因子
+                        rotationAngle += rotationSpeed;
+                        navLogo.querySelector('img').style.transform = `rotate(${rotationAngle}deg)`;
+                        
+                        if (rotationSpeed > 0.1) {
+                            requestAnimationFrame(gradualStop);
+                        } else {
+                            rotationSpeed = 0;
+                        }
                     }
                 }
-            }
-            
-            gradualStop();
-        }
-        
-        // 导航点点击事件 - 添加旋转效果
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                // 添加导航栏图片旋转效果
-                const targetIndex = parseInt(dot.getAttribute('data-target'));
-                currentSection = targetIndex;
-                scrollToSection(currentSection);
                 
-                // 点击时也触发旋转
-                rotationSpeed = 15; // 中等速度
+                gradualStop();
+            }
+
+            // 初始化
+            updateActiveSection();
+            animateCurrentSection();
+            window.addEventListener('scroll', handleNavbarScroll);
+
+            // 鼠标滚轮事件
+            document.addEventListener('wheel', function(e) {
+                if (isScrolling) return;
+                
+                const now = Date.now();
+                if (now - lastScrollTime < scrollCooldown) return;
+                lastScrollTime = now;
+                
+                // 计算旋转速度（基于滚轮速度）
+                const delta = Math.abs(e.deltaY);
+                rotationSpeed = Math.min(delta * 0.5, 30); // 限制最大速度
+                
+                // 开始旋转
                 if (!isRotating) {
                     isRotating = true;
                     startRotation();
                 }
                 
-                // 设置停止计时器
+                // 重置旋转停止计时器
                 clearTimeout(window.rotationStopTimer);
-                window.rotationStopTimer = setTimeout(stopRotation, 500);
-            });
-        });
-        
-        // 滚动到指定部分
-        function scrollToSection(index) {
-            isScrolling = true;
-            
-            // 更新导航点
-            dots.forEach(dot => dot.classList.remove('active'));
-            dots[index].classList.add('active');
-            
-            // 更新部分位置
-            updateSectionPositions();
-            
-            // 重置滚动状态
-            setTimeout(() => {
-                isScrolling = false;
-            }, 800);
-        }
-        
-        // 更新部分位置 - 修改为渐变式切换
-        function updateSectionPositions() {
-            sections.forEach((section, index) => {
-                if (index === currentSection) {
-                    section.classList.add('active');
-                } else {
-                    section.classList.remove('active');
-                }
-            });
-        }
-        
-        // 图片切换功能
-        const faceSwitcher = document.getElementById('faceSwitcher');
-        if (faceSwitcher) {
-            faceSwitcher.addEventListener('click', function() {
-                this.classList.toggle('active');
-            });
-        }
-        
-        // 横向滚动功能
-        const sourcesCarousel = document.getElementById('sourcesCarousel');
-        if (sourcesCarousel) {
-            const scrollContent = sourcesCarousel.querySelector('.horizontal-scroll-content');
-            let currentScroll = 0;
-            let isHorizontalScrolling = false;
-            
-            // 鼠标滚轮事件
-            sourcesCarousel.addEventListener('wheel', function(e) {
-                if (isHorizontalScrolling) return;
-                
-                if (e.deltaX > 0 || e.deltaY > 0) {
-                    // 向右滚动
-                    if (currentScroll < 2) {
-                        currentScroll++;
-                        scrollToItem(currentScroll);
+                window.rotationStopTimer = setTimeout(stopRotation, 200);
+
+                if (currentSection === 4) { // Sources section (horizontal)
+                    if (!isHorizontalScrolling) {
+                        if (e.deltaY > 0 && currentHorizontalPage < 2) {
+                            // 向右滚动
+                            currentHorizontalPage++;
+                            scrollToHorizontalPage(currentHorizontalPage);
+                        } else if (e.deltaY < 0 && currentHorizontalPage > 0) {
+                            // 向左滚动
+                            currentHorizontalPage--;
+                            scrollToHorizontalPage(currentHorizontalPage);
+                        } else if (e.deltaY > 0 && currentHorizontalPage === 2) {
+                            // 滚动到下一节
+                            currentSection++;
+                            scrollToSection(currentSection);
+                        } else if (e.deltaY < 0 && currentHorizontalPage === 0) {
+                            // 滚动到上一节
+                            currentSection--;
+                            scrollToSection(currentSection);
+                        }
                     }
                 } else {
-                    // 向左滚动
-                    if (currentScroll > 0) {
-                        currentScroll--;
-                        scrollToItem(currentScroll);
+                    // 竖屏滚动
+                    if (e.deltaY > 0 && currentSection < sections.length - 1) {
+                        currentSection++;
+                        scrollToSection(currentSection);
+                    } else if (e.deltaY < 0 && currentSection > 0) {
+                        currentSection--;
+                        scrollToSection(currentSection);
                     }
                 }
-                
-                // 阻止事件冒泡，避免触发全屏滚动
-                e.stopPropagation();
             });
-            
-            // 滚动到指定项目
-            function scrollToItem(index) {
+
+            // 导航点点击事件
+            indicators.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const targetIndex = parseInt(dot.getAttribute('data-target'));
+                    currentSection = targetIndex;
+                    scrollToSection(currentSection);
+                    
+                    // 点击时也触发旋转
+                    rotationSpeed = 15; // 中等速度
+                    if (!isRotating) {
+                        isRotating = true;
+                        startRotation();
+                    }
+                    
+                    // 设置停止计时器
+                    clearTimeout(window.rotationStopTimer);
+                    window.rotationStopTimer = setTimeout(stopRotation, 500);
+                });
+            });
+
+            // 导航盒子点击事件
+            navBoxes.forEach(box => {
+                box.addEventListener('click', () => {
+                    const target = box.getAttribute('data-target');
+                    alert(`Navigating to: ${target}`);
+                    // 这里可以添加实际导航逻辑
+                });
+            });
+
+            // 图片切换器点击事件
+            if (faceSwitcher) {
+                faceSwitcher.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            }
+
+            // 滚动到指定部分
+            function scrollToSection(index) {
+                isScrolling = true;
+                sections[index].scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
+                updateActiveSection();
+                animateCurrentSection();
+
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 1000);
+            }
+
+            // 滚动到横屏页面
+            function scrollToHorizontalPage(index) {
                 isHorizontalScrolling = true;
-                scrollContent.style.transform = `translateX(-${index * 33.33}%)`;
+                horizontalPages.style.transform = `translateX(-${index * 100}vw)`;
                 
                 setTimeout(() => {
                     isHorizontalScrolling = false;
                 }, 800);
             }
-        }
-        
-        // 横屏滚动功能
-        const horizontalPageContainer = document.getElementById('horizontalPageContainer');
-        const horizontalPages = document.getElementById('horizontalPages');
-        const horizontalDots = document.querySelectorAll('.horizontal-dot');
-        const openHorizontalBtn = document.getElementById('openHorizontal');
-        const closeHorizontalBtn = document.getElementById('closeHorizontal');
-        let currentHorizontalPage = 0;
-        let isHorizontalScrolling = false;
-        
-        // 打开横屏滚动页面
-        openHorizontalBtn.addEventListener('click', () => {
-            horizontalPageContainer.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-        
-        // 关闭横屏滚动页面
-        closeHorizontalBtn.addEventListener('click', () => {
-            horizontalPageContainer.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-        
-        // 横屏滚动页面鼠标滚轮事件
-        horizontalPageContainer.addEventListener('wheel', function(e) {
-            if (isHorizontalScrolling) return;
-            
-            if (e.deltaX > 0 || e.deltaY > 0) {
-                // 向右滚动
-                if (currentHorizontalPage < 2) {
-                    currentHorizontalPage++;
-                    scrollToHorizontalPage(currentHorizontalPage);
-                }
-            } else {
-                // 向左滚动
-                if (currentHorizontalPage > 0) {
-                    currentHorizontalPage--;
-                    scrollToHorizontalPage(currentHorizontalPage);
-                }
+
+            // 更新活动部分
+            function updateActiveSection() {
+                indicators.forEach(dot => dot.classList.remove('active'));
+                indicators[currentSection].classList.add('active');
             }
-            
-            // 阻止事件冒泡
-            e.stopPropagation();
+
+            // 动画当前部分
+            function animateCurrentSection() {
+                const current = sections[currentSection];
+                
+                // 重置所有动画元素
+                const textElements = current.querySelectorAll('.text-content, .image-content, .card-text');
+                textElements.forEach(element => {
+                    element.classList.remove('visible');
+                });
+
+                // 解决方案卡片动画
+                if (currentSection === 6) {
+                    solutionCards.forEach((card, index) => {
+                        card.classList.remove('visible');
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 200);
+                    });
+                }
+
+                // 导航盒子动画
+                if (currentSection === 7) {
+                    navBoxes.forEach((box, index) => {
+                        box.classList.remove('visible');
+                        setTimeout(() => {
+                            box.classList.add('visible');
+                        }, index * 100);
+                    });
+                }
+
+                // 扩展内容卡片动画
+                if (currentSection === 8) {
+                    extendedCards.forEach((card, index) => {
+                        card.classList.remove('visible');
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 150);
+                    });
+                }
+
+                // 延迟触发动画
+                setTimeout(() => {
+                    textElements.forEach((element, index) => {
+                        setTimeout(() => {
+                            element.classList.add('visible');
+                        }, index * 300);
+                    });
+                }, 500);
+            }
         });
-        
-        // 横屏滚动页面导航点点击事件
-        horizontalDots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const targetIndex = parseInt(dot.getAttribute('data-target'));
-                currentHorizontalPage = targetIndex;
-                scrollToHorizontalPage(currentHorizontalPage);
-            });
-        });
-        
-        // 滚动到指定横屏页面
-        function scrollToHorizontalPage(index) {
-            isHorizontalScrolling = true;
-            horizontalPages.style.transform = `translateX(-${index * 33.33}%)`;
-            
-            // 更新导航点
-            horizontalDots.forEach(dot => dot.classList.remove('active'));
-            horizontalDots[index].classList.add('active');
-            
-            setTimeout(() => {
-                isHorizontalScrolling = false;
-            }, 800);
-        }
-    });
-</script>
+    </script>
 </body>
 </html>
