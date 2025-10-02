@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,13 +35,13 @@
             line-height: 1.6;
         }
 
-        /* 自定义鼠标指针 - 已调整大小和形状 */
+        /* 自定义鼠标指针 - 油滴形状 */
         .custom-cursor {
             position: fixed;
             top: 0;
             left: 0;
-            width: 40px; /* 缩小尺寸 */
-            height: 40px; /* 缩小尺寸 */
+            width: 40px;
+            height: 50px; /* 增加高度以容纳油滴形状 */
             pointer-events: none;
             z-index: 9999;
             transition: transform 0.1s ease;
@@ -58,9 +59,10 @@
             width: 100%;
             height: 100%;
             background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+            border-radius: 50% 50% 50% 50%;
+            /* 创建油滴形状 */
+            clip-path: polygon(50% 0%, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
             animation: oilDrip 3s infinite alternate;
         }
 
@@ -69,7 +71,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 5px; /* 减小字体大小 */
+            font-size: 5px;
             font-weight: bold;
             color: #2E5D32;
             text-align: center;
@@ -78,67 +80,71 @@
         }
 
         @keyframes oilDrip {
-            0% { transform: rotate(-45deg) scale(1); }
-            50% { transform: rotate(-45deg) scale(1.1); }
-            100% { transform: rotate(-45deg) scale(1); }
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-5px) scale(1.1); }
+            100% { transform: translateY(0) scale(1); }
         }
 
-        /* 导航栏 */
         .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(248, 244, 233, 0.9);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(139, 115, 85, 0.1);
-            transform: translateY(0);
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(248, 244, 233, 0.9);
+        backdrop-filter: blur(20px);
+        z-index: 1000;
+        padding: 1rem 0; /* 移除左右边距 */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+        transform: translateY(0);
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .navbar.hidden {
-            transform: translateY(-100%);
+        transform: translateY(-100%);
         }
 
         .navbar.scrolled {
-            background: rgba(248, 244, 233, 0.95);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        background: rgba(248, 244, 233, 0.95);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
         .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-left: 2rem; /* 添加左侧内边距以保持logo位置 */
         }
 
         .nav-logo img {
-            height: 40px;
-            width: auto;
-            transition: transform 0.6s ease;
-        }
-
-        .nav-logo.rotate img {
-            transform: rotate(360deg);
+        height: 40px;
+        width: auto;
+        transition: transform 0.6s ease;
         }
 
         .nav-logo-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-            background: linear-gradient(135deg, #4A7C51, #2E5D32);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, #4A7C51, #2E5D32);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
         }
 
+        /* 其他导航样式保持不变 */
+        .nav-links-container {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        }
+    
         .nav-links {
-            display: flex;
-            gap: 1.5rem; /* 减小间距 */
-            position: relative;
+           display: flex;
+           gap: 2.5rem;
+           position: relative;
+           transition: transform 0.3s ease;
         }
 
         .nav-item {
@@ -148,13 +154,14 @@
         .nav-link {
             color: #555;
             text-decoration: none;
-            font-weight: 500;
+            font-size: 1.5rem;
+            font-weight: 700;
             transition: var(--transition);
             position: relative;
             padding: 0.5rem 0;
             display: flex;
             align-items: center;
-            gap: 0.3rem;
+            gap: 1rem;
         }
 
         .nav-link:hover {
@@ -182,7 +189,7 @@
             top: 100%;
             left: 0;
             width: 200px;
-            background: rgba(255, 255, 255, 0.95);
+            background: #fff6d8;
             backdrop-filter: blur(10px);
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -206,7 +213,8 @@
             color: #555;
             text-decoration: none;
             transition: all 0.2s ease;
-            font-size: 0.95rem;
+            font-size:1rem;
+            font-weight: bold;
         }
 
         .dropdown-link:hover {
@@ -287,7 +295,7 @@
         }
 
         #navigation::before {
-            background-image: url('https://static.igem.wiki/teams/5569/description/fengmiannew.webp');
+            background-image: url('https://static.igem.wiki/teams/5569/description/fengmiannew1.webp');
         }
 
         /* 横屏滚动部分 */
@@ -430,11 +438,10 @@
             width: 100%;
             max-width: 500px;
             border-radius: 16px;
-            transition: transform 0.5s ease, box-shadow 0.5s ease; /* 添加阴影过渡 */
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        /* 修改图片悬停效果 - 移除左右晃动 */
         .section-image:hover {
             transform: scale(1.03);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
@@ -628,7 +635,7 @@
         /* 页脚 */
         .footer {
             background: linear-gradient(rgba(248, 244, 233, 0.9), rgba(248, 244, 233, 0.9)), 
-                        url('https://static.igem.wiki/teams/5569/description/fengmiannew.webp');
+                        url('https://static.igem.wiki/teams/5569/description/ditu.webp');
             background-size: cover;
             background-position: center;
             padding: 4rem 2rem;
@@ -866,68 +873,72 @@
     </style>
 </head>
 <body>
-    <!-- 自定义鼠标指针 - 已调整大小和形状 -->
+    <!-- 自定义鼠标指针 - 油滴形状 -->
     <div class="custom-cursor">
         <div class="cursor-inner"></div>
-        <div class="cursor-text">HUST-China<br>SQUALENE</div>
+        <div class="cursor-text">HUST-China<br>SQUAOILENE</div>
     </div>
 
     <!-- 导航栏 - 添加了下拉菜单 -->
     <nav class="navbar">
-        <div class="nav-logo">
-            <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="iGEM HUST-China">
-            <div class="nav-logo-text">iGEM HUST-China 2025</div>
-        </div>
+        <!-- 导航栏 - 修改了跳转链接（无.html后缀） -->
+<nav class="navbar">
+    <div class="nav-logo">
+        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="iGEM HUST-China">
+        <div class="nav-logo-text">iGEM HUST-China 2025</div>
+    </div>
+    <div class="nav-links-container">
         <div class="nav-links">
-            <a href="#" class="nav-link">Home</a>
+            <a href="index.html" class="nav-link">Home</a>
             
             <div class="nav-item">
                 <a href="#" class="nav-link">Project</a>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-link"><i class="fas fa-file-alt"></i> Description</a>
-                    <a href="#" class="dropdown-link"><i class="fas fa-shield-alt"></i> Safety</a>
-                    <a href="#" class="dropdown-link"><i class="fas fa-cogs"></i> Proposed Implementation</a>
+                    <a href="description" class="dropdown-link"><i class="fas fa-file-alt"></i> Description</a>
+                    <a href="safety" class="dropdown-link"><i class="fas fa-shield-alt"></i> Safety</a>
+                    <a href="proposed-implementation" class="dropdown-link"><i class="fas fa-lightbulb"></i> Proposed Implementation</a>
                 </div>
             </div>
             
             <div class="nav-item">
                 <a href="#" class="nav-link">Wet Lab</a>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-link"><i class="fas fa-pencil-ruler"></i> Design</a>
-                    <a href="#" class="dropdown-link"><i class="fas fa-microscope"></i> Engineering</a>
-                    <a href="#" class="dropdown-link"><i class="fas fa-flask"></i> Protocol</a>
-                    <a href="#" class="dropdown-link"><i class="fas fa-chart-line"></i> Results</a>
-                    <a href="#" class="dropdown-link"><i class="fas fa-book"></i> Notebook</a>
-                    <a href="#" class="dropdown-link"><i class="fas fa-puzzle-piece"></i> Parts</a>
+                    <a href="design" class="dropdown-link"><i class="fas fa-pencil-ruler"></i> Design</a>
+                    <a href="engineering" class="dropdown-link"><i class="fas fa-dna"></i> Engineering</a>
+                    <a href="protocol" class="dropdown-link"><i class="fas fa-flask"></i> Protocol</a>
+                    <a href="results" class="dropdown-link"><i class="fas fa-chart-line"></i> Results</a>
+                    <a href="notebook" class="dropdown-link"><i class="fas fa-book"></i> Notebook</a>
+                    <a href="parts" class="dropdown-link"><i class="fas fa-puzzle-piece"></i> Parts</a>
                 </div>
             </div>
             
             <div class="nav-item">
                 <a href="#" class="nav-link">Dry Lab</a>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-link"><i class="fas fa-cubes"></i> Model</a>
-                    <a href="#" class="dropdown-link"><i class="fas fa-microchip"></i> Hardware</a>
+                    <a href="model" class="dropdown-link"><i class="fas fa-gears"></i> Model</a>
+                    <a href="hardware" class="dropdown-link"><i class="fas fa-microchip"></i> Hardware</a>
                 </div>
             </div>
             
             <div class="nav-item">
                 <a href="#" class="nav-link">Human Practices</a>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-link"><i class="fas fa-users"></i> Human Practices</a>
-                    <a href="#" class="dropdown-link"><i class="fas fa-graduation-cap"></i> Education & Communication</a>
+                    <a href="human-practices" class="dropdown-link"><i class="fas fa-users"></i> Human Practices</a>
+                    <a href="education" class="dropdown-link"><i class="fas fa-graduation-cap"></i> Education & Communication</a>
                 </div>
             </div>
             
             <div class="nav-item">
                 <a href="#" class="nav-link">Team</a>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-link"><i class="fas fa-user-friends"></i> Members</a>
-                    <a href="#" class="dropdown-link"><i class="fas fa-hands-helping"></i> Contribution</a>
-                    <a href="#" class="dropdown-link"><i class="fas fa-award"></i> Attributions</a>
+                    <a href="members" class="dropdown-link"><i class="fas fa-user-friends"></i> Members</a>
+                    <a href="contribution" class="dropdown-link"><i class="fas fa-hands-helping"></i> Contribution</a>
+                    <a href="attributions" class="dropdown-link"><i class="fas fa-award"></i> Attributions</a>
                 </div>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- 滚动指示器 -->
     <div class="scroll-indicator">
@@ -947,10 +958,10 @@
         <!-- 封面 -->
         <section id="cover" class="vertical-section">
             <div class="cover-content floating">
-                <h1 class="cover-title">Squalene Revolution</h1>
-                <p class="cover-subtitle">Sustainable Beauty Through Synthetic Biology</p>
-                <p class="cover-subtitle">Transforming Waste Oil into Premium Skincare</p>
-            </极>
+                <h1 class="cover-title"></h1>
+                <p class="cover-subtitle"></p>
+                <p class="cover-subtitle"></p>
+            </div>
         </section>
 
         <!-- 介绍 -->
@@ -1102,7 +1113,7 @@
                     </div>
                     <div class="solution-card">
                         <h3 style="color: #4A7C51; margin-bottom: 1rem;">Cost-Effective</h3>
-                        <p style="color:#555;">Lower production costs compared to traditional methods</p>
+                        <p style="color: #555;">Lower production costs compared to traditional methods</p>
                     </div>
                     <div class="solution-card">
                         <h3 style="color: #4A7C51; margin-bottom: 1rem;">Scalability</h3>
@@ -1199,7 +1210,7 @@
                         </div>
                         <div class="logo-item">
                             <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Logo 3">
-                        </极>
+                        </div>
                     </div>
                 </div>
                 
@@ -1252,6 +1263,7 @@
             const navLogo = document.querySelector('.nav-logo');
             const customCursor = document.querySelector('.custom-cursor');
             const faceSwitcher = document.getElementById('faceSwitcher');
+            const navLinks = document.querySelector('.nav-links');
             
             let currentSection = 0;
             let currentHorizontalPage = 0;
