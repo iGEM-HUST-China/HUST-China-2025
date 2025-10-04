@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | iGEM HUST-China 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -112,9 +113,10 @@
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .navbar.hidden {
+        /* 移除导航栏隐藏的样式 */
+        /* .navbar.hidden {
             transform: translateY(-100%);
-        }
+        } */
 
         .navbar.scrolled {
             background: rgba(248, 244, 233, 0.95);
@@ -910,6 +912,94 @@
             font-weight: bold;
         }
 
+        /* 滚动指示器样式 */
+        .scroll-indicator {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .indicator-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(46, 93, 50, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .indicator-dot.active {
+            background: var(--primary-green);
+            transform: scale(1.3);
+        }
+
+        .indicator-dot:hover {
+            background: var(--primary-green);
+            transform: scale(1.2);
+        }
+
+        .indicator-dot::after {
+            content: attr(data-title);
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(46, 93, 50, 0.9);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .indicator-dot:hover::after {
+            opacity: 1;
+        }
+
+        /* 回到顶部按钮样式 - 修改为显示"Top"文字 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-green);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
         /* 响应式设计 */
         @media (max-width: 768px) {
             .clean-layout, .split-layout, .mosaic-layout {
@@ -961,8 +1051,9 @@
             .back-to-top {
                 bottom: 20px;
                 right: 20px;
-                width: 45px;
-                height: 45px;
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
             }
             
             .alternating-layout {
@@ -1022,9 +1113,9 @@
         <div class="cursor-inner"></div>
     </div>
 
-    <!-- 回到顶部按钮 -->
+    <!-- 回到顶部按钮 - 修改为显示"Top"文字 -->
     <button class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
+        Top
     </button>
 
     <!-- 导航栏 -->
@@ -1515,17 +1606,18 @@
                 customCursor.style.transform = 'scale(1)';
             });
 
-            // 导航栏滚动效果
+            // 导航栏滚动效果 - 修复：始终显示导航栏
             function handleNavbarScroll() {
                 const currentScrollY = window.scrollY;
                 
-                if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                    // 向下滚动，隐藏导航栏
-                    navbar.classList.add('hidden');
-                } else {
-                    // 向上滚动，显示导航栏
-                    navbar.classList.remove('hidden');
-                }
+                // 移除隐藏导航栏的逻辑，使其始终显示
+                // if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                //     // 向下滚动，隐藏导航栏
+                //     navbar.classList.add('hidden');
+                // } else {
+                //     // 向上滚动，显示导航栏
+                //     navbar.classList.remove('hidden');
+                // }
                 
                 if (currentScrollY > 50) {
                     navbar.classList.add('scrolled');
