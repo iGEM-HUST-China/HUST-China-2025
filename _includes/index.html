@@ -3,7 +3,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | iGEM HUST-China 2025</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -112,11 +111,6 @@
             transform: translateY(0);
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        /* 移除导航栏隐藏的样式 */
-        /* .navbar.hidden {
-            transform: translateY(-100%);
-        } */
 
         .navbar.scrolled {
             background: rgba(248, 244, 233, 0.95);
@@ -247,27 +241,91 @@
             text-align: center;
         }
 
-        .dropdown-link {
-            display: block;
-            padding: 0.6rem 1.5rem;
-            color: #555;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            font-size:1rem;
-            font-weight: 500;
-            font-family: 'Inter', sans-serif;
+        /* 滚动指示器 */
+        .scroll-indicator {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .dropdown-link:hover {
-            background: rgba(74, 124, 81, 0.1);
-            color: #4A7C51;
-            padding-left: 1.8rem;
+        .indicator-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(139, 115, 85, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        .dropdown-link i {
-            margin-right: 0.5rem;
-            width: 15px;
-            text-align: center;
+        .indicator-dot.active {
+            background: var(--secondary-green);
+            transform: scale(1.3);
+        }
+
+        .indicator-dot:hover {
+            background: var(--primary-green);
+            transform: scale(1.5);
+        }
+
+        .indicator-dot::after {
+            content: attr(data-title);
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .indicator-dot:hover::after {
+            opacity: 1;
+        }
+
+        /* 回到顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary-green);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-green);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
 
         /* 滚动容器 */
@@ -390,7 +448,7 @@
         }
 
         #navigation::before {
-            background-image: url('https://static.igem.wiki/teams/5569/description/fengmiannew1.webp');
+            background-image: url('https://static.igem.wiki/teams/5569/description/baidi.webp');
         }
 
         /* 简洁布局样式 */
@@ -482,11 +540,12 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
-        /* 图片切换器样式 */
+        /* 图片切换器样式 - 添加放大镜效果 */
         .image-switcher {
             position: relative;
             cursor: pointer;
             display: inline-block;
+            overflow: visible; /* 允许延伸线超出容器 */
         }
 
         .image-switcher .switch-icon {
@@ -510,6 +569,68 @@
 
         .image-switcher:hover .switch-icon {
             opacity: 1;
+        }
+
+        /* 延伸线和扩展图片容器 */
+        .image-extension {
+            position: absolute;
+            top: 50%;
+            right: -20px; /* 从图片右侧开始 */
+            transform: translateY(-50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .image-switcher.active .image-extension {
+            opacity: 1;
+            visibility: visible;
+            right: -100px; /* 移动到图片右侧适当距离 */
+        }
+
+        /* 延伸线 */
+        .extension-line {
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--light-gold));
+            position: relative;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .extension-line::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            border-radius: 50%;
+            animation: lineFlow 2s infinite;
+        }
+
+        @keyframes lineFlow {
+            0%, 100% { transform: translateX(0); opacity: 1; }
+            50% { transform: translateX(70px); opacity: 0.3; }
+        }
+
+        /* 扩展图片 */
+        .extension-image {
+            width: 250px;
+            height: 200px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            border: 3px solid var(--gold);
+        }
+
+        .extension-image:hover {
+            transform: scale(1.05);
         }
 
         /* 文字渐次出现效果 */
@@ -541,6 +662,30 @@
             display: inline-block;
             font-weight: 700;
             color: #2E5D32;
+        }
+
+        /* 打字机效果样式 */
+        .typewriter-container {
+            margin-top: 2rem;
+            text-align: center;
+            min-height: 150px;
+        }
+        
+        .typewriter-text {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2E5D32;
+            border-right: 3px solid #2E5D32;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: blink-caret 1s step-end infinite;
+            font-family: 'Source Serif Pro', serif;
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #2E5D32; }
         }
 
         /* 多样化布局样式 */
@@ -772,34 +917,41 @@
             color: #444;
         }
 
-        /* 导航图片部分 */
+        /* 导航图片样式调整 */
         .nav-images {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
             margin: 4rem 0;
-            flex-wrap: wrap;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
-
+        
         .nav-image-item {
             text-align: center;
             cursor: pointer;
             transition: transform 0.3s ease;
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
-
+        
         .nav-image-item:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
         }
-
+        
         .nav-image-item img {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             margin-bottom: 1rem;
         }
-
+        
         .nav-image-item p {
             font-size: 1.3rem;
             font-weight: 600;
@@ -912,94 +1064,6 @@
             font-weight: bold;
         }
 
-        /* 滚动指示器样式 */
-        .scroll-indicator {
-            position: fixed;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .indicator-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(46, 93, 50, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .indicator-dot.active {
-            background: var(--primary-green);
-            transform: scale(1.3);
-        }
-
-        .indicator-dot:hover {
-            background: var(--primary-green);
-            transform: scale(1.2);
-        }
-
-        .indicator-dot::after {
-            content: attr(data-title);
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(46, 93, 50, 0.9);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            white-space: nowrap;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .indicator-dot:hover::after {
-            opacity: 1;
-        }
-
-        /* 回到顶部按钮样式 - 修改为显示"Top"文字 */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--primary-green);
-            color: white;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: bold;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 999;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: var(--secondary-green);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
         /* 响应式设计 */
         @media (max-width: 768px) {
             .clean-layout, .split-layout, .mosaic-layout {
@@ -1051,9 +1115,8 @@
             .back-to-top {
                 bottom: 20px;
                 right: 20px;
-                width: 50px;
-                height: 50px;
-                font-size: 1rem;
+                width: 45px;
+                height: 45px;
             }
             
             .alternating-layout {
@@ -1074,12 +1137,25 @@
             }
             
             .nav-images {
-                gap: 2rem;
+                grid-template-columns: 1fr;
             }
             
             .nav-image-item img {
                 width: 120px;
                 height: 120px;
+            }
+            
+            .typewriter-text {
+                font-size: 1.4rem;
+            }
+            
+            /* 移动端调整放大镜和延伸线效果 */
+            .image-extension {
+                display: none; /* 移动端隐藏延伸效果 */
+            }
+            
+            .image-switcher:hover::after {
+                display: none; /* 移动端隐藏放大镜 */
             }
             
             footer {
@@ -1113,9 +1189,9 @@
         <div class="cursor-inner"></div>
     </div>
 
-    <!-- 回到顶部按钮 - 修改为显示"Top"文字 -->
+    <!-- 回到顶部按钮 -->
     <button class="back-to-top" id="backToTop">
-        Top
+        <span>TOP</span>
     </button>
 
     <!-- 导航栏 -->
@@ -1187,8 +1263,6 @@
         <div class="indicator-dot" data-title="Technology" data-target="5"></div>
         <div class="indicator-dot" data-title="Solution" data-target="6"></div>
         <div class="indicator-dot" data-title="Navigation" data-target="7"></div>
-        <div class="indicator-dot" data-title="Details" data-target="8"></div>
-        <div class="indicator-dot" data-title="Footer" data-target="9"></div>
     </div>
 
     <!-- 滚动容器 -->
@@ -1196,9 +1270,9 @@
         <!-- 封面 -->
         <section id="cover" class="vertical-section">
             <div class="cover-content floating">
-                <h1 class="cover-title">SQUAOILENE</h1>
-                <p class="cover-subtitle">Transforming Waste Oil into Sustainable Squalene</p>
-                <p class="cover-subtitle">iGEM HUST-China 2025</p>
+                <h1 class="cover-title"></h1>
+                <p class="cover-subtitle"></p>
+                <p class="cover-subtitle"></p>
             </div>
         </section>
 
@@ -1230,6 +1304,11 @@
                         <img src="https://static.igem.wiki/teams/5569/description/face11.webp" alt="Benefits" class="section-image image-animated" id="faceImage">
                         <div class="switch-icon">
                             <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <!-- 添加延伸线和扩展图片 -->
+                        <div class="image-extension">
+                            <div class="extension-line"></div>
+                            <img src="https://static.igem.wiki/teams/5569/description/suoshui.webp" alt="锁水效果" class="extension-image">
                         </div>
                     </div>
                 </div>
@@ -1356,23 +1435,12 @@
         <section id="navigation" class="vertical-section">
             <div class="clean-layout">
                 <div class="content-block">
-                    <h2 class="section-title">Explore Our Project</h2>
-                    <p class="section-text">Navigate through different sections of our project to learn more about our work.</p>
-                    <div class="image-container">
-                        <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
-                            <div style="cursor: pointer; text-align: center;" data-target="project">
-                                <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Project" class="section-image image-animated" style="max-width: 150px;">
-                                <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: 600;">Project</p>
-                            </div>
-                            <div style="cursor: pointer; text-align: center;" data-target="lab">
-                                <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Lab" class="section-image image-animated" style="max-width: 150px;">
-                                <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: 600;">Lab</p>
-                            </div>
-                            <div style="cursor: pointer; text-align: center;" data-target="team">
-                                <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Team" class="section-image image-animated" style="max-width: 150px;">
-                                <p style="margin-top: 1rem; font-size: 1.2rem; font-weight: 600;">Team</p>
-                            </div>
-                        </div>
+                    <h2 class="section-title">Our Solution</h2>
+                    <p class="section-text">Our innovative approach combines cutting-edge biotechnology with sustainable practices.</p>
+                    
+                    <!-- 打字机效果容器 -->
+                    <div class="typewriter-container">
+                        <div id="typewriter-text" class="typewriter-text"></div>
                     </div>
                 </div>
             </div>
@@ -1427,23 +1495,27 @@
                 </div>
             </div>
 
-            <!-- 导航图片部分 -->
+            <!-- 导航图片部分 - 修改为4个导航项 -->
             <div style="text-align: center; margin: 4rem 0;">
                 <h2 class="section-title">Explore More</h2>
                 <p class="section-text" style="max-width: 800px; margin: 0 auto 2rem;">Click on the sections below to learn more about different aspects of our project</p>
                 
                 <div class="nav-images">
-                    <div class="nav-image-item" data-target="project">
-                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Project Details">
-                        <p>Project Details</p>
+                    <div class="nav-image-item" data-target="design">
+                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Design">
+                        <p>Design</p>
                     </div>
-                    <div class="nav-image-item" data-target="lab">
-                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Lab Work">
-                        <p>Lab Work</p>
+                    <div class="nav-image-item" data-target="hardware">
+                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Hardware">
+                        <p>Hardware</p>
                     </div>
-                    <div class="nav-image-item" data-target="team">
-                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Our Team">
-                        <p>Our Team</p>
+                    <div class="nav-image-item" data-target="human-practices">
+                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Human Practices">
+                        <p>Human Practices</p>
+                    </div>
+                    <div class="nav-image-item" data-target="description">
+                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Description">
+                        <p>Description</p>
                     </div>
                 </div>
             </div>
@@ -1500,6 +1572,7 @@
             const footerContainer = document.getElementById('footerContainer');
             const faceImage = document.getElementById('faceImage');
             const imageSwitcher = document.querySelector('.image-switcher');
+            const imageExtension = document.querySelector('.image-extension');
             
             let currentSection = 0;
             let currentHorizontalPage = 0;
@@ -1522,14 +1595,71 @@
             const faceImage1 = 'https://static.igem.wiki/teams/5569/description/face11.webp';
             const faceImage2 = 'https://static.igem.wiki/teams/5569/description/face2.webp';
 
-            // 图片切换功能
+            // 新增打字机效果
+            const typewriterText = document.getElementById('typewriter-text');
+            const texts = [
+                "Sustainable squalene production from waste oil",
+                "40% lower production costs",
+                "Environmentally friendly process",
+                "High purity product"
+            ];
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 100;
+            
+            function typeWriter() {
+                const currentText = texts[textIndex];
+                
+                if (isDeleting) {
+                    // 删除文字
+                    typewriterText.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                    typingSpeed = 50;
+                } else {
+                    // 输入文字
+                    typewriterText.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                    typingSpeed = 100;
+                }
+                
+                // 判断是否完成当前文本
+                if (!isDeleting && charIndex === currentText.length) {
+                    // 暂停一下再开始删除
+                    typingSpeed = 1500;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    // 切换到下一个文本
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    typingSpeed = 500;
+                }
+                
+                setTimeout(typeWriter, typingSpeed);
+            }
+            
+            // 启动打字机效果
+            setTimeout(typeWriter, 1000);
+
+            // 图片切换功能 - 点击后显示延伸线和扩展图片
+            let isExtensionVisible = false;
+            
             imageSwitcher.addEventListener('click', function() {
+                // 切换图片
                 if (isFaceImage1) {
                     faceImage.src = faceImage2;
                     isFaceImage1 = false;
                 } else {
                     faceImage.src = faceImage1;
                     isFaceImage1 = true;
+                }
+                
+                // 切换延伸线和扩展图片的显示状态
+                isExtensionVisible = !isExtensionVisible;
+                if (isExtensionVisible) {
+                    imageSwitcher.classList.add('active');
+                } else {
+                    imageSwitcher.classList.remove('active');
                 }
             });
 
@@ -1848,12 +1978,12 @@
                 });
             });
 
-            // 导航盒子点击事件
+            // 导航盒子点击事件 - 移除alert弹窗
             navBoxes.forEach(box => {
                 box.addEventListener('click', () => {
                     const target = box.getAttribute('data-target');
-                    alert(`Navigating to: ${target}`);
                     // 这里可以添加实际导航逻辑
+                    // 移除了alert弹窗
                 });
             });
 
@@ -1861,8 +1991,21 @@
             navImageItems.forEach(item => {
                 item.addEventListener('click', () => {
                     const target = item.getAttribute('data-target');
-                    alert(`Navigating to: ${target}`);
-                    // 这里可以添加实际导航逻辑
+                    // 根据目标导航到相应页面
+                    switch(target) {
+                        case 'design':
+                            window.location.href = 'design.html';
+                            break;
+                        case 'hardware':
+                            window.location.href = 'hardware';
+                            break;
+                        case 'human-practices':
+                            window.location.href = 'human-practices';
+                            break;
+                        case 'description':
+                            window.location.href = 'description';
+                            break;
+                    }
                 });
             });
 
