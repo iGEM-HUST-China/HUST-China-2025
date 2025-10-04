@@ -3,7 +3,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | iGEM HUST-China 2025</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -180,11 +179,12 @@
             font-family: 'Source Serif Pro', serif;
         }
 
+        /* 导航栏链接容器 - 向左移动更多 */
         .nav-links-container {
             display: flex;
             justify-content: flex-end;
             flex: 1;
-            padding-right: 3rem;
+            padding-right: 1rem; /* 进一步减少右侧内边距，使导航栏整体左移 */
         }
     
         .nav-links {
@@ -192,6 +192,7 @@
             gap: 2.5rem;
             position: relative;
             transition: transform 0.3s ease;
+            margin-right: 4.5rem; /* 添加右侧外边距，确保下拉菜单不会超出屏幕 */
         }
 
         .nav-item {
@@ -231,12 +232,12 @@
             width: 100%;
         }
 
-        /* 下拉菜单样式 */
+        /* 下拉菜单样式 - 向左调整更多位置 */
         .dropdown {
             position: absolute;
             top: 100%;
-            left: 0;
-            width: 200px;
+            left: -20px; /* 进一步向左调整位置 */
+            width: 170px;
             background: #fff6d8;
             backdrop-filter: blur(10px);
             border-radius: 8px;
@@ -334,6 +335,36 @@
             align-items: center;
             justify-content: center;
             position: relative;
+        }
+
+        /* 为横屏页面添加背景 */
+        .horizontal-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        /* 鲨鱼来源背景 */
+        .shark-bg::before {
+            background-image: url('https://static.igem.wiki/teams/5569/index/shark.webp');
+        }
+
+        /* 植物来源背景 */
+        .plant-bg::before {
+            background-image: url('https://static.igem.wiki/teams/5569/index/plant.webp');
+        }
+
+        /* 生物技术背景 */
+        .biotech-bg::before {
+            background-image: url('https://static.igem.wiki/teams/5569/index/gongchang.webp');
         }
 
         /* 各场景背景 - 统一背景图与内容图 */
@@ -460,6 +491,36 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
+        /* 图片切换器样式 */
+        .image-switcher {
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .image-switcher .switch-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #2E5D32;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-switcher:hover .switch-icon {
+            opacity: 1;
+        }
+
         /* 文字渐次出现效果 */
         .text-line {
             opacity: 0;
@@ -513,15 +574,30 @@
             align-items: center;
         }
 
+        /* 马赛克布局样式 - 已修改为与其它页面一致的格式 */
         .mosaic-layout {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            padding: 4rem;
+            position: relative;
+            justify-content: center;
+            padding-top: 3rem; /* 增加顶部内边距避免被导航栏遮挡 */
+        }
+
+        .mosaic-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .mosaic-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(2, 1fr);
             gap: 2rem;
-            width: 100%;
-            height: 100%;
-            padding: 4rem;
-            padding-top: 6rem; /* 增加顶部内边距避免被导航栏遮挡 */
+            margin-top: 3rem;
         }
 
         .mosaic-item {
@@ -631,6 +707,7 @@
             padding: 2rem;
         }
 
+        /* 交替布局 - 修复左右交替效果，添加向中间靠拢的动画 */
         .alternating-layout {
             display: flex;
             align-items: center;
@@ -658,6 +735,9 @@
         .alternating-text {
             flex: 1;
             padding: 2rem;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease 0.3s; /* 延迟出现 */
         }
 
         .alternating-image {
@@ -665,6 +745,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease 0.3s; /* 延迟出现 */
+        }
+
+        .alternating-layout.visible .alternating-text,
+        .alternating-layout.visible .alternating-image {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .alternating-image img {
@@ -875,7 +964,7 @@
                 grid-template-columns: 1fr;
             }
             
-            .mosaic-layout {
+            .mosaic-grid {
                 grid-template-columns: 1fr;
                 grid-template-rows: auto;
             }
@@ -1027,9 +1116,9 @@
         <!-- 封面 -->
         <section id="cover" class="vertical-section">
             <div class="cover-content floating">
-                <h1 class="cover-title">SQUAOILENE</h1>
-                <p class="cover-subtitle">Transforming Waste Oil into Sustainable Squalene</p>
-                <p class="cover-subtitle">iGEM HUST-China 2025</p>
+                <h1 class="cover-title"></h1>
+                <p class="cover-subtitle"></p>
+                <p class="cover-subtitle"></p>
             </div>
         </section>
 
@@ -1057,7 +1146,12 @@
                     <p class="section-text text-line">Rapidly absorbed without leaving a greasy residue.</p>
                 </div>
                 <div class="split-image">
-                    <img src="https://static.igem.wiki/teams/5569/description/face11.webp" alt="Benefits" class="section-image image-animated">
+                    <div class="image-switcher">
+                        <img src="https://static.igem.wiki/teams/5569/description/face11.webp" alt="Benefits" class="section-image image-animated" id="faceImage">
+                        <div class="switch-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1080,7 +1174,7 @@
         <section id="sources" class="horizontal-scroll-section">
             <div class="horizontal-pages">
                 <!-- 页面1: 鲨鱼来源 -->
-                <div class="horizontal-page">
+                <div class="horizontal-page shark-bg">
                     <div class="split-layout">
                         <div class="split-image">
                             <img src="https://static.igem.wiki/teams/5569/index/shark.webp" alt="Shark Source" class="section-image image-animated">
@@ -1095,7 +1189,7 @@
                 </div>
 
                 <!-- 页面2: 植物来源 -->
-                <div class="horizontal-page">
+                <div class="horizontal-page plant-bg">
                     <div class="split-layout">
                         <div class="split-text">
                             <h2 class="section-title">Plant-Based Sources</h2>
@@ -1110,7 +1204,7 @@
                 </div>
 
                 <!-- 页面3: 生物技术 -->
-                <div class="horizontal-page">
+                <div class="horizontal-page biotech-bg">
                     <div class="clean-layout">
                         <div class="content-block">
                             <h2 class="section-title">Biotechnological Production</h2>
@@ -1126,32 +1220,40 @@
             </div>
         </section>
 
-        <!-- 技术 - 马赛克布局 -->
+        <!-- 技术 - 修改为与其他页面一致的格式 -->
         <section id="technology" class="vertical-section">
             <div class="mosaic-layout">
-                <div class="mosaic-item">
-                    <h3 class="mosaic-title">Waste Transformation</h3>
-                    <p class="mosaic-text">Converting used cooking oil into valuable squalene</p>
-                </div>
-                <div class="mosaic-item">
-                    <h3 class="mosaic-title">Microbial Engineering</h3>
-                    <p class="mosaic-text">Optimized strains for maximum efficiency</p>
-                </div>
-                <div class="mosaic-item">
-                    <h3 class="mosaic-title">Sustainable Process</h3>
-                    <p class="mosaic-text">Environmentally friendly production method</p>
-                </div>
-                <div class="mosaic-item">
-                    <h3 class="mosaic-title">Cost Reduction</h3>
-                    <p class="mosaic-text"><span class="number-counter" data-target="40">0</span>% lower production costs</p>
-                </div>
-                <div class="mosaic-item">
-                    <h3 class="mosaic-title">High Purity</h3>
-                    <p class="mosaic-text">Exceptional product quality maintained</p>
-                </div>
-                <div class="mosaic-item">
-                    <h3 class="mosaic-title">Scalability</h3>
-                    <p class="mosaic-text">Easily scalable to industrial levels</p>
+                <div class="mosaic-content">
+                    <h2 class="section-title">Our Technology</h2>
+                    <p class="section-text text-line">Our innovative approach combines cutting-edge biotechnology with sustainable practices.</p>
+                    <p class="section-text text-line">We've developed a comprehensive solution that addresses multiple challenges in squalene production.</p>
+                    
+                    <div class="mosaic-grid">
+                        <div class="mosaic-item">
+                            <h3 class="mosaic-title">Waste Transformation</h3>
+                            <p class="mosaic-text">Converting used cooking oil into valuable squalene</p>
+                        </div>
+                        <div class="mosaic-item">
+                            <h3 class="mosaic-title">Microbial Engineering</h3>
+                            <p class="mosaic-text">Optimized strains for maximum efficiency</p>
+                        </div>
+                        <div class="mosaic-item">
+                            <h3 class="mosaic-title">Sustainable Process</h3>
+                            <p class="mosaic-text">Environmentally friendly production method</p>
+                        </div>
+                        <div class="mosaic-item">
+                            <h3 class="mosaic-title">Cost Reduction</h3>
+                            <p class="mosaic-text"><span class="number-counter" data-target="40">0</span>% lower production costs</p>
+                        </div>
+                        <div class="mosaic-item">
+                            <h3 class="mosaic-title">High Purity</h3>
+                            <p class="mosaic-text">Exceptional product quality maintained</p>
+                        </div>
+                        <div class="mosaic-item">
+                            <h3 class="mosaic-title">Scalability</h3>
+                            <p class="mosaic-text">Easily scalable to industrial levels</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1200,7 +1302,7 @@
     <!-- 长页滚动内容 -->
     <section id="details" class="long-scroll-section">
         <div class="scroll-content">
-            <!-- 第一个图文内容 -->
+            <!-- 第一个图文内容 - 添加向中间靠拢的动画 -->
             <div class="alternating-layout">
                 <div class="alternating-text">
                     <h2 class="alternating-title">Our Mission</h2>
@@ -1316,6 +1418,8 @@
             const navImageItems = document.querySelectorAll('.nav-image-item');
             const longScrollSection = document.getElementById('details');
             const footerContainer = document.getElementById('footerContainer');
+            const faceImage = document.getElementById('faceImage');
+            const imageSwitcher = document.querySelector('.image-switcher');
             
             let currentSection = 0;
             let currentHorizontalPage = 0;
@@ -1332,6 +1436,22 @@
             let rotationSpeed = 0;
             let isRotating = false;
             let rotationAnimationId = null;
+
+            // 图片切换状态
+            let isFaceImage1 = true;
+            const faceImage1 = 'https://static.igem.wiki/teams/5569/description/face11.webp';
+            const faceImage2 = 'https://static.igem.wiki/teams/5569/description/face2.webp';
+
+            // 图片切换功能
+            imageSwitcher.addEventListener('click', function() {
+                if (isFaceImage1) {
+                    faceImage.src = faceImage2;
+                    isFaceImage1 = false;
+                } else {
+                    faceImage.src = faceImage1;
+                    isFaceImage1 = true;
+                }
+            });
 
             // 导航栏Logo点击跳转
             navLogo.addEventListener('click', function() {
@@ -1385,7 +1505,7 @@
             });
 
             // 为可交互元素添加悬停效果
-            const interactiveElements = document.querySelectorAll('a, button, .indicator-dot, [data-target], .back-to-top, .nav-image-item');
+            const interactiveElements = document.querySelectorAll('a, button, .indicator-dot, [data-target], .back-to-top, .nav-image-item, .image-switcher');
 
             interactiveElements.forEach(element => {
                 element.addEventListener('mouseenter', () => {
@@ -1491,7 +1611,7 @@
                 });
             }
 
-            // 鼠标滚轮事件
+            // 鼠标滚轮事件 - 修复横屏滚动问题
             document.addEventListener('wheel', function(e) {
                 if (isScrolling) return;
                 
@@ -1544,7 +1664,7 @@
                             currentHorizontalPage++;
                             scrollToHorizontalPage(currentHorizontalPage);
                         } else if (e.deltaY < 0 && currentHorizontalPage > 0) {
-                            // 向左滚动
+                            // 向左滚动 - 修复：现在可以返回上一界面
                             currentHorizontalPage--;
                             scrollToHorizontalPage(currentHorizontalPage);
                         } else if (e.deltaY > 0 && currentHorizontalPage === 2) {
