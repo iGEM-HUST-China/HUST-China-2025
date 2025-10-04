@@ -112,9 +112,10 @@
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .navbar.hidden {
+        /* 移除导航栏隐藏的样式 */
+        /* .navbar.hidden {
             transform: translateY(-100%);
-        }
+        } */
 
         .navbar.scrolled {
             background: rgba(248, 244, 233, 0.95);
@@ -1105,9 +1106,9 @@
         <!-- 封面 -->
         <section id="cover" class="vertical-section">
             <div class="cover-content floating">
-                <h1 class="cover-title">SQUAOILENE</h1>
-                <p class="cover-subtitle">Transforming Waste Oil into Sustainable Squalene</p>
-                <p class="cover-subtitle">iGEM HUST-China 2025</p>
+                <h1 class="cover-title"></h1>
+                <p class="cover-subtitle"></p>
+                <p class="cover-subtitle"></p>
             </div>
         </section>
 
@@ -1515,17 +1516,18 @@
                 customCursor.style.transform = 'scale(1)';
             });
 
-            // 导航栏滚动效果
+            // 导航栏滚动效果 - 修复：始终显示导航栏
             function handleNavbarScroll() {
                 const currentScrollY = window.scrollY;
                 
-                if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                    // 向下滚动，隐藏导航栏
-                    navbar.classList.add('hidden');
-                } else {
-                    // 向上滚动，显示导航栏
-                    navbar.classList.remove('hidden');
-                }
+                // 移除隐藏导航栏的逻辑，使其始终显示
+                // if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                //     // 向下滚动，隐藏导航栏
+                //     navbar.classList.add('hidden');
+                // } else {
+                //     // 向上滚动，显示导航栏
+                //     navbar.classList.remove('hidden');
+                // }
                 
                 if (currentScrollY > 50) {
                     navbar.classList.add('scrolled');
