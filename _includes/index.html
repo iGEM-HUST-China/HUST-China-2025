@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | iGEM HUST-China 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -18,6 +19,8 @@
             --light-cream: #FDFDF6;
             --warm-beige: #F8F4E9;
             --warm-brown: #8B7355;
+            --gold: #D4AF37;
+            --light-gold: #F9E076;
             --transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
@@ -30,13 +33,13 @@
             cursor: none;
         }
 
-        /* 优化后的鼠标指针 - 水滴形状 */
+        /* 优化后的鼠标指针 - 金色水滴形状 */
         .custom-cursor {
             position: fixed;
             top: 0;
             left: 0;
-            width: 20px;
-            height: 28px;
+            width: 24px;
+            height: 32px;
             pointer-events: none;
             z-index: 9999;
             transition: transform 0.15s ease;
@@ -53,7 +56,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 50% 70%, #efe832 0%, #ded013 100%);
+            background: radial-gradient(circle at 50% 70%, var(--light-gold) 0%, var(--gold) 100%);
             border-radius: 50% 50% 50% 50%;
             /* 水滴形状 - 上尖下圆 */
             clip-path: polygon(
@@ -71,46 +74,26 @@
                 10% 50%,
                 20% 30%,
                 35% 15%
-        );
+            );
             box-shadow: 
-                0 0 8px #Ffd700,
+                0 0 8px rgba(212, 175, 55, 0.6),
                 inset 0 2px 4px rgba(255, 255, 255, 0.3);
             animation: waterDrip 2.5s infinite ease-in-out;
         }
 
         @keyframes waterDrip {
             0%, 100% {
-            transform: translateY(0) scale(1);
-        }
+                transform: translateY(0) scale(1);
+            }
             50% {
-            transform: translateY(-2px) scale(1.05);
-        }
+                transform: translateY(-2px) scale(1.05);
+            }
         }
 
         /* 悬停时的效果 */
         .custom-cursor.hover {
             transform: scale(1.3);
             filter: brightness(1.2);
-        }
-
-        .cursor-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 4px;
-            font-weight: bold;
-            color: #2E5D32;
-            text-align: center;
-            width: 100%;
-            line-height: 1.2;
-            font-family: 'Inter', sans-serif;
-        }
-
-        @keyframes oilDrip {
-            0% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-3px) scale(1.05); }
-            100% { transform: translateY(0) scale(1); }
         }
 
         /* 回到顶部按钮 */
@@ -199,8 +182,9 @@
 
         .nav-links-container {
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             flex: 1;
+            padding-right: 3rem;
         }
     
         .nav-links {
@@ -627,6 +611,227 @@
             animation: glow 3s ease-in-out infinite;
         }
 
+        /* 长页滚动内容 */
+        .long-scroll-section {
+            width: 100%;
+            min-height: 100vh;
+            background: var(--light-cream);
+            position: relative;
+            padding: 4rem 0;
+            display: none; /* 初始隐藏 */
+        }
+
+        .long-scroll-section.active {
+            display: block;
+        }
+
+        .scroll-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .alternating-layout {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8rem;
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s ease;
+        }
+
+        .alternating-layout.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .alternating-layout.reverse {
+            flex-direction: row-reverse;
+            transform: translateX(100px);
+        }
+
+        .alternating-layout.reverse.visible {
+            transform: translateX(0);
+        }
+
+        .alternating-text {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .alternating-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .alternating-image img {
+            max-width: 90%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .alternating-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .alternating-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #2E5D32;
+            font-family: 'Source Serif Pro', serif;
+        }
+
+        .alternating-content {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* 导航图片部分 */
+        .nav-images {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 4rem 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-image-item {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-image-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .nav-image-item img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        .nav-image-item p {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2E5D32;
+        }
+
+        /* 页脚样式 */
+        .footer-container {
+            width: 100%;
+            margin-top: auto;
+            display: none; /* 初始隐藏 */
+        }
+        
+        .footer-container.active {
+            display: block; /* 只有激活时才显示 */
+        }
+        
+        footer {
+            color: #0c0c0c;
+            background-color: #aadec3;
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh; /* 高度足够大，确保背景图显示 */
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* 背景图样式 - 横向铺满，无左右边距 */
+        .footer-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://static.igem.wiki/teams/5569/description/ditu.webp');
+            background-size: cover; /* 铺满宽度，可能裁切上下 */
+            background-position: top center; /* 顶部居中 */
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+        
+        .footer-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-grow: 1;
+            padding: 40px 0 60px; /* 去掉左右 padding，避免背景留白 */
+            font-weight: bold;
+        }
+        
+        .logos {
+            display: flex;
+            gap: 40px;
+            align-items: flex-end;
+            padding-left: 20vw; /* 只给内容加左侧间距 */
+        }
+        
+        .logos img {
+            height: auto;
+            max-height: 120px;
+            width: auto;
+            max-width: 150px;
+            object-fit: contain;
+        }
+        
+        .contact-info {
+            text-align: right;
+            color: #0c0c0c;
+            padding-right: 2vw; /* 只给内容加右侧间距 */
+        }
+        
+        .contact-info h3 {
+            color: #2d5a3c;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+        
+        .contact-info p {
+            margin-bottom: 8px;
+            line-height: 1.5;
+            font-size: 1.5rem;
+        }
+        
+        .contact-info a {
+            color: #2d5a3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .footer-bottom {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px 0;
+            background: rgba(144, 189, 166, 0.8);
+        }
+        
+        .footer-bottom p {
+            margin: 5px 0;
+            font-size: 1.4rem;
+            color:#0c0c0c;
+        }
+        
+        .footer-bottom a {
+            color: #2d5a3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
         /* 响应式设计 */
         @media (max-width: 768px) {
             .clean-layout, .split-layout, .mosaic-layout {
@@ -681,14 +886,62 @@
                 width: 45px;
                 height: 45px;
             }
+            
+            .alternating-layout {
+                flex-direction: column;
+                margin-bottom: 4rem;
+            }
+            
+            .alternating-layout.reverse {
+                flex-direction: column;
+            }
+            
+            .alternating-text, .alternating-image {
+                padding: 1rem;
+            }
+            
+            .alternating-title {
+                font-size: 2rem;
+            }
+            
+            .nav-images {
+                gap: 2rem;
+            }
+            
+            .nav-image-item img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            footer {
+                min-height: 70vh;
+            }
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+                padding: 40px 0 60px;
+            }
+            .logos {
+                order: 2;
+                justify-content: center;
+                width: 100%;
+                padding-left: 0;
+                gap: 30px;
+            }
+            .contact-info {
+                order: 1;
+                text-align: center;
+                width: 100%;
+                padding-right: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- 自定义鼠标指针 - 优化后的油滴形状 -->
+    <!-- 自定义鼠标指针 - 优化后的金色油滴形状 -->
     <div class="custom-cursor">
         <div class="cursor-inner"></div>
-        <div class="cursor-text">HUST-China<br>SQUAOILENE</div>
     </div>
 
     <!-- 回到顶部按钮 -->
@@ -765,6 +1018,8 @@
         <div class="indicator-dot" data-title="Technology" data-target="5"></div>
         <div class="indicator-dot" data-title="Solution" data-target="6"></div>
         <div class="indicator-dot" data-title="Navigation" data-target="7"></div>
+        <div class="indicator-dot" data-title="Details" data-target="8"></div>
+        <div class="indicator-dot" data-title="Footer" data-target="9"></div>
     </div>
 
     <!-- 滚动容器 -->
@@ -772,9 +1027,9 @@
         <!-- 封面 -->
         <section id="cover" class="vertical-section">
             <div class="cover-content floating">
-                <h1 class="cover-title"></h1>
-                <p class="cover-subtitle"></p>
-                <p class="cover-subtitle"></p>
+                <h1 class="cover-title">SQUAOILENE</h1>
+                <p class="cover-subtitle">Transforming Waste Oil into Sustainable Squalene</p>
+                <p class="cover-subtitle">iGEM HUST-China 2025</p>
             </div>
         </section>
 
@@ -942,6 +1197,105 @@
         </section>
     </div>
 
+    <!-- 长页滚动内容 -->
+    <section id="details" class="long-scroll-section">
+        <div class="scroll-content">
+            <!-- 第一个图文内容 -->
+            <div class="alternating-layout">
+                <div class="alternating-text">
+                    <h2 class="alternating-title">Our Mission</h2>
+                    <div class="alternating-content">
+                        <p>At iGEM HUST-China 2025, we're dedicated to solving the squalene sustainability problem through innovative synthetic biology.</p>
+                        <p>Our project focuses on developing a sustainable production method for squalene by converting waste cooking oil into this valuable cosmetic ingredient.</p>
+                        <p>By engineering microorganisms to efficiently produce squalene, we aim to reduce environmental impact while meeting the growing demand for this important compound.</p>
+                    </div>
+                </div>
+                <div class="alternating-image">
+                    <img src="https://static.igem.wiki/teams/5569/description/huazhuangpinnew.webp" alt="Our Mission">
+                </div>
+            </div>
+
+            <!-- 第二个图文内容 -->
+            <div class="alternating-layout reverse">
+                <div class="alternating-text">
+                    <h2 class="alternating-title">Technical Innovation</h2>
+                    <div class="alternating-content">
+                        <p>Our approach combines cutting-edge genetic engineering with sustainable resource utilization.</p>
+                        <p>We've developed specialized microbial strains that can efficiently convert waste oil into high-purity squalene through optimized metabolic pathways.</p>
+                        <p>The process reduces production costs by 40% compared to traditional methods while maintaining exceptional product quality.</p>
+                    </div>
+                </div>
+                <div class="alternating-image">
+                    <img src="https://static.igem.wiki/teams/5569/description/feiyou.webp" alt="Technical Innovation">
+                </div>
+            </div>
+
+            <!-- 第三个图文内容 -->
+            <div class="alternating-layout">
+                <div class="alternating-text">
+                    <h2 class="alternating-title">Environmental Impact</h2>
+                    <div class="alternating-content">
+                        <p>Our solution addresses multiple environmental challenges simultaneously.</p>
+                        <p>By utilizing waste cooking oil as a raw material, we help reduce improper disposal that contributes to water pollution.</p>
+                        <p>Our biotechnological approach eliminates the need for shark harvesting and reduces agricultural land use compared to plant-based alternatives.</p>
+                    </div>
+                </div>
+                <div class="alternating-image">
+                    <img src="https://static.igem.wiki/teams/5569/description/youwu.webp" alt="Environmental Impact">
+                </div>
+            </div>
+
+            <!-- 导航图片部分 -->
+            <div style="text-align: center; margin: 4rem 0;">
+                <h2 class="section-title">Explore More</h2>
+                <p class="section-text" style="max-width: 800px; margin: 0 auto 2rem;">Click on the sections below to learn more about different aspects of our project</p>
+                
+                <div class="nav-images">
+                    <div class="nav-image-item" data-target="project">
+                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Project Details">
+                        <p>Project Details</p>
+                    </div>
+                    <div class="nav-image-item" data-target="lab">
+                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Lab Work">
+                        <p>Lab Work</p>
+                    </div>
+                    <div class="nav-image-item" data-target="team">
+                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Our Team">
+                        <p>Our Team</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <div class="footer-container" id="footerContainer">
+        <footer class="footer">
+            <div class="footer-bg"></div>
+            
+            <div class="footer-content">
+                <div class="logos">
+                    <img src="https://static.igem.wiki/teams/5569/description/qiming1.webp" alt="Qiming">
+                    <img src="https://static.igem.wiki/teams/5569/description/xiaohui.webp" alt="HUST">
+                    <img src="https://static.igem.wiki/teams/5569/description/xueyuan.webp" alt="LifeST">
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>Huazhong University of Science and Technology</p>
+                    <p>1037 Luoyu Road, Hongshan District, Wuhan</p>
+                    <p>Hubei Province, P.R. China 430074</p>
+                    <p><a href="mailto:igemhustchina@163.com">igemhustchina@163.com</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; iGEM HUST-China 2025</p>
+                <p>Licenced under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></p>
+            </div>
+        </footer>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const container = document.querySelector('.scroll-container');
@@ -958,6 +1312,10 @@
             const horizontalPages = document.querySelector('.horizontal-pages');
             const backToTop = document.getElementById('backToTop');
             const numberCounters = document.querySelectorAll('.number-counter');
+            const alternatingLayouts = document.querySelectorAll('.alternating-layout');
+            const navImageItems = document.querySelectorAll('.nav-image-item');
+            const longScrollSection = document.getElementById('details');
+            const footerContainer = document.getElementById('footerContainer');
             
             let currentSection = 0;
             let currentHorizontalPage = 0;
@@ -966,6 +1324,8 @@
             const scrollCooldown = 800;
             let lastScrollY = window.scrollY;
             let lastScrollTime = 0;
+            let isInLongScroll = false;
+            let isInFooter = false;
             
             // 旋转相关变量
             let rotationAngle = 0;
@@ -981,7 +1341,11 @@
             // 回到顶部按钮点击事件
             backToTop.addEventListener('click', function() {
                 currentSection = 0;
-                scrollToSection(0);
+                isInLongScroll = false;
+                isInFooter = false;
+                longScrollSection.classList.remove('active');
+                footerContainer.classList.remove('active');
+                scrollToSection(currentSection);
             });
 
             // 数字计数器函数 - 加快速度
@@ -1021,15 +1385,15 @@
             });
 
             // 为可交互元素添加悬停效果
-            const interactiveElements = document.querySelectorAll('a, button, .indicator-dot, [data-target], .back-to-top');
+            const interactiveElements = document.querySelectorAll('a, button, .indicator-dot, [data-target], .back-to-top, .nav-image-item');
 
             interactiveElements.forEach(element => {
                 element.addEventListener('mouseenter', () => {
-                    customCursor.classList.add('hover-effect');
+                    customCursor.classList.add('hover');
                 });
                 
                 element.addEventListener('mouseleave', () => {
-                    customCursor.classList.remove('hover-effect');
+                    customCursor.classList.remove('hover');
                 });
             });
 
@@ -1110,6 +1474,22 @@
             updateActiveSection();
             animateCurrentSection();
             window.addEventListener('scroll', handleNavbarScroll);
+            window.addEventListener('scroll', handleScrollAnimations);
+
+            // 滚动动画处理
+            function handleScrollAnimations() {
+                if (!isInLongScroll && !isInFooter) return;
+                
+                const scrollPosition = window.scrollY + window.innerHeight;
+                
+                alternatingLayouts.forEach(layout => {
+                    const elementTop = layout.getBoundingClientRect().top + window.scrollY;
+                    
+                    if (scrollPosition > elementTop + 100) {
+                        layout.classList.add('visible');
+                    }
+                });
+            }
 
             // 鼠标滚轮事件
             document.addEventListener('wheel', function(e) {
@@ -1132,6 +1512,30 @@
                 // 重置旋转停止计时器
                 clearTimeout(window.rotationStopTimer);
                 window.rotationStopTimer = setTimeout(stopRotation, 200);
+
+                // 如果在页脚中
+                if (isInFooter) {
+                    // 正常滚动，不进行特殊处理
+                    return;
+                }
+
+                // 如果在长页滚动中
+                if (isInLongScroll) {
+                    // 检查是否滚动到底部
+                    const longScrollBottom = longScrollSection.offsetTop + longScrollSection.offsetHeight;
+                    const currentPosition = window.scrollY + window.innerHeight;
+                    
+                    if (e.deltaY > 0 && currentPosition >= longScrollBottom - 50) {
+                        // 滚动到底部，显示页脚
+                        isInFooter = true;
+                        footerContainer.classList.add('active');
+                        footerContainer.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                    return;
+                }
 
                 if (currentSection === 4) { // Sources section (horizontal)
                     if (!isHorizontalScrolling) {
@@ -1161,6 +1565,14 @@
                     } else if (e.deltaY < 0 && currentSection > 0) {
                         currentSection--;
                         scrollToSection(currentSection);
+                    } else if (e.deltaY > 0 && currentSection === sections.length - 1) {
+                        // 到达最后一节，进入长页滚动
+                        isInLongScroll = true;
+                        longScrollSection.classList.add('active');
+                        longScrollSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
                     }
                 }
             });
@@ -1169,8 +1581,35 @@
             indicators.forEach(dot => {
                 dot.addEventListener('click', () => {
                     const targetIndex = parseInt(dot.getAttribute('data-target'));
-                    currentSection = targetIndex;
-                    scrollToSection(currentSection);
+                    
+                    if (targetIndex === 8) {
+                        // 长页滚动部分
+                        isInLongScroll = true;
+                        isInFooter = false;
+                        longScrollSection.classList.add('active');
+                        footerContainer.classList.remove('active');
+                        longScrollSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    } else if (targetIndex === 9) {
+                        // 页脚部分
+                        isInFooter = true;
+                        isInLongScroll = false;
+                        footerContainer.classList.add('active');
+                        longScrollSection.classList.remove('active');
+                        footerContainer.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    } else {
+                        currentSection = targetIndex;
+                        isInLongScroll = false;
+                        isInFooter = false;
+                        longScrollSection.classList.remove('active');
+                        footerContainer.classList.remove('active');
+                        scrollToSection(currentSection);
+                    }
                     
                     // 点击时也触发旋转
                     rotationSpeed = 15; // 中等速度
@@ -1194,13 +1633,25 @@
                 });
             });
 
+            // 导航图片点击事件
+            navImageItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const target = item.getAttribute('data-target');
+                    alert(`Navigating to: ${target}`);
+                    // 这里可以添加实际导航逻辑
+                });
+            });
+
             // 滚动到指定部分
             function scrollToSection(index) {
                 isScrolling = true;
-                sections[index].scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                
+                if (index < sections.length) {
+                    sections[index].scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
 
                 updateActiveSection();
                 animateCurrentSection();
@@ -1223,7 +1674,14 @@
             // 更新活动部分
             function updateActiveSection() {
                 indicators.forEach(dot => dot.classList.remove('active'));
-                indicators[currentSection].classList.add('active');
+                
+                if (isInFooter) {
+                    indicators[9].classList.add('active');
+                } else if (isInLongScroll) {
+                    indicators[8].classList.add('active');
+                } else {
+                    indicators[currentSection].classList.add('active');
+                }
             }
 
             // 动画当前部分
