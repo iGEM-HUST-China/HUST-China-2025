@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -254,6 +255,29 @@
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 0.6rem 1.5rem;
+            color: #555;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size:1rem;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(74, 124, 81, 0.1);
+            color: #4A7C51;
+            padding-left: 1.8rem;
+        }
+
+        .dropdown-link i {
+            margin-right: 0.5rem;
+            width: 15px;
+            text-align: center;
         }
 
         .dropdown-link {
@@ -1116,9 +1140,9 @@
         <!-- 封面 -->
         <section id="cover" class="vertical-section">
             <div class="cover-content floating">
-                <h1 class="cover-title"></h1>
-                <p class="cover-subtitle"></p>
-                <p class="cover-subtitle"></p>
+                <h1 class="cover-title">SQUAOILENE</h1>
+                <p class="cover-subtitle">Transforming Waste Oil into Sustainable Squalene</p>
+                <p class="cover-subtitle">iGEM HUST-China 2025</p>
             </div>
         </section>
 
@@ -1611,7 +1635,7 @@
                 });
             }
 
-            // 鼠标滚轮事件 - 修复横屏滚动问题
+            // 鼠标滚轮事件 - 修复所有滚动问题
             document.addEventListener('wheel', function(e) {
                 if (isScrolling) return;
                 
@@ -1635,28 +1659,49 @@
 
                 // 如果在页脚中
                 if (isInFooter) {
-                    // 正常滚动，不进行特殊处理
-                    return;
-                }
-
-                // 如果在长页滚动中
-                if (isInLongScroll) {
-                    // 检查是否滚动到底部
-                    const longScrollBottom = longScrollSection.offsetTop + longScrollSection.offsetHeight;
-                    const currentPosition = window.scrollY + window.innerHeight;
-                    
-                    if (e.deltaY > 0 && currentPosition >= longScrollBottom - 50) {
-                        // 滚动到底部，显示页脚
-                        isInFooter = true;
-                        footerContainer.classList.add('active');
-                        footerContainer.scrollIntoView({
+                    // 向上滚动时返回长页滚动
+                    if (e.deltaY < 0) {
+                        isInFooter = false;
+                        footerContainer.classList.remove('active');
+                        longScrollSection.scrollIntoView({
                             behavior: 'smooth',
-                            block: 'start'
+                            block: 'end'
                         });
                     }
                     return;
                 }
 
+                // 如果在长页滚动中
+                if (isInLongScroll) {
+                    // 检查是否滚动到顶部
+                    const longScrollTop = longScrollSection.offsetTop;
+                    const currentPosition = window.scrollY;
+                    
+                    if (e.deltaY < 0 && currentPosition <= longScrollTop + 50) {
+                        // 滚动到顶部，返回竖屏滚动
+                        isInLongScroll = false;
+                        longScrollSection.classList.remove('active');
+                        currentSection = 7; // 返回到Navigation部分
+                        scrollToSection(currentSection);
+                    } else if (e.deltaY > 0) {
+                        // 检查是否滚动到底部
+                        const longScrollBottom = longScrollSection.offsetTop + longScrollSection.offsetHeight;
+                        const currentPosition = window.scrollY + window.innerHeight;
+                        
+                        if (currentPosition >= longScrollBottom - 50) {
+                            // 滚动到底部，显示页脚
+                            isInFooter = true;
+                            footerContainer.classList.add('active');
+                            footerContainer.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                    return;
+                }
+
+                // 横屏滚动部分
                 if (currentSection === 4) { // Sources section (horizontal)
                     if (!isHorizontalScrolling) {
                         if (e.deltaY > 0 && currentHorizontalPage < 2) {
@@ -1664,7 +1709,7 @@
                             currentHorizontalPage++;
                             scrollToHorizontalPage(currentHorizontalPage);
                         } else if (e.deltaY < 0 && currentHorizontalPage > 0) {
-                            // 向左滚动 - 修复：现在可以返回上一界面
+                            // 向左滚动
                             currentHorizontalPage--;
                             scrollToHorizontalPage(currentHorizontalPage);
                         } else if (e.deltaY > 0 && currentHorizontalPage === 2) {
@@ -1678,15 +1723,17 @@
                         }
                     }
                 } else {
-                    // 竖屏滚动
+                    // 竖屏滚动 - 修复所有section的滚动逻辑
                     if (e.deltaY > 0 && currentSection < sections.length - 1) {
+                        // 向下滚动到下一节
                         currentSection++;
                         scrollToSection(currentSection);
                     } else if (e.deltaY < 0 && currentSection > 0) {
+                        // 向上滚动到上一节 - 这是关键修复！
                         currentSection--;
                         scrollToSection(currentSection);
                     } else if (e.deltaY > 0 && currentSection === sections.length - 1) {
-                        // 到达最后一节，进入长页滚动
+                        // 到达最后一节（Navigation），进入长页滚动
                         isInLongScroll = true;
                         longScrollSection.classList.add('active');
                         longScrollSection.scrollIntoView({
