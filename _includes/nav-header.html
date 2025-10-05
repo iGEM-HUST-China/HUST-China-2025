@@ -16,7 +16,8 @@
       <a href="{{ url }}">{{ item.title }}</a>
       {% endif %}
       {% if item.sub_navigation %}
-      <ul class="sub_nav" style="display: none; position: absolute;">
+      <!-- 移除内联的 display: none -->
+      <ul class="sub_nav">
         {% for sub_nav in item.sub_navigation %}
         <li class="sub_nav item--nav">
           <a href="{{ site.baseurl }}{{ sub_nav.url }}" class="sub_nav">{{ sub_nav.title }}</a>
@@ -79,7 +80,7 @@
     padding-right: 1rem;
   }
 
-  /* 导航项 */
+  /* 导航项 - 确保有相对定位 */
   nav.nav ul.list--nav li.item--nav {
     position: relative;
     list-style: none;
@@ -123,7 +124,7 @@
     color: #4A7C51;
   }
 
-  /* 下拉菜单 */
+  /* 下拉菜单 - 关键修复 */
   ul.sub_nav {
     position: absolute;
     top: 100%;
@@ -142,6 +143,8 @@
     flex-direction: column;
     height: fit-content;
     margin-top: 0.6rem;
+    /* 确保没有内联样式覆盖 */
+    display: block !important;
   }
 
   nav.nav ul.list--nav li.item--nav:hover ul.sub_nav {
@@ -195,6 +198,15 @@
     }
 
     /* 移动端下拉菜单调整 */
+    ul.sub_nav {
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+    }
+
+    nav.nav ul.list--nav li.item--nav:hover ul.sub_nav {
+      transform: translateX(-50%) translateY(0);
+    }
+
     ul.sub_nav li.sub_nav {
       text-align: right !important;
     }

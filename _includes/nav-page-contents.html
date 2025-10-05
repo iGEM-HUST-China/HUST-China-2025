@@ -37,68 +37,216 @@
         scroll-behavior: smooth;
     }
 
+    /* 目录导航样式优化 */
     .section.page--description nav {
         overflow-y: auto;
         overflow-x: hidden;
-        background: #f9f9f9;
-        padding: 10px;
-        margin-top: 10px;
-        max-height: 80vh;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+        background: rgba(248, 244, 233, 0.8);
+        backdrop-filter: blur(10px);
+        padding: 1.5rem;
+        margin-top: 1rem;
+        max-height: 70vh;
+        border: 1px solid rgba(139, 115, 85, 0.2);
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .section.page--description nav:hover {
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+        border-color: rgba(139, 115, 85, 0.3);
     }
 
     .section.page--description nav a {
         display: block;
-        font-size: medium;
-        margin-bottom: 5px;
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+        color: #555;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        border-left: 3px solid transparent;
+    }
+
+    .section.page--description nav a:hover {
+        color: #4A7C51;
+        background: rgba(74, 124, 81, 0.08);
+        border-left-color: #4A7C51;
+        transform: translateX(4px);
     }
 
     .section.page--description nav a.h2 {
-        padding-left: 0;
+        padding-left: 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #2E5D32;
     }
 
     .section.page--description nav a.h3 {
-        padding-left: 30px;
+        padding-left: 2rem;
+        font-size: 1rem;
+        font-weight: 500;
     }
 
     .section.page--description nav a.h4 {
-        padding-left: 60px;
+        padding-left: 3rem;
+        font-size: 0.95rem;
     }
 
     .section.page--description nav a.h5 {
-        padding-left: 90px;
+        padding-left: 4rem;
+        font-size: 0.9rem;
     }
 
     .section.page--description nav a.h6 {
-        padding-left: 120px;
+        padding-left: 5rem;
+        font-size: 0.85rem;
     }
 
-    /* 滚动条样式 */
+    /* 滚动条样式优化 */
     .section.page--description nav::-webkit-scrollbar {
-        /*滚动条整体样式*/
-        width: 7px;
-        /*高宽分别对应横竖滚动条的尺寸*/
-        height: 1px;
+        width: 6px;
+        height: 6px;
     }
 
     .section.page--description nav::-webkit-scrollbar-thumb {
-        /*滚动条里面小方块*/
         border-radius: 10px;
-        box-shadow: inset 0 0 5px rgba(178, 176, 176, 0.1);
-        background: #535353;
+        background: rgba(74, 124, 81, 0.3);
+        transition: background 0.3s ease;
+    }
+
+    .section.page--description nav::-webkit-scrollbar-thumb:hover {
+        background: rgba(74, 124, 81, 0.6);
     }
 
     .section.page--description nav::-webkit-scrollbar-track {
-        /*滚动条里面轨道*/
-        box-shadow: inset 0 0 5px rgba(228, 226, 226, 0.1);
         border-radius: 10px;
-        background: #ededed;
+        background: rgba(248, 244, 233, 0.5);
     }
-</style>
 
-<!-- 点击目录标签跳转、目录显示当前页面位置 -->
-<style>
+    /* 当前正处于的目录标签 */
+    .section.page--description nav a.current {
+        color: #2E5D32;
+        background: rgba(74, 124, 81, 0.12);
+        border-left-color: #2E5D32;
+        font-weight: 600;
+    }
+
+    /* 代码框整体优化 */
+    article .highlighter-rouge {
+        position: relative;
+        margin: 2rem 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(139, 115, 85, 0.15);
+    }
+
+    article .highlighter-rouge .highlight {
+        overflow-x: auto;
+        background: #f8f4e9;
+    }
+
+    /* 代码框内文字优化 */
+    article .highlighter-rouge pre {
+        font-size: 15px;
+        line-height: 1.5;
+        margin: 0;
+        padding: 1.5rem 1.5rem 1.5rem 4rem;
+        background: #f8f4e9;
+        color: #2f2f2f;
+    }
+
+    article .highlighter-rouge code span {
+        font-size: 15px;
+    }
+
+    article .highlighter-rouge code,
+    article .highlighter-rouge code span {
+        line-height: 1.5;
+        font-size: 15px;
+        font-family: 'Cascadia Code', 'Source Code Pro', 'Monaco', 'Consolas', monospace;
+        font-feature-settings: normal;
+    }
+
+    /* 行号样式优化 */
+    article .highlighter-rouge pre .code-number {
+        position: absolute;
+        width: 3.5rem;
+        background: rgba(139, 115, 85, 0.08);
+        top: 0;
+        left: 0;
+        padding: 1.5rem 0;
+        margin: 0;
+        list-style: none;
+        text-align: right;
+        font-size: 14px;
+        overflow: hidden;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #8b7355;
+        border-right: 1px solid rgba(139, 115, 85, 0.2);
+    }
+
+    article .highlighter-rouge pre .code-number li {
+        color: #8b7355;
+        padding: 0 1rem;
+        list-style: none;
+        margin: 0;
+        font-weight: 400;
+        font-family: 'Cascadia Code', 'Source Code Pro', monospace;
+        background: transparent;
+    }
+
+    /* 行号悬停效果 */
+    article .highlighter-rouge pre .code-number li:hover {
+        background: rgba(74, 124, 81, 0.1);
+        color: #4A7C51;
+    }
+
+    /* 内联代码优化 */
+    article code.highlighter-rouge {
+        padding: 0.2rem 0.6rem;
+        font-size: 14px;
+        line-height: 1.4;
+        color: #2E5D32;
+        background: rgba(74, 124, 81, 0.1);
+        border-radius: 6px;
+        border: 1px solid rgba(74, 124, 81, 0.2);
+        font-family: 'Cascadia Code', 'Source Code Pro', monospace;
+        font-feature-settings: normal;
+        transition: all 0.3s ease;
+    }
+
+    article code.highlighter-rouge:hover {
+        background: rgba(74, 124, 81, 0.15);
+        border-color: rgba(74, 124, 81, 0.3);
+        transform: translateY(-1px);
+    }
+
+    /* 代码滚动条优化 */
+    article .highlighter-rouge pre code::-webkit-scrollbar {
+        height: 8px;
+        width: 100%;
+    }
+
+    article .highlighter-rouge pre code::-webkit-scrollbar-thumb {
+        background: rgba(74, 124, 81, 0.3);
+        border-radius: 4px;
+    }
+
+    article .highlighter-rouge pre code::-webkit-scrollbar-thumb:hover {
+        background: rgba(74, 124, 81, 0.5);
+    }
+
+    article .highlighter-rouge pre code::-webkit-scrollbar-track {
+        background: rgba(248, 244, 233, 0.5);
+        border-radius: 4px;
+    }
+
     /* 去掉链接、按钮等点击后出现的边框以及下划线 */
     a,
     a:focus,
@@ -120,118 +268,81 @@
 
     /* 去掉a标签点击的颜色残留 */
     a:focus {
-        color: #05bf85;
+        color: #4A7C51;
     }
 
     a:focus:hover {
-        color: green;
+        color: #2E5D32;
     }
 
-    /* 当前正处于的目录标签 */
-    .section.page--description nav a.current {
-        color: red;
-    }
-</style>
-
-<!-- 代码框显示行数--行数样式 -->
-<style>
-    article .highlighter-rouge pre .code-number {
-        position: absolute;
-        width: 48px;
-        background-color: #fafafa;
-        top: 0;
-        left: 0;
-        padding: 8px 0 6px 0;
-        margin: 0;
-        list-style: none;
-        text-align: right;
-        font-size: 16px;
-        overflow: hidden;
-        overflow-x: auto;
-        font-weight: normal;
-        line-height: 22px;
-        color: #000;
+    /* 文章内容整体优化 */
+    article {
+        color: #333;
+        line-height: 1.7;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
-    article .highlighter-rouge pre .code-number li {
-        color: #383a42;
-        border-right: 1px solid #c5c5c5;
-        padding: 0 8px;
-        list-style: none;
-        margin: 0;
-        font-weight: normal;
-        /* 字体 */
-        font-family: Cascadia Code;
-        /* font-family: Source Code Pro, DejaVu Sans Mono, Ubuntu Mono, Anonymous Pro, Droid Sans Mono, Menlo, Monaco, Consolas, Inconsolata, Courier, monospace, PingFang SC, Microsoft YaHei, sans-serif; */
-        font-feature-settings: normal;
-    }
-</style>
-
-<!-- 代码框样式 -->
-<style>
-    /* 初始配置 */
-    article .highlighter-rouge {
-        position: relative;
+    article h1, article h2, article h3, article h4, article h5, article h6 {
+        color: #2E5D32;
+        margin: 2rem 0 1rem 0;
+        font-weight: 600;
+        line-height: 1.3;
     }
 
-    article .highlighter-rouge .highlight {
-        overflow-x: auto;
+    article h1 {
+        font-size: 2.2rem;
+        border-bottom: 2px solid rgba(74, 124, 81, 0.2);
+        padding-bottom: 0.5rem;
     }
 
-    /* 代码框内文字 */
-    article .highlighter-rouge pre {
-        font-size: 14px;
-        line-height: 22px;
-        margin: 0 0 24px;
-        padding: 8px 16px 6px 56px;
+    article h2 {
+        font-size: 1.8rem;
+        border-left: 4px solid #4A7C51;
+        padding-left: 1rem;
     }
 
-    article .highlighter-rouge code span {
-        font-size: 14px;
+    article h3 {
+        font-size: 1.5rem;
+        color: #4A7C51;
     }
 
-    article .highlighter-rouge code,
-    article .highlighter-rouge code span {
-        line-height: 22px;
-        font-size: 14px;
-        /* 字体 */
-        font-family: Cascadia Code;
-        /* font-family: Source Code Pro, DejaVu Sans Mono, Ubuntu Mono, Anonymous Pro, Droid Sans Mono, Menlo, Monaco, Consolas, Inconsolata, Courier, monospace, PingFang SC, Microsoft YaHei, sans-serif; */
-        font-feature-settings: normal;
+    article h4 {
+        font-size: 1.3rem;
+        color: #555;
     }
 
-    /* 设置代码框内滚动条在code框上 */
-    article .highlighter-rouge pre {
-        overflow-x: hidden;
+    article p {
+        margin-bottom: 1.5rem;
+        text-align: justify;
     }
 
-    article .highlighter-rouge pre code {
-        display: block;
-        overflow-x: auto;
+    /* 引用块样式优化 */
+    article blockquote {
+        border-left: 4px solid #4A7C51;
+        background: rgba(248, 244, 233, 0.5);
+        padding: 1rem 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0 8px 8px 0;
+        font-style: italic;
+        color: #555;
     }
 
-    /* 用单个`括起来的代码 */
-    article code.highlighter-rouge {
-        padding: 2px 4px;
-        font-size: 14px;
-        line-height: 22px;
-        color: #c7254e;
-        background-color: #f9f2f4;
-        border-radius: 2px;
-        /* 字体 */
-        font-family: Cascadia Code;
-        /* font-family: Source Code Pro, DejaVu Sans Mono, Ubuntu Mono, Anonymous Pro, Droid Sans Mono, Menlo, Monaco, Consolas, Inconsolata, Courier, monospace, PingFang SC, Microsoft YaHei, sans-serif; */
-        font-feature-settings: normal;
+    /* 列表样式优化 */
+    article ul, article ol {
+        margin: 1.5rem 0;
+        padding-left: 2rem;
     }
 
-    /* 滚动条样式 */
-    article .highlighter-rouge pre code::-webkit-scrollbar {
-        height: 8px;
-        width: 138px;
+    article li {
+        margin-bottom: 0.5rem;
     }
 
-    article .highlighter-rouge pre code::-webkit-scrollbar-thumb {
-        background: #C2C2C2;
-        border-radius: 4px;
+    article ul li::marker {
+        color: #4A7C51;
+    }
+
+    article ol li::marker {
+        color: #4A7C51;
+        font-weight: 600;
     }
 </style>
