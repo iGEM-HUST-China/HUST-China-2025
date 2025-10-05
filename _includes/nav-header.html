@@ -37,7 +37,7 @@
 {% endif %}
 
 <style>
-          .navbar {
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
@@ -52,10 +52,6 @@
             border-bottom: 1px solid rgba(139, 115, 85, 0.1);
             transform: translateY(0);
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .navbar.hidden {
-            transform: translateY(-100%);
         }
 
         .navbar.scrolled {
@@ -78,7 +74,7 @@
         }
 
         .nav-logo-text {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 700;
             background: linear-gradient(135deg, #4A7C51, #2E5D32);
             -webkit-background-clip: text;
@@ -87,10 +83,12 @@
             font-family: 'Source Serif Pro', serif;
         }
 
+        /* 导航栏链接容器 - 向左移动更多 */
         .nav-links-container {
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             flex: 1;
+            padding-right: 1rem; /* 进一步减少右侧内边距，使导航栏整体左移 */
         }
     
         .nav-links {
@@ -98,6 +96,7 @@
             gap: 2.5rem;
             position: relative;
             transition: transform 0.3s ease;
+            margin-right: 5rem; /* 添加右侧外边距，确保下拉菜单不会超出屏幕 */
         }
 
         .nav-item {
@@ -137,12 +136,12 @@
             width: 100%;
         }
 
-        /* 下拉菜单样式 */
+        /* 下拉菜单样式 - 向左调整更多位置 */
         .dropdown {
             position: absolute;
             top: 100%;
-            left: 0;
-            width: 200px;
+            left: 0px; /* 进一步向左调整位置 */
+            width: 150px;
             background: #fff6d8;
             backdrop-filter: blur(10px);
             border-radius: 8px;
@@ -170,6 +169,7 @@
             font-size:1rem;
             font-weight: 500;
             font-family: 'Inter', sans-serif;
+            text-align: center;
         }
 
         .dropdown-link:hover {
