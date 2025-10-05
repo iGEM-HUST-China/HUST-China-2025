@@ -1,6 +1,6 @@
 ---
 title: Home
-layout: blank
+layout: page
 excerpt: "Welcome to iGEM HUST-China 2025 wiki!"
 ---
 
