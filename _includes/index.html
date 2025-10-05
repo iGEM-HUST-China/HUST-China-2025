@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | iGEM HUST-China 2025</title>
     <style>
-        /* 加载动画样式 */
+        /* 加载动画样式 - 修改为WebP动图 */
         #loading-animation {
             position: fixed;
             top: 0;
@@ -19,7 +19,7 @@
             transition: opacity 0.5s ease, visibility 0.5s;
         }
         
-        #loading-video {
+        #loading-gif {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -574,10 +574,6 @@
             cursor: pointer;
             display: inline-block;
             overflow: visible; /* 允许延伸线超出容器 */
-        }
-
-        .image-switcher:hover .switch-icon {
-            opacity: 1;
         }
 
         /* 延伸线和扩展图片容器 */
@@ -1193,11 +1189,9 @@
     </style>
 </head>
 <body>
-    <!-- 加载动画 -->
+    <!-- 加载动画 - 修改为WebP动图 -->
     <div id="loading-animation">
-        <video id="loading-video" autoplay muted playsinline>
-            <iframe title="HUST-China: LOGO of Wiki (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/1dMKEifXBqLdgJJJWuTWrR" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
-        </video>
+        <img id="loading-gif" src="https://static.igem.wiki/teams/5569/description/jiazaizaizaizaizai.webp" alt="Loading animation">
     </div>
 
     <!-- 自定义鼠标指针 - 优化后的金色油滴形状 -->
@@ -1318,9 +1312,6 @@
                 <div class="split-image">
                     <div class="image-switcher">
                         <img src="https://static.igem.wiki/teams/5569/description/face11.webp" alt="Benefits" class="section-image image-animated" id="faceImage">
-                        <div class="switch-icon">
-                            <i class="fas fa-exchange-alt"></i>
-                        </div>
                         <!-- 添加延伸线和扩展图片 -->
                         <div class="image-extension">
                             <div class="extension-line"></div>
@@ -1567,34 +1558,32 @@
     </div>
 
     <script>
-        // 加载动画控制
+        // 加载动画控制 - 修改为动图版本
         document.addEventListener('DOMContentLoaded', function() {
             const loadingAnimation = document.getElementById('loading-animation');
-            const loadingVideo = document.getElementById('loading-video');
+            const loadingGif = document.getElementById('loading-gif');
             
-            // 当视频结束时隐藏加载动画
-            loadingVideo.addEventListener('ended', function() {
+            // 当动图加载完成后隐藏加载动画
+            loadingGif.addEventListener('load', function() {
+                // 设置一个定时器，在动图显示一段时间后隐藏
+                setTimeout(function() {
+                    document.body.classList.add('loaded');
+                    // 可选：完全移除加载动画元素
+                    setTimeout(function() {
+                        loadingAnimation.remove();
+                    }, 500);
+                }, 4000); // 显示4秒后隐藏
+            });
+            
+            // 如果动图加载失败，直接显示页面
+            loadingGif.addEventListener('error', function() {
                 document.body.classList.add('loaded');
-                // 可选：完全移除加载动画元素
                 setTimeout(function() {
                     loadingAnimation.remove();
                 }, 500);
             });
             
-            // 如果视频加载失败，直接显示页面
-            loadingVideo.addEventListener('error', function() {
-                document.body.classList.add('loaded');
-                setTimeout(function() {
-                    loadingAnimation.remove();
-                }, 500);
-            });
-            
-            // 如果视频无法播放（例如移动设备限制），直接显示页面
-            loadingVideo.addEventListener('canplaythrough', function() {
-                // 视频可以播放，不需要额外处理
-            }, { once: true });
-            
-            // 安全措施：如果5秒后视频仍未播放，强制显示页面
+            // 安全措施：如果4秒后动图仍未加载，强制显示页面
             setTimeout(function() {
                 if (!document.body.classList.contains('loaded')) {
                     document.body.classList.add('loaded');
@@ -1602,7 +1591,7 @@
                         loadingAnimation.remove();
                     }, 500);
                 }
-            }, 5000);
+            }, 3800);
             
             // 原有JavaScript代码保持不变...
             const container = document.querySelector('.scroll-container');
