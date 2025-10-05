@@ -2,7 +2,7 @@
   <ul class="list list--nav">
     {% for item in site.navigation_header %}
       {% unless item.title == false or item.url contains "/page" or item.url contains "/404.html" %}
-        <li class="item  item--nav{% if item.url == page.url %}  item--current{% endif %}">
+        <li class="item item--nav{% if item.url == page.url %} item--current{% endif %}">
 
           {% if item.url %}
             {% if item.url contains '://' %}
@@ -44,97 +44,33 @@
 </nav>
 
 <style>
-  /* 仅针对此导航栏的样式 */
-main.container ul.list--nav {
-display: grid;
-gap: 1.5rem; /* 增大块之间的空隙 */
-padding: 2rem;
-}
+  /* 确保父元素有相对定位 */
+  main.container li.item--nav {
+    position: relative;
+  }
 
-main.container ul.list--nav li {
-padding: 1.5rem; /* 增大内边距 */
-border-radius: 8px; /* 调整圆角大小 */
-background: rgba(248, 244, 233, 0.9); /* 使用半透明白色背景 */
-backdrop-filter: blur(20px); /* 添加毛玻璃效果 */
-border: 1px solid rgba(139, 115, 85, 0.1); /* 调整边框颜色和透明度 */
-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* 增强阴影效果 */
-display: flex;
-justify-content: center;
-align-items: center;
-transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
-}
+  /* 下拉菜单样式 */
+  main.container ul.list--sub-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 150px;
+    background: #fff6d8;
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    margin-top: 0.5rem;
+  }
 
-main.container ul.list--nav li:hover {
-transform: translateY(-2px); /* 悬停时轻微上浮 */
-box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* 悬停时增强阴影 */
-background: rgba(248, 244, 233, 0.95); /* 悬停时背景略微加深 */
-}
-
-main.container ul.list--nav {
-list-style: none;
-padding: 0;
-margin: 0;
-}
-
-main.container li.item--nav {
-margin: auto;
-min-height: 120px; /* 调整最小高度 */
-min-width: 200px; /* 调整最小宽度 */
-}
-
-main.container ul.list--nav li a {
-text-decoration: none; /* 去掉链接的下划线 */
-color: #555; /* 设置文字颜色 */
-font-size: 1.5rem; /* 设置字体大小 */
-font-weight: 600; /* 设置字体粗细 /
-font-family: 'Inter', sans-serif; / 设置字体 */
-transition: color 0.3s ease; /* 添加颜色过渡效果 */
-position: relative;
-padding: 0.5rem 0;
-display: flex;
-align-items: center;
-gap: 1rem;
-}
-
-main.container ul.list--nav li a:hover {
-cursor: pointer;
-color: #4A7C51; /* 悬停时改变文字颜色 */
-}
-
-main.container ul.list--nav li a::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-width: 0;
-height: 2px;
-background: linear-gradient(90deg, #4A7C51, #2E5D32);
-transition: width 0.3s ease;
-}
-
-main.container ul.list--nav li a:hover::after {
-width: 100%; /* 悬停时下划线展开 */
-}
-
-/* 640px 以下分 1 栏 */
-@media (max-width: 640px) {
-main.container ul.list--nav {
-grid-template-columns: 1fr; /* 定义一列布局 */
-padding: 1rem; /* 调整内边距 */
-gap: 1rem; /* 调整间隙 */
-}
-}
-
-/* 960px 以下分 2 栏 */
-@media (min-width: 641px) and (max-width: 960px) {
-main.container ul.list--nav {
-grid-template-columns: repeat(2, 1fr); /* 定义两列布局 */
-}
-}
-
-/* 960px 以上分 3 栏 */
-@media (min-width: 961px) {
-main.container ul.list--nav {
-grid-template-columns: repeat(3, 1fr); /* 定义三列布局 */
-}
-}
+  main.container li.item--nav:hover ul.list--sub-nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+</style>
