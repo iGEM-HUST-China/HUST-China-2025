@@ -18,7 +18,7 @@ In the current fields of molecular biology, synthetic biology, proteomics, and b
 
 To systematically address these challenges, our project team innovatively proposed the design of an "**Integrated Fermentation & Processing System (iFPS)**" based on real-world research needs. This system deeply integrates mechatronics and intelligent control technologies, seamlessly combining three core functional modules---micro-fermentation culture, high-speed centrifugal collection, and mechanical agitation disruption---into a single compact benchtop device. This achieves true end-to-end automation from "post-inoculation" to "crude lysate collection." The system not only significantly enhances experimental consistency and operational safety but also keeps equipment costs around **\$100**-**just 1% of the cost of existing micro-fermentation devices.** fundamentally solving problems points in synthetic biology practice---namely high costs, low efficiency, and heavy reliance on manual labor.
 
-![Video 1.1 iFPS Demonstration](media/image1.png)
+![Video 1.1 iFPS Demonstration](https://static.igem.wiki/teams/5569/hardware/h10.webp)
 
 ## Device Development Process
 
@@ -72,7 +72,7 @@ Our hardware team has consistently focused on addressing practical challenges en
 
 ### Core Module Function Design and Testing
 
-## a. Fermentation Culture and Fluid Control: Enables strain expansion culture and employs flow switches to control two liquid release stages for microbial enrichment and transfer of concentrated culture.
+**a. Fermentation Culture and Fluid Control: Enables strain expansion culture and employs flow switches to control two liquid release stages for microbial enrichment and transfer of concentrated culture.**
 
 ![Figure 3.2.1 Schematic Diagram of Fermentation Condition Control Module](media/image5.png)
 
@@ -84,7 +84,6 @@ Our hardware team has consistently focused on addressing practical challenges en
 ![Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)](media/image6.png) ![Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)](media/image7.png)
 
 - The inner tank bottom features a 30° sector-shaped aperture aligned with two sector-shaped and circular apertures in the outer tank base plate. The outer tank's edge is concave, while its central protrusion interlocks with the inner tank bottom to create hydraulic pressure, preventing medium leakage through edge gaps.
-- Mortise-and-tenon video
 - The inner tank's mid-section incorporates a mortise-and-tenon structure that mates with the complementary half on the bottom of the stirring rod. The top stepper motor operates in two modes: continuous clockwise rotation and counterclockwise step mode (each button press rotates 30° counterclockwise). During clockwise rotation, the inclined planes of the mortise-and-tenon joints slide against each other, preventing the inner tank from rotating. The stirring rod does not rotate the inner tank, ensuring thorough mixing of the bacterial solution. During counterclockwise rotation, the vertical surfaces of the two joints interlock. The stirring rod drives the inner tank to rotate, thereby controlling leakage.
 - The circular opening at the bottom of the outer tank has internal threads. These are used to secure a bacterial filter membrane during the first drainage cycle. The culture medium flows directly into the waste tank via the rubber tube connected to the bottom of the drainage port, while cells are intercepted, enhancing bacterial density within the tank. The fan-shaped aperture facilitates the second drainage cycle, directing residual medium and cells downward to the centrifugal shaking module for subsequent processing.
 - Under microscopic observation, the size of lipolytic yeast cells was determined (Figure 3.2.4). After averaging measurements from 20 cells, the bacterial cell's major axis measured approximately 8.4 μm, and the minor axis approximately 5.2 μm. A bacterial filter membrane with a mesh size of 3 μm was selected.
@@ -115,7 +114,7 @@ The maximum speed of the purchased brushless motor under load, measured by an in
 
 ![Figure 3.2.5 Contour Plot of Absorbance](media/image10.png)
 
-# Mode Switching Module:
+**Mode Switching Module:**
 
 ![Figure 3.2.6 Schematic of the Mode Switching Module](media/image11.png)
 
@@ -124,7 +123,7 @@ We designed the equipment based on the commonly used glass bead shaking method i
 - **Centrifugation Mode (Motor Forward Rotation):** When the motor rotates forward, the limit device locks the switching bearing, aligning it concentrically with the main shaft. This drives the entire rotor assembly to high-speed rotation, generating strong centrifugal force that precipitates microbial cells to the bottom of the centrifuge tube**.**
 - **Shaking Mode (Motor Reverse Rotation):** When the motor reverses, the switching bearing unlocks. Under mechanical force, it undergoes radial translation, creating an eccentric displacement. The motor then rotates, driving the centrifuge tube to perform high-speed eccentric shaking.
 
-# Motion Decoupling Mechanism---"One-Way Bearing": To prevent centrifuge tubes from self-rotating during oscillation, we incorporated a one-way bearing between the tube holder and the rotating shaft. This achieves pure oscillation-based disruption.
+Motion Decoupling Mechanism---"One-Way Bearing": To prevent centrifuge tubes from self-rotating during oscillation, we incorporated a one-way bearing between the tube holder and the rotating shaft. This achieves pure oscillation-based disruption.
 
 To resolve the issue of repeatedly transferring liquid and balancing the centrifuge, we designed a communicating centrifuge tube based on the communicating vessel principle. A matching liquid connection switch was also developed to prevent circulation while facilitating easy liquid release and collection.
 
@@ -154,7 +153,7 @@ To integrate control of the entire apparatus and monitor cell culture conditions
 
     ![Figure 3.2.10 Peristaltic Pump](media/image17.png)
 
-# Software:
+### Software:
 
 We developed the program using Keil5. The primary functional code is as follows:
 
