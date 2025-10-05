@@ -19,9 +19,13 @@ In the current fields of molecular biology, synthetic biology, proteomics, and b
 
 To systematically address these challenges, our project team innovatively proposed the design of an "**Integrated Fermentation & Processing System (iFPS)**" based on real-world research needs. This system deeply integrates mechatronics and intelligent control technologies, seamlessly combining three core functional modules---micro-fermentation culture, high-speed centrifugal collection, and mechanical agitation disruption---into a single compact benchtop device. This achieves true end-to-end automation from "post-inoculation" to "crude lysate collection." The system not only significantly enhances experimental consistency and operational safety but also keeps equipment costs around **\$100**-**just 1% of the cost of existing micro-fermentation devices.** fundamentally solving problems points in synthetic biology practice---namely high costs, low efficiency, and heavy reliance on manual labor.
 
+![Video 1.1 iFPS Demonstration](media/image1.png)
+
 # Device Development Process
 
 Throughout development, we strictly adhered to standard hardware development procedures and the iGEM-advocated Design-Test-Learn-Build cycle, structured into five phases.
+
+![Figure 1.2 R&D Process Diagram](media/image2.png)
 
 ## Phase 1: Defining Requirements and Pain Points
 
@@ -47,13 +51,15 @@ During this phase, we invited target users (other iGEM teammates, lab peers, fac
 
 Through interviews with multiple laboratory researchers, we discovered that the process of extracting substances in laboratories consumes significant time.Simultaneously, the need to move between different instruments significantly increases the error rate. Based on this, we conducted research into traditional laboratory processes and the problems inherent within them.
 
-| Evaluation Criteria      | Existing Traditional Solution (Micro-fermentation tank + Centrifuge + Grinder) |
-| :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+![Figure 1.3 Flowchart for Laboratory Shaker Culture and Miniature Fermentation Methods](media/image3.png)
+
+| Evaluation Criteria      | Existing Traditional Solution (Micro-fermentation tank + Centrifuge + Grinder)                                                                                                                                                                                                                             |
+| :----------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Time Cost**            | **Extensive manual operations** (aliquoting, transferring, resuspending, balancing, setting up equipment) require approximately **60--75 minutes of active handling time**. <br> T**he experiment requires continuous operation**: Monitoring fermentation conditions necessitates 24-hour uninterrupted sampling and experimentation. The prolonged continuous work and disrupted sleep patterns are difficult for researchers to endure. <br> **Total process duration:** Approximately **1.5--2.5 hours** from culture completion to obtaining lysate. |
-| **Equipment Cost**       | **High initial procurement cost:** The price of a miniature fermenter is at least **\$10,000.** The combined cost of three separate pieces of equipment---a rocking incubator, centrifuge, and shaker---is approximately **\$5,000**. |
-| **Laboratory Space Occupancy** | **Significant space requirements:** Three large devices occupy at least **2--3 square meters** of valuable laboratory space. |
-| **Labor and Training Costs** | **High demands:** Personnel must be trained to proficiently operate three instruments and master aseptic techniques. <br> **Value wastage:** PhD students and researchers spend time on repetitive tasks. |
-| **Result Consistency and Risk** | **Poor consistency:** Manual operations inevitably introduce errors, resulting in high coefficient of variation. <br> **High Risk:** Multiple sample transfers increase **cross- contamination** hazards. Moreover, manual sampling from conical flasks and miniature fermenters carries a high risk of contamination. |
+| **Equipment Cost**       | **High initial procurement cost:** The price of a miniature fermenter is at least **\$10,000.** The combined cost of three separate pieces of equipment---a rocking incubator, centrifuge, and shaker---is approximately **\$5,000**.                                                                         |
+| **Laboratory Space Occupancy** | **Significant space requirements:** Three large devices occupy at least **2--3 square meters** of valuable laboratory space.                                                                                                                                                                                |
+| **Labor and Training Costs** | **High demands:** Personnel must be trained to proficiently operate three instruments and master aseptic techniques. <br> **Value wastage:** PhD students and researchers spend time on repetitive tasks.                                                                                                     |
+| **Result Consistency and Risk** | **Poor consistency:** Manual operations inevitably introduce errors, resulting in high coefficient of variation**. <br> **High Risk:** Multiple sample transfers increase **cross- contamination** hazards. Moreover, manual sampling from conical flasks and miniature fermenters carries a high risk of contamination.     |
 
 Thus, we identified three major pain points: **cumbersome and time-consuming operations, high equipment costs and space requirements, and poor result reproducibility**. Based on this, we defined the core design requirements for the equipment: achieving full automation and integration of the three key functions:** fermentation, centrifugation, and agitation/disruption. The goal is to reduce manual operation time by over 90% and significantly enhance data consistency. All design decisions stem from these requirements.
 
@@ -63,25 +69,38 @@ Thus, we identified three major pain points: **cumbersome and time-consuming ope
 
 Our hardware team has consistently focused on addressing practical challenges encountered in synthetic biology micro-fermentation, aiming to provide solutions and fresh perspectives for tackling specific problems. Our design philosophy centers on "**integration, automation, and miniaturization,** **Modular**." The system appears as a compact desktop unit internally divided into two modules: an upper fermentation module and a lower integrated centrifugal agitation module. Controlled by a single STM32 chip, the system utilizes multiple control chips to drive motor rotation. An OLED display shows culture temperature, pH, and motor parameters for real-time monitoring of cultivation conditions. It also comes equipped with numerous components and modules for users to choose from, catering to diverse needs and practical situations.
 
+![Overall Presentation Diagram](media/image4.jpeg)
+
 # Core Module Function Design and Testing
 
 ## a. Fermentation Culture and Fluid Control: Enables strain expansion culture and employs flow switches to control two liquid release stages for microbial enrichment and transfer of concentrated culture.
+
+![Figure 3.2.1 Schematic Diagram of Fermentation Condition Control Module](media/image5.png)
 
 - **Fermentation Condition Control Module:** Multiple designs at the top of the device primarily enable real-time monitoring and control of fermentation conditions.
 - A 42-step motor drives the stirrer and flow switch via bevel gear transmission. Three small ports accommodate: a pH sensor for real-time monitoring, a temperature sensor for fermentation conditions, and a blue light emitter to activate the strain's suicide switch, preventing microbial leakage. Two sidewall ports allow tubing to deliver solutions from a peristaltic pump for timed feed supplementation.
 
 **Leakage Control and Cell Enrichment Module: Leakage control and cell enrichment are achieved through a nested double-layered fermentation tank system and interlocking mortise-and-tenon joints.**
 
+![Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)](media/image6.png) ![Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)](media/image7.png)
+
 - The inner tank bottom features a 30° sector-shaped aperture aligned with two sector-shaped and circular apertures in the outer tank base plate. The outer tank's edge is concave, while its central protrusion interlocks with the inner tank bottom to create hydraulic pressure, preventing medium leakage through edge gaps.
+- Mortise-and-tenon video
 - The inner tank's mid-section incorporates a mortise-and-tenon structure that mates with the complementary half on the bottom of the stirring rod. The top stepper motor operates in two modes: continuous clockwise rotation and counterclockwise step mode (each button press rotates 30° counterclockwise). During clockwise rotation, the inclined planes of the mortise-and-tenon joints slide against each other, preventing the inner tank from rotating. The stirring rod does not rotate the inner tank, ensuring thorough mixing of the bacterial solution. During counterclockwise rotation, the vertical surfaces of the two joints interlock. The stirring rod drives the inner tank to rotate, thereby controlling leakage.
 - The circular opening at the bottom of the outer tank has internal threads. These are used to secure a bacterial filter membrane during the first drainage cycle. The culture medium flows directly into the waste tank via the rubber tube connected to the bottom of the drainage port, while cells are intercepted, enhancing bacterial density within the tank. The fan-shaped aperture facilitates the second drainage cycle, directing residual medium and cells downward to the centrifugal shaking module for subsequent processing.
-- Under microscopic observation, the size of lipolytic yeast cells was determined. After averaging measurements from 20 cells, the bacterial cell's major axis measured approximately 8.4 μm, and the minor axis approximately 5.2 μm. A bacterial filter membrane with a mesh size of 3 μm was selected.
+- Under microscopic observation, the size of lipolytic yeast cells was determined (Figure 3.2.4). After averaging measurements from 20 cells, the bacterial cell's major axis measured approximately 8.4 μm, and the minor axis approximately 5.2 μm. A bacterial filter membrane with a mesh size of 3 μm was selected.
 
-## b. Centrifugation and Agitation-Induced Lysis: Primarily separates cells from the culture medium. Adding glass beads followed by agitation lyses cells to release intracellular squalene.
+![Figure 3.2.3 Schematic diagram of lipolytic yeast cells under a microscope](media/image8.jpeg)
+
+## TEST: Top motor video
+
+**b. Centrifugation and Agitation-Induced Lysis: Primarily separates cells from the culture medium. Adding glass beads followed by agitation lyses cells to release intracellular squalene.**
 
 - **Centrifugation Module:** Enriched bacterial suspension enters centrifuge tubes via liquid transfer tubes. A brushless DC motor within the base, coupled with a synchronous gear set, drives the centrifuge tubes and their contents to high-speed rotation.
 
 During cell centrifugation, rotational speed and duration are the two most critical parameters. Increasing rotational speed significantly raises motor costs, while extending duration reduces production efficiency. To determine the conditions under which our equipment achieves maximum economic benefit, we employed Minitab to design the following response surface experiment.
+
+![Figure 3.2.4 Experimental Design Table](media/image9.png)
 
 The two influencing factors are rotational speed (1000 rpm--5000 rpm) and time (1min--5 min). The response variable is absorbance (A), measured at 500 nm wavelength using a spectrophotometer. The blank control group consists of pre-centrifugation solution, while the sample group comprises supernatant collected after each centrifugation run.
 
@@ -95,36 +114,52 @@ It is evident that absorbance is directly proportional to solution concentration
 
 The maximum speed of the purchased brushless motor under load, measured by an infrared sensor, is 840 rpm. Through a 1:3 speed reduction gear set, the speed can reach 2520 rpm. At this speed, centrifugation requires only about 3 minutes, maximizing economic efficiency.
 
+![Figure 3.2.5 Contour Plot of Absorbance](media/image10.png)
+
 ## Mode Switching Module:
 
-We designed the equipment based on the commonly used glass bead shaking method in laboratories to disrupt cells and extract intracellular squalene. To save space, we developed a mode switching module to integrate both shaking and centrifugation functions. The core design features a mode switching bearing.
+![Figure 3.2.6 Schematic of the Mode Switching Module](media/image11.png)
 
-- **Centrifugation Mode (Motor Forward Rotation):** When the motor rotates forward, the limit device locks the switching bearing, aligning it concentrically with the main shaft. This drives the entire rotor assembly to high-speed rotation, generating strong centrifugal force that precipitates microbial cells to the bottom of the centrifuge tube.
+We designed the equipment based on the commonly used glass bead shaking method in laboratories to disrupt cells and extract intracellular squalene. To save space, we developed a mode switching module to integrate both shaking and centrifugation functions. The core design features a mode switching bearing (animation shown).
+
+- **Centrifugation Mode (Motor Forward Rotation):** When the motor rotates forward, the limit device locks the switching bearing, aligning it concentrically with the main shaft. This drives the entire rotor assembly to high-speed rotation, generating strong centrifugal force that precipitates microbial cells to the bottom of the centrifuge tube**.**
 - **Shaking Mode (Motor Reverse Rotation):** When the motor reverses, the switching bearing unlocks. Under mechanical force, it undergoes radial translation, creating an eccentric displacement. The motor then rotates, driving the centrifuge tube to perform high-speed eccentric shaking.
 
 ## Motion Decoupling Mechanism---"One-Way Bearing": To prevent centrifuge tubes from self-rotating during oscillation, we incorporated a one-way bearing between the tube holder and the rotating shaft. This achieves pure oscillation-based disruption.
 
 To resolve the issue of repeatedly transferring liquid and balancing the centrifuge, we designed a communicating centrifuge tube based on the communicating vessel principle. A matching liquid connection switch was also developed to prevent circulation while facilitating easy liquid release and collection.
 
+![Figure 3.2.7 CommunicatingCentrifuge Tube Kit](media/image12.png) ![](media/image13.png) ![](media/image14.png)
+
 ## c. Intelligent Control System: Primarily used to automate the entire device, reducing manual operation time
 
 To integrate control of the entire apparatus and monitor cell culture conditions in real time, we developed the following circuit control system based on the STM32F103C8T6 microcontroller:
 
+![Figure 3.2.8 Wiring Diagram](media/image15.png)
+
 ### Equipment:
 
 1.  **Condition Monitoring Module**
-    Drawing inspiration from HUST-China 2023's fermentation condition monitoring design, we employed a DS18B20 + temperature probe as the temperature monitoring module and a pH composite electrode + pH sensor as the pH detection module.
+
+    Drawing inspiration from HUST-China 2023's fermentation condition monitoring design, we employed a DS18B20 + temperature probe as the temperature monitoring module and a pH composite electrode + pH sensor as the pH detection module. ([Hardware | Huazhong University of Science and Technology - China - iGEM 2023](https://2023.igem.wiki/hust-china/hardware))
+
+    ![Figure 3.2.9 pH Calibration Curve](media/image16.png)
 
 2.  **Motion Control Module:**
+
     We selected distinct motors for the three key motion control points based on thorough research and analysis of each motor's characteristics, implementing optimal designs:
 
     - **Top:** The top motor drives the stirring rod and activates the flow switch, requiring high precision. We selected the 11HS2810S stepper motor, which enables precise speed and angle control via PWM modulation and delivers substantial torque.
     - **Bottom:** The bottom motor controls centrifugation and oscillation, demanding strict speed regulation. We selected the 36-3530 brushless DC motor. Its brushless design enables high rotational speeds at low power consumption.
     - **External:** The external motor controls timed nutrient supplementation to regulate nitrogen levels in the culture medium. We fabricated a simple peristaltic pump that achieves timed supplementation (of ammonium sulfate) by adjusting the motor's speed and rotation status. For the peristaltic pump's control motor, we selected the MG996R servo motor. It is easy to program, allows precise specification of rotation angles, and consumes minimal power.
 
+    ![Figure 3.2.10 Peristaltic Pump](media/image17.png)
+
 ### Software:
 
-We developed the program using Keil5.
+We developed the program using Keil5. The primary functional code is as follows:
+
+![Figure 3.2.11 Main Code](media/image18.jpeg) ![Figure 3.2.11 Main Code](media/image19.jpeg)
 
 # Product Iteration
 
@@ -136,7 +171,11 @@ Initially, our device design comprised only an upper chamber for fermentation an
 
 However, this version still required significant manual labor, leading us to develop V2.0.
 
+![Figure 3.3.1 Schematic of the First-Generation Model](media/image20.png)
+
 ## Second Version
+
+![Figure 3.3.2 Schematic of the second-generation model](media/image21.png)
 
 Compared to the first generation, we introduced a mortise-and-tenon structure to mechanically link the flow switch and stirrer rod. The top knob can drive either the stirrer rod or the flow switch depending on its rotation direction. Simultaneously, we designed an automatic switching bearing that alters the motor's rotation direction to toggle between centrifugal and agitation modes.
 
@@ -149,6 +188,10 @@ However, during practical testing, we encountered the following issues:
 To address these issues, we continuously optimized the design and launched V3.0.
 
 ## Third Generation
+
+![Figure 3.3.3 Schematic Diagram of Third-Generation Model](media/image22.png) ![Figure 3.3.3 Schematic Diagram of Third-Generation Model](media/image23.png)
+
+![Figure 3.3.4 Third-Generation Circuit Wiring Diagram](media/image24.jpeg)
 
 In the third-generation design, we introduced an automated control system. A DC motor-driven stirring rod was added to the top of the upper tank, along with two small openings for pH and temperature sensors to enable real-time monitoring of fermentation conditions.
 
@@ -173,43 +216,55 @@ Our device continues last year's modular and "building block" design philosophy,
 
 During fermentation, stirring rods are commonly used within fermentation tanks to mix reactants and ensure uniform reactions, facilitating efficient processes and thorough nutrient absorption. Different stirring rods are required based on the physicochemical properties of the fermentation broth, such as viscosity and dissolved oxygen levels.
 
-Fan-blade agitator designed for vigorous liquid agitation. Its curved profile reduces resistance during mixing, making it suitable for environments requiring large-scale culture medium agitation.
+Figure 3.4.1 shows a fan-blade agitator designed for vigorous liquid agitation. Its curved profile reduces resistance during mixing, making it suitable for environments requiring large-scale culture medium agitation.
 
-Spiral-rising agitator uniformly mixes microbial cultures with nutrients. Its thin blades easily divide the liquid, making it suitable for high-viscosity culture media.
+Figure 3.4.2 shows a spiral-rising agitator that uniformly mixes microbial cultures with nutrients. Its thin blades easily divide the liquid, making it suitable for high-viscosity culture media.
+
+![Figure 3.4.1 Fan-shaped stirring rod](media/image25.png) ![Figure 3.4.2 Spiral stirring rod](media/image26.png)
 
 ## Flow Control Module
 
-During fermentation, scenarios often arise where controlling the flow rate or volume of fermentation broth is necessary to optimize subsequent processes. Flow control module featuring porous construction for uniform leakage, enabling seamless integration into our equipment. The triple-hole design enhances operational flexibility. Flow control valve regulates flow from the upper to lower tubes via a rotary handle, offering simple operation suitable for infrequently used flow control valves.
+During fermentation, scenarios often arise where controlling the flow rate or volume of fermentation broth is necessary to optimize subsequent processes. Figure 3.4.3 depicts a flow control module featuring porous construction for uniform leakage, enabling seamless integration into our equipment. The triple-hole design enhances operational flexibility. Figure 3.4.4 shows a flow control valve that regulates flow from the upper to lower tubes via a rotary handle, offering simple operation suitable for infrequently used flow control valves.
+
+![Figure 3.4.3 Multi-hole Fluid Switch](media/image27.png) ![Figure 3.4.4 Flow Control Valve](media/image28.png)
 
 ## Speed Control Module
 
 During cell centrifugation, the required rotational speed is influenced by cell size. To facilitate switching the centrifuge's rotational speed, we designed a speed adjustment module.
 
-7-tooth gear connected to the drive shaft. Gear set designed for speed adjustment, featuring 14, 21, and 28 teeth respectively. These gears amplify the motor speed by 2x, 1.34x, and 1x, allowing speed switching through height adjustment for quick and convenient operation.
+Figure 3.4.5 shows a 7-tooth gear connected to the drive shaft. Figure 3.4.6 depicts a gear set designed for speed adjustment, featuring 14, 21, and 28 teeth respectively. These gears amplify the motor speed by 2x, 1.34x, and 1x, allowing speed switching through height adjustment for quick and convenient operation.
+
+![Figure 3.4.5 Seven-tooth gear](media/image29.png) ![Figure 3.4.6 Speed adjustment gear set](media/image30.png)
 
 ## Aeration Module
 
 Lipase yeast requires substantial oxygen during fermentation, making an efficient aeration system critical for enhancing fermentation efficiency. To improve oxygen utilization, we have designed the following three aeration systems.
 
-Aeration unit where gas is introduced radially through the disc. Typically used downward, it features small outlet holes and high gas pressure, suitable for systems with high oxygen demand.
+Figure 3.4.7 shows an aeration unit where gas is introduced radially through the disc. Typically used downward, it features small outlet holes and high gas pressure, suitable for systems with high oxygen demand.
 
-Another aeration unit connected to a long gas transport pipe. It diverts part of the gas flow into spherical chambers before diffusing outward, increasing gas-liquid contact area. This configuration serves as an ideal transfer station for multiple aeration systems.
+Figure 3.4.8 depicts another aeration unit connected to a long gas transport pipe. It diverts part of the gas flow into spherical chambers before diffusing outward, increasing gas-liquid contact area. This configuration serves as an ideal transfer station for multiple aeration systems.
 
-Aeration line that can be laid along the tank bottom. It disperses bubbles in a fishbone pattern. As the bubbles rise, they agitate the liquid and dissolve, featuring a simple structure suitable for tubular fermenters.
+Figure 3.4.9 depicts an aeration line that can be laid along the tank bottom. It disperses bubbles in a fishbone pattern. As the bubbles rise, they agitate the liquid and dissolve, featuring a simple structure suitable for tubular fermenters.
+
+![Figure 3.4.7 Disc Aeration Unit](media/image31.png) ![Figure 3.4.8 Long Tube Aeration Unit](media/image32.png) ![Figure 3.4.9 Fishbone Aeration Unit](media/image33.png)
 
 ## Fermentation Modules
 
 To accommodate diverse fermentation requirements and conditions, we have concurrently designed several variants of fermentation apparatus.
 
-200 ml fermentation vessel enables larger-scale fermentation and extraction.
+Figure 3.4.10 A 200 ml fermentation vessel enables larger-scale fermentation and extraction.
 
-Fermenter with baffles added to increase oxygen supply during agitation.
+Figure 3.4.11 shows a fermenter with baffles added to increase oxygen supply during agitation.
+
+![Figure 3.4.10 200ml Fermentation Vessel](media/image34.png) ![Figure 3.4.11 Baffled Fermentation Vessel](media/image35.png)
 
 # Product Usage Procedure:
 
 1.  Install communicating centrifuge tubes and sterile filters; close all flow switches
 2.  Open the top lid, add the culture medium, and inoculate the microbial strain.
 3.  Connect the power cord and press buttons in sequence to activate corresponding functions.
+
+![Figure 4.1 Button Layout Diagram](media/image38.jpeg)
 
 The red button powers on the device and illuminates the display. The yellow button activates the upper motor for continuous clockwise rotation. The left white button controls the upper motor for 30° counterclockwise rotation. The blue button controls the lower motor rotation. The white button reverses the lower motor rotation direction. The green button activates the nutrient replenishment system.
 
@@ -231,6 +286,8 @@ We presented the initial prototype to Professor Wang Jinchun at the Engineering 
 
 To address these issues, we have developed corresponding improvement plans: After structural validation, critical bearings and moving parts will be replaced with metal materials to enhance longevity and operational stability; a removable, independently sterilizable "reaction inner chamber" will be designed to effectively resolve cleaning and sealing challenges; a dedicated PCB board will be developed to integrate circuits, improving system safety and anti-interference capabilities.
 
+Figure 3.5.1 Discussion with Professor Wang Jinchun
+
 ## Expanding Application Scenarios and Functional Optimization
 
 We also invited Dr. Chen Yulong from the Institute of Resource Biology and Biotechnology at Huazhong University of Science and Technology to participate in testing. He provided valuable suggestions from the perspectives of synthetic biology and large-scale fermentation:
@@ -239,6 +296,8 @@ We also invited Dr. Chen Yulong from the Institute of Resource Biology and Biote
 - **New Application Scenarios**: Initial drainage can be utilized to collect bacterial extracellular secretory products. Prompt separation of these products mitigates feedback inhibition, thereby enhancing fermentation efficiency.
 
 Based on these recommendations, we redesigned the fermentation module by incorporating baffled fermentation vessels of multiple specifications and integrating an oxygen supply unit. Dr. Chen's proposed application scenarios also guided us toward new R&D directions. We are currently exploring the use of this equipment for exosome collection, further validating its scalability and practical value in bioprocessing.
+
+![Figure 3.5.2 Exchange with Dr. Chen Yulong](media/image43.jpeg)
 
 # Equipment Component List and Cost
 
@@ -277,12 +336,18 @@ Achieving balance during centrifugation is a critical challenge in automated exp
 
 Our device is designed to precisely address real-world issues through human-practice feedback loops, meeting diverse needs while continuously optimizing performance. Furthermore, its versatility and replicability unlock broader application potential.
 
+(Overview, Requirements and Cost Analysis, Project Philosophy and Design, Discussion)
+
 Core functions and structure performed well in the prototype, demonstrating the device's practicality and functionality. This strongly indicates that with further refinement, it can evolve into a commercialized and practical model in the future.
+
+(Project Philosophy and Design, Product Usage Procedure, Discussion)
 
 We conducted multiple user tests and interviews, gathering diverse feedback on the entire device. This feedback was either incorporated into the device's actual production or integrated into plans for future enhancements and implementation.
 
+(Requirement & Cost Analysis, User Feedback)
+
 All design information, 3D printing data, electronic schematics, parts lists, and assembly instructions for the final prototype have been fully documented and released in a format easily accessible for replication.
 
+(Data for replication)
+
 In summary, we have developed and demonstrated an automated crude cell extraction device integrating fermentation, centrifugation, and shaking, effectively addressing challenges in synthetic biology development and application.
-
-
