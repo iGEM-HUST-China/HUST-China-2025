@@ -39,18 +39,20 @@
   </script>
   
   <style>
+	<style>
 	html {
 	  scroll-behavior: smooth;
 	}
   
 	/* 导航栏容器 */
 	.section.page--description nav {
-	  background: #f9f9f9;
+	  background: rgba(248, 244, 233, 0.9);
 	  padding: 15px;
 	  margin-top: 15px;
-	  border: 1px solid #e0e0e0;
+	  border: 1px solid rgba(139, 115, 85, 0.1);
 	  border-radius: 8px;
 	  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+	  backdrop-filter: blur(20px);
 	}
   
 	/* 导航链接基础样式 */
@@ -58,51 +60,58 @@
 	  display: block;
 	  margin-bottom: 8px;
 	  padding: 5px 10px;
-	  color: #333;
+	  color: #555;
 	  text-decoration: none;
 	  border-radius: 4px;
 	  transition: all 0.2s ease;
+	  font-family: 'Inter', sans-serif;
+	  font-weight: 600;
 	}
   
 	/* 标题层级缩进和样式 */
 	.section.page--description nav a.h2 {
 	  padding-left: 0;
-	  font-weight: bold;
-	  font-size: 1.1rem;
+	  font-weight: 700;
+	  font-size: 1.5rem;
 	  color: #2d5a3c;
+	  font-family: 'Source Serif Pro', serif;
 	}
 	.section.page--description nav a.h3 {
 	  padding-left: 15px;
-	  font-size: 1rem;
+	  font-size: 1.5rem;
+	  color: #555;
 	}
 	.section.page--description nav a.h4 {
 	  padding-left: 30px;
-	  font-size: 0.95rem;
+	  font-size: 1rem;
 	  color: #555;
+	  font-weight: 500;
 	}
 	.section.page--description nav a.h5 {
 	  padding-left: 45px;
-	  font-size: 0.9rem;
-	  color: #666;
+	  font-size: 1rem;
+	  color: #555;
+	  font-weight: 500;
 	}
 	.section.page--description nav a.h6 {
 	  padding-left: 60px;
-	  font-size: 0.85rem;
-	  color: #777;
+	  font-size: 1rem;
+	  color: #555;
+	  font-weight: 500;
 	}
   
 	/* 悬停和激活状态 */
 	.section.page--description nav a:hover {
-	  background-color: #eaf4ef;
-	  color: #3cb469;
+	  background-color: rgba(74, 124, 81, 0.1);
+	  color: #4A7C51;
 	  transform: translateX(3px);
 	}
   
 	/* 当前激活的锚点 */
 	.section.page--description nav a.active {
-	  background-color: #d9ead3;
-	  color: #3cb469;
-	  font-weight: bold;
+	  background-color: rgba(74, 124, 81, 0.1);
+	  color: #4A7C51;
+	  font-weight: 600;
 	}
   
 	/* 返回顶部按钮 */
@@ -113,19 +122,23 @@
 	  right: 20px;
 	  padding: 10px 15px;
 	  font-size: 16px;
-	  background-color: #f9f9f9;
-	  color: #aaddc4;
-	  border: 1px solid #ccc;
+	  background-color: rgba(248, 244, 233, 0.9);
+	  color: #4A7C51;
+	  border: 1px solid rgba(139, 115, 85, 0.1);
 	  border-radius: 5px;
 	  cursor: pointer;
 	  z-index: 1000;
 	  transition: all 0.2s ease;
+	  backdrop-filter: blur(20px);
+	  font-family: 'Inter', sans-serif;
+	  font-weight: 600;
 	}
 	#back-to-top:hover,
 	#back-to-top:active {
-	  background-color: #3cb469;
+	  background-color: #4A7C51;
 	  color: #f9f9f9;
 	  transform: translateY(-2px);
 	  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 	}
+</style>
   </style>
