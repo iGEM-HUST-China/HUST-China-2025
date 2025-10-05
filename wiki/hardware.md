@@ -3,12 +3,11 @@ title: Hardware
 permalink: /hardware/
 feature_text: |
   ## Hardware
-  This page introduces the hardware design of our project, including three parts: **enrichment**, **fermentation**, and **modular design**.
+  This page introduces the hardware design of our project.
 feature_image: "https://static.igem.wiki/teams/5569/hardware/h1.webp"
-excerpt: "This page introduces the hardware design of our project, including three parts: **enrichment**, **fermentation**, and **modular design**."
+excerpt: "This page introduces the hardware design of our project."
 ---
-# Overview
-
+## Overview
 In the current fields of molecular biology, synthetic biology, proteomics, and biopharmaceuticals, microbial cultivation and the extraction of intracellular active substances constitute fundamental and critical experimental steps. However, existing technical workflows face significant bottlenecks:
 
 **1. High equipment cost:** Our field research indicates that mainstream micro-fermentation tank equipment on the market is expensive, creating a significant barrier to entry.
@@ -19,35 +18,35 @@ In the current fields of molecular biology, synthetic biology, proteomics, and b
 
 To systematically address these challenges, our project team innovatively proposed the design of an "**Integrated Fermentation & Processing System (iFPS)**" based on real-world research needs. This system deeply integrates mechatronics and intelligent control technologies, seamlessly combining three core functional modules---micro-fermentation culture, high-speed centrifugal collection, and mechanical agitation disruption---into a single compact benchtop device. This achieves true end-to-end automation from "post-inoculation" to "crude lysate collection." The system not only significantly enhances experimental consistency and operational safety but also keeps equipment costs around **\$100**-**just 1% of the cost of existing micro-fermentation devices.** fundamentally solving problems points in synthetic biology practice---namely high costs, low efficiency, and heavy reliance on manual labor.
 
-![Video 1.1 iFPS Demonstration](media/image1.png)
+![Video 1.1 iFPS Demonstration](https://static.igem.wiki/teams/5569/hardware/h10.webp)
 
-# Device Development Process
+## Device Development Process
 
 Throughout development, we strictly adhered to standard hardware development procedures and the iGEM-advocated Design-Test-Learn-Build cycle, structured into five phases.
 
 ![Figure 1.2 R&D Process Diagram](media/image2.png)
 
-## Phase 1: Defining Requirements and Pain Points
+### Phase 1: Defining Requirements and Pain Points
 
 The primary task in this phase is to precisely identify core issues within the current laboratory workflow. Through researcher interviews and observation of experimental procedures, we pinpointed the project's pain points Based on this, we defined the core design requirements for the device and established the ultimate objectives to be achieved. All design decisions stem from these requirements.
 
-## Phase 2: Existing Solutions and Technology Research
+### Phase 2: Existing Solutions and Technology Research
 
 This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative "single-motor-driven multi-mode switching" solution.
 
-## Phase 3: Mechanical and System Prototyping
+### Phase 3: Mechanical and System Prototyping
 
 In this phase, we translated concepts into concrete engineering designs. Using SolidWorks software for 3D modeling, we meticulously considered the dimensions, materials, and compatibility of all components. This iterative process involved multiple design revisions and improvements based on team discussions and feedback.
 
-## Phase 4: Prototype Manufacturing and Integration Testing
+### Phase 4: Prototype Manufacturing and Integration Testing
 
 This phase marks the critical transition from virtual to physical reality. We manufacture all custom parts via methods like 3D printing, procure standard components, and complete the assembly and debugging of the first prototype. Subsequently, rigorous system integration testing is conducted in the wet lab. This testing phase is crucial for identifying any design flaws, performance limitations, or unexpected behaviors. The validation results from the wet lab provide insights for further design iterations and refinements.
 
-## Phase 5: Comprehensive Feedback and Design Optimization
+### Phase 5: Comprehensive Feedback and Design Optimization
 
 During this phase, we invited target users (other iGEM teammates, lab peers, faculty members) to experience the device operation and gathered feedback on **human- machine interaction, operational safety,** and structural stability. This feedback directly informed the final design iterations. Ultimately, all design files, code, and bill of materials were finalized, and comprehensive assembly guides and user manuals were developed to ensure project replicability.
 
-# Requirement and Cost Analysis
+## Requirement and Cost Analysis
 
 Through interviews with multiple laboratory researchers, we discovered that the process of extracting substances in laboratories consumes significant time.Simultaneously, the need to move between different instruments significantly increases the error rate. Based on this, we conducted research into traditional laboratory processes and the problems inherent within them.
 
@@ -63,17 +62,17 @@ Through interviews with multiple laboratory researchers, we discovered that the 
 
 Thus, we identified three major pain points: **cumbersome and time-consuming operations, high equipment costs and space requirements, and poor result reproducibility**. Based on this, we defined the core design requirements for the equipment: achieving full automation and integration of the three key functions:** fermentation, centrifugation, and agitation/disruption. The goal is to reduce manual operation time by over 90% and significantly enhance data consistency. All design decisions stem from these requirements.
 
-# Project Philosophy and Design
+## Project Philosophy and Design
 
-## 1. Project Overview
+### 1. Project Overview
 
 Our hardware team has consistently focused on addressing practical challenges encountered in synthetic biology micro-fermentation, aiming to provide solutions and fresh perspectives for tackling specific problems. Our design philosophy centers on "**integration, automation, and miniaturization,** **Modular**." The system appears as a compact desktop unit internally divided into two modules: an upper fermentation module and a lower integrated centrifugal agitation module. Controlled by a single STM32 chip, the system utilizes multiple control chips to drive motor rotation. An OLED display shows culture temperature, pH, and motor parameters for real-time monitoring of cultivation conditions. It also comes equipped with numerous components and modules for users to choose from, catering to diverse needs and practical situations.
 
 ![Overall Presentation Diagram](media/image4.jpeg)
 
-# Core Module Function Design and Testing
+### Core Module Function Design and Testing
 
-## a. Fermentation Culture and Fluid Control: Enables strain expansion culture and employs flow switches to control two liquid release stages for microbial enrichment and transfer of concentrated culture.
+**a. Fermentation Culture and Fluid Control: Enables strain expansion culture and employs flow switches to control two liquid release stages for microbial enrichment and transfer of concentrated culture.**
 
 ![Figure 3.2.1 Schematic Diagram of Fermentation Condition Control Module](media/image5.png)
 
@@ -85,14 +84,13 @@ Our hardware team has consistently focused on addressing practical challenges en
 ![Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)](media/image6.png) ![Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)](media/image7.png)
 
 - The inner tank bottom features a 30° sector-shaped aperture aligned with two sector-shaped and circular apertures in the outer tank base plate. The outer tank's edge is concave, while its central protrusion interlocks with the inner tank bottom to create hydraulic pressure, preventing medium leakage through edge gaps.
-- Mortise-and-tenon video
 - The inner tank's mid-section incorporates a mortise-and-tenon structure that mates with the complementary half on the bottom of the stirring rod. The top stepper motor operates in two modes: continuous clockwise rotation and counterclockwise step mode (each button press rotates 30° counterclockwise). During clockwise rotation, the inclined planes of the mortise-and-tenon joints slide against each other, preventing the inner tank from rotating. The stirring rod does not rotate the inner tank, ensuring thorough mixing of the bacterial solution. During counterclockwise rotation, the vertical surfaces of the two joints interlock. The stirring rod drives the inner tank to rotate, thereby controlling leakage.
 - The circular opening at the bottom of the outer tank has internal threads. These are used to secure a bacterial filter membrane during the first drainage cycle. The culture medium flows directly into the waste tank via the rubber tube connected to the bottom of the drainage port, while cells are intercepted, enhancing bacterial density within the tank. The fan-shaped aperture facilitates the second drainage cycle, directing residual medium and cells downward to the centrifugal shaking module for subsequent processing.
 - Under microscopic observation, the size of lipolytic yeast cells was determined (Figure 3.2.4). After averaging measurements from 20 cells, the bacterial cell's major axis measured approximately 8.4 μm, and the minor axis approximately 5.2 μm. A bacterial filter membrane with a mesh size of 3 μm was selected.
 
 ![Figure 3.2.3 Schematic diagram of lipolytic yeast cells under a microscope](media/image8.jpeg)
 
-## TEST: Top motor video
+
 
 **b. Centrifugation and Agitation-Induced Lysis: Primarily separates cells from the culture medium. Adding glass beads followed by agitation lyses cells to release intracellular squalene.**
 
@@ -116,7 +114,7 @@ The maximum speed of the purchased brushless motor under load, measured by an in
 
 ![Figure 3.2.5 Contour Plot of Absorbance](media/image10.png)
 
-## Mode Switching Module:
+**Mode Switching Module:**
 
 ![Figure 3.2.6 Schematic of the Mode Switching Module](media/image11.png)
 
@@ -125,13 +123,13 @@ We designed the equipment based on the commonly used glass bead shaking method i
 - **Centrifugation Mode (Motor Forward Rotation):** When the motor rotates forward, the limit device locks the switching bearing, aligning it concentrically with the main shaft. This drives the entire rotor assembly to high-speed rotation, generating strong centrifugal force that precipitates microbial cells to the bottom of the centrifuge tube**.**
 - **Shaking Mode (Motor Reverse Rotation):** When the motor reverses, the switching bearing unlocks. Under mechanical force, it undergoes radial translation, creating an eccentric displacement. The motor then rotates, driving the centrifuge tube to perform high-speed eccentric shaking.
 
-## Motion Decoupling Mechanism---"One-Way Bearing": To prevent centrifuge tubes from self-rotating during oscillation, we incorporated a one-way bearing between the tube holder and the rotating shaft. This achieves pure oscillation-based disruption.
+Motion Decoupling Mechanism---"One-Way Bearing": To prevent centrifuge tubes from self-rotating during oscillation, we incorporated a one-way bearing between the tube holder and the rotating shaft. This achieves pure oscillation-based disruption.
 
 To resolve the issue of repeatedly transferring liquid and balancing the centrifuge, we designed a communicating centrifuge tube based on the communicating vessel principle. A matching liquid connection switch was also developed to prevent circulation while facilitating easy liquid release and collection.
 
 ![Figure 3.2.7 CommunicatingCentrifuge Tube Kit](media/image12.png) ![](media/image13.png) ![](media/image14.png)
 
-## c. Intelligent Control System: Primarily used to automate the entire device, reducing manual operation time
+# c. Intelligent Control System: Primarily used to automate the entire device, reducing manual operation time
 
 To integrate control of the entire apparatus and monitor cell culture conditions in real time, we developed the following circuit control system based on the STM32F103C8T6 microcontroller:
 
@@ -161,11 +159,11 @@ We developed the program using Keil5. The primary functional code is as follows:
 
 ![Figure 3.2.11 Main Code](media/image18.jpeg) ![Figure 3.2.11 Main Code](media/image19.jpeg)
 
-# Product Iteration
+## Product Iteration
 
 This section documents the challenges encountered during hardware development and their corresponding solutions.
 
-## First Version
+### First Version
 
 Initially, our device design comprised only an upper chamber for fermentation and a lower chamber for enrichment and lysis. In the upper chamber, we incorporated a stirring rod. Two openings were added to the chamber's side, each equipped with a slide valve for controlled liquid addition and removal. At the tank bottom, a drain pipe allowed the concentrated bacterial solution to be sequentially transferred into centrifuge tubes below via a plug-screw mechanism upon fermentation completion, followed by removal for weighing. After centrifugation in the lower tank, the shaft was manually switched from concentric to eccentric mode, and grinding beads with buffer solution were added to initiate agitation and cell disruption.
 
@@ -173,7 +171,7 @@ However, this version still required significant manual labor, leading us to dev
 
 ![Figure 3.3.1 Schematic of the First-Generation Model](media/image20.png)
 
-## Second Version
+### Second Version
 
 ![Figure 3.3.2 Schematic of the second-generation model](media/image21.png)
 
@@ -187,7 +185,7 @@ However, during practical testing, we encountered the following issues:
 
 To address these issues, we continuously optimized the design and launched V3.0.
 
-## Third Generation
+### Third Generation
 
 ![Figure 3.3.3 Schematic Diagram of Third-Generation Model](media/image22.png) ![Figure 3.3.3 Schematic Diagram of Third-Generation Model](media/image23.png)
 
@@ -204,15 +202,15 @@ Although we successfully resolved the issues encountered in the third version, w
 1.  The brushed DC motor proved difficult to control for precise angular rotation, causing the inner plate to frequently stop at undesirable positions and preventing successful single-pass liquid discharge.
 2.  The 3D-printed servo gears proved too flexible to effectively rotate the outer tank for secondary drainage.
 
-## Version 4
+### Version 4
 
 Ultimately, we iterated to V4.0 as the final hardware product for this project. Through research, we discovered that stepper motors can simultaneously achieve continuous rotation and precise angle control. By positioning both discharge outlets on the base plate and utilizing the stepper motor's fixed-angle rotation, we resolved the issues present in the third version.
 
-# Modularity
+## Modularity
 
 Our device continues last year's modular and "building block" design philosophy, enhancing tank interchangeability and portability. Different modules can be easily swapped based on varying scenarios and fermentation requirements to maximize environmental benefits and operational efficiency while reducing costs. This year, we added several new designs, including: Stirring Module, Fermentation Tank Module, Flow Control Module, Temperature Control Module, and Aeration Module.
 
-## Agitator Module
+### Agitator Module
 
 During fermentation, stirring rods are commonly used within fermentation tanks to mix reactants and ensure uniform reactions, facilitating efficient processes and thorough nutrient absorption. Different stirring rods are required based on the physicochemical properties of the fermentation broth, such as viscosity and dissolved oxygen levels.
 
@@ -222,13 +220,13 @@ Figure 3.4.2 shows a spiral-rising agitator that uniformly mixes microbial cultu
 
 ![Figure 3.4.1 Fan-shaped stirring rod](media/image25.png) ![Figure 3.4.2 Spiral stirring rod](media/image26.png)
 
-## Flow Control Module
+### Flow Control Module
 
 During fermentation, scenarios often arise where controlling the flow rate or volume of fermentation broth is necessary to optimize subsequent processes. Figure 3.4.3 depicts a flow control module featuring porous construction for uniform leakage, enabling seamless integration into our equipment. The triple-hole design enhances operational flexibility. Figure 3.4.4 shows a flow control valve that regulates flow from the upper to lower tubes via a rotary handle, offering simple operation suitable for infrequently used flow control valves.
 
 ![Figure 3.4.3 Multi-hole Fluid Switch](media/image27.png) ![Figure 3.4.4 Flow Control Valve](media/image28.png)
 
-## Speed Control Module
+### Speed Control Module
 
 During cell centrifugation, the required rotational speed is influenced by cell size. To facilitate switching the centrifuge's rotational speed, we designed a speed adjustment module.
 
@@ -236,7 +234,7 @@ Figure 3.4.5 shows a 7-tooth gear connected to the drive shaft. Figure 3.4.6 dep
 
 ![Figure 3.4.5 Seven-tooth gear](media/image29.png) ![Figure 3.4.6 Speed adjustment gear set](media/image30.png)
 
-## Aeration Module
+### Aeration Module
 
 Lipase yeast requires substantial oxygen during fermentation, making an efficient aeration system critical for enhancing fermentation efficiency. To improve oxygen utilization, we have designed the following three aeration systems.
 
@@ -248,7 +246,7 @@ Figure 3.4.9 depicts an aeration line that can be laid along the tank bottom. It
 
 ![Figure 3.4.7 Disc Aeration Unit](media/image31.png) ![Figure 3.4.8 Long Tube Aeration Unit](media/image32.png) ![Figure 3.4.9 Fishbone Aeration Unit](media/image33.png)
 
-## Fermentation Modules
+### Fermentation Modules
 
 To accommodate diverse fermentation requirements and conditions, we have concurrently designed several variants of fermentation apparatus.
 
@@ -258,7 +256,7 @@ Figure 3.4.11 shows a fermenter with baffles added to increase oxygen supply dur
 
 ![Figure 3.4.10 200ml Fermentation Vessel](media/image34.png) ![Figure 3.4.11 Baffled Fermentation Vessel](media/image35.png)
 
-# Product Usage Procedure:
+### Product Usage Procedure:
 
 1.  Install communicating centrifuge tubes and sterile filters; close all flow switches
 2.  Open the top lid, add the culture medium, and inoculate the microbial strain.
@@ -268,15 +266,15 @@ Figure 3.4.11 shows a fermenter with baffles added to increase oxygen supply dur
 
 The red button powers on the device and illuminates the display. The yellow button activates the upper motor for continuous clockwise rotation. The left white button controls the upper motor for 30° counterclockwise rotation. The blue button controls the lower motor rotation. The white button reverses the lower motor rotation direction. The green button activates the nutrient replenishment system.
 
-# User Feedback
+## User Feedback
 
 **Throughout the design and development process, we actively engaged with multiple experts and users in the field, extensively gathering feedback to continuously optimize the device. This valuable input provides crucial support for our ongoing product iterations**.
 
-## Expert Recommendations: Equipment Architecture Design Direction
+### Expert Recommendations: Equipment Architecture Design Direction
 
 We first consulted Professor Yang Xuezhi from the National Bio-Manufacturing Industry Innovation Center. He systematically introduced common design approaches for industrial equipment and pointed out: integrated hardware design is suitable for fixed, single-process workflows, while scenarios requiring higher flexibility should adopt industry-standard modular connection methods. Based on this advice, we established an integrated hardware-centric design direction and ultimately successfully developed the iFPS device.
 
-## Initial Prototype Testing and Key Improvements
+### Initial Prototype Testing and Key Improvements
 
 We presented the initial prototype to Professor Wang Jinchun at the Engineering Practice Innovation Center of Huazhong University of Science and Technology. While acknowledging the device's innovation, he proposed the following critical improvements from a practical application perspective:
 
@@ -288,7 +286,7 @@ To address these issues, we have developed corresponding improvement plans: Afte
 
 Figure 3.5.1 Discussion with Professor Wang Jinchun
 
-## Expanding Application Scenarios and Functional Optimization
+### Expanding Application Scenarios and Functional Optimization
 
 We also invited Dr. Chen Yulong from the Institute of Resource Biology and Biotechnology at Huazhong University of Science and Technology to participate in testing. He provided valuable suggestions from the perspectives of synthetic biology and large-scale fermentation:
 
@@ -299,7 +297,7 @@ Based on these recommendations, we redesigned the fermentation module by incorpo
 
 ![Figure 3.5.2 Exchange with Dr. Chen Yulong](media/image43.jpeg)
 
-# Equipment Component List and Cost
+## Equipment Component List and Cost
 
 | Serial No. | Name                              | Unit Price | Quantity | Total Price |
 | :--------- | :-------------------------------- | :--------- | :------- | :---------- |
@@ -318,19 +316,19 @@ Based on these recommendations, we redesigned the fermentation module by incorpo
 | 13         | Metal Components, Wires           |            |          | 5￥         |
 | **Total**  |                                   |            |          | **663.81￥≈93.2＄** |
 
-# Discussion
+## Discussion
 
-## 1. Contributions to Synthetic Biology and the iGEM Community
+### 1. Contributions to Synthetic Biology and the iGEM Community
 
-### Significance of the Integrated Automated Cultivation and Lysis Mechanism
+## Significance of the Integrated Automated Cultivation and Lysis Mechanism
 
 This integrated automated cultivation and lysis mechanism will benefit all teams focused on protein expression screening, metabolite engineering, and cell factory optimization. Our device establishes a mechanism that automates the process from cultivation to lysis on a low-cost benchtop platform, enabling easy replication by other teams. In this way, it introduces the option of "desktop-scale automated sample preparation" for subsequent teams and projects beyond iGEM, thereby broadening the application scope of synthetic biology in rapid iteration and standardized characterization.
 
-### Significance of the Single-Motor Reversible Multi-Mode Drive Mechanism
+## Significance of the Single-Motor Reversible Multi-Mode Drive Mechanism
 
 As a device capable of automatically switching between centrifugation and shaking modes using a single power source, it will assist all teams in developing compact, cost- controlled automated biological experimental equipment. One advantage of its modular integrated design is the ability to simplify control systems and reduce manufacturing costs, enabling complex functionality even under resource constraints.
 
-### Significance of the Device's Self-Balancing Centrifuge Tubes
+## Significance of the Device's Self-Balancing Centrifuge Tubes
 
 Achieving balance during centrifugation is a critical challenge in automated experimental systems. Our self-balancing centrifuge tubes, based on the communicating vessels principle, instantly achieve mass equilibrium upon liquid injection. This innovation eliminates the cumbersome, time-consuming manual weighing and balancing steps required in traditional centrifugation, providing essential support for true "one-button start" fully automated workflows.
 
