@@ -11,8 +11,7 @@
 
     <li class="item  item--nav{% if item.url == page.url %}  item--current{% endif %}">
       {% if item.sub_navigation %}
-      <a href="javascript:;" class="no-hover">{{ item.title }} <span
-          class="icon iconfont icon-down-line-free"></span></a>
+      <a href="javascript:;" class="no-hover">{{ item.title }}</a>
       {% else %}
       <a href="{{ url }}">{{ item.title }}</a>
       {% endif %}
@@ -37,214 +36,198 @@
 {% endif %}
 
 <style>
-  /* 导航栏外层容器：匹配目标米色半透明背景+模糊效果 */
   header.header {
     width: 100%;
   }
+
   header.header .container-wrapper {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* 提升层级匹配目标z-index */
+    z-index: 9000;
     width: 100%;
-    background: rgba(248, 244, 233, 0.9); /* 目标复古米色背景 */
-    backdrop-filter: blur(20px); /* 背景模糊效果 */
-    padding: 1rem 0; /* 上下内边距 */
-    border-bottom: 1px solid rgba(139, 115, 85, 0.1); /* 底部细边框 */
+    background: rgba(248, 244, 233, 0.9);
+    backdrop-filter: blur(20px);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(139, 115, 85, 0.1);
     transform: translateY(0);
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* 平滑过渡 */
-  }
-  /* 滚动后导航栏样式（匹配.navbar.scrolled） */
-  header.header .container-wrapper.scrolled {
-    background: rgba(248, 244, 233, 0.95);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* 滚动后阴影 */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* 导航栏布局：匹配目标flex布局 */
+  header.header .container-wrapper.scrolled {
+    background: rgba(248, 244, 233, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 导航栏整体布局 */
   nav.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem; /* 左右内边距，匹配logo左侧间距 */
+    width: 100%;
   }
-  /* 主菜单容器：匹配目标导航链接间距 */
+
+  /* 导航链接容器 */
   nav.nav ul.list--nav {
     display: flex;
-    gap: 2.5rem; /* 主菜单项间距 */
-    margin: 0;
-    padding: 0;
-  }
-
-  /* 小屏样式调整 */
-  button.button--nav {
-    display: inline-block;
-    box-shadow: none; /* 清除按钮阴影 */
-    background: transparent; /* 按钮透明背景 */
-    border: none; /* 清除按钮边框 */
-    cursor: pointer;
-  }
-  @media screen and (max-width: 640px) {
-    div.container-wrapper {
-      display: flex;
-    }
-    nav.nav--header {
-      width: 100%;
-      max-width: 100%;
-    }
-    /* 小屏主菜单：垂直排列 */
-    nav.nav--header ul.list--nav {
-      flex-direction: column;
-      gap: 1rem; /* 垂直间距 */
-      padding: 1rem 0;
-    }
-  }
-
-  /* 大屏样式调整（匹配目标桌面端） */
-  @media screen and (min-width: 640px) {
-    button.button--nav {
-      display: none; /* 大屏隐藏菜单按钮 */
-    }
-  }
-
-  /* 主菜单项样式：匹配.nav-item */
-  nav.nav ul.list--nav li.item--nav {
-    position: relative; /* 为下拉菜单定位做准备 */
-    list-style: none; /* 清除列表默认样式 */
-  }
-
-  /* 主菜单链接样式：匹配.nav-link */
-  nav.nav--header li.item a {
+    gap: 2.5rem;
     position: relative;
-    color: #555; /* 默认文字颜色 */
+    transition: transform 0.3s ease;
+    margin-right: 5rem;
+    justify-content: flex-end;
+    flex: 1;
+    padding-right: 1rem;
+  }
+
+  /* 导航项 */
+  nav.nav ul.list--nav li.item--nav {
+    position: relative;
+    list-style: none;
+  }
+
+  /* 导航链接 */
+  nav.nav ul.list--nav li.item--nav a {
+    color: #555;
     text-decoration: none;
-    font-size: 1.5rem; /* 主菜单文字大小 */
-    font-weight: 600; /* 文字加粗 */
-    font-family: 'Inter', sans-serif; /* 目标无衬线字体 */
-    padding: 0.5rem 0; /* 上下内边距 */
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* 文字与箭头间距 */
+    font-family: 'Inter', sans-serif;
   }
-  /* 主菜单链接hover效果 */
-  nav.nav a:hover {
-    color: #4A7C51; /* hover文字绿色 */
+
+  nav.nav ul.list--nav li.item--nav a:hover {
+    color: #4A7C51;
   }
-  /* 主菜单链接下划线动画（匹配.nav-link::after） */
-  nav.nav--header li.item a::after {
+
+  nav.nav ul.list--nav li.item--nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #4A7C51, #2E5D32); /* 渐变下划线 */
-    transition: width 0.3s ease; /* 宽度过渡动画 */
-  }
-  nav.nav--header li.item a:hover::after {
-    width: 100%; /* hover时下划线展开 */
+    background: linear-gradient(90deg, #4A7C51, #2E5D32);
+    transition: width 0.3s ease;
   }
 
-  /* 主菜单下拉箭头样式 */
-  nav.nav ul.list--nav li.item--nav a.no-hover {
-    font-size: 1.5rem; /* 统一主菜单文字大小 */
-    font-weight: 600;
-    font-family: 'Inter', sans-serif;
-  }
-  nav.nav ul.list--nav li.item--nav span.icon-down-line-free {
-    display: inline-block;
-    vertical-align: middle;
-    transform: rotate(-90deg);
-    transform-origin: center center;
-    transition: transform 0.3s ease; /* 箭头过渡速度匹配目标 */
-    color: #555; /* 箭头默认颜色 */
-  }
-  nav.nav ul.list--nav li.item--nav:hover span.icon-down-line-free {
-    color: #4A7C51; /* hover时箭头变绿 */
+  nav.nav ul.list--nav li.item--nav a:hover::after {
+    width: 100%;
   }
 
-  /* 下拉菜单样式：匹配.dropdown */
+  /* 当前页面链接 */
+  nav.nav ul.list--nav li.item--current a {
+    color: #4A7C51;
+  }
+
+  /* 下拉菜单 */
   ul.sub_nav {
     position: absolute;
     top: 100%;
-    left: 0; /* 下拉菜单左对齐主菜单 */
-    width: 150px; /* 下拉菜单宽度 */
-    background: #fff6d8; /* 下拉菜单背景色 */
+    left: 0px;
+    width: 150px;
+    background: #fff6d8;
     backdrop-filter: blur(10px);
-    border-radius: 8px; /* 圆角 */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 下拉菜单阴影 */
-    padding: 0.5rem 0; /* 上下内边距 */
-    margin: 0;
-    display: none; /* 初始隐藏（替代原inline样式） */
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: all 0.3s ease; /* 下拉菜单展开动画 */
+    transition: all 0.3s ease;
     z-index: 1000;
+    flex-direction: column;
+    height: fit-content;
+    margin-top: 0.6rem;
   }
-  /* 主菜单hover时显示下拉菜单 */
+
   nav.nav ul.list--nav li.item--nav:hover ul.sub_nav {
-    display: block;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
   }
 
-  /* 下拉菜单项样式：匹配.dropdown-link */
+  /* 下拉菜单项 */
   ul.sub_nav li.sub_nav {
     list-style-type: none;
-    text-align: center; /* 下拉菜单项居中 */
+    text-align: center;
     padding: 0;
     margin: 0;
   }
+
+  /* 下拉菜单链接 */
   ul.sub_nav li.sub_nav a.sub_nav {
     display: block;
-    padding: 0.6rem 1.5rem; /* 菜单项内边距 */
-    color: #555; /* 下拉菜单文字颜色 */
+    padding: 0.6rem 1.5rem;
+    color: #555;
     text-decoration: none;
-    font-size: 1rem; /* 下拉菜单文字大小 */
-    font-weight: 500; /* 文字权重 */
-    font-family: 'Inter', sans-serif; /* 字体 */
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
     white-space: nowrap;
-    transition: all 0.2s ease; /* 过渡动画 */
-  }
-  /* 下拉菜单项hover效果 */
-  ul.sub_nav li.sub_nav a.sub_nav:hover {
-    background: rgba(74, 124, 81, 0.1); /* hover背景色 */
-    color: #4A7C51; /* hover文字颜色 */
-    padding-left: 1.8rem; /* 左移效果 */
+    line-height: 1rem;
+    margin: 0;
   }
 
-  /* 清除默认样式冲突 */
-  nav.nav a.current {
-    color: #4A7C51; /* 当前页文字颜色改为绿色（匹配hover色） */
+  ul.sub_nav li.sub_nav a.sub_nav:hover {
+    background: rgba(74, 124, 81, 0.1);
+    color: #4A7C51;
+    padding-left: 1.8rem;
   }
-  nav.nav a.current:hover {
-    color: #2E5D32; /* 当前页hover加深绿色 */
+
+  /* 小屏样式 */
+  @media screen and (max-width: 640px) {
+    div.container-wrapper {
+      display: flex;
+    }
+
+    nav.nav button.button--nav {
+      box-shadow: none !important;
+    }
+
+    nav.nav--header {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    /* 移动端下拉菜单调整 */
+    ul.sub_nav li.sub_nav {
+      text-align: right !important;
+    }
   }
-  /* 图标样式修正 */
-  nav.nav a .icon {
-    height: fit-content;
-    fill: #555; /* 图标默认颜色 */
+
+  /* 大屏样式 */
+  @media screen and (min-width: 640px) {
+    button.button--nav {
+      display: none;
+    }
+    
+    /* 大屏下拉菜单居中对齐 */
+    ul.sub_nav li.sub_nav {
+      text-align: center !important;
+    }
   }
-  nav.nav a:hover .icon {
-    fill: #4A7C51; /* 图标hover颜色 */
+
+  /* 移除下拉菜单箭头 */
+  nav.nav ul.list--nav li.item--nav a.no-hover {
+    font-size: 1.5rem;
+  }
+
+  nav.nav ul.list--nav li.item--nav span.icon-down-line-free {
+    display: none;
   }
 </style>
+
+<!-- 保留原有的JavaScript代码 -->
 <script>
   $(document).ready(function () {
     const nav = $(".header .container-wrapper");
     const feature = $(".header .feature");
     const aside = $("aside.aside section#about-this-page");
-    
-    // 新增：导航栏滚动效果（匹配.navbar.scrolled）
-    $(window).scroll(function() {
-      if ($(this).scrollTop() > 50) {
-        nav.addClass("scrolled");
-      } else {
-        nav.removeClass("scrolled");
-      }
-    });
-
     function update_feature() {
       if (nav.css("position") !== "fixed") return;
       const nav_height = nav.outerHeight();
