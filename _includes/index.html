@@ -4,6 +4,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | iGEM HUST-China 2025</title>
     <style>
+        /* 加载动画样式 */
+        #loading-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease, visibility 0.5s;
+        }
+        
+        #loading-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .loaded #loading-animation {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        /* 原有样式保持不变 */
         * {
             margin: 0;
             padding: 0;
@@ -1166,6 +1193,13 @@
     </style>
 </head>
 <body>
+    <!-- 加载动画 -->
+    <div id="loading-animation">
+        <video id="loading-video" autoplay muted playsinline>
+            <iframe title="HUST-China: LOGO of Wiki (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/1dMKEifXBqLdgJJJWuTWrR" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
+        </video>
+    </div>
+
     <!-- 自定义鼠标指针 - 优化后的金色油滴形状 -->
     <div class="custom-cursor">
         <div class="cursor-inner"></div>
@@ -1533,7 +1567,44 @@
     </div>
 
     <script>
+        // 加载动画控制
         document.addEventListener('DOMContentLoaded', function() {
+            const loadingAnimation = document.getElementById('loading-animation');
+            const loadingVideo = document.getElementById('loading-video');
+            
+            // 当视频结束时隐藏加载动画
+            loadingVideo.addEventListener('ended', function() {
+                document.body.classList.add('loaded');
+                // 可选：完全移除加载动画元素
+                setTimeout(function() {
+                    loadingAnimation.remove();
+                }, 500);
+            });
+            
+            // 如果视频加载失败，直接显示页面
+            loadingVideo.addEventListener('error', function() {
+                document.body.classList.add('loaded');
+                setTimeout(function() {
+                    loadingAnimation.remove();
+                }, 500);
+            });
+            
+            // 如果视频无法播放（例如移动设备限制），直接显示页面
+            loadingVideo.addEventListener('canplaythrough', function() {
+                // 视频可以播放，不需要额外处理
+            }, { once: true });
+            
+            // 安全措施：如果5秒后视频仍未播放，强制显示页面
+            setTimeout(function() {
+                if (!document.body.classList.contains('loaded')) {
+                    document.body.classList.add('loaded');
+                    setTimeout(function() {
+                        loadingAnimation.remove();
+                    }, 500);
+                }
+            }, 5000);
+            
+            // 原有JavaScript代码保持不变...
             const container = document.querySelector('.scroll-container');
             const sections = document.querySelectorAll('.vertical-section, .horizontal-scroll-section');
             const indicators = document.querySelectorAll('.indicator-dot');
