@@ -921,47 +921,71 @@
             line-height: 1.7;
             color: #444;
         }
-
-        /* 导航图片样式调整 */
+        /* 导航图片样式调整 - 五张并排 */
         .nav-images {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
             margin: 4rem 0;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            flex-wrap: wrap;
         }
-        
+
         .nav-image-item {
             text-align: center;
             cursor: pointer;
             transition: transform 0.3s ease;
-            padding: 1.5rem;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.7);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 1rem;
+            border-radius: 0px;
+            background: transparent;
+            flex-shrink: 0; /* 防止图片被压缩 */
         }
-        
-        .nav-image-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-        
+
         .nav-image-item img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            margin-bottom: 1rem;
+            width: 170px; /* 调整为适合五张并排的大小 */
+            height: 255px;
+            margin-bottom: 0rem;
         }
-        
+
         .nav-image-item p {
-            font-size: 1.3rem;
+            font-size: 1rem;
             font-weight: 600;
             color: #2E5D32;
+            margin: 0;
+            white-space: nowrap; /* 防止文字换行 */
         }
+
+/* 响应式设计 - 在小屏幕上调整 */
+@media (max-width: 768px) {
+    .nav-images {
+        gap: 1rem;
+    }
+    
+    .nav-image-item img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .nav-image-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* 响应式设计 - 在小屏幕上调整 */
+@media (max-width: 768px) {
+    .nav-images {
+        gap: 1rem;
+    }
+    
+    .nav-image-item img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .nav-image-item p {
+        font-size: 0.9rem;
+    }
+}
 
         /* 页脚样式 */
         .footer-container {
@@ -1508,21 +1532,25 @@
                 <p class="section-text" style="max-width: 800px; margin: 0 auto 2rem;">Click on the sections below to learn more about different aspects of our project</p>
                 
                 <div class="nav-images">
+                    <div class="nav-image-item" data-target="description">
+                        <img src="https://static.igem.wiki/teams/5569/description/description.webp" alt="Description">
+                        <p></p>
+                    </div>
                     <div class="nav-image-item" data-target="design">
-                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Design">
-                        <p>Design</p>
+                        <img src="https://static.igem.wiki/teams/5569/description/design.webp" alt="Design">
+                        <p></p>
                     </div>
                     <div class="nav-image-item" data-target="hardware">
-                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Hardware">
-                        <p>Hardware</p>
+                        <img src="https://static.igem.wiki/teams/5569/description/hardware.webp" alt="Hardware">
+                        <p></p>
                     </div>
                     <div class="nav-image-item" data-target="human-practices">
-                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Human Practices">
-                        <p>Human Practices</p>
+                        <img src="https://static.igem.wiki/teams/5569/description/human-practice.webp" alt="Human Practices">
+                        <p></p>
                     </div>
-                    <div class="nav-image-item" data-target="description">
-                        <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="Description">
-                        <p>Description</p>
+                    <div class="nav-image-item" data-target="team">
+                        <img src="https://static.igem.wiki/teams/5569/description/team.webp" alt="Team">
+                        <p></p>
                     </div>
                 </div>
             </div>
