@@ -133,15 +133,13 @@ To integrate control of the entire apparatus and monitor cell culture conditions
 
 ![Figure 3.2.8 Wiring Diagram](media/image15.png)
 
-### Equipment:
-
-1.  **Condition Monitoring Module**
+### Equipment
+ **Condition Monitoring Module**
 
     Drawing inspiration from HUST-China 2023's fermentation condition monitoring design, we employed a DS18B20 + temperature probe as the temperature monitoring module and a pH composite electrode + pH sensor as the pH detection module. ([Hardware | Huazhong University of Science and Technology - China - iGEM 2023](https://2023.igem.wiki/hust-china/hardware))
 
     ![Figure 3.2.9 pH Calibration Curve](media/image16.png)
-
-2.  **Motion Control Module:**
+ **Motion Control Module:**
 
     We selected distinct motors for the three key motion control points based on thorough research and analysis of each motor's characteristics, implementing optimal designs:
 
@@ -169,7 +167,7 @@ However, this version still required significant manual labor, leading us to dev
 
 ![Figure 3.3.1 Schematic of the First-Generation Model](media/image20.png)
 
-### 2.0Version
+### Version 2.0
 
 ![Figure 3.3.2 Schematic of the second-generation model](media/image21.png)
 
@@ -316,7 +314,7 @@ Based on these recommendations, we redesigned the fermentation module by incorpo
 
 ## Discussion
 
-### 1. Contributions to Synthetic Biology and the iGEM Community
+### Contributions to Synthetic Biology and the iGEM Community
 
 **Significance of the Integrated Automated Cultivation and Lysis Mechanism**
 
@@ -331,7 +329,7 @@ As a device capable of automatically switching between centrifugation and shakin
 Achieving balance during centrifugation is a critical challenge in automated experimental systems. Our self-balancing centrifuge tubes, based on the communicating vessels principle, instantly achieve mass equilibrium upon liquid injection. This innovation eliminates the cumbersome, time-consuming manual weighing and balancing steps required in traditional centrifugation, providing essential support for true "one-button start" fully automated workflows.
 
 
-
+## Conclusion
 
 Our device is designed to precisely address real-world issues through human-practice feedback loops, meeting diverse needs while continuously optimizing performance. Furthermore, its versatility and replicability unlock broader application potential.
 
