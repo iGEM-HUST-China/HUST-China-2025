@@ -352,7 +352,7 @@ Achieving balance during centrifugation is a critical challenge in automated exp
 
 Our device is designed to precisely address real-world issues through human-practice feedback loops, meeting diverse needs while continuously optimizing performance. Furthermore, its versatility and replicability unlock broader application potential.
 
-([Overview](#overview), Requirements and Cost Analysis, Project Philosophy and Design, Discussion)
+([Overview](#overview), [Requirements and Cost Analysis](#requirement-and-cost-analysis), [Project Philosophy and Design](#project-philosophy-and-design) , [Discussion](#discussion))
 
 Core functions and structure performed well in the prototype, demonstrating the device's practicality and functionality. This strongly indicates that with further refinement, it can evolve into a commercialized and practical model in the future.
 
