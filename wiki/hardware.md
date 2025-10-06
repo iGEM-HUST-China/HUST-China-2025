@@ -216,7 +216,7 @@ Our device continues last year's modular and "building block" design philosophy,
 
 During fermentation, stirring rods are commonly used within fermentation tanks to mix reactants and ensure uniform reactions, facilitating efficient processes and thorough nutrient absorption. Different stirring rods are required based on the physicochemical properties of the fermentation broth, such as viscosity and dissolved oxygen levels.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh6.webp" caption="Figure 3.4.1 Agitator Module" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh7.webp" caption="Figure 3.4.1 Agitator Module" %}
 
 Figure 3.4.1(a) shows a fan-blade agitator designed for vigorous liquid agitation. Its curved profile reduces resistance during mixing, making it suitable for environments requiring large-scale culture medium agitation.
 
@@ -227,7 +227,11 @@ Figure 3.4.1(b) shows a spiral-rising agitator that uniformly mixes microbial cu
 
 ### Flow Control Module
 
-During fermentation, scenarios often arise where controlling the flow rate or volume of fermentation broth is necessary to optimize subsequent processes. Figure 3.4.3 depicts a flow control module featuring porous construction for uniform leakage, enabling seamless integration into our equipment. The triple-hole design enhances operational flexibility. Figure 3.4.4 shows a flow control valve that regulates flow from the upper to lower tubes via a rotary handle, offering simple operation suitable for infrequently used flow control valves.
+During fermentation, scenarios often arise where controlling the flow rate or volume of fermentation broth is necessary to optimize subsequent processes. 
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh8.webp" caption="Figure 3.4.2 Flow Control Module" %}
+
+Figure 3.4.2(a) depicts a flow control module featuring porous construction for uniform leakage, enabling seamless integration into our equipment. The triple-hole design enhances operational flexibility. Figure 3.4.2(b) shows a flow control valve that regulates flow from the upper to lower tubes via a rotary handle, offering simple operation suitable for infrequently used flow control valves.
 
 {% include figure2.html images=page.images21 %}
 
