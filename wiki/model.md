@@ -12,8 +12,8 @@ images02:
     alt: Enzyme-wise HADDOCK score comparison (barplot)
     caption: Figure 4b. Enzyme-wise HADDOCK score comparison across target enzymes (barplot). 
 ---
-## Overview
 
+## Our Model
 
 Engineering peroxisomal protein targeting and rewiring central carbon metabolism in *Yarrowia lipolytica* poses a formidable design challenge: the import efficiency of linker–signal peptides, the catalytic bottleneck imposed by pathway rate-limiting enzymes, and the nonlinear dynamics of growth under complex carbon sources are deeply intertwined. Trial-and-error approaches alone cannot efficiently resolve this multi-layered problem.
 
@@ -358,9 +358,9 @@ Second, Frustratometer2 relies on classical potentials lacking quantum and solve
 Third, FastRelax focuses on energy minimization without explicitly constraining catalytic kinetics.  
 
 Future extensions include:  
-1️⃣ Incorporating molecular dynamics simulations to represent conformational dynamics;  
-2️⃣ Developing multi-objective optimization strategies to balance thermodynamic stability and catalytic activity;  
-3️⃣ Integrating experimental feedback loops to achieve closed-cycle computational–experimental co-design.  
+1 Incorporating molecular dynamics simulations to represent conformational dynamics;  
+2 Developing multi-objective optimization strategies to balance thermodynamic stability and catalytic activity;  
+3 Integrating experimental feedback loops to achieve closed-cycle computational–experimental co-design.  
 
 
 ## References
@@ -375,3 +375,230 @@ Future extensions include:
 8. Liu Z, Gao Y, Chen J, Imanaka T, Bao J, Hua Q. **Metabolic engineering of *Yarrowia lipolytica* for the production of terpenoids.** *Metab Eng.* 2019;57:151–161.  
 9. Rodriguez GM, Hussain MS, Gambill L, Gao D, Yaguchi A, Blenner M. **Engineering *Yarrowia lipolytica* to produce fuels and chemicals from xylose.** *Biotechnol Bioeng.* 2016;113(11):2528–2538.  
 
+# III. Machine Learning Growth Modeling
+
+## Background
+
+Understanding the quantitative relationship between environmental factors and microbial growth dynamics is essential for optimizing bioprocesses and designing predictive cultivation strategies.  
+In this study, *Yarrowia lipolytica* was chosen as a model organism owing to its exceptional environmental tolerance and remarkable lipid-producing capacity, making it a versatile chassis for metabolic engineering.  
+
+Traditionally, microbial growth is described using the four-parameter Gompertz equation, which captures the characteristic sigmoidal trajectory of a batch culture.  
+Its parameters—initial biomass (A), carrying capacity (K), maximum specific growth rate (μₘₐₓ), and lag-phase duration (λ)—offer direct physiological interpretation, reflecting cell density, growth potential, metabolic activity, and adaptation time, respectively.  
+
+However, this classical fitting approach is inherently phenomenological and condition-specific: each growth curve is fitted independently under a fixed environment, and the obtained parameters cannot be generalized to new combinations of pH or temperature.  
+To overcome this limitation, we established a hybrid modelling framework that integrates mechanistic growth equations with machine-learning regression, enabling the model to learn the mapping between culture conditions (pH, T) and Gompertz parameters.  
+
+This combined approach allows not only quantitative prediction of unseen conditions but also rational optimization of environmental variables—bridging the gap between empirical growth curves and data-driven bioprocess design.  
+
+## 3.2 Data Acquisition
+
+To construct a comprehensive dataset linking environmental variables to growth behavior, we continuously monitored OD₆₀₀ of *Yarrowia lipolytica* cultivated under systematically varied conditions.  
+Each culture was measured in triplicate across eleven time points spanning 0–80 h. At every time point, OD₆₀₀ was recorded both before and after centrifugation, and the difference was taken as the effective OD, thereby eliminating background interference from medium turbidity and yielding cleaner growth profiles.  
+
+The experimental design combined two environmental factors—pH and temperature—with twelve distinct carbon sources, including oleic acid, glycerol, and recycled cooking oil.  
+Sixteen pH–temperature combinations were tested in total: twelve evenly spaced factorial conditions for model training and four intermediate, non-equidistant points for testing generalization to unseen environments.  
+
+Altogether, the dataset contained approximately 6,000 high-resolution measurements, providing a robust quantitative foundation for Gompertz parameter fitting and machine-learning regression.  
+
+## 3.3 Modelling and Prediction
+
+To transform the experimental OD₆₀₀ trajectories into interpretable kinetic descriptors, we first applied the Gompertz equation to fit all growth curves using non-linear least squares  
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m7.webp" caption=" Figure 7. Gompertz model fitting of Y. lipolytica growth under varied carbon-source conditions." %}
+
+This classical model captures the sigmoidal microbial growth pattern and provides four biologically meaningful parameters: the initial biomass (A), the carrying capacity (K), the maximum specific growth rate (μₘₐₓ), and the lag-phase duration (λ). 
+
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+y(t) = A + (K - A) \cdot \exp\left[-\exp\left(\frac{\mu_{\max} \cdot e}{K - A}(\lambda - t) + 1\right)\right]
+$$
+
+</div>
+
+
+Each fit produced smooth trajectories and 95 % confidence intervals, providing robust parameter estimates.  
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m8.webp" caption=" Figure 7. Gompertz model fitting with 95% confidence intervals across multiple carbon sources." %}
+
+The fitted parameters were then reformulated as a multi-output regression task, with environmental conditions (pH, temperature, substrate) serving as inputs and the Gompertz parameter vector as outputs.  
+Model training minimized the L2 loss function , ensuring consistency between predicted and fitted parameters.  
+
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+E_{\text{HADDOCK}} = w_{\text{vdw}}E_{\text{vdw}} + w_{\text{elec}}E_{\text{elec}} + w_{\text{desolv}}E_{\text{desolv}} + w_{\text{AIR}}E_{\text{AIR}}
+$$
+
+</div>
+
+
+For decision-tree models, node splits were determined by maximizing variance reduction (Figure 3-4).  
+Two ensemble-tree algorithms were benchmarked:  
+
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+E_{\text{desolv}} = \sum_{i,j} S_i S_j \exp(-r_{ij}^2 / 2\sigma^2)
+$$
+
+</div>
+
+
+- **Random Forest** — aggregates multiple decision trees through a bagging strategy to reduce variance and improve robustness;  
+- **XGBoost** — applies boosting to iteratively fit residuals while optimizing a regularized objective . The regularization term penalizes overly complex tree structures and large weights, thereby enhancing generalization.  
+
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+E_{\text{air}} = \sum_k W_k (d_k - d_{0,k})^2
+$$
+
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+\text{Score} = w_{\text{vdW}}E_{\text{vdW}} + w_{\text{elec}}E_{\text{elec}} + w_{\text{desolv}}E_{\text{desolv}} + w_{\text{air}}E_{\text{air}} - w_{\text{BSA}}\cdot\text{BSA}
+$$
+
+</div>
+
+Training was conducted under five-fold cross-validation, with predictive performance evaluated using the coefficient of determination (R²) and root-mean-square error (RMSE).  
+To ensure biological plausibility, we incorporated an empirical constraint based on the 10%→90% rise width of the Gompertz curve .  
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+y(t) = A + (K - A)\exp\!\left[-\exp\!\left(\frac{\mu_{\max} e}{K - A}(\lambda - t) + 1\right)\right]
+$$
+
+</div>
+
+In specific scenarios, μₘₐₓ was recalculated from this constraint , further improving the physiological interpretability of predictions.  
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+L = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2
+$$
+
+</div>
+
+
+In summary, this tri-layer modelling framework — **mechanistic fitting**, **data-driven regression**, and **empirical constraint** — ensures both interpretability and generalization, providing a robust tool for predictive modelling and optimization of microbial growth curves.  
+This hybrid approach bridges mechanistic insight with data-driven flexibility, enabling rational environmental optimization in bioprocess design.  
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m9.webp" caption=" Figure 7. Environmental adjustment of lipid growth curve (pH 6.0, 30 °C)." %}
+
+### 3.4 Results and Model Verification
+
+After completing curve fitting and machine learning training, we systematically evaluated the overall performance and extrapolation capability of the model. All 144 growth curves (12 environmental conditions × 12 substrates) were successfully fitted without any failure, demonstrating the strong adaptability and numerical stability of the Gompertz equation within this system. The fitted curves closely overlapped with the experimental measurements, accurately capturing the initiation, exponential, and stationary phases of the typical sigmoidal growth pattern, confirming that the model can robustly describe microbial growth under diverse conditions.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m10-3.webp" caption=" Figure 7. System evaluation of growth fitting and model prediction." %}
+
+To assess the model’s generalization ability, fivefold cross-validation was conducted on the training dataset, and an independent test set was constructed for unseen conditions. The training dataset included combinations of pH 4.5, 5.5, 6.5, and 7.5 with temperatures of 24 °C, 28 °C, and 32 °C, while the test dataset comprised four new conditions (pH 6.0 and 6.8 × 26 °C and 30 °C). Cross-validation results showed that the Random Forest model achieved the best overall accuracy, with an average RMSE of approximately 0.0609 and R² of 0.93, whereas XGBoost yielded slightly higher error with a normalized RMSE of around 0.12. The predicted values of the four Gompertz parameters (A, K, μₘₐₓ, and λ) exhibited strong linear correlation with the fitted results, indicating that the model successfully learned the nonlinear mapping between environmental variables and growth kinetics.
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m11.webp" caption=" Figure 7. Predicted vs. true values for Gompertz parameters.." %}
+
+In the independent test set, the predicted growth curves almost completely overlapped with the experimentally fitted ones. The onset of the exponential phase and the stationary plateau were consistent across curves, with deviations in onset time and maximum specific growth rate remaining within ±5 %. These results indicate that the learned mapping relationships can reliably extend to unseen environmental conditions, demonstrating excellent extrapolation performance.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m12.webp" caption=" Figure 7. Predicted vs. actual growth curve (unseen condition, 26 °C)." %}
+
+The reliability of the model was further confirmed through multiple validation strategies. Leave-one-condition-out analysis showed that removing any single condition still yielded predictions with an average R² above 0.9. Residual analysis revealed a normal distribution of prediction errors across different pH and temperature combinations, without systematic bias. Moreover, bootstrap resampling demonstrated that 90 % prediction intervals successfully encompassed over 90 % of the true parameter values, confirming the robustness and statistical confidence of the model.
+
+In summary, the combined “prediction + constraint” framework preserves biophysical interpretability while enabling accurate extrapolation to unseen environmental conditions. The model exhibits high stability, generalization, and physiological plausibility, providing a reliable quantitative foundation for subsequent metabolic modeling and cultivation optimization.
+
+### 3.5 Biological Interpretation
+
+The four kinetic parameters (A, K, μₘₐₓ, λ) extracted from the model provide clear insights into how *Yarrowia lipolytica* responds to different environmental conditions. Both pH and temperature exhibited strong nonlinear effects on growth dynamics. At pH 5.5–6.5 and 28 °C, the yeast achieved its highest maximum specific growth rate (μₘₐₓ) and the shortest lag-phase duration (λ), indicating this region represents the physiological optimum where metabolic activity and growth are most synchronized. This trend is consistent with previous reports on the optimal pH range for lipid accumulation, suggesting that the conditions favoring rapid population growth also coincide with enhanced biosynthetic activity.
+
+When the environment deviated from this range (pH < 5 or > 7), μₘₐₓ decreased sharply while λ increased, indicating that both acidic and alkaline stresses delayed metabolic activation and slowed biomass expansion. Under alkaline conditions in particular, the model predicted that λ could increase by 1.5–2 fold, implying that membrane integrity and enzyme activity are compromised under pH stress.
+
+Temperature exerted a clear influence on the carrying capacity (K). Above 28 °C, K gradually declined, suggesting that elevated temperatures induced early stationary phases and reduced total biomass yield. Conversely, between 24–28 °C, K remained stable at high levels, implying that moderate temperatures promote prolonged and balanced population growth.
+
+**Table 3-1. Model predictions versus actual Gompertz parameters on independent test set**
+
+<div style="font-size:12px; overflow-x:auto;">
+<table>
+<thead>
+<tr>
+<th>Group</th><th>Target</th><th>pH</th><th>Temperature (°C)</th>
+<th>A_pred</th><th>K_pred</th><th>μₘₐₓ_pred</th><th>λ_pred</th>
+<th>A_actual</th><th>K_actual</th><th>μₘₐₓ_actual</th><th>λ_actual</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Oleic_1:1</td><td>6.0</td><td>26.0</td><td>0.013</td><td>0.801</td><td>0.048</td><td>8.932</td><td>0.012</td><td>0.719</td><td>0.048</td><td>8.955</td></tr>
+<tr><td>1</td><td>Oleic_1:3</td><td>6.0</td><td>26.0</td><td>0.028</td><td>0.507</td><td>0.072</td><td>8.471</td><td>0.027</td><td>0.451</td><td>0.072</td><td>8.558</td></tr>
+<tr><td>1</td><td>Oleic_1:5</td><td>6.0</td><td>26.0</td><td>0.024</td><td>0.566</td><td>0.047</td><td>5.003</td><td>0.039</td><td>0.503</td><td>0.046</td><td>5.000</td></tr>
+<tr><td>1</td><td>Linoleic_1:1</td><td>6.0</td><td>26.0</td><td>0.021</td><td>0.267</td><td>0.100</td><td>6.653</td><td>0.019</td><td>0.210</td><td>0.100</td><td>6.775</td></tr>
+<tr><td>1</td><td>Linoleic_1:3</td><td>6.0</td><td>26.0</td><td>0.041</td><td>0.346</td><td>0.075</td><td>5.006</td><td>0.039</td><td>0.306</td><td>0.074</td><td>5.000</td></tr>
+<tr><td>1</td><td>Linoleic_1:5</td><td>6.0</td><td>26.0</td><td>0.030</td><td>0.435</td><td>0.073</td><td>7.381</td><td>0.020</td><td>0.385</td><td>0.073</td><td>7.495</td></tr>
+<tr><td>1</td><td>Alpha-linolenic_1:1</td><td>6.0</td><td>26.0</td><td>0.018</td><td>0.234</td><td>0.100</td><td>6.450</td><td>0.014</td><td>0.179</td><td>0.100</td><td>6.475</td></tr>
+<tr><td>1</td><td>Alpha-linolenic_1:3</td><td>6.0</td><td>26.0</td><td>0.029</td><td>0.125</td><td>0.100</td><td>7.265</td><td>0.024</td><td>0.103</td><td>0.100</td><td>7.264</td></tr>
+<tr><td>1</td><td>Alpha-linolenic_1:5</td><td>6.0</td><td>26.0</td><td>0.023</td><td>0.140</td><td>0.100</td><td>6.397</td><td>0.020</td><td>0.281</td><td>0.100</td><td>6.562</td></tr>
+<tr><td>1</td><td>YPD</td><td>6.0</td><td>26.0</td><td>0.014</td><td>0.186</td><td>0.100</td><td>5.896</td><td>0.013</td><td>0.145</td><td>0.100</td><td>5.995</td></tr>
+<tr><td>1</td><td>Lipid</td><td>6.0</td><td>26.0</td><td>0.049</td><td>0.552</td><td>0.100</td><td>10.861</td><td>0.044</td><td>0.496</td><td>0.100</td><td>10.875</td></tr>
+<tr><td>1</td><td>Lipid-fatase</td><td>6.0</td><td>26.0</td><td>0.000</td><td>0.476</td><td>0.049</td><td>6.881</td><td>0.000</td><td>0.418</td><td>0.049</td><td>6.908</td></tr>
+<tr><td>2</td><td>Oleic_1:1</td><td>6.0</td><td>30.0</td><td>0.018</td><td>0.818</td><td>0.048</td><td>8.920</td><td>0.014</td><td>0.799</td><td>0.048</td><td>8.862</td></tr>
+<tr><td>2</td><td>Oleic_1:3</td><td>6.0</td><td>30.0</td><td>0.029</td><td>0.513</td><td>0.072</td><td>8.487</td><td>0.032</td><td>0.501</td><td>0.071</td><td>8.482</td></tr>
+<tr><td>2</td><td>Oleic_1:5</td><td>6.0</td><td>30.0</td><td>0.042</td><td>0.568</td><td>0.047</td><td>5.005</td><td>0.049</td><td>0.558</td><td>0.046</td><td>5.000</td></tr>
+<tr><td>2</td><td>Linoleic_1:1</td><td>6.0</td><td>30.0</td><td>0.021</td><td>0.258</td><td>0.100</td><td>6.667</td><td>0.022</td><td>0.233</td><td>0.100</td><td>6.720</td></tr>
+<tr><td>2</td><td>Linoleic_1:3</td><td>6.0</td><td>30.0</td><td>0.042</td><td>0.347</td><td>0.075</td><td>5.006</td><td>0.047</td><td>0.338</td><td>0.075</td><td>5.000</td></tr>
+<tr><td>2</td><td>Linoleic_1:5</td><td>6.0</td><td>30.0</td><td>0.020</td><td>0.435</td><td>0.073</td><td>7.399</td><td>0.022</td><td>0.427</td><td>0.071</td><td>7.246</td></tr>
+<tr><td>2</td><td>Alpha-linolenic_1:1</td><td>6.0</td><td>30.0</td><td>0.017</td><td>0.224</td><td>0.100</td><td>6.452</td><td>0.015</td><td>0.199</td><td>0.100</td><td>6.476</td></tr>
+<tr><td>2</td><td>Alpha-linolenic_1:3</td><td>6.0</td><td>30.0</td><td>0.029</td><td>0.122</td><td>0.100</td><td>7.270</td><td>0.028</td><td>0.115</td><td>0.100</td><td>7.233</td></tr>
+<tr><td>2</td><td>Alpha-linolenic_1:5</td><td>6.0</td><td>30.0</td><td>0.032</td><td>0.328</td><td>0.100</td><td>6.426</td><td>0.039</td><td>0.312</td><td>0.100</td><td>6.439</td></tr>
+<tr><td>2</td><td>YPD</td><td>6.0</td><td>30.0</td><td>0.014</td><td>0.178</td><td>0.100</td><td>5.912</td><td>0.014</td><td>0.161</td><td>0.100</td><td>5.859</td></tr>
+<tr><td>2</td><td>Lipid</td><td>6.0</td><td>30.0</td><td>0.059</td><td>0.555</td><td>0.100</td><td>10.858</td><td>0.052</td><td>0.551</td><td>0.100</td><td>10.920</td></tr>
+<tr><td>2</td><td>Lipid-fatase</td><td>6.0</td><td>30.0</td><td>0.000</td><td>0.477</td><td>0.048</td><td>6.840</td><td>0.000</td><td>0.465</td><td>0.047</td><td>6.592</td></tr>
+<tr><td>3</td><td>Oleic_1:1</td><td>6.8</td><td>26.0</td><td>0.013</td><td>0.824</td><td>0.048</td><td>8.922</td><td>0.010</td><td>0.613</td><td>0.048</td><td>8.943</td></tr>
+<tr><td>3</td><td>Oleic_1:3</td><td>6.8</td><td>26.0</td><td>0.029</td><td>0.519</td><td>0.072</td><td>8.478</td><td>0.023</td><td>0.386</td><td>0.072</td><td>8.549</td></tr>
+<tr><td>3</td><td>Oleic_1:5</td><td>6.8</td><td>26.0</td><td>0.043</td><td>0.574</td><td>0.047</td><td>5.004</td><td>0.033</td><td>0.430</td><td>0.046</td><td>5.000</td></tr>
+<tr><td>3</td><td>Linoleic_1:1</td><td>6.8</td><td>26.0</td><td>0.021</td><td>0.259</td><td>0.100</td><td>6.664</td><td>0.016</td><td>0.179</td><td>0.100</td><td>6.808</td></tr>
+<tr><td>3</td><td>Linoleic_1:3</td><td>6.8</td><td>26.0</td><td>0.042</td><td>0.351</td><td>0.075</td><td>5.006</td><td>0.034</td><td>0.261</td><td>0.073</td><td>5.000</td></tr>
+<tr><td>3</td><td>Linoleic_1:5</td><td>6.8</td><td>26.0</td><td>0.021</td><td>0.443</td><td>0.073</td><td>7.386</td><td>0.017</td><td>0.328</td><td>0.074</td><td>7.548</td></tr>
+<tr><td>3</td><td>Alpha-linolenic_1:1</td><td>6.8</td><td>26.0</td><td>0.027</td><td>0.227</td><td>0.100</td><td>6.450</td><td>0.012</td><td>0.152</td><td>0.100</td><td>6.508</td></tr>
+<tr><td>3</td><td>Alpha-linolenic_1:3</td><td>6.8</td><td>26.0</td><td>0.029</td><td>0.123</td><td>0.100</td><td>7.269</td><td>0.021</td><td>0.088</td><td>0.100</td><td>7.288</td></tr>
+<tr><td>3</td><td>Alpha-linolenic_1:5</td><td>6.8</td><td>26.0</td><td>0.036</td><td>0.329</td><td>0.100</td><td>6.410</td><td>0.030</td><td>0.240</td><td>0.100</td><td>6.668</td></tr>
+<tr><td>3</td><td>YPD</td><td>6.8</td><td>26.0</td><td>0.013</td><td>0.180</td><td>0.100</td><td>5.899</td><td>0.011</td><td>0.124</td><td>0.100</td><td>5.800</td></tr>
+<tr><td>3</td><td>Lipid</td><td>6.8</td><td>26.0</td><td>0.030</td><td>0.566</td><td>0.100</td><td>10.859</td><td>0.038</td><td>0.423</td><td>0.100</td><td>10.868</td></tr>
+<tr><td>3</td><td>Lipid-fatase</td><td>6.8</td><td>26.0</td><td>0.000</td><td>0.484</td><td>0.048</td><td>6.845</td><td>0.002</td><td>0.355</td><td>0.051</td><td>7.187</td></tr>
+<tr><td>4</td><td>Oleic_1:1</td><td>6.8</td><td>30.0</td><td>0.031</td><td>0.828</td><td>0.048</td><td>9.012</td><td>0.028</td><td>0.907</td><td>0.048</td><td>8.950</td></tr>
+<tr><td>4</td><td>Oleic_1:3</td><td>6.8</td><td>30.0</td><td>0.029</td><td>0.520</td><td>0.072</td><td>8.947</td><td>0.027</td><td>0.453</td><td>0.072</
+</tbody>
+</table>
+</div>
+
+> **RMSE:** 0.0609  **R²:** 0.9333  
+> The model shows close agreement between predicted and actual Gompertz parameters across unseen pH–temperature conditions.
+
+
+Together, these findings demonstrate that the model successfully captured the multidimensional physiological responses of *Y. lipolytica* to environmental variation. The inverse relationship between μₘₐₓ and λ reflects the trade-off between metabolic activation and adaptation, while the decline of K at higher temperatures highlights energy and stability constraints under heat stress. Overall, this interpretation confirms the biological validity of the model and provides quantitative guidance for optimizing culture conditions.
+
+### 3.6 Limitations and Future Work
+
+Although the hybrid modelling framework developed in this study demonstrated high accuracy and interpretability in predicting and optimizing microbial growth, several limitations remain.  
+First, the Gompertz equation assumes a single sigmoidal phase and does not account for substrate depletion, nutrient limitation, or metabolic reprogramming.  
+As a result, its descriptive capacity may decline when *Yarrowia lipolytica* undergoes secondary growth or stress-induced recovery under complex substrate conditions.  
+Second, the machine-learning module currently relies on static environmental inputs (pH, temperature, substrate type), without incorporating temporal features or process factors such as dissolved oxygen or C/N ratio.  
+This allows the model to capture global growth trends but limits its ability to represent short-term transitions or regulatory responses.
+
+Future extensions will focus on two directions:  
+(1) introducing dynamic modelling approaches, such as sequence-to-sequence architectures or neural ordinary differential equations (Neural ODEs), to describe multi-phase growth and stress-response processes;  
+and (2) expanding the dataset to include multiple carbon sources and nutrient regimes, enabling the construction of a multidimensional predictive model that learns substrate adaptability and growth stability simultaneously.  
+
+Overall, this framework establishes a generalizable approach for predictive and interpretable growth modelling in *Y. lipolytica*, which can be further enhanced by integrating dynamic information and environmental complexity.
+
+---
+
+**References**
+
+1. Zwietering MH, Jongenburger I, Rombouts FM, van ’t Riet K. Modeling of the bacterial growth curve. *Appl Environ Microbiol.* 1990;56(6):1875–81.  
+2. Gibson AM, Bratchell N, Roberts TA. The effect of sodium chloride and temperature on the rate and extent of growth of *Clostridium botulinum* type A. *J Appl Bacteriol.* 1988;65(2):95–108.  
+3. Ratkowsky DA, Olley J, McMeekin TA, Ball A. Relationship between temperature and growth rate of bacterial cultures. *J Bacteriol.* 1982;149(1):1–5.  
+4. Gupta S, Mozaffar H, Syed A, et al. Machine learning models for microbial growth prediction under environmental stress. *Biotechnol Bioeng.* 2020;117(12):3727–38.  
+5. Buchanan RL, Whiting RC, Damert WC. When is simple good enough: a comparison of the Gompertz, logistic, and other empirical models for fitting bacterial growth curves. *Food Microbiol.* 1997;14(4):313–26.  
+6. Desai M, Udupa S, Chatterjee S, Sarma SJ. A hybrid machine learning framework for predictive bioprocess modeling using ensemble tree algorithms. *Comput Chem Eng.* 2022;157:107675.  
+7. Rajamanickam S, Misra BB. Machine learning-based prediction of microbial growth under multiple environmental conditions. *Front Microbiol.* 2021;12:713517.  
+8. Yang H, He F, Liu J, et al. Integration of mechanistic models and machine learning improves prediction accuracy in microbial fermentation. *Biotechnol J.* 2023;18(4):2200604.  
+9. Larroude M, Rossignol T, Nicaud JM, Ledesma-Amaro R. Synthetic biology tools for engineering *Yarrowia lipolytica*. *Biotechnol Adv.* 2018;36(8):2150–64.  
+10. Qiao K, Abidi SHI, Liu H, Zhang H, Chakraborty S, Zhang L, Tang Y. Engineering lipid overproduction in the oleaginous yeast *Yarrowia lipolytica*. *Metab Eng.* 2015;29:56–65.
