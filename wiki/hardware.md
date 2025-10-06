@@ -108,11 +108,13 @@ Our hardware team has consistently focused on addressing practical challenges en
 
 - The two influencing factors are rotational speed (1000 rpm--5000 rpm) and time (1min--5 min). The response variable is absorbance (A), measured at 500 nm wavelength using a spectrophotometer. The blank control group consists of pre-centrifugation solution, while the sample group comprises supernatant collected after each centrifugation run.
 
+
+
 - According to the spectrophotometric formula:
 
 -                                           *A* = *ε* • *c* • *l*
 
-- *A : Absorbance; *ε*  : Molar absorptivity (L/(mol·cm)); *c* : Solution concentration (mol/L); *l*: Optical path length (cm)
+- *A* : Absorbance; *ε*  : Molar absorptivity (L/(mol·cm)); *c*: Solution concentration (mol/L); *l*: Optical path length (cm)
 
 - It is evident that absorbance is directly proportional to solution concentration. A lower A value indicates a lower cell concentration in the supernatant. Therefore, our optimization objective is to achieve the lowest A value using the minimum rotational speed and shortest duration. The A contour plot indicates that all regions outside the shaded area represent viable [rotational speed: time] combinations.
 
