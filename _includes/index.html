@@ -2011,18 +2011,28 @@
                     });
                 }
     
+                // 改进的滚动检测 - 专门处理苹果触控板
+                let isMacTrackpadScrolling = false;
+                let macTrackpadTimeout;
+                
                 // 使用更通用的滚动检测
                 window.addEventListener('scroll', function() {
                     // 设置滚动状态
                     isScrolling = true;
+                    isMacTrackpadScrolling = true;
                     
                     // 清除之前的计时器
                     clearTimeout(scrollTimeout);
+                    clearTimeout(macTrackpadTimeout);
                     
                     // 设置新的计时器
                     scrollTimeout = setTimeout(function() {
                         isScrolling = false;
                     }, 150);
+                    
+                    macTrackpadTimeout = setTimeout(function() {
+                        isMacTrackpadScrolling = false;
+                    }, 300);
                     
                     // 执行滚动处理
                     handleScroll();
@@ -2096,7 +2106,7 @@
     
                 // 统一滚动处理函数
                 function handleScroll() {
-                    if (isScrolling) return;
+                    if (isScrolling && !isMacTrackpadScrolling) return;
                     
                     // 更新导航栏状态
                     handleNavbarScroll();
@@ -2123,8 +2133,13 @@
                     updateActiveSection();
                 }
     
-                // 鼠标滚轮事件 - 兼容触控板
+                // 改进的鼠标滚轮事件 - 专门处理苹果触控板
                 document.addEventListener('wheel', function(e) {
+                    // 如果是苹果触控板，优先使用scroll事件处理
+                    if (isMacTrackpadScrolling) {
+                        return;
+                    }
+                    
                     if (isScrolling) return;
                     
                     const now = Date.now();
@@ -2406,5 +2421,36 @@
                         });
                     }, 500);
                 }
+                
+                // 添加键盘导航支持
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                        // 向下或向右键
+                        if (currentSection < sections.length - 1) {
+                            currentSection++;
+                            scrollToSection(currentSection);
+                        } else if (currentSection === sections.length - 1 && !isInLongScroll) {
+                            isInLongScroll = true;
+                            longScrollSection.classList.add('active');
+                            longScrollSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                        e.preventDefault();
+                    } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                        // 向上或向左键
+                        if (currentSection > 0) {
+                            currentSection--;
+                            scrollToSection(currentSection);
+                        } else if (isInLongScroll && window.scrollY <= longScrollSection.offsetTop + 50) {
+                            isInLongScroll = false;
+                            longScrollSection.classList.remove('active');
+                            currentSection = 7;
+                            scrollToSection(currentSection);
+                        }
+                        e.preventDefault();
+                    }
+                });
             });
         </script>
