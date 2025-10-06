@@ -516,21 +516,57 @@ Temperature exerted a clear influence on the carrying capacity (K). Above 28 °C
 
 **Table 3-1. Model predictions versus actual Gompertz parameters on independent test set**
 
-| Group | Target | pH | Temp (°C) | A_pred | K_pred | μₘₐₓ_pred | λ_pred | A_actual | K_actual | μₘₐₓ_actual | λ_actual |
-|:------|:--------|:--:|:----------:|-------:|-------:|-----------:|-------:|----------:|----------:|-------------:|----------:|
-| 1 | Oleic_1:1 | 6.0 | 26.0 | 0.013 | 0.801 | 0.048 | 8.932 | 0.012 | 0.719 | 0.048 | 8.955 |
-| 1 | Oleic_1:3 | 6.0 | 26.0 | 0.028 | 0.507 | 0.072 | 8.471 | 0.027 | 0.451 | 0.072 | 8.558 |
-| 1 | Oleic_1:5 | 6.0 | 26.0 | 0.024 | 0.566 | 0.047 | 5.003 | 0.039 | 0.503 | 0.046 | 5.000 |
-| 1 | Linoleic_1:1 | 6.0 | 26.0 | 0.021 | 0.267 | 0.100 | 6.653 | 0.019 | 0.210 | 0.100 | 6.775 |
-| 1 | Linoleic_1:3 | 6.0 | 26.0 | 0.041 | 0.346 | 0.075 | 5.006 | 0.039 | 0.306 | 0.074 | 5.000 |
-| 1 | Linoleic_1:5 | 6.0 | 26.0 | 0.030 | 0.435 | 0.073 | 7.381 | 0.020 | 0.385 | 0.073 | 7.495 |
-| 1 | Alpha-linolenic_1:1 | 6.0 | 26.0 | 0.018 | 0.234 | 0.100 | 6.450 | 0.014 | 0.179 | 0.100 | 6.475 |
-| 1 | Alpha-linolenic_1:3 | 6.0 | 26.0 | 0.029 | 0.125 | 0.100 | 7.265 | 0.024 | 0.103 | 0.100 | 7.264 |
-| 1 | Alpha-linolenic_1:5 | 6.0 | 26.0 | 0.023 | 0.140 | 0.100 | 6.397 | 0.020 | 0.281 | 0.100 | 6.562 |
-| 1 | YPD | 6.0 | 26.0 | 0.014 | 0.186 | 0.100 | 5.896 | 0.013 | 0.145 | 0.100 | 5.995 |
-| 1 | Lipid | 6.0 | 26.0 | 0.049 | 0.552 | 0.100 | 10.861 | 0.044 | 0.496 | 0.100 | 10.875 |
-| 1 | Lipid-fatase | 6.0 | 26.0 | 0.000 | 0.476 | 0.049 | 6.881 | 0.000 | 0.418 | 0.049 | 6.908 |
-| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+<div style="font-size:12px; overflow-x:auto;">
+<table>
+<thead>
+<tr>
+<th>Group</th><th>Target</th><th>pH</th><th>Temperature (°C)</th>
+<th>A_pred</th><th>K_pred</th><th>μₘₐₓ_pred</th><th>λ_pred</th>
+<th>A_actual</th><th>K_actual</th><th>μₘₐₓ_actual</th><th>λ_actual</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Oleic_1:1</td><td>6.0</td><td>26.0</td><td>0.013</td><td>0.801</td><td>0.048</td><td>8.932</td><td>0.012</td><td>0.719</td><td>0.048</td><td>8.955</td></tr>
+<tr><td>1</td><td>Oleic_1:3</td><td>6.0</td><td>26.0</td><td>0.028</td><td>0.507</td><td>0.072</td><td>8.471</td><td>0.027</td><td>0.451</td><td>0.072</td><td>8.558</td></tr>
+<tr><td>1</td><td>Oleic_1:5</td><td>6.0</td><td>26.0</td><td>0.024</td><td>0.566</td><td>0.047</td><td>5.003</td><td>0.039</td><td>0.503</td><td>0.046</td><td>5.000</td></tr>
+<tr><td>1</td><td>Linoleic_1:1</td><td>6.0</td><td>26.0</td><td>0.021</td><td>0.267</td><td>0.100</td><td>6.653</td><td>0.019</td><td>0.210</td><td>0.100</td><td>6.775</td></tr>
+<tr><td>1</td><td>Linoleic_1:3</td><td>6.0</td><td>26.0</td><td>0.041</td><td>0.346</td><td>0.075</td><td>5.006</td><td>0.039</td><td>0.306</td><td>0.074</td><td>5.000</td></tr>
+<tr><td>1</td><td>Linoleic_1:5</td><td>6.0</td><td>26.0</td><td>0.030</td><td>0.435</td><td>0.073</td><td>7.381</td><td>0.020</td><td>0.385</td><td>0.073</td><td>7.495</td></tr>
+<tr><td>1</td><td>Alpha-linolenic_1:1</td><td>6.0</td><td>26.0</td><td>0.018</td><td>0.234</td><td>0.100</td><td>6.450</td><td>0.014</td><td>0.179</td><td>0.100</td><td>6.475</td></tr>
+<tr><td>1</td><td>Alpha-linolenic_1:3</td><td>6.0</td><td>26.0</td><td>0.029</td><td>0.125</td><td>0.100</td><td>7.265</td><td>0.024</td><td>0.103</td><td>0.100</td><td>7.264</td></tr>
+<tr><td>1</td><td>Alpha-linolenic_1:5</td><td>6.0</td><td>26.0</td><td>0.023</td><td>0.140</td><td>0.100</td><td>6.397</td><td>0.020</td><td>0.281</td><td>0.100</td><td>6.562</td></tr>
+<tr><td>1</td><td>YPD</td><td>6.0</td><td>26.0</td><td>0.014</td><td>0.186</td><td>0.100</td><td>5.896</td><td>0.013</td><td>0.145</td><td>0.100</td><td>5.995</td></tr>
+<tr><td>1</td><td>Lipid</td><td>6.0</td><td>26.0</td><td>0.049</td><td>0.552</td><td>0.100</td><td>10.861</td><td>0.044</td><td>0.496</td><td>0.100</td><td>10.875</td></tr>
+<tr><td>1</td><td>Lipid-fatase</td><td>6.0</td><td>26.0</td><td>0.000</td><td>0.476</td><td>0.049</td><td>6.881</td><td>0.000</td><td>0.418</td><td>0.049</td><td>6.908</td></tr>
+<tr><td>2</td><td>Oleic_1:1</td><td>6.0</td><td>30.0</td><td>0.018</td><td>0.818</td><td>0.048</td><td>8.920</td><td>0.014</td><td>0.799</td><td>0.048</td><td>8.862</td></tr>
+<tr><td>2</td><td>Oleic_1:3</td><td>6.0</td><td>30.0</td><td>0.029</td><td>0.513</td><td>0.072</td><td>8.487</td><td>0.032</td><td>0.501</td><td>0.071</td><td>8.482</td></tr>
+<tr><td>2</td><td>Oleic_1:5</td><td>6.0</td><td>30.0</td><td>0.042</td><td>0.568</td><td>0.047</td><td>5.005</td><td>0.049</td><td>0.558</td><td>0.046</td><td>5.000</td></tr>
+<tr><td>2</td><td>Linoleic_1:1</td><td>6.0</td><td>30.0</td><td>0.021</td><td>0.258</td><td>0.100</td><td>6.667</td><td>0.022</td><td>0.233</td><td>0.100</td><td>6.720</td></tr>
+<tr><td>2</td><td>Linoleic_1:3</td><td>6.0</td><td>30.0</td><td>0.042</td><td>0.347</td><td>0.075</td><td>5.006</td><td>0.047</td><td>0.338</td><td>0.075</td><td>5.000</td></tr>
+<tr><td>2</td><td>Linoleic_1:5</td><td>6.0</td><td>30.0</td><td>0.020</td><td>0.435</td><td>0.073</td><td>7.399</td><td>0.022</td><td>0.427</td><td>0.071</td><td>7.246</td></tr>
+<tr><td>2</td><td>Alpha-linolenic_1:1</td><td>6.0</td><td>30.0</td><td>0.017</td><td>0.224</td><td>0.100</td><td>6.452</td><td>0.015</td><td>0.199</td><td>0.100</td><td>6.476</td></tr>
+<tr><td>2</td><td>Alpha-linolenic_1:3</td><td>6.0</td><td>30.0</td><td>0.029</td><td>0.122</td><td>0.100</td><td>7.270</td><td>0.028</td><td>0.115</td><td>0.100</td><td>7.233</td></tr>
+<tr><td>2</td><td>Alpha-linolenic_1:5</td><td>6.0</td><td>30.0</td><td>0.032</td><td>0.328</td><td>0.100</td><td>6.426</td><td>0.039</td><td>0.312</td><td>0.100</td><td>6.439</td></tr>
+<tr><td>2</td><td>YPD</td><td>6.0</td><td>30.0</td><td>0.014</td><td>0.178</td><td>0.100</td><td>5.912</td><td>0.014</td><td>0.161</td><td>0.100</td><td>5.859</td></tr>
+<tr><td>2</td><td>Lipid</td><td>6.0</td><td>30.0</td><td>0.059</td><td>0.555</td><td>0.100</td><td>10.858</td><td>0.052</td><td>0.551</td><td>0.100</td><td>10.920</td></tr>
+<tr><td>2</td><td>Lipid-fatase</td><td>6.0</td><td>30.0</td><td>0.000</td><td>0.477</td><td>0.048</td><td>6.840</td><td>0.000</td><td>0.465</td><td>0.047</td><td>6.592</td></tr>
+<tr><td>3</td><td>Oleic_1:1</td><td>6.8</td><td>26.0</td><td>0.013</td><td>0.824</td><td>0.048</td><td>8.922</td><td>0.010</td><td>0.613</td><td>0.048</td><td>8.943</td></tr>
+<tr><td>3</td><td>Oleic_1:3</td><td>6.8</td><td>26.0</td><td>0.029</td><td>0.519</td><td>0.072</td><td>8.478</td><td>0.023</td><td>0.386</td><td>0.072</td><td>8.549</td></tr>
+<tr><td>3</td><td>Oleic_1:5</td><td>6.8</td><td>26.0</td><td>0.043</td><td>0.574</td><td>0.047</td><td>5.004</td><td>0.033</td><td>0.430</td><td>0.046</td><td>5.000</td></tr>
+<tr><td>3</td><td>Linoleic_1:1</td><td>6.8</td><td>26.0</td><td>0.021</td><td>0.259</td><td>0.100</td><td>6.664</td><td>0.016</td><td>0.179</td><td>0.100</td><td>6.808</td></tr>
+<tr><td>3</td><td>Linoleic_1:3</td><td>6.8</td><td>26.0</td><td>0.042</td><td>0.351</td><td>0.075</td><td>5.006</td><td>0.034</td><td>0.261</td><td>0.073</td><td>5.000</td></tr>
+<tr><td>3</td><td>Linoleic_1:5</td><td>6.8</td><td>26.0</td><td>0.021</td><td>0.443</td><td>0.073</td><td>7.386</td><td>0.017</td><td>0.328</td><td>0.074</td><td>7.548</td></tr>
+<tr><td>3</td><td>Alpha-linolenic_1:1</td><td>6.8</td><td>26.0</td><td>0.027</td><td>0.227</td><td>0.100</td><td>6.450</td><td>0.012</td><td>0.152</td><td>0.100</td><td>6.508</td></tr>
+<tr><td>3</td><td>Alpha-linolenic_1:3</td><td>6.8</td><td>26.0</td><td>0.029</td><td>0.123</td><td>0.100</td><td>7.269</td><td>0.021</td><td>0.088</td><td>0.100</td><td>7.288</td></tr>
+<tr><td>3</td><td>Alpha-linolenic_1:5</td><td>6.8</td><td>26.0</td><td>0.036</td><td>0.329</td><td>0.100</td><td>6.410</td><td>0.030</td><td>0.240</td><td>0.100</td><td>6.668</td></tr>
+<tr><td>3</td><td>YPD</td><td>6.8</td><td>26.0</td><td>0.013</td><td>0.180</td><td>0.100</td><td>5.899</td><td>0.011</td><td>0.124</td><td>0.100</td><td>5.800</td></tr>
+<tr><td>3</td><td>Lipid</td><td>6.8</td><td>26.0</td><td>0.030</td><td>0.566</td><td>0.100</td><td>10.859</td><td>0.038</td><td>0.423</td><td>0.100</td><td>10.868</td></tr>
+<tr><td>3</td><td>Lipid-fatase</td><td>6.8</td><td>26.0</td><td>0.000</td><td>0.484</td><td>0.048</td><td>6.845</td><td>0.002</td><td>0.355</td><td>0.051</td><td>7.187</td></tr>
+<tr><td>4</td><td>Oleic_1:1</td><td>6.8</td><td>30.0</td><td>0.031</td><td>0.828</td><td>0.048</td><td>9.012</td><td>0.028</td><td>0.907</td><td>0.048</td><td>8.950</td></tr>
+<tr><td>4</td><td>Oleic_1:3</td><td>6.8</td><td>30.0</td><td>0.029</td><td>0.520</td><td>0.072</td><td>8.947</td><td>0.027</td><td>0.453</td><td>0.072</
+</tbody>
+</table>
+</div>
 
 > **RMSE:** 0.0609  **R²:** 0.9333  
 > The model shows close agreement between predicted and actual Gompertz parameters across unseen pH–temperature conditions.
