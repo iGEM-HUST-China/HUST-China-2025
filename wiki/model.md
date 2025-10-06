@@ -340,3 +340,38 @@ Top-ranked variants were subsequently selected for experimental validation of fo
 <iframe title="HUST-China: Alignment of t-HMGR before and after optimization (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/joCRDYNNTRjtMv2kHZpHLe" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
 </div>
 
+
+
+## 2.5 Biological Interpretation
+
+From an energy-landscape perspective, the reduction of frustration indicates fewer energetic barriers along the folding pathway, resulting in a smoother folding funnel and more stable energy minima.  
+During the design process, the core catalytic region of tHMGR was deliberately preserved; all mutations were restricted to peripheral or non-conserved sites to maintain the geometry of catalytic residues and cofactor-binding motifs.  
+This rational constraint ensured that structural optimization did not compromise enzymatic activity, achieving a balance between stability enhancement and functional retention.  
+Interestingly, several low-frustration regions were located near the catalytic pocket, suggesting that local stabilization may further fine-tune the catalytic microenvironment and improve functional efficiency.  
+
+
+## 2.6 Limitations and Future Work
+
+Although the integrated framework performed effectively for rational optimization of tHMGR, several limitations remain.  
+First, ProteinMPNN operates on static backbones and does not capture conformational flexibility.  
+Second, Frustratometer2 relies on classical potentials lacking quantum and solvent effects.  
+Third, FastRelax focuses on energy minimization without explicitly constraining catalytic kinetics.  
+
+Future extensions include:  
+1️⃣ Incorporating molecular dynamics simulations to represent conformational dynamics;  
+2️⃣ Developing multi-objective optimization strategies to balance thermodynamic stability and catalytic activity;  
+3️⃣ Integrating experimental feedback loops to achieve closed-cycle computational–experimental co-design.  
+
+
+## References
+
+1. Dauparas J, Anishchenko I, Bennett N, *et al.* **Robust deep learning based protein sequence design using ProteinMPNN.** *Science.* 2022;378(6615):49–56.  
+2. Ferreiro DU, Hegler JA, Komives EA, Wolynes PG. **Localizing frustration in native proteins and protein assemblies.** *Proc Natl Acad Sci USA.* 2007;104(50):19819–19824.  
+3. Parra RG, Schafer NP, Radusky LG, Tsai MY, Guzovsky AB, Wolynes PG, Ferreiro DU. **Protein Frustratometer 2: a tool to localize energetic frustration in protein molecules, now with electrostatics.** *Nucleic Acids Res.* 2016;44(W1):W356–W360.  
+4. Tyka MD, Keedy DA, André I, Dimaio F, Song Y, Richardson DC, Richardson JS, Baker D. **Alternate states of proteins revealed by detailed energy landscape mapping.** *J Mol Biol.* 2011;405(2):607–618.  
+5. Leaver-Fay A, Tyka M, Lewis SM, Lange OF, Thompson J, Jacak R, Kaufman K, Renfrew PD, Smith CA, Sheffler W, *et al.* **ROSETTA3: An object-oriented software suite for the simulation and design of macromolecules.** *Methods Enzymol.* 2011;487:545–574.  
+6. Istvan ES, Deisenhofer J. **Structural mechanism for statin inhibition of HMG-CoA reductase.** *Science.* 2001;292(5519):1160–1164.  
+7. Miziorko HM. **Enzymes of the mevalonate pathway of isoprenoid biosynthesis.** *Arch Biochem Biophys.* 2011;505(2):131–143.  
+8. Liu Z, Gao Y, Chen J, Imanaka T, Bao J, Hua Q. **Metabolic engineering of *Yarrowia lipolytica* for the production of terpenoids.** *Metab Eng.* 2019;57:151–161.  
+9. Rodriguez GM, Hussain MS, Gambill L, Gao D, Yaguchi A, Blenner M. **Engineering *Yarrowia lipolytica* to produce fuels and chemicals from xylose.** *Biotechnol Bioeng.* 2016;113(11):2528–2538.  
+
