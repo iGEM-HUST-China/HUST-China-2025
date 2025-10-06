@@ -1,7 +1,7 @@
 // Background colours
-$backgroundColour: #ffffff !default;
+$backgroundColour: #f5f0dc !default;
 $codeBackgroundColour: #fafafa !default;
-$featureBackgroundColour: #f9fafa !default;
+$featureBackgroundColour: #f5f0dc !default;
 $accentColour: #05bf85 !default;
 
 // Text colours
@@ -15,7 +15,7 @@ $white: #ffffff !default;
 
 // Fonts
 @font-face {
-  font-family: 'Cascadia Code';
+  font-family: 'Arial';
   src: url('https://static.igem.wiki/teams/5175/static/cascadiacode.ttf') format('ttf');
   font-weight: 400;
   font-style: normal;
@@ -23,7 +23,7 @@ $white: #ffffff !default;
 
 // Typography
 $bodytype: (
-  font-family: "Georgia, serif",
+  font-family: "Arial",
   regular: 400,
   bold: 700,
   italic: italic,
@@ -31,14 +31,14 @@ $bodytype: (
 ) !default;
 
 $headingtype: (
-  font-family: '"Merriweather", serif',
+  font-family: '"Arial", serif',
   regular: 400,
   bold: 700,
   cap-height: 0.75
 ) !default;
 
 $monospacetype: (
-  font-family: "Cascadia Code, Menlo, monospace",
+  font-family: "Arial",
   regular: 400,
   cap-height: 0.68
 ) !default;
