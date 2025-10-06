@@ -99,12 +99,12 @@ images19:
     caption: Figure 3.3.4 Third-Generation Circuit Wiring Diagram
 
 images20:
-    - src:  https://static.igem.wiki/teams/5569/hardware/h19.webp
-      alt: Figure 3.4.1 Fan-shaped stirring rod
-      caption: Figure 3.4.1 Fan-shaped stirring rod
-    - src: ttps://static.igem.wiki/teams/5569/hardware/h18.webp
-      alt:  Figure 3.4.2 Spiral stirring rod
-      caption:  Figure 3.4.2 Spiral stirring rod
+  - src:  https://static.igem.wiki/teams/5569/hardware/h19.webp
+    alt: Figure 3.4.1 Fan-shaped stirring rod
+    caption: Figure 3.4.1 Fan-shaped stirring rod
+  - src: https://static.igem.wiki/teams/5569/hardware/h18.webp
+    alt:  Figure 3.4.2 Spiral stirring rod
+    caption:  Figure 3.4.2 Spiral stirring rod
 
 
 
@@ -112,7 +112,7 @@ images21:
   - src:  https://static.igem.wiki/teams/5569/hardware/h25.webp
     alt: Figure 3.4.3 Multi-hole Fluid Switch	  
     caption: Figure 3.4.3 Multi-hole Fluid Switch	  
-  - src: ttps://static.igem.wiki/teams/5569/hardware/h27.webp
+  - src: https://static.igem.wiki/teams/5569/hardware/h27.webp
     alt:   Figure 3.4.4 Flow Control Valve
     caption:  Figure 3.4.4 Flow Control Valve 
 
@@ -121,7 +121,7 @@ images22:
   - src:  https://static.igem.wiki/teams/5569/hardware/h47.webp
     alt: Figure 3.4.5 Seven-tooth gear 	  
     caption: Figure 3.4.5 Seven-tooth gear 	  
-  - src: ttps://static.igem.wiki/teams/5569/hardware/h48.webp
+  - src: https://static.igem.wiki/teams/5569/hardware/h48.webp
     alt:   Figure 3.4.6 Speed adjustment gear set
     caption:  FiFigure 3.4.6 Speed adjustment gear set 
 
@@ -140,7 +140,7 @@ images24:
   - src:  https://static.igem.wiki/teams/5569/hardware/h15.webp
     alt: Figure 3.4.10 200ml Fermentation Vessel	  
     caption: Figure 3.4.10 200ml Fermentation Vessel	  
-  - src: ttps://static.igem.wiki/teams/5569/hardware/h14.webp
+  - src:  https://static.igem.wiki/teams/5569/hardware/h14.webp
     alt:   Figure 3.4.11 Baffled Fermentation Vessel
     caption:  Figure 3.4.11 Baffled Fermentation Vessel
 
