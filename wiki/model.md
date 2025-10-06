@@ -7,10 +7,10 @@ excerpt: ""
 images02:
   - src: https://static.igem.wiki/teams/5569/model/m5.webp
     alt: Global HADDOCK score distribution (boxplot)
-    caption: **Figure 4a.** Global HADDOCK score distribution across peptide–enzyme complexes (boxplot).
+    caption: Figure 4a. Global HADDOCK score distribution across peptide–enzyme complexes (boxplot).
   - src: https://static.igem.wiki/teams/5569/model/m4.webp
     alt: Enzyme-wise HADDOCK score comparison (barplot)
-    caption: **Figure 4b.** Enzyme-wise HADDOCK score comparison across target enzymes (barplot). 
+    caption: Figure 4b.** Enzyme-wise HADDOCK score comparison across target enzymes (barplot). 
 ---
 
 ## Our Model
