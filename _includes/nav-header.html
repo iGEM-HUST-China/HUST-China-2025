@@ -11,8 +11,7 @@
 
     <li class="item  item--nav{% if item.url == page.url %}  item--current{% endif %}">
       {% if item.sub_navigation %}
-      <a href="javascript:;" class="no-hover">{{ item.title }} <span
-          class="icon iconfont icon-down-line-free"></span></a>
+      <a href="javascript:;" class="no-hover">{{ item.title }} 
       {% else %}
       <a href="{{ url }}">{{ item.title }}</a>
       {% endif %}

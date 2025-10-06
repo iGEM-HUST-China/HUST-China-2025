@@ -128,146 +128,244 @@
             left: 0;
             width: 100%;
             background: rgba(248, 244, 233, 0.9);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1rem 0;
+            z-index: 9000;
+            padding: 0.6rem 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
             transform: translateY(0);
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .navbar.scrolled {
             background: rgba(248, 244, 233, 0.95);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding-left: 2rem;
+            padding-left: 7.5rem;
             cursor: pointer;
         }
 
         .nav-logo img {
-            height: 60px;
+            height: 95px;
             width: auto;
             transition: transform 0.6s ease;
         }
 
-        .nav-logo-text {
-            font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #4A7C51, #2E5D32);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-family: 'Arial', serif;
-        }
-
-        /* 导航栏链接容器 - 向左移动更多 */
+        /* 导航栏链接容器 - 疯狂左移 */
         .nav-links-container {
             display: flex;
             justify-content: flex-end;
             flex: 1;
-            padding-right: 1rem; /* 进一步减少右侧内边距，使导航栏整体左移 */
-        }
-    
+            padding-right: 8.8rem;
+}
+
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 1.4rem;
             position: relative;
             transition: transform 0.3s ease;
-            margin-right: 5rem; /* 添加右侧外边距，确保下拉菜单不会超出屏幕 */
+            align-items: center;
         }
 
         .nav-item {
             position: relative;
+            cursor: pointer;
         }
 
         .nav-link {
-            color: #555;
+            color: #28b17f;
             text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: 600;
-            transition: var(--transition);
+            font-size: 1.4rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.8rem;
             font-family: 'Arial', sans-serif;
+            z-index: 1000;
         }
 
         .nav-link:hover {
-            color: #4A7C51;
+            color: #0e391d; /* 悬停时变为 #4A7C51 */
         }
 
+        .nav-link.current {
+            color: #a8adac;
+        }
+
+        .nav-link.current:hover {
+            color: #0e391d; /* 当前项悬停也变为 #4A7C51 */
+        }
+
+        /* 移除底部的绿色线 */
         .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #4A7C51, #2E5D32);
-            transition: width 0.3s ease;
+            display: none;
         }
 
-        .nav-link:hover::after {
-            width: 100%;
+        /* 下拉箭头样式 */
+        .nav-link .icon-down {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0.9rem;
+            transform: rotate(0deg);
+            transform-origin: center center;
+            transition: transform 0.3s ease;
+            color: inherit;
         }
 
-        /* 下拉菜单样式 - 向左调整更多位置 */
+        .nav-item:hover .nav-link .icon-down {
+            transform: rotate(180deg);
+        }
+
+        /* 下拉菜单样式 */
         .dropdown {
             position: absolute;
             top: 100%;
-            left: 0px; /* 进一步向左调整位置 */
-            width: 150px;
-            background: #fff6d8;
-            backdrop-filter: blur(10px);
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+            width: auto;
+            min-width: 120px;
+            background: rgba(248, 244, 233, 0.95);
             border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 0.5rem 0;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            padding: 0.8rem 0;
             opacity: 0;
             visibility: hidden;
-            transform: translateY(10px);
             transition: all 0.3s ease;
-            z-index: 1000;
+            z-index: 999;
+            margin-top: 0.6rem;
+            white-space: nowrap;
         }
 
         .nav-item:hover .dropdown {
             opacity: 1;
             visibility: visible;
-            transform: translateY(0);
+            transform: translateX(-50%) translateY(0);
         }
 
         .dropdown-link {
             display: block;
-            padding: 0.6rem 1.5rem;
-            color: #555;
+            padding: 0.8rem 1.5rem;
+            color: #28b17f; /* 初始颜色改为 #28b17f */
             text-decoration: none;
-            transition: all 0.2s ease;
-            font-size:1rem;
-            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            font-weight: 400;
             font-family: 'Arial', sans-serif;
             text-align: center;
+            line-height: 1.2;
         }
 
         .dropdown-link:hover {
-            background: rgba(74, 124, 81, 0.1);
-            color: #4A7C51;
-            padding-left: 1.8rem;
+            color: #0e391d; /* 悬停时变为 #0e391d */
+            background: rgba(248, 244, 233, 0.95); /* 移除绿色背景，保持原背景 */
+            padding-left: 0.8rem; /* 恢复原始padding */
+            padding-right: 1.5rem; /* 恢复原始padding */
         }
 
-        .dropdown-link i {
-            margin-right: 0.5rem;
-            width: 15px;
-            text-align: center;
+        /* 移动端响应式样式 */
+        .button--nav {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: #0e391d;
+            font-size: 1.5rem;
         }
+
+        @media screen and (max-width: 640px) {
+            .navbar {
+                display: flex;
+                flex-direction: column;
+                padding: 0.5rem 0;
+            }
+    
+        .button--nav {
+            display: inline-block;
+            box-shadow: none !important;
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+        }
+    
+        .nav-logo {
+            padding-left: 2rem;
+            align-self: flex-start;
+        }
+    
+        .nav-logo img {
+            height: 80px;
+        }
+    
+        .nav-links-container {
+            width: 100%;
+            max-width: 100%;
+            display: none;
+            padding-right: 0;
+            margin-left: 0; /* 移动端恢复正常位置 */
+        }
+    
+        .nav-links-container.active {
+            display: flex;
+        }
+    
+        .nav-links {
+            flex-direction: column;
+            width: 100%;
+            gap: 0;
+            padding: 1rem 0;
+        }
+    
+        .nav-item {
+            width: 100%;
+            text-align: center;
+            padding: 0.8rem 0;
+        }
+    
+        .nav-link {
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+    
+        .dropdown {
+            position: static;
+            width: 90%;
+            margin: 0.5rem auto;
+            transform: none;
+            opacity: 1;
+            visibility: visible;
+            display: none;
+            background: rgba(248, 244, 233, 0.8);
+        }
+    
+        .nav-item:hover .dropdown,
+        .nav-item.active .dropdown {
+            display: block;
+        }
+    
+        .dropdown-link {
+            text-align: center;
+            padding: 0.7rem 1rem;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+    }
+
+    @media screen and (min-width: 640px) {
+        .button--nav {
+            display: none;
+        }
+    }
 
         /* 滚动指示器 */
         .scroll-indicator {
@@ -1245,7 +1343,7 @@
     <nav class="navbar">
         <div class="nav-logo" id="navLogo">
             <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="iGEM HUST-China">
-            <div class="nav-logo-text">SQUOILENE</div>
+            <div class="nav-logo-text"></div>
         </div>
         <div class="nav-links-container">
             <div class="nav-links">
