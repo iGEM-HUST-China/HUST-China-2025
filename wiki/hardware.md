@@ -7,62 +7,6 @@ excerpt: ""
 
 
 
-images20:
-  - src:  https://static.igem.wiki/teams/5569/hardware/h19.webp
-    alt: Figure 3.4.1 Fan-shaped stirring rod
-    caption: Figure 3.4.1 Fan-shaped stirring rod
-  - src: https://static.igem.wiki/teams/5569/hardware/h18.webp
-    alt:  Figure 3.4.2 Spiral stirring rod
-    caption:  Figure 3.4.2 Spiral stirring rod
-
-
-
-images21:
-  - src:  https://static.igem.wiki/teams/5569/hardware/h25.webp
-    alt: Figure 3.4.3 Multi-hole Fluid Switch	  
-    caption: Figure 3.4.3 Multi-hole Fluid Switch	  
-  - src: https://static.igem.wiki/teams/5569/hardware/h27.webp
-    alt:   Figure 3.4.4 Flow Control Valve
-    caption:  Figure 3.4.4 Flow Control Valve 
-
-
-images22:
-  - src:  https://static.igem.wiki/teams/5569/hardware/h47.webp
-    alt: Figure 3.4.5 Seven-tooth gear 	  
-    caption: Figure 3.4.5 Seven-tooth gear 	  
-  - src: https://static.igem.wiki/teams/5569/hardware/h48.webp
-    alt:   Figure 3.4.6 Speed adjustment gear set
-    caption:  FiFigure 3.4.6 Speed adjustment gear set 
-
-images23:
-  - src: https://static.igem.wiki/teams/5569/hardware/h29.webp
-    alt: Figure 3.4.7 Disc Aeration Unit
-    caption: Figure 3.4.7 Disc Aeration Unit
-  - src: https://static.igem.wiki/teams/5569/hardware/h31.webp
-    alt: Figure 3.4.8 Long Tube Aeration Unit Figure 
-    caption: Figure 3.4.8 Long Tube Aeration Unit Figure 
-  - src: https://static.igem.wiki/teams/5569/hardware/h28.webp
-    alt: 3.4.9 Fishbone Aeration Unit
-    caption: 3.4.9 Fishbone Aeration Unit
-
-images24:
-  - src:  https://static.igem.wiki/teams/5569/hardware/h15.webp
-    alt: Figure 3.4.10 200ml Fermentation Vessel	  
-    caption: Figure 3.4.10 200ml Fermentation Vessel	  
-  - src:  https://static.igem.wiki/teams/5569/hardware/h14.webp
-    alt:   Figure 3.4.11 Baffled Fermentation Vessel
-    caption:  Figure 3.4.11 Baffled Fermentation Vessel
-
-images25:
-  - src:  https://static.igem.wiki/teams/5569/hardware/open-by-shunzhuan-soconvert.webp
-    alt: Turn clockwise to open the flow switch	  
-    caption: Turn clockwise to open the flow switch	  
-  - src:  https://static.igem.wiki/teams/5569/hardware/h14.webp
-    alt:   Figure 3.4.11 Baffled Fermentation Vessel
-    caption:  Figure 3.4.11 Baffled Fermentation Vessel
-
-
-
 ---
 
 ## Overview
@@ -274,9 +218,9 @@ During fermentation, stirring rods are commonly used within fermentation tanks t
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh6.webp" caption="Figure 3.4.1 Agitator Module" %}
 
-Figure 3.4.1 shows a fan-blade agitator designed for vigorous liquid agitation. Its curved profile reduces resistance during mixing, making it suitable for environments requiring large-scale culture medium agitation.
+Figure 3.4.1(a) shows a fan-blade agitator designed for vigorous liquid agitation. Its curved profile reduces resistance during mixing, making it suitable for environments requiring large-scale culture medium agitation.
 
-Figure 3.4.2 shows a spiral-rising agitator that uniformly mixes microbial cultures with nutrients. Its thin blades easily divide the liquid, making it suitable for high-viscosity culture media.
+Figure 3.4.1(b) shows a spiral-rising agitator that uniformly mixes microbial cultures with nutrients. Its thin blades easily divide the liquid, making it suitable for high-viscosity culture media.
 
 {% include figure2.html images=page.images20 %}
 
