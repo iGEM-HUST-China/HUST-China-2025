@@ -293,7 +293,7 @@ During fermentation, scenarios often arise where controlling the flow rate or vo
 
 During cell centrifugation, the required rotational speed is influenced by cell size. To facilitate switching the centrifuge's rotational speed, we designed a speed adjustment module.
 
-Figure 3.4.5 shows a 7-tooth gear connected to the drive shaft. Figure 3.4.6 depicts a gear set designed for speed adjustment, featuring 14, 21, and 28 teeth respectively. These gears amplify the motor speed by 2x, 1.34x, and 1x, allowing speed switching through height adjustment for quick and convenient operation.
+Figure 3.4.5 shows a 7-tooth gear connected to the drive shaft. Figure 3.4.6 depicts a gear set designed for speed adjustment, featuring 14, 21, and 28 teeth respectively. These gears amplify the motor speed by 2x, 3x, and 4x, allowing speed switching through height adjustment for quick and convenient operation.
 
 {% include figure2.html images=page.images22 %}
 
