@@ -249,7 +249,6 @@ Figure 3.4.8 depicts another aeration unit connected to a long gas transport pip
 
 Figure 3.4.9 depicts an aeration line that can be laid along the tank bottom. It disperses bubbles in a fishbone pattern. As the bubbles rise, they agitate the liquid and dissolve, featuring a simple structure suitable for tubular fermenters.
 
-{% include figure3.html images=page.images23 %}
 ### Fermentation Modules
 
 To accommodate diverse fermentation requirements and conditions, we have concurrently designed several variants of fermentation apparatus.
