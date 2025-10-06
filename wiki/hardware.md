@@ -118,18 +118,18 @@ Our hardware team has consistently focused on addressing practical challenges en
 
 - The maximum speed of the purchased brushless motor under load, measured by an infrared sensor, is 840 rpm. Through a 1:3 speed reduction gear set, the speed can reach 2520 rpm. At this speed, centrifugation requires only about 3 minutes, maximizing economic efficiency.
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h38.webp" caption="Figure 3.2.5 Contour Plot of Absorbance" %}
-**Mode Switching Module:**
+- **Mode Switching Module:**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh2.webp" caption="Figure 3.2.6 Schematic of the Mode Switching Module" %}
+- {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh2.webp" caption="Figure 3.2.6 Schematic of the Mode Switching Module" %}
 
-We designed the equipment based on the commonly used glass bead shaking method in laboratories to disrupt cells and extract intracellular squalene. To save space, we developed a mode switching module to integrate both shaking and centrifugation functions. The core design features a mode switching bearing (animation shown).
+- We designed the equipment based on the commonly used glass bead shaking method in laboratories to disrupt cells and extract intracellular squalene. To save space, we developed a mode switching module to integrate both shaking and centrifugation functions. The core design features a mode switching bearing (animation shown).
 
 - **Centrifugation Mode (Motor Forward Rotation):** When the motor rotates forward, the limit device locks the switching bearing, aligning it concentrically with the main shaft. This drives the entire rotor assembly to high-speed rotation, generating strong centrifugal force that precipitates microbial cells to the bottom of the centrifuge tube**.**
 - **Shaking Mode (Motor Reverse Rotation):** When the motor reverses, the switching bearing unlocks. Under mechanical force, it undergoes radial translation, creating an eccentric displacement. The motor then rotates, driving the centrifuge tube to perform high-speed eccentric shaking.
 
-Motion Decoupling Mechanism---"One-Way Bearing": To prevent centrifuge tubes from self-rotating during oscillation, we incorporated a one-way bearing between the tube holder and the rotating shaft. This achieves pure oscillation-based disruption.
+- **Motion Decoupling Mechanism---"One-Way Bearing":** To prevent centrifuge tubes from self-rotating during oscillation, we incorporated a one-way bearing between the tube holder and the rotating shaft. This achieves pure oscillation-based disruption.
 
-To resolve the issue of repeatedly transferring liquid and balancing the centrifuge, we designed a communicating centrifuge tube based on the communicating vessel principle. A matching liquid connection switch was also developed to prevent circulation while facilitating easy liquid release and collection.
+- To resolve the issue of repeatedly transferring liquid and balancing the centrifuge, we designed a communicating centrifuge tube based on the communicating vessel principle. A matching liquid connection switch was also developed to prevent circulation while facilitating easy liquid release and collection.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h45.webp" caption="Figure 3.2.7 CommunicatingCentrifuge Tube Kit" %}
 
