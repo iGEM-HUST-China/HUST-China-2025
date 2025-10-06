@@ -108,11 +108,7 @@ Our hardware team has consistently focused on addressing practical challenges en
 
 - The two influencing factors are rotational speed (1000 rpm--5000 rpm) and time (1min--5 min). The response variable is absorbance (A), measured at 500 nm wavelength using a spectrophotometer. The blank control group consists of pre-centrifugation solution, while the sample group comprises supernatant collected after each centrifugation run.
 
-<center>
-  $$
-    *A* = *ε* • *c* • *l*
-  $$
-</center>
+
 
 - According to the spectrophotometric formula:
 
