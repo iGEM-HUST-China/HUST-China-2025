@@ -932,7 +932,7 @@
             min-height: 100vh;
             background: var(--light-cream);
             position: relative;
-            padding: 4rem 0;
+            padding: 4rem 0 0;
             display: none; /* 初始隐藏 */
         }
 
@@ -1101,7 +1101,7 @@
         /* 页脚样式 */
         .footer-container {
             width: 100%;
-            margin-top: auto;
+            margin-top: 0;
             display: none; /* 初始隐藏 */
         }
         
@@ -1465,7 +1465,7 @@
                     <p class="section-text text-line">The global squalene market is expanding at <span class="highlight"><span class="number-counter" data-target="7.5">0</span>% annually</span>.</p>
                     <p class="section-text text-line">Driven by rising demand for natural skincare products and premium cosmetics.</p>
                     <div class="image-container">
-                        <img src="https://static.igem.wiki/teams/5569/description/jiaoshaxishuju.webp" alt="Market" class="section-image image-animated">
+                        <img src="https://static.igem.wiki/teams/5569/description/jiaoshaxinumber.webp" alt="Market" class="section-image image-animated">
                     </div>
                 </div>
             </div>
@@ -1724,569 +1724,687 @@
             
             // 如果动图加载失败，直接显示页面
             loadingGif.addEventListener('error', function() {
-                document.body.classList.add('loaded');
-                setTimeout(function() {
-                    loadingAnimation.remove();
-                }, 500);
-            });
-            
-            // 安全措施：如果4秒后动图仍未加载，强制显示页面
-            setTimeout(function() {
-                if (!document.body.classList.contains('loaded')) {
                     document.body.classList.add('loaded');
                     setTimeout(function() {
                         loadingAnimation.remove();
                     }, 500);
-                }
-            }, 3800);
-            
-            // 原有JavaScript代码保持不变...
-            const container = document.querySelector('.scroll-container');
-            const sections = document.querySelectorAll('.vertical-section, .horizontal-scroll-section');
-            const indicators = document.querySelectorAll('.indicator-dot');
-            const textLines = document.querySelectorAll('.text-line');
-            const images = document.querySelectorAll('.image-animated');
-            const mosaicItems = document.querySelectorAll('.mosaic-item');
-            const navBoxes = document.querySelectorAll('[data-target]');
-            const navbar = document.querySelector('.navbar');
-            const navLogo = document.querySelector('#navLogo');
-            const customCursor = document.querySelector('.custom-cursor');
-            const horizontalSection = document.querySelector('.horizontal-scroll-section');
-            const horizontalPages = document.querySelector('.horizontal-pages');
-            const backToTop = document.getElementById('backToTop');
-            const numberCounters = document.querySelectorAll('.number-counter');
-            const alternatingLayouts = document.querySelectorAll('.alternating-layout');
-            const navImageItems = document.querySelectorAll('.nav-image-item');
-            const longScrollSection = document.getElementById('details');
-            const footerContainer = document.getElementById('footerContainer');
-            const faceImage = document.getElementById('faceImage');
-            const imageSwitcher = document.querySelector('.image-switcher');
-            const imageExtension = document.querySelector('.image-extension');
-            
-            let currentSection = 0;
-            let currentHorizontalPage = 0;
-            let isScrolling = false;
-            let isHorizontalScrolling = false;
-            const scrollCooldown = 800;
-            let lastScrollY = window.scrollY;
-            let lastScrollTime = 0;
-            let isInLongScroll = false;
-            let isInFooter = false;
-            
-            // 旋转相关变量
-            let rotationAngle = 0;
-            let rotationSpeed = 0;
-            let isRotating = false;
-            let rotationAnimationId = null;
-
-            // 图片切换状态
-            let isFaceImage1 = true;
-            const faceImage1 = 'https://static.igem.wiki/teams/5569/description/face11.webp';
-            const faceImage2 = 'https://static.igem.wiki/teams/5569/description/face2.webp';
-
-            // 新增打字机效果
-            const typewriterText = document.getElementById('typewriter-text');
-            const texts = [
-                "Sustainable squalene production from waste oil",
-                "40% lower production costs",
-                "Environmentally friendly process",
-                "High purity product"
-            ];
-            let textIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
-            let typingSpeed = 100;
-            
-            function typeWriter() {
-                const currentText = texts[textIndex];
+                });
                 
-                if (isDeleting) {
-                    // 删除文字
-                    typewriterText.textContent = currentText.substring(0, charIndex - 1);
-                    charIndex--;
-                    typingSpeed = 50;
-                } else {
-                    // 输入文字
-                    typewriterText.textContent = currentText.substring(0, charIndex + 1);
-                    charIndex++;
-                    typingSpeed = 100;
-                }
-                
-                // 判断是否完成当前文本
-                if (!isDeleting && charIndex === currentText.length) {
-                    // 暂停一下再开始删除
-                    typingSpeed = 1500;
-                    isDeleting = true;
-                } else if (isDeleting && charIndex === 0) {
-                    // 切换到下一个文本
-                    isDeleting = false;
-                    textIndex = (textIndex + 1) % texts.length;
-                    typingSpeed = 500;
-                }
-                
-                setTimeout(typeWriter, typingSpeed);
-            }
-            
-            // 启动打字机效果
-            setTimeout(typeWriter, 1000);
-
-            // 图片切换功能 - 点击后显示延伸线和扩展图片
-            let isExtensionVisible = false;
-            
-            imageSwitcher.addEventListener('click', function() {
-                // 切换图片
-                if (isFaceImage1) {
-                    faceImage.src = faceImage2;
-                    isFaceImage1 = false;
-                } else {
-                    faceImage.src = faceImage1;
-                    isFaceImage1 = true;
-                }
-                
-                // 切换延伸线和扩展图片的显示状态
-                isExtensionVisible = !isExtensionVisible;
-                if (isExtensionVisible) {
-                    imageSwitcher.classList.add('active');
-                } else {
-                    imageSwitcher.classList.remove('active');
-                }
-            });
-
-            // 导航栏Logo点击跳转
-            navLogo.addEventListener('click', function() {
-                window.location.href = 'index.html';
-            });
-
-            // 回到顶部按钮点击事件
-            backToTop.addEventListener('click', function() {
-                currentSection = 0;
-                isInLongScroll = false;
-                isInFooter = false;
-                longScrollSection.classList.remove('active');
-                footerContainer.classList.remove('active');
-                scrollToSection(currentSection);
-            });
-
-            // 数字计数器函数 - 加快速度
-            function animateNumberCounter(counter, target, duration = 800) {
-                let start = 0;
-                const increment = target / (duration / 16); // 16ms per frame
-                
-                function updateCounter() {
-                    start += increment;
-                    if (start < target) {
-                        // 格式化大数字，添加逗号分隔符
-                        counter.textContent = Math.floor(start).toLocaleString();
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target.toLocaleString();
+                // 安全措施：如果4秒后动图仍未加载，强制显示页面
+                setTimeout(function() {
+                    if (!document.body.classList.contains('loaded')) {
+                        document.body.classList.add('loaded');
+                        setTimeout(function() {
+                            loadingAnimation.remove();
+                        }, 500);
                     }
+                }, 3800);
+                
+                // 获取DOM元素
+                const container = document.querySelector('.scroll-container');
+                const sections = document.querySelectorAll('.vertical-section, .horizontal-scroll-section');
+                const indicators = document.querySelectorAll('.indicator-dot');
+                const textLines = document.querySelectorAll('.text-line');
+                const images = document.querySelectorAll('.image-animated');
+                const mosaicItems = document.querySelectorAll('.mosaic-item');
+                const navBoxes = document.querySelectorAll('[data-target]');
+                const navbar = document.querySelector('.navbar');
+                const navLogo = document.querySelector('#navLogo');
+                const customCursor = document.querySelector('.custom-cursor');
+                const horizontalSection = document.querySelector('.horizontal-scroll-section');
+                const horizontalPages = document.querySelector('.horizontal-pages');
+                const backToTop = document.getElementById('backToTop');
+                const numberCounters = document.querySelectorAll('.number-counter');
+                const alternatingLayouts = document.querySelectorAll('.alternating-layout');
+                const navImageItems = document.querySelectorAll('.nav-image-item');
+                const longScrollSection = document.getElementById('details');
+                const footerContainer = document.getElementById('footerContainer');
+                const faceImage = document.getElementById('faceImage');
+                const imageSwitcher = document.querySelector('.image-switcher');
+                const imageExtension = document.querySelector('.image-extension');
+                
+                let currentSection = 0;
+                let currentHorizontalPage = 0;
+                let isScrolling = false;
+                let isHorizontalScrolling = false;
+                const scrollCooldown = 800;
+                let lastScrollY = window.scrollY;
+                let lastScrollTime = 0;
+                let isInLongScroll = false;
+                let isInFooter = false;
+                
+                // 滚动相关变量
+                let scrollTimeout;
+                
+                // 触摸相关变量
+                let touchStartY = 0;
+                let touchEndY = 0;
+                let touchStartX = 0;
+                let touchEndX = 0;
+                
+                // 旋转相关变量
+                let rotationAngle = 0;
+                let rotationSpeed = 0;
+                let isRotating = false;
+                let rotationAnimationId = null;
+    
+                // 图片切换状态
+                let isFaceImage1 = true;
+                const faceImage1 = 'https://static.igem.wiki/teams/5569/description/face11.webp';
+                const faceImage2 = 'https://static.igem.wiki/teams/5569/description/face2.webp';
+    
+                // 新增打字机效果
+                const typewriterText = document.getElementById('typewriter-text');
+                const texts = [
+                    "Sustainable squalene production from waste oil",
+                    "40% lower production costs",
+                    "Environmentally friendly process",
+                    "High purity product"
+                ];
+                let textIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+                let typingSpeed = 100;
+                
+                function typeWriter() {
+                    const currentText = texts[textIndex];
+                    
+                    if (isDeleting) {
+                        // 删除文字
+                        typewriterText.textContent = currentText.substring(0, charIndex - 1);
+                        charIndex--;
+                        typingSpeed = 50;
+                    } else {
+                        // 输入文字
+                        typewriterText.textContent = currentText.substring(0, charIndex + 1);
+                        charIndex++;
+                        typingSpeed = 100;
+                    }
+                    
+                    // 判断是否完成当前文本
+                    if (!isDeleting && charIndex === currentText.length) {
+                        // 暂停一下再开始删除
+                        typingSpeed = 1500;
+                        isDeleting = true;
+                    } else if (isDeleting && charIndex === 0) {
+                        // 切换到下一个文本
+                        isDeleting = false;
+                        textIndex = (textIndex + 1) % texts.length;
+                        typingSpeed = 500;
+                    }
+                    
+                    setTimeout(typeWriter, typingSpeed);
                 }
                 
-                updateCounter();
-            }
-
-            // 自定义鼠标指针移动
-            document.addEventListener('mousemove', function(e) {
-                customCursor.style.left = e.clientX + 'px';
-                customCursor.style.top = e.clientY + 'px';
-                customCursor.classList.add('cursor-visible');
-            });
-
-            // 鼠标离开窗口事件
-            document.addEventListener('mouseleave', () => {
-                customCursor.classList.remove('cursor-visible');
-            });
-
-            // 鼠标进入窗口事件
-            document.addEventListener('mouseenter', () => {
-                customCursor.classList.add('cursor-visible');
-            });
-
-            // 为可交互元素添加悬停效果
-            const interactiveElements = document.querySelectorAll('a, button, .indicator-dot, [data-target], .back-to-top, .nav-image-item, .image-switcher');
-
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', () => {
-                    customCursor.classList.add('hover');
+                // 启动打字机效果
+                setTimeout(typeWriter, 1000);
+    
+                // 图片切换功能 - 点击后显示延伸线和扩展图片
+                let isExtensionVisible = false;
+                
+                imageSwitcher.addEventListener('click', function() {
+                    // 切换图片
+                    if (isFaceImage1) {
+                        faceImage.src = faceImage2;
+                        isFaceImage1 = false;
+                    } else {
+                        faceImage.src = faceImage1;
+                        isFaceImage1 = true;
+                    }
+                    
+                    // 切换延伸线和扩展图片的显示状态
+                    isExtensionVisible = !isExtensionVisible;
+                    if (isExtensionVisible) {
+                        imageSwitcher.classList.add('active');
+                    } else {
+                        imageSwitcher.classList.remove('active');
+                    }
                 });
-                
-                element.addEventListener('mouseleave', () => {
-                    customCursor.classList.remove('hover');
+    
+                // 导航栏Logo点击跳转
+                navLogo.addEventListener('click', function() {
+                    window.location.href = 'index.html';
                 });
-            });
-
-            // 点击时的效果
-            document.addEventListener('mousedown', () => {
-                customCursor.style.transform = 'scale(0.8)';
-            });
-
-            document.addEventListener('mouseup', () => {
-                customCursor.style.transform = 'scale(1)';
-            });
-
-            // 导航栏滚动效果 - 修复：始终显示导航栏
-            function handleNavbarScroll() {
-                const currentScrollY = window.scrollY;
-                
-                // 移除隐藏导航栏的逻辑，使其始终显示
-                // if (currentScrollY > lastScrollY && currentScrollY > 100) {
-                //     // 向下滚动，隐藏导航栏
-                //     navbar.classList.add('hidden');
-                // } else {
-                //     // 向上滚动，显示导航栏
-                //     navbar.classList.remove('hidden');
-                // }
-                
-                if (currentScrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-                
-                // 控制回到顶部按钮显示
-                if (currentScrollY > 500) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
-                
-                lastScrollY = currentScrollY;
-            }
-
-            // 旋转动画函数
-            function startRotation() {
-                function rotate() {
-                    rotationAngle += rotationSpeed;
-                    navLogo.querySelector('img').style.transform = `rotate(${rotationAngle}deg)`;
-                    rotationAnimationId = requestAnimationFrame(rotate);
-                }
-                rotate();
-            }
-            
-            // 停止旋转函数
-            function stopRotation() {
-                isRotating = false;
-                if (rotationAnimationId) {
-                    cancelAnimationFrame(rotationAnimationId);
-                    rotationAnimationId = null;
-                }
-                
-                // 平滑减速效果
-                function gradualStop() {
-                    if (rotationSpeed > 0) {
-                        rotationSpeed *= 0.9; // 减速因子
-                        rotationAngle += rotationSpeed;
-                        navLogo.querySelector('img').style.transform = `rotate(${rotationAngle}deg)`;
-                        
-                        if (rotationSpeed > 0.1) {
-                            requestAnimationFrame(gradualStop);
+    
+                // 回到顶部按钮点击事件
+                backToTop.addEventListener('click', function() {
+                    currentSection = 0;
+                    isInLongScroll = false;
+                    isInFooter = false;
+                    longScrollSection.classList.remove('active');
+                    footerContainer.classList.remove('active');
+                    scrollToSection(currentSection);
+                });
+    
+                // 数字计数器函数 - 加快速度
+                function animateNumberCounter(counter, target, duration = 800) {
+                    let start = 0;
+                    const increment = target / (duration / 16); // 16ms per frame
+                    
+                    function updateCounter() {
+                        start += increment;
+                        if (start < target) {
+                            // 格式化大数字，添加逗号分隔符
+                            counter.textContent = Math.floor(start).toLocaleString();
+                            requestAnimationFrame(updateCounter);
                         } else {
-                            rotationSpeed = 0;
+                            counter.textContent = target.toLocaleString();
                         }
                     }
-                }
-                
-                gradualStop();
-            }
-
-            // 初始化
-            updateActiveSection();
-            animateCurrentSection();
-            window.addEventListener('scroll', handleNavbarScroll);
-            window.addEventListener('scroll', handleScrollAnimations);
-
-            // 滚动动画处理
-            function handleScrollAnimations() {
-                if (!isInLongScroll && !isInFooter) return;
-                
-                const scrollPosition = window.scrollY + window.innerHeight;
-                
-                alternatingLayouts.forEach(layout => {
-                    const elementTop = layout.getBoundingClientRect().top + window.scrollY;
                     
-                    if (scrollPosition > elementTop + 100) {
-                        layout.classList.add('visible');
-                    }
+                    updateCounter();
+                }
+    
+                // 自定义鼠标指针移动
+                document.addEventListener('mousemove', function(e) {
+                    customCursor.style.left = e.clientX + 'px';
+                    customCursor.style.top = e.clientY + 'px';
+                    customCursor.classList.add('cursor-visible');
                 });
-            }
-
-            // 鼠标滚轮事件 - 修复所有滚动问题
-            document.addEventListener('wheel', function(e) {
-                if (isScrolling) return;
-                
-                const now = Date.now();
-                if (now - lastScrollTime < scrollCooldown) return;
-                lastScrollTime = now;
-                
-                // 计算旋转速度（基于滚轮速度）
-                const delta = Math.abs(e.deltaY);
-                rotationSpeed = Math.min(delta * 0.5, 30); // 限制最大速度
-                
-                // 开始旋转
-                if (!isRotating) {
-                    isRotating = true;
-                    startRotation();
-                }
-                
-                // 重置旋转停止计时器
-                clearTimeout(window.rotationStopTimer);
-                window.rotationStopTimer = setTimeout(stopRotation, 200);
-
-                // 如果在页脚中
-                if (isInFooter) {
-                    // 向上滚动时返回长页滚动
-                    if (e.deltaY < 0) {
-                        isInFooter = false;
-                        footerContainer.classList.remove('active');
-                        longScrollSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'end'
-                        });
-                    }
-                    return;
-                }
-
-                // 如果在长页滚动中
-                if (isInLongScroll) {
-                    // 检查是否滚动到顶部
-                    const longScrollTop = longScrollSection.offsetTop;
-                    const currentPosition = window.scrollY;
+    
+                // 鼠标离开窗口事件
+                document.addEventListener('mouseleave', () => {
+                    customCursor.classList.remove('cursor-visible');
+                });
+    
+                // 鼠标进入窗口事件
+                document.addEventListener('mouseenter', () => {
+                    customCursor.classList.add('cursor-visible');
+                });
+    
+                // 为可交互元素添加悬停效果
+                const interactiveElements = document.querySelectorAll('a, button, .indicator-dot, [data-target], .back-to-top, .nav-image-item, .image-switcher');
+    
+                interactiveElements.forEach(element => {
+                    element.addEventListener('mouseenter', () => {
+                        customCursor.classList.add('hover');
+                    });
                     
-                    if (e.deltaY < 0 && currentPosition <= longScrollTop + 50) {
-                        // 滚动到顶部，返回竖屏滚动
-                        isInLongScroll = false;
-                        longScrollSection.classList.remove('active');
-                        currentSection = 7; // 返回到Navigation部分
-                        scrollToSection(currentSection);
-                    } else if (e.deltaY > 0) {
-                        // 检查是否滚动到底部
-                        const longScrollBottom = longScrollSection.offsetTop + longScrollSection.offsetHeight;
-                        const currentPosition = window.scrollY + window.innerHeight;
+                    element.addEventListener('mouseleave', () => {
+                        customCursor.classList.remove('hover');
+                    });
+                });
+    
+                // 点击时的效果
+                document.addEventListener('mousedown', () => {
+                    customCursor.style.transform = 'scale(0.8)';
+                });
+    
+                document.addEventListener('mouseup', () => {
+                    customCursor.style.transform = 'scale(1)';
+                });
+    
+                // 导航栏滚动效果 - 修复：始终显示导航栏
+                function handleNavbarScroll() {
+                    const currentScrollY = window.scrollY;
+                    
+                    if (currentScrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                    
+                    // 控制回到顶部按钮显示
+                    if (currentScrollY > 500) {
+                        backToTop.classList.add('visible');
+                    } else {
+                        backToTop.classList.remove('visible');
+                    }
+                    
+                    lastScrollY = currentScrollY;
+                }
+    
+                // 旋转动画函数
+                function startRotation() {
+                    function rotate() {
+                        rotationAngle += rotationSpeed;
+                        navLogo.querySelector('img').style.transform = `rotate(${rotationAngle}deg)`;
+                        rotationAnimationId = requestAnimationFrame(rotate);
+                    }
+                    rotate();
+                }
+                
+                // 停止旋转函数
+                function stopRotation() {
+                    isRotating = false;
+                    if (rotationAnimationId) {
+                        cancelAnimationFrame(rotationAnimationId);
+                        rotationAnimationId = null;
+                    }
+                    
+                    // 平滑减速效果
+                    function gradualStop() {
+                        if (rotationSpeed > 0) {
+                            rotationSpeed *= 0.9; // 减速因子
+                            rotationAngle += rotationSpeed;
+                            navLogo.querySelector('img').style.transform = `rotate(${rotationAngle}deg)`;
+                            
+                            if (rotationSpeed > 0.1) {
+                                requestAnimationFrame(gradualStop);
+                            } else {
+                                rotationSpeed = 0;
+                            }
+                        }
+                    }
+                    
+                    gradualStop();
+                }
+    
+                // 初始化
+                updateActiveSection();
+                animateCurrentSection();
+                window.addEventListener('scroll', handleNavbarScroll);
+                window.addEventListener('scroll', handleScrollAnimations);
+    
+                // 滚动动画处理
+                function handleScrollAnimations() {
+                    if (!isInLongScroll && !isInFooter) return;
+                    
+                    const scrollPosition = window.scrollY + window.innerHeight;
+                    
+                    alternatingLayouts.forEach(layout => {
+                        const elementTop = layout.getBoundingClientRect().top + window.scrollY;
                         
-                        if (currentPosition >= longScrollBottom - 50) {
-                            // 滚动到底部，显示页脚
-                            isInFooter = true;
-                            footerContainer.classList.add('active');
-                            footerContainer.scrollIntoView({
+                        if (scrollPosition > elementTop + 100) {
+                            layout.classList.add('visible');
+                        }
+                    });
+                }
+    
+                // 使用更通用的滚动检测
+                window.addEventListener('scroll', function() {
+                    // 设置滚动状态
+                    isScrolling = true;
+                    
+                    // 清除之前的计时器
+                    clearTimeout(scrollTimeout);
+                    
+                    // 设置新的计时器
+                    scrollTimeout = setTimeout(function() {
+                        isScrolling = false;
+                    }, 150);
+                    
+                    // 执行滚动处理
+                    handleScroll();
+                }, { passive: true });
+    
+                // 触摸事件支持（移动端）
+                document.addEventListener('touchstart', function(e) {
+                    touchStartY = e.changedTouches[0].screenY;
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+    
+                document.addEventListener('touchend', function(e) {
+                    touchEndY = e.changedTouches[0].screenY;
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleTouchScroll();
+                }, { passive: true });
+    
+                // 处理触摸滚动
+                function handleTouchScroll() {
+                    if (isScrolling) return;
+                    
+                    const touchDiffY = touchStartY - touchEndY;
+                    const touchDiffX = touchStartX - touchEndX;
+                    const minSwipeDistance = 50; // 最小滑动距离
+                    
+                    // 如果是水平滚动（横屏部分）
+                    if (currentSection === 4 && Math.abs(touchDiffX) > Math.abs(touchDiffY) && Math.abs(touchDiffX) > minSwipeDistance) {
+                        if (touchDiffX > 0 && currentHorizontalPage < 2) {
+                            // 向左滑动 - 下一页
+                            currentHorizontalPage++;
+                            scrollToHorizontalPage(currentHorizontalPage);
+                        } else if (touchDiffX < 0 && currentHorizontalPage > 0) {
+                            // 向右滑动 - 上一页
+                            currentHorizontalPage--;
+                            scrollToHorizontalPage(currentHorizontalPage);
+                        }
+                        return;
+                    }
+                    
+                    // 垂直滚动
+                    if (Math.abs(touchDiffY) < minSwipeDistance) return;
+                    
+                    if (touchDiffY > 0) {
+                        // 向下滑动 - 下一页
+                        if (currentSection < sections.length - 1) {
+                            currentSection++;
+                            scrollToSection(currentSection);
+                        } else if (currentSection === sections.length - 1 && !isInLongScroll) {
+                            // 进入长页滚动
+                            isInLongScroll = true;
+                            longScrollSection.classList.add('active');
+                            longScrollSection.scrollIntoView({
                                 behavior: 'smooth',
                                 block: 'start'
                             });
                         }
-                    }
-                    return;
-                }
-
-                // 横屏滚动部分
-                if (currentSection === 4) { // Sources section (horizontal)
-                    if (!isHorizontalScrolling) {
-                        if (e.deltaY > 0 && currentHorizontalPage < 2) {
-                            // 向右滚动
-                            currentHorizontalPage++;
-                            scrollToHorizontalPage(currentHorizontalPage);
-                        } else if (e.deltaY < 0 && currentHorizontalPage > 0) {
-                            // 向左滚动
-                            currentHorizontalPage--;
-                            scrollToHorizontalPage(currentHorizontalPage);
-                        } else if (e.deltaY > 0 && currentHorizontalPage === 2) {
-                            // 滚动到下一节
-                            currentSection++;
-                            scrollToSection(currentSection);
-                        } else if (e.deltaY < 0 && currentHorizontalPage === 0) {
-                            // 滚动到上一节
+                    } else {
+                        // 向上滑动 - 上一页
+                        if (currentSection > 0) {
                             currentSection--;
+                            scrollToSection(currentSection);
+                        } else if (isInLongScroll && window.scrollY <= longScrollSection.offsetTop + 50) {
+                            // 返回竖屏滚动
+                            isInLongScroll = false;
+                            longScrollSection.classList.remove('active');
+                            currentSection = 7; // 返回到Navigation部分
                             scrollToSection(currentSection);
                         }
                     }
-                } else {
-                    // 竖屏滚动 - 修复所有section的滚动逻辑
-                    if (e.deltaY > 0 && currentSection < sections.length - 1) {
-                        // 向下滚动到下一节
-                        currentSection++;
-                        scrollToSection(currentSection);
-                    } else if (e.deltaY < 0 && currentSection > 0) {
-                        // 向上滚动到上一节 - 这是关键修复！
-                        currentSection--;
-                        scrollToSection(currentSection);
-                    } else if (e.deltaY > 0 && currentSection === sections.length - 1) {
-                        // 到达最后一节（Navigation），进入长页滚动
-                        isInLongScroll = true;
-                        longScrollSection.classList.add('active');
-                        longScrollSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
                 }
-            });
-
-            // 导航点点击事件
-            indicators.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    const targetIndex = parseInt(dot.getAttribute('data-target'));
+    
+                // 统一滚动处理函数
+                function handleScroll() {
+                    if (isScrolling) return;
                     
-                    if (targetIndex === 8) {
-                        // 长页滚动部分
-                        isInLongScroll = true;
-                        isInFooter = false;
-                        longScrollSection.classList.add('active');
-                        footerContainer.classList.remove('active');
-                        longScrollSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    } else if (targetIndex === 9) {
-                        // 页脚部分
-                        isInFooter = true;
-                        isInLongScroll = false;
-                        footerContainer.classList.add('active');
-                        longScrollSection.classList.remove('active');
-                        footerContainer.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    } else {
-                        currentSection = targetIndex;
-                        isInLongScroll = false;
-                        isInFooter = false;
-                        longScrollSection.classList.remove('active');
-                        footerContainer.classList.remove('active');
-                        scrollToSection(currentSection);
+                    // 更新导航栏状态
+                    handleNavbarScroll();
+                    
+                    // 如果在长页滚动中，处理交替布局动画
+                    if (isInLongScroll) {
+                        handleScrollAnimations();
+                        
+                        // 检查是否滚动到页脚区域
+                        const footerTrigger = longScrollSection.offsetTop + longScrollSection.offsetHeight - window.innerHeight * 0.7;
+                        
+                        if (window.scrollY >= footerTrigger && !isInFooter) {
+                            // 平滑过渡到页脚
+                            isInFooter = true;
+                            footerContainer.classList.add('active');
+                        } else if (window.scrollY < footerTrigger && isInFooter) {
+                            // 返回长页滚动
+                            isInFooter = false;
+                            footerContainer.classList.remove('active');
+                        }
                     }
                     
-                    // 点击时也触发旋转
-                    rotationSpeed = 15; // 中等速度
+                    // 更新活动部分指示器
+                    updateActiveSection();
+                }
+    
+                // 鼠标滚轮事件 - 兼容触控板
+                document.addEventListener('wheel', function(e) {
+                    if (isScrolling) return;
+                    
+                    const now = Date.now();
+                    if (now - lastScrollTime < scrollCooldown) return;
+                    lastScrollTime = now;
+                    
+                    // 计算旋转速度（基于滚轮速度）
+                    const delta = Math.abs(e.deltaY);
+                    rotationSpeed = Math.min(delta * 0.5, 30); // 限制最大速度
+                    
+                    // 开始旋转
                     if (!isRotating) {
                         isRotating = true;
                         startRotation();
                     }
                     
-                    // 设置停止计时器
+                    // 重置旋转停止计时器
                     clearTimeout(window.rotationStopTimer);
-                    window.rotationStopTimer = setTimeout(stopRotation, 500);
-                });
-            });
-
-            // 导航盒子点击事件 - 移除alert弹窗
-            navBoxes.forEach(box => {
-                box.addEventListener('click', () => {
-                    const target = box.getAttribute('data-target');
-                    // 这里可以添加实际导航逻辑
-                    // 移除了alert弹窗
-                });
-            });
-
-            // 导航图片点击事件
-            navImageItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const target = item.getAttribute('data-target');
-                    // 根据目标导航到相应页面
-                    switch(target) {
-                        case 'design':
-                            window.location.href = 'design.html';
-                            break;
-                        case 'hardware':
-                            window.location.href = 'hardware';
-                            break;
-                        case 'human-practices':
-                            window.location.href = 'human-practices';
-                            break;
-                        case 'description':
-                            window.location.href = 'description';
-                            break;
+                    window.rotationStopTimer = setTimeout(stopRotation, 200);
+    
+                    // 如果在页脚中
+                    if (isInFooter) {
+                        // 向上滚动时返回长页滚动
+                        if (e.deltaY < 0) {
+                            isInFooter = false;
+                            footerContainer.classList.remove('active');
+                            longScrollSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'end'
+                            });
+                        }
+                        return;
+                    }
+    
+                    // 如果在长页滚动中
+                    if (isInLongScroll) {
+                        // 检查是否滚动到顶部
+                        const longScrollTop = longScrollSection.offsetTop;
+                        const currentPosition = window.scrollY;
+                        
+                        if (e.deltaY < 0 && currentPosition <= longScrollTop + 50) {
+                            // 滚动到顶部，返回竖屏滚动
+                            isInLongScroll = false;
+                            longScrollSection.classList.remove('active');
+                            currentSection = 7; // 返回到Navigation部分
+                            scrollToSection(currentSection);
+                        } else if (e.deltaY > 0) {
+                            // 检查是否滚动到底部
+                            const longScrollBottom = longScrollSection.offsetTop + longScrollSection.offsetHeight;
+                            const currentPosition = window.scrollY + window.innerHeight;
+                            
+                            if (currentPosition >= longScrollBottom - 50) {
+                                // 滚动到底部，显示页脚
+                                isInFooter = true;
+                                footerContainer.classList.add('active');
+                                footerContainer.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        }
+                        return;
+                    }
+    
+                    // 横屏滚动部分
+                    if (currentSection === 4) { // Sources section (horizontal)
+                        if (!isHorizontalScrolling) {
+                            if (e.deltaY > 0 && currentHorizontalPage < 2) {
+                                // 向右滚动
+                                currentHorizontalPage++;
+                                scrollToHorizontalPage(currentHorizontalPage);
+                            } else if (e.deltaY < 0 && currentHorizontalPage > 0) {
+                                // 向左滚动
+                                currentHorizontalPage--;
+                                scrollToHorizontalPage(currentHorizontalPage);
+                            } else if (e.deltaY > 0 && currentHorizontalPage === 2) {
+                                // 滚动到下一节
+                                currentSection++;
+                                scrollToSection(currentSection);
+                            } else if (e.deltaY < 0 && currentHorizontalPage === 0) {
+                                // 滚动到上一节
+                                currentSection--;
+                                scrollToSection(currentSection);
+                            }
+                        }
+                    } else {
+                        // 竖屏滚动 - 修复所有section的滚动逻辑
+                        if (e.deltaY > 0 && currentSection < sections.length - 1) {
+                            // 向下滚动到下一节
+                            currentSection++;
+                            scrollToSection(currentSection);
+                        } else if (e.deltaY < 0 && currentSection > 0) {
+                            // 向上滚动到上一节 - 这是关键修复！
+                            currentSection--;
+                            scrollToSection(currentSection);
+                        } else if (e.deltaY > 0 && currentSection === sections.length - 1) {
+                            // 到达最后一节（Navigation），进入长页滚动
+                            isInLongScroll = true;
+                            longScrollSection.classList.add('active');
+                            longScrollSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
                     }
                 });
+    
+                // 导航点点击事件
+                indicators.forEach(dot => {
+                    dot.addEventListener('click', () => {
+                        const targetIndex = parseInt(dot.getAttribute('data-target'));
+                        
+                        if (targetIndex === 8) {
+                            // 长页滚动部分
+                            isInLongScroll = true;
+                            isInFooter = false;
+                            longScrollSection.classList.add('active');
+                            footerContainer.classList.remove('active');
+                            longScrollSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        } else if (targetIndex === 9) {
+                            // 页脚部分
+                            isInFooter = true;
+                            isInLongScroll = false;
+                            footerContainer.classList.add('active');
+                            longScrollSection.classList.remove('active');
+                            footerContainer.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        } else {
+                            currentSection = targetIndex;
+                            isInLongScroll = false;
+                            isInFooter = false;
+                            longScrollSection.classList.remove('active');
+                            footerContainer.classList.remove('active');
+                            scrollToSection(currentSection);
+                        }
+                        
+                        // 点击时也触发旋转
+                        rotationSpeed = 15; // 中等速度
+                        if (!isRotating) {
+                            isRotating = true;
+                            startRotation();
+                        }
+                        
+                        // 设置停止计时器
+                        clearTimeout(window.rotationStopTimer);
+                        window.rotationStopTimer = setTimeout(stopRotation, 500);
+                    });
+                });
+    
+                // 导航盒子点击事件 - 移除alert弹窗
+                navBoxes.forEach(box => {
+                    box.addEventListener('click', () => {
+                        const target = box.getAttribute('data-target');
+                        // 这里可以添加实际导航逻辑
+                        // 移除了alert弹窗
+                    });
+                });
+    
+                // 导航图片点击事件
+                navImageItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        const target = item.getAttribute('data-target');
+                        // 根据目标导航到相应页面
+                        switch(target) {
+                            case 'design':
+                                window.location.href = 'design.html';
+                                break;
+                            case 'hardware':
+                                window.location.href = 'hardware';
+                                break;
+                            case 'human-practices':
+                                window.location.href = 'human-practices';
+                                break;
+                            case 'description':
+                                window.location.href = 'description';
+                                break;
+                        }
+                    });
+                });
+    
+                // 滚动到指定部分
+                function scrollToSection(index) {
+                    if (isScrolling || index < 0 || index >= sections.length) return;
+                    
+                    isScrolling = true;
+                    
+                    if (index < sections.length) {
+                        sections[index].scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+    
+                    updateActiveSection();
+                    animateCurrentSection();
+    
+                    setTimeout(() => {
+                        isScrolling = false;
+                    }, 1000);
+                }
+    
+                // 滚动到横屏页面
+                function scrollToHorizontalPage(index) {
+                    isHorizontalScrolling = true;
+                    horizontalPages.style.transform = `translateX(-${index * 100}vw)`;
+                    
+                    setTimeout(() => {
+                        isHorizontalScrolling = false;
+                    }, 800);
+                }
+    
+                // 更新活动部分
+                function updateActiveSection() {
+                    indicators.forEach(dot => dot.classList.remove('active'));
+                    
+                    if (isInFooter) {
+                        // 找到页脚对应的指示点
+                        const footerDot = document.querySelector('.indicator-dot[data-target="9"]');
+                        if (footerDot) footerDot.classList.add('active');
+                    } else if (isInLongScroll) {
+                        // 找到长页滚动对应的指示点
+                        const longScrollDot = document.querySelector('.indicator-dot[data-target="8"]');
+                        if (longScrollDot) longScrollDot.classList.add('active');
+                    } else {
+                        indicators[currentSection].classList.add('active');
+                    }
+                }
+    
+                // 动画当前部分
+                function animateCurrentSection() {
+                    const current = sections[currentSection];
+                    
+                    // 重置所有动画元素
+                    textLines.forEach(line => {
+                        line.classList.remove('visible');
+                    });
+                    images.forEach(img => {
+                        img.classList.remove('visible');
+                    });
+                    mosaicItems.forEach(item => {
+                        item.classList.remove('visible');
+                    });
+    
+                    // 延迟触发动画
+                    setTimeout(() => {
+                        const currentTextLines = current.querySelectorAll('.text-line');
+                        currentTextLines.forEach((line, index) => {
+                            setTimeout(() => {
+                                line.classList.add('visible');
+                            }, index * 400);
+                        });
+    
+                        const currentImages = current.querySelectorAll('.image-animated');
+                        currentImages.forEach((img, index) => {
+                            setTimeout(() => {
+                                img.classList.add('visible');
+                            }, index * 600);
+                        });
+    
+                        const currentMosaicItems = current.querySelectorAll('.mosaic-item');
+                        currentMosaicItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.classList.add('visible');
+                            }, index * 300);
+                        });
+    
+                        // 触发数字计数器动画
+                        const currentNumberCounters = current.querySelectorAll('.number-counter');
+                        currentNumberCounters.forEach((counter, index) => {
+                            setTimeout(() => {
+                                const target = parseFloat(counter.getAttribute('data-target'));
+                                animateNumberCounter(counter, target);
+                            }, index * 500 + 800);
+                        });
+                    }, 500);
+                }
             });
-
-            // 滚动到指定部分
-            function scrollToSection(index) {
-                isScrolling = true;
-                
-                if (index < sections.length) {
-                    sections[index].scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-
-                updateActiveSection();
-                animateCurrentSection();
-
-                setTimeout(() => {
-                    isScrolling = false;
-                }, 1000);
-            }
-
-            // 滚动到横屏页面
-            function scrollToHorizontalPage(index) {
-                isHorizontalScrolling = true;
-                horizontalPages.style.transform = `translateX(-${index * 100}vw)`;
-                
-                setTimeout(() => {
-                    isHorizontalScrolling = false;
-                }, 800);
-            }
-
-            // 更新活动部分
-            function updateActiveSection() {
-                indicators.forEach(dot => dot.classList.remove('active'));
-                
-                if (isInFooter) {
-                    indicators[9].classList.add('active');
-                } else if (isInLongScroll) {
-                    indicators[8].classList.add('active');
-                } else {
-                    indicators[currentSection].classList.add('active');
-                }
-            }
-
-            // 动画当前部分
-            function animateCurrentSection() {
-                const current = sections[currentSection];
-                
-                // 重置所有动画元素
-                textLines.forEach(line => {
-                    line.classList.remove('visible');
-                });
-                images.forEach(img => {
-                    img.classList.remove('visible');
-                });
-                mosaicItems.forEach(item => {
-                    item.classList.remove('visible');
-                });
-
-                // 延迟触发动画
-                setTimeout(() => {
-                    const currentTextLines = current.querySelectorAll('.text-line');
-                    currentTextLines.forEach((line, index) => {
-                        setTimeout(() => {
-                            line.classList.add('visible');
-                        }, index * 400);
-                    });
-
-                    const currentImages = current.querySelectorAll('.image-animated');
-                    currentImages.forEach((img, index) => {
-                        setTimeout(() => {
-                            img.classList.add('visible');
-                        }, index * 600);
-                    });
-
-                    const currentMosaicItems = current.querySelectorAll('.mosaic-item');
-                    currentMosaicItems.forEach((item, index) => {
-                        setTimeout(() => {
-                            item.classList.add('visible');
-                        }, index * 300);
-                    });
-
-                    // 触发数字计数器动画
-                    const currentNumberCounters = current.querySelectorAll('.number-counter');
-                    currentNumberCounters.forEach((counter, index) => {
-                        setTimeout(() => {
-                            const target = parseFloat(counter.getAttribute('data-target'));
-                            animateNumberCounter(counter, target);
-                        }, index * 500 + 800);
-                    });
-                }, 500);
-            }
-        });
-    </script>
+        </script>

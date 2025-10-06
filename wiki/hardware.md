@@ -122,7 +122,7 @@ Our hardware team has consistently focused on addressing practical challenges en
 
 - {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh2.webp" caption="Figure 3.2.6 Schematic of the Mode Switching Module" %}
 <div class="video">
-<iframe title="HUST-China: Switch Bearing Schematic (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/vN7xmhDkPJmwbuFQNtVP64" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
+<iframe title="HUST-China: Switch Bearing Schematic (2025)" width="460" height="215" src="https://video.igem.org/videos/embed/vN7xmhDkPJmwbuFQNtVP64" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
 </div>
 - We designed the equipment based on the commonly used glass bead shaking method in laboratories to disrupt cells and extract intracellular squalene. To save space, we developed a mode switching module to integrate both shaking and centrifugation functions. The core design features a mode switching bearing (animation shown).
 
@@ -132,7 +132,7 @@ Our hardware team has consistently focused on addressing practical challenges en
 - **Motion Decoupling Mechanism---"One-Way Bearing":** To prevent centrifuge tubes from self-rotating during oscillation, we incorporated a one-way bearing between the tube holder and the rotating shaft. This achieves pure oscillation-based disruption.
 
 <div class="video">
-<iframe title="HUST-China: Switch Bearing Physical Object (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/vvgN7HHYfFkn3DRL4DMzMK" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
+<iframe title="HUST-China: Switch Bearing Physical Object (2025)" width="460" height="215" src="https://video.igem.org/videos/embed/vvgN7HHYfFkn3DRL4DMzMK" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
 </div>
 
 - To resolve the issue of repeatedly transferring liquid and balancing the centrifuge, we designed a communicating centrifuge tube based on the communicating vessel principle. A matching liquid connection switch was also developed to prevent circulation while facilitating easy liquid release and collection.
@@ -206,6 +206,9 @@ In the third-generation design, we introduced an automated control system. A DC 
 To address the challenges of unbalanced centrifuge tubes and cumbersome liquid removal, we introduced a communicating centrifuge tube kit.
 
 To ensure the mode-switching bearing achieves true oscillation functionality, we installed a one-way bearing on the drive shaft to transmit unidirectional motion, enabling selection between centrifugal and oscillation modes.
+<div class="video">
+<iframe title="HUST-China: Third Vision Model (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/hnytwZsPjAqQcComMRBuPU" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
+</div>
 
 Although we successfully resolved the issues encountered in the third version, we now face a new challenge:
 

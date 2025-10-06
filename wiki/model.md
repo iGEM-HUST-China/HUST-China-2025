@@ -4,6 +4,13 @@ permalink: /model/
 feature_text: |
 feature_image: "https://static.igem.wiki/teams/5569/description/modl.webp"
 excerpt: ""
+images02:
+  - src: https://static.igem.wiki/teams/5175/test-resources/test-pic-left.jpeg
+    alt: Yunli
+    caption: Yunli
+  - src: https://static.igem.wiki/teams/5175/test-resources/test-pic-middle.jpeg
+    alt: High-Cloud Quintet
+    caption: High-Cloud Quintet
 ---
 
 ## Our Model
@@ -56,6 +63,27 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
 - Extracted kinetic parameters (**μₘₐₓ**, **λ**, **K**) via **Gompertz** and **spline** fits.
 - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.
 
+# I. Linker–Signal Peptide System Docking
+
+**Signal-peptide & linker selection · Molecular docking · Energy analysis**
+
+## Background & Rationale
+
+Peroxisomal protein import relies on **peroxisomal targeting signals (PTS)** and their cytosolic receptors.  
+Two major types exist: **PTS1**, a canonical C-terminal tripeptide such as –SKL, and **PTS2**, a nonapeptide motif near the N-terminus.  
+Among these, **PTS1** is the most conserved and widely used signal across eukaryotes.
+
+The cytosolic receptor **PEX5** specifically recognizes PTS1-containing proteins, forming a transient **receptor–cargo complex**.  
+This complex docks at the peroxisomal membrane through interactions with **PEX13** and **PEX14**, which together constitute the import machinery.  
+After cargo translocation, **PEX5** is recycled to the cytosol for subsequent transport cycles.
+
+To engineer efficient peroxisomal targeting in *Yarrowia lipolytica*, we incorporated the classical **PTS1 (–SKL)** signal at the C-terminus of peptides.  
+Beyond the minimal SKL motif, we designed two extended variants—**GGGSSKL** and **TYWIRFSKL**—to systematically evaluate how linker length and composition affect **PEX5** recognition.  
+The design rationale was that a **flexible linker (GGGS)** could increase accessibility of the SKL motif, while an **aromatic-rich segment (TYWIRF)** might provide additional stabilizing interactions.
+
+These three peptide designs were fused to the eight key enzymes of the **MVA pathway** (*Erg8, Erg9, Erg10, Erg13, Erg20, Hmgr, Idi,* and *Merg12*), providing the foundation for subsequent molecular docking analysis.
+
+🎞️ *An animation illustrates this process: enzyme–SKL forms a complex with PEX5, which then docks with PEX14 and PEX13; IDRs of PEX13 undergo liquid–liquid phase separation to generate a transient liquid cavity that facilitates import.*
 
 
 
