@@ -69,7 +69,7 @@ Thus, we identified three major pain points: **cumbersome and time-consuming ope
 
 ## Project Philosophy and Design
 
-### 1. Project Overview
+### Project Overview
 
 Our hardware team has consistently focused on addressing practical challenges encountered in synthetic biology micro-fermentation, aiming to provide solutions and fresh perspectives for tackling specific problems. Our design philosophy centers on "**integration, automation, and miniaturization,** **Modular**." The system appears as a compact desktop unit internally divided into two modules: an upper fermentation module and a lower integrated centrifugal agitation module. Controlled by a single STM32 chip, the system utilizes multiple control chips to drive motor rotation. An OLED display shows culture temperature, pH, and motor parameters for real-time monitoring of cultivation conditions. It also comes equipped with numerous components and modules for users to choose from, catering to diverse needs and practical situations.
 
@@ -84,7 +84,7 @@ Our hardware team has consistently focused on addressing practical challenges en
 - **Fermentation Condition Control Module:** Multiple designs at the top of the device primarily enable real-time monitoring and control of fermentation conditions.
 - A 42-step motor drives the stirrer and flow switch via bevel gear transmission. Three small ports accommodate: a pH sensor for real-time monitoring, a temperature sensor for fermentation conditions, and a blue light emitter to activate the strain's suicide switch, preventing microbial leakage. Two sidewall ports allow tubing to deliver solutions from a peristaltic pump for timed feed supplementation.
 
-**Leakage Control and Cell Enrichment Module: Leakage control and cell enrichment are achieved through a nested double-layered fermentation tank system and interlocking mortise-and-tenon joints.**
+- **Leakage Control and Cell Enrichment Module:** Leakage control and cell enrichment are achieved through a nested double-layered fermentation tank system and interlocking mortise-and-tenon joints.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h49.webp" caption="Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a:Leakage Control Device, b:Mortise-and-Tenon Structure)" %}
 
