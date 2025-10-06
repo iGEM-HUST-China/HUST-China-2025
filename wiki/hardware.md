@@ -6,53 +6,6 @@ feature_image: "https://static.igem.wiki/teams/5569/description/hdwe.webp"
 excerpt: ""
 
 
-
-images20:
-  - src:  https://static.igem.wiki/teams/5569/hardware/h19.webp
-    alt: Figure 3.4.1 Fan-shaped stirring rod
-    caption: Figure 3.4.1 Fan-shaped stirring rod
-  - src: https://static.igem.wiki/teams/5569/hardware/h18.webp
-    alt:  Figure 3.4.2 Spiral stirring rod
-    caption:  Figure 3.4.2 Spiral stirring rod
-
-
-
-images21:
-  - src:  https://static.igem.wiki/teams/5569/hardware/h25.webp
-    alt: Figure 3.4.3 Multi-hole Fluid Switch	  
-    caption: Figure 3.4.3 Multi-hole Fluid Switch	  
-  - src: https://static.igem.wiki/teams/5569/hardware/h27.webp
-    alt:   Figure 3.4.4 Flow Control Valve
-    caption:  Figure 3.4.4 Flow Control Valve 
-
-
-images22:
-  - src:  https://static.igem.wiki/teams/5569/hardware/h47.webp
-    alt: Figure 3.4.5 Seven-tooth gear 	  
-    caption: Figure 3.4.5 Seven-tooth gear 	  
-  - src: https://static.igem.wiki/teams/5569/hardware/h48.webp
-    alt:   Figure 3.4.6 Speed adjustment gear set
-    caption:  FiFigure 3.4.6 Speed adjustment gear set 
-
-images23:
-  - src: https://static.igem.wiki/teams/5569/hardware/h29.webp
-    alt: Figure 3.4.7 Disc Aeration Unit
-    caption: Figure 3.4.7 Disc Aeration Unit
-  - src: https://static.igem.wiki/teams/5569/hardware/h31.webp
-    alt: Figure 3.4.8 Long Tube Aeration Unit Figure 
-    caption: Figure 3.4.8 Long Tube Aeration Unit Figure 
-  - src: https://static.igem.wiki/teams/5569/hardware/h28.webp
-    alt: 3.4.9 Fishbone Aeration Unit
-    caption: 3.4.9 Fishbone Aeration Unit
-
-images24:
-  - src:  https://static.igem.wiki/teams/5569/hardware/h15.webp
-    alt: Figure 3.4.10 200ml Fermentation Vessel	  
-    caption: Figure 3.4.10 200ml Fermentation Vessel	  
-  - src:  https://static.igem.wiki/teams/5569/hardware/h14.webp
-    alt:   Figure 3.4.11 Baffled Fermentation Vessel
-    caption:  Figure 3.4.11 Baffled Fermentation Vessel
-
 images25:
   - src:  https://static.igem.wiki/teams/5569/hardware/open-by-shunzhuan-soconvert.webp
     alt: Turn clockwise to open the flow switch	  
@@ -152,10 +105,6 @@ Our hardware team has consistently focused on addressing practical challenges en
 - The circular opening at the bottom of the outer tank has internal threads. These are used to secure a bacterial filter membrane during the first drainage cycle. The culture medium flows directly into the waste tank via the rubber tube connected to the bottom of the drainage port, while cells are intercepted, enhancing bacterial density within the tank. The fan-shaped aperture facilitates the second drainage cycle, directing residual medium and cells downward to the centrifugal shaking module for subsequent processing.
 - Under microscopic observation, the size of lipolytic yeast cells was determined (Figure 3.2.4). After averaging measurements from 20 cells, the bacterial cell's major axis measured approximately 8.4 μm, and the minor axis approximately 5.2 μm. A bacterial filter membrane with a mesh size of 3 μm was selected.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h43.webp" caption="Figure 3.2.3 Schematic diagram of lipolytic yeast cells under a microscope" %}
-
-
-
 **b. Centrifugation and Agitation-Induced Lysis: Primarily separates cells from the culture medium. Adding glass beads followed by agitation lyses cells to release intracellular squalene.**
 
 - **Centrifugation Module:** Enriched bacterial suspension enters centrifuge tubes via liquid transfer tubes. A brushless DC motor within the base, coupled with a synchronous gear set, drives the centrifuge tubes and their contents to high-speed rotation.
@@ -178,7 +127,7 @@ The maximum speed of the purchased brushless motor under load, measured by an in
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h38.webp" caption="Figure 3.2.5 Contour Plot of Absorbance" %}
 **Mode Switching Module:**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h32.webp" caption="Figure 3.2.6 Schematic of the Mode Switching Module" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh2.webp" caption="Figure 3.2.6 Schematic of the Mode Switching Module" %}
 
 We designed the equipment based on the commonly used glass bead shaking method in laboratories to disrupt cells and extract intracellular squalene. To save space, we developed a mode switching module to integrate both shaking and centrifugation functions. The core design features a mode switching bearing (animation shown).
 
@@ -211,7 +160,7 @@ To integrate control of the entire apparatus and monitor cell culture conditions
 
  **External:** The external motor controls timed nutrient supplementation to regulate nitrogen levels in the culture medium. We fabricated a simple peristaltic pump that achieves timed supplementation (of ammonium sulfate) by adjusting the motor's speed and rotation status. For the peristaltic pump's control motor, we selected the MG996R servo motor. It is easy to program, allows precise specification of rotation angles, and consumes minimal power.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h33.webp" caption="Figure 3.2.10 Peristaltic Pump" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh3.webp" caption="Figure 3.2.10 Peristaltic Pump" %}
 
 
 ### Software
@@ -230,11 +179,11 @@ This section documents the challenges encountered during hardware development an
 Initially, our device design comprised only an upper chamber for fermentation and a lower chamber for enrichment and lysis. In the upper chamber, we incorporated a stirring rod. Two openings were added to the chamber's side, each equipped with a slide valve for controlled liquid addition and removal. At the tank bottom, a drain pipe allowed the concentrated bacterial solution to be sequentially transferred into centrifuge tubes below via a plug-screw mechanism upon fermentation completion, followed by removal for weighing. After centrifugation in the lower tank, the shaft was manually switched from concentric to eccentric mode, and grinding beads with buffer solution were added to initiate agitation and cell disruption.
 
 However, this version still required significant manual labor, leading us to develop V2.0.
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h10.webp" caption="Figure 3.3.1 Schematic of the First-Generation Model" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh4.webp" caption="Figure 3.3.1 Schematic of the First-Generation Model" %}
 
 
 ### Version 2.0
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h11.webp" caption=" Figure 3.3.2 Schematic of the second-generation model" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh5.webp" caption=" Figure 3.3.2 Schematic of the second-generation model" %}
 
 Compared to the first generation, we introduced a mortise-and-tenon structure to mechanically link the flow switch and stirrer rod. The top knob can drive either the stirrer rod or the flow switch depending on its rotation direction. Simultaneously, we designed an automatic switching bearing that alters the motor's rotation direction to toggle between centrifugal and agitation modes.
 
@@ -249,7 +198,7 @@ To address these issues, we continuously optimized the design and launched V3.0.
 ### Version 3.0
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h12.webp" caption="Figure 3.3.3 Schematic Diagram of Third-Generation Model" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh6.webp" caption="Figure 3.3.3 Schematic Diagram of Third-Generation Model" %}
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h39.webp" caption="Figure 3.3.4 Third-Generation Circuit Wiring Diagram" %}
 
 
@@ -276,47 +225,46 @@ Our device continues last year's modular and "building block" design philosophy,
 
 During fermentation, stirring rods are commonly used within fermentation tanks to mix reactants and ensure uniform reactions, facilitating efficient processes and thorough nutrient absorption. Different stirring rods are required based on the physicochemical properties of the fermentation broth, such as viscosity and dissolved oxygen levels.
 
-Figure 3.4.1 shows a fan-blade agitator designed for vigorous liquid agitation. Its curved profile reduces resistance during mixing, making it suitable for environments requiring large-scale culture medium agitation.
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh7.webp" caption="Figure 3.4.1 Agitator Module" %}
 
-Figure 3.4.2 shows a spiral-rising agitator that uniformly mixes microbial cultures with nutrients. Its thin blades easily divide the liquid, making it suitable for high-viscosity culture media.
-
-{% include figure2.html images=page.images20 %}
+Figure 3.4.1(a) shows a fan-blade agitator designed for vigorous liquid agitation. Its curved profile reduces resistance during mixing, making it suitable for environments requiring large-scale culture medium agitation.Figure 3.4.1(b) shows a spiral-rising agitator that uniformly mixes microbial cultures with nutrients. Its thin blades easily divide the liquid, making it suitable for high-viscosity culture media.
 
 
 ### Flow Control Module
 
-During fermentation, scenarios often arise where controlling the flow rate or volume of fermentation broth is necessary to optimize subsequent processes. Figure 3.4.3 depicts a flow control module featuring porous construction for uniform leakage, enabling seamless integration into our equipment. The triple-hole design enhances operational flexibility. Figure 3.4.4 shows a flow control valve that regulates flow from the upper to lower tubes via a rotary handle, offering simple operation suitable for infrequently used flow control valves.
+During fermentation, scenarios often arise where controlling the flow rate or volume of fermentation broth is necessary to optimize subsequent processes. 
 
-{% include figure2.html images=page.images21 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh8.webp" caption="Figure 3.4.2 Flow Control Module" %}
+
+Figure 3.4.2(a) depicts a flow control module featuring porous construction for uniform leakage, enabling seamless integration into our equipment. The triple-hole design enhances operational flexibility. Figure 3.4.2(b) shows a flow control valve that regulates flow from the upper to lower tubes via a rotary handle, offering simple operation suitable for infrequently used flow control valves.
+
 
 ### Speed Control Module
 
 During cell centrifugation, the required rotational speed is influenced by cell size. To facilitate switching the centrifuge's rotational speed, we designed a speed adjustment module.
 
-Figure 3.4.5 shows a 7-tooth gear connected to the drive shaft. Figure 3.4.6 depicts a gear set designed for speed adjustment, featuring 14, 21, and 28 teeth respectively. These gears amplify the motor speed by 2x, 3x, and 4x, allowing speed switching through height adjustment for quick and convenient operation.
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh9.webp" caption="Figure 3.4.3 Speed Control Module" %}
 
-{% include figure2.html images=page.images22 %}
+Figure 3.4.3(a) shows a 7-tooth gear connected to the drive shaft. Figure 3.4.3(b) depicts a gear set designed for speed adjustment, featuring 14, 21, and 28 teeth respectively. These gears amplify the motor speed by 2x, 3x, and 4x, allowing speed switching through height adjustment for quick and convenient operation.
+
 
 ### Aeration Module
 
 Lipase yeast requires substantial oxygen during fermentation, making an efficient aeration system critical for enhancing fermentation efficiency. To improve oxygen utilization, we have designed the following three aeration systems.
 
-Figure 3.4.7 shows an aeration unit where gas is introduced radially through the disc. Typically used downward, it features small outlet holes and high gas pressure, suitable for systems with high oxygen demand.
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh10.webp" caption="Figure 3.4.4 Aeration Module" %}
 
-Figure 3.4.8 depicts another aeration unit connected to a long gas transport pipe. It diverts part of the gas flow into spherical chambers before diffusing outward, increasing gas-liquid contact area. This configuration serves as an ideal transfer station for multiple aeration systems.
+Figure 3.4.4(a) shows an aeration unit where gas is introduced radially through the disc. Typically used downward, it features small outlet holes and high gas pressure, suitable for systems with high oxygen demand.Figure 3.4.4(b) depicts another aeration unit connected to a long gas transport pipe. It diverts part of the gas flow into spherical chambers before diffusing outward, increasing gas-liquid contact area. This configuration serves as an ideal transfer station for multiple aeration systems.Figure 3.4.4(c) depicts an aeration line that can be laid along the tank bottom. It disperses bubbles in a fishbone pattern. As the bubbles rise, they agitate the liquid and dissolve, featuring a simple structure suitable for tubular fermenters.
 
-Figure 3.4.9 depicts an aeration line that can be laid along the tank bottom. It disperses bubbles in a fishbone pattern. As the bubbles rise, they agitate the liquid and dissolve, featuring a simple structure suitable for tubular fermenters.
-
-{% include figure3.html images=page.images23 %}
 ### Fermentation Modules
 
 To accommodate diverse fermentation requirements and conditions, we have concurrently designed several variants of fermentation apparatus.
 
-Figure 3.4.10 A 200 ml fermentation vessel enables larger-scale fermentation and extraction.
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh11.webp" caption="Figure 3.4.5 Fermentation Modules" %}
 
-Figure 3.4.11 shows a fermenter with baffles added to increase oxygen supply during agitation.
 
-{% include figure2.html images=page.images24 %}
+Figure 3.4.5(a) A 200 ml fermentation vessel enables larger-scale fermentation and extraction.Figure 3.4.5(b) shows a fermenter with baffles added to increase oxygen supply during agitation.
+
 
 ### Product Usage Procedure:
 
