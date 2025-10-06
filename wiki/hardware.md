@@ -204,7 +204,7 @@ During this phase, we invited target users (other iGEM teammates, lab peers, fac
 ## Requirement and Cost Analysis
 
 Through interviews with multiple laboratory researchers, we discovered that the process of extracting substances in laboratories consumes significant time.Simultaneously, the need to move between different instruments significantly increases the error rate. Based on this, we conducted research into traditional laboratory processes and the problems inherent within them.
-{% include figure.html images=page.images02 %}
+{% include figure.html image=page.images02 %}
 
 | Evaluation Criteria      | Existing Traditional Solution (Micro-fermentation tank + Centrifuge + Grinder)                                                                                                                                                                                                                             |
 | :----------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -302,7 +302,7 @@ To integrate control of the entire apparatus and monitor cell culture conditions
  **Top:** The top motor drives the stirring rod and activates the flow switch, requiring high precision. We selected the 11HS2810S stepper motor, which enables precise speed and angle control via PWM modulation and delivers substantial torque.
 
  **Bottom:** The bottom motor controls centrifugation and oscillation, demanding strict speed regulation. We selected the 36-3530 brushless DC motor. Its brushless design enables high rotational speeds at low power consumption.
- 
+
  **External:** The external motor controls timed nutrient supplementation to regulate nitrogen levels in the culture medium. We fabricated a simple peristaltic pump that achieves timed supplementation (of ammonium sulfate) by adjusting the motor's speed and rotation status. For the peristaltic pump's control motor, we selected the MG996R servo motor. It is easy to program, allows precise specification of rotation angles, and consumes minimal power.
 
     {% include figure.html images=page.images14 %}
