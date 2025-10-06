@@ -5,12 +5,12 @@ feature_text: |
 feature_image: "https://static.igem.wiki/teams/5569/description/modl.webp"
 excerpt: ""
 images02:
-  - src: https://static.igem.wiki/teams/5175/test-resources/test-pic-left.jpeg
-    alt: Yunli
-    caption: Yunli
-  - src: https://static.igem.wiki/teams/5175/test-resources/test-pic-middle.jpeg
-    alt: High-Cloud Quintet
-    caption: High-Cloud Quintet
+  - src: https://static.igem.wiki/teams/5569/model/m5.webp
+    alt: Global HADDOCK score distribution (boxplot)
+    caption: **Figure 4a.** Global HADDOCK score distribution across peptide–enzyme complexes (boxplot).
+  - src: https://static.igem.wiki/teams/5569/model/m4.webp
+    alt: Enzyme-wise HADDOCK score comparison (barplot)
+    caption: **Figure 4b.** Enzyme-wise HADDOCK score comparison across target enzymes (barplot). 
 ---
 
 ## Our Model
@@ -118,12 +118,25 @@ The HADDOCK docking protocol is fundamentally a physics-based and restraint-driv
 
 - **van der Waals interactions**: Describing repulsion and attraction between atoms, preventing steric clashes while capturing hydrophobic stabilization.  
 
+<div style="display:flex; justify-content:center;">
+
+$$
+E_{\text{vdW}} = \sum_{i<j} \varepsilon_{ij} \!\left[ \left( \frac{r_{\min,ij}}{r_{ij}} \right)^{12} - 2 \left( \frac{r_{\min,ij}}{r_{ij}} \right)^6 \right]
+$$
+
+</div>
+
 - **Electrostatics**: Coulombic interactions between charged residues, essential for PEX5 recognition of signal peptides.  
 
+<div style="display:flex; justify-content:center;">
+
+$$
+E_{\text{elec}} = \sum_{i<j} \frac{k_e\,q_i q_j}{\varepsilon(r_{ij})\,r_{ij}}, \quad k_e \approx 332\ \text{kcal·Å·mol}^{-1}\text{·e}^{-2}
+$$
+
+</div>
+
 - **Desolvation energy**: Reflecting the free-energy change of amino acid residues when buried at the interface. Hydrophobic burial is favorable, while polar residues require compensating hydrogen bonds or salt bridges.  
-
-The desolvation energy term can be expressed as:
-
 
 <div style="display:flex; justify-content:center;">
 
@@ -133,36 +146,29 @@ $$
 
 </div>
 
-
 - **Ambiguous Interaction Restraints (AIRs)**: Experimentally derived or hypothesized distance restraints that bias docking toward biologically relevant solutions.  
-
-The restraint energy is defined as:
-
 
 <div style="display:flex; justify-content:center;">
 
 $$
-E_{\text{air}} = \sum_k W_k (d_k - d_{0,k})^2
+E_{\text{air}} = \sum_k W_k \big(\langle d_k^{-6}\rangle^{-1/6} - d_{0,k}\big)^2
 $$
 
 </div>
-
 
 At different docking stages (rigid body, semi-flexible refinement, water refinement), these energy terms are combined with varying weights into the final HADDOCK score. Additionally, **Buried Surface Area (BSA)** is used to quantify the size and compactness of the interface.  
 
-The overall scoring function is:
-
-
 <div style="display:flex; justify-content:center;">
 
 $$
-\text{Score} = w_{\text{vdW}} E_{\text{vdW}} + w_{\text{elec}} E_{\text{elec}} + w_{\text{desolv}} E_{\text{desolv}} + w_{\text{air}} E_{\text{air}} - w_{\text{BSA}}\cdot \text{BSA}
+\text{Score} = w_{\text{vdW}} E_{\text{vdW}} + w_{\text{elec}} E_{\text{elec}} + w_{\text{desolv}} E_{\text{desolv}} + w_{\text{air}} E_{\text{air}}
 $$
 
 </div>
 
+*(Optional reporting term: − 0.01 × BSA may be included to account for interface compactness.)*
 
-Thus, HADDOCK scoring integrates both atomic-level physical interactions and experimental constraints, rather than relying on geometry alone.
+Thus, HADDOCK scoring integrates both atomic-level physical interactions and experimental restraints, rather than relying on geometry alone.
 
 
 ## Structure Preparation
@@ -181,7 +187,7 @@ Clustering by interface RMSD reduced the dataset to ~192 representative complexe
 
 ## Definition of Active Residues
 
-To focus docking on biologically relevant regions, active residues were explicitly defined. For PEX5, the TPR repeat hot-spot residues (364, 398, 438, 469, 476, 501, 507, 585) were selected. For the MVA enzymes, the C-terminal linker+SKL regions were defined as active sites, reproducing the natural recognition of PTS1 signals by PEX5.
+To focus docking on biologically relevant regions, active residues were explicitly defined. For PEX5, the TPR repeat hot-spot residues (364, 398, 438, 469, 476, 501, 507, 585) were selected. For the MVA enzymes, the C-terminal linker + SKL regions were defined as active sites, reproducing the natural recognition of PTS1 signals by PEX5.
 
 
 ## Scoring and Visualization
@@ -189,6 +195,7 @@ To focus docking on biologically relevant regions, active residues were explicit
 Docking results were evaluated with the HADDOCK scoring function, which integrates van der Waals, electrostatics, desolvation, and restraint energies, combined with BSA to quantify interface size (Figure 1).  
 
 Representative complexes were visualized in PyMOL and ChimeraX to illustrate hydrogen-bond networks and structural overlays. The results confirmed the plausibility of docking poses and highlighted distinct recognition patterns between the minimal and extended signal peptides at the PEX5 interface.
+
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/model/m1.webp" caption="Figure3. Molecular_docking" %}
 
@@ -200,13 +207,8 @@ Boxplot comparisons across all peptide–enzyme complexes revealed a clear hiera
 
 When HADDOCK scores were resolved for each enzyme partner (barplot analysis), the same pattern emerged: **TYWIRFSKL** outperformed **SKL** in nearly every case, often with large margins, whereas **GGGSSKL** tracked between the two. These results demonstrate that the effect is not restricted to a single target but represents a general enhancement of binding across the enzyme panel.
 
-images02:
-  - src: https://static.igem.wiki/teams/5569/model/m5.webp
-    alt: Global HADDOCK score distribution (boxplot)
-    caption: **Figure 4a.** Global HADDOCK score distribution across peptide–enzyme complexes (boxplot).
-  - src: https://static.igem.wiki/teams/5569/model/m4.webp
-    alt: Enzyme-wise HADDOCK score comparison (barplot)
-    caption: **Figure 4b.** Enzyme-wise HADDOCK score comparison across target enzymes (barplot).
+{% include figure2.html images=page.images02 %}
+
 
 We next examined the energetic basis for these differences. Donut plots visualizing HADDOCK scoring weights highlighted distinct stabilization mechanisms. For **TYWIRFSKL**, improved binding arose primarily from enhanced electrostatics and van der Waals packing, which favor tighter and more specific interfaces. By contrast, **SKL** complexes relied disproportionately on desolvation contributions, reflecting weaker direct interactions and more solvent-mediated stabilization. **GGGSSKL** again showed an intermediate profile, suggesting that the flexible linker partially compensates but cannot substitute for the aromatic contacts.
 
