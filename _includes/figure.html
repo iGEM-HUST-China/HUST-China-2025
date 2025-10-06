@@ -1,7 +1,7 @@
 
 <div class="figure flex-container">
   <figure class="figure  figure--{{ image.position | default: 'center' }} allow-contextmenu">
-    <img class="image" src="{{ image.src }}" alt="{{ image.alt | default: image.caption }}" {{ include.width ? include.width | prepend: 'width="' | append: '"' }} {{ include.height ? include.height | prepend: 'height="' | append: '"' }}>
+    <img class="image" src="{{ image.src }}" alt="{{ image.alt | default: image.caption }}" {{ image.width ? image.width | prepend: 'width="' | append: '"' }} {{ image.height ? image.height | prepend: 'height="' | append: '"' }}>
     {% if image.caption %}<figcaption class="caption">{{ image.caption }}</figcaption>{% endif %}
   </figure>
 </div>
