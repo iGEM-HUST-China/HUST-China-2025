@@ -6,7 +6,7 @@ feature_image: "https://static.igem.wiki/teams/5569/description/modl.webp"
 excerpt: ""
 ---
 
-# Our Model
+## Our Model
 
 Engineering peroxisomal protein targeting and rewiring central carbon metabolism in *Yarrowia lipolytica* poses a formidable design challenge:  
 the import efficiency of linker–signal peptides, the catalytic bottleneck imposed by pathway rate-limiting enzymes,  
@@ -16,16 +16,12 @@ Trial-and-error approaches alone cannot efficiently resolve this multi-layered p
 To bridge this gap, we established a **hierarchical in silico pipeline** that acts as a digital twin of our PICasSO-inspired engineering strategy,  
 enabling rational design and predictive prototyping.
 
----
-
 ## Molecular Layer — Peptide–Enzyme Docking
 
 At the molecular interface, we employed **HADDOCK-based peptide–enzyme docking** to interrogate the binding determinants  
 of classical and extended PTS1 variants (*SKL*, *GGGSSKL*, *TYWIRFSKL*).  
 These simulations uncovered the energetic and structural principles that govern efficient recognition by PEX5  
 and defined rational rules for designing import signals.
-
----
 
 ## Enzyme Layer — AI-Guided Sequence Redesign
 
@@ -35,8 +31,6 @@ followed by **Rosetta FastRelax** refinement to minimize conformational strain e
 This computational protein engineering strategy yielded enzyme variants with enhanced stability and binding properties,  
 thereby providing a robust starting point for experimental implementation.
 
----
-
 ## Systems Layer — Machine Learning Growth Modeling
 
 To connect molecular insights with systems-level behavior, we constructed a **machine learning–driven growth modeling framework**.  
@@ -44,8 +38,6 @@ Experimental OD₆₀₀ kinetics were first parameterized using **Gompertz** an
 These kinetic features, combined with medium composition variables, were used to train **Random Forest** and **XGBoost** models  
 capable of forecasting growth performance under novel carbon-source combinations.  
 This predictive capacity enables extrapolation beyond measured conditions and provides a quantitative basis for rational medium optimization.
-
----
 
 ## Integration and Impact
 
