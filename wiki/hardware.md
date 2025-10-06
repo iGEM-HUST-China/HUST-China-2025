@@ -208,7 +208,7 @@ To integrate control of the entire apparatus and monitor cell culture conditions
 
  **External:** The external motor controls timed nutrient supplementation to regulate nitrogen levels in the culture medium. We fabricated a simple peristaltic pump that achieves timed supplementation (of ammonium sulfate) by adjusting the motor's speed and rotation status. For the peristaltic pump's control motor, we selected the MG996R servo motor. It is easy to program, allows precise specification of rotation angles, and consumes minimal power.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h33.webp" caption="Figure 3.2.10 Peristaltic Pump" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh3.webp" caption="Figure 3.2.10 Peristaltic Pump" %}
 
 
 ### Software
