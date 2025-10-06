@@ -222,7 +222,7 @@ excerpt: ""
 {% include figure.html 
    image="https://static.igem.wiki/teams/5569/description/menber/wbh.webp" 
    alt="Our Team" 
-   caption="HUST-China 2025: \"PETilizer\"" %}
+   caption="HUST-China 2025: \"Squoilene\"" %}
 
 {% include figure.html 
    image="https://static.igem.wiki/teams/5569/description/menber/wbh.webp" 
