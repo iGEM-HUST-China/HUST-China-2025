@@ -7,26 +7,19 @@
     return target.closest && target.closest('.' + className);
   }
 
-  // 禁止右键，除白名单及其所有子元素
+  // 允许所有右键
   document.addEventListener('contextmenu', function (event) {
-    if (!isInWhitelist(event.target, 'allow-contextmenu')) {
-      event.preventDefault();
-    }
+    // 不阻止默认行为，允许右键菜单
   });
 
-  // 禁止选择，除白名单及其所有子元素
+  // 允许所有选择
   document.addEventListener('selectstart', function (event) {
-    if (!isInWhitelist(event.target, 'allow-select')) {
-      event.preventDefault();
-    }
+    // 不阻止默认行为，允许选择文本
   });
 
-  // 禁止复制，除白名单及其所有子元素
+  // 允许所有复制
   document.addEventListener('copy', function (event) {
-    if (!isInWhitelist(event.target, 'allow-copy')) {
-      event.clipboardData.setData('text/plain', 'This text is protected from copying.');
-      event.preventDefault();
-    }
+    // 不阻止默认行为，允许复制
   });
 </script>
 

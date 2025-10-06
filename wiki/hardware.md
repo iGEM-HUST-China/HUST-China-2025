@@ -53,6 +53,14 @@ images24:
     alt:   Figure 3.4.11 Baffled Fermentation Vessel
     caption:  Figure 3.4.11 Baffled Fermentation Vessel
 
+images25:
+  - src:  https://static.igem.wiki/teams/5569/hardware/open-by-shunzhuan-soconvert.webp
+    alt: Turn clockwise to open the flow switch	  
+    caption: Turn clockwise to open the flow switch	  
+  - src:  https://static.igem.wiki/teams/5569/hardware/h14.webp
+    alt:   Figure 3.4.11 Baffled Fermentation Vessel
+    caption:  Figure 3.4.11 Baffled Fermentation Vessel
+
 
 
 ---
@@ -103,14 +111,14 @@ to five phases.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h24.webp" caption="Figure 1.3 Flowchart for Laboratory Shaker Culture and Miniature Fermentation Methods" %}
 
-                                                                                                                                                                                                                   |
+| **Evaluation Criteria**     | **Existing Traditional Solution (Micro-fermentation tank + Centrifuge + Grinder**)                                                                                                                                                                                                                             |
 | :----------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Evaluation Criteria      | Existing Traditional Solution (Micro-fermentation tank + Centrifuge + Grinder)     
 | **Time Cost**            | **Extensive manual operations** (aliquoting, transferring, resuspending, balancing, setting up equipment) require approximately **60--75 minutes of active handling time**. <br> T**he experiment requires continuous operation**: Monitoring fermentation conditions necessitates 24-hour uninterrupted sampling and experimentation. The prolonged continuous work and disrupted sleep patterns are difficult for researchers to endure. <br> **Total process duration:** Approximately **1.5--2.5 hours** from culture completion to obtaining lysate. |
 | **Equipment Cost**       | **High initial procurement cost:** The price of a miniature fermenter is at least **\$10,000.** The combined cost of three separate pieces of equipment---a rocking incubator, centrifuge, and shaker---is approximately **\$5,000**.                                                                         |
 | **Laboratory Space Occupancy** | **Significant space requirements:** Three large devices occupy at least **2--3 square meters** of valuable laboratory space.                                                                                                                                                                                |
 | **Labor and Training Costs** | **High demands:** Personnel must be trained to proficiently operate three instruments and master aseptic techniques. <br> **Value wastage:** PhD students and researchers spend time on repetitive tasks.                                                                                                     |
 | **Result Consistency and Risk** | **Poor consistency:** Manual operations inevitably introduce errors, resulting in high coefficient of variation**. <br> **High Risk:** Multiple sample transfers increase **cross- contamination** hazards. Moreover, manual sampling from conical flasks and miniature fermenters carries a high risk of contamination.     |
+
 
 Thus, we identified three major pain points: **cumbersome and time-consuming operations, high equipment costs and space requirements, and poor result reproducibility**. Based on this, we defined the core design requirements for the equipment: achieving full automation and integration of the three key functions:** fermentation, centrifugation, and agitation/disruption. The goal is to reduce manual operation time by over 90% and significantly enhance data consistency. All design decisions stem from these requirements.
 
@@ -139,6 +147,8 @@ Our hardware team has consistently focused on addressing practical challenges en
 
 - The inner tank bottom features a 30° sector-shaped aperture aligned with two sector-shaped and circular apertures in the outer tank base plate. The outer tank's edge is concave, while its central protrusion interlocks with the inner tank bottom to create hydraulic pressure, preventing medium leakage through edge gaps.
 - The inner tank's mid-section incorporates a mortise-and-tenon structure that mates with the complementary half on the bottom of the stirring rod. The top stepper motor operates in two modes: continuous clockwise rotation and counterclockwise step mode (each button press rotates 30° counterclockwise). During clockwise rotation, the inclined planes of the mortise-and-tenon joints slide against each other, preventing the inner tank from rotating. The stirring rod does not rotate the inner tank, ensuring thorough mixing of the bacterial solution. During counterclockwise rotation, the vertical surfaces of the two joints interlock. The stirring rod drives the inner tank to rotate, thereby controlling leakage.
+
+{% include figure2.html images=page.images25 %}
 - The circular opening at the bottom of the outer tank has internal threads. These are used to secure a bacterial filter membrane during the first drainage cycle. The culture medium flows directly into the waste tank via the rubber tube connected to the bottom of the drainage port, while cells are intercepted, enhancing bacterial density within the tank. The fan-shaped aperture facilitates the second drainage cycle, directing residual medium and cells downward to the centrifugal shaking module for subsequent processing.
 - Under microscopic observation, the size of lipolytic yeast cells was determined (Figure 3.2.4). After averaging measurements from 20 cells, the bacterial cell's major axis measured approximately 8.4 μm, and the minor axis approximately 5.2 μm. A bacterial filter membrane with a mesh size of 3 μm was selected.
 
@@ -270,7 +280,7 @@ Figure 3.4.1 shows a fan-blade agitator designed for vigorous liquid agitation. 
 
 Figure 3.4.2 shows a spiral-rising agitator that uniformly mixes microbial cultures with nutrients. Its thin blades easily divide the liquid, making it suitable for high-viscosity culture media.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h19.webp" caption="Figure 3.3.4 Third-Generation Circuit Wiring Diagram" %}
+{% include figure2.html images=page.images20 %}
 
 
 ### Flow Control Module
@@ -348,7 +358,7 @@ We also invited Dr. Chen Yulong from the Institute of Resource Biology and Biote
 
 Based on these recommendations, we redesigned the fermentation module by incorporating baffled fermentation vessels of multiple specifications and integrating an oxygen supply unit. Dr. Chen's proposed application scenarios also guided us toward new R&D directions. We are currently exploring the use of this equipment for exosome collection, further validating its scalability and practical value in bioprocessing.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h27.webp" caption="Figure 3.5.2 Exchange with Dr. Chen Yulong" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h3.webp" caption="Figure 3.5.2 Exchange with Dr. Chen Yulong" %}
 
 ## Equipment Component List and Cost
 
