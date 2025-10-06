@@ -227,7 +227,7 @@ This section documents the challenges encountered during hardware development an
 Initially, our device design comprised only an upper chamber for fermentation and a lower chamber for enrichment and lysis. In the upper chamber, we incorporated a stirring rod. Two openings were added to the chamber's side, each equipped with a slide valve for controlled liquid addition and removal. At the tank bottom, a drain pipe allowed the concentrated bacterial solution to be sequentially transferred into centrifuge tubes below via a plug-screw mechanism upon fermentation completion, followed by removal for weighing. After centrifugation in the lower tank, the shaft was manually switched from concentric to eccentric mode, and grinding beads with buffer solution were added to initiate agitation and cell disruption.
 
 However, this version still required significant manual labor, leading us to develop V2.0.
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h10.webp" caption="Figure 3.3.1 Schematic of the First-Generation Model" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh4.webp" caption="Figure 3.3.1 Schematic of the First-Generation Model" %}
 
 
 ### Version 2.0
