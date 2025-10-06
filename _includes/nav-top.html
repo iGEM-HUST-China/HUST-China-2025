@@ -1,102 +1,92 @@
 <script>
 	document.addEventListener("DOMContentLoaded", function() {
-	  const headers = document.querySelectorAll("article h2, article h3, article h4, article h5, article h6");
-	  const section = document.querySelector("#about-this-page");
-	  const nav = document.createElement("nav");
-	  section.appendChild(nav);
+		const headers = document.querySelectorAll("article h2, article h3, article h4, article h5, article h6");
+		const section = document.querySelector("#about-this-page");
+		const nav = document.createElement("nav");
+		section.appendChild(nav);
   
-	  headers.forEach((header, index) => {
-		if (!header.id) {
-		  header.id = "header-" + index;
-		}
-		const link = document.createElement("a");
-		link.href = "#" + header.id;
-		link.textContent = header.textContent;
-		link.classList.add(header.tagName.toLowerCase());
-		nav.appendChild(link);
-	  });
+		headers.forEach((header, index) => {
+			if (!header.id) {
+				header.id = "header-" + index;
+			}
+			const link = document.createElement("a");
+			link.href = "#" + header.id;
+			link.textContent = header.textContent;
+			link.classList.add(header.tagName.toLowerCase());
+			nav.appendChild(link);
+		});
   
-	  // 创建返回顶部按钮
-	  const backToTopButton = document.createElement("button");
-	  backToTopButton.id = "back-to-top";
-	  backToTopButton.textContent = "↑ Top";
-	  document.body.appendChild(backToTopButton);
+		// 创建返回顶部按钮
+		const backToTopButton = document.createElement("button");
+		backToTopButton.id = "back-to-top";
+		backToTopButton.textContent = "↑ Top";
+		document.body.appendChild(backToTopButton);
   
-	  // 监听滚动事件
-	  window.addEventListener("scroll", function() {
-		if (window.scrollY > 200) { // 滚动距离大于200px时显示按钮
-		  backToTopButton.style.display = "block";
-		} else {
-		  backToTopButton.style.display = "none";
-		}
-	  });
+		// 监听滚动事件
+		window.addEventListener("scroll", function() {
+			if (window.scrollY > 200) { // 滚动距离大于200px时显示按钮
+				backToTopButton.style.display = "block";
+			} else {
+				backToTopButton.style.display = "none";
+			}
+		});
   
-	  // 返回顶部按钮点击事件
-	  backToTopButton.addEventListener("click", function() {
-		window.scrollTo({ top: 0, behavior: "smooth" });
-	  });
+		// 返回顶部按钮点击事件
+		backToTopButton.addEventListener("click", function() {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		});
 	});
   </script>
   
   <style>
 	  html {
-		scroll-behavior: smooth;
-	}
-	.section.page--description nav {
-		background: #f9f9f9;
-		padding: 10px;
-		margin-top: 10px;
-		border: 1px solid #ccc;
-		border-radius: 5px; 
-	}
-	.section.page--description nav a {
-		display: block;
-		margin-bottom: 5px;
-	}
-	.section.page--description nav a.h2 {
-		padding-left: 0;
-	}
-	.section.page--description nav a.h3 {
-		padding-left: 10px;
-	}
-	.section.page--description nav a.h4 {
-		padding-left: 20px;
-	}
-	.section.page--description nav a.h5 {
-		padding-left: 30px;
-	}
-	.section.page--description nav a.h6 {
-		padding-left: 40px;
-	}
-	
-	/* 回到顶部按钮 */
+		  scroll-behavior: smooth;
+	  }
+	  .section.page--description nav {
+		  background: #f9f9f9;
+		  padding: 10px;
+		  margin-top: 10px;
+		  border: 1px solid #ccc;
+		  border-radius: 5px; 
+	  }
+	  .section.page--description nav a {
+		  display: block;
+		  margin-bottom: 5px;
+	  }
+	  .section.page--description nav a.h2 {
+		  padding-left: 0;
+	  }
+	  .section.page--description nav a.h3 {
+		  padding-left: 10px;
+	  }
+	  .section.page--description nav a.h4 {
+		  padding-left: 20px;
+	  }
+	  .section.page--description nav a.h5 {
+		  padding-left: 30px;
+	  }
+	  .section.page--description nav a.h6 {
+		  padding-left: 40px;
+	  }
 	#back-to-top {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: var(--secondary-green);
-        color: white;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 100;
-        }
-
-        #back-to-top:hover
-		#back-to-top:active {
-            background: var(--primary-green);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-        }
-</style>
+	  display: none; /* 初始隐藏 */
+	  position: fixed;
+	  bottom: 70px;
+	  right: 20px;
+	  padding: 10px 15px;
+	  font-size: 16px;
+	  background-color: #f9f9f9;
+	  color: #aaddc4; /* 未选中时的文字颜色 */
+	  border: none;
+	  border-radius: 5px;
+	  cursor: pointer;
+	  z-index: 1000;
+	  border: 1px solid #ccc;
+  }
+  
+  #back-to-top:hover,
+  #back-to-top:active {
+	  background-color: #3cb469;
+	  color: #f9f9f9; /* 选中后（点击时）的文字颜色 */
+  }
   </style>
