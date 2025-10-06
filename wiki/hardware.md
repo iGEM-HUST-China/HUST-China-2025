@@ -6,6 +6,15 @@ feature_image: "https://static.igem.wiki/teams/5569/description/hdwe.webp"
 excerpt: ""
 
 
+images25:
+  - src:  https://static.igem.wiki/teams/5569/hardware/open-by-shunzhuan-soconvert.webp
+    alt: Turn clockwise to open the flow switch	  
+    caption: Turn clockwise to open the flow switch	  
+  - src:  https://static.igem.wiki/teams/5569/hardware/h14.webp
+    alt:   Figure 3.4.11 Baffled Fermentation Vessel
+    caption:  Figure 3.4.11 Baffled Fermentation Vessel
+
+
 
 ---
 
@@ -218,11 +227,7 @@ During fermentation, stirring rods are commonly used within fermentation tanks t
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh7.webp" caption="Figure 3.4.1 Agitator Module" %}
 
-Figure 3.4.1(a) shows a fan-blade agitator designed for vigorous liquid agitation. Its curved profile reduces resistance during mixing, making it suitable for environments requiring large-scale culture medium agitation.
-
-Figure 3.4.1(b) shows a spiral-rising agitator that uniformly mixes microbial cultures with nutrients. Its thin blades easily divide the liquid, making it suitable for high-viscosity culture media.
-
-{% include figure2.html images=page.images20 %}
+Figure 3.4.1(a) shows a fan-blade agitator designed for vigorous liquid agitation. Its curved profile reduces resistance during mixing, making it suitable for environments requiring large-scale culture medium agitation.Figure 3.4.1(b) shows a spiral-rising agitator that uniformly mixes microbial cultures with nutrients. Its thin blades easily divide the liquid, making it suitable for high-viscosity culture media.
 
 
 ### Flow Control Module
@@ -233,15 +238,15 @@ During fermentation, scenarios often arise where controlling the flow rate or vo
 
 Figure 3.4.2(a) depicts a flow control module featuring porous construction for uniform leakage, enabling seamless integration into our equipment. The triple-hole design enhances operational flexibility. Figure 3.4.2(b) shows a flow control valve that regulates flow from the upper to lower tubes via a rotary handle, offering simple operation suitable for infrequently used flow control valves.
 
-{% include figure2.html images=page.images21 %}
 
 ### Speed Control Module
 
 During cell centrifugation, the required rotational speed is influenced by cell size. To facilitate switching the centrifuge's rotational speed, we designed a speed adjustment module.
 
-Figure 3.4.5 shows a 7-tooth gear connected to the drive shaft. Figure 3.4.6 depicts a gear set designed for speed adjustment, featuring 14, 21, and 28 teeth respectively. These gears amplify the motor speed by 2x, 3x, and 4x, allowing speed switching through height adjustment for quick and convenient operation.
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh9.webp" caption="Figure 3.4.3 Speed Control Module" %}
 
-{% include figure2.html images=page.images22 %}
+Figure 3.4.3(a) shows a 7-tooth gear connected to the drive shaft. Figure 3.4.3(b) depicts a gear set designed for speed adjustment, featuring 14, 21, and 28 teeth respectively. These gears amplify the motor speed by 2x, 3x, and 4x, allowing speed switching through height adjustment for quick and convenient operation.
+
 
 ### Aeration Module
 
