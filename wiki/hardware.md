@@ -161,6 +161,7 @@ images27:
     caption: Figure 3.5.2 Exchange with Dr. Chen Yulong
 
 ---
+
 ## Overview
 In the current fields of molecular biology, synthetic biology, proteomics, and biopharmaceuticals, microbial cultivation and the extraction of intracellular active substances constitute fundamental and critical experimental steps. However, existing technical workflows face significant bottlenecks:
 
