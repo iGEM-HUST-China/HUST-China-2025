@@ -516,7 +516,7 @@ Temperature exerted a clear influence on the carrying capacity (K). Above 28 °C
 
 **Table 3-1. Model predictions versus actual Gompertz parameters on independent test set**
 
-<div style="font-size:12px; overflow-x:auto;">
+{<div style="font-size:12px; overflow-x:auto;">
 <table>
 <thead>
 <tr>
@@ -567,7 +567,7 @@ Temperature exerted a clear influence on the carrying capacity (K). Above 28 °C
 </tbody>
 </table>
 </div>
-
+}
 > **RMSE:** 0.0609  **R²:** 0.9333  
 > The model shows close agreement between predicted and actual Gompertz parameters across unseen pH–temperature conditions.
 
