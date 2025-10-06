@@ -10,4 +10,4 @@ excerpt: ""
 
 All the pages are under construction, please check [description](description) page for more information about this year's project briefly.
 
-[{% include button.html text="Click here to see the Hardware page" link="../hardware/#user-feedback" %}](https://gitlab.igem.org/2025/hust-china)
+[{% include button.html text="Click here to see the Hardware page" link="../hardware/#user-feedback" %}](hardware)
