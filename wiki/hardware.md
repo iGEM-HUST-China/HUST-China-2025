@@ -127,7 +127,7 @@ To resolve the issue of repeatedly transferring liquid and balancing the centrif
 
 ![Figure 3.2.7 CommunicatingCentrifuge Tube Kit](media/image12.png) ![](media/image13.png) ![](media/image14.png)
 
-# c. Intelligent Control System: Primarily used to automate the entire device, reducing manual operation time
+**c. Intelligent Control System: Primarily used to automate the entire device, reducing manual operation time**
 
 To integrate control of the entire apparatus and monitor cell culture conditions in real time, we developed the following circuit control system based on the STM32F103C8T6 microcontroller:
 
@@ -151,7 +151,7 @@ To integrate control of the entire apparatus and monitor cell culture conditions
 
     ![Figure 3.2.10 Peristaltic Pump](media/image17.png)
 
-### Software:
+### Software
 
 We developed the program using Keil5. The primary functional code is as follows:
 
@@ -161,7 +161,7 @@ We developed the program using Keil5. The primary functional code is as follows:
 
 This section documents the challenges encountered during hardware development and their corresponding solutions.
 
-### First Version
+### Version 1.0
 
 Initially, our device design comprised only an upper chamber for fermentation and a lower chamber for enrichment and lysis. In the upper chamber, we incorporated a stirring rod. Two openings were added to the chamber's side, each equipped with a slide valve for controlled liquid addition and removal. At the tank bottom, a drain pipe allowed the concentrated bacterial solution to be sequentially transferred into centrifuge tubes below via a plug-screw mechanism upon fermentation completion, followed by removal for weighing. After centrifugation in the lower tank, the shaft was manually switched from concentric to eccentric mode, and grinding beads with buffer solution were added to initiate agitation and cell disruption.
 
@@ -169,7 +169,7 @@ However, this version still required significant manual labor, leading us to dev
 
 ![Figure 3.3.1 Schematic of the First-Generation Model](media/image20.png)
 
-### Second Version
+### 2.0Version
 
 ![Figure 3.3.2 Schematic of the second-generation model](media/image21.png)
 
@@ -183,7 +183,7 @@ However, during practical testing, we encountered the following issues:
 
 To address these issues, we continuously optimized the design and launched V3.0.
 
-### Third Generation
+### Version 3.0
 
 ![Figure 3.3.3 Schematic Diagram of Third-Generation Model](media/image22.png) ![Figure 3.3.3 Schematic Diagram of Third-Generation Model](media/image23.png)
 
@@ -200,7 +200,7 @@ Although we successfully resolved the issues encountered in the third version, w
 1.  The brushed DC motor proved difficult to control for precise angular rotation, causing the inner plate to frequently stop at undesirable positions and preventing successful single-pass liquid discharge.
 2.  The 3D-printed servo gears proved too flexible to effectively rotate the outer tank for secondary drainage.
 
-### Version 4
+### Version 4.0
 
 Ultimately, we iterated to V4.0 as the final hardware product for this project. Through research, we discovered that stepper motors can simultaneously achieve continuous rotation and precise angle control. By positioning both discharge outlets on the base plate and utilizing the stepper motor's fixed-angle rotation, we resolved the issues present in the third version.
 
@@ -318,17 +318,20 @@ Based on these recommendations, we redesigned the fermentation module by incorpo
 
 ### 1. Contributions to Synthetic Biology and the iGEM Community
 
-## Significance of the Integrated Automated Cultivation and Lysis Mechanism
+**Significance of the Integrated Automated Cultivation and Lysis Mechanism**
 
 This integrated automated cultivation and lysis mechanism will benefit all teams focused on protein expression screening, metabolite engineering, and cell factory optimization. Our device establishes a mechanism that automates the process from cultivation to lysis on a low-cost benchtop platform, enabling easy replication by other teams. In this way, it introduces the option of "desktop-scale automated sample preparation" for subsequent teams and projects beyond iGEM, thereby broadening the application scope of synthetic biology in rapid iteration and standardized characterization.
 
-## Significance of the Single-Motor Reversible Multi-Mode Drive Mechanism
+**Significance of the Single-Motor Reversible Multi-Mode Drive Mechanism**
 
 As a device capable of automatically switching between centrifugation and shaking modes using a single power source, it will assist all teams in developing compact, cost- controlled automated biological experimental equipment. One advantage of its modular integrated design is the ability to simplify control systems and reduce manufacturing costs, enabling complex functionality even under resource constraints.
 
-## Significance of the Device's Self-Balancing Centrifuge Tubes
+**Significance of the Device's Self-Balancing Centrifuge Tubes**
 
 Achieving balance during centrifugation is a critical challenge in automated experimental systems. Our self-balancing centrifuge tubes, based on the communicating vessels principle, instantly achieve mass equilibrium upon liquid injection. This innovation eliminates the cumbersome, time-consuming manual weighing and balancing steps required in traditional centrifugation, providing essential support for true "one-button start" fully automated workflows.
+
+
+
 
 Our device is designed to precisely address real-world issues through human-practice feedback loops, meeting diverse needs while continuously optimizing performance. Furthermore, its versatility and replicability unlock broader application potential.
 
