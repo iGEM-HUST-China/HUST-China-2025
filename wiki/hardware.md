@@ -178,7 +178,7 @@ The maximum speed of the purchased brushless motor under load, measured by an in
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h38.webp" caption="Figure 3.2.5 Contour Plot of Absorbance" %}
 **Mode Switching Module:**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h32.webp" caption="Figure 3.2.6 Schematic of the Mode Switching Module" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh2.webp" caption="Figure 3.2.6 Schematic of the Mode Switching Module" %}
 
 We designed the equipment based on the commonly used glass bead shaking method in laboratories to disrupt cells and extract intracellular squalene. To save space, we developed a mode switching module to integrate both shaking and centrifugation functions. The core design features a mode switching bearing (animation shown).
 
