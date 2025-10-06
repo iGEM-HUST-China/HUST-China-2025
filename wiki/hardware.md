@@ -356,11 +356,11 @@ Our device is designed to precisely address real-world issues through human-prac
 
 Core functions and structure performed well in the prototype, demonstrating the device's practicality and functionality. This strongly indicates that with further refinement, it can evolve into a commercialized and practical model in the future.
 
-(Project Philosophy and Design, Product Usage Procedure, Discussion)
+([Project Philosophy and Design](#project-philosophy-and-design), [Product Usage Procedure](#product-usage-procedure), [Discussion](#discussion))
 
 We conducted multiple user tests and interviews, gathering diverse feedback on the entire device. This feedback was either incorporated into the device's actual production or integrated into plans for future enhancements and implementation.
 
-(Requirement & Cost Analysis, User Feedback)
+([Requirement & Cost Analysis](#requirement-and-cost-analysis), [User Feedback](#user-feedback))
 
 All design information, 3D printing data, electronic schematics, parts lists, and assembly instructions for the final prototype have been fully documented and released in a format easily accessible for replication.
 
