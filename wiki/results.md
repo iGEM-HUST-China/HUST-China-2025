@@ -2,10 +2,8 @@
 title: Results
 permalink: /results/
 feature_text: |
-  ## Results
-  This page contains the results of our project.
-feature_image: https://static.igem.wiki/teams/5175/resources/background/bg-results.jpg
-excerpt: "This page contains the results of our project."
+feature_image: "https://static.igem.wiki/teams/5569/description/rst.webp"
+excerpt: ""
 ---
 
 ## Welcome to iGEM HUST-China 2025 wiki!

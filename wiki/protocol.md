@@ -2,10 +2,8 @@
 title: Protocol
 permalink: /protocol/
 feature_text: |
-  ## Protocol
-  This page contains the protocols of our project.
-feature_image: "https://static.igem.wiki/teams/5175/resources/background/bg-protocol.jpg"
-excerpt: "This page contains the protocols of our project."
+feature_image: "https://static.igem.wiki/teams/5569/description/pcol.webp"
+excerpt: ""
 ---
 
 ## Welcome to iGEM HUST-China 2025 wiki!

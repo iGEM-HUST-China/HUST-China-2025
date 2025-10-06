@@ -2,10 +2,8 @@
 title: Hardware
 permalink: /hardware/
 feature_text: |
-  ## Hardware
-  This page introduces the hardware design of our project.
-feature_image: "https://static.igem.wiki/teams/5569/hardware/h1.webp"
-excerpt: "This page introduces the hardware design of our project."
+feature_image: "https://static.igem.wiki/teams/5569/description/hdwe.webp"
+excerpt: ""
 ---
 ## Overview
 In the current fields of molecular biology, synthetic biology, proteomics, and biopharmaceuticals, microbial cultivation and the extraction of intracellular active substances constitute fundamental and critical experimental steps. However, existing technical workflows face significant bottlenecks:
