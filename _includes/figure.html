@@ -12,11 +12,4 @@
 </div>
 
 
-<div class="figure flex-container">
-  {% for image in include.images %}
-  <figure2 class="figure figure--auto-width allow-contextmenu">
-      <img class="image" src="{{ image.src }}" alt="{{ image.alt | default: image.caption }}" style="width: auto;">
-      {% if image.caption %}<figcaption class="caption">{{ image.caption }}</figcaption>{% endif %}
-  </figure2>
-  {% endfor %}
-</div>
+<
