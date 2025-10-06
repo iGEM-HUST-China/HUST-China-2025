@@ -5,12 +5,12 @@ feature_text: |
 feature_image: "https://static.igem.wiki/teams/5569/description/modl.webp"
 excerpt: ""
 images02:
-  - src: https://static.igem.wiki/teams/5175/test-resources/test-pic-left.jpeg
-    alt: Yunli
-    caption: Yunli
-  - src: https://static.igem.wiki/teams/5175/test-resources/test-pic-middle.jpeg
-    alt: High-Cloud Quintet
-    caption: High-Cloud Quintet
+  - src: https://static.igem.wiki/teams/5569/model/m5.webp
+    alt: Global HADDOCK score distribution (boxplot)
+    caption: Figure 4a. Global HADDOCK score distribution across peptide–enzyme complexes (boxplot).
+  - src: https://static.igem.wiki/teams/5569/model/m4.webp
+    alt: Enzyme-wise HADDOCK score comparison (barplot)
+    caption: Figure 4b.** Enzyme-wise HADDOCK score comparison across target enzymes (barplot). 
 ---
 
 ## Our Model
@@ -63,7 +63,7 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
 - Extracted kinetic parameters (**μₘₐₓ**, **λ**, **K**) via **Gompertz** and **spline** fits.
 - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m01.webp" caption="Figure1. MODEL PEPLINE" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure1. MODEL PEPLINE" %}
 
 # I. Linker–Signal Peptide System Docking
 
@@ -110,7 +110,7 @@ window.MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
 
-# II. Molecular Docking
+# 1.1 Molecular Docking
 
 ## Energy Terms and Scoring Principles
 
@@ -118,12 +118,25 @@ The HADDOCK docking protocol is fundamentally a physics-based and restraint-driv
 
 - **van der Waals interactions**: Describing repulsion and attraction between atoms, preventing steric clashes while capturing hydrophobic stabilization.  
 
+<div style="display:flex; justify-content:center;">
+
+$$
+E_{\text{vdW}} = \sum_{i<j} \varepsilon_{ij} \!\left[ \left( \frac{r_{\min,ij}}{r_{ij}} \right)^{12} - 2 \left( \frac{r_{\min,ij}}{r_{ij}} \right)^6 \right]
+$$
+
+</div>
+
 - **Electrostatics**: Coulombic interactions between charged residues, essential for PEX5 recognition of signal peptides.  
 
+<div style="display:flex; justify-content:center;">
+
+$$
+E_{\text{elec}} = \sum_{i<j} \frac{k_e\,q_i q_j}{\varepsilon(r_{ij})\,r_{ij}}, \quad k_e \approx 332\ \text{kcal·Å·mol}^{-1}\text{·e}^{-2}
+$$
+
+</div>
+
 - **Desolvation energy**: Reflecting the free-energy change of amino acid residues when buried at the interface. Hydrophobic burial is favorable, while polar residues require compensating hydrogen bonds or salt bridges.  
-
-The desolvation energy term can be expressed as:
-
 
 <div style="display:flex; justify-content:center;">
 
@@ -133,36 +146,29 @@ $$
 
 </div>
 
-
 - **Ambiguous Interaction Restraints (AIRs)**: Experimentally derived or hypothesized distance restraints that bias docking toward biologically relevant solutions.  
-
-The restraint energy is defined as:
-
 
 <div style="display:flex; justify-content:center;">
 
 $$
-E_{\text{air}} = \sum_k W_k (d_k - d_{0,k})^2
+E_{\text{air}} = \sum_k W_k \big(\langle d_k^{-6}\rangle^{-1/6} - d_{0,k}\big)^2
 $$
 
 </div>
-
 
 At different docking stages (rigid body, semi-flexible refinement, water refinement), these energy terms are combined with varying weights into the final HADDOCK score. Additionally, **Buried Surface Area (BSA)** is used to quantify the size and compactness of the interface.  
 
-The overall scoring function is:
-
-
 <div style="display:flex; justify-content:center;">
 
 $$
-\text{Score} = w_{\text{vdW}} E_{\text{vdW}} + w_{\text{elec}} E_{\text{elec}} + w_{\text{desolv}} E_{\text{desolv}} + w_{\text{air}} E_{\text{air}} - w_{\text{BSA}}\cdot \text{BSA}
+\text{Score} = w_{\text{vdW}} E_{\text{vdW}} + w_{\text{elec}} E_{\text{elec}} + w_{\text{desolv}} E_{\text{desolv}} + w_{\text{air}} E_{\text{air}}
 $$
 
 </div>
 
+*(Optional reporting term: − 0.01 × BSA may be included to account for interface compactness.)*
 
-Thus, HADDOCK scoring integrates both atomic-level physical interactions and experimental constraints, rather than relying on geometry alone.
+Thus, HADDOCK scoring integrates both atomic-level physical interactions and experimental restraints, rather than relying on geometry alone.
 
 
 ## Structure Preparation
@@ -181,7 +187,7 @@ Clustering by interface RMSD reduced the dataset to ~192 representative complexe
 
 ## Definition of Active Residues
 
-To focus docking on biologically relevant regions, active residues were explicitly defined. For PEX5, the TPR repeat hot-spot residues (364, 398, 438, 469, 476, 501, 507, 585) were selected. For the MVA enzymes, the C-terminal linker+SKL regions were defined as active sites, reproducing the natural recognition of PTS1 signals by PEX5.
+To focus docking on biologically relevant regions, active residues were explicitly defined. For PEX5, the TPR repeat hot-spot residues (364, 398, 438, 469, 476, 501, 507, 585) were selected. For the MVA enzymes, the C-terminal linker + SKL regions were defined as active sites, reproducing the natural recognition of PTS1 signals by PEX5.
 
 
 ## Scoring and Visualization
@@ -190,9 +196,10 @@ Docking results were evaluated with the HADDOCK scoring function, which integrat
 
 Representative complexes were visualized in PyMOL and ChimeraX to illustrate hydrogen-bond networks and structural overlays. The results confirmed the plausibility of docking poses and highlighted distinct recognition patterns between the minimal and extended signal peptides at the PEX5 interface.
 
+
 {% include figure.html image="https://static.igem.wiki/teams/5569/model/m1.webp" caption="Figure3. Molecular_docking" %}
 
-# III. Energy Analysis
+# 1.2 Energy Analysis
 
 To comprehensively evaluate docking outcomes, we analyzed both global scores and underlying energetic contributions.
 
@@ -200,7 +207,12 @@ Boxplot comparisons across all peptide–enzyme complexes revealed a clear hiera
 
 When HADDOCK scores were resolved for each enzyme partner (barplot analysis), the same pattern emerged: **TYWIRFSKL** outperformed **SKL** in nearly every case, often with large margins, whereas **GGGSSKL** tracked between the two. These results demonstrate that the effect is not restricted to a single target but represents a general enhancement of binding across the enzyme panel.
 
+{% include figure2.html images=page.images02 %}
+
+
 We next examined the energetic basis for these differences. Donut plots visualizing HADDOCK scoring weights highlighted distinct stabilization mechanisms. For **TYWIRFSKL**, improved binding arose primarily from enhanced electrostatics and van der Waals packing, which favor tighter and more specific interfaces. By contrast, **SKL** complexes relied disproportionately on desolvation contributions, reflecting weaker direct interactions and more solvent-mediated stabilization. **GGGSSKL** again showed an intermediate profile, suggesting that the flexible linker partially compensates but cannot substitute for the aromatic contacts.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m3.webp" caption="**Figure 5.** Energetic decomposition showing relative contributions of electrostatics, vdW, and desolvation terms (donut plots)." %}
 
 Finally, we integrated all docking metrics—including **HADDOCK score**, **vdW**, **electrostatics**, **desolvation**, **buried surface area (BSA)**, and **Z-score**—into a standardized heatmap to compare complexes on a unified scale. To enable cross-metric comparison, terms where “lower is better” were inverted, and each column was z-score normalized. This approach eliminated differences in physical units and revealed the relative performance landscape.
 
@@ -212,10 +224,84 @@ $$
 
 </div>
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m2.webp" caption="**Figure 6.** Standardized heatmap of HADDOCK-derived energetic and interfacial metrics." %}
+
 In this analysis, **TYWIRFSKL** complexes consistently clustered toward favorable energetic and interfacial signatures, with larger BSA and stronger vdW/electrostatics contributions. In contrast, **SKL** complexes grouped together at the unfavorable end of the spectrum, with lower BSA and weaker interactions.
 
 Together, these multi-layered analyses converge on the conclusion that aromatic extension of the **SKL** motif enhances recognition, increases buried surface area, and stabilizes peptide–enzyme interactions through stronger packing and electrostatics, providing a mechanistic rationale for its superior docking performance.
 
+# 1.3 Limitations and Future Perspectives
+
+Despite providing valuable insights into peptide–enzyme recognition, this study has several limitations.  
+
+First, HADDOCK predictions are highly dependent on the quality of input structures.  
+Homology-modeled enzymes and AlphaFold-predicted peptide fusions may carry local inaccuracies, and the definition of active residues remains partly subjective—both factors potentially bias docking outcomes and cluster rankings.  
+
+Second, docking represents molecular interactions in a static framework.  
+Conformational flexibility, induced-fit effects, and large-scale domain motions prevalent in the cellular environment cannot be fully captured.  
+Moreover, macromolecular crowding, ionic strength, and post-translational modifications—critical determinants of peroxisomal import—were not considered in the present computational setup.  
+
+Third, the HADDOCK scoring function is based on empirical weighting.  
+While the composite score provides a useful trend indicator, it may not accurately reflect the true energetic balance under physiological conditions.  
+The dominance of electrostatic and van der Waals contributions observed here warrants validation through more rigorous, force-field–based simulations.  
+
+Finally, the functional relevance of docking preferences remains to be experimentally verified.  
+In vitro binding assays and in vivo peroxisomal import experiments will be required to confirm whether the enhanced affinity of **TYWIRFSKL** indeed translates into improved targeting efficiency.  
+
+Future work will address these limitations by:  
+- refining top-performing complexes with long-timescale molecular dynamics simulations under near-physiological conditions;  
+- incorporating explicit solvent and macromolecular crowding models to capture cellular complexity;  
+- coupling computational predictions with biochemical and cellular assays to validate binding preferences and import outcomes.  
+
+
+## References
+
+1. Gould SJ, Keller GA, Hosken N, Wilkinson J, Subramani S. *A conserved tripeptide sorts proteins to peroxisomes.* **J Cell Biol.** 1989;108(5):1657–1664.  
+2. Brocard C, Hartig A. *Peroxisome targeting signal 1: Is it really a simple tripeptide?* **Biochim Biophys Acta.** 2006;1763(12):1565–1573.  
+3. Lametschwandtner G, Brocard C, Fransen M, Van Veldhoven PP, Berger J, Hartig A. *The difference in recognition of PTS1 and PTS2 signals is conserved between yeast and mammals.* **EMBO J.** 1998;17(21):5948–5958.  
+4. Neuberger G, Maurer-Stroh S, Eisenhaber B, Hartig A, Eisenhaber F. *Prediction of peroxisomal targeting signal 1–containing proteins from amino acid sequence.* **J Mol Biol.** 2003;328(3):581–592.  
+5. Dominguez C, Boelens R, Bonvin AMJJ. *HADDOCK: A protein–protein docking approach based on biochemical or biophysical information.* **J Am Chem Soc.** 2003;125(7):1731–1737.  
+6. van Zundert GCP, Rodrigues JPG, Trellet M, Schmitz C, Kastritis PL, Karaca E, *et al.* *The HADDOCK2.4 web server: user-friendly integrative modeling of biomolecular complexes.* **J Mol Biol.** 2016;428(4):720–725.  
+7. Rodrigues JPG, Trellet M, Schmitz C, Kastritis PL, Karaca E, Melquiond ASJ, Bonvin AMJJ. *Clustering biomolecular complexes by residue contacts similarity.* **Proteins.** 2012;80(7):1810–1817.  
+8. van Zundert GCP, Bonvin AMJJ. *Modeling protein–protein complexes using the HADDOCK webserver.* **Methods Mol Biol.** 2014;1137:163–179.  
+
+
+# II. Protein Design and Optimization
+
+## 2.1 Background
+
+3-Hydroxy-3-methylglutaryl-CoA reductase (HMGR) is the rate-limiting enzyme of the mevalonate (MVA) pathway, catalyzing the reduction of HMG-CoA to mevalonate — a crucial control point for isoprenoid, sterol, and lipid biosynthesis. The structural stability and catalytic efficiency of HMGR therefore exert a decisive influence on downstream metabolic flux and product accumulation.  
+
+In *Yarrowia lipolytica*, HMGR is a membrane-associated enzyme composed of an N-terminal transmembrane and sterol-binding domain and a C-terminal cytosolic catalytic domain. Because full-length HMGR is difficult to express and fold in heterologous systems, we employed a truncated soluble variant (tHMGR) that lacks the sterol-binding and transmembrane regions but retains the core catalytic domain. This truncation preserves enzymatic activity while significantly improving solubility and expression stability.  
+
+To enhance thermodynamic stability without compromising catalytic function, we developed a structure-guided protein design framework integrating ProteinMPNN, Frustratometer2, and Rosetta FastRelax, enabling systematic sequence exploration and energy refinement of tHMGR — laying a computational foundation for rational enzyme optimization in the MVA pathway.  
+
+
+## 2.2 Theoretical Principles
+
+### (1) ProteinMPNN
+
+ProteinMPNN is a graph-based sequence design model built upon message passing neural networks (MPNNs).  
+The protein backbone is represented as a residue graph, where nodes correspond to residues and edges encode geometric relationships.  
+By iteratively passing messages between nodes, the model learns spatial dependencies that govern residue identity.  
+
+Trained on large-scale protein structure–sequence datasets, ProteinMPNN can rapidly sample diverse and stable sequences conditioned on a fixed backbone, efficiently balancing sequence diversity and thermodynamic stability.  
+
+
+### (2) Frustratometer2
+
+Frustratometer2 quantitatively characterizes the frustration of a protein’s energy landscape — a measure of energetic conflict among local interactions.  
+Using molecular mechanics potentials and perturbation analysis, it classifies interactions as minimally, neutral, or highly frustrated, thereby evaluating both local and global energetic smoothness.  
+
+Reducing local frustration typically enhances folding cooperativity and thermodynamic stability.  
+
+
+### (3) Rosetta FastRelax
+
+Rosetta FastRelax is an all-atom refinement protocol within the Rosetta suite.  
+By iteratively minimizing energy and repacking side-chains while maintaining the global fold, it eliminates steric clashes and achieves energetically favorable conformations.  
+
+FastRelax is typically employed as a post-design refinement step to further optimize candidate structures, ensuring physical plausibility and thermodynamic robustness.  
 
 
 
