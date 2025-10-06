@@ -1,0 +1,63 @@
+<!-- _includes/dropdown.html -->
+<div class="dropdown {% if include.class %}{{ include.class }}{% endif %}">
+    <button class="dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
+      {{ include.title | default: "点击展开" }}
+    </button>
+    <div class="dropdown-content">
+      {{ include.content }}
+    </div>
+  </div>
+  
+  <style>
+  .dropdown {
+    border: 1px solid #e1e8ed;
+    border-radius: 8px;
+    margin: 15px 0;
+    overflow: hidden;
+    background: white;
+  }
+  
+  .dropdown-btn {
+    width: 100%;
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dropdown-btn::after {
+    content: "▶";
+    font-size: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown.active .dropdown-btn::after {
+    transform: rotate(90deg);
+  }
+  
+  .dropdown-btn:hover {
+    background: #e9ecef;
+  }
+  
+  .dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 20px;
+    background: white;
+  }
+  
+  .dropdown.active .dropdown-content {
+    max-height: 1000px;
+    padding: 20px;
+    border-top: 1px solid #e1e8ed;
+  }
+  </style>
