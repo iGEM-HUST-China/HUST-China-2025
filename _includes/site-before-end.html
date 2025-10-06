@@ -401,122 +401,27 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
       // 处理单张图片的全屏显示
-      const singleImages = document.querySelectorAll('.flex-container-single .image'); // 选择单张图片
+      const singleImages = document.querySelectorAll('.flex-container-single .image');
       const singleFullscreenContainer = document.getElementById('fullscreen-container');
       const singleFullscreenImage = document.getElementById('fullscreen-image');
       const closeBtn = document.querySelector('.close-btn');
       
-      // 图片缩放和拖动变量
-      let scale = 1;
-      let isDragging = false;
-      let startX, startY, translateX = 0, translateY = 0;
+      // 设置全屏容器默认样式
+      $(singleFullscreenContainer).css("display", "flex");
+      $(singleFullscreenContainer).hide();
       
-      $(singleFullscreenContainer).css("display", "flex"); //设置默认display样式为flex
-      $(singleFullscreenContainer).hide(); //先隐藏
+      // 为每张图片添加点击事件
+      singleImages.forEach(singleImage => {
+          singleImage.addEventListener('click', function () {
+              singleFullscreenImage.src = this.src;
+              $(singleFullscreenContainer).fadeIn(300);
+          });
+      });
       
-      let is_first_click = true;
-      
-      if (singleImages) {
-          singleImages.forEach(singleImage => {
-              singleImage.addEventListener('click', function () {
-                  singleFullscreenImage.src = this.src; // 设置全屏图像的 src
-                  // 重置缩放和位置
-                  singleFullscreenImage.style.transform = 'scale(1) translate(0, 0)';
-                  scale = 1;
-                  translateX = 0;
-                  translateY = 0;
-                  
-                  if (is_first_click) {
-                      singleFullscreenContainer.style.display = 'flex'; // 显示全屏容器
-                      is_first_click = false;
-                  } else {
-                      $(singleFullscreenContainer).stop().fadeIn(150); // 显示全屏容器
-                  }
-                  
-                  // 使用 setTimeout 确保容器显示后再添加放大类
-                  setTimeout(() => {
-                      singleFullscreenImage.classList.add('zoom-in'); // 添加放大类
-                  }, 150); // 使用小的延迟确保容器已经显示
-              });
-          });
-
-          // 点击全屏容器或关闭按钮时隐藏
-          singleFullscreenContainer.addEventListener('click', function (e) {
-              if (e.target === singleFullscreenContainer || e.target === closeBtn) {
-                  singleFullscreenImage.classList.add('zoom-out'); // 添加缩小类
-                  $(singleFullscreenContainer).stop().fadeOut(300);
-                  setTimeout(() => {
-                      singleFullscreenImage.classList.remove('zoom-out'); // 移除缩小类
-                  }, 300); // 持续时间与 CSS 中的过渡时间相同
-              }
-          });
-
-          // 图片缩放功能
-          singleFullscreenImage.addEventListener('wheel', function (e) {
-              e.preventDefault();
-              
-              const rect = singleFullscreenImage.getBoundingClientRect();
-              const offsetX = e.clientX - rect.left;
-              const offsetY = e.clientY - rect.top;
-              
-              const delta = e.deltaY > 0 ? -0.1 : 0.1;
-              const newScale = Math.min(Math.max(0.5, scale + delta), 3);
-              
-              if (newScale !== scale) {
-                  // 计算缩放中心点
-                  const scaleChange = newScale / scale;
-                  translateX = offsetX - (offsetX - translateX) * scaleChange;
-                  translateY = offsetY - (offsetY - translateY) * scaleChange;
-                  
-                  scale = newScale;
-                  updateImageTransform();
-              }
-          });
-          
-          // 图片拖动功能
-          singleFullscreenImage.addEventListener('mousedown', function (e) {
-              if (scale > 1) {
-                  isDragging = true;
-                  startX = e.clientX - translateX;
-                  startY = e.clientY - translateY;
-                  singleFullscreenImage.style.cursor = 'grabbing';
-              }
-          });
-          
-          document.addEventListener('mousemove', function (e) {
-              if (isDragging) {
-                  translateX = e.clientX - startX;
-                  translateY = e.clientY - startY;
-                  updateImageTransform();
-              }
-          });
-          
-          document.addEventListener('mouseup', function () {
-              isDragging = false;
-              singleFullscreenImage.style.cursor = scale > 1 ? 'grab' : 'zoom-out';
-          });
-          
-          // 更新图片变换
-          function updateImageTransform() {
-              singleFullscreenImage.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
-          }
-
-          // 定义函数来隐藏全屏容器
-          function hideFullscreenContainerOnScroll() {
-              if (!singleFullscreenContainer) return;
-              // 如果全屏容器是可见的
-              if ($(singleFullscreenContainer).is(':visible')) {
-                  singleFullscreenImage.classList.add('zoom-out'); // 添加缩小类
-                  $(singleFullscreenContainer).stop().fadeOut(300);
-                  setTimeout(() => {
-                      singleFullscreenImage.classList.remove('zoom-out'); // 移除缩小类
-                  }, 300); // 持续时间与 CSS 中的过渡时间相同
-              }
-          }
-
-          // 监听滚动事件
-          window.addEventListener('scroll', hideFullscreenContainerOnScroll);
-      }
+      // 点击关闭按钮时隐藏全屏
+      closeBtn.addEventListener('click', function() {
+          $(singleFullscreenContainer).fadeOut(300);
+      });
   });
 
     // 处理多张图片的全屏显示
