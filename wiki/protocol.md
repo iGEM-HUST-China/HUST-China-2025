@@ -12,6 +12,5 @@ All the pages are under construction, please check [description](description) pa
 
 {% include button.html text="Click here to see the Hardware page" link="../hardware/#user-feedback" %}
 
-{% include dropdown.html 
-   title="📁 点击查看安装步骤"
+{% include dropdown.html title="📁 点击查看安装步骤"
    content="waoooooooooooooooooo"}
