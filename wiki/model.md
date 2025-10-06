@@ -12,8 +12,8 @@ images02:
     alt: Enzyme-wise HADDOCK score comparison (barplot)
     caption: Figure 4b. Enzyme-wise HADDOCK score comparison across target enzymes (barplot). 
 ---
-## Overview
 
+## Our Model
 
 Engineering peroxisomal protein targeting and rewiring central carbon metabolism in *Yarrowia lipolytica* poses a formidable design challenge: the import efficiency of linker–signal peptides, the catalytic bottleneck imposed by pathway rate-limiting enzymes, and the nonlinear dynamics of growth under complex carbon sources are deeply intertwined. Trial-and-error approaches alone cannot efficiently resolve this multi-layered problem.
 
@@ -358,9 +358,9 @@ Second, Frustratometer2 relies on classical potentials lacking quantum and solve
 Third, FastRelax focuses on energy minimization without explicitly constraining catalytic kinetics.  
 
 Future extensions include:  
-1️⃣ Incorporating molecular dynamics simulations to represent conformational dynamics;  
-2️⃣ Developing multi-objective optimization strategies to balance thermodynamic stability and catalytic activity;  
-3️⃣ Integrating experimental feedback loops to achieve closed-cycle computational–experimental co-design.  
+1 Incorporating molecular dynamics simulations to represent conformational dynamics;  
+2 Developing multi-objective optimization strategies to balance thermodynamic stability and catalytic activity;  
+3 Integrating experimental feedback loops to achieve closed-cycle computational–experimental co-design.  
 
 
 ## References
@@ -374,4 +374,116 @@ Future extensions include:
 7. Miziorko HM. **Enzymes of the mevalonate pathway of isoprenoid biosynthesis.** *Arch Biochem Biophys.* 2011;505(2):131–143.  
 8. Liu Z, Gao Y, Chen J, Imanaka T, Bao J, Hua Q. **Metabolic engineering of *Yarrowia lipolytica* for the production of terpenoids.** *Metab Eng.* 2019;57:151–161.  
 9. Rodriguez GM, Hussain MS, Gambill L, Gao D, Yaguchi A, Blenner M. **Engineering *Yarrowia lipolytica* to produce fuels and chemicals from xylose.** *Biotechnol Bioeng.* 2016;113(11):2528–2538.  
+
+# III. Machine Learning Growth Modeling
+
+## Background
+
+Understanding the quantitative relationship between environmental factors and microbial growth dynamics is essential for optimizing bioprocesses and designing predictive cultivation strategies.  
+In this study, *Yarrowia lipolytica* was chosen as a model organism owing to its exceptional environmental tolerance and remarkable lipid-producing capacity, making it a versatile chassis for metabolic engineering.  
+
+Traditionally, microbial growth is described using the four-parameter Gompertz equation, which captures the characteristic sigmoidal trajectory of a batch culture.  
+Its parameters—initial biomass (A), carrying capacity (K), maximum specific growth rate (μₘₐₓ), and lag-phase duration (λ)—offer direct physiological interpretation, reflecting cell density, growth potential, metabolic activity, and adaptation time, respectively.  
+
+However, this classical fitting approach is inherently phenomenological and condition-specific: each growth curve is fitted independently under a fixed environment, and the obtained parameters cannot be generalized to new combinations of pH or temperature.  
+To overcome this limitation, we established a hybrid modelling framework that integrates mechanistic growth equations with machine-learning regression, enabling the model to learn the mapping between culture conditions (pH, T) and Gompertz parameters.  
+
+This combined approach allows not only quantitative prediction of unseen conditions but also rational optimization of environmental variables—bridging the gap between empirical growth curves and data-driven bioprocess design.  
+
+## 3.2 Data Acquisition
+
+To construct a comprehensive dataset linking environmental variables to growth behavior, we continuously monitored OD₆₀₀ of *Yarrowia lipolytica* cultivated under systematically varied conditions.  
+Each culture was measured in triplicate across eleven time points spanning 0–80 h. At every time point, OD₆₀₀ was recorded both before and after centrifugation, and the difference was taken as the effective OD, thereby eliminating background interference from medium turbidity and yielding cleaner growth profiles.  
+
+The experimental design combined two environmental factors—pH and temperature—with twelve distinct carbon sources, including oleic acid, glycerol, and recycled cooking oil.  
+Sixteen pH–temperature combinations were tested in total: twelve evenly spaced factorial conditions for model training and four intermediate, non-equidistant points for testing generalization to unseen environments.  
+
+Altogether, the dataset contained approximately 6,000 high-resolution measurements, providing a robust quantitative foundation for Gompertz parameter fitting and machine-learning regression.  
+
+## 3.3 Modelling and Prediction
+
+To transform the experimental OD₆₀₀ trajectories into interpretable kinetic descriptors, we first applied the Gompertz equation to fit all growth curves using non-linear least squares  
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m7.webp" caption=" Figure 7. Gompertz model fitting of Y. lipolytica growth under varied carbon-source conditions." %}
+
+This classical model captures the sigmoidal microbial growth pattern and provides four biologically meaningful parameters: the initial biomass (A), the carrying capacity (K), the maximum specific growth rate (μₘₐₓ), and the lag-phase duration (λ). 
+
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+y(t) = A + (K - A) \cdot \exp\left[-\exp\left(\frac{\mu_{\max} \cdot e}{K - A}(\lambda - t) + 1\right)\right]
+$$
+
+</div>
+
+
+Each fit produced smooth trajectories and 95 % confidence intervals, providing robust parameter estimates.  
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m8.webp" caption=" Figure 7. Gompertz model fitting with 95% confidence intervals across multiple carbon sources." %}
+
+The fitted parameters were then reformulated as a multi-output regression task, with environmental conditions (pH, temperature, substrate) serving as inputs and the Gompertz parameter vector as outputs.  
+Model training minimized the L2 loss function , ensuring consistency between predicted and fitted parameters.  
+
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+E_{\text{HADDOCK}} = w_{\text{vdw}}E_{\text{vdw}} + w_{\text{elec}}E_{\text{elec}} + w_{\text{desolv}}E_{\text{desolv}} + w_{\text{AIR}}E_{\text{AIR}}
+$$
+
+</div>
+
+
+For decision-tree models, node splits were determined by maximizing variance reduction (Figure 3-4).  
+Two ensemble-tree algorithms were benchmarked:  
+
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+E_{\text{desolv}} = \sum_{i,j} S_i S_j \exp(-r_{ij}^2 / 2\sigma^2)
+$$
+
+</div>
+
+
+- **Random Forest** — aggregates multiple decision trees through a bagging strategy to reduce variance and improve robustness;  
+- **XGBoost** — applies boosting to iteratively fit residuals while optimizing a regularized objective . The regularization term penalizes overly complex tree structures and large weights, thereby enhancing generalization.  
+
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+E_{\text{air}} = \sum_k W_k (d_k - d_{0,k})^2
+$$
+
+</div>
+
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+\text{Score} = w_{\text{vdW}}E_{\text{vdW}} + w_{\text{elec}}E_{\text{elec}} + w_{\text{desolv}}E_{\text{desolv}} + w_{\text{air}}E_{\text{air}} - w_{\text{BSA}}\cdot\text{BSA}
+$$
+
+</div>
+
+Training was conducted under five-fold cross-validation, with predictive performance evaluated using the coefficient of determination (R²) and root-mean-square error (RMSE).  
+To ensure biological plausibility, we incorporated an empirical constraint based on the 10%→90% rise width of the Gompertz curve .  
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+y(t) = A + (K - A)\exp\!\left[-\exp\!\left(\frac{\mu_{\max} e}{K - A}(\lambda - t) + 1\right)\right]
+$$
+
+</div>
+
+In specific scenarios, μₘₐₓ was recalculated from this constraint , further improving the physiological interpretability of predictions.  
+<div style="display:flex; justify-content:center; margin-top:1em; margin-bottom:1em;">
+
+$$
+L = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2
+$$
+
+</div>
+
+
+In summary, this tri-layer modelling framework — **mechanistic fitting**, **data-driven regression**, and **empirical constraint** — ensures both interpretability and generalization, providing a robust tool for predictive modelling and optimization of microbial growth curves.  
+This hybrid approach bridges mechanistic insight with data-driven flexibility, enabling rational environmental optimization in bioprocess design.  
 
