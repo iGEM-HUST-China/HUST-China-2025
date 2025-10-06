@@ -1,34 +1,6 @@
 <!-- Overwrite this file with code you want before the closing body tag -->
 
 <!-- Prohibit right-clicking, copying and selecting -->
-<script>
-  // 判断目标及其所有父元素是否属于指定白名单
-  function isInWhitelist(target, className) {
-    return target.closest && target.closest('.' + className);
-  }
-
-  // 禁止右键，除白名单及其所有子元素
-  document.addEventListener('contextmenu', function (event) {
-    if (!isInWhitelist(event.target, 'allow-contextmenu')) {
-      event.preventDefault();
-    }
-  });
-
-  // 禁止选择，除白名单及其所有子元素
-  document.addEventListener('selectstart', function (event) {
-    if (!isInWhitelist(event.target, 'allow-select')) {
-      event.preventDefault();
-    }
-  });
-
-  // 禁止复制，除白名单及其所有子元素
-  document.addEventListener('copy', function (event) {
-    if (!isInWhitelist(event.target, 'allow-copy')) {
-      event.clipboardData.setData('text/plain', 'This text is protected from copying.');
-      event.preventDefault();
-    }
-  });
-</script>
 
 <!-- 清除可能重复的左侧目录 -->
 <script>
