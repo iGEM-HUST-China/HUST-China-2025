@@ -6,14 +6,6 @@ feature_image: "https://static.igem.wiki/teams/5569/description/hdwe.webp"
 excerpt: ""
 
 
-images25:
-  - src:  https://static.igem.wiki/teams/5569/hardware/open-by-shunzhuan-soconvert.webp
-    alt: Turn clockwise to open the flow switch	  
-    caption: Turn clockwise to open the flow switch	  
-  - src:  https://static.igem.wiki/teams/5569/hardware/h14.webp
-    alt:   Figure 3.4.11 Baffled Fermentation Vessel
-    caption:  Figure 3.4.11 Baffled Fermentation Vessel
-
 
 
 ---
@@ -21,11 +13,11 @@ images25:
 ## Overview
 In the current fields of molecular biology, synthetic biology, proteomics, and biopharmaceuticals, microbial cultivation and the extraction of intracellular active substances constitute fundamental and critical experimental steps. However, existing technical workflows face significant bottlenecks:
 
-**1. High equipment cost:** Our field research indicates that mainstream micro-fermentation tank equipment on the market is expensive, creating a significant barrier to entry.
+  **1. High equipment cost:** Our field research indicates that mainstream micro-fermentation tank equipment on the market is expensive, creating a significant barrier to entry.
 
-**2. Complex operation and challenging real-time monitoring:** During experiments, we found that real-time monitoring remains difficult with such equipment. Researchers must still invest significant time in manual operations and prolonged monitoring, especially requiring continuous oversight during nighttime hours. This substantially impacts experimental efficiency and increase researcher workload. Furthermore, existing workflows rely on multiple disparate devices working in tandem, resulting in cumbersome procedures with poor reproducibility.
+  **2. Complex operation and challenging real-time monitoring:** During experiments, we found that real-time monitoring remains difficult with such equipment. Researchers must still invest significant time in manual operations and prolonged monitoring, especially requiring continuous oversight during nighttime hours. This substantially impacts experimental efficiency and increase researcher workload. Furthermore, existing workflows rely on multiple disparate devices working in tandem, resulting in cumbersome procedures with poor reproducibility.
 
-**3. High contamination risk:** Both existing shake flask and micro-fermentation methods require manual sampling, resulting in elevated overall contamination risks that severely compromise research stability and efficiency.
+  **3. High contamination risk:** Both existing shake flask and micro-fermentation methods require manual sampling, resulting in elevated overall contamination risks that severely compromise research stability and efficiency.
 
 To systematically address these challenges, our project team innovatively proposed the design of an "**Integrated Fermentation & Processing System (iFPS)**" based on real-world research needs. This system deeply integrates mechatronics and intelligent control technologies, seamlessly combining three core functional modules---micro-fermentation culture, high-speed centrifugal collection, and mechanical agitation disruption---into a single compact benchtop device. This achieves true end-to-end automation from "post-inoculation" to "crude lysate collection." The system not only significantly enhances experimental consistency and operational safety but also keeps equipment costs around **\$100**-**just 1% of the cost of existing micro-fermentation devices.** fundamentally solving problems points in synthetic biology practice---namely high costs, low efficiency, and heavy reliance on manual labor.
 
@@ -37,23 +29,23 @@ Throughout development, we strictly adhered to standard hardware development pro
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h36.webp" caption="Figure 1.2 R&D Process Diagram" %}
 
-### Phase 1: Defining Requirements and Pain Points
+ **Phase 1: Defining Requirements and Pain Points**
 
 The primary task in this phase is to precisely identify core issues within the current laboratory workflow. Through researcher interviews and observation of experimental procedures, we pinpointed the project's pain points Based on this, we defined the core design requirements for the device and established the ultimate objectives to be achieved. All design decisions stem from these requirements.
 
-### Phase 2: Existing Solutions and Technology Research
+ **Phase 2: Existing Solutions and Technology Research**
 
 This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative "single-motor-driven multi-mode switching" solution.
 
-### Phase 3: Mechanical and System Prototyping
+ **Phase 3: Mechanical and System Prototyping**
 
 In this phase, we translated concepts into concrete engineering designs. Using SolidWorks software for 3D modeling, we meticulously considered the dimensions, materials, and compatibility of all components. This iterative process involved multiple design revisions and improvements based on team discussions and feedback.
 
-### Phase 4: Prototype Manufacturing and Integration Testing
+ **Phase 4: Prototype Manufacturing and Integration Testing**
 
 This phase marks the critical transition from virtual to physical reality. We manufacture all custom parts via methods like 3D printing, procure standard components, and complete the assembly and debugging of the first prototype. Subsequently, rigorous system integration testing is conducted in the wet lab. This testing phase is crucial for identifying any design flaws, performance limitations, or unexpected behaviors. The validation results from the wet lab provide insights for further design iterations and refinements.
 
-### Phase 5: Comprehensive Feedback and Design Optimization
+ **Phase 5: Comprehensive Feedback and Design Optimization**
 
 During this phase, we invited target users (other iGEM teammates, lab peers, faculty members) to experience the device operation and gathered feedback on **human- machine interaction, operational safety,** and structural stability. This feedback directly informed the final design iterations. Ultimately, all design files, code, and bill of materials were finalized, and comprehensive assembly guides and user manuals were developed to ensure project replicability.
 
@@ -77,7 +69,7 @@ Thus, we identified three major pain points: **cumbersome and time-consuming ope
 
 ## Project Philosophy and Design
 
-### 1. Project Overview
+### Project Overview
 
 Our hardware team has consistently focused on addressing practical challenges encountered in synthetic biology micro-fermentation, aiming to provide solutions and fresh perspectives for tackling specific problems. Our design philosophy centers on "**integration, automation, and miniaturization,** **Modular**." The system appears as a compact desktop unit internally divided into two modules: an upper fermentation module and a lower integrated centrifugal agitation module. Controlled by a single STM32 chip, the system utilizes multiple control chips to drive motor rotation. An OLED display shows culture temperature, pH, and motor parameters for real-time monitoring of cultivation conditions. It also comes equipped with numerous components and modules for users to choose from, catering to diverse needs and practical situations.
 
@@ -92,7 +84,7 @@ Our hardware team has consistently focused on addressing practical challenges en
 - **Fermentation Condition Control Module:** Multiple designs at the top of the device primarily enable real-time monitoring and control of fermentation conditions.
 - A 42-step motor drives the stirrer and flow switch via bevel gear transmission. Three small ports accommodate: a pH sensor for real-time monitoring, a temperature sensor for fermentation conditions, and a blue light emitter to activate the strain's suicide switch, preventing microbial leakage. Two sidewall ports allow tubing to deliver solutions from a peristaltic pump for timed feed supplementation.
 
-**Leakage Control and Cell Enrichment Module: Leakage control and cell enrichment are achieved through a nested double-layered fermentation tank system and interlocking mortise-and-tenon joints.**
+- **Leakage Control and Cell Enrichment Module:** Leakage control and cell enrichment are achieved through a nested double-layered fermentation tank system and interlocking mortise-and-tenon joints.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h49.webp" caption="Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a:Leakage Control Device, b:Mortise-and-Tenon Structure)" %}
 
@@ -101,7 +93,8 @@ Our hardware team has consistently focused on addressing practical challenges en
 - The inner tank bottom features a 30° sector-shaped aperture aligned with two sector-shaped and circular apertures in the outer tank base plate. The outer tank's edge is concave, while its central protrusion interlocks with the inner tank bottom to create hydraulic pressure, preventing medium leakage through edge gaps.
 - The inner tank's mid-section incorporates a mortise-and-tenon structure that mates with the complementary half on the bottom of the stirring rod. The top stepper motor operates in two modes: continuous clockwise rotation and counterclockwise step mode (each button press rotates 30° counterclockwise). During clockwise rotation, the inclined planes of the mortise-and-tenon joints slide against each other, preventing the inner tank from rotating. The stirring rod does not rotate the inner tank, ensuring thorough mixing of the bacterial solution. During counterclockwise rotation, the vertical surfaces of the two joints interlock. The stirring rod drives the inner tank to rotate, thereby controlling leakage.
 
-{% include figure2.html images=page.images25 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/open-by-shunzhuan-soconvert.webp" caption="Turn clockwise to open the flow switch" %}
+
 - The circular opening at the bottom of the outer tank has internal threads. These are used to secure a bacterial filter membrane during the first drainage cycle. The culture medium flows directly into the waste tank via the rubber tube connected to the bottom of the drainage port, while cells are intercepted, enhancing bacterial density within the tank. The fan-shaped aperture facilitates the second drainage cycle, directing residual medium and cells downward to the centrifugal shaking module for subsequent processing.
 - Under microscopic observation, the size of lipolytic yeast cells was determined (Figure 3.2.4). After averaging measurements from 20 cells, the bacterial cell's major axis measured approximately 8.4 μm, and the minor axis approximately 5.2 μm. A bacterial filter membrane with a mesh size of 3 μm was selected.
 
@@ -109,34 +102,34 @@ Our hardware team has consistently focused on addressing practical challenges en
 
 - **Centrifugation Module:** Enriched bacterial suspension enters centrifuge tubes via liquid transfer tubes. A brushless DC motor within the base, coupled with a synchronous gear set, drives the centrifuge tubes and their contents to high-speed rotation.
 
-During cell centrifugation, rotational speed and duration are the two most critical parameters. Increasing rotational speed significantly raises motor costs, while extending duration reduces production efficiency. To determine the conditions under which our equipment achieves maximum economic benefit, we employed Minitab to design the following response surface experiment.
+- During cell centrifugation, rotational speed and duration are the two most critical parameters. Increasing rotational speed significantly raises motor costs, while extending duration reduces production efficiency. To determine the conditions under which our equipment achieves maximum economic benefit, we employed Minitab to design the following response surface experiment.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h37.webp" caption=" Figure 3.2.4 Experimental Design Table" %}
+- {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h37.webp" caption=" Figure 3.2.4 Experimental Design Table" %}
 
-The two influencing factors are rotational speed (1000 rpm--5000 rpm) and time (1min--5 min). The response variable is absorbance (A), measured at 500 nm wavelength using a spectrophotometer. The blank control group consists of pre-centrifugation solution, while the sample group comprises supernatant collected after each centrifugation run.
+- The two influencing factors are rotational speed (1000 rpm--5000 rpm) and time (1min--5 min). The response variable is absorbance (A), measured at 500 nm wavelength using a spectrophotometer. The blank control group consists of pre-centrifugation solution, while the sample group comprises supernatant collected after each centrifugation run.
 
-According to the spectrophotometric formula:
+- According to the spectrophotometric formula:
 
-*A* = *ε* • *c* • *l*
+-                                           *A* = *ε* • *c* • *l*
 
-*A ε* : Absorbance; *c* : Molar absorptivity (L/(mol·cm)); *l* : Solution concentration (mol/L); : Optical path length (cm)
+- *A : Absorbance; *ε*  : Molar absorptivity (L/(mol·cm)); *c* : Solution concentration (mol/L); *l*: Optical path length (cm)
 
-It is evident that absorbance is directly proportional to solution concentration. A lower A value indicates a lower cell concentration in the supernatant. Therefore, our optimization objective is to achieve the lowest A value using the minimum rotational speed and shortest duration. The A contour plot indicates that all regions outside the shaded area represent viable [rotational speed: time] combinations.
+- It is evident that absorbance is directly proportional to solution concentration. A lower A value indicates a lower cell concentration in the supernatant. Therefore, our optimization objective is to achieve the lowest A value using the minimum rotational speed and shortest duration. The A contour plot indicates that all regions outside the shaded area represent viable [rotational speed: time] combinations.
 
-The maximum speed of the purchased brushless motor under load, measured by an infrared sensor, is 840 rpm. Through a 1:3 speed reduction gear set, the speed can reach 2520 rpm. At this speed, centrifugation requires only about 3 minutes, maximizing economic efficiency.
+- The maximum speed of the purchased brushless motor under load, measured by an infrared sensor, is 840 rpm. Through a 1:3 speed reduction gear set, the speed can reach 2520 rpm. At this speed, centrifugation requires only about 3 minutes, maximizing economic efficiency.
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h38.webp" caption="Figure 3.2.5 Contour Plot of Absorbance" %}
-**Mode Switching Module:**
+- **Mode Switching Module:**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh2.webp" caption="Figure 3.2.6 Schematic of the Mode Switching Module" %}
+- {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh2.webp" caption="Figure 3.2.6 Schematic of the Mode Switching Module" %}
 
-We designed the equipment based on the commonly used glass bead shaking method in laboratories to disrupt cells and extract intracellular squalene. To save space, we developed a mode switching module to integrate both shaking and centrifugation functions. The core design features a mode switching bearing (animation shown).
+- We designed the equipment based on the commonly used glass bead shaking method in laboratories to disrupt cells and extract intracellular squalene. To save space, we developed a mode switching module to integrate both shaking and centrifugation functions. The core design features a mode switching bearing (animation shown).
 
 - **Centrifugation Mode (Motor Forward Rotation):** When the motor rotates forward, the limit device locks the switching bearing, aligning it concentrically with the main shaft. This drives the entire rotor assembly to high-speed rotation, generating strong centrifugal force that precipitates microbial cells to the bottom of the centrifuge tube**.**
 - **Shaking Mode (Motor Reverse Rotation):** When the motor reverses, the switching bearing unlocks. Under mechanical force, it undergoes radial translation, creating an eccentric displacement. The motor then rotates, driving the centrifuge tube to perform high-speed eccentric shaking.
 
-Motion Decoupling Mechanism---"One-Way Bearing": To prevent centrifuge tubes from self-rotating during oscillation, we incorporated a one-way bearing between the tube holder and the rotating shaft. This achieves pure oscillation-based disruption.
+- **Motion Decoupling Mechanism---"One-Way Bearing":** To prevent centrifuge tubes from self-rotating during oscillation, we incorporated a one-way bearing between the tube holder and the rotating shaft. This achieves pure oscillation-based disruption.
 
-To resolve the issue of repeatedly transferring liquid and balancing the centrifuge, we designed a communicating centrifuge tube based on the communicating vessel principle. A matching liquid connection switch was also developed to prevent circulation while facilitating easy liquid release and collection.
+- To resolve the issue of repeatedly transferring liquid and balancing the centrifuge, we designed a communicating centrifuge tube based on the communicating vessel principle. A matching liquid connection switch was also developed to prevent circulation while facilitating easy liquid release and collection.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h45.webp" caption="Figure 3.2.7 CommunicatingCentrifuge Tube Kit" %}
 
