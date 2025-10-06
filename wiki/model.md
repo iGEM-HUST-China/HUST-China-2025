@@ -320,4 +320,23 @@ This pipeline enables iterative coupling of generative modeling and physics-base
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/model/m6-2.webp" caption="**Figure 7.** Figure 7. Integrated pipeline for sequence design and energy optimization of tHMGR." %}
 
+## 2.4 Results and Validation
+
+The workflow successfully generated a set of structurally compatible and energetically optimized tHMGR variants.  
+All ProteinMPNN-designed sequences aligned well with the target backbone, confirming the feasibility of conditional sequence generation.  
+
+Frustratometer2 analysis revealed that several designed variants exhibited a slight reduction (~2%) in highly frustrated regions and a corresponding increase in minimally frustrated contacts compared with the wild-type template.  
+
+After Rosetta FastRelax refinement, the total energy decreased by approximately 15–25%, and the local energy landscape in the core folding regions became smoother (Figure 2-3).  
+During the relaxation process, the backbone RMSD gradually converged from 14.52 Å to 1.34 Å (calculated over 2796 atoms).  
+The RMSD values for the five relaxation cycles were 14.52, 5.10, 2.75, 2.08, and 1.67 Å respectively (Figure 2-4), illustrating the progressive elimination of energetic strain through iterative minimization and side-chain repacking.  
+
+The final RMSD of ~1.3 Å indicates that structural refinement mainly affected local regions—particularly side chains and flexible loops—while maintaining the global fold.  
+In the interactive NGLView visualization, the pre-relaxation model (grey) and post-relaxation model (cyan) clearly demonstrate local rearrangements and reduced steric clashes, confirming the effectiveness of the FastRelax refinement.  
+
+Top-ranked variants were subsequently selected for experimental validation of folding stability and catalytic activity.  
+
+<div class="video">
+<iframe title="HUST-China: Alignment of t-HMGR before and after optimization (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/joCRDYNNTRjtMv2kHZpHLe" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
+</div>
 
