@@ -293,11 +293,10 @@ To integrate control of the entire apparatus and monitor cell culture conditions
 
 ### Equipment
  **Condition Monitoring Module**
-
     Drawing inspiration from HUST-China 2023's fermentation condition monitoring design, we employed a DS18B20 + temperature probe as the temperature monitoring module and a pH composite electrode + pH sensor as the pH detection module. ([Hardware | Huazhong University of Science and Technology - China - iGEM 2023](https://2023.igem.wiki/hust-china/hardware))
 
     {% include figure.html images=page.images13 %}
- **Motion Control Module:**
+ **Motion Control Module**
 
     We selected distinct motors for the three key motion control points based on thorough research and analysis of each motor's characteristics, implementing optimal designs:
 
