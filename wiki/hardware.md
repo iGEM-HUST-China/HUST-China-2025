@@ -4,6 +4,7 @@ permalink: /hardware/
 feature_text: |
 feature_image: "https://static.igem.wiki/teams/5569/description/hdwe.webp"
 excerpt: ""
+
 images01:
   - src: https://static.igem.wiki/teams/5569/hardware/h36.webp
     alt: Figure 1.2 R&D Process Diagram
@@ -18,14 +19,17 @@ images03:
   - src: https://static.igem.wiki/teams/5569/hardware/h40.webp
     alt: Figure 3.1.1 Overall Presentation Diagram
     caption: Figure 3.1.1 Overall Presentation Diagram
+
 images04:
   - src: https://static.igem.wiki/teams/5569/hardware/h13.webp
     alt: Figure 3.2.1 Schematic Diagram of Fermentation Condition Control Module
     caption: Figure 3.2.1 Schematic Diagram of Fermentation Condition Control Module
+
 images05:
   - src: https://static.igem.wiki/teams/5569/hardware/h49.webp
     alt: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)
     caption: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)
+
 images06:
   - src: https://static.igem.wiki/teams/5569/hardware/h43.webp
     alt: Figure 3.2.3 Schematic diagram of lipolytic yeast cells under a microscope
@@ -36,6 +40,7 @@ images07:
   - src: https://static.igem.wiki/teams/5569/hardware/h37.webp
     alt: Figure 3.2.4 Experimental Design Table
     caption: Figure 3.2.4 Experimental Design Table
+
 images08:
   - src: https://static.igem.wiki/teams/5569/hardware/h38.webp
     alt: Figure 3.2.5 Contour Plot of Absorbance
@@ -47,6 +52,7 @@ images10:
   - src: https://static.igem.wiki/teams/5569/hardware/h32.webp
     alt: Figure 3.2.6 Schematic of the Mode Switching Module
     caption: Figure 3.2.6 Schematic of the Mode Switching Module
+    
 images11:
   - src: https://static.igem.wiki/teams/5569/hardware/h45.webp
     alt: Figure 3.2.7 CommunicatingCentrifuge Tube Kit
@@ -66,6 +72,7 @@ images14:
   - src: https://static.igem.wiki/teams/5569/hardware/h33.webp
     alt: Figure 3.2.10 Peristaltic Pump
     caption: Figure 3.2.10 Peristaltic Pump
+
 images15:
   - src: https://static.igem.wiki/teams/5569/hardware/h46.webp
     alt: Figure 3.2.11 Main Code
@@ -147,12 +154,11 @@ images26:
   - src: https://static.igem.wiki/teams/5569/hardware/h44.webp
     alt: Figure 3.5.1 Discussion with Professor Wang Jinchun
     caption: Figure 3.5.1 Discussion with Professor Wang Jinchun
+
 images27:
   - src: https://static.igem.wiki/teams/5569/hardware/h3.webp
     alt: Figure 3.5.2 Exchange with Dr. Chen Yulong
     caption: Figure 3.5.2 Exchange with Dr. Chen Yulong
-
-
 
 ---
 ## Overview
@@ -166,7 +172,7 @@ In the current fields of molecular biology, synthetic biology, proteomics, and b
 
 To systematically address these challenges, our project team innovatively proposed the design of an "**Integrated Fermentation & Processing System (iFPS)**" based on real-world research needs. This system deeply integrates mechatronics and intelligent control technologies, seamlessly combining three core functional modules---micro-fermentation culture, high-speed centrifugal collection, and mechanical agitation disruption---into a single compact benchtop device. This achieves true end-to-end automation from "post-inoculation" to "crude lysate collection." The system not only significantly enhances experimental consistency and operational safety but also keeps equipment costs around **\$100**-**just 1% of the cost of existing micro-fermentation devices.** fundamentally solving problems points in synthetic biology practice---namely high costs, low efficiency, and heavy reliance on manual labor.
 
-![Video 1.1 iFPS Demonstration](https://static.igem.wiki/teams/5569/hardware/h10.webp)
+
 
 ## Device Development Process
 
