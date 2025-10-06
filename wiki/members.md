@@ -4,9 +4,163 @@ permalink: /members/
 feature_text: |
 feature_image: "https://static.igem.wiki/teams/5175/resources/background/bg-members.webp"
 excerpt: ""
+layout: members
+members:
+  # Principal Investigators
+  - name: "Yu Zhou"
+    major: "Primary PI"
+    motto: "Student Affair Officer in College of Life Sci. & Tech., HUST. This year, she is the primary PI of our team and helps us finish our project in many areas. Thank for her assistance through the whole season."
+    image: "https://static.igem.wiki/teams/5175/resources/members/yu-zhou.webp"
+  
+  - name: "Kang Ning"
+    major: "Secondary PI"
+    motto: "Professor of College of Life Sci. & Tech., HUST. His main research area is bioinformatics. Thanks for his suggestions to our modeling."
+    image: "https://static.igem.wiki/teams/5175/resources/members/kang-ning.webp"
+  
+  - name: "Yunjun Yan"
+    major: "Secondary PI"
+    motto: "Professor and principle investigator of College of Life Sci. & Tech., HUST. Prof. Yan provides lab for us to experiment. He gives us many precious suggestions to our project."
+    image: "https://static.igem.wiki/teams/5175/resources/members/yunjun-yan.webp"
+  
+  - name: "Xiaoman Xie"
+    major: "Secondary PI"
+    motto: "Post-doctoral in College of Life Sci. & Tech., HUST. This year, she provided us with a lot of experimental guidance and helped us complete the project."
+    image: "https://static.igem.wiki/teams/5175/resources/members/xiaoman-xie.webp"
+  
+  # Instructor
+  - name: "Bohan Wang"
+    major: "Instructor"
+    motto: "Doctor in College of Life Sci. & Tech., HUST. This year, he provided us with a lot of human-practice guidance and helped us make a integrated social research for our project."
+    image: "https://static.igem.wiki/teams/5175/resources/members/bohan-wang.webp"
+  
+  # Advisors
+  - name: "Haoran Nie"
+    major: "Advisor"
+    motto: "Ad astra abyssosque."
+    image: "https://static.igem.wiki/teams/4595/wiki/members/7.jpg"
+  
+  - name: "Zhengdong Wu"
+    major: "Advisor"
+    motto: "actions speak louder than words."
+    image: "https://static.igem.wiki/teams/4595/wiki/members/10.jpg"
+  
+  # Student Leaders
+  - name: "Tianxu Yuan"
+    major: "Student Leader"
+    motto: "Grow in silence."
+    image: "https://static.igem.wiki/teams/5175/resources/members/zhengdong-wu.webp"
+  
+  - name: "Wanting Zou"
+    major: "Student Leader"
+    motto: "Grow in silence."
+    image: "https://static.igem.wiki/teams/5175/resources/members/rui-zhu.webp"
+  
+  # Students
+  - name: "Yuhan Huang"
+    major: "Student"
+    motto: "Not all those who wander are lost. It's just wanderlust."
+    image: "https://static.igem.wiki/teams/5175/resources/members/yingying-he.webp"
+  
+  - name: "Longcheng Sun"
+    major: "Student"
+    motto: "peace&love."
+    image: "https://static.igem.wiki/teams/5175/resources/members/shuo-yan.webp"
+  
+  - name: "He Wu"
+    major: "Student"
+    motto: "Once iGEMer，always iGEMer."
+    image: "https://static.igem.wiki/teams/5175/resources/members/yuhan-zou.webp"
+  
+  - name: "Jiarui Wu"
+    major: "Student"
+    motto: "Au milieu de l'hiver, j'apprenais enfin qu'il y avait en moi un été invincible."
+    image: "https://static.igem.wiki/teams/5175/resources/members/suyuan-jiang.webp"
+  
+  - name: "Ziheng Yu"
+    major: "Student"
+    motto: "Don’t fear detours — if waste oil can turn into squalane, imagine what your life can become."
+    image: "https://static.igem.wiki/teams/5175/resources/members/shaoheng-lyu.webp"
+  
+  - name: "Haixi Zhao"
+    major: "Student"
+    motto: "And miles to go before I sleep."
+    image: "https://static.igem.wiki/teams/5175/resources/members/zeyu-miao.webp"
+  
+  - name: "Leyan Zheng"
+    major: "Student"
+    motto: "iGEM has polished me."
+    image: "https://static.igem.wiki/teams/5175/resources/members/haoran-nie.webp"
+  
+  - name: "Yilong Chen"
+    major: "Student"
+    motto: "Response = f(stimulus, Charles)."
+    image: "https://static.igem.wiki/teams/5175/resources/members/xinghao-xiong.webp"
+  
+  - name: "Jiayi Gao"
+    major: "Student"
+    motto: "This will be a romantic story like none that has come before."
+    image: "https://static.igem.wiki/teams/5175/resources/members/jiayin-zhang.webp"
+  
+  - name: "Duoduo Li"
+    major: "Student"
+    motto: "Live and Learn."
+    image: "https://static.igem.wiki/teams/5175/resources/members/jiayue-su.webp"
+  
+  - name: "Yichuan Ma"
+    major: "Student"
+    motto: "Though the winds of adversity blow strong, never give up on life."
+    image: "https://static.igem.wiki/teams/5175/resources/members/leyan-zheng.webp"
+  
+  - name: "Zexuan Song"
+    major: "Student"
+    motto: "it is not the beginning of the end, but the end of the beginning."
+    image: "https://static.igem.wiki/teams/5175/resources/members/liting-feng.webp"
+  
+  - name: "Hanjing Wen"
+    major: "Student"
+    motto: "Always on the road, always moving forward."
+    image: "https://static.igem.wiki/teams/5175/resources/members/longcheng-sun.webp"
+  
+  - name: "Yixuan Wang"
+    major: "Student"
+    motto: "Working hard is important,but there's something that matters even more:believing in yourself."
+    image: "https://static.igem.wiki/teams/5175/resources/members/nanxi-yi.webp"
+  
+  - name: "Huangpeng Xie"
+    major: "Student"
+    motto: "Just do it！"
+    image: "https://static.igem.wiki/teams/5175/resources/members/yifeng-xiong.webp"
+  
+  - name: "Aoru Yang"
+    major: "Student"
+    motto: "Our true output wasn't just a wiki and a poster; it was the number of times Adobe crashed at 3 a.m. (It was worth it.)"
+    image: "https://static.igem.wiki/teams/4595/wiki/members/33.jpg"
+  
+  - name: "Yiting Yang"
+    major: "Student"
+    motto: "A journey of a thousand miles begins with a single step."
+    image: "https://static.igem.wiki/teams/5175/resources/members/pinrong-qian.webp"
+  
+  - name: "Shijing Zhao"
+    major: "Student"
+    motto: "Cleave the darkness and seize the light."
+    image: "https://static.igem.wiki/teams/5175/resources/members/jiarui-wu.webp"
+  
+  - name: "Shengzhe Zou"
+    major: "Student"
+    motto: "Every story's ending is bound to be good; and if it isn't, that simply means the final chapter hasn't come yet."
+    image: "https://static.igem.wiki/teams/5175/resources/members/tianhao-wang.webp"
+  
+  - name: "Wenhui Zhao"
+    major: "Student"
+    motto: "Growth is a long process."
+    image: "https://static.igem.wiki/teams/5175/resources/members/tianxi-kang.webp"
+  
+  - name: "Yuyao Zhou"
+    major: "Student"
+    motto: "Every cloud has a silver lining."
+    image: "https://static.igem.wiki/teams/5175/resources/members/tianxu-yuan.webp"
 ---
-
-{% include members.html %}
 
 ## Our Team
 
@@ -14,202 +168,6 @@ excerpt: ""
    image="https://static.igem.wiki/teams/5175/resources/members/team-full.webp" 
    alt="Our Team" 
    caption="All HUST-China 2025 iGEMers " %}
-
-
-## Principal Investigators
-
-### Primary PI
-
-{% include members-people.html 
-   name="Yu Zhou" 
-   description="Student Affair Officer in College of Life Sci. & Tech., HUST. This year, she is the primary PI of our team and helps us finish our project in many areas. Thank for her assistance through the whole season." 
-   image="https://static.igem.wiki/teams/5175/resources/members/yu-zhou.webp" 
-   image_position="left" %}
-
-### Secondary PIs
-
-{% include members-people.html
-   name="Kang Ning" 
-   description="Professor of College of Life Sci. & Tech., HUST. His main research area is bioinformatics. Thanks for his suggestions to our modeling." 
-   image="https://static.igem.wiki/teams/5175/resources/members/kang-ning.webp" 
-   image_position="right" %}
-
-{% include members-people.html
-   name="Yunjun Yan" 
-   description="Professor and principle investigator of College of Life Sci. & Tech., HUST. Prof. Yan provides lab for us to experiment. He gives us many precious suggestions to our project." 
-   image="https://static.igem.wiki/teams/5175/resources/members/yunjun-yan.webp" 
-   image_position="left" %}
-
-{% include members-people.html 
-   name="Xiaoman Xie" 
-   description="Post-doctoral in College of Life Sci. & Tech., HUST. This year, she provided us with a lot of experimental guidance and helped us complete the project." 
-   image="https://static.igem.wiki/teams/5175/resources/members/xiaoman-xie.webp" 
-   image_position="right" %}
-
-## Instructor
-
-{% include members-people.html 
-   name="Bohan Wang" 
-   description="Doctor in College of Life Sci. & Tech., HUST. This year, he provided us with a lot of human-practice guidance and helped us make a integrated social research for our project." 
-   image="https://static.igem.wiki/teams/5175/resources/members/bohan-wang.webp"
-   image_position="left" %}
-
-## Advisors
-
-{% include members-people.html 
-   name="Haoran Nie" 
-   description="Ad astra abyssosque." 
-   image="https://static.igem.wiki/teams/4595/wiki/members/7.jpg" 
-   image_position="right" %}
-
-{% include members-people.html 
-   name="Zhengdong Wu" 
-   description="actions speak louder than words." 
-   image="https://static.igem.wiki/teams/4595/wiki/members/10.jpg" 
-   image_position="left" %}
-
-
-## Student Leaders
-
-{% include members-people.html 
-   name="Tianxu Yuan" 
-   description="Grow in silence." 
-   image="https://static.igem.wiki/teams/5175/resources/members/zhengdong-wu.webp" 
-   image_position="right" %}
-
-{% include members-people.html 
-   name="Wanting Zou" 
-   description="Grow in silence." 
-   image="https://static.igem.wiki/teams/5175/resources/members/rui-zhu.webp" 
-   image_position="left" %}
-
-## Students
-
-{% include members-people.html
-   name="Yuhan Huang"
-   description="Not all those who wander are lost. It's just wanderlust."
-   image="https://static.igem.wiki/teams/5175/resources/members/yingying-he.webp"
-   image_position="right" %}
-
-{% include members-people.html
-   name="Longcheng Sun"
-   description="peace&love."
-   image="https://static.igem.wiki/teams/5175/resources/members/shuo-yan.webp"
-   image_position="left" %}
-
-{% include members-people.html
-   name="He Wu"
-   description="Once iGEMer，always iGEMer."
-   image="https://static.igem.wiki/teams/5175/resources/members/yuhan-zou.webp"
-   image_position="right" %}
-
-{% include members-people.html
-   name="Jiarui Wu"
-   description="Au milieu de l'hiver, j'apprenais enfin qu'il y avait en moi un été invincible."
-   image="https://static.igem.wiki/teams/5175/resources/members/suyuan-jiang.webp"
-   image_position="left" %}
-
-{% include members-people.html
-   name="Ziheng Yu"
-   description="Don’t fear detours — if waste oil can turn into squalane, imagine what your life can become."
-   image="https://static.igem.wiki/teams/5175/resources/members/shaoheng-lyu.webp"
-   image_position="right" %}
-
-{% include members-people.html
-   name="Haixi Zhao"
-   description="And miles to go before I sleep."
-   image="https://static.igem.wiki/teams/5175/resources/members/zeyu-miao.webp"
-   image_position="left" %}
-
-{% include members-people.html
-   name="Leyan Zheng"
-   description="iGEM has polished me."
-   image="https://static.igem.wiki/teams/5175/resources/members/haoran-nie.webp"
-   image_position="right" %}
-
-{% include members-people.html
-   name="Yilong Chen"
-   description="Response = f(stimulus, Charles)."
-   image="https://static.igem.wiki/teams/5175/resources/members/xinghao-xiong.webp"
-   image_position="left" %}
-
-{% include members-people.html
-   name="Jiayi Gao"
-   description="This will be a romantic story like none that has come before."
-   image="https://static.igem.wiki/teams/5175/resources/members/jiayin-zhang.webp"
-   image_position="right" %}
-
-{% include members-people.html
-   name="Duoduo Li"
-   description="Live and Learn."
-   image="https://static.igem.wiki/teams/5175/resources/members/jiayue-su.webp"
-   image_position="left" %}
-
-{% include members-people.html
-   name="Yichuan Ma"
-   description="Though the winds of adversity blow strong, never give up on life."
-   image="https://static.igem.wiki/teams/5175/resources/members/leyan-zheng.webp"
-   image_position="right" %}
-
-{% include members-people.html
-   name="Zexuan Song"
-   description="it is not the beginning of the end, but the end of the beginning."
-   image="https://static.igem.wiki/teams/5175/resources/members/liting-feng.webp"
-   image_position="left" %}
-
-{% include members-people.html
-   name="Hanjing Wen"
-   description="Always on the road, always moving forward."
-   image="https://static.igem.wiki/teams/5175/resources/members/longcheng-sun.webp"
-   image_position="right" %}
-
-{% include members-people.html
-   name="Yixuan Wang"
-   description="Working hard is important,but there's something that matters even more:believing in yourself."
-   image="https://static.igem.wiki/teams/5175/resources/members/nanxi-yi.webp"
-   image_position="left" %}
-
-{% include members-people.html
-   name="Huangpeng Xie"
-   description="Just do it！"
-   image="https://static.igem.wiki/teams/5175/resources/members/yifeng-xiong.webp"
-   image_position="right" %}
-
-{% include members-people.html
-   name="Aoru Yang"
-   description="Our true output wasn't just a wiki and a poster; it was the number of times Adobe crashed at 3 a.m. (It was worth it.)"
-   image="https://static.igem.wiki/teams/4595/wiki/members/33.jpg"
-   image_position="left" %}
-
-{% include members-people.html
-   name="Yiting Yang"
-   description="A journey of a thousand miles begins with a single step."
-   image="https://static.igem.wiki/teams/5175/resources/members/pinrong-qian.webp"
-   image_position="right" %}
-
-{% include members-people.html
-   name="Shijing Zhao"
-   description="Cleave the darkness and seize the light."
-   image="https://static.igem.wiki/teams/5175/resources/members/jiarui-wu.webp"
-   image_position="left" %}
-
-{% include members-people.html
-   name="Shengzhe Zou"
-   description="Every story’s ending is bound to be good; and if it isn’t, that simply means the final chapter hasn’t come yet."
-   image="https://static.igem.wiki/teams/5175/resources/members/tianhao-wang.webp"
-   image_position="right" %}
-
-{% include members-people.html
-   name="Wenhui Zhao"
-   description="Growth is a long process."
-   image="https://static.igem.wiki/teams/5175/resources/members/tianxi-kang.webp"
-   image_position="left" %}
-
-{% include members-people.html
-   name="Yuyao Zhou"
-   description="Every cloud has a silver lining."
-   image="https://static.igem.wiki/teams/5175/resources/members/tianxu-yuan.webp"
-   image_position="right" %}
 
 ---
 
@@ -222,4 +180,3 @@ excerpt: ""
    image="https://static.igem.wiki/teams/5175/resources/members/team-logo.webp" 
    alt="Our Team" 
    caption=" " %}
-

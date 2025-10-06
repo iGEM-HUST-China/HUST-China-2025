@@ -1,19 +1,32 @@
-<!-- _includes/members-people.html -->
-{% if include.image_position == 'left' %}
-<div class="section left" id="members">
-  <img src="{{ include.image }}" alt="{{ include.name }}" id="members">
-  <div class="info">
-    <div class="name">{{ include.name }}</div>
-    <div class="description">{{ include.description }}</div>
-  </div>
+<div class="page-header">
+    <h1 class="page-title">{{ page.title | default: "团队成员" }}</h1>
+    <h2 class="page-subtitle">{{ page.subtitle | default: "专业、热情、创新" }}</h2>
 </div>
-{% endif %}
-{% if include.image_position == 'right' %}
-<div class="section right" id="members">
-  <div class="info">
-    <div class="name">{{ include.name }}</div>
-    <div class="description">{{ include.description }}</div>
-  </div>
-  <img src="{{ include.image }}" alt="{{ include.name }}" id="members">
+
+<div class="members-horizontal-scroll">
+    <div class="members-container">
+        {% for member in page.members %}
+        {% if forloop.index0 | modulo: 2 == 0 %}
+        <!-- 左图右文 -->
+        <div class="section" id="members">
+            <img src="{{ member.image }}" alt="{{ member.name }}">
+            <div class="info">
+                <div class="name">{{ member.name }}</div>
+                <div class="major">{{ member.major }}</div>
+                <div class="motto">{{ member.motto }}</div>
+            </div>
+        </div>
+        {% else %}
+        <!-- 右图左文 -->
+        <div class="section right" id="members">
+            <img src="{{ member.image }}" alt="{{ member.name }}">
+            <div class="info">
+                <div class="name">{{ member.name }}</div>
+                <div class="major">{{ member.major }}</div>
+                <div class="motto">{{ member.motto }}</div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
 </div>
-{% endif %}
