@@ -237,9 +237,10 @@ However, during practical testing, we encountered the following issues:
 To address these issues, we continuously optimized the design and launched V3.0.
 
 ### Version 3.0
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h12.webp" caption="Figure 1.3 Flowchart for Laboratory Shaker Culture and Miniature Fermentation Methods" %}
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure 3.3.3 Schematic Diagram of Third-Generation Model" %}
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h12.webp" caption="Figure 3.3.3 Schematic Diagram of Third-Generation Model" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h39.webp" caption="Figure 3.3.4 Third-Generation Circuit Wiring Diagram" %}
 
 
 In the third-generation design, we introduced an automated control system. A DC motor-driven stirring rod was added to the top of the upper tank, along with two small openings for pH and temperature sensors to enable real-time monitoring of fermentation conditions.
