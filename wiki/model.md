@@ -563,13 +563,26 @@ Temperature exerted a clear influence on the carrying capacity (K). Above 28 °C
 <tr><td>3</td><td>Lipid</td><td>6.8</td><td>26.0</td><td>0.030</td><td>0.566</td><td>0.100</td><td>10.859</td><td>0.038</td><td>0.423</td><td>0.100</td><td>10.868</td></tr>
 <tr><td>3</td><td>Lipid-fatase</td><td>6.8</td><td>26.0</td><td>0.000</td><td>0.484</td><td>0.048</td><td>6.845</td><td>0.002</td><td>0.355</td><td>0.051</td><td>7.187</td></tr>
 <tr><td>4</td><td>Oleic_1:1</td><td>6.8</td><td>30.0</td><td>0.031</td><td>0.828</td><td>0.048</td><td>9.012</td><td>0.028</td><td>0.907</td><td>0.048</td><td>8.950</td></tr>
-<tr><td>4</td><td>Oleic_1:3</td><td>6.8</td><td>30.0</td><td>0.029</td><td>0.520</td><td>0.072</td><td>8.947</td><td>0.027</td><td>0.453</td><td>0.072</
+<tr><td>4</td><td>Oleic_1:3</td><td>6.8</td><td>30.0</td><td>0.029</td><td>0.520</td><td>0.072</td><td>8.947</td><td>0.027</td><td>0.453</td><td>0.072</td><td>8.950</td></tr>
+<tr><td>4</td><td>Oleic_1:5</td><td>6.8</td><td>30.0</td><td>0.043</td><td>0.576</td><td>0.047</td><td>5.007</td><td>0.041</td><td>0.539</td><td>0.047</td><td>5.000</td></tr>
+<tr><td>4</td><td>Linoleic_1:1</td><td>6.8</td><td>30.0</td><td>0.022</td><td>0.259</td><td>0.100</td><td>6.675</td><td>0.022</td><td>0.229</td><td>0.100</td><td>6.784</td></tr>
+<tr><td>4</td><td>Linoleic_1:3</td><td>6.8</td><td>30.0</td><td>0.041</td><td>0.352</td><td>0.075</td><td>5.010</td><td>0.040</td><td>0.331</td><td>0.074</td><td>5.000</td></tr>
+<tr><td>4</td><td>Linoleic_1:5</td><td>6.8</td><td>30.0</td><td>0.022</td><td>0.446</td><td>0.073</td><td>7.391</td><td>0.020</td><td>0.402</td><td>0.073</td><td>7.472</td></tr>
+<tr><td>4</td><td>Alpha-linolenic_1:1</td><td>6.8</td><td>30.0</td><td>0.018</td><td>0.228</td><td>0.100</td><td>6.458</td><td>0.016</td><td>0.186</td><td>0.100</td><td>6.489</td></tr>
+<tr><td>4</td><td>Alpha-linolenic_1:3</td><td>6.8</td><td>30.0</td><td>0.029</td><td>0.124</td><td>0.100</td><td>7.278</td><td>0.025</td><td>0.107</td><td>0.100</td><td>7.266</td></tr>
+<tr><td>4</td><td>Alpha-linolenic_1:5</td><td>6.8</td><td>30.0</td><td>0.035</td><td>0.331</td><td>0.100</td><td>6.436</td><td>0.032</td><td>0.289</td><td>0.100</td><td>6.459</td></tr>
+<tr><td>4</td><td>YPD</td><td>6.8</td><td>30.0</td><td>0.014</td><td>0.183</td><td>0.100</td><td>5.915</td><td>0.013</td><td>0.151</td><td>0.100</td><td>5.904</td></tr>
+<tr><td>4</td><td>Lipid</td><td>6.8</td><td>30.0</td><td>0.061</td><td>0.557</td><td>0.100</td><td>10.863</td><td>0.055</td><td>0.522</td><td>0.100</td><td>10.881</td></tr>
+<tr><td>4</td><td>Lipid-fatase</td><td>6.8</td><td>30.0</td><td>0.000</td><td>0.479</td><td>0.048</td><td>6.842</td><td>0.000</td><td>0.442</td><td>0.047</td><td>6.701</td></tr>
 </tbody>
 </table>
 </div>
 
+
 > **RMSE:** 0.0609  **R²:** 0.9333  
 > The model shows close agreement between predicted and actual Gompertz parameters across unseen pH–temperature conditions.
+
+
 
 
 Together, these findings demonstrate that the model successfully captured the multidimensional physiological responses of *Y. lipolytica* to environmental variation. The inverse relationship between μₘₐₓ and λ reflects the trade-off between metabolic activation and adaptation, while the decline of K at higher temperatures highlights energy and stability constraints under heat stress. Overall, this interpretation confirms the biological validity of the model and provides quantitative guidance for optimizing culture conditions.
