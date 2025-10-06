@@ -179,7 +179,7 @@ To systematically address these challenges, our project team innovatively propos
 
 Throughout development, we strictly adhered to standard hardware development procedures and the iGEM-advocated Design-Test-Learn-Build cycle, structured into five phases.
 
-{% include figure.html images=page.images01 %}
+{% include figure2.html images=page.images01 %}
 
 ### Phase 1: Defining Requirements and Pain Points
 
@@ -300,7 +300,9 @@ To integrate control of the entire apparatus and monitor cell culture conditions
  We selected distinct motors for the three key motion control points based on thorough research and analysis of each motor's characteristics, implementing optimal designs:
 
  **Top:** The top motor drives the stirring rod and activates the flow switch, requiring high precision. We selected the 11HS2810S stepper motor, which enables precise speed and angle control via PWM modulation and delivers substantial torque.
+
  **Bottom:** The bottom motor controls centrifugation and oscillation, demanding strict speed regulation. We selected the 36-3530 brushless DC motor. Its brushless design enables high rotational speeds at low power consumption.
+ 
  **External:** The external motor controls timed nutrient supplementation to regulate nitrogen levels in the culture medium. We fabricated a simple peristaltic pump that achieves timed supplementation (of ammonium sulfate) by adjusting the motor's speed and rotation status. For the peristaltic pump's control motor, we selected the MG996R servo motor. It is easy to program, allows precise specification of rotation angles, and consumes minimal power.
 
     {% include figure.html images=page.images14 %}
