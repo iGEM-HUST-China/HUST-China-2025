@@ -932,7 +932,7 @@
             min-height: 100vh;
             background: var(--light-cream);
             position: relative;
-            padding: 4rem 0 0;
+            padding: 4rem 0;
             display: none; /* 初始隐藏 */
         }
 
@@ -1101,7 +1101,7 @@
         /* 页脚样式 */
         .footer-container {
             width: 100%;
-            margin-top: 0;
+            margin-top: auto;
             display: none; /* 初始隐藏 */
         }
         
@@ -1705,21 +1705,24 @@
     </section>
 
     <script>
-        // 加载动画控制
+        // 加载动画控制 - 修改为动图版本
         document.addEventListener('DOMContentLoaded', function() {
             const loadingAnimation = document.getElementById('loading-animation');
             const loadingGif = document.getElementById('loading-gif');
             
-            // 加载动画逻辑
+            // 当动图加载完成后隐藏加载动画
             loadingGif.addEventListener('load', function() {
+                // 设置一个定时器，在动图显示一段时间后隐藏
                 setTimeout(function() {
                     document.body.classList.add('loaded');
+                    // 可选：完全移除加载动画元素
                     setTimeout(function() {
                         loadingAnimation.remove();
                     }, 500);
-                }, 4000);
+                }, 4000); // 显示4秒后隐藏
             });
             
+            // 如果动图加载失败，直接显示页面
             loadingGif.addEventListener('error', function() {
                 document.body.classList.add('loaded');
                 setTimeout(function() {
@@ -1727,6 +1730,7 @@
                 }, 500);
             });
             
+            // 安全措施：如果4秒后动图仍未加载，强制显示页面
             setTimeout(function() {
                 if (!document.body.classList.contains('loaded')) {
                     document.body.classList.add('loaded');
@@ -1736,15 +1740,18 @@
                 }
             }, 3800);
             
-            // 获取DOM元素
+            // 原有JavaScript代码保持不变...
+            const container = document.querySelector('.scroll-container');
             const sections = document.querySelectorAll('.vertical-section, .horizontal-scroll-section');
             const indicators = document.querySelectorAll('.indicator-dot');
             const textLines = document.querySelectorAll('.text-line');
             const images = document.querySelectorAll('.image-animated');
             const mosaicItems = document.querySelectorAll('.mosaic-item');
+            const navBoxes = document.querySelectorAll('[data-target]');
             const navbar = document.querySelector('.navbar');
             const navLogo = document.querySelector('#navLogo');
             const customCursor = document.querySelector('.custom-cursor');
+            const horizontalSection = document.querySelector('.horizontal-scroll-section');
             const horizontalPages = document.querySelector('.horizontal-pages');
             const backToTop = document.getElementById('backToTop');
             const numberCounters = document.querySelectorAll('.number-counter');
@@ -1754,33 +1761,30 @@
             const footerContainer = document.getElementById('footerContainer');
             const faceImage = document.getElementById('faceImage');
             const imageSwitcher = document.querySelector('.image-switcher');
+            const imageExtension = document.querySelector('.image-extension');
             
-            // 状态变量
             let currentSection = 0;
             let currentHorizontalPage = 0;
             let isScrolling = false;
+            let isHorizontalScrolling = false;
+            const scrollCooldown = 800;
+            let lastScrollY = window.scrollY;
+            let lastScrollTime = 0;
             let isInLongScroll = false;
             let isInFooter = false;
-            let isHorizontalScrolling = false;
-            let isTransitioningToLongScroll = false; // 新增：防止重复进入
             
-            // 滚动控制
-            let scrollTimeout;
-            let lastScrollTime = 0;
-            const scrollCooldown = 1000;
-            
-            // 旋转相关
+            // 旋转相关变量
             let rotationAngle = 0;
             let rotationSpeed = 0;
             let isRotating = false;
             let rotationAnimationId = null;
-    
-            // 图片切换
+
+            // 图片切换状态
             let isFaceImage1 = true;
             const faceImage1 = 'https://static.igem.wiki/teams/5569/description/face11.webp';
             const faceImage2 = 'https://static.igem.wiki/teams/5569/description/face2.webp';
-    
-            // 打字机效果
+
+            // 新增打字机效果
             const typewriterText = document.getElementById('typewriter-text');
             const texts = [
                 "Sustainable squalene production from waste oil",
@@ -1797,19 +1801,24 @@
                 const currentText = texts[textIndex];
                 
                 if (isDeleting) {
+                    // 删除文字
                     typewriterText.textContent = currentText.substring(0, charIndex - 1);
                     charIndex--;
                     typingSpeed = 50;
                 } else {
+                    // 输入文字
                     typewriterText.textContent = currentText.substring(0, charIndex + 1);
                     charIndex++;
                     typingSpeed = 100;
                 }
                 
+                // 判断是否完成当前文本
                 if (!isDeleting && charIndex === currentText.length) {
+                    // 暂停一下再开始删除
                     typingSpeed = 1500;
                     isDeleting = true;
                 } else if (isDeleting && charIndex === 0) {
+                    // 切换到下一个文本
                     isDeleting = false;
                     textIndex = (textIndex + 1) % texts.length;
                     typingSpeed = 500;
@@ -1818,12 +1827,14 @@
                 setTimeout(typeWriter, typingSpeed);
             }
             
+            // 启动打字机效果
             setTimeout(typeWriter, 1000);
-    
-            // 图片切换功能
+
+            // 图片切换功能 - 点击后显示延伸线和扩展图片
             let isExtensionVisible = false;
             
             imageSwitcher.addEventListener('click', function() {
+                // 切换图片
                 if (isFaceImage1) {
                     faceImage.src = faceImage2;
                     isFaceImage1 = false;
@@ -1832,6 +1843,7 @@
                     isFaceImage1 = true;
                 }
                 
+                // 切换延伸线和扩展图片的显示状态
                 isExtensionVisible = !isExtensionVisible;
                 if (isExtensionVisible) {
                     imageSwitcher.classList.add('active');
@@ -1839,32 +1851,31 @@
                     imageSwitcher.classList.remove('active');
                 }
             });
-    
+
             // 导航栏Logo点击跳转
             navLogo.addEventListener('click', function() {
                 window.location.href = 'index.html';
             });
-    
-            // 回到顶部按钮
+
+            // 回到顶部按钮点击事件
             backToTop.addEventListener('click', function() {
                 currentSection = 0;
                 isInLongScroll = false;
                 isInFooter = false;
-                isTransitioningToLongScroll = false;
                 longScrollSection.classList.remove('active');
                 footerContainer.classList.remove('active');
-                window.removeEventListener('scroll', handleLongScroll);
                 scrollToSection(currentSection);
             });
-    
-            // 数字计数器
+
+            // 数字计数器函数 - 加快速度
             function animateNumberCounter(counter, target, duration = 800) {
                 let start = 0;
-                const increment = target / (duration / 16);
+                const increment = target / (duration / 16); // 16ms per frame
                 
                 function updateCounter() {
                     start += increment;
                     if (start < target) {
+                        // 格式化大数字，添加逗号分隔符
                         counter.textContent = Math.floor(start).toLocaleString();
                         requestAnimationFrame(updateCounter);
                     } else {
@@ -1874,24 +1885,27 @@
                 
                 updateCounter();
             }
-    
-            // 自定义鼠标指针
+
+            // 自定义鼠标指针移动
             document.addEventListener('mousemove', function(e) {
                 customCursor.style.left = e.clientX + 'px';
                 customCursor.style.top = e.clientY + 'px';
                 customCursor.classList.add('cursor-visible');
             });
-    
+
+            // 鼠标离开窗口事件
             document.addEventListener('mouseleave', () => {
                 customCursor.classList.remove('cursor-visible');
             });
-    
+
+            // 鼠标进入窗口事件
             document.addEventListener('mouseenter', () => {
                 customCursor.classList.add('cursor-visible');
             });
-    
+
+            // 为可交互元素添加悬停效果
             const interactiveElements = document.querySelectorAll('a, button, .indicator-dot, [data-target], .back-to-top, .nav-image-item, .image-switcher');
-    
+
             interactiveElements.forEach(element => {
                 element.addEventListener('mouseenter', () => {
                     customCursor.classList.add('hover');
@@ -1901,18 +1915,28 @@
                     customCursor.classList.remove('hover');
                 });
             });
-    
+
+            // 点击时的效果
             document.addEventListener('mousedown', () => {
                 customCursor.style.transform = 'scale(0.8)';
             });
-    
+
             document.addEventListener('mouseup', () => {
                 customCursor.style.transform = 'scale(1)';
             });
-    
-            // 导航栏滚动效果
+
+            // 导航栏滚动效果 - 修复：始终显示导航栏
             function handleNavbarScroll() {
                 const currentScrollY = window.scrollY;
+                
+                // 移除隐藏导航栏的逻辑，使其始终显示
+                // if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                //     // 向下滚动，隐藏导航栏
+                //     navbar.classList.add('hidden');
+                // } else {
+                //     // 向上滚动，显示导航栏
+                //     navbar.classList.remove('hidden');
+                // }
                 
                 if (currentScrollY > 50) {
                     navbar.classList.add('scrolled');
@@ -1920,14 +1944,17 @@
                     navbar.classList.remove('scrolled');
                 }
                 
+                // 控制回到顶部按钮显示
                 if (currentScrollY > 500) {
                     backToTop.classList.add('visible');
                 } else {
                     backToTop.classList.remove('visible');
                 }
+                
+                lastScrollY = currentScrollY;
             }
-    
-            // 旋转动画
+
+            // 旋转动画函数
             function startRotation() {
                 function rotate() {
                     rotationAngle += rotationSpeed;
@@ -1937,6 +1964,7 @@
                 rotate();
             }
             
+            // 停止旋转函数
             function stopRotation() {
                 isRotating = false;
                 if (rotationAnimationId) {
@@ -1944,9 +1972,10 @@
                     rotationAnimationId = null;
                 }
                 
+                // 平滑减速效果
                 function gradualStop() {
                     if (rotationSpeed > 0) {
-                        rotationSpeed *= 0.9;
+                        rotationSpeed *= 0.9; // 减速因子
                         rotationAngle += rotationSpeed;
                         navLogo.querySelector('img').style.transform = `rotate(${rotationAngle}deg)`;
                         
@@ -1960,223 +1989,16 @@
                 
                 gradualStop();
             }
-    
+
             // 初始化
             updateActiveSection();
             animateCurrentSection();
             window.addEventListener('scroll', handleNavbarScroll);
-    
-            // ========== 修复滚动冲突问题 ==========
-            
-            // 鼠标滚轮事件
-            document.addEventListener('wheel', function(e) {
-                if (isScrolling || isTransitioningToLongScroll) return;
-                
-                const now = Date.now();
-                if (now - lastScrollTime < scrollCooldown) return;
-                lastScrollTime = now;
-                
-                // 触发旋转效果
-                rotationSpeed = Math.min(Math.abs(e.deltaY) * 0.3, 20);
-                if (!isRotating) {
-                    isRotating = true;
-                    startRotation();
-                }
-                clearTimeout(window.rotationStopTimer);
-                window.rotationStopTimer = setTimeout(stopRotation, 300);
-    
-                // 如果在长页滚动或页脚中，使用原生滚动
-                if (isInLongScroll || isInFooter) {
-                    return;
-                }
-    
-                // 横屏滚动部分
-                if (currentSection === 4) {
-                    if (!isHorizontalScrolling) {
-                        if (e.deltaY > 0 && currentHorizontalPage < 2) {
-                            currentHorizontalPage++;
-                            scrollToHorizontalPage(currentHorizontalPage);
-                        } else if (e.deltaY < 0 && currentHorizontalPage > 0) {
-                            currentHorizontalPage--;
-                            scrollToHorizontalPage(currentHorizontalPage);
-                        } else if (e.deltaY > 0 && currentHorizontalPage === 2) {
-                            currentSection++;
-                            scrollToSection(currentSection);
-                        } else if (e.deltaY < 0 && currentHorizontalPage === 0) {
-                            currentSection--;
-                            scrollToSection(currentSection);
-                        }
-                    }
-                    return;
-                }
-    
-                // 竖屏滚动 - 关键修复：防止重复触发
-                if (e.deltaY > 0) {
-                    // 向下滚动
-                    if (currentSection < sections.length - 1) {
-                        currentSection++;
-                        scrollToSection(currentSection);
-                    } else if (currentSection === sections.length - 1 && !isTransitioningToLongScroll) {
-                        // 关键修复：设置标志防止重复进入
-                        isTransitioningToLongScroll = true;
-                        enterLongScroll();
-                    }
-                } else if (e.deltaY < 0) {
-                    // 向上滚动
-                    if (currentSection > 0) {
-                        currentSection--;
-                        scrollToSection(currentSection);
-                    }
-                }
-            }, { passive: true });
-    
-            // 触摸事件
-            let touchStartY = 0;
-            let touchStartX = 0;
-            let touchEndY = 0;
-            let touchEndX = 0;
-            
-            document.addEventListener('touchstart', function(e) {
-                touchStartY = e.touches[0].clientY;
-                touchStartX = e.touches[0].clientX;
-            }, { passive: true });
-    
-            document.addEventListener('touchend', function(e) {
-                touchEndY = e.changedTouches[0].clientY;
-                touchEndX = e.changedTouches[0].clientX;
-                handleTouchScroll();
-            }, { passive: true });
-    
-            function handleTouchScroll() {
-                if (isScrolling || isTransitioningToLongScroll) return;
-                
-                const diffY = touchStartY - touchEndY;
-                const diffX = touchStartX - touchEndX;
-                const minSwipeDistance = 50;
-    
-                // 横屏滚动部分
-                if (currentSection === 4 && Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > minSwipeDistance) {
-                    if (diffX > 0 && currentHorizontalPage < 2) {
-                        currentHorizontalPage++;
-                        scrollToHorizontalPage(currentHorizontalPage);
-                    } else if (diffX < 0 && currentHorizontalPage > 0) {
-                        currentHorizontalPage--;
-                        scrollToHorizontalPage(currentHorizontalPage);
-                    }
-                    return;
-                }
-    
-                // 竖屏滚动
-                if (Math.abs(diffY) < minSwipeDistance) return;
-                
-                if (diffY > 0) {
-                    // 向下滑动
-                    if (currentSection < sections.length - 1) {
-                        currentSection++;
-                        scrollToSection(currentSection);
-                    } else if (currentSection === sections.length - 1 && !isTransitioningToLongScroll) {
-                        isTransitioningToLongScroll = true;
-                        enterLongScroll();
-                    }
-                } else {
-                    // 向上滑动
-                    if (currentSection > 0) {
-                        currentSection--;
-                        scrollToSection(currentSection);
-                    }
-                }
-            }
-    
-            // 键盘导航
-            document.addEventListener('keydown', function(e) {
-                if (isInLongScroll || isInFooter || isTransitioningToLongScroll) return;
-                
-                if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === 'PageDown') {
-                    if (currentSection < sections.length - 1) {
-                        currentSection++;
-                        scrollToSection(currentSection);
-                    } else if (currentSection === sections.length - 1) {
-                        isTransitioningToLongScroll = true;
-                        enterLongScroll();
-                    }
-                    e.preventDefault();
-                } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'PageUp') {
-                    if (currentSection > 0) {
-                        currentSection--;
-                        scrollToSection(currentSection);
-                    }
-                    e.preventDefault();
-                }
-            });
-    
-            // 进入长页滚动 - 完全重写，防止冲突
-            function enterLongScroll() {
-                console.log('安全进入长页滚动');
-                
-                // 立即设置状态，防止重复触发
-                isTransitioningToLongScroll = true;
-                isInLongScroll = true;
-                
-                // 显示长页滚动部分
-                longScrollSection.classList.add('active');
-                longScrollSection.style.display = 'block';
-                
-                // 使用更精确的滚动定位
-                const targetScrollPosition = longScrollSection.offsetTop;
-                
-                // 平滑滚动到长页滚动部分
-                window.scrollTo({
-                    top: targetScrollPosition,
-                    behavior: 'smooth'
-                });
-                
-                // 添加长页滚动监听
-                window.addEventListener('scroll', handleLongScroll, { passive: true });
-                
-                // 更新指示器
-                updateActiveSection();
-                
-                // 2秒后重置过渡状态，允许再次滚动
-                setTimeout(() => {
-                    isTransitioningToLongScroll = false;
-                    console.log('长页滚动过渡完成');
-                }, 2000);
-                
-                // 触发长页滚动内的动画
-                setTimeout(() => {
-                    handleScrollAnimations();
-                }, 1000);
-            }
-    
-            // 处理长页滚动 - 优化防冲突
-            function handleLongScroll() {
-                if (!isInLongScroll) return;
-                
-                // 处理交替布局动画
-                handleScrollAnimations();
-                
-                // 检查是否到达页脚
-                const footerTrigger = longScrollSection.offsetTop + longScrollSection.offsetHeight - window.innerHeight * 0.7;
-                if (window.scrollY >= footerTrigger && !isInFooter) {
-                    isInFooter = true;
-                    footerContainer.classList.add('active');
-                } else if (window.scrollY < footerTrigger - 300 && isInFooter) {
-                    isInFooter = false;
-                    footerContainer.classList.remove('active');
-                }
-                
-                // 检查是否滚动到顶部 - 增加容错范围
-                const longScrollTop = longScrollSection.offsetTop;
-                if (window.scrollY <= longScrollTop + 150 && !isTransitioningToLongScroll) {
-                    exitLongScroll();
-                }
-                
-                updateActiveSection();
-            }
-    
+            window.addEventListener('scroll', handleScrollAnimations);
+
             // 滚动动画处理
             function handleScrollAnimations() {
-                if (!isInLongScroll) return;
+                if (!isInLongScroll && !isInFooter) return;
                 
                 const scrollPosition = window.scrollY + window.innerHeight;
                 
@@ -2188,68 +2010,177 @@
                     }
                 });
             }
-    
-            // 退出长页滚动
-            function exitLongScroll() {
-                console.log('退出长页滚动');
-                isInLongScroll = false;
-                isInFooter = false;
-                isTransitioningToLongScroll = false;
-                longScrollSection.classList.remove('active');
-                footerContainer.classList.remove('active');
-                window.removeEventListener('scroll', handleLongScroll);
-                currentSection = 7; // 返回到Navigation部分
-                scrollToSection(currentSection);
-            }
-    
+
+            // 鼠标滚轮事件 - 修复所有滚动问题
+            document.addEventListener('wheel', function(e) {
+                if (isScrolling) return;
+                
+                const now = Date.now();
+                if (now - lastScrollTime < scrollCooldown) return;
+                lastScrollTime = now;
+                
+                // 计算旋转速度（基于滚轮速度）
+                const delta = Math.abs(e.deltaY);
+                rotationSpeed = Math.min(delta * 0.5, 30); // 限制最大速度
+                
+                // 开始旋转
+                if (!isRotating) {
+                    isRotating = true;
+                    startRotation();
+                }
+                
+                // 重置旋转停止计时器
+                clearTimeout(window.rotationStopTimer);
+                window.rotationStopTimer = setTimeout(stopRotation, 200);
+
+                // 如果在页脚中
+                if (isInFooter) {
+                    // 向上滚动时返回长页滚动
+                    if (e.deltaY < 0) {
+                        isInFooter = false;
+                        footerContainer.classList.remove('active');
+                        longScrollSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'end'
+                        });
+                    }
+                    return;
+                }
+
+                // 如果在长页滚动中
+                if (isInLongScroll) {
+                    // 检查是否滚动到顶部
+                    const longScrollTop = longScrollSection.offsetTop;
+                    const currentPosition = window.scrollY;
+                    
+                    if (e.deltaY < 0 && currentPosition <= longScrollTop + 50) {
+                        // 滚动到顶部，返回竖屏滚动
+                        isInLongScroll = false;
+                        longScrollSection.classList.remove('active');
+                        currentSection = 7; // 返回到Navigation部分
+                        scrollToSection(currentSection);
+                    } else if (e.deltaY > 0) {
+                        // 检查是否滚动到底部
+                        const longScrollBottom = longScrollSection.offsetTop + longScrollSection.offsetHeight;
+                        const currentPosition = window.scrollY + window.innerHeight;
+                        
+                        if (currentPosition >= longScrollBottom - 50) {
+                            // 滚动到底部，显示页脚
+                            isInFooter = true;
+                            footerContainer.classList.add('active');
+                            footerContainer.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }
+                    return;
+                }
+
+                // 横屏滚动部分
+                if (currentSection === 4) { // Sources section (horizontal)
+                    if (!isHorizontalScrolling) {
+                        if (e.deltaY > 0 && currentHorizontalPage < 2) {
+                            // 向右滚动
+                            currentHorizontalPage++;
+                            scrollToHorizontalPage(currentHorizontalPage);
+                        } else if (e.deltaY < 0 && currentHorizontalPage > 0) {
+                            // 向左滚动
+                            currentHorizontalPage--;
+                            scrollToHorizontalPage(currentHorizontalPage);
+                        } else if (e.deltaY > 0 && currentHorizontalPage === 2) {
+                            // 滚动到下一节
+                            currentSection++;
+                            scrollToSection(currentSection);
+                        } else if (e.deltaY < 0 && currentHorizontalPage === 0) {
+                            // 滚动到上一节
+                            currentSection--;
+                            scrollToSection(currentSection);
+                        }
+                    }
+                } else {
+                    // 竖屏滚动 - 修复所有section的滚动逻辑
+                    if (e.deltaY > 0 && currentSection < sections.length - 1) {
+                        // 向下滚动到下一节
+                        currentSection++;
+                        scrollToSection(currentSection);
+                    } else if (e.deltaY < 0 && currentSection > 0) {
+                        // 向上滚动到上一节 - 这是关键修复！
+                        currentSection--;
+                        scrollToSection(currentSection);
+                    } else if (e.deltaY > 0 && currentSection === sections.length - 1) {
+                        // 到达最后一节（Navigation），进入长页滚动
+                        isInLongScroll = true;
+                        longScrollSection.classList.add('active');
+                        longScrollSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+
             // 导航点点击事件
             indicators.forEach(dot => {
                 dot.addEventListener('click', () => {
                     const targetIndex = parseInt(dot.getAttribute('data-target'));
                     
                     if (targetIndex === 8) {
-                        if (!isTransitioningToLongScroll) {
-                            isTransitioningToLongScroll = true;
-                            enterLongScroll();
-                        }
-                    } else if (targetIndex === 9) {
-                        isInFooter = true;
+                        // 长页滚动部分
                         isInLongScroll = true;
-                        isTransitioningToLongScroll = true;
-                        footerContainer.classList.add('active');
+                        isInFooter = false;
                         longScrollSection.classList.add('active');
+                        footerContainer.classList.remove('active');
+                        longScrollSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    } else if (targetIndex === 9) {
+                        // 页脚部分
+                        isInFooter = true;
+                        isInLongScroll = false;
+                        footerContainer.classList.add('active');
+                        longScrollSection.classList.remove('active');
                         footerContainer.scrollIntoView({
                             behavior: 'smooth',
                             block: 'start'
                         });
-                        setTimeout(() => {
-                            isTransitioningToLongScroll = false;
-                        }, 2000);
                     } else {
                         currentSection = targetIndex;
                         isInLongScroll = false;
                         isInFooter = false;
-                        isTransitioningToLongScroll = false;
                         longScrollSection.classList.remove('active');
                         footerContainer.classList.remove('active');
-                        window.removeEventListener('scroll', handleLongScroll);
                         scrollToSection(currentSection);
                     }
                     
-                    rotationSpeed = 15;
+                    // 点击时也触发旋转
+                    rotationSpeed = 15; // 中等速度
                     if (!isRotating) {
                         isRotating = true;
                         startRotation();
                     }
+                    
+                    // 设置停止计时器
                     clearTimeout(window.rotationStopTimer);
                     window.rotationStopTimer = setTimeout(stopRotation, 500);
                 });
             });
-    
+
+            // 导航盒子点击事件 - 移除alert弹窗
+            navBoxes.forEach(box => {
+                box.addEventListener('click', () => {
+                    const target = box.getAttribute('data-target');
+                    // 这里可以添加实际导航逻辑
+                    // 移除了alert弹窗
+                });
+            });
+
             // 导航图片点击事件
             navImageItems.forEach(item => {
                 item.addEventListener('click', () => {
                     const target = item.getAttribute('data-target');
+                    // 根据目标导航到相应页面
                     switch(target) {
                         case 'design':
                             window.location.href = 'design.html';
@@ -2266,57 +2197,65 @@
                     }
                 });
             });
-    
+
             // 滚动到指定部分
             function scrollToSection(index) {
-                if (isScrolling || index < 0 || index >= sections.length) return;
-                
                 isScrolling = true;
-                sections[index].scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-    
+                
+                if (index < sections.length) {
+                    sections[index].scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+
                 updateActiveSection();
                 animateCurrentSection();
-    
+
                 setTimeout(() => {
                     isScrolling = false;
                 }, 1000);
             }
-    
+
             // 滚动到横屏页面
             function scrollToHorizontalPage(index) {
                 isHorizontalScrolling = true;
                 horizontalPages.style.transform = `translateX(-${index * 100}vw)`;
+                
                 setTimeout(() => {
                     isHorizontalScrolling = false;
                 }, 800);
             }
-    
+
             // 更新活动部分
             function updateActiveSection() {
                 indicators.forEach(dot => dot.classList.remove('active'));
                 
                 if (isInFooter) {
-                    const footerDot = document.querySelector('.indicator-dot[data-target="9"]');
-                    if (footerDot) footerDot.classList.add('active');
+                    indicators[9].classList.add('active');
                 } else if (isInLongScroll) {
-                    const longScrollDot = document.querySelector('.indicator-dot[data-target="8"]');
-                    if (longScrollDot) longScrollDot.classList.add('active');
+                    indicators[8].classList.add('active');
                 } else {
                     indicators[currentSection].classList.add('active');
                 }
             }
-    
+
             // 动画当前部分
             function animateCurrentSection() {
                 const current = sections[currentSection];
                 
-                textLines.forEach(line => line.classList.remove('visible'));
-                images.forEach(img => img.classList.remove('visible'));
-                mosaicItems.forEach(item => item.classList.remove('visible'));
-    
+                // 重置所有动画元素
+                textLines.forEach(line => {
+                    line.classList.remove('visible');
+                });
+                images.forEach(img => {
+                    img.classList.remove('visible');
+                });
+                mosaicItems.forEach(item => {
+                    item.classList.remove('visible');
+                });
+
+                // 延迟触发动画
                 setTimeout(() => {
                     const currentTextLines = current.querySelectorAll('.text-line');
                     currentTextLines.forEach((line, index) => {
@@ -2324,21 +2263,22 @@
                             line.classList.add('visible');
                         }, index * 400);
                     });
-    
+
                     const currentImages = current.querySelectorAll('.image-animated');
                     currentImages.forEach((img, index) => {
                         setTimeout(() => {
                             img.classList.add('visible');
                         }, index * 600);
                     });
-    
+
                     const currentMosaicItems = current.querySelectorAll('.mosaic-item');
                     currentMosaicItems.forEach((item, index) => {
                         setTimeout(() => {
                             item.classList.add('visible');
                         }, index * 300);
                     });
-    
+
+                    // 触发数字计数器动画
                     const currentNumberCounters = current.querySelectorAll('.number-counter');
                     currentNumberCounters.forEach((counter, index) => {
                         setTimeout(() => {
