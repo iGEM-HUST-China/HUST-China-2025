@@ -10,7 +10,7 @@ images02:
     caption: Figure 4a. Global HADDOCK score distribution across peptide–enzyme complexes (boxplot).
   - src: https://static.igem.wiki/teams/5569/model/m4.webp
     alt: Enzyme-wise HADDOCK score comparison (barplot)
-    caption: Figure 4b.** Enzyme-wise HADDOCK score comparison across target enzymes (barplot). 
+    caption: Figure 4b. Enzyme-wise HADDOCK score comparison across target enzymes (barplot). 
 ---
 
 ## Our Model
@@ -212,7 +212,7 @@ When HADDOCK scores were resolved for each enzyme partner (barplot analysis), th
 
 We next examined the energetic basis for these differences. Donut plots visualizing HADDOCK scoring weights highlighted distinct stabilization mechanisms. For **TYWIRFSKL**, improved binding arose primarily from enhanced electrostatics and van der Waals packing, which favor tighter and more specific interfaces. By contrast, **SKL** complexes relied disproportionately on desolvation contributions, reflecting weaker direct interactions and more solvent-mediated stabilization. **GGGSSKL** again showed an intermediate profile, suggesting that the flexible linker partially compensates but cannot substitute for the aromatic contacts.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m3.webp" caption="**Figure 5.** Energetic decomposition showing relative contributions of electrostatics, vdW, and desolvation terms (donut plots)." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m3.webp" caption="Figure 5. Energetic decomposition showing relative contributions of electrostatics, vdW, and desolvation terms (donut plots)." %}
 
 Finally, we integrated all docking metrics—including **HADDOCK score**, **vdW**, **electrostatics**, **desolvation**, **buried surface area (BSA)**, and **Z-score**—into a standardized heatmap to compare complexes on a unified scale. To enable cross-metric comparison, terms where “lower is better” were inverted, and each column was z-score normalized. This approach eliminated differences in physical units and revealed the relative performance landscape.
 
@@ -224,7 +224,7 @@ $$
 
 </div>
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m2.webp" caption="**Figure 6.** Standardized heatmap of HADDOCK-derived energetic and interfacial metrics." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m2.webp" caption="Figure 6. Standardized heatmap of HADDOCK-derived energetic and interfacial metrics." %}
 
 In this analysis, **TYWIRFSKL** complexes consistently clustered toward favorable energetic and interfacial signatures, with larger BSA and stronger vdW/electrostatics contributions. In contrast, **SKL** complexes grouped together at the unfavorable end of the spectrum, with lower BSA and weaker interactions.
 
@@ -307,18 +307,18 @@ FastRelax is typically employed as a post-design refinement step to further opti
 
 To systematically explore the sequence landscape of tHMGR, we established a three-step design–optimization workflow (Figure 2-1):  
 
-1️⃣ **Sequence Sampling:**  
+1 **Sequence Sampling:**  
 ProteinMPNN generates approximately 100 candidate sequences conditioned on the tHMGR backbone.  
 
-2️⃣ **Energy Evaluation:**  
+2 **Energy Evaluation:**  
 Each sequence is analyzed using Frustratometer2 to quantify local and global frustration, selecting those with smooth energy landscapes.  
 
-3️⃣ **Structure Relaxation:**  
+3 **Structure Relaxation:**  
 Selected candidates are refined by Rosetta FastRelax to remove steric conflicts and minimize total energy at the atomic level.  
 
 This pipeline enables iterative coupling of generative modeling and physics-based refinement, ensuring both sequence diversity and structural stability in tHMGR design.  
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m6-2.webp" caption="**Figure 7.** Figure 7. Integrated pipeline for sequence design and energy optimization of tHMGR." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m6-2.webp" caption=" Figure 7. Integrated pipeline for sequence design and energy optimization of tHMGR." %}
 
 ## 2.4 Results and Validation
 
