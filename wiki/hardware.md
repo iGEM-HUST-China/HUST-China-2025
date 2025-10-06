@@ -9,6 +9,9 @@ images01:
   - src: https://static.igem.wiki/teams/5569/hardware/h36.webp
     alt: Figure 1.2 R&D Process Diagram
     caption: Figure 1.2 R&D Process Diagram
+    
+
+
 
 images02:
   - src: https://static.igem.wiki/teams/5569/hardware/h24.webp
@@ -179,7 +182,7 @@ To systematically address these challenges, our project team innovatively propos
 
 Throughout development, we strictly adhered to standard hardware development procedures and the iGEM-advocated Design-Test-Learn-Build cycle, structured into five phases.
 
-{% include figure.html images=page.images01 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h36.webp" caption="Figure 1.2 R&D Process Diagram" %}
 
 ### Phase 1: Defining Requirements and Pain Points
 
@@ -204,7 +207,9 @@ During this phase, we invited target users (other iGEM teammates, lab peers, fac
 ## Requirement and Cost Analysis
 
 Through interviews with multiple laboratory researchers, we discovered that the process of extracting substances in laboratories consumes significant time.Simultaneously, the need to move between different instruments significantly increases the error rate. Based on this, we conducted research into traditional laboratory processes and the problems inherent within them.
-{% include figure.html images=page.images02 %}
+to five phases.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h24.webp" caption="Figure 1.3 Flowchart for Laboratory Shaker Culture and Miniature Fermentation Methods" %}
 
 | Evaluation Criteria      | Existing Traditional Solution (Micro-fermentation tank + Centrifuge + Grinder)                                                                                                                                                                                                                             |
 | :----------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -222,20 +227,20 @@ Thus, we identified three major pain points: **cumbersome and time-consuming ope
 
 Our hardware team has consistently focused on addressing practical challenges encountered in synthetic biology micro-fermentation, aiming to provide solutions and fresh perspectives for tackling specific problems. Our design philosophy centers on "**integration, automation, and miniaturization,** **Modular**." The system appears as a compact desktop unit internally divided into two modules: an upper fermentation module and a lower integrated centrifugal agitation module. Controlled by a single STM32 chip, the system utilizes multiple control chips to drive motor rotation. An OLED display shows culture temperature, pH, and motor parameters for real-time monitoring of cultivation conditions. It also comes equipped with numerous components and modules for users to choose from, catering to diverse needs and practical situations.
 
-{% include figure.html images=page.images03 %}
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure 1.3 Flowchart for Laboratory Shaker Culture and Miniature Fermentation Methods" %}
 
 ### Core Module Function Design and Testing
 
 **a. Fermentation Culture and Fluid Control: Enables strain expansion culture and employs flow switches to control two liquid release stages for microbial enrichment and transfer of concentrated culture.**
-
-{% include figure.html images=page.images04 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h13.webp" caption="Figure 3.2.1 Schematic Diagram of Fermentation Condition Control Module" %}
 
 - **Fermentation Condition Control Module:** Multiple designs at the top of the device primarily enable real-time monitoring and control of fermentation conditions.
 - A 42-step motor drives the stirrer and flow switch via bevel gear transmission. Three small ports accommodate: a pH sensor for real-time monitoring, a temperature sensor for fermentation conditions, and a blue light emitter to activate the strain's suicide switch, preventing microbial leakage. Two sidewall ports allow tubing to deliver solutions from a peristaltic pump for timed feed supplementation.
 
 **Leakage Control and Cell Enrichment Module: Leakage control and cell enrichment are achieved through a nested double-layered fermentation tank system and interlocking mortise-and-tenon joints.**
 
-{% include figure.html images=page.images05 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h49.webp" caption="Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a:Leakage Control Device, b:Mortise-and-Tenon Structure)" %}
 
 
 
@@ -244,7 +249,7 @@ Our hardware team has consistently focused on addressing practical challenges en
 - The circular opening at the bottom of the outer tank has internal threads. These are used to secure a bacterial filter membrane during the first drainage cycle. The culture medium flows directly into the waste tank via the rubber tube connected to the bottom of the drainage port, while cells are intercepted, enhancing bacterial density within the tank. The fan-shaped aperture facilitates the second drainage cycle, directing residual medium and cells downward to the centrifugal shaking module for subsequent processing.
 - Under microscopic observation, the size of lipolytic yeast cells was determined (Figure 3.2.4). After averaging measurements from 20 cells, the bacterial cell's major axis measured approximately 8.4 μm, and the minor axis approximately 5.2 μm. A bacterial filter membrane with a mesh size of 3 μm was selected.
 
-{% include figure.html images=page.images06 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h43.webp" caption="Figure 3.2.3 Schematic diagram of lipolytic yeast cells under a microscope" %}
 
 
 
@@ -254,7 +259,7 @@ Our hardware team has consistently focused on addressing practical challenges en
 
 During cell centrifugation, rotational speed and duration are the two most critical parameters. Increasing rotational speed significantly raises motor costs, while extending duration reduces production efficiency. To determine the conditions under which our equipment achieves maximum economic benefit, we employed Minitab to design the following response surface experiment.
 
-{% include figure.html images=page.images07 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h37.webp" caption=" Figure 3.2.4 Experimental Design Table" %}
 
 The two influencing factors are rotational speed (1000 rpm--5000 rpm) and time (1min--5 min). The response variable is absorbance (A), measured at 500 nm wavelength using a spectrophotometer. The blank control group consists of pre-centrifugation solution, while the sample group comprises supernatant collected after each centrifugation run.
 
@@ -267,12 +272,10 @@ According to the spectrophotometric formula:
 It is evident that absorbance is directly proportional to solution concentration. A lower A value indicates a lower cell concentration in the supernatant. Therefore, our optimization objective is to achieve the lowest A value using the minimum rotational speed and shortest duration. The A contour plot indicates that all regions outside the shaded area represent viable [rotational speed: time] combinations.
 
 The maximum speed of the purchased brushless motor under load, measured by an infrared sensor, is 840 rpm. Through a 1:3 speed reduction gear set, the speed can reach 2520 rpm. At this speed, centrifugation requires only about 3 minutes, maximizing economic efficiency.
-
-{% include figure.html images=page.images08 %}
-
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h38.webp" caption="Figure 3.2.5 Contour Plot of Absorbance" %}
 **Mode Switching Module:**
 
-{% include figure.html images=page.images10 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h32.webp" caption="Figure 3.2.6 Schematic of the Mode Switching Module" %}
 
 We designed the equipment based on the commonly used glass bead shaking method in laboratories to disrupt cells and extract intracellular squalene. To save space, we developed a mode switching module to integrate both shaking and centrifugation functions. The core design features a mode switching bearing (animation shown).
 
@@ -283,19 +286,19 @@ Motion Decoupling Mechanism---"One-Way Bearing": To prevent centrifuge tubes fro
 
 To resolve the issue of repeatedly transferring liquid and balancing the centrifuge, we designed a communicating centrifuge tube based on the communicating vessel principle. A matching liquid connection switch was also developed to prevent circulation while facilitating easy liquid release and collection.
 
-{% include figure.html images=page.images11 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h45.webp" caption="Figure 3.2.7 CommunicatingCentrifuge Tube Kit" %}
 
 **c. Intelligent Control System: Primarily used to automate the entire device, reducing manual operation time**
 
 To integrate control of the entire apparatus and monitor cell culture conditions in real time, we developed the following circuit control system based on the STM32F103C8T6 microcontroller:
 
-{% include figure.html images=page.images12 %}
-
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h9.webp" caption="Figure 3.2.8 Wiring Diagram" %}
 ### Equipment
  **Condition Monitoring Module**
     Drawing inspiration from HUST-China 2023's fermentation condition monitoring design, we employed a DS18B20 + temperature probe as the temperature monitoring module and a pH composite electrode + pH sensor as the pH detection module. ([Hardware | Huazhong University of Science and Technology - China - iGEM 2023](https://2023.igem.wiki/hust-china/hardware))
 
-    {% include figure.html images=page.images13 %}
+  {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h1.webp" caption=" Figure 3.2.9 pH Calibration Curve" %}
+
  **Motion Control Module**
  We selected distinct motors for the three key motion control points based on thorough research and analysis of each motor's characteristics, implementing optimal designs:
 
@@ -305,13 +308,15 @@ To integrate control of the entire apparatus and monitor cell culture conditions
 
  **External:** The external motor controls timed nutrient supplementation to regulate nitrogen levels in the culture medium. We fabricated a simple peristaltic pump that achieves timed supplementation (of ammonium sulfate) by adjusting the motor's speed and rotation status. For the peristaltic pump's control motor, we selected the MG996R servo motor. It is easy to program, allows precise specification of rotation angles, and consumes minimal power.
 
-    {% include figure.html images=page.images14 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h33.webp" caption="Figure 3.2.10 Peristaltic Pump" %}
+
 
 ### Software
 
 We developed the program using Keil5. The primary functional code is as follows:
 
-{% include figure.html images=page.images15 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h46.webp" caption="Figure 3.2.11 Main Code" %}
+
 
 ## Product Iteration
 
@@ -322,12 +327,11 @@ This section documents the challenges encountered during hardware development an
 Initially, our device design comprised only an upper chamber for fermentation and a lower chamber for enrichment and lysis. In the upper chamber, we incorporated a stirring rod. Two openings were added to the chamber's side, each equipped with a slide valve for controlled liquid addition and removal. At the tank bottom, a drain pipe allowed the concentrated bacterial solution to be sequentially transferred into centrifuge tubes below via a plug-screw mechanism upon fermentation completion, followed by removal for weighing. After centrifugation in the lower tank, the shaft was manually switched from concentric to eccentric mode, and grinding beads with buffer solution were added to initiate agitation and cell disruption.
 
 However, this version still required significant manual labor, leading us to develop V2.0.
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h10.webp" caption="Figure 3.3.1 Schematic of the First-Generation Model" %}
 
-{% include figure.html images=page.images16 %}
 
 ### Version 2.0
-
-{% include figure.html images=page.images17 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h11.webp" caption=" Figure 3.3.2 Schematic of the second-generation model" %}
 
 Compared to the first generation, we introduced a mortise-and-tenon structure to mechanically link the flow switch and stirrer rod. The top knob can drive either the stirrer rod or the flow switch depending on its rotation direction. Simultaneously, we designed an automatic switching bearing that alters the motor's rotation direction to toggle between centrifugal and agitation modes.
 
@@ -340,10 +344,10 @@ However, during practical testing, we encountered the following issues:
 To address these issues, we continuously optimized the design and launched V3.0.
 
 ### Version 3.0
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h12.webp" caption="Figure 1.3 Flowchart for Laboratory Shaker Culture and Miniature Fermentation Methods" %}
 
-{% include figure.html images=page.images18 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure 3.3.3 Schematic Diagram of Third-Generation Model" %}
 
-{% include figure.html images=page.images19 %}
 
 In the third-generation design, we introduced an automated control system. A DC motor-driven stirring rod was added to the top of the upper tank, along with two small openings for pH and temperature sensors to enable real-time monitoring of fermentation conditions.
 
@@ -372,7 +376,8 @@ Figure 3.4.1 shows a fan-blade agitator designed for vigorous liquid agitation. 
 
 Figure 3.4.2 shows a spiral-rising agitator that uniformly mixes microbial cultures with nutrients. Its thin blades easily divide the liquid, making it suitable for high-viscosity culture media.
 
-{% include figure2.html images=page.images20 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h19.webp" caption="Figure 3.3.4 Third-Generation Circuit Wiring Diagram" %}
+
 
 ### Flow Control Module
 
@@ -415,7 +420,8 @@ Figure 3.4.11 shows a fermenter with baffles added to increase oxygen supply dur
 2.  Open the top lid, add the culture medium, and inoculate the microbial strain.
 3.  Connect the power cord and press buttons in sequence to activate corresponding functions.
 
-{% include figure.html images=page.images25 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h2.webp" caption="Figure 4.1 Button Layout Diagram" %}
+
 The red button powers on the device and illuminates the display. The yellow button activates the upper motor for continuous clockwise rotation. The left white button controls the upper motor for 30° counterclockwise rotation. The blue button controls the lower motor rotation. The white button reverses the lower motor rotation direction. The green button activates the nutrient replenishment system.
 
 ## User Feedback
@@ -436,7 +442,8 @@ We presented the initial prototype to Professor Wang Jinchun at the Engineering 
 
 To address these issues, we have developed corresponding improvement plans: After structural validation, critical bearings and moving parts will be replaced with metal materials to enhance longevity and operational stability; a removable, independently sterilizable "reaction inner chamber" will be designed to effectively resolve cleaning and sealing challenges; a dedicated PCB board will be developed to integrate circuits, improving system safety and anti-interference capabilities.
 
-{% include figure.html images=page.images26 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h44.webp" caption=": Figure 3.5.1 Discussion with Professor Wang Jinchun" %}
+
 
 ### Expanding Application Scenarios and Functional Optimization
 
@@ -447,7 +454,7 @@ We also invited Dr. Chen Yulong from the Institute of Resource Biology and Biote
 
 Based on these recommendations, we redesigned the fermentation module by incorporating baffled fermentation vessels of multiple specifications and integrating an oxygen supply unit. Dr. Chen's proposed application scenarios also guided us toward new R&D directions. We are currently exploring the use of this equipment for exosome collection, further validating its scalability and practical value in bioprocessing.
 
-{% include figure.html images=page.images27 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h27.webp" caption="Figure 3.5.2 Exchange with Dr. Chen Yulong" %}
 
 ## Equipment Component List and Cost
 
