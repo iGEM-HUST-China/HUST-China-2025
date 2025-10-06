@@ -27,8 +27,8 @@ images04:
 
 images05:
   - src: https://static.igem.wiki/teams/5569/hardware/h49.webp
-    alt: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)
-    caption: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)
+    alt: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a:Leakage Control Device, b:Mortise-and-Tenon Structure)
+    caption: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a:Leakage Control Device, b:Mortise-and-Tenon Structure)
 
 images06:
   - src: https://static.igem.wiki/teams/5569/hardware/h43.webp
@@ -102,7 +102,7 @@ images20:
   - src:  https://static.igem.wiki/teams/5569/hardware/h19.webp
     alt: Figure 3.4.1 Fan-shaped stirring rod
     caption: Figure 3.4.1 Fan-shaped stirring rod
-  - src: ttps://static.igem.wiki/teams/5569/hardware/h18.webp
+  - src: https://static.igem.wiki/teams/5569/hardware/h18.webp
     alt:  Figure 3.4.2 Spiral stirring rod
     caption:  Figure 3.4.2 Spiral stirring rod
 
@@ -112,7 +112,7 @@ images21:
   - src:  https://static.igem.wiki/teams/5569/hardware/h25.webp
     alt: Figure 3.4.3 Multi-hole Fluid Switch	  
     caption: Figure 3.4.3 Multi-hole Fluid Switch	  
-  - src: ttps://static.igem.wiki/teams/5569/hardware/h27.webp
+  - src: https://static.igem.wiki/teams/5569/hardware/h27.webp
     alt:   Figure 3.4.4 Flow Control Valve
     caption:  Figure 3.4.4 Flow Control Valve 
 
@@ -121,7 +121,7 @@ images22:
   - src:  https://static.igem.wiki/teams/5569/hardware/h47.webp
     alt: Figure 3.4.5 Seven-tooth gear 	  
     caption: Figure 3.4.5 Seven-tooth gear 	  
-  - src: ttps://static.igem.wiki/teams/5569/hardware/h48.webp
+  - src: https://static.igem.wiki/teams/5569/hardware/h48.webp
     alt:   Figure 3.4.6 Speed adjustment gear set
     caption:  FiFigure 3.4.6 Speed adjustment gear set 
 
@@ -140,7 +140,7 @@ images24:
   - src:  https://static.igem.wiki/teams/5569/hardware/h15.webp
     alt: Figure 3.4.10 200ml Fermentation Vessel	  
     caption: Figure 3.4.10 200ml Fermentation Vessel	  
-  - src: ttps://static.igem.wiki/teams/5569/hardware/h14.webp
+  - src:  https://static.igem.wiki/teams/5569/hardware/h14.webp
     alt:   Figure 3.4.11 Baffled Fermentation Vessel
     caption:  Figure 3.4.11 Baffled Fermentation Vessel
 
@@ -293,17 +293,15 @@ To integrate control of the entire apparatus and monitor cell culture conditions
 
 ### Equipment
  **Condition Monitoring Module**
-
     Drawing inspiration from HUST-China 2023's fermentation condition monitoring design, we employed a DS18B20 + temperature probe as the temperature monitoring module and a pH composite electrode + pH sensor as the pH detection module. ([Hardware | Huazhong University of Science and Technology - China - iGEM 2023](https://2023.igem.wiki/hust-china/hardware))
 
     {% include figure.html images=page.images13 %}
- **Motion Control Module:**
+ **Motion Control Module**
+ We selected distinct motors for the three key motion control points based on thorough research and analysis of each motor's characteristics, implementing optimal designs:
 
-    We selected distinct motors for the three key motion control points based on thorough research and analysis of each motor's characteristics, implementing optimal designs:
-
-    - **Top:** The top motor drives the stirring rod and activates the flow switch, requiring high precision. We selected the 11HS2810S stepper motor, which enables precise speed and angle control via PWM modulation and delivers substantial torque.
-    - **Bottom:** The bottom motor controls centrifugation and oscillation, demanding strict speed regulation. We selected the 36-3530 brushless DC motor. Its brushless design enables high rotational speeds at low power consumption.
-    - **External:** The external motor controls timed nutrient supplementation to regulate nitrogen levels in the culture medium. We fabricated a simple peristaltic pump that achieves timed supplementation (of ammonium sulfate) by adjusting the motor's speed and rotation status. For the peristaltic pump's control motor, we selected the MG996R servo motor. It is easy to program, allows precise specification of rotation angles, and consumes minimal power.
+ **Top:** The top motor drives the stirring rod and activates the flow switch, requiring high precision. We selected the 11HS2810S stepper motor, which enables precise speed and angle control via PWM modulation and delivers substantial torque.
+ **Bottom:** The bottom motor controls centrifugation and oscillation, demanding strict speed regulation. We selected the 36-3530 brushless DC motor. Its brushless design enables high rotational speeds at low power consumption.
+ **External:** The external motor controls timed nutrient supplementation to regulate nitrogen levels in the culture medium. We fabricated a simple peristaltic pump that achieves timed supplementation (of ammonium sulfate) by adjusting the motor's speed and rotation status. For the peristaltic pump's control motor, we selected the MG996R servo motor. It is easy to program, allows precise specification of rotation angles, and consumes minimal power.
 
     {% include figure.html images=page.images14 %}
 
