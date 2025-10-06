@@ -6,11 +6,6 @@ feature_image: "https://static.igem.wiki/teams/5569/description/hdwe.webp"
 excerpt: ""
 
 
-images25:
-  - src:  https://static.igem.wiki/teams/5569/hardware/open-by-shunzhuan-soconvert.webp
-    alt: Turn clockwise to open the flow switch	  
-    caption: Turn clockwise to open the flow switch	  
-
 
 
 ---
@@ -98,7 +93,8 @@ Our hardware team has consistently focused on addressing practical challenges en
 - The inner tank bottom features a 30° sector-shaped aperture aligned with two sector-shaped and circular apertures in the outer tank base plate. The outer tank's edge is concave, while its central protrusion interlocks with the inner tank bottom to create hydraulic pressure, preventing medium leakage through edge gaps.
 - The inner tank's mid-section incorporates a mortise-and-tenon structure that mates with the complementary half on the bottom of the stirring rod. The top stepper motor operates in two modes: continuous clockwise rotation and counterclockwise step mode (each button press rotates 30° counterclockwise). During clockwise rotation, the inclined planes of the mortise-and-tenon joints slide against each other, preventing the inner tank from rotating. The stirring rod does not rotate the inner tank, ensuring thorough mixing of the bacterial solution. During counterclockwise rotation, the vertical surfaces of the two joints interlock. The stirring rod drives the inner tank to rotate, thereby controlling leakage.
 
-{% include figure2.html images=page.images25 %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/open-by-shunzhuan-soconvert.webp" caption="Turn clockwise to open the flow switch" %}
+
 - The circular opening at the bottom of the outer tank has internal threads. These are used to secure a bacterial filter membrane during the first drainage cycle. The culture medium flows directly into the waste tank via the rubber tube connected to the bottom of the drainage port, while cells are intercepted, enhancing bacterial density within the tank. The fan-shaped aperture facilitates the second drainage cycle, directing residual medium and cells downward to the centrifugal shaking module for subsequent processing.
 - Under microscopic observation, the size of lipolytic yeast cells was determined (Figure 3.2.4). After averaging measurements from 20 cells, the bacterial cell's major axis measured approximately 8.4 μm, and the minor axis approximately 5.2 μm. A bacterial filter membrane with a mesh size of 3 μm was selected.
 
