@@ -246,7 +246,7 @@ To address these issues, we continuously optimized the design and launched V3.0.
 ### Version 3.0
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h12.webp" caption="Figure 3.3.3 Schematic Diagram of Third-Generation Model" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh6.webp" caption="Figure 3.3.3 Schematic Diagram of Third-Generation Model" %}
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h39.webp" caption="Figure 3.3.4 Third-Generation Circuit Wiring Diagram" %}
 
 
