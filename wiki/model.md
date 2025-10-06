@@ -514,7 +514,55 @@ When the environment deviated from this range (pH < 5 or > 7), μₘₐₓ decre
 
 Temperature exerted a clear influence on the carrying capacity (K). Above 28 °C, K gradually declined, suggesting that elevated temperatures induced early stationary phases and reduced total biomass yield. Conversely, between 24–28 °C, K remained stable at high levels, implying that moderate temperatures promote prolonged and balanced population growth.
 
+**Table 3-1. Model predictions versus actual Gompertz parameters on independent test set**
+
+| Group | Target | pH | Temp (°C) | A_pred | K_pred | μₘₐₓ_pred | λ_pred | A_actual | K_actual | μₘₐₓ_actual | λ_actual |
+|:------|:--------|:--:|:----------:|-------:|-------:|-----------:|-------:|----------:|----------:|-------------:|----------:|
+| 1 | Oleic_1:1 | 6.0 | 26.0 | 0.013 | 0.801 | 0.048 | 8.932 | 0.012 | 0.719 | 0.048 | 8.955 |
+| 1 | Oleic_1:3 | 6.0 | 26.0 | 0.028 | 0.507 | 0.072 | 8.471 | 0.027 | 0.451 | 0.072 | 8.558 |
+| 1 | Oleic_1:5 | 6.0 | 26.0 | 0.024 | 0.566 | 0.047 | 5.003 | 0.039 | 0.503 | 0.046 | 5.000 |
+| 1 | Linoleic_1:1 | 6.0 | 26.0 | 0.021 | 0.267 | 0.100 | 6.653 | 0.019 | 0.210 | 0.100 | 6.775 |
+| 1 | Linoleic_1:3 | 6.0 | 26.0 | 0.041 | 0.346 | 0.075 | 5.006 | 0.039 | 0.306 | 0.074 | 5.000 |
+| 1 | Linoleic_1:5 | 6.0 | 26.0 | 0.030 | 0.435 | 0.073 | 7.381 | 0.020 | 0.385 | 0.073 | 7.495 |
+| 1 | Alpha-linolenic_1:1 | 6.0 | 26.0 | 0.018 | 0.234 | 0.100 | 6.450 | 0.014 | 0.179 | 0.100 | 6.475 |
+| 1 | Alpha-linolenic_1:3 | 6.0 | 26.0 | 0.029 | 0.125 | 0.100 | 7.265 | 0.024 | 0.103 | 0.100 | 7.264 |
+| 1 | Alpha-linolenic_1:5 | 6.0 | 26.0 | 0.023 | 0.140 | 0.100 | 6.397 | 0.020 | 0.281 | 0.100 | 6.562 |
+| 1 | YPD | 6.0 | 26.0 | 0.014 | 0.186 | 0.100 | 5.896 | 0.013 | 0.145 | 0.100 | 5.995 |
+| 1 | Lipid | 6.0 | 26.0 | 0.049 | 0.552 | 0.100 | 10.861 | 0.044 | 0.496 | 0.100 | 10.875 |
+| 1 | Lipid-fatase | 6.0 | 26.0 | 0.000 | 0.476 | 0.049 | 6.881 | 0.000 | 0.418 | 0.049 | 6.908 |
+| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+
+> **RMSE:** 0.0609  **R²:** 0.9333  
+> The model shows close agreement between predicted and actual Gompertz parameters across unseen pH–temperature conditions.
 
 
 Together, these findings demonstrate that the model successfully captured the multidimensional physiological responses of *Y. lipolytica* to environmental variation. The inverse relationship between μₘₐₓ and λ reflects the trade-off between metabolic activation and adaptation, while the decline of K at higher temperatures highlights energy and stability constraints under heat stress. Overall, this interpretation confirms the biological validity of the model and provides quantitative guidance for optimizing culture conditions.
 
+### 3.6 Limitations and Future Work
+
+Although the hybrid modelling framework developed in this study demonstrated high accuracy and interpretability in predicting and optimizing microbial growth, several limitations remain.  
+First, the Gompertz equation assumes a single sigmoidal phase and does not account for substrate depletion, nutrient limitation, or metabolic reprogramming.  
+As a result, its descriptive capacity may decline when *Yarrowia lipolytica* undergoes secondary growth or stress-induced recovery under complex substrate conditions.  
+Second, the machine-learning module currently relies on static environmental inputs (pH, temperature, substrate type), without incorporating temporal features or process factors such as dissolved oxygen or C/N ratio.  
+This allows the model to capture global growth trends but limits its ability to represent short-term transitions or regulatory responses.
+
+Future extensions will focus on two directions:  
+(1) introducing dynamic modelling approaches, such as sequence-to-sequence architectures or neural ordinary differential equations (Neural ODEs), to describe multi-phase growth and stress-response processes;  
+and (2) expanding the dataset to include multiple carbon sources and nutrient regimes, enabling the construction of a multidimensional predictive model that learns substrate adaptability and growth stability simultaneously.  
+
+Overall, this framework establishes a generalizable approach for predictive and interpretable growth modelling in *Y. lipolytica*, which can be further enhanced by integrating dynamic information and environmental complexity.
+
+---
+
+**References**
+
+1. Zwietering MH, Jongenburger I, Rombouts FM, van ’t Riet K. Modeling of the bacterial growth curve. *Appl Environ Microbiol.* 1990;56(6):1875–81.  
+2. Gibson AM, Bratchell N, Roberts TA. The effect of sodium chloride and temperature on the rate and extent of growth of *Clostridium botulinum* type A. *J Appl Bacteriol.* 1988;65(2):95–108.  
+3. Ratkowsky DA, Olley J, McMeekin TA, Ball A. Relationship between temperature and growth rate of bacterial cultures. *J Bacteriol.* 1982;149(1):1–5.  
+4. Gupta S, Mozaffar H, Syed A, et al. Machine learning models for microbial growth prediction under environmental stress. *Biotechnol Bioeng.* 2020;117(12):3727–38.  
+5. Buchanan RL, Whiting RC, Damert WC. When is simple good enough: a comparison of the Gompertz, logistic, and other empirical models for fitting bacterial growth curves. *Food Microbiol.* 1997;14(4):313–26.  
+6. Desai M, Udupa S, Chatterjee S, Sarma SJ. A hybrid machine learning framework for predictive bioprocess modeling using ensemble tree algorithms. *Comput Chem Eng.* 2022;157:107675.  
+7. Rajamanickam S, Misra BB. Machine learning-based prediction of microbial growth under multiple environmental conditions. *Front Microbiol.* 2021;12:713517.  
+8. Yang H, He F, Liu J, et al. Integration of mechanistic models and machine learning improves prediction accuracy in microbial fermentation. *Biotechnol J.* 2023;18(4):2200604.  
+9. Larroude M, Rossignol T, Nicaud JM, Ledesma-Amaro R. Synthetic biology tools for engineering *Yarrowia lipolytica*. *Biotechnol Adv.* 2018;36(8):2150–64.  
+10. Qiao K, Abidi SHI, Liu H, Zhang H, Chakraborty S, Zhang L, Tang Y. Engineering lipid overproduction in the oleaginous yeast *Yarrowia lipolytica*. *Metab Eng.* 2015;29:56–65.
