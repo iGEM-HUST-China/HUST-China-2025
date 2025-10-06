@@ -63,7 +63,7 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
 - Extracted kinetic parameters (**μₘₐₓ**, **λ**, **K**) via **Gompertz** and **spline** fits.
 - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m01.webp" caption="Figure1. MODEL PEPLINE" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure1. MODEL PEPLINE" %}
 
 # I. Linker–Signal Peptide System Docking
 
@@ -200,7 +200,17 @@ Boxplot comparisons across all peptide–enzyme complexes revealed a clear hiera
 
 When HADDOCK scores were resolved for each enzyme partner (barplot analysis), the same pattern emerged: **TYWIRFSKL** outperformed **SKL** in nearly every case, often with large margins, whereas **GGGSSKL** tracked between the two. These results demonstrate that the effect is not restricted to a single target but represents a general enhancement of binding across the enzyme panel.
 
+images02:
+  - src: https://static.igem.wiki/teams/5569/model/m5.webp
+    alt: Global HADDOCK score distribution (boxplot)
+    caption: **Figure 4a.** Global HADDOCK score distribution across peptide–enzyme complexes (boxplot).
+  - src: https://static.igem.wiki/teams/5569/model/m4.webp
+    alt: Enzyme-wise HADDOCK score comparison (barplot)
+    caption: **Figure 4b.** Enzyme-wise HADDOCK score comparison across target enzymes (barplot).
+
 We next examined the energetic basis for these differences. Donut plots visualizing HADDOCK scoring weights highlighted distinct stabilization mechanisms. For **TYWIRFSKL**, improved binding arose primarily from enhanced electrostatics and van der Waals packing, which favor tighter and more specific interfaces. By contrast, **SKL** complexes relied disproportionately on desolvation contributions, reflecting weaker direct interactions and more solvent-mediated stabilization. **GGGSSKL** again showed an intermediate profile, suggesting that the flexible linker partially compensates but cannot substitute for the aromatic contacts.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m3.webp" caption="**Figure 5.** Energetic decomposition showing relative contributions of electrostatics, vdW, and desolvation terms (donut plots)." %}
 
 Finally, we integrated all docking metrics—including **HADDOCK score**, **vdW**, **electrostatics**, **desolvation**, **buried surface area (BSA)**, and **Z-score**—into a standardized heatmap to compare complexes on a unified scale. To enable cross-metric comparison, terms where “lower is better” were inverted, and each column was z-score normalized. This approach eliminated differences in physical units and revealed the relative performance landscape.
 
@@ -211,6 +221,8 @@ Z = \frac{x - \mu}{\sigma}
 $$
 
 </div>
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m2.webp" caption="**Figure 6.** Standardized heatmap of HADDOCK-derived energetic and interfacial metrics." %}
 
 In this analysis, **TYWIRFSKL** complexes consistently clustered toward favorable energetic and interfacial signatures, with larger BSA and stronger vdW/electrostatics contributions. In contrast, **SKL** complexes grouped together at the unfavorable end of the spectrum, with lower BSA and weaker interactions.
 
