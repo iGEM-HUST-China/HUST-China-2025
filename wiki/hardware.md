@@ -152,7 +152,6 @@ Our hardware team has consistently focused on addressing practical challenges en
 - The circular opening at the bottom of the outer tank has internal threads. These are used to secure a bacterial filter membrane during the first drainage cycle. The culture medium flows directly into the waste tank via the rubber tube connected to the bottom of the drainage port, while cells are intercepted, enhancing bacterial density within the tank. The fan-shaped aperture facilitates the second drainage cycle, directing residual medium and cells downward to the centrifugal shaking module for subsequent processing.
 - Under microscopic observation, the size of lipolytic yeast cells was determined (Figure 3.2.4). After averaging measurements from 20 cells, the bacterial cell's major axis measured approximately 8.4 μm, and the minor axis approximately 5.2 μm. A bacterial filter membrane with a mesh size of 3 μm was selected.
 
-
 **b. Centrifugation and Agitation-Induced Lysis: Primarily separates cells from the culture medium. Adding glass beads followed by agitation lyses cells to release intracellular squalene.**
 
 - **Centrifugation Module:** Enriched bacterial suspension enters centrifuge tubes via liquid transfer tubes. A brushless DC motor within the base, coupled with a synchronous gear set, drives the centrifuge tubes and their contents to high-speed rotation.
@@ -272,6 +271,8 @@ Our device continues last year's modular and "building block" design philosophy,
 ### Agitator Module
 
 During fermentation, stirring rods are commonly used within fermentation tanks to mix reactants and ensure uniform reactions, facilitating efficient processes and thorough nutrient absorption. Different stirring rods are required based on the physicochemical properties of the fermentation broth, such as viscosity and dissolved oxygen levels.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh6.webp" caption="Figure 3.4.1 Agitator Module" %}
 
 Figure 3.4.1 shows a fan-blade agitator designed for vigorous liquid agitation. Its curved profile reduces resistance during mixing, making it suitable for environments requiring large-scale culture medium agitation.
 
