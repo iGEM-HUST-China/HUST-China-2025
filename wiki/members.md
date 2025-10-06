@@ -4,9 +4,12 @@ permalink: /members/
 feature_text: |
 feature_image: "https://static.igem.wiki/teams/5569/resources/background/bg-members.webp"
 excerpt: ""
-layout: members
-members:
-  # Students (按中文音序排列)
+---
+
+{% include members.html %}
+
+## Students
+
   - name: "Aoru Yang"
     major: "Student"
     motto: "Our true output wasn't just a wiki and a poster; it was the number of times Adobe crashed at 3 a.m. (It was worth it.)"
@@ -156,7 +159,6 @@ members:
     major: "Instructor"
     motto: "Doctor in College of Life Sci. & Tech., HUST. This year, he provided us with a lot of human-practice guidance and helped us make a integrated social research for our project."
     image: "https://static.igem.wiki/teams/5569/description/menber/wbh.webp"
----
 
 ## Our Team
 
@@ -164,8 +166,6 @@ members:
    image="https://static.igem.wiki/teams/5569/resources/members/team-full.webp" 
    alt="Our Team" 
    caption="All HUST-China 2025 iGEMers " %}
-
----
 
 {% include figure.html 
    image="https://static.igem.wiki/teams/5569/resources/members/team.webp" 
