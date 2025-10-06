@@ -27,8 +27,8 @@ images04:
 
 images05:
   - src: https://static.igem.wiki/teams/5569/hardware/h49.webp
-    alt: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)
-    caption: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)
+    alt: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a:Leakage Control Device, b:Mortise-and-Tenon Structure)
+    caption: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a:Leakage Control Device, b:Mortise-and-Tenon Structure)
 
 images06:
   - src: https://static.igem.wiki/teams/5569/hardware/h43.webp
@@ -99,12 +99,12 @@ images19:
     caption: Figure 3.3.4 Third-Generation Circuit Wiring Diagram
 
 images20:
-  - src:  https://static.igem.wiki/teams/5569/hardware/h19.webp
-    alt: Figure 3.4.1 Fan-shaped stirring rod
-    caption: Figure 3.4.1 Fan-shaped stirring rod
-  - src: ttps://static.igem.wiki/teams/5569/hardware/h18.webp
-    alt:  Figure 3.4.2 Spiral stirring rod
-    caption:  Figure 3.4.2 Spiral stirring rod
+    - src:  https://static.igem.wiki/teams/5569/hardware/h19.webp
+      alt: Figure 3.4.1 Fan-shaped stirring rod
+      caption: Figure 3.4.1 Fan-shaped stirring rod
+    - src: ttps://static.igem.wiki/teams/5569/hardware/h18.webp
+      alt:  Figure 3.4.2 Spiral stirring rod
+      caption:  Figure 3.4.2 Spiral stirring rod
 
 
 
