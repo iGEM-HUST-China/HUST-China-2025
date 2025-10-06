@@ -10,9 +10,6 @@ images25:
   - src:  https://static.igem.wiki/teams/5569/hardware/open-by-shunzhuan-soconvert.webp
     alt: Turn clockwise to open the flow switch	  
     caption: Turn clockwise to open the flow switch	  
-  - src:  https://static.igem.wiki/teams/5569/hardware/h14.webp
-    alt:   Figure 3.4.11 Baffled Fermentation Vessel
-    caption:  Figure 3.4.11 Baffled Fermentation Vessel
 
 
 
