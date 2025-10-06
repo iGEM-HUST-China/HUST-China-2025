@@ -1,14 +1,14 @@
 
 <div class="figure flex-container-single">
   <figure class="figure  figure--{{ include.position | default: 'center' }}">
-    <img class="image" src="{{ include.image[0].src }}" alt="{{ include.images[0].alt | default: include.caption }}" {{ include.width ? include.width | prepend: 'width="' | append: '"' }} {{ include.height ? include.height | prepend: 'height="' | append: '"' }}>
+    <img class="images" src="{{ include.images[0].src }}" alt="{{ include.images[0].alt | default: include.caption }}" {{ include.width ? include.width | prepend: 'width="' | append: '"' }} {{ include.height ? include.height | prepend: 'height="' | append: '"' }}>
     {% if include.caption %}<figcaption class="caption">{{ include.images[0].caption }}</figcaption>{% endif %}
   </figure>
 </div>
 
 <!-- 全屏显示的容器 -->
 <div id="fullscreen-container" class="fullscreen-container">
-  <img id="fullscreen-image" src="{{ include.image }}" alt="{{ include.alt | default: include.caption }}" />
+  <img id="fullscreen-image" src="{{ include.images }}" alt="{{ include.alt | default: include.caption }}" />
 </div>
 
 
