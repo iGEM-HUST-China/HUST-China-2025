@@ -124,39 +124,42 @@ The HADDOCK docking protocol is fundamentally a physics-based and restraint-driv
 
 The desolvation energy term can be expressed as:
 
-<div align="center">
+
+<p style="text-align:center;">
 
 $$
 E_{\text{desolv}} = \sum_{i,j} S_i V_j \exp\left(-\frac{r_{ij}^2}{2\sigma^2}\right)
 $$
 
-</div>
+</p>
 
 
 - **Ambiguous Interaction Restraints (AIRs)**: Experimentally derived or hypothesized distance restraints that bias docking toward biologically relevant solutions.  
 
 The restraint energy is defined as:
 
-<div align="center">
+
+<p style="text-align:center;">
 
 $$
 E_{\text{air}} = \sum_k W_k (d_k - d_{0,k})^2
 $$
 
-</div>
+</p>
 
 
 At different docking stages (rigid body, semi-flexible refinement, water refinement), these energy terms are combined with varying weights into the final HADDOCK score. Additionally, **Buried Surface Area (BSA)** is used to quantify the size and compactness of the interface.  
 
 The overall scoring function is:
 
-<div align="center">
+
+<p style="text-align:center;">
 
 $$
 \text{Score} = w_{\text{vdW}} E_{\text{vdW}} + w_{\text{elec}} E_{\text{elec}} + w_{\text{desolv}} E_{\text{desolv}} + w_{\text{air}} E_{\text{air}} - w_{\text{BSA}}\cdot \text{BSA}
 $$
 
-</div>
+</p>
 
 
 Thus, HADDOCK scoring integrates both atomic-level physical interactions and experimental constraints, rather than relying on geometry alone.
