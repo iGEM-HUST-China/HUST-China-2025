@@ -231,7 +231,7 @@ However, this version still required significant manual labor, leading us to dev
 
 
 ### Version 2.0
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h11.webp" caption=" Figure 3.3.2 Schematic of the second-generation model" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh5.webp" caption=" Figure 3.3.2 Schematic of the second-generation model" %}
 
 Compared to the first generation, we introduced a mortise-and-tenon structure to mechanically link the flow switch and stirrer rod. The top knob can drive either the stirrer rod or the flow switch depending on its rotation direction. Simultaneously, we designed an automatic switching bearing that alters the motor's rotation direction to toggle between centrifugal and agitation modes.
 
