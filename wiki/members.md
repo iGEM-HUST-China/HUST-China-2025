@@ -2,10 +2,8 @@
 title: Members
 permalink: /members/
 feature_text: |
-  ## Members
-  Meet the team behind our project.
 feature_image: "https://static.igem.wiki/teams/5175/resources/background/bg-members.webp"
-excerpt: "Meet the team behind our project."
+excerpt: ""
 ---
 
 {% include members.html %}
