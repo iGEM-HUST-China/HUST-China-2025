@@ -5,101 +5,7 @@ feature_text: |
 feature_image: "https://static.igem.wiki/teams/5569/description/hdwe.webp"
 excerpt: ""
 
-images01:
-  - src: https://static.igem.wiki/teams/5569/hardware/h36.webp
-    alt: Figure 1.2 R&D Process Diagram
-    caption: Figure 1.2 R&D Process Diagram
-    
 
-
-
-images02:
-  - src: https://static.igem.wiki/teams/5569/hardware/h24.webp
-    alt: Figure 1.3 Flowchart for Laboratory Shaker Culture and Miniature Fermentation Methods
-    caption: Figure 1.3 Flowchart for Laboratory Shaker Culture and Miniature Fermentation Methods
-
-images03:
-  - src: https://static.igem.wiki/teams/5569/hardware/h40.webp
-    alt: Figure 3.1.1 Overall Presentation Diagram
-    caption: Figure 3.1.1 Overall Presentation Diagram
-
-images04:
-  - src: https://static.igem.wiki/teams/5569/hardware/h13.webp
-    alt: Figure 3.2.1 Schematic Diagram of Fermentation Condition Control Module
-    caption: Figure 3.2.1 Schematic Diagram of Fermentation Condition Control Module
-
-images05:
-  - src: https://static.igem.wiki/teams/5569/hardware/h49.webp
-    alt: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a:Leakage Control Device, b:Mortise-and-Tenon Structure)
-    caption: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a:Leakage Control Device, b:Mortise-and-Tenon Structure)
-
-images06:
-  - src: https://static.igem.wiki/teams/5569/hardware/h43.webp
-    alt: Figure 3.2.3 Schematic diagram of lipolytic yeast cells under a microscope
-    caption: Figure 3.2.3 Schematic diagram of lipolytic yeast cells under a microscope  
-    
-
-images07:
-  - src: https://static.igem.wiki/teams/5569/hardware/h37.webp
-    alt: Figure 3.2.4 Experimental Design Table
-    caption: Figure 3.2.4 Experimental Design Table
-
-images08:
-  - src: https://static.igem.wiki/teams/5569/hardware/h38.webp
-    alt: Figure 3.2.5 Contour Plot of Absorbance
-    caption: Figure 3.2.5 Contour Plot of Absorbance  
-    
-
-
-images10:
-  - src: https://static.igem.wiki/teams/5569/hardware/h32.webp
-    alt: Figure 3.2.6 Schematic of the Mode Switching Module
-    caption: Figure 3.2.6 Schematic of the Mode Switching Module
-    
-images11:
-  - src: https://static.igem.wiki/teams/5569/hardware/h45.webp
-    alt: Figure 3.2.7 CommunicatingCentrifuge Tube Kit
-    caption: Figure 3.2.7 CommunicatingCentrifuge Tube Kit  
-
-images12:
-  - src: https://static.igem.wiki/teams/5569/hardware/h9.webp
-    alt: Figure 3.2.8 Wiring Diagram
-    caption: Figure 3.2.8 Wiring Diagram
-
-images13:
-  - src: https://static.igem.wiki/teams/5569/hardware/h1.webp
-    alt: Figure 3.2.9 pH Calibration Curve
-    caption: Figure 3.2.9 pH Calibration Curve
-
-images14:
-  - src: https://static.igem.wiki/teams/5569/hardware/h33.webp
-    alt: Figure 3.2.10 Peristaltic Pump
-    caption: Figure 3.2.10 Peristaltic Pump
-
-images15:
-  - src: https://static.igem.wiki/teams/5569/hardware/h46.webp
-    alt: Figure 3.2.11 Main Code
-    caption: Figure 3.2.11 Main Code
-
-images16:
-  - src: https://static.igem.wiki/teams/5569/hardware/h10.webp
-    alt: Figure 3.3.1 Schematic of the First-Generation Model
-    caption: Figure 3.3.1 Schematic of the First-Generation Model    
-    
-images17:
-  - src: https://static.igem.wiki/teams/5569/hardware/h11.webp
-    alt: Figure 3.3.2 Schematic of the second-generation model
-    caption: Figure 3.3.2 Schematic of the second-generation model
-
-images18:
-  - src: https://static.igem.wiki/teams/5569/hardware/h12.webp
-    alt: Figure 3.3.3 Schematic Diagram of Third-Generation Model
-    caption: Figure 3.3.3 Schematic Diagram of Third-Generation Model
-
-images19:
-  - src: https://static.igem.wiki/teams/5569/hardware/h39.webp
-    alt: Figure 3.3.4 Third-Generation Circuit Wiring Diagram
-    caption: Figure 3.3.4 Third-Generation Circuit Wiring Diagram
 
 images20:
   - src:  https://static.igem.wiki/teams/5569/hardware/h19.webp
@@ -148,20 +54,6 @@ images24:
     caption:  Figure 3.4.11 Baffled Fermentation Vessel
 
 
-images25:
-  - src: https://static.igem.wiki/teams/5569/hardware/h2.webp
-    alt: Figure 4.1 Button Layout Diagram
-    caption: FFigure 4.1 Button Layout Diagram
-
-images26:
-  - src: https://static.igem.wiki/teams/5569/hardware/h44.webp
-    alt: Figure 3.5.1 Discussion with Professor Wang Jinchun
-    caption: Figure 3.5.1 Discussion with Professor Wang Jinchun
-
-images27:
-  - src: https://static.igem.wiki/teams/5569/hardware/h3.webp
-    alt: Figure 3.5.2 Exchange with Dr. Chen Yulong
-    caption: Figure 3.5.2 Exchange with Dr. Chen Yulong
 
 ---
 
@@ -211,8 +103,9 @@ to five phases.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h24.webp" caption="Figure 1.3 Flowchart for Laboratory Shaker Culture and Miniature Fermentation Methods" %}
 
-| Evaluation Criteria      | Existing Traditional Solution (Micro-fermentation tank + Centrifuge + Grinder)                                                                                                                                                                                                                             |
+                                                                                                                                                                                                                   |
 | :----------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Evaluation Criteria      | Existing Traditional Solution (Micro-fermentation tank + Centrifuge + Grinder)     
 | **Time Cost**            | **Extensive manual operations** (aliquoting, transferring, resuspending, balancing, setting up equipment) require approximately **60--75 minutes of active handling time**. <br> T**he experiment requires continuous operation**: Monitoring fermentation conditions necessitates 24-hour uninterrupted sampling and experimentation. The prolonged continuous work and disrupted sleep patterns are difficult for researchers to endure. <br> **Total process duration:** Approximately **1.5--2.5 hours** from culture completion to obtaining lysate. |
 | **Equipment Cost**       | **High initial procurement cost:** The price of a miniature fermenter is at least **\$10,000.** The combined cost of three separate pieces of equipment---a rocking incubator, centrifuge, and shaker---is approximately **\$5,000**.                                                                         |
 | **Laboratory Space Occupancy** | **Significant space requirements:** Three large devices occupy at least **2--3 square meters** of valuable laboratory space.                                                                                                                                                                                |
@@ -344,9 +237,10 @@ However, during practical testing, we encountered the following issues:
 To address these issues, we continuously optimized the design and launched V3.0.
 
 ### Version 3.0
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h12.webp" caption="Figure 1.3 Flowchart for Laboratory Shaker Culture and Miniature Fermentation Methods" %}
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure 3.3.3 Schematic Diagram of Third-Generation Model" %}
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h12.webp" caption="Figure 3.3.3 Schematic Diagram of Third-Generation Model" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h39.webp" caption="Figure 3.3.4 Third-Generation Circuit Wiring Diagram" %}
 
 
 In the third-generation design, we introduced an automated control system. A DC motor-driven stirring rod was added to the top of the upper tank, along with two small openings for pH and temperature sensors to enable real-time monitoring of fermentation conditions.
