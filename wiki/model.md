@@ -12,8 +12,8 @@ images02:
     alt: Enzyme-wise HADDOCK score comparison (barplot)
     caption: Figure 4b. Enzyme-wise HADDOCK score comparison across target enzymes (barplot). 
 ---
+## Overview
 
-## Our Model
 
 Engineering peroxisomal protein targeting and rewiring central carbon metabolism in *Yarrowia lipolytica* poses a formidable design challenge: the import efficiency of linker–signal peptides, the catalytic bottleneck imposed by pathway rate-limiting enzymes, and the nonlinear dynamics of growth under complex carbon sources are deeply intertwined. Trial-and-error approaches alone cannot efficiently resolve this multi-layered problem.
 
