@@ -10,10 +10,10 @@ images02:
     caption: Figure 4a. Global HADDOCK score distribution across peptide–enzyme complexes (boxplot).
   - src: https://static.igem.wiki/teams/5569/model/m4.webp
     alt: Enzyme-wise HADDOCK score comparison (barplot)
-    caption: Figure 4b.** Enzyme-wise HADDOCK score comparison across target enzymes (barplot). 
+    caption: Figure 4b. Enzyme-wise HADDOCK score comparison across target enzymes (barplot). 
 ---
+## Overview
 
-## Our Model
 
 Engineering peroxisomal protein targeting and rewiring central carbon metabolism in *Yarrowia lipolytica* poses a formidable design challenge: the import efficiency of linker–signal peptides, the catalytic bottleneck imposed by pathway rate-limiting enzymes, and the nonlinear dynamics of growth under complex carbon sources are deeply intertwined. Trial-and-error approaches alone cannot efficiently resolve this multi-layered problem.
 
@@ -212,7 +212,7 @@ When HADDOCK scores were resolved for each enzyme partner (barplot analysis), th
 
 We next examined the energetic basis for these differences. Donut plots visualizing HADDOCK scoring weights highlighted distinct stabilization mechanisms. For **TYWIRFSKL**, improved binding arose primarily from enhanced electrostatics and van der Waals packing, which favor tighter and more specific interfaces. By contrast, **SKL** complexes relied disproportionately on desolvation contributions, reflecting weaker direct interactions and more solvent-mediated stabilization. **GGGSSKL** again showed an intermediate profile, suggesting that the flexible linker partially compensates but cannot substitute for the aromatic contacts.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m3.webp" caption="**Figure 5.** Energetic decomposition showing relative contributions of electrostatics, vdW, and desolvation terms (donut plots)." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m3.webp" caption="Figure 5. Energetic decomposition showing relative contributions of electrostatics, vdW, and desolvation terms (donut plots)." %}
 
 Finally, we integrated all docking metrics—including **HADDOCK score**, **vdW**, **electrostatics**, **desolvation**, **buried surface area (BSA)**, and **Z-score**—into a standardized heatmap to compare complexes on a unified scale. To enable cross-metric comparison, terms where “lower is better” were inverted, and each column was z-score normalized. This approach eliminated differences in physical units and revealed the relative performance landscape.
 
@@ -224,7 +224,7 @@ $$
 
 </div>
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m2.webp" caption="**Figure 6.** Standardized heatmap of HADDOCK-derived energetic and interfacial metrics." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m2.webp" caption="Figure 6. Standardized heatmap of HADDOCK-derived energetic and interfacial metrics." %}
 
 In this analysis, **TYWIRFSKL** complexes consistently clustered toward favorable energetic and interfacial signatures, with larger BSA and stronger vdW/electrostatics contributions. In contrast, **SKL** complexes grouped together at the unfavorable end of the spectrum, with lower BSA and weaker interactions.
 
@@ -303,6 +303,75 @@ By iteratively minimizing energy and repacking side-chains while maintaining the
 
 FastRelax is typically employed as a post-design refinement step to further optimize candidate structures, ensuring physical plausibility and thermodynamic robustness.  
 
+## 2.3 Design Workflow
+
+To systematically explore the sequence landscape of tHMGR, we established a three-step design–optimization workflow (Figure 2-1):  
+
+1 **Sequence Sampling:**  
+ProteinMPNN generates approximately 100 candidate sequences conditioned on the tHMGR backbone.  
+
+2 **Energy Evaluation:**  
+Each sequence is analyzed using Frustratometer2 to quantify local and global frustration, selecting those with smooth energy landscapes.  
+
+3 **Structure Relaxation:**  
+Selected candidates are refined by Rosetta FastRelax to remove steric conflicts and minimize total energy at the atomic level.  
+
+This pipeline enables iterative coupling of generative modeling and physics-based refinement, ensuring both sequence diversity and structural stability in tHMGR design.  
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m6-2.webp" caption=" Figure 7. Integrated pipeline for sequence design and energy optimization of tHMGR." %}
+
+## 2.4 Results and Validation
+
+The workflow successfully generated a set of structurally compatible and energetically optimized tHMGR variants.  
+All ProteinMPNN-designed sequences aligned well with the target backbone, confirming the feasibility of conditional sequence generation.  
+
+Frustratometer2 analysis revealed that several designed variants exhibited a slight reduction (~2%) in highly frustrated regions and a corresponding increase in minimally frustrated contacts compared with the wild-type template.  
+
+After Rosetta FastRelax refinement, the total energy decreased by approximately 15–25%, and the local energy landscape in the core folding regions became smoother (Figure 2-3).  
+During the relaxation process, the backbone RMSD gradually converged from 14.52 Å to 1.34 Å (calculated over 2796 atoms).  
+The RMSD values for the five relaxation cycles were 14.52, 5.10, 2.75, 2.08, and 1.67 Å respectively (Figure 2-4), illustrating the progressive elimination of energetic strain through iterative minimization and side-chain repacking.  
+
+The final RMSD of ~1.3 Å indicates that structural refinement mainly affected local regions—particularly side chains and flexible loops—while maintaining the global fold.  
+In the interactive NGLView visualization, the pre-relaxation model (grey) and post-relaxation model (cyan) clearly demonstrate local rearrangements and reduced steric clashes, confirming the effectiveness of the FastRelax refinement.  
+
+Top-ranked variants were subsequently selected for experimental validation of folding stability and catalytic activity.  
+
+<div class="video">
+<iframe title="HUST-China: Alignment of t-HMGR before and after optimization (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/joCRDYNNTRjtMv2kHZpHLe" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
+</div>
 
 
+
+## 2.5 Biological Interpretation
+
+From an energy-landscape perspective, the reduction of frustration indicates fewer energetic barriers along the folding pathway, resulting in a smoother folding funnel and more stable energy minima.  
+During the design process, the core catalytic region of tHMGR was deliberately preserved; all mutations were restricted to peripheral or non-conserved sites to maintain the geometry of catalytic residues and cofactor-binding motifs.  
+This rational constraint ensured that structural optimization did not compromise enzymatic activity, achieving a balance between stability enhancement and functional retention.  
+Interestingly, several low-frustration regions were located near the catalytic pocket, suggesting that local stabilization may further fine-tune the catalytic microenvironment and improve functional efficiency.  
+
+
+## 2.6 Limitations and Future Work
+
+Although the integrated framework performed effectively for rational optimization of tHMGR, several limitations remain.  
+First, ProteinMPNN operates on static backbones and does not capture conformational flexibility.  
+Second, Frustratometer2 relies on classical potentials lacking quantum and solvent effects.  
+Third, FastRelax focuses on energy minimization without explicitly constraining catalytic kinetics.  
+
+Future extensions include:  
+1️⃣ Incorporating molecular dynamics simulations to represent conformational dynamics;  
+2️⃣ Developing multi-objective optimization strategies to balance thermodynamic stability and catalytic activity;  
+3️⃣ Integrating experimental feedback loops to achieve closed-cycle computational–experimental co-design.  
+
+
+## References
+
+1. Dauparas J, Anishchenko I, Bennett N, *et al.* **Robust deep learning based protein sequence design using ProteinMPNN.** *Science.* 2022;378(6615):49–56.  
+2. Ferreiro DU, Hegler JA, Komives EA, Wolynes PG. **Localizing frustration in native proteins and protein assemblies.** *Proc Natl Acad Sci USA.* 2007;104(50):19819–19824.  
+3. Parra RG, Schafer NP, Radusky LG, Tsai MY, Guzovsky AB, Wolynes PG, Ferreiro DU. **Protein Frustratometer 2: a tool to localize energetic frustration in protein molecules, now with electrostatics.** *Nucleic Acids Res.* 2016;44(W1):W356–W360.  
+4. Tyka MD, Keedy DA, André I, Dimaio F, Song Y, Richardson DC, Richardson JS, Baker D. **Alternate states of proteins revealed by detailed energy landscape mapping.** *J Mol Biol.* 2011;405(2):607–618.  
+5. Leaver-Fay A, Tyka M, Lewis SM, Lange OF, Thompson J, Jacak R, Kaufman K, Renfrew PD, Smith CA, Sheffler W, *et al.* **ROSETTA3: An object-oriented software suite for the simulation and design of macromolecules.** *Methods Enzymol.* 2011;487:545–574.  
+6. Istvan ES, Deisenhofer J. **Structural mechanism for statin inhibition of HMG-CoA reductase.** *Science.* 2001;292(5519):1160–1164.  
+7. Miziorko HM. **Enzymes of the mevalonate pathway of isoprenoid biosynthesis.** *Arch Biochem Biophys.* 2011;505(2):131–143.  
+8. Liu Z, Gao Y, Chen J, Imanaka T, Bao J, Hua Q. **Metabolic engineering of *Yarrowia lipolytica* for the production of terpenoids.** *Metab Eng.* 2019;57:151–161.  
+9. Rodriguez GM, Hussain MS, Gambill L, Gao D, Yaguchi A, Blenner M. **Engineering *Yarrowia lipolytica* to produce fuels and chemicals from xylose.** *Biotechnol Bioeng.* 2016;113(11):2528–2538.  
 
