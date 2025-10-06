@@ -121,7 +121,9 @@ Our hardware team has consistently focused on addressing practical challenges en
 - **Mode Switching Module:**
 
 - {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh2.webp" caption="Figure 3.2.6 Schematic of the Mode Switching Module" %}
-
+<div class="video">
+<iframe title="HUST-China: Third Vision Model (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/vN7xmhDkPJmwbuFQNtVP64" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
+</div>
 - We designed the equipment based on the commonly used glass bead shaking method in laboratories to disrupt cells and extract intracellular squalene. To save space, we developed a mode switching module to integrate both shaking and centrifugation functions. The core design features a mode switching bearing (animation shown).
 
 - **Centrifugation Mode (Motor Forward Rotation):** When the motor rotates forward, the limit device locks the switching bearing, aligning it concentrically with the main shaft. This drives the entire rotor assembly to high-speed rotation, generating strong centrifugal force that precipitates microbial cells to the bottom of the centrifuge tube**.**
