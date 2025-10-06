@@ -22,8 +22,8 @@ images04:
   - src: https://static.igem.wiki/teams/5569/hardware/h13.webp
     alt: Figure 3.2.1 Schematic Diagram of Fermentation Condition Control Module
     caption: Figure 3.2.1 Schematic Diagram of Fermentation Condition Control Module
-/////////images05:
-  - src: https://static.igem.wiki/teams/5569/hardware/h26.webp
+images05:
+  - src: https://static.igem.wiki/teams/5569/hardware/h49.webp
     alt: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)
     caption: Figure 3.2.2 Schematic of Liquid Control and Microorganism Enrichment Module (a: Leakage Control Device, b: Mortise-and-Tenon Structure)
 images06:
@@ -50,8 +50,8 @@ images10:
   - src: https://static.igem.wiki/teams/5569/hardware/h32.webp
     alt: Figure 3.2.6 Schematic of the Mode Switching Module
     caption: Figure 3.2.6 Schematic of the Mode Switching Module
-/////images11:
-  - src: https://static.igem.wiki/teams/5569/hardware/h24.webp
+images11:
+  - src: https://static.igem.wiki/teams/5569/hardware/h45.webp
     alt: Figure 3.2.7 CommunicatingCentrifuge Tube Kit
     caption: Figure 3.2.7 CommunicatingCentrifuge Tube Kit  
 
@@ -69,9 +69,8 @@ images14:
   - src: https://static.igem.wiki/teams/5569/hardware/h33.webp
     alt: Figure 3.2.10 Peristaltic Pump
     caption: Figure 3.2.10 Peristaltic Pump
-
-///images15:
-  - src: https://static.igem.wiki/teams/5569/hardware/h41.webp
+images15:
+  - src: https://static.igem.wiki/teams/5569/hardware/h46.webp
     alt: Figure 3.2.11 Main Code
     caption: Figure 3.2.11 Main Code
 
@@ -113,10 +112,14 @@ images21:
     alt:   Figure 3.4.4 Flow Control Valve
     caption:  Figure 3.4.4 Flow Control Valve 
 
-////images22:
-  - src: https://static.igem.wiki/teams/5569/hardware/h36.webp
-    alt: Figure 1.2 R&D Process Diagram
-    caption: Figure 1.2 R&D Process Diagram
+
+images22:
+  - src:  https://static.igem.wiki/teams/5569/hardware/h47.webp
+    alt: Figure 3.4.5 Seven-tooth gear 	  
+    caption: Figure 3.4.5 Seven-tooth gear 	  
+  - src: ttps://static.igem.wiki/teams/5569/hardware/h48.webp
+    alt:   Figure 3.4.6 Speed adjustment gear set
+    caption:  FiFigure 3.4.6 Speed adjustment gear set 
 
 images23:
   - src: https://static.igem.wiki/teams/5569/hardware/h29.webp
@@ -137,8 +140,8 @@ images24:
     alt:   Figure 3.4.11 Baffled Fermentation Vessel
     caption:  Figure 3.4.11 Baffled Fermentation Vessel
 
-/////images25:
-  - src: https://static.igem.wiki/teams/5569/hardware/h3.webp
+images25:
+  - src: https://static.igem.wiki/teams/5569/hardware/h44.webp
     alt: Figure 3.5.1 Discussion with Professor Wang Jinchun
     caption: Figure 3.5.1 Discussion with Professor Wang Jinchun
 images26:
