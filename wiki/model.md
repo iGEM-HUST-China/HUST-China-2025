@@ -27,6 +27,34 @@ To connect molecular insights with systems-level behavior, we constructed a **ma
 ### Integration and Impact
 
 By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine learning–based systems modeling** into a unified framework, our model enables *in silico* prototyping of peroxisomal targeting and metabolic rewiring. This **model-driven strategy** transforms the traditional **Design–Build–Test–Learn (DBTL)** cycle into a **predictive, knowledge-**
+## PART 1 · Our Model Overview
+
+**One-sentence summary:** We built a digital-twin pipeline for our project.
+
+- **Docking** identifies efficient linker–signal peptide combinations for peroxisomal import.
+- **AI-driven redesign** of the MVA pathway’s rate-limiting enzyme yields more stable and more active variants.
+- **Machine learning** predicts growth performance under new carbon sources.
+
+
+## PART 2 · Linker–Signal Peptide System Docking
+
+- Simulated interactions of *SKL*, *GGGSSKL*, and *TYWIRFSKL* with MVA-pathway enzymes using **HADDOCK**.
+- Identified the **structural** and **energetic** principles governing efficient **PEX5**-mediated import.
+- Generated **docking clusters** to guide selection of linker–signal peptide combinations.
+
+
+## PART 3 · Computational Enzyme Engineering
+
+- Focused on the **MVA pathway’s rate-limiting enzyme** as the metabolic bottleneck.
+- Applied **ProteinMPNN** for amino-acid sequence redesign; selected the sequence with the **lowest frustration energy** using **Frustratometer2**.
+- Refined conformations with **Rosetta FastRelax** to obtain stable, high-activity variants.
+
+
+## PART 4 · Machine Learning Growth Modeling
+
+- Collected **OD₆₀₀** growth data under multiple culture conditions.
+- Extracted kinetic parameters (**μₘₐₓ**, **λ**, **K**) via **Gompertz** and **spline** fits.
+- Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.
 
 
 
