@@ -303,6 +303,21 @@ By iteratively minimizing energy and repacking side-chains while maintaining the
 
 FastRelax is typically employed as a post-design refinement step to further optimize candidate structures, ensuring physical plausibility and thermodynamic robustness.  
 
+## 2.3 Design Workflow
 
+To systematically explore the sequence landscape of tHMGR, we established a three-step design–optimization workflow (Figure 2-1):  
+
+1️⃣ **Sequence Sampling:**  
+ProteinMPNN generates approximately 100 candidate sequences conditioned on the tHMGR backbone.  
+
+2️⃣ **Energy Evaluation:**  
+Each sequence is analyzed using Frustratometer2 to quantify local and global frustration, selecting those with smooth energy landscapes.  
+
+3️⃣ **Structure Relaxation:**  
+Selected candidates are refined by Rosetta FastRelax to remove steric conflicts and minimize total energy at the atomic level.  
+
+This pipeline enables iterative coupling of generative modeling and physics-based refinement, ensuring both sequence diversity and structural stability in tHMGR design.  
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m6-2.webp" caption="**Figure 7.** Figure 7. Integrated pipeline for sequence design and energy optimization of tHMGR." %}
 
 
