@@ -58,8 +58,8 @@ excerpt: ""
 
 {% include members-people.html 
    name="Na An" 
-   description="描述内容" 
-   image="https://static.igem.wiki/teams/5569/description/menber/an.webp" 
+   description="She provided strategic insights and management experience to support effective project coordination and execution." 
+   image="https://static.igem.wiki/teams/5569/description/menber/anna.webp" 
    image_position="right" %}
 
 {% include members-people.html 
