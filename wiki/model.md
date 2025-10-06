@@ -63,6 +63,8 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
 - Extracted kinetic parameters (**μₘₐₓ**, **λ**, **K**) via **Gompertz** and **spline** fits.
 - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m01.webp" caption="Figure1. MODEL PEPLINE" %}
+
 # I. Linker–Signal Peptide System Docking
 
 **Signal-peptide & linker selection · Molecular docking · Energy analysis**
@@ -83,7 +85,9 @@ The design rationale was that a **flexible linker (GGGS)** could increase access
 
 These three peptide designs were fused to the eight key enzymes of the **MVA pathway** (*Erg8, Erg9, Erg10, Erg13, Erg20, Hmgr, Idi,* and *Merg12*), providing the foundation for subsequent molecular docking analysis.
 
-🎞️ *An animation illustrates this process: enzyme–SKL forms a complex with PEX5, which then docks with PEX14 and PEX13; IDRs of PEX13 undergo liquid–liquid phase separation to generate a transient liquid cavity that facilitates import.*
+ *An animation illustrates this process: enzyme–SKL forms a complex with PEX5, which then docks with PEX14 and PEX13; IDRs of PEX13 undergo liquid–liquid phase separation to generate a transient liquid cavity that facilitates import.*
+
+
 
 
 
