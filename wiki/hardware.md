@@ -152,9 +152,6 @@ Our hardware team has consistently focused on addressing practical challenges en
 - The circular opening at the bottom of the outer tank has internal threads. These are used to secure a bacterial filter membrane during the first drainage cycle. The culture medium flows directly into the waste tank via the rubber tube connected to the bottom of the drainage port, while cells are intercepted, enhancing bacterial density within the tank. The fan-shaped aperture facilitates the second drainage cycle, directing residual medium and cells downward to the centrifugal shaking module for subsequent processing.
 - Under microscopic observation, the size of lipolytic yeast cells was determined (Figure 3.2.4). After averaging measurements from 20 cells, the bacterial cell's major axis measured approximately 8.4 μm, and the minor axis approximately 5.2 μm. A bacterial filter membrane with a mesh size of 3 μm was selected.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h43.webp" caption="Figure 3.2.3 Schematic diagram of lipolytic yeast cells under a microscope" %}
-
-
 
 **b. Centrifugation and Agitation-Induced Lysis: Primarily separates cells from the culture medium. Adding glass beads followed by agitation lyses cells to release intracellular squalene.**
 
