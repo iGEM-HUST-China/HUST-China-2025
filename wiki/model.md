@@ -9,9 +9,7 @@ excerpt: ""
 ## Our Model
 
 Engineering peroxisomal protein targeting and rewiring central carbon metabolism in *Yarrowia lipolytica* poses a formidable design challenge:  
-the import efficiency of linker–signal peptides, the catalytic bottleneck imposed by pathway rate-limiting enzymes,  
-and the nonlinear dynamics of growth under complex carbon sources are deeply intertwined.  
-Trial-and-error approaches alone cannot efficiently resolve this multi-layered problem.
+the import efficiency of linker–signal peptides, the catalytic bottleneck imposed by pathway rate-limiting enzymes, and the nonlinear dynamics of growth under complex carbon sources are deeply intertwined. Trial-and-error approaches alone cannot efficiently resolve this multi-layered problem.
 
 To bridge this gap, we established a **hierarchical in silico pipeline** that acts as a digital twin of our PICasSO-inspired engineering strategy,  
 enabling rational design and predictive prototyping.
