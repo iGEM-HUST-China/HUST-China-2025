@@ -102,21 +102,21 @@ Our hardware team has consistently focused on addressing practical challenges en
 
 - **Centrifugation Module:** Enriched bacterial suspension enters centrifuge tubes via liquid transfer tubes. A brushless DC motor within the base, coupled with a synchronous gear set, drives the centrifuge tubes and their contents to high-speed rotation.
 
-During cell centrifugation, rotational speed and duration are the two most critical parameters. Increasing rotational speed significantly raises motor costs, while extending duration reduces production efficiency. To determine the conditions under which our equipment achieves maximum economic benefit, we employed Minitab to design the following response surface experiment.
+- During cell centrifugation, rotational speed and duration are the two most critical parameters. Increasing rotational speed significantly raises motor costs, while extending duration reduces production efficiency. To determine the conditions under which our equipment achieves maximum economic benefit, we employed Minitab to design the following response surface experiment.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h37.webp" caption=" Figure 3.2.4 Experimental Design Table" %}
+- {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h37.webp" caption=" Figure 3.2.4 Experimental Design Table" %}
 
-The two influencing factors are rotational speed (1000 rpm--5000 rpm) and time (1min--5 min). The response variable is absorbance (A), measured at 500 nm wavelength using a spectrophotometer. The blank control group consists of pre-centrifugation solution, while the sample group comprises supernatant collected after each centrifugation run.
+- The two influencing factors are rotational speed (1000 rpm--5000 rpm) and time (1min--5 min). The response variable is absorbance (A), measured at 500 nm wavelength using a spectrophotometer. The blank control group consists of pre-centrifugation solution, while the sample group comprises supernatant collected after each centrifugation run.
 
-According to the spectrophotometric formula:
+- According to the spectrophotometric formula:
 
-*A* = *ε* • *c* • *l*
+-                                           *A* = *ε* • *c* • *l*
 
-*A ε* : Absorbance; *c* : Molar absorptivity (L/(mol·cm)); *l* : Solution concentration (mol/L); : Optical path length (cm)
+- *A : Absorbance; *ε*  : Molar absorptivity (L/(mol·cm)); *c* : Solution concentration (mol/L); *l*: Optical path length (cm)
 
-It is evident that absorbance is directly proportional to solution concentration. A lower A value indicates a lower cell concentration in the supernatant. Therefore, our optimization objective is to achieve the lowest A value using the minimum rotational speed and shortest duration. The A contour plot indicates that all regions outside the shaded area represent viable [rotational speed: time] combinations.
+- It is evident that absorbance is directly proportional to solution concentration. A lower A value indicates a lower cell concentration in the supernatant. Therefore, our optimization objective is to achieve the lowest A value using the minimum rotational speed and shortest duration. The A contour plot indicates that all regions outside the shaded area represent viable [rotational speed: time] combinations.
 
-The maximum speed of the purchased brushless motor under load, measured by an infrared sensor, is 840 rpm. Through a 1:3 speed reduction gear set, the speed can reach 2520 rpm. At this speed, centrifugation requires only about 3 minutes, maximizing economic efficiency.
+- The maximum speed of the purchased brushless motor under load, measured by an infrared sensor, is 840 rpm. Through a 1:3 speed reduction gear set, the speed can reach 2520 rpm. At this speed, centrifugation requires only about 3 minutes, maximizing economic efficiency.
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h38.webp" caption="Figure 3.2.5 Contour Plot of Absorbance" %}
 **Mode Switching Module:**
 
