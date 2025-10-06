@@ -103,7 +103,7 @@ to five phases.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h24.webp" caption="Figure 1.3 Flowchart for Laboratory Shaker Culture and Miniature Fermentation Methods" %}
 
-| Evaluation Criteria      | Existing Traditional Solution (Micro-fermentation tank + Centrifuge + Grinder)                                                                                                                                                                                                                             |
+| **Evaluation Criteria**     | **Existing Traditional Solution (Micro-fermentation tank + Centrifuge + Grinder**)                                                                                                                                                                                                                             |
 | :----------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Time Cost**            | **Extensive manual operations** (aliquoting, transferring, resuspending, balancing, setting up equipment) require approximately **60--75 minutes of active handling time**. <br> T**he experiment requires continuous operation**: Monitoring fermentation conditions necessitates 24-hour uninterrupted sampling and experimentation. The prolonged continuous work and disrupted sleep patterns are difficult for researchers to endure. <br> **Total process duration:** Approximately **1.5--2.5 hours** from culture completion to obtaining lysate. |
 | **Equipment Cost**       | **High initial procurement cost:** The price of a miniature fermenter is at least **\$10,000.** The combined cost of three separate pieces of equipment---a rocking incubator, centrifuge, and shaker---is approximately **\$5,000**.                                                                         |
@@ -240,7 +240,7 @@ To address these issues, we continuously optimized the design and launched V3.0.
 
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h12.webp" caption="Figure 3.3.3 Schematic Diagram of Third-Generation Model" %}
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h39.webp" caption="Figure 1.3 Flowchart for Laboratory Shaker Culture and Miniature Fermentation Methods" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h39.webp" caption="Figure 3.3.4 Third-Generation Circuit Wiring Diagram" %}
 
 
 In the third-generation design, we introduced an automated control system. A DC motor-driven stirring rod was added to the top of the upper tank, along with two small openings for pH and temperature sensors to enable real-time monitoring of fermentation conditions.
@@ -270,7 +270,7 @@ Figure 3.4.1 shows a fan-blade agitator designed for vigorous liquid agitation. 
 
 Figure 3.4.2 shows a spiral-rising agitator that uniformly mixes microbial cultures with nutrients. Its thin blades easily divide the liquid, making it suitable for high-viscosity culture media.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h19.webp" caption="Figure 3.3.4 Third-Generation Circuit Wiring Diagram" %}
+{% include figure2.html images=page.images20 %}
 
 
 ### Flow Control Module
@@ -348,7 +348,7 @@ We also invited Dr. Chen Yulong from the Institute of Resource Biology and Biote
 
 Based on these recommendations, we redesigned the fermentation module by incorporating baffled fermentation vessels of multiple specifications and integrating an oxygen supply unit. Dr. Chen's proposed application scenarios also guided us toward new R&D directions. We are currently exploring the use of this equipment for exosome collection, further validating its scalability and practical value in bioprocessing.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h27.webp" caption="Figure 3.5.2 Exchange with Dr. Chen Yulong" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h3.webp" caption="Figure 3.5.2 Exchange with Dr. Chen Yulong" %}
 
 ## Equipment Component List and Cost
 
