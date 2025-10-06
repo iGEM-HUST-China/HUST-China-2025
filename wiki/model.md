@@ -125,13 +125,12 @@ The HADDOCK docking protocol is fundamentally a physics-based and restraint-driv
 The desolvation energy term can be expressed as:
 
 
-<p style="text-align:center;">
-
+<center>
 $$
 E_{\text{desolv}} = \sum_{i,j} S_i V_j \exp\left(-\frac{r_{ij}^2}{2\sigma^2}\right)
 $$
+<center>
 
-</p>
 
 
 - **Ambiguous Interaction Restraints (AIRs)**: Experimentally derived or hypothesized distance restraints that bias docking toward biologically relevant solutions.  
