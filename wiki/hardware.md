@@ -252,21 +252,19 @@ Figure 3.4.3(a) shows a 7-tooth gear connected to the drive shaft. Figure 3.4.3(
 
 Lipase yeast requires substantial oxygen during fermentation, making an efficient aeration system critical for enhancing fermentation efficiency. To improve oxygen utilization, we have designed the following three aeration systems.
 
-Figure 3.4.7 shows an aeration unit where gas is introduced radially through the disc. Typically used downward, it features small outlet holes and high gas pressure, suitable for systems with high oxygen demand.
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh10.webp" caption="Figure 3.4.4 Aeration Module" %}
 
-Figure 3.4.8 depicts another aeration unit connected to a long gas transport pipe. It diverts part of the gas flow into spherical chambers before diffusing outward, increasing gas-liquid contact area. This configuration serves as an ideal transfer station for multiple aeration systems.
-
-Figure 3.4.9 depicts an aeration line that can be laid along the tank bottom. It disperses bubbles in a fishbone pattern. As the bubbles rise, they agitate the liquid and dissolve, featuring a simple structure suitable for tubular fermenters.
+Figure 3.4.4(a) shows an aeration unit where gas is introduced radially through the disc. Typically used downward, it features small outlet holes and high gas pressure, suitable for systems with high oxygen demand.Figure 3.4.4(b) depicts another aeration unit connected to a long gas transport pipe. It diverts part of the gas flow into spherical chambers before diffusing outward, increasing gas-liquid contact area. This configuration serves as an ideal transfer station for multiple aeration systems.Figure 3.4.4(c) depicts an aeration line that can be laid along the tank bottom. It disperses bubbles in a fishbone pattern. As the bubbles rise, they agitate the liquid and dissolve, featuring a simple structure suitable for tubular fermenters.
 
 ### Fermentation Modules
 
 To accommodate diverse fermentation requirements and conditions, we have concurrently designed several variants of fermentation apparatus.
 
-Figure 3.4.10 A 200 ml fermentation vessel enables larger-scale fermentation and extraction.
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh11.webp" caption="Figure 3.4.5 Fermentation Modules" %}
 
-Figure 3.4.11 shows a fermenter with baffles added to increase oxygen supply during agitation.
 
-{% include figure2.html images=page.images24 %}
+Figure 3.4.5(a) A 200 ml fermentation vessel enables larger-scale fermentation and extraction.Figure 3.4.5(b) shows a fermenter with baffles added to increase oxygen supply during agitation.
+
 
 ### Product Usage Procedure:
 
