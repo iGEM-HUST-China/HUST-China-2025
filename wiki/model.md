@@ -110,7 +110,7 @@ window.MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
 
-# II. Molecular Docking
+# 1.1 Molecular Docking
 
 ## Energy Terms and Scoring Principles
 
@@ -199,7 +199,7 @@ Representative complexes were visualized in PyMOL and ChimeraX to illustrate hyd
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/model/m1.webp" caption="Figure3. Molecular_docking" %}
 
-# III. Energy Analysis
+# 1.2 Energy Analysis
 
 To comprehensively evaluate docking outcomes, we analyzed both global scores and underlying energetic contributions.
 
@@ -230,7 +230,7 @@ In this analysis, **TYWIRFSKL** complexes consistently clustered toward favorabl
 
 Together, these multi-layered analyses converge on the conclusion that aromatic extension of the **SKL** motif enhances recognition, increases buried surface area, and stabilizes peptide–enzyme interactions through stronger packing and electrostatics, providing a mechanistic rationale for its superior docking performance.
 
-# IV. Limitations and Future Perspectives
+# 1.3 Limitations and Future Perspectives
 
 Despite providing valuable insights into peptide–enzyme recognition, this study has several limitations.  
 
@@ -265,6 +265,43 @@ Future work will address these limitations by:
 7. Rodrigues JPG, Trellet M, Schmitz C, Kastritis PL, Karaca E, Melquiond ASJ, Bonvin AMJJ. *Clustering biomolecular complexes by residue contacts similarity.* **Proteins.** 2012;80(7):1810–1817.  
 8. van Zundert GCP, Bonvin AMJJ. *Modeling protein–protein complexes using the HADDOCK webserver.* **Methods Mol Biol.** 2014;1137:163–179.  
 
+
+# II. Protein Design and Optimization
+
+## 2.1 Background
+
+3-Hydroxy-3-methylglutaryl-CoA reductase (HMGR) is the rate-limiting enzyme of the mevalonate (MVA) pathway, catalyzing the reduction of HMG-CoA to mevalonate — a crucial control point for isoprenoid, sterol, and lipid biosynthesis. The structural stability and catalytic efficiency of HMGR therefore exert a decisive influence on downstream metabolic flux and product accumulation.  
+
+In *Yarrowia lipolytica*, HMGR is a membrane-associated enzyme composed of an N-terminal transmembrane and sterol-binding domain and a C-terminal cytosolic catalytic domain. Because full-length HMGR is difficult to express and fold in heterologous systems, we employed a truncated soluble variant (tHMGR) that lacks the sterol-binding and transmembrane regions but retains the core catalytic domain. This truncation preserves enzymatic activity while significantly improving solubility and expression stability.  
+
+To enhance thermodynamic stability without compromising catalytic function, we developed a structure-guided protein design framework integrating ProteinMPNN, Frustratometer2, and Rosetta FastRelax, enabling systematic sequence exploration and energy refinement of tHMGR — laying a computational foundation for rational enzyme optimization in the MVA pathway.  
+
+
+## 2.2 Theoretical Principles
+
+### (1) ProteinMPNN
+
+ProteinMPNN is a graph-based sequence design model built upon message passing neural networks (MPNNs).  
+The protein backbone is represented as a residue graph, where nodes correspond to residues and edges encode geometric relationships.  
+By iteratively passing messages between nodes, the model learns spatial dependencies that govern residue identity.  
+
+Trained on large-scale protein structure–sequence datasets, ProteinMPNN can rapidly sample diverse and stable sequences conditioned on a fixed backbone, efficiently balancing sequence diversity and thermodynamic stability.  
+
+
+### (2) Frustratometer2
+
+Frustratometer2 quantitatively characterizes the frustration of a protein’s energy landscape — a measure of energetic conflict among local interactions.  
+Using molecular mechanics potentials and perturbation analysis, it classifies interactions as minimally, neutral, or highly frustrated, thereby evaluating both local and global energetic smoothness.  
+
+Reducing local frustration typically enhances folding cooperativity and thermodynamic stability.  
+
+
+### (3) Rosetta FastRelax
+
+Rosetta FastRelax is an all-atom refinement protocol within the Rosetta suite.  
+By iteratively minimizing energy and repacking side-chains while maintaining the global fold, it eliminates steric clashes and achieves energetically favorable conformations.  
+
+FastRelax is typically employed as a post-design refinement step to further optimize candidate structures, ensuring physical plausibility and thermodynamic robustness.  
 
 
 
