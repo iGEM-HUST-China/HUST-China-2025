@@ -487,3 +487,34 @@ $$
 In summary, this tri-layer modelling framework — **mechanistic fitting**, **data-driven regression**, and **empirical constraint** — ensures both interpretability and generalization, providing a robust tool for predictive modelling and optimization of microbial growth curves.  
 This hybrid approach bridges mechanistic insight with data-driven flexibility, enabling rational environmental optimization in bioprocess design.  
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m9.webp" caption=" Figure 7. Environmental adjustment of lipid growth curve (pH 6.0, 30 °C)." %}
+
+### 3.4 Results and Model Verification
+
+After completing curve fitting and machine learning training, we systematically evaluated the overall performance and extrapolation capability of the model. All 144 growth curves (12 environmental conditions × 12 substrates) were successfully fitted without any failure, demonstrating the strong adaptability and numerical stability of the Gompertz equation within this system. The fitted curves closely overlapped with the experimental measurements, accurately capturing the initiation, exponential, and stationary phases of the typical sigmoidal growth pattern, confirming that the model can robustly describe microbial growth under diverse conditions.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m10-3.webp" caption=" Figure 7. System evaluation of growth fitting and model prediction." %}
+
+To assess the model’s generalization ability, fivefold cross-validation was conducted on the training dataset, and an independent test set was constructed for unseen conditions. The training dataset included combinations of pH 4.5, 5.5, 6.5, and 7.5 with temperatures of 24 °C, 28 °C, and 32 °C, while the test dataset comprised four new conditions (pH 6.0 and 6.8 × 26 °C and 30 °C). Cross-validation results showed that the Random Forest model achieved the best overall accuracy, with an average RMSE of approximately 0.0609 and R² of 0.93, whereas XGBoost yielded slightly higher error with a normalized RMSE of around 0.12. The predicted values of the four Gompertz parameters (A, K, μₘₐₓ, and λ) exhibited strong linear correlation with the fitted results, indicating that the model successfully learned the nonlinear mapping between environmental variables and growth kinetics.
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m11.webp" caption=" Figure 7. Predicted vs. true values for Gompertz parameters.." %}
+
+In the independent test set, the predicted growth curves almost completely overlapped with the experimentally fitted ones. The onset of the exponential phase and the stationary plateau were consistent across curves, with deviations in onset time and maximum specific growth rate remaining within ±5 %. These results indicate that the learned mapping relationships can reliably extend to unseen environmental conditions, demonstrating excellent extrapolation performance.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m12.webp" caption=" Figure 7. Predicted vs. actual growth curve (unseen condition, 26 °C)." %}
+
+The reliability of the model was further confirmed through multiple validation strategies. Leave-one-condition-out analysis showed that removing any single condition still yielded predictions with an average R² above 0.9. Residual analysis revealed a normal distribution of prediction errors across different pH and temperature combinations, without systematic bias. Moreover, bootstrap resampling demonstrated that 90 % prediction intervals successfully encompassed over 90 % of the true parameter values, confirming the robustness and statistical confidence of the model.
+
+In summary, the combined “prediction + constraint” framework preserves biophysical interpretability while enabling accurate extrapolation to unseen environmental conditions. The model exhibits high stability, generalization, and physiological plausibility, providing a reliable quantitative foundation for subsequent metabolic modeling and cultivation optimization.
+
+### 3.5 Biological Interpretation
+
+The four kinetic parameters (A, K, μₘₐₓ, λ) extracted from the model provide clear insights into how *Yarrowia lipolytica* responds to different environmental conditions. Both pH and temperature exhibited strong nonlinear effects on growth dynamics. At pH 5.5–6.5 and 28 °C, the yeast achieved its highest maximum specific growth rate (μₘₐₓ) and the shortest lag-phase duration (λ), indicating this region represents the physiological optimum where metabolic activity and growth are most synchronized. This trend is consistent with previous reports on the optimal pH range for lipid accumulation, suggesting that the conditions favoring rapid population growth also coincide with enhanced biosynthetic activity.
+
+When the environment deviated from this range (pH < 5 or > 7), μₘₐₓ decreased sharply while λ increased, indicating that both acidic and alkaline stresses delayed metabolic activation and slowed biomass expansion. Under alkaline conditions in particular, the model predicted that λ could increase by 1.5–2 fold, implying that membrane integrity and enzyme activity are compromised under pH stress.
+
+Temperature exerted a clear influence on the carrying capacity (K). Above 28 °C, K gradually declined, suggesting that elevated temperatures induced early stationary phases and reduced total biomass yield. Conversely, between 24–28 °C, K remained stable at high levels, implying that moderate temperatures promote prolonged and balanced population growth.
+
+
+
+Together, these findings demonstrate that the model successfully captured the multidimensional physiological responses of *Y. lipolytica* to environmental variation. The inverse relationship between μₘₐₓ and λ reflects the trade-off between metabolic activation and adaptation, while the decline of K at higher temperatures highlights energy and stability constraints under heat stress. Overall, this interpretation confirms the biological validity of the model and provides quantitative guidance for optimizing culture conditions.
+
