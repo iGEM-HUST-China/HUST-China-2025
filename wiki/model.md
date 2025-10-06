@@ -230,6 +230,41 @@ In this analysis, **TYWIRFSKL** complexes consistently clustered toward favorabl
 
 Together, these multi-layered analyses converge on the conclusion that aromatic extension of the **SKL** motif enhances recognition, increases buried surface area, and stabilizes peptide–enzyme interactions through stronger packing and electrostatics, providing a mechanistic rationale for its superior docking performance.
 
+# IV. Limitations and Future Perspectives
+
+Despite providing valuable insights into peptide–enzyme recognition, this study has several limitations.  
+
+First, HADDOCK predictions are highly dependent on the quality of input structures.  
+Homology-modeled enzymes and AlphaFold-predicted peptide fusions may carry local inaccuracies, and the definition of active residues remains partly subjective—both factors potentially bias docking outcomes and cluster rankings.  
+
+Second, docking represents molecular interactions in a static framework.  
+Conformational flexibility, induced-fit effects, and large-scale domain motions prevalent in the cellular environment cannot be fully captured.  
+Moreover, macromolecular crowding, ionic strength, and post-translational modifications—critical determinants of peroxisomal import—were not considered in the present computational setup.  
+
+Third, the HADDOCK scoring function is based on empirical weighting.  
+While the composite score provides a useful trend indicator, it may not accurately reflect the true energetic balance under physiological conditions.  
+The dominance of electrostatic and van der Waals contributions observed here warrants validation through more rigorous, force-field–based simulations.  
+
+Finally, the functional relevance of docking preferences remains to be experimentally verified.  
+In vitro binding assays and in vivo peroxisomal import experiments will be required to confirm whether the enhanced affinity of **TYWIRFSKL** indeed translates into improved targeting efficiency.  
+
+Future work will address these limitations by:  
+- refining top-performing complexes with long-timescale molecular dynamics simulations under near-physiological conditions;  
+- incorporating explicit solvent and macromolecular crowding models to capture cellular complexity;  
+- coupling computational predictions with biochemical and cellular assays to validate binding preferences and import outcomes.  
+
+
+## References
+
+1. Gould SJ, Keller GA, Hosken N, Wilkinson J, Subramani S. *A conserved tripeptide sorts proteins to peroxisomes.* **J Cell Biol.** 1989;108(5):1657–1664.  
+2. Brocard C, Hartig A. *Peroxisome targeting signal 1: Is it really a simple tripeptide?* **Biochim Biophys Acta.** 2006;1763(12):1565–1573.  
+3. Lametschwandtner G, Brocard C, Fransen M, Van Veldhoven PP, Berger J, Hartig A. *The difference in recognition of PTS1 and PTS2 signals is conserved between yeast and mammals.* **EMBO J.** 1998;17(21):5948–5958.  
+4. Neuberger G, Maurer-Stroh S, Eisenhaber B, Hartig A, Eisenhaber F. *Prediction of peroxisomal targeting signal 1–containing proteins from amino acid sequence.* **J Mol Biol.** 2003;328(3):581–592.  
+5. Dominguez C, Boelens R, Bonvin AMJJ. *HADDOCK: A protein–protein docking approach based on biochemical or biophysical information.* **J Am Chem Soc.** 2003;125(7):1731–1737.  
+6. van Zundert GCP, Rodrigues JPG, Trellet M, Schmitz C, Kastritis PL, Karaca E, *et al.* *The HADDOCK2.4 web server: user-friendly integrative modeling of biomolecular complexes.* **J Mol Biol.** 2016;428(4):720–725.  
+7. Rodrigues JPG, Trellet M, Schmitz C, Kastritis PL, Karaca E, Melquiond ASJ, Bonvin AMJJ. *Clustering biomolecular complexes by residue contacts similarity.* **Proteins.** 2012;80(7):1810–1817.  
+8. van Zundert GCP, Bonvin AMJJ. *Modeling protein–protein complexes using the HADDOCK webserver.* **Methods Mol Biol.** 2014;1137:163–179.  
+
 
 
 
