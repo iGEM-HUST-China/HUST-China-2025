@@ -87,6 +87,70 @@ These three peptide designs were fused to the eight key enzymes of the **MVA pat
 
  *An animation illustrates this process: enzyme–SKL forms a complex with PEX5, which then docks with PEX14 and PEX13; IDRs of PEX13 undergo liquid–liquid phase separation to generate a transient liquid cavity that facilitates import.*
 
+# II. Molecular Docking
+
+## Energy Terms and Scoring Principles
+
+The HADDOCK docking protocol is fundamentally a physics-based and restraint-driven platform. It evaluates docking poses by combining several key energy terms:
+
+- **van der Waals interactions**: Describing repulsion and attraction between atoms, preventing steric clashes while capturing hydrophobic stabilization.  
+
+- **Electrostatics**: Coulombic interactions between charged residues, essential for PEX5 recognition of signal peptides.  
+
+- **Desolvation energy**: Reflecting the free-energy change of amino acid residues when buried at the interface. Hydrophobic burial is favorable, while polar residues require compensating hydrogen bonds or salt bridges.  
+
+The desolvation energy term can be expressed as:
+
+$$
+E_{\text{desolv}} = \sum_{i,j} S_i V_j \exp \left( -\frac{r_{ij}^2}{2\sigma^2} \right)
+$$
+
+
+- **Ambiguous Interaction Restraints (AIRs)**: Experimentally derived or hypothesized distance restraints that bias docking toward biologically relevant solutions.  
+
+The restraint energy is defined as:
+
+$$
+E_{\text{air}} = \sum_k W_k (d_k - d_{0,k})^2
+$$
+
+
+At different docking stages (rigid body, semi-flexible refinement, water refinement), these energy terms are combined with varying weights into the final HADDOCK score. Additionally, **Buried Surface Area (BSA)** is used to quantify the size and compactness of the interface.  
+
+The overall scoring function is:
+
+$$
+\text{Score} = w_{\text{vdW}} E_{\text{vdW}} + w_{\text{elec}} E_{\text{elec}} + w_{\text{desolv}} E_{\text{desolv}} + w_{\text{air}} E_{\text{air}} - w_{\text{BSA}} \cdot \text{BSA}
+$$
+
+
+Thus, HADDOCK scoring integrates both atomic-level physical interactions and experimental constraints, rather than relying on geometry alone.
+
+
+## Structure Preparation
+
+To systematically investigate peroxisomal targeting, we collected structural information for the eight key enzymes of the *Yarrowia lipolytica* MVA pathway (*Erg8, Erg9, Erg10, Erg13, Erg20, Hmgr, Idi, Merg12*). Experimental structures were retrieved from the PDB database, and missing structures were completed by homology modeling.  
+
+We designed three C-terminal signal peptide tags: the canonical SKL motif, the flexible extended GGGSSKL, and the aromatic-rich TYWIRFSKL. These tags were fused to the eight enzymes, and complete inputs were generated with AlphaFold predictions.
+
+
+## Docking Workflow
+
+Docking simulations were performed with HADDOCK 2.4 for PEX5 against each enzyme–peptide fusion. In total, 24 independent jobs (3 peptides × 8 enzymes) were executed. Each job produced ~300 poses at the rigid-body stage (it0), yielding ~14,400 initial poses overall. After semi-flexible refinement (it1) and water refinement, 2,880 water-refined models were retained, consistent with the typical ~1:5 (it1:it0) selection ratio.  
+
+Clustering by interface RMSD reduced the dataset to ~192 representative complexes. Based on HADDOCK scores, buried surface area (BSA), and conformational diversity, 24 best-performing complexes were selected for downstream energy analysis and visualization.
+
+
+## Definition of Active Residues
+
+To focus docking on biologically relevant regions, active residues were explicitly defined. For PEX5, the TPR repeat hot-spot residues (364, 398, 438, 469, 476, 501, 507, 585) were selected. For the MVA enzymes, the C-terminal linker+SKL regions were defined as active sites, reproducing the natural recognition of PTS1 signals by PEX5.
+
+
+## Scoring and Visualization
+
+Docking results were evaluated with the HADDOCK scoring function, which integrates van der Waals, electrostatics, desolvation, and restraint energies, combined with BSA to quantify interface size (Figure 1).  
+
+Representative complexes were visualized in PyMOL and ChimeraX to illustrate hydrogen-bond networks and structural overlays. The results confirmed the plausibility of docking poses and highlighted distinct recognition patterns between the minimal and extended signal peptides at the PEX5 interface.
 
 
 
