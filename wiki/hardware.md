@@ -204,7 +204,7 @@ During this phase, we invited target users (other iGEM teammates, lab peers, fac
 ## Requirement and Cost Analysis
 
 Through interviews with multiple laboratory researchers, we discovered that the process of extracting substances in laboratories consumes significant time.Simultaneously, the need to move between different instruments significantly increases the error rate. Based on this, we conducted research into traditional laboratory processes and the problems inherent within them.
-{% include figure.html image=page.images02 %}
+{% include figure.html images=page.images02 %}
 
 | Evaluation Criteria      | Existing Traditional Solution (Micro-fermentation tank + Centrifuge + Grinder)                                                                                                                                                                                                                             |
 | :----------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
