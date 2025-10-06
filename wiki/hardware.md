@@ -179,7 +179,7 @@ To systematically address these challenges, our project team innovatively propos
 
 Throughout development, we strictly adhered to standard hardware development procedures and the iGEM-advocated Design-Test-Learn-Build cycle, structured into five phases.
 
-{% include figure2.html images=page.images01 %}
+{% include figure.html images=page.images01 %}
 
 ### Phase 1: Defining Requirements and Pain Points
 

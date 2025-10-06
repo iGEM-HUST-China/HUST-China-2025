@@ -1,13 +1,10 @@
 
 <div class="figure flex-container-single">
-  <figure class="figure  figure--{{ include.position | default: 'center' }}">
+  <figure class="figure text-center {{ include.class }}" style="max-width: 600px; margin: 0 auto;">
     <img class="images" src="{{ include.images[0].src }}" alt="{{ include.images[0].alt | default: include.caption }}" {{ include.width ? include.width | prepend: 'width="' | append: '"' }} {{ include.height ? include.height | prepend: 'height="' | append: '"' }}>
     {% if include.caption %}<figcaption class="caption">{{ include.images[0].caption }}</figcaption>{% endif %}
   </figure>
 </div>
-
-
-
 
 
 
