@@ -1762,11 +1762,12 @@
             let isInLongScroll = false;
             let isInFooter = false;
             let isHorizontalScrolling = false;
+            let isTransitioningToLongScroll = false; // 新增：防止重复进入
             
             // 滚动控制
             let scrollTimeout;
             let lastScrollTime = 0;
-            const scrollCooldown = 800;
+            const scrollCooldown = 1000;
             
             // 旋转相关
             let rotationAngle = 0;
@@ -1849,6 +1850,7 @@
                 currentSection = 0;
                 isInLongScroll = false;
                 isInFooter = false;
+                isTransitioningToLongScroll = false;
                 longScrollSection.classList.remove('active');
                 footerContainer.classList.remove('active');
                 window.removeEventListener('scroll', handleLongScroll);
@@ -1964,11 +1966,11 @@
             animateCurrentSection();
             window.addEventListener('scroll', handleNavbarScroll);
     
-            // ========== 修复的关键滚动逻辑 ==========
+            // ========== 修复滚动冲突问题 ==========
             
             // 鼠标滚轮事件
             document.addEventListener('wheel', function(e) {
-                if (isScrolling) return;
+                if (isScrolling || isTransitioningToLongScroll) return;
                 
                 const now = Date.now();
                 if (now - lastScrollTime < scrollCooldown) return;
@@ -1983,9 +1985,8 @@
                 clearTimeout(window.rotationStopTimer);
                 window.rotationStopTimer = setTimeout(stopRotation, 300);
     
-                // 关键修复：检查是否在长页滚动或页脚中
+                // 如果在长页滚动或页脚中，使用原生滚动
                 if (isInLongScroll || isInFooter) {
-                    // 在长页滚动中，允许原生滚动
                     return;
                 }
     
@@ -2009,14 +2010,15 @@
                     return;
                 }
     
-                // 竖屏滚动 - 关键修复：确保能滚动到最后一节
+                // 竖屏滚动 - 关键修复：防止重复触发
                 if (e.deltaY > 0) {
                     // 向下滚动
                     if (currentSection < sections.length - 1) {
                         currentSection++;
                         scrollToSection(currentSection);
-                    } else if (currentSection === sections.length - 1) {
-                        // 关键修复：在最后一节时进入长页滚动
+                    } else if (currentSection === sections.length - 1 && !isTransitioningToLongScroll) {
+                        // 关键修复：设置标志防止重复进入
+                        isTransitioningToLongScroll = true;
                         enterLongScroll();
                     }
                 } else if (e.deltaY < 0) {
@@ -2046,7 +2048,7 @@
             }, { passive: true });
     
             function handleTouchScroll() {
-                if (isScrolling) return;
+                if (isScrolling || isTransitioningToLongScroll) return;
                 
                 const diffY = touchStartY - touchEndY;
                 const diffX = touchStartX - touchEndX;
@@ -2072,8 +2074,8 @@
                     if (currentSection < sections.length - 1) {
                         currentSection++;
                         scrollToSection(currentSection);
-                    } else if (currentSection === sections.length - 1) {
-                        // 关键修复：在最后一节时进入长页滚动
+                    } else if (currentSection === sections.length - 1 && !isTransitioningToLongScroll) {
+                        isTransitioningToLongScroll = true;
                         enterLongScroll();
                     }
                 } else {
@@ -2087,13 +2089,14 @@
     
             // 键盘导航
             document.addEventListener('keydown', function(e) {
-                if (isInLongScroll || isInFooter) return;
+                if (isInLongScroll || isInFooter || isTransitioningToLongScroll) return;
                 
                 if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === 'PageDown') {
                     if (currentSection < sections.length - 1) {
                         currentSection++;
                         scrollToSection(currentSection);
                     } else if (currentSection === sections.length - 1) {
+                        isTransitioningToLongScroll = true;
                         enterLongScroll();
                     }
                     e.preventDefault();
@@ -2106,37 +2109,48 @@
                 }
             });
     
-            // 进入长页滚动 - 关键修复函数
+            // 进入长页滚动 - 完全重写，防止冲突
             function enterLongScroll() {
-                console.log('进入长页滚动');
-                isInLongScroll = true;
-                longScrollSection.classList.add('active');
+                console.log('安全进入长页滚动');
                 
-                // 确保长页滚动部分可见
+                // 立即设置状态，防止重复触发
+                isTransitioningToLongScroll = true;
+                isInLongScroll = true;
+                
+                // 显示长页滚动部分
+                longScrollSection.classList.add('active');
                 longScrollSection.style.display = 'block';
                 
+                // 使用更精确的滚动定位
+                const targetScrollPosition = longScrollSection.offsetTop;
+                
                 // 平滑滚动到长页滚动部分
-                longScrollSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                window.scrollTo({
+                    top: targetScrollPosition,
+                    behavior: 'smooth'
                 });
                 
                 // 添加长页滚动监听
                 window.addEventListener('scroll', handleLongScroll, { passive: true });
                 
+                // 更新指示器
                 updateActiveSection();
+                
+                // 2秒后重置过渡状态，允许再次滚动
+                setTimeout(() => {
+                    isTransitioningToLongScroll = false;
+                    console.log('长页滚动过渡完成');
+                }, 2000);
                 
                 // 触发长页滚动内的动画
                 setTimeout(() => {
                     handleScrollAnimations();
-                }, 500);
+                }, 1000);
             }
     
-            // 处理长页滚动
+            // 处理长页滚动 - 优化防冲突
             function handleLongScroll() {
                 if (!isInLongScroll) return;
-                
-                console.log('处理长页滚动', window.scrollY);
                 
                 // 处理交替布局动画
                 handleScrollAnimations();
@@ -2144,19 +2158,16 @@
                 // 检查是否到达页脚
                 const footerTrigger = longScrollSection.offsetTop + longScrollSection.offsetHeight - window.innerHeight * 0.7;
                 if (window.scrollY >= footerTrigger && !isInFooter) {
-                    console.log('进入页脚');
                     isInFooter = true;
                     footerContainer.classList.add('active');
-                } else if (window.scrollY < footerTrigger - 200 && isInFooter) {
-                    console.log('退出页脚');
+                } else if (window.scrollY < footerTrigger - 300 && isInFooter) {
                     isInFooter = false;
                     footerContainer.classList.remove('active');
                 }
                 
-                // 检查是否滚动到顶部
+                // 检查是否滚动到顶部 - 增加容错范围
                 const longScrollTop = longScrollSection.offsetTop;
-                if (window.scrollY <= longScrollTop + 100) {
-                    console.log('退出长页滚动');
+                if (window.scrollY <= longScrollTop + 150 && !isTransitioningToLongScroll) {
                     exitLongScroll();
                 }
                 
@@ -2180,8 +2191,10 @@
     
             // 退出长页滚动
             function exitLongScroll() {
+                console.log('退出长页滚动');
                 isInLongScroll = false;
                 isInFooter = false;
+                isTransitioningToLongScroll = false;
                 longScrollSection.classList.remove('active');
                 footerContainer.classList.remove('active');
                 window.removeEventListener('scroll', handleLongScroll);
@@ -2195,20 +2208,28 @@
                     const targetIndex = parseInt(dot.getAttribute('data-target'));
                     
                     if (targetIndex === 8) {
-                        enterLongScroll();
+                        if (!isTransitioningToLongScroll) {
+                            isTransitioningToLongScroll = true;
+                            enterLongScroll();
+                        }
                     } else if (targetIndex === 9) {
                         isInFooter = true;
                         isInLongScroll = true;
+                        isTransitioningToLongScroll = true;
                         footerContainer.classList.add('active');
                         longScrollSection.classList.add('active');
                         footerContainer.scrollIntoView({
                             behavior: 'smooth',
                             block: 'start'
                         });
+                        setTimeout(() => {
+                            isTransitioningToLongScroll = false;
+                        }, 2000);
                     } else {
                         currentSection = targetIndex;
                         isInLongScroll = false;
                         isInFooter = false;
+                        isTransitioningToLongScroll = false;
                         longScrollSection.classList.remove('active');
                         footerContainer.classList.remove('active');
                         window.removeEventListener('scroll', handleLongScroll);
