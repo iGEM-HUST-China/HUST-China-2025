@@ -7,6 +7,13 @@ excerpt: ""
 
 
 
+images02:
+  - src: https://static.igem.wiki/teams/5569/hardware/open-by-shunzhuan-soconvert.webp
+    alt: Turn clockwise to open the flow switch
+    caption: Turn clockwise to open the flow switch
+  - src: https://static.igem.wiki/teams/5569/hardware/jiaosoconvert.webp
+    alt: Reverse continuous stirring
+    caption: Reverse continuous stirring
 
 ---
 
@@ -88,6 +95,7 @@ Our hardware team has consistently focused on addressing practical challenges en
 
 - **Fermentation Condition Control Module:** Multiple designs at the top of the device primarily enable real-time monitoring and control of fermentation conditions.
 - A 42-step motor drives the stirrer and flow switch via bevel gear transmission. Three small ports accommodate: a pH sensor for real-time monitoring, a temperature sensor for fermentation conditions, and a blue light emitter to activate the strain's suicide switch, preventing microbial leakage. Two sidewall ports allow tubing to deliver solutions from a peristaltic pump for timed feed supplementation.
+
 <div class="video">
 <iframe title="HUST-China: Hardware-Real shot of the motor (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/nB2YrNVLdf8GfF9isd2DUp" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
 </div>
@@ -101,7 +109,7 @@ Our hardware team has consistently focused on addressing practical challenges en
 - The inner tank bottom features a 30° sector-shaped aperture aligned with two sector-shaped and circular apertures in the outer tank base plate. The outer tank's edge is concave, while its central protrusion interlocks with the inner tank bottom to create hydraulic pressure, preventing medium leakage through edge gaps.
 - The inner tank's mid-section incorporates a mortise-and-tenon structure that mates with the complementary half on the bottom of the stirring rod. The top stepper motor operates in two modes: continuous clockwise rotation and counterclockwise step mode (each button press rotates 30° counterclockwise). During clockwise rotation, the inclined planes of the mortise-and-tenon joints slide against each other, preventing the inner tank from rotating. The stirring rod does not rotate the inner tank, ensuring thorough mixing of the bacterial solution. During counterclockwise rotation, the vertical surfaces of the two joints interlock. The stirring rod drives the inner tank to rotate, thereby controlling leakage.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/open-by-shunzhuan-soconvert.webp" caption="Turn clockwise to open the flow switch" %}
+{% include figure2.html images=page.images02 %}
 
 - The circular opening at the bottom of the outer tank has internal threads. These are used to secure a bacterial filter membrane during the first drainage cycle. The culture medium flows directly into the waste tank via the rubber tube connected to the bottom of the drainage port, while cells are intercepted, enhancing bacterial density within the tank. The fan-shaped aperture facilitates the second drainage cycle, directing residual medium and cells downward to the centrifugal shaking module for subsequent processing.
 - Under microscopic observation, the size of lipolytic yeast cells was determined (Figure 3.2.4). After averaging measurements from 20 cells, the bacterial cell's major axis measured approximately 8.4 μm, and the minor axis approximately 5.2 μm. A bacterial filter membrane with a mesh size of 3 μm was selected.
