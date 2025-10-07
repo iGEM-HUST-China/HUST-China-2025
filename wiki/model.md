@@ -326,7 +326,7 @@ In the interactive NGLView visualization, the pre-relaxation model (grey) and po
 Top-ranked variants were subsequently selected for experimental validation of folding stability and catalytic activity.  
 
 <div class="video">
-<iframe title="HUST-China: Alignment of t-HMGR before and after optimization (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/joCRDYNNTRjtMv2kHZpHLe" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
+<iframe title="HUST-China: Alignment of t-HMGR before and after optimization (2025)" width="460" height="215" src="https://video.igem.org/videos/embed/joCRDYNNTRjtMv2kHZpHLe" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
 </div>
 
 
@@ -584,6 +584,8 @@ Future extensions will focus on two directions:
 and (2) expanding the dataset to include multiple carbon sources and nutrient regimes, enabling the construction of a multidimensional predictive model that learns substrate adaptability and growth stability simultaneously.  
 
 Overall, this framework establishes a generalizable approach for predictive and interpretable growth modelling in *Y. lipolytica*, which can be further enhanced by integrating dynamic information and environmental complexity.
+
+{% include button.html link="https://gitlab.igem.org/2025/software-tools/hust-china" text="Click to learn more about our software-tools" %}
 
 ## References
 1. Gould SJ, Keller GA, Hosken N, Wilkinson J, Subramani S. *A conserved tripeptide sorts proteins to peroxisomes.* **J Cell Biol.** 1989;108(5):1657–1664.  

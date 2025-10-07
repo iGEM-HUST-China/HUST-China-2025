@@ -6,8 +6,6 @@ feature_image: "https://static.igem.wiki/teams/5569/description/desn.webp"
 excerpt: ""
 ---
 
-## Welcome to iGEM HUST-China 2025 wiki!
-
 # Design Description: Squalene Production from Waste Cooking Oil
 
 ## 1. Introduction
