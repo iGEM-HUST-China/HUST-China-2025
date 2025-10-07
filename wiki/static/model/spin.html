@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>t-HMGR Alignment Viewer</title>
+
+  <!-- ✅ 本地化资源 -->
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+
+  <!-- ✅ 本地 JS 依赖 -->
+  <script src="js/require.min.js"></script>
+  <script src="js/embed-amd.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      overflow: hidden;
+    }
+    #viewer {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="viewer"></div>
+
+  <!-- ✅ Jupyter Widget 状态 JSON -->
+  <script type="application/vnd.jupyter.widget-state+json">
+  {
+    "version_major": 2,
+    "version_minor": 0,
+    "state": {
+      /* ⚠️ 这里保持你原有的 JSON 数据部分不变，
+         从原 spin.html 中复制整段 “widget-state+json” 块粘贴到这里 */
+    }
+  }
+  </script>
+
+  <!-- ✅ Widget 视图数据 -->
+  <script type="application/vnd.jupyter.widget-view+json">
+  {
+    /* 同样保留你原文件的 “widget-view+json” 部分 */
+  }
+  </script>
+</body>
+</html>
