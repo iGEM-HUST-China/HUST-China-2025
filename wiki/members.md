@@ -11,7 +11,7 @@ excerpt: ""
 ## Our Team
 
 {% include figure.html 
-   image="https://static.igem.wiki/teams/5569/description/menber/wbh.webp" 
+   image="https://static.igem.wiki/teams/5569/description/hezhao.webp" 
    alt="Our Team" 
    caption="All HUST-China 2025 iGEMers " %}
 
@@ -219,12 +219,12 @@ excerpt: ""
 
 ---
 
-{% include figure.html 
-   image="https://static.igem.wiki/teams/5569/description/menber/wbh.webp" 
+{% include figure2.html 
+   image="https://static.igem.wiki/teams/5569/index/logo.webp" 
    alt="Our Team" 
    caption="HUST-China 2025: \"Squoilene\"" %}
 
-{% include figure.html 
-   image="https://static.igem.wiki/teams/5569/description/menber/wbh.webp" 
+{% include figure2.html 
+   image="https://static.igem.wiki/teams/5569/description/dui.webp" 
    alt="Our Team" 
    caption=" " %}
