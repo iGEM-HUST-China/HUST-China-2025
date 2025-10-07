@@ -12,7 +12,7 @@ excerpt: ""
 
 | Stakeholder Type | Specific Representatives | Role in Ensuring Values |
 |------------------|--------------------------|-------------------------|
-| Academic & Research Institutions | Prof. Yan Yunjun, Researcher Xie Xiaoman, Prof. Tang Qiang, Prof. Ning Kang, Prof. Sylvain FISSON | Validated technical route科学性and innovation, ensured scientific values realization. Provided key guidance on metabolic pathways, computational design, compartmentalization strategies. |
+| Academic & Research Institutions | Prof. Yan Yunjun, Researcher Xie Xiaoman, Prof. Tang Qiang, Prof. Ning Kang, Prof. Sylvain FISSON | Validated the scientific merit and innovation of the technical route, ensured the realization of its scientific value, and provided key guidance on metabolic pathways, computational design, and compartmentalization strategies. |
 | Enterprises & Industries | Proya, Bloomage Bio, Wuhan Berca, Hubei Hongfuda, Zhejiang Zhengda Environmental Protection | Ensured project meets market demands and industry standards (Social Values). Clarified safety requirements (Ethical Values), understood waste oil treatment pain points (Environmental Values). |
 | Government & Public Institutions | Wuhan Municipal Bureau of Ecology and Environment, Ministry of Agriculture and Rural Affairs | Ensured project complies with national environmental policies and shark protection regulations (Environmental & Ethical Values), advancing within compliant framework. |
 | Frontline Producers & Practitioners | Fisherman Uncle Sun from Weihai, Manager Cai from waste oil recycling company | Obtained first-hand information about shark fishing industry and waste oil treatment, ensuring project addresses real social and environmental problems. |
