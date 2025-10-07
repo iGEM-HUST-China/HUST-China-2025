@@ -102,7 +102,7 @@ To solve the classic problems of metabolic flux dispersion and product toxicity 
 
 Ultimately, we have created a microbial cell factory capable of efficiently converting harmful WCO into high‑value squalene, thereby providing the cosmetics industry with a new low‑cost, sustainable source of raw materials.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 9. Composition and environmental issues of WCO (wasted cooked oil)." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/d1.webp" caption="Figure 10. Metabolic mechanism of our design" %}
 
 ### Model
 
@@ -116,7 +116,7 @@ At the systems layer, to quantify the host’s metabolic responses under varying
 
 Through this integrated three‑layer modelling system, we achieved a closed‑loop design linking peroxisomal import optimisation, rate‑limiting enzyme refinement and growth‑environment prediction, transforming metabolic engineering of Y. lipolytica from empirical exploration to prediction‑driven design.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 9. Composition and environmental issues of WCO (wasted cooked oil)." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 11. Model design of our project" %}
 
 ### Hardware
 
@@ -124,7 +124,7 @@ In the squalene extraction experiments, our practical experience and surveys rev
 
 To address this challenge, we propose the design of an Integrated Fermentation & Processing System (iFPS). This compact device integrates three functional modules—micro‑fermentation cultivation, high‑speed centrifugation collection and mechanical agitation‑based disruption—into a single unit. It substantially enhances experimental consistency and operational safety while keeping the equipment cost at about US$ 100. In essence, the iFPS provides a fundamental solution to the micro‑fermentation challenges encountered in synthetic biology.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 9. Composition and environmental issues of WCO (wasted cooked oil)." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure 12. 3D model of iFPS" %}
 
 ## Reference
 
