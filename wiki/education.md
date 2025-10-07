@@ -8,6 +8,36 @@ excerpt: ""
 
 ---
 
+## 1.Education 
+### 1.1Advancing New Quality Productive Forces through Synthetic Biology
+#### A specialized interview on "New Quality Productive Forces"
+
+HUST-China was invited to discuss the role of synthetic biology in driving the development of new-quality productive forces. As one of the team leaders, Zou Wanting introduced our team's background and achievements, elaborating in detail on how synthetic biology aligns with new-quality productive forces by promoting technological innovation and sustainable development.
+
+We systematically elucidated the intrinsic connection between synthetic biology and new-quality productive forces, while analyzing and emphasizing the following key points:
+
+1.Synthetic biology surpasses traditional production methods by introducing editable, life-based manufacturing platforms.
+
+2.Compared to conventional processes, it significantly reduces energy consumption and waste generation, reflecting its efficiency in resource utilization and environmental sustainability.
+
+This interview showcased how synthetic biology contributes to sustainable industrial transformation．Looking forward, we foresee that the integration of synthetic biology with transformative technologies like artificial intelligence will profoundly accelerate the development of New Quality Productive Forces, unlocking breakthroughs in critical domains such as carbon neutrality, smart agriculture, and precision medicine.
+
+### 1.2 Science popularization education activities
+
+Throughout our human practices activities, we have identified a significant knowledge gap in synthetic biology among non-biology majors and the general public. To address this, we have designed and implemented a series of science education initiatives targeting different age groups, spanning from basic education to higher education, to promote innovative concepts in synthetic biology.
+
+#### 1.2.1 “Huaxiaomiao” Classroom Fun Enlightenment: Gene Expression Structure and Components
+
+In the "Huaxiaomiao" weekend class organized by the University Youth League Committee, Labor Union, and School of Life Science, we conducted engaging science outreach on synthetic biology for 28 science-loving primary students. Through well-designed interactive games and vivid analogies, we transformed complex gene expression structures and functional parts into comprehensible modules, allowing children to experience the unique appeal of synthetic biology in areas like environmental remediation through hands-on activities, sowing the seeds for future scientific talent.
+
+#### 1.2.3 Professional Knowledge Seminar at Tianmen Middle School
+
+In the school science festival extension activity, we visited Tianmen Middle School in Hubei Province to provide professional science education to high school students. Through microscopic observation of our project's self-developed novel yeast strains and displays of macro samples on culture media, students gained intuitive understanding of synthetic biology's engineering capabilities. Volunteers from the iGEM team detailed the special functions and culture conditions of the strains, sparking strong interest in biotechnology among numerous students.
+
+#### 1.2.4 Promotional Tour at Wen Deng and Jiangxi Affiliated High Schools
+
+Several team members utilized winter break to revisit Wen Deng New First Middle School and Jiangxi Normal University Affiliated High School, delivering specialized presentations on synthetic biology to students and parents. At the project introduction session of Wen Deng District University Student Union and the promotion event at the affiliated high school, team members presented our team's annual work and achievements in iGEM competitions. Through systematic introduction of the discipline's research fields and development prospects, along with specific project explanations, they effectively enhanced middle school students' understanding of biotechnology. The enthusiastic interactions following the sessions reflected the young generation's strong interest in cutting-edge technology, establishing a solid foundation for talent development in this discipline.
+
 ## 2.Communication 
 ### 2.1 Communicate with BIT-China iGEM team
 #### 2.1.1 Introduction
