@@ -517,12 +517,18 @@ Temperature exerted a clear influence on the carrying capacity (K). Above 28 °C
 **Table 3-1. Model predictions versus actual Gompertz parameters on independent test set**
 
 <div style="font-size:12px; overflow-x:auto;">
+<style>
+th {
+  vertical-align: top;   /* 🔹让表头文字贴在格子上边缘 */
+  text-align: center;    /* 🔹水平居中（可选） */
+}
+</style>
 <table>
 <thead>
 <tr>
-<th>Group</th><th>Target</th><th>pH</th><th>Temperature (°C)</th>
-<th>A_pred</th><th>K_pred</th><th>μₘₐₓ_pred</th><th>λ_pred</th>
-<th>A_actual</th><th>K_actual</th><th>μₘₐₓ_actual</th><th>λ_actual</th>
+<th>Group</th><th>Target</th><th>pH</th><th>Temperature </th>
+<th>A_pd</th><th>K_pd</th><th>μₘₐₓ_pd</th><th>λ_pd</th>
+<th>A_ac</th><th>K_ac</th><th>μₘₐₓ_ac</th><th>λ_ac</th>
 </tr>
 </thead>
 <tbody>
