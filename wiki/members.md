@@ -219,12 +219,12 @@ excerpt: ""
 
 ---
 
-{% include figure2.html 
+{% include figure.html 
    image="https://static.igem.wiki/teams/5569/index/logo.webp" 
    alt="Our Team" 
    caption="HUST-China 2025: \"Squoilene\"" %}
 
-{% include figure2.html 
+{% include figure.html 
    image="https://static.igem.wiki/teams/5569/description/dui.webp" 
    alt="Our Team" 
    caption=" " %}
