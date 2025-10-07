@@ -57,7 +57,7 @@ What we learned:
 - Industry urgently needs high-value conversion pathways
 - 20mg high-purity squalene worth 800 RMB vs 1kg biodiesel at 8.5 RMB
 
-How we adapted: Solidified core innovation of 'upgrading waste oil to squalene,' extending story from environmental protection to circular economy."
+How we adapted: Solidified core innovation of 'upgrading waste oil to squalene', extending story from environmental protection to circular economy."
 %}
 
 {% include dropdown.html
@@ -72,38 +72,44 @@ What we learned:
 How we adapted: Positioned project in 'Fashion' track, creating brand narrative combining technology, environmental protection, and lifestyle."
 %}
 
-
 ## Part II: Technical Path Construction & Key Iterations
 
-### Ideal Chassis Organism Finalization
+{% include dropdown.html
+   title="Ideal Chassis Organism Finalization"
+   content="Consultation: Prof. Tang Qiang from USTC
 
-**Consultation:** Prof. Tang Qiang from USTC
+Key Insight: *Yarrowia lipolytica* is ideal choice - natural lipid metabolism capability and complete MVA pathway.
 
-**Key Insight:** *Yarrowia lipolytica* is ideal choice - natural lipid metabolism capability and complete MVA pathway.
+Adaptation: Formally selected *Yarrowia lipolytica* as project chassis."
+%}
 
-**Adaptation:** Formally selected *Yarrowia lipolytica* as project chassis.
+{% include dropdown.html
+   title="Lipase Introduction"
+   content="
+   Consultation: Prof. Yan Yunjun from HUST
 
-### Lipase Introduction
+   Problem: Wild-type strain degradation efficiency insufficient
 
-**Consultation:** Prof. Yan Yunjun from HUST
+   Solution: Introduced exogenous TLL lipase from *Aspergillus oryzae*"
+%}
 
-**Problem:** Wild-type strain degradation efficiency insufficient
+{% include dropdown.html
+   title="Rate-Limiting Enzyme Optimization"
+   content="
+   Consultation: Prof. Ning Kang from HUST
 
-**Solution:** Introduced exogenous TLL lipase from *Aspergillus oryzae*
+   Approach: Used ProteinMPNN and Rosetta for protein redesign to reduce conformational frustration and improve stability."
+%}
 
-### Rate-Limiting Enzyme Optimization
+{% include dropdown.html
+   title="Mining Novel HMGR Homologs"
+   content="
+   **Consultation:** Prof. Shi Mang from Sun Yat-sen University
 
-**Consultation:** Prof. Ning Kang from HUST
+   **Tool:** Integrated Foldseek for 3D structure-based homology search
 
-**Approach:** Used ProteinMPNN and Rosetta for protein redesign to reduce conformational frustration and improve stability.
-
-### Mining Novel HMGR Homologs
-
-**Consultation:** Prof. Shi Mang from Sun Yat-sen University
-
-**Tool:** Integrated Foldseek for 3D structure-based homology search
-
-**Method:** Set 90% structural consistency threshold for reliable functional inference
+   **Method:** Set 90% structural consistency threshold for reliable functional inference"
+%}
 
 ### Compartmentalization Strategy
 
