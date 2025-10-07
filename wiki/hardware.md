@@ -48,7 +48,7 @@ Throughout development, we strictly adhered to standard hardware development pro
 
 {% include dropdown.html
    title="2: Existing Solutions and Technology Research"
-   content="This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative single-motor-driven multi-mode switching" solution."
+   content="This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative single-motor-driven multi-mode switching solution."
 %}
 
 {% include dropdown.html
