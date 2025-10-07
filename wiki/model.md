@@ -607,7 +607,7 @@ and (2) expanding the dataset to include multiple carbon sources and nutrient re
 
 Overall, this framework establishes a generalizable approach for predictive and interpretable growth modelling in *Y. lipolytica*, which can be further enhanced by integrating dynamic information and environmental complexity.
 
-** References
+## References
 
 1. Zwietering MH, Jongenburger I, Rombouts FM, van ’t Riet K. Modeling of the bacterial growth curve. *Appl Environ Microbiol.* 1990;56(6):1875–81.  
 2. Gibson AM, Bratchell N, Roberts TA. The effect of sodium chloride and temperature on the rate and extent of growth of *Clostridium botulinum* type A. *J Appl Bacteriol.* 1988;65(2):95–108.  
