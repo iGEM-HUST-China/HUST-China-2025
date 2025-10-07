@@ -59,7 +59,7 @@ This collaborative achievement significantly enhanced the accuracy and reach of 
 ## 2.Communication 
 ### 2.1 Communicate with BIT-China iGEM team
 #### 2.1.1 Introduction
-
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp/hp1.webp" caption="Fig 2.1 Communicate with BIT-China iGEM team" %}
 In July, 2025, we engaged in a productive exchange with the BIT-China iGEM team. Both teams presented their project progress and shared insights on experimental design and practical implementation, which brought valuable inspiration and ideas.
 
 #### 2.1.2 Sharing of experience
