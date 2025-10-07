@@ -97,20 +97,35 @@ To address this challenge, we propose the design of an Integrated Fermentation &
 
 ## Reference
 
-[1] Cleveland Clinic. What is squalane? This oil helps amp up hydration and fight signs of aging. Cleveland Clinic Health Essentials. 2022;1-3.
-[2] Exploding Topics. Beauty industry statistics: revenue and growth. Exploding Topics. 2023;1‑2.
-[3] Fortune Business Insights. (2024). Moisturizer Market Size, Share & Trends, 2024-2032. Retrieved October 2025, from https://www.fortunebusinessinsights.com/moisturizer-market-102644
-[4] Ducos L, Guillonneau V, Le Manach F, Nouvian C. Shark in our beauty creams: Beauty and beast. BLOOM Association. 2015;1‑30.
-[5] Popa O, Băbeanu N E, Popa I, Niță S, Dinu-Pârvu C E. Methods for obtaining and determination of squalene from natural sources[J]. BioMed Research International, 2015, 2015: 367202.
-[6] Fisher, K., Schofer, S. J., & Kanne, D. B. (2011). Squalane and isosqualane compositions and methods for preparing the same. U.S. Patent No. US 2011/0287988 A1.
-[7] Li, Q., Xu, Y., Zhou, Y., Chen, Z., & Zhang, X. (2019). Microbial production of squalene: advances, challenges and prospects. Biotechnology for Biofuels, 12, 159.
-[8] Kumar, A., Bhayana, S., Singh, P.K. et al. Valorization of used cooking oil: challenges, current developments, life cycle assessment and future prospects. Discov Sustain 6, 119 (2025).
-[9] Caporusso, N., Rossi, S., Sacchi, G., Algieri, C., Grillo, G., & Romano, M. C. (2025). Waste cooking oils as a sustainable feedstock: opportunities and challenges for valorization to biofuels and biochemicals. Resources, Conservation & Recycling, 211, 107758.
-[10] Argus Media. (2024, December 6). European UCO prices rise to two-year high. Retrieved from https://www.argusmedia.com/en/news/2542521-european-uco-prices-rise-to-two-year-high
-[11] Dominguez C, Boelens R, Bonvin AMJJ. HADDOCK: a protein-protein docking approach based on biochemical or biophysical information. J Am Chem Soc. 2003;125(7):1731–1737
-[12] Dauparas J, Anishchenko I, Wayment‑Steele HK, et al. Robust deep learning‑based protein sequence design using ProteinMPNN. Science. 2022;378(6615):49–56
-[13] Parra RG, Schafer NP, Radusky LG, Monzon AM, Alber F, Ferreiro DU. Protein Frustratometer 2: a tool to localize energetic frustration in protein molecules, now with electrostatics. Nucleic Acids Res. 2016;44(W1):W356–W360
-[14] Conway P, Tyka MD, DiMaio F, Konerding DE, Baker D. Relaxation of backbone bond geometry improves protein energy landscape modeling. Protein Sci. 2014;23(1):47–55
-[15]  Breiman L. Random forests. Mach Learn. 2001;45(1):5–32
-[16] Chen T, Guestrin C. XGBoost: a scalable tree boosting system. Proc 22nd ACM SIGKDD Int Conf Knowl Discov Data Min. 2016;785–794
+[^1] Cleveland Clinic. What is squalane? This oil helps amp up hydration and fight signs of aging. Cleveland Clinic Health Essentials. 2022;1-3.
+
+[^2] Exploding Topics. Beauty industry statistics: revenue and growth. Exploding Topics. 2023;1‑2.
+
+[^3] Fortune Business Insights. (2024). Moisturizer Market Size, Share & Trends, 2024-2032. Retrieved October 2025.
+
+[^4] Ducos L, Guillonneau V, Le Manach F, Nouvian C. Shark in our beauty creams: Beauty and beast. BLOOM Association. 2015;1‑30.
+
+[^5] Popa O, Băbeanu N E, Popa I, Niță S, Dinu-Pârvu C E. Methods for obtaining and determination of squalene from natural sources[J]. BioMed Research International, 2015, 2015: 367202.
+
+[^6] Fisher, K., Schofer, S. J., & Kanne, D. B. (2011). Squalane and isosqualane compositions and methods for preparing the same. U.S. Patent No. US 2011/0287988 A1.
+
+[^7] Li, Q., Xu, Y., Zhou, Y., Chen, Z., & Zhang, X. (2019). Microbial production of squalene: advances, challenges and prospects. Biotechnology for Biofuels, 12, 159.
+
+[^8] Kumar, A., Bhayana, S., Singh, P.K. et al. Valorization of used cooking oil: challenges, current developments, life cycle assessment and future prospects. Discov Sustain 6, 119 (2025).
+
+[^9] Caporusso, N., Rossi, S., Sacchi, G., Algieri, C., Grillo, G., & Romano, M. C. (2025). Waste cooking oils as a sustainable feedstock: opportunities and challenges for valorization to biofuels and biochemicals. Resources, Conservation & Recycling, 211, 107758.
+
+[^10] Argus Media. (2024, December 6). European UCO prices rise to two-year high.
+
+[^11] Dominguez C, Boelens R, Bonvin AMJJ. HADDOCK: a protein-protein docking approach based on biochemical or biophysical information. J Am Chem Soc. 2003;125(7):1731–1737
+
+[^12] Dauparas J, Anishchenko I, Wayment‑Steele HK, et al. Robust deep learning‑based protein sequence design using ProteinMPNN. Science. 2022;378(6615):49–56
+
+[^13] Parra RG, Schafer NP, Radusky LG, Monzon AM, Alber F, Ferreiro DU. Protein Frustratometer 2: a tool to localize energetic frustration in protein molecules, now with electrostatics. Nucleic Acids Res. 2016;44(W1):W356–W360
+
+[^14] Conway P, Tyka MD, DiMaio F, Konerding DE, Baker D. Relaxation of backbone bond geometry improves protein energy landscape modeling. Protein Sci. 2014;23(1):47–55
+
+[^15]  Breiman L. Random forests. Mach Learn. 2001;45(1):5–32
+
+[^16] Chen T, Guestrin C. XGBoost: a scalable tree boosting system. Proc 22nd ACM SIGKDD Int Conf Knowl Discov Data Min. 2016;785–794
 
