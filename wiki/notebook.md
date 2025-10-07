@@ -6,6 +6,8 @@ feature_image: "https://static.igem.wiki/teams/5569/description/ntbk.webp"
 excerpt: ""
 ---
 
-## Welcome to iGEM HUST-China 2025 wiki!
+## This is the Notebook of our wet-lab experiments which provides a detailed record of  our wet-lab activities throughout the season.
 
-All the pages are under construction, please check [description](description) page for more information about this year's project briefly.
+You can explore our detailed Notebook PDF here:
+
+{% include button.html link="https://static.igem.wiki/teams/5569/document/notebook.pdf" text="check the Notebook of ours" %}
