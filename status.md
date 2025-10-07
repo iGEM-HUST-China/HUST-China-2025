@@ -3,7 +3,7 @@ title: Status
 feature_text: |
   ## Status
   Here's some pipeline and website status information.
-feature_image: "https://static.igem.wiki/teams/5175/test-resources/test-image-1300x400.jpg"
+feature_image: "https://static.igem.wiki/teams/5569/description/baidi.webp"
 excerpt: "Welcome to iGEM HUST-China 2025 wiki! It's still under construction. Please stay tuned for more information."
 aside: false
 ---
