@@ -23,7 +23,7 @@ excerpt: ""
 {% include members-people.html 
    name="Yu Zhou" 
    description="Student Affair Officer in College of Life Sci. & Tech., HUST. This year, she is the primary PI of our team and helps us finish our project in many areas. Thank for her assistance through the whole season." 
-   image="https://static.igem.wiki/teams/5569/description/menber/zy.webp" 
+   image="https://static.igem.wiki/teams/5569/description/menber/zyyy.webp" 
    image_position="left" %}
 
 ### Secondary PIs
@@ -59,7 +59,7 @@ excerpt: ""
 {% include members-people.html 
    name="Na An" 
    description="She provided strategic insights and management experience to support effective project coordination and execution." 
-   image="https://static.igem.wiki/teams/5569/description/menber/anna.webp" 
+   image="https://static.igem.wiki/teams/5569/description/menber/annaa.webp" 
    image_position="right" %}
 
 {% include members-people.html 
