@@ -8,4 +8,5 @@ excerpt: ""
 
 ## Welcome to iGEM HUST-China 2025 wiki!
 
-
+You can download our detailed Proposed Implementation here:
+[Download the Design PDF](https://gitlab.igem.org/2025/hust-china/-/blob/main/Protocols.pdf)
