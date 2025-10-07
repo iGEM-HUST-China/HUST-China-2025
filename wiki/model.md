@@ -326,7 +326,7 @@ In the interactive NGLView visualization, the pre-relaxation model (grey) and po
 Top-ranked variants were subsequently selected for experimental validation of folding stability and catalytic activity.  
 
 <div class="video">
-<iframe title="HUST-China: Alignment of t-HMGR before and after optimization (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/joCRDYNNTRjtMv2kHZpHLe" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
+<iframe title="HUST-China: Alignment of t-HMGR before and after optimization (2025)" width="460" height="215" src="https://video.igem.org/videos/embed/joCRDYNNTRjtMv2kHZpHLe" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
 </div>
 
 
