@@ -118,6 +118,8 @@ Through this integrated three‑layer modelling system, we achieved a closed‑l
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 11. Model design of our project" %}
 
+{% include button.html link="../Model/" text="Go to Model Page" %}
+
 ### Hardware
 
 In the squalene extraction experiments, our practical experience and surveys revealed that the micro‑fermenters commonly used in synthetic biology are costly and lack real‑time monitoring capabilities. Consequently, researchers must perform extensive repetitive and continuous work while relying on multiple separate, large instruments, which reduces both experimental efficiency and accuracy.
@@ -125,6 +127,8 @@ In the squalene extraction experiments, our practical experience and surveys rev
 To address this challenge, we propose the design of an Integrated Fermentation & Processing System (iFPS). This compact device integrates three functional modules—micro‑fermentation cultivation, high‑speed centrifugation collection and mechanical agitation‑based disruption—into a single unit. It substantially enhances experimental consistency and operational safety while keeping the equipment cost at about US$ 100. In essence, the iFPS provides a fundamental solution to the micro‑fermentation challenges encountered in synthetic biology.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure 12. 3D model of iFPS" %}
+
+{% include button.html link="../Hardware/" text="Go to Hardware Page" %}
 
 ## Reference
 
