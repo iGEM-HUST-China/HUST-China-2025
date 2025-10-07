@@ -107,7 +107,7 @@ window.MathJax = {
   }
 };
 </script>
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script async src="https://gitlab.igem.org/2025/hust-china/-/tree/main/wiki/static/model/js/tex-svg.js"></script>
 
 
 # 1.1 Molecular Docking
