@@ -1465,7 +1465,7 @@
                     <p class="section-text text-line">The global squalene market is expanding at <span class="highlight"><span class="number-counter" data-target="7.5">0</span>% annually</span>.</p>
                     <p class="section-text text-line">Driven by rising demand for natural skincare products and premium cosmetics.</p>
                     <div class="image-container">
-                        <img src="https://static.igem.wiki/teams/5569/description/jiaoshaxinumber.webp" alt="Market" class="section-image image-animated">
+                        <img src="https://static.igem.wiki/teams/5569/description/squlanechart.webp" alt="Market" class="section-image image-animated">
                     </div>
                 </div>
             </div>
@@ -1723,10 +1723,10 @@
             
             // 如果动图加载失败，直接显示页面
             loadingGif.addEventListener('error', function() {
-                document.body.classList.add('loaded');
-                setTimeout(function() {
-                    loadingAnimation.remove();
-                }, 500);
+                    document.body.classList.add('loaded');
+                    setTimeout(function() {
+                        loadingAnimation.remove();
+                    }, 500);
             });
             
             // 安全措施：如果4秒后动图仍未加载，强制显示页面
@@ -1777,12 +1777,19 @@
             let rotationSpeed = 0;
             let isRotating = false;
             let rotationAnimationId = null;
-
+    
             // 图片切换状态
             let isFaceImage1 = true;
             const faceImage1 = 'https://static.igem.wiki/teams/5569/description/face11.webp';
             const faceImage2 = 'https://static.igem.wiki/teams/5569/description/face2.webp';
-
+    
+            // 触摸滑动相关变量
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let touchEndX = 0;
+            let touchEndY = 0;
+            const minSwipeDistance = 50; // 最小滑动距离
+    
             // 新增打字机效果
             const typewriterText = document.getElementById('typewriter-text');
             const texts = [
@@ -1828,7 +1835,7 @@
             
             // 启动打字机效果
             setTimeout(typeWriter, 1000);
-
+    
             // 图片切换功能 - 点击后显示延伸线和扩展图片
             let isExtensionVisible = false;
             
@@ -1850,12 +1857,12 @@
                     imageSwitcher.classList.remove('active');
                 }
             });
-
+    
             // 导航栏Logo点击跳转
             navLogo.addEventListener('click', function() {
                 window.location.href = 'index.html';
             });
-
+    
             // 回到顶部按钮点击事件
             backToTop.addEventListener('click', function() {
                 currentSection = 0;
@@ -1865,7 +1872,7 @@
                 footerContainer.classList.remove('active');
                 scrollToSection(currentSection);
             });
-
+    
             // 数字计数器函数 - 加快速度
             function animateNumberCounter(counter, target, duration = 800) {
                 let start = 0;
@@ -1884,27 +1891,27 @@
                 
                 updateCounter();
             }
-
+    
             // 自定义鼠标指针移动
             document.addEventListener('mousemove', function(e) {
                 customCursor.style.left = e.clientX + 'px';
                 customCursor.style.top = e.clientY + 'px';
                 customCursor.classList.add('cursor-visible');
             });
-
+    
             // 鼠标离开窗口事件
             document.addEventListener('mouseleave', () => {
                 customCursor.classList.remove('cursor-visible');
             });
-
+    
             // 鼠标进入窗口事件
             document.addEventListener('mouseenter', () => {
                 customCursor.classList.add('cursor-visible');
             });
-
+    
             // 为可交互元素添加悬停效果
             const interactiveElements = document.querySelectorAll('a, button, .indicator-dot, [data-target], .back-to-top, .nav-image-item, .image-switcher');
-
+    
             interactiveElements.forEach(element => {
                 element.addEventListener('mouseenter', () => {
                     customCursor.classList.add('hover');
@@ -1914,16 +1921,16 @@
                     customCursor.classList.remove('hover');
                 });
             });
-
+    
             // 点击时的效果
             document.addEventListener('mousedown', () => {
                 customCursor.style.transform = 'scale(0.8)';
             });
-
+    
             document.addEventListener('mouseup', () => {
                 customCursor.style.transform = 'scale(1)';
             });
-
+    
             // 导航栏滚动效果 - 修复：始终显示导航栏
             function handleNavbarScroll() {
                 const currentScrollY = window.scrollY;
@@ -1952,7 +1959,7 @@
                 
                 lastScrollY = currentScrollY;
             }
-
+    
             // 旋转动画函数
             function startRotation() {
                 function rotate() {
@@ -1988,13 +1995,143 @@
                 
                 gradualStop();
             }
-
+    
+            // 触摸开始事件
+            document.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            });
+    
+            // 触摸结束事件
+            document.addEventListener('touchend', function(e) {
+                if (isScrolling) return;
+                
+                const now = Date.now();
+                if (now - lastScrollTime < scrollCooldown) return;
+                lastScrollTime = now;
+                
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                
+                handleSwipe();
+            });
+    
+            // 处理滑动逻辑
+            function handleSwipe() {
+                const deltaX = touchEndX - touchStartX;
+                const deltaY = touchEndY - touchStartY;
+                
+                // 计算旋转速度（基于滑动距离）
+                const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                rotationSpeed = Math.min(distance * 0.1, 30); // 限制最大速度
+                
+                // 开始旋转
+                if (!isRotating) {
+                    isRotating = true;
+                    startRotation();
+                }
+                
+                // 重置旋转停止计时器
+                clearTimeout(window.rotationStopTimer);
+                window.rotationStopTimer = setTimeout(stopRotation, 200);
+                
+                // 判断是水平滑动还是垂直滑动
+                if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
+                    // 水平滑动 - 主要用于横屏滚动部分
+                    if (currentSection === 4) { // Sources section (horizontal)
+                        if (!isHorizontalScrolling) {
+                            if (deltaX < 0 && currentHorizontalPage < 2) {
+                                // 向左滑动 (下一页)
+                                currentHorizontalPage++;
+                                scrollToHorizontalPage(currentHorizontalPage);
+                            } else if (deltaX > 0 && currentHorizontalPage > 0) {
+                                // 向右滑动 (上一页)
+                                currentHorizontalPage--;
+                                scrollToHorizontalPage(currentHorizontalPage);
+                            } else if (deltaX < 0 && currentHorizontalPage === 2) {
+                                // 滑动到下一节
+                                currentSection++;
+                                scrollToSection(currentSection);
+                            } else if (deltaX > 0 && currentHorizontalPage === 0) {
+                                // 滑动到上一节
+                                currentSection--;
+                                scrollToSection(currentSection);
+                            }
+                        }
+                    }
+                } else if (Math.abs(deltaY) > minSwipeDistance) {
+                    // 垂直滑动 - 用于竖屏滚动
+                    // 如果在页脚中
+                    if (isInFooter) {
+                        // 向上滑动时返回长页滚动
+                        if (deltaY > 0) {
+                            isInFooter = false;
+                            footerContainer.classList.remove('active');
+                            longScrollSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'end'
+                            });
+                        }
+                        return;
+                    }
+    
+                    // 如果在长页滚动中
+                    if (isInLongScroll) {
+                        // 检查是否滑动到顶部
+                        const longScrollTop = longScrollSection.offsetTop;
+                        const currentPosition = window.scrollY;
+                        
+                        if (deltaY > 0 && currentPosition <= longScrollTop + 50) {
+                            // 滑动到顶部，返回竖屏滚动
+                            isInLongScroll = false;
+                            longScrollSection.classList.remove('active');
+                            currentSection = 7; // 返回到Navigation部分
+                            scrollToSection(currentSection);
+                        } else if (deltaY < 0) {
+                            // 检查是否滑动到底部
+                            const longScrollBottom = longScrollSection.offsetTop + longScrollSection.offsetHeight;
+                            const currentPosition = window.scrollY + window.innerHeight;
+                            
+                            if (currentPosition >= longScrollBottom - 50) {
+                                // 滑动到底部，显示页脚
+                                isInFooter = true;
+                                footerContainer.classList.add('active');
+                                footerContainer.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }
+                        }
+                        return;
+                    }
+    
+                    // 竖屏滚动部分
+                    if (deltaY < 0 && currentSection < sections.length - 1) {
+                        // 向下滑动到下一节
+                        currentSection++;
+                        scrollToSection(currentSection);
+                    } else if (deltaY > 0 && currentSection > 0) {
+                        // 向上滑动到上一节
+                        currentSection--;
+                        scrollToSection(currentSection);
+                    } else if (deltaY < 0 && currentSection === sections.length - 1) {
+                        // 到达最后一节（Navigation），进入长页滚动
+                        isInLongScroll = true;
+                        longScrollSection.classList.add('active');
+                        longScrollSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            }
+    
             // 初始化
             updateActiveSection();
             animateCurrentSection();
             window.addEventListener('scroll', handleNavbarScroll);
             window.addEventListener('scroll', handleScrollAnimations);
-
+    
             // 滚动动画处理
             function handleScrollAnimations() {
                 if (!isInLongScroll && !isInFooter) return;
@@ -2009,7 +2146,7 @@
                     }
                 });
             }
-
+    
             // 鼠标滚轮事件 - 修复所有滚动问题
             document.addEventListener('wheel', function(e) {
                 if (isScrolling) return;
@@ -2031,7 +2168,7 @@
                 // 重置旋转停止计时器
                 clearTimeout(window.rotationStopTimer);
                 window.rotationStopTimer = setTimeout(stopRotation, 200);
-
+    
                 // 如果在页脚中
                 if (isInFooter) {
                     // 向上滚动时返回长页滚动
@@ -2045,7 +2182,7 @@
                     }
                     return;
                 }
-
+    
                 // 如果在长页滚动中
                 if (isInLongScroll) {
                     // 检查是否滚动到顶部
@@ -2075,7 +2212,7 @@
                     }
                     return;
                 }
-
+    
                 // 横屏滚动部分
                 if (currentSection === 4) { // Sources section (horizontal)
                     if (!isHorizontalScrolling) {
@@ -2118,7 +2255,7 @@
                     }
                 }
             });
-
+    
             // 导航点点击事件
             indicators.forEach(dot => {
                 dot.addEventListener('click', () => {
@@ -2165,7 +2302,7 @@
                     window.rotationStopTimer = setTimeout(stopRotation, 500);
                 });
             });
-
+    
             // 导航盒子点击事件 - 移除alert弹窗
             navBoxes.forEach(box => {
                 box.addEventListener('click', () => {
@@ -2174,7 +2311,7 @@
                     // 移除了alert弹窗
                 });
             });
-
+    
             // 导航图片点击事件
             navImageItems.forEach(item => {
                 item.addEventListener('click', () => {
@@ -2196,7 +2333,7 @@
                     }
                 });
             });
-
+    
             // 滚动到指定部分
             function scrollToSection(index) {
                 isScrolling = true;
@@ -2207,15 +2344,15 @@
                         block: 'start'
                     });
                 }
-
+    
                 updateActiveSection();
                 animateCurrentSection();
-
+    
                 setTimeout(() => {
                     isScrolling = false;
                 }, 1000);
             }
-
+    
             // 滚动到横屏页面
             function scrollToHorizontalPage(index) {
                 isHorizontalScrolling = true;
@@ -2225,7 +2362,7 @@
                     isHorizontalScrolling = false;
                 }, 800);
             }
-
+    
             // 更新活动部分
             function updateActiveSection() {
                 indicators.forEach(dot => dot.classList.remove('active'));
@@ -2238,7 +2375,7 @@
                     indicators[currentSection].classList.add('active');
                 }
             }
-
+    
             // 动画当前部分
             function animateCurrentSection() {
                 const current = sections[currentSection];
@@ -2253,7 +2390,7 @@
                 mosaicItems.forEach(item => {
                     item.classList.remove('visible');
                 });
-
+    
                 // 延迟触发动画
                 setTimeout(() => {
                     const currentTextLines = current.querySelectorAll('.text-line');
@@ -2262,21 +2399,21 @@
                             line.classList.add('visible');
                         }, index * 400);
                     });
-
+    
                     const currentImages = current.querySelectorAll('.image-animated');
                     currentImages.forEach((img, index) => {
                         setTimeout(() => {
                             img.classList.add('visible');
                         }, index * 600);
                     });
-
+    
                     const currentMosaicItems = current.querySelectorAll('.mosaic-item');
                     currentMosaicItems.forEach((item, index) => {
                         setTimeout(() => {
                             item.classList.add('visible');
                         }, index * 300);
                     });
-
+    
                     // 触发数字计数器动画
                     const currentNumberCounters = current.querySelectorAll('.number-counter');
                     currentNumberCounters.forEach((counter, index) => {
