@@ -13,6 +13,6 @@ All the pages are under construction, please check [description](description) pa
 {% include button.html text="Click here to see the Hardware page" link="../hardware/#user-feedback" %}
 
 {% include dropdown.html 
-   title="" 
-   content="" 
+   title="click here" 
+   content="you are very good！" 
 %}
