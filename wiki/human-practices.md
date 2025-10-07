@@ -29,7 +29,7 @@ Why: To understand from the source whether large-scale commercial shark fishing 
 
 What we learned:
 - No specialized shark fishing industry in Chinese coastal waters
-- Sharks caught are mostly "bycatch" during deep-sea operations
+- Sharks caught are mostly 'bycatch' during deep-sea operations
 - Oceana reports reveal threat to shark populations from cosmetics industry
 - National policies prohibit new construction of vessels primarily targeting sharks
 
@@ -41,7 +41,7 @@ How we adapted: Strengthened our fundamental stance on finding alternatives, anc
    content="Who we contacted: Proya Cosmetics, Wuhan Berca Biomedical, Hubei Hongfuda Biotechnology, and other industry players.
 
 What we learned:
-- Market strongly prefers “non-animal derived” ingredients
+- Market strongly prefers 'non-animal derived' ingredients
 - Extreme requirements for safety and stability
 - Insufficient supply is a real industry pain point
 
@@ -57,19 +57,21 @@ What we learned:
 - Industry urgently needs high-value conversion pathways
 - 20mg high-purity squalene worth 800 RMB vs 1kg biodiesel at 8.5 RMB
 
-How we adapted: Solidified core innovation of "upgrading waste oil to squalene," extending story from environmental protection to circular economy."
+How we adapted: Solidified core innovation of 'upgrading waste oil to squalene,' extending story from environmental protection to circular economy."
 %}
 
-### Project Positioning in "Fashion" Track
+{% include dropdown.html
+   title="Project Positioning in 'Fashion' Track"
+   content="Who we contacted: 200+ consumer questionnaire respondents.
 
-**Who we contacted:** 200+ consumer questionnaire respondents.
-
-**What we learned:**
+What we learned:
 - 75% of respondents had positive or curious first reaction
 - 68% concerned about safety
-- "Fashion Pioneer Story" (41%) most popular narrative preference
+- 'Fashion Pioneer Story' (41%) most popular narrative preference
 
-**How we adapted:** Positioned project in "Fashion" track, creating brand narrative combining technology, environmental protection, and lifestyle.
+How we adapted: Positioned project in 'Fashion' track, creating brand narrative combining technology, environmental protection, and lifestyle."
+%}
+
 
 ## Part II: Technical Path Construction & Key Iterations
 
