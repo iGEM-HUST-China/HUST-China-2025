@@ -21,84 +21,95 @@ excerpt: ""
 
 ## Part I: Problem Definition & Value Discovery
 
-### Confirming the Unsustainability of Animal-Derived Squalene
+{% include dropdown.html
+   title="Confirming the Unsustainability of Animal-Derived Squalene"
+   content="Who we contacted: Fisherman Uncle Sun from Weihai, Shandong; Oceana reports; Policies from China's Ministry of Agriculture and Rural Affairs.
 
-**Who we contacted:** Fisherman Uncle Sun from Weihai, Shandong; Oceana reports; Policies from China's Ministry of Agriculture and Rural Affairs.
+Why: To understand from the source whether large-scale commercial shark fishing for squalene exists in China's coastal areas.
 
-**Why:** To understand from the source whether large-scale commercial shark fishing for squalene exists in China's coastal areas.
-
-**What we learned:**
+What we learned:
 - No specialized shark fishing industry in Chinese coastal waters
-- Sharks caught are mostly "bycatch" during deep-sea operations
+- Sharks caught are mostly 'bycatch' during deep-sea operations
 - Oceana reports reveal threat to shark populations from cosmetics industry
 - National policies prohibit new construction of vessels primarily targeting sharks
 
-**How we adapted:** Strengthened our fundamental stance on finding alternatives, anchoring project value in ecological protection and sustainable development.
+How we adapted: Strengthened our fundamental stance on finding alternatives, anchoring project value in ecological protection and sustainable development."
+%}
 
-### Clarifying Industry Demand for Sustainable Ingredients
+{% include dropdown.html
+   title="Clarifying Industry Demand for Sustainable Ingredients"
+   content="Who we contacted: Proya Cosmetics, Wuhan Berca Biomedical, Hubei Hongfuda Biotechnology, and other industry players.
 
-**Who we contacted:** Proya Cosmetics, Wuhan Berca Biomedical, Hubei Hongfuda Biotechnology, and other industry players.
-
-**What we learned:**
-- Market strongly prefers "non-animal derived" ingredients
+What we learned:
+- Market strongly prefers 'non-animal derived' ingredients
 - Extreme requirements for safety and stability
 - Insufficient supply is a real industry pain point
 
-**How we adapted:** Defined final product as squalene and planned full third-party safety testing procedures.
+How we adapted: Defined final product as squalene and planned full third-party safety testing procedures."
+%}
 
-### Discovering High-Value Conversion Potential of Waste Oil
+{% include dropdown.html
+   title="Discovering High-Value Conversion Potential of Waste Oil"
+   content="Who we contacted: Zhejiang Zhengda Environmental Protection, waste oil recycling managers.
 
-**Who we contacted:** Zhejiang Zhengda Environmental Protection, waste oil recycling managers.
-
-**What we learned:**
+What we learned:
 - Current waste oil to biodiesel conversion has meager profits (~8.5 RMB/kg)
 - Industry urgently needs high-value conversion pathways
 - 20mg high-purity squalene worth 800 RMB vs 1kg biodiesel at 8.5 RMB
 
-**How we adapted:** Solidified core innovation of "upgrading waste oil to squalene," extending story from environmental protection to circular economy.
+How we adapted: Solidified core innovation of 'upgrading waste oil to squalene', extending story from environmental protection to circular economy."
+%}
 
-### Project Positioning in "Fashion" Track
+{% include dropdown.html
+   title="Project Positioning in 'Fashion' Track"
+   content="Who we contacted: 200+ consumer questionnaire respondents.
 
-**Who we contacted:** 200+ consumer questionnaire respondents.
-
-**What we learned:**
+What we learned:
 - 75% of respondents had positive or curious first reaction
 - 68% concerned about safety
-- "Fashion Pioneer Story" (41%) most popular narrative preference
+- 'Fashion Pioneer Story' (41%) most popular narrative preference
 
-**How we adapted:** Positioned project in "Fashion" track, creating brand narrative combining technology, environmental protection, and lifestyle.
+How we adapted: Positioned project in 'Fashion' track, creating brand narrative combining technology, environmental protection, and lifestyle."
+%}
 
 ## Part II: Technical Path Construction & Key Iterations
 
-### Ideal Chassis Organism Finalization
+{% include dropdown.html
+   title="Ideal Chassis Organism Finalization"
+   content="Consultation: Prof. Tang Qiang from USTC
 
-**Consultation:** Prof. Tang Qiang from USTC
+Key Insight: *Yarrowia lipolytica* is ideal choice - natural lipid metabolism capability and complete MVA pathway.
 
-**Key Insight:** *Yarrowia lipolytica* is ideal choice - natural lipid metabolism capability and complete MVA pathway.
+Adaptation: Formally selected *Yarrowia lipolytica* as project chassis."
+%}
 
-**Adaptation:** Formally selected *Yarrowia lipolytica* as project chassis.
+{% include dropdown.html
+   title="Lipase Introduction"
+   content="
+   `Consultation`: Prof. Yan Yunjun from HUST<br>
 
-### Lipase Introduction
+   `Problem`: Wild-type strain degradation efficiency insufficient<br>
 
-**Consultation:** Prof. Yan Yunjun from HUST
+   `Solution`: Introduced exogenous TLL lipase from *Aspergillus oryzae*"
+%}
 
-**Problem:** Wild-type strain degradation efficiency insufficient
+{% include dropdown.html
+   title="Rate-Limiting Enzyme Optimization"
+   content="
+   Consultation: Prof. Ning Kang from HUST
 
-**Solution:** Introduced exogenous TLL lipase from *Aspergillus oryzae*
+   Approach: Used ProteinMPNN and Rosetta for protein redesign to reduce conformational frustration and improve stability."
+%}
 
-### Rate-Limiting Enzyme Optimization
+{% include dropdown.html
+   title="Mining Novel HMGR Homologs"
+   content="
+   **Consultation:** Prof. Shi Mang from Sun Yat-sen University
 
-**Consultation:** Prof. Ning Kang from HUST
+   **Tool:** Integrated Foldseek for 3D structure-based homology search
 
-**Approach:** Used ProteinMPNN and Rosetta for protein redesign to reduce conformational frustration and improve stability.
-
-### Mining Novel HMGR Homologs
-
-**Consultation:** Prof. Shi Mang from Sun Yat-sen University
-
-**Tool:** Integrated Foldseek for 3D structure-based homology search
-
-**Method:** Set 90% structural consistency threshold for reliable functional inference
+   **Method:** Set 90% structural consistency threshold for reliable functional inference"
+%}
 
 ### Compartmentalization Strategy
 
