@@ -86,11 +86,11 @@ Adaptation: Formally selected *Yarrowia lipolytica* as project chassis."
 {% include dropdown.html
    title="Lipase Introduction"
    content="
-   Consultation: Prof. Yan Yunjun from HUST
+   `Consultation`: Prof. Yan Yunjun from HUST<br>
 
-   Problem: Wild-type strain degradation efficiency insufficient
+   `Problem`: Wild-type strain degradation efficiency insufficient<br>
 
-   Solution: Introduced exogenous TLL lipase from *Aspergillus oryzae*"
+   `Solution`: Introduced exogenous TLL lipase from *Aspergillus oryzae*"
 %}
 
 {% include dropdown.html
