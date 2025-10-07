@@ -84,4 +84,3 @@ The HUST-China team was awarded the National Gold Award for its previous project
 
 The competition provided us with a platform to interact with outstanding synthetic biology teams from across the nation. It served as an opportunity to discuss projects and share knowledge. Through these exchanges, we gained new technical insights and interdisciplinary perspectives, which have been incorporated into the refinement of this year's project plan.
 
-All the pages are under construction, please check [description](description) page for more information about this year's project briefly.
