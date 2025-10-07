@@ -40,6 +40,8 @@ excerpt: ""
 
 (3) The growth curves did not conform to the standard S-shaped curve of microbial growth; although there was an upward trend, adjacent data fluctuated significantly.
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/fatase-sdspage.webp" caption="1" %}
+
 ### Cycle 1.1.2 Optimization of Hydrolysis Zone Verification
 
 #### Design
@@ -59,6 +61,8 @@ Overnight-cultured Po1f-fatase and wild-type strains were inoculated into phenol
 #### Learn
 
 The hydrolysis zone of Po1f-fatase was significantly larger and yellower than that of the wild-type strain. Both yeasts showed a trend of increasing hydrolysis zones and colonies over time, indicating that Po1f-fatase could degrade fats well and absorb them.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/fatase-sdspage.webp" caption="1" %}
 
 ### Cycle 1.2.1 Growth Condition Exploration
 
