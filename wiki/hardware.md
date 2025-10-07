@@ -43,10 +43,8 @@ Throughout development, we strictly adhered to standard hardware development pro
    content="The primary task in this phase is to precisely identify core issues within the current laboratory workflow. Through researcher interviews and observation of experimental procedures, we pinpointed the project's pain points Based on this, we defined the core design requirements for the device and established the ultimate objectives to be achieved. All design decisions stem from these requirements."
 %}
 
-{% include dropdown.html
-   title="**Phase 2: Existing Solutions and Technology Research**"
-   content="This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative single-motor-driven multi-mode switching" solution."
-%}
+**Phase 2: Existing Solutions and Technology Research**
+This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative single-motor-driven multi-mode switching" solution.
 
 This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative single-motor-driven multi-mode switching" solution.
  
