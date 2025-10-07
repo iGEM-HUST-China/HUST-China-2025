@@ -20,13 +20,22 @@ images02:
 ## Overview
 In the current fields of molecular biology, synthetic biology, proteomics, and biopharmaceuticals, microbial cultivation and the extraction of intracellular active substances constitute fundamental and critical experimental steps. However, existing technical workflows face significant bottlenecks:
 
-  **1. High equipment cost:** Our field research indicates that mainstream micro-fermentation tank equipment on the market is expensive, creating a significant barrier to entry.
+{% include dropdown.html
+   title="1. High equipment cost:"
+   content="Our field research indicates that mainstream micro-fermentation tank equipment on the market is expensive, creating a significant barrier to entry."
+%}
 
-  **2. Complex operation and challenging real-time monitoring:** During experiments, we found that real-time monitoring remains difficult with such equipment. Researchers must still invest significant time in manual operations and prolonged monitoring, especially requiring continuous oversight during nighttime hours. This substantially impacts experimental efficiency and increase researcher workload. Furthermore, existing workflows rely on multiple disparate devices working in tandem, resulting in cumbersome procedures with poor reproducibility.
+{% include dropdown.html
+   title="2. Complex operation and challenging real-time monitoring:"
+   content="During experiments, we found that real-time monitoring remains difficult with such equipment. Researchers must still invest significant time in manual operations and prolonged monitoring, especially requiring continuous oversight during nighttime hours. This substantially impacts experimental efficiency and increase researcher workload. Furthermore, existing workflows rely on multiple disparate devices working in tandem, resulting in cumbersome procedures with poor reproducibility."
+%}
 
-  **3. High contamination risk:** Both existing shake flask and micro-fermentation methods require manual sampling, resulting in elevated overall contamination risks that severely compromise research stability and efficiency.
+{% include dropdown.html
+   title="3. High contamination risk:"
+   content="Both existing shake flask and micro-fermentation methods require manual sampling, resulting in elevated overall contamination risks that severely compromise research stability and efficiency."
+%}
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure 1.1 3.1.1	Overall Presentation Diagram" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure1.1	Overall Presentation Diagram" %}
 
 To systematically address these challenges, our project team innovatively proposed the design of an "**Integrated Fermentation & Processing System (iFPS)**" based on real-world research needs. This system deeply integrates mechatronics and intelligent control technologies, seamlessly combining three core functional modules---micro-fermentation culture, high-speed centrifugal collection, and mechanical agitation disruption---into a single compact benchtop device. This achieves true end-to-end automation from "post-inoculation" to "crude lysate collection." The system not only significantly enhances experimental consistency and operational safety but also keeps equipment costs around **\$100**-**just 1% of the cost of existing micro-fermentation devices.** fundamentally solving problems points in synthetic biology practice---namely high costs, low efficiency, and heavy reliance on manual labor.
 
@@ -38,14 +47,10 @@ Throughout development, we strictly adhered to standard hardware development pro
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h36.webp" caption="Figure 1.2 R&D Process Diagram" %}
 
-{% include dropdown.html
-   title="**Phase 1: Defining Requirements and Pain Points**"
-   content="The primary task in this phase is to precisely identify core issues within the current laboratory workflow. Through researcher interviews and observation of experimental procedures, we pinpointed the project's pain points Based on this, we defined the core design requirements for the device and established the ultimate objectives to be achieved. All design decisions stem from these requirements."
-%}
+**Phase 1: Defining Requirements and Pain Points**
+The primary task in this phase is to precisely identify core issues within the current laboratory workflow. Through researcher interviews and observation of experimental procedures, we pinpointed the project's pain points Based on this, we defined the core design requirements for the device and established the ultimate objectives to be achieved. All design decisions stem from these requirements.
 
 **Phase 2: Existing Solutions and Technology Research**
-This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative single-motor-driven multi-mode switching" solution.
-
 This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative single-motor-driven multi-mode switching" solution.
  
 **Phase 3: Mechanical and System Prototyping**

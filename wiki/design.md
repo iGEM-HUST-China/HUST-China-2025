@@ -64,5 +64,4 @@ While considering synthesizing squalene in peroxisomes, we also proposed the ide
 
 The Squoilene project provides a complete and feasible compartmentalization strategy for the MVA pathway. Using squalene as a precursor, numerous terpenoids have the potential to be produced through the construction of subcellular factories using compartmentalization strategies. Many terpenes currently sourced from plants, animals, or the chemical industry for cosmetics and other sectors could be obtained in a more environmentally friendly and stable manner. We hope that the strategies and iterative solutions developed by Squoilene for squalene synthesis will inspire more iGEM teams to focus on the cosmetics industry and motivate them to undertake more creative work. Although many factors still affect practical application, we believe this will unlock the often-overlooked potential of synthetic biology in the fashion field and promote the greening and sustainability of the fashion industry.
 
----
-**Design Description: Mature Design**
+

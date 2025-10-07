@@ -38,9 +38,9 @@ With increasing age, endogenous production of squalene declines, leading to redu
 
 ### Expanding Market for Moisturizers
 
-The fashion and beauty sector is experiencing unprecedented growth and globalization. In 2024, the beauty market—defined to include skincare, fragrances, make‑up and hair‑care products—generated approximately US$ 491 billion in revenue and is projected to reach around US$ 694 billion by 2030, with an estimated annual growth rate of about 6 % <sup>2</sup>.
+The fashion and beauty sector is experiencing unprecedented growth and globalization. In 2024, the beauty market—defined to include skincare, fragrances, make‑up and hair‑care products—generated approximately 491 billion dollars in revenue and is projected to reach around 694 billion dollars by 2030, with an estimated annual growth rate of about 6 % <sup>2</sup>.
 
-In the same year, the global market for moisturizing creams was valued at US$ 11.02 billion; it is forecast to grow to US$ 11.47 billion in 2025 and to US$ 16.71 billion by 2032, corresponding to a compound annual growth rate of 5.52 % <sup>3</sup>.
+In the same year, the global market for moisturizing creams was valued at 11.02 billion dollars; it is forecast to grow to 11.47 billion dollars in 2025 and to 16.71 billion dollars by 2032, corresponding to a compound annual growth rate of 5.52 % <sup>3</sup>.
 
 {% include figure2.html images=page.images02 %}
 
