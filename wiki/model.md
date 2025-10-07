@@ -19,13 +19,6 @@ Engineering peroxisomal protein targeting and rewiring central carbon metabolism
 
 To bridge this gap, we established a **hierarchical in silico pipeline** that acts as a digital twin of our PICasSO-inspired engineering strategy, enabling rational design and predictive prototyping.
 
-#### Molecular Layer — Peptide–Enzyme Docking
-
-
-#### Enzyme Layer — AI-Guided Sequence Redesign
-
-
-#### Systems Layer — Machine Learning Growth Modeling
 
 
 #### Integration and Impact
