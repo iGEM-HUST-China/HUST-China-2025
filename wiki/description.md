@@ -34,7 +34,7 @@ Squalene (C₃₀H₅₀) is a 30‑carbon triterpenoid containing six isoprenoi
 
 With increasing age, endogenous production of squalene declines, leading to reduced moisture retention in the skin and resulting in dryness and roughness. Cosmetics compensate for this natural decline by supplementing with squalene. Squalane, which has been demonstrated to prevent transepidermal water loss, diminish the appearance of fine lines and help prevent wrinkles, has therefore become a highly coveted ingredient <sup>1</sup>.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/squalene-fix.webp" caption="Figure 2. Schematic illustration of the role of squalene in skin hydration and repair." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/squlene-fix.webp" caption="Figure 2. Schematic illustration of the role of squalene in skin hydration and repair." %}
 
 ### Expanding Market for Moisturizers
 
