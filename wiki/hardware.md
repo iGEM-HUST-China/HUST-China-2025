@@ -85,7 +85,9 @@ Our hardware team has consistently focused on addressing practical challenges en
 
 **a. Fermentation Culture and Fluid Control: Enables strain expansion culture and employs flow switches to control two liquid release stages for microbial enrichment and transfer of concentrated culture.**
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh1.webp" caption="Figure 3.2.1 Schematic Diagram of Fermentation Condition Control Module" %}
-
+<div class="video">
+<iframe title="HUST-China: Hardware-Real shot of the motor (2025)" width="560" height="315" src="https://video.igem.org/videos/embed/nB2YrNVLdf8GfF9isd2DUp" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
+</div>
 - **Fermentation Condition Control Module:** Multiple designs at the top of the device primarily enable real-time monitoring and control of fermentation conditions.
 - A 42-step motor drives the stirrer and flow switch via bevel gear transmission. Three small ports accommodate: a pH sensor for real-time monitoring, a temperature sensor for fermentation conditions, and a blue light emitter to activate the strain's suicide switch, preventing microbial leakage. Two sidewall ports allow tubing to deliver solutions from a peristaltic pump for timed feed supplementation.
 
