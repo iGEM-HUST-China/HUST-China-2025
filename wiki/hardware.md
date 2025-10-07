@@ -129,7 +129,11 @@ Our hardware team has consistently focused on addressing practical challenges en
 -                                           *A* = *ε* • *c* • *l*
 
 - *A* : Absorbance; *ε*  : Molar absorptivity (L/(mol·cm)); *c*: Solution concentration (mol/L); *l*: Optical path length (cm)
-
+<center>
+  $$
+    \mathrm{2H_2O} + 2 e^- \rightarrow \mathrm{H_2} + \mathrm{OH^-}
+  $$
+</center>
 - It is evident that absorbance is directly proportional to solution concentration. A lower A value indicates a lower cell concentration in the supernatant. Therefore, our optimization objective is to achieve the lowest A value using the minimum rotational speed and shortest duration. The A contour plot indicates that all regions outside the shaded area represent viable [rotational speed: time] combinations.
 
 - The maximum speed of the purchased brushless motor under load, measured by an infrared sensor, is 840 rpm. Through a 1:3 speed reduction gear set, the speed can reach 2520 rpm. At this speed, centrifugation requires only about 3 minutes, maximizing economic efficiency.
