@@ -12,7 +12,6 @@ All the pages are under construction, please check [description](description) pa
 
 {% include button.html text="Click here to see the Hardware page" link="../hardware/#user-feedback" %}
 
-{% raw %}
 {% include dropdown.html 
    title="常见问题" 
    content="
@@ -25,4 +24,3 @@ All the pages are under construction, please check [description](description) pa
 - 第三点
 " 
 %}
-{% endraw %}
