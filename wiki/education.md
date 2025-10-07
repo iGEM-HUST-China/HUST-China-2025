@@ -16,9 +16,9 @@ HUST-China was invited to discuss the role of synthetic biology in driving the d
 
 We systematically elucidated the intrinsic connection between synthetic biology and new-quality productive forces, while analyzing and emphasizing the following key points:
 
-1.Synthetic biology surpasses traditional production methods by introducing editable, life-based manufacturing platforms.
+1.Synthetic biology surpasses traditional production methods by introducing editable, life-based manufacturing platforms.
 
-2.Compared to conventional processes, it significantly reduces energy consumption and waste generation, reflecting its efficiency in resource utilization and environmental sustainability.
+2.Compared to conventional processes, it significantly reduces energy consumption and waste generation, reflecting its efficiency in resource utilization and environmental sustainability.
 
 This interview showcased how synthetic biology contributes to sustainable industrial transformation．Looking forward, we foresee that the integration of synthetic biology with transformative technologies like artificial intelligence will profoundly accelerate the development of New Quality Productive Forces, unlocking breakthroughs in critical domains such as carbon neutrality, smart agriculture, and precision medicine.
 
@@ -59,11 +59,11 @@ CCiC is a premier event initiated by iGEM teams in mainland China, designed to p
 #### 2.2.2 Key Takeaways
 Over the three-day conference, our team gained immensely：
 
-1.By attending frontier presentations, we learned about the latest innovations in synthetic biology. 
+1.By attending frontier presentations, we learned about the latest innovations in synthetic biology. 
 
-2.Participating in round-table discussions, absorbing key competition insights and broadening our approach to project design and innovation. 
+2.Participating in round-table discussions, absorbing key competition insights and broadening our approach to project design and innovation. 
 
-3.During the parallel project presentation and poster sessions, we introduced our Squalene project to teams nationwide, garnering significant attention. While observing the presentations of multiple teams, we learned narrative techniques crucial for effectively communicating a project's core value and creative points.
+3.During the parallel project presentation and poster sessions, we introduced our Squalene project to teams nationwide, garnering significant attention. While observing the presentations of multiple teams, we learned narrative techniques crucial for effectively communicating a project's core value and creative points.
 
 We also actively engaged with other teams' progress and delved into in-depth discussions at the poster zone, where vibrant conversations on experimental design, modeling, and human practices led to constructive feedback and the sharing of invaluable experiences.
 
