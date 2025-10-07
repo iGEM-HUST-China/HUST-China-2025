@@ -9,9 +9,4 @@ excerpt: ""
 ## This page is our protocol.
 
 You can download our detailed protocol PDF here:
-[Download the Prtocol PDF](https://gitlab.igem.org/2025/hust-china/-/blob/main/Protocols.pdf)
-
-{% include dropdown.html
-   title="nihao"
-   content="i love igem"
-%}
+[Download the Prtocol PDF](https://gitlab.igem.org/2025/hust-china/-/blob/main/Protocols.pdf?ref_type=heads)
