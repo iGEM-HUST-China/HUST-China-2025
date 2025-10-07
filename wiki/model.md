@@ -607,17 +607,31 @@ and (2) expanding the dataset to include multiple carbon sources and nutrient re
 
 Overall, this framework establishes a generalizable approach for predictive and interpretable growth modelling in *Y. lipolytica*, which can be further enhanced by integrating dynamic information and environmental complexity.
 
----
-
-**References**
-
-1. Zwietering MH, Jongenburger I, Rombouts FM, van ’t Riet K. Modeling of the bacterial growth curve. *Appl Environ Microbiol.* 1990;56(6):1875–81.  
-2. Gibson AM, Bratchell N, Roberts TA. The effect of sodium chloride and temperature on the rate and extent of growth of *Clostridium botulinum* type A. *J Appl Bacteriol.* 1988;65(2):95–108.  
-3. Ratkowsky DA, Olley J, McMeekin TA, Ball A. Relationship between temperature and growth rate of bacterial cultures. *J Bacteriol.* 1982;149(1):1–5.  
-4. Gupta S, Mozaffar H, Syed A, et al. Machine learning models for microbial growth prediction under environmental stress. *Biotechnol Bioeng.* 2020;117(12):3727–38.  
-5. Buchanan RL, Whiting RC, Damert WC. When is simple good enough: a comparison of the Gompertz, logistic, and other empirical models for fitting bacterial growth curves. *Food Microbiol.* 1997;14(4):313–26.  
-6. Desai M, Udupa S, Chatterjee S, Sarma SJ. A hybrid machine learning framework for predictive bioprocess modeling using ensemble tree algorithms. *Comput Chem Eng.* 2022;157:107675.  
-7. Rajamanickam S, Misra BB. Machine learning-based prediction of microbial growth under multiple environmental conditions. *Front Microbiol.* 2021;12:713517.  
-8. Yang H, He F, Liu J, et al. Integration of mechanistic models and machine learning improves prediction accuracy in microbial fermentation. *Biotechnol J.* 2023;18(4):2200604.  
-9. Larroude M, Rossignol T, Nicaud JM, Ledesma-Amaro R. Synthetic biology tools for engineering *Yarrowia lipolytica*. *Biotechnol Adv.* 2018;36(8):2150–64.  
-10. Qiao K, Abidi SHI, Liu H, Zhang H, Chakraborty S, Zhang L, Tang Y. Engineering lipid overproduction in the oleaginous yeast *Yarrowia lipolytica*. *Metab Eng.* 2015;29:56–65.
+## References
+1. Gould SJ, Keller GA, Hosken N, Wilkinson J, Subramani S. *A conserved tripeptide sorts proteins to peroxisomes.* **J Cell Biol.** 1989;108(5):1657–1664.  
+2. Brocard C, Hartig A. *Peroxisome targeting signal 1: Is it really a simple tripeptide?* **Biochim Biophys Acta.** 2006;1763(12):1565–1573.  
+3. Lametschwandtner G, Brocard C, Fransen M, Van Veldhoven PP, Berger J, Hartig A. *The difference in recognition of PTS1 and PTS2 signals is conserved between yeast and mammals.* **EMBO J.** 1998;17(21):5948–5958.  
+4. Neuberger G, Maurer-Stroh S, Eisenhaber B, Hartig A, Eisenhaber F. *Prediction of peroxisomal targeting signal 1–containing proteins from amino acid sequence.* **J Mol Biol.** 2003;328(3):581–592.  
+5. Dominguez C, Boelens R, Bonvin AMJJ. *HADDOCK: A protein–protein docking approach based on biochemical or biophysical information.* **J Am Chem Soc.** 2003;125(7):1731–1737.  
+6. van Zundert GCP, Rodrigues JPG, Trellet M, Schmitz C, Kastritis PL, Karaca E, *et al.* *The HADDOCK2.4 web server: user-friendly integrative modeling of biomolecular complexes.* **J Mol Biol.** 2016;428(4):720–725.  
+7. Rodrigues JPG, Trellet M, Schmitz C, Kastritis PL, Karaca E, Melquiond ASJ, Bonvin AMJJ. *Clustering biomolecular complexes by residue contacts similarity.* **Proteins.** 2012;80(7):1810–1817.  
+8. van Zundert GCP, Bonvin AMJJ. *Modeling protein–protein complexes using the HADDOCK webserver.* **Methods Mol Biol.** 2014;1137:163–179.  
+9. Dauparas J, Anishchenko I, Bennett N, *et al.* **Robust deep learning based protein sequence design using ProteinMPNN.** *Science.* 2022;378(6615):49–56.  
+10. Ferreiro DU, Hegler JA, Komives EA, Wolynes PG. **Localizing frustration in native proteins and protein assemblies.** *Proc Natl Acad Sci USA.* 2007;104(50):19819–19824.  
+11. Parra RG, Schafer NP, Radusky LG, Tsai MY, Guzovsky AB, Wolynes PG, Ferreiro DU. **Protein Frustratometer 2: a tool to localize energetic frustration in protein molecules, now with electrostatics.** *Nucleic Acids Res.* 2016;44(W1):W356–W360.  
+12. Tyka MD, Keedy DA, André I, Dimaio F, Song Y, Richardson DC, Richardson JS, Baker D. **Alternate states of proteins revealed by detailed energy landscape mapping.** *J Mol Biol.* 2011;405(2):607–618.  
+13. Leaver-Fay A, Tyka M, Lewis SM, Lange OF, Thompson J, Jacak R, Kaufman K, Renfrew PD, Smith CA, Sheffler W, *et al.* **ROSETTA3: An object-oriented software suite for the simulation and design of macromolecules.** *Methods Enzymol.* 2011;487:545–574.  
+14. Istvan ES, Deisenhofer J. **Structural mechanism for statin inhibition of HMG-CoA reductase.** *Science.* 2001;292(5519):1160–1164.  
+15. Miziorko HM. **Enzymes of the mevalonate pathway of isoprenoid biosynthesis.** *Arch Biochem Biophys.* 2011;505(2):131–143.  
+16. Liu Z, Gao Y, Chen J, Imanaka T, Bao J, Hua Q. **Metabolic engineering of *Yarrowia lipolytica* for the production of terpenoids.** *Metab Eng.* 2019;57:151–161.  
+17. Rodriguez GM, Hussain MS, Gambill L, Gao D, Yaguchi A, Blenner M. **Engineering *Yarrowia lipolytica* to produce fuels and chemicals from xylose.** *Biotechnol Bioeng.* 2016;113(11):2528–2538.  
+18. Zwietering MH, Jongenburger I, Rombouts FM, van ’t Riet K. Modeling of the bacterial growth curve. *Appl Environ Microbiol.* 1990;56(6):1875–81.  
+19. Gibson AM, Bratchell N, Roberts TA. The effect of sodium chloride and temperature on the rate and extent of growth of *Clostridium botulinum* type A. *J Appl Bacteriol.* 1988;65(2):95–108.  
+20. Ratkowsky DA, Olley J, McMeekin TA, Ball A. Relationship between temperature and growth rate of bacterial cultures. *J Bacteriol.* 1982;149(1):1–5.  
+21. Gupta S, Mozaffar H, Syed A, et al. Machine learning models for microbial growth prediction under environmental stress. *Biotechnol Bioeng.* 2020;117(12):3727–38.  
+22. Buchanan RL, Whiting RC, Damert WC. When is simple good enough: a comparison of the Gompertz, logistic, and other empirical models for fitting bacterial growth curves. *Food Microbiol.* 1997;14(4):313–26.  
+23. Desai M, Udupa S, Chatterjee S, Sarma SJ. A hybrid machine learning framework for predictive bioprocess modeling using ensemble tree algorithms. *Comput Chem Eng.* 2022;157:107675.  
+24. Rajamanickam S, Misra BB. Machine learning-based prediction of microbial growth under multiple environmental conditions. *Front Microbiol.* 2021;12:713517.  
+25. Yang H, He F, Liu J, et al. Integration of mechanistic models and machine learning improves prediction accuracy in microbial fermentation. *Biotechnol J.* 2023;18(4):2200604.  
+26. Larroude M, Rossignol T, Nicaud JM, Ledesma-Amaro R. Synthetic biology tools for engineering *Yarrowia lipolytica*. *Biotechnol Adv.* 2018;36(8):2150–64.  
+27. Qiao K, Abidi SHI, Liu H, Zhang H, Chakraborty S, Zhang L, Tang Y. Engineering lipid overproduction in the oleaginous yeast *Yarrowia lipolytica*. *Metab Eng.* 2015;29:56–65.

@@ -30,6 +30,10 @@ Throughout our human practices activities, we have identified a significant know
 
 In the "Huaxiaomiao" weekend class organized by the University Youth League Committee, Labor Union, and School of Life Science, we conducted engaging science outreach on synthetic biology for 28 science-loving primary students. Through well-designed interactive games and vivid analogies, we transformed complex gene expression structures and functional parts into comprehensible modules, allowing children to experience the unique appeal of synthetic biology in areas like environmental remediation through hands-on activities, sowing the seeds for future scientific talent.
 
+#### 1.2.2 Liren Community Summer Camp: Hands-on Experience in Genetic Design
+
+During the Liren Community Summer Camp, we innovatively presented principles of synthetic biology through game-based formats that appeal to children. During the activity, we deconstructed plasmid components into separate modular stickers, such as promoters, terminators, and functional genes. After acquiring essential theoretical knowledge before the game, the children could freely unleash their imagination—starting by building plasmids with basic functions and eventually combining various plasmids of different sizes and functions, transforming into junior "synthetic biology researchers." Depending on specific gene segments, some of the plasmids they created could absorb heavy metals, while others produced pigments, and so on. By simplifying functional units like promoters and genes into building block-like modules, we guided children to assemble these modules into "cells" after understanding basic concepts. This approach not only cultivated their systematic thinking and creativity but also demonstrated the core design philosophy of standardization and modularization in synthetic biology.
+
 #### 1.2.3 Professional Knowledge Seminar at Tianmen Middle School
 
 In the school science festival extension activity, we visited Tianmen Middle School in Hubei Province to provide professional science education to high school students. Through microscopic observation of our project's self-developed novel yeast strains and displays of macro samples on culture media, students gained intuitive understanding of synthetic biology's engineering capabilities. Volunteers from the iGEM team detailed the special functions and culture conditions of the strains, sparking strong interest in biotechnology among numerous students.
@@ -37,6 +41,20 @@ In the school science festival extension activity, we visited Tianmen Middle Sch
 #### 1.2.4 Promotional Tour at Wen Deng and Jiangxi Affiliated High Schools
 
 Several team members utilized winter break to revisit Wen Deng New First Middle School and Jiangxi Normal University Affiliated High School, delivering specialized presentations on synthetic biology to students and parents. At the project introduction session of Wen Deng District University Student Union and the promotion event at the affiliated high school, team members presented our team's annual work and achievements in iGEM competitions. Through systematic introduction of the discipline's research fields and development prospects, along with specific project explanations, they effectively enhanced middle school students' understanding of biotechnology. The enthusiastic interactions following the sessions reflected the young generation's strong interest in cutting-edge technology, establishing a solid foundation for talent development in this discipline.
+
+#### 1.2.5 Contributing to the "Debunking Synthetic Biology Myths" Collaborative Project
+
+Invited to contribute to the "Debunking Synthetic Biology Myths" science handbook co-compiled by 33 universities nationwide, our team fully leveraged our professional expertise to author authoritative explanations addressing common public misconceptions. This collaborative achievement significantly enhanced the accuracy and reach of science communication, demonstrating the social responsibility and professional commitment of iGEM teams in the field of scientific outreach.
+
+In this manual, we debunk three myths related to synthetic biology:
+
+1.Addressing the misunderstanding about biotechnology that "Synthetic biology is just 'Gene Editing'under a new name", we distinguish the operational differences between gene editing and synthetic biology. Unlike the single-point modifications of the former, synthetic biology emphasizes modularity and engineering principles, enabling biological systems to be designed and optimized like "building blocks".
+
+2.Regarding the misunderstanding and product safety concerns behind the question "You're using waste oil in your experiments--does that mean the waste oil ends up being sold as cosmetics?", we explain that through specific fermentation, yeast decomposes waste oil and reconstructs its molecules into entirely new, safe products (such as squalene). The final product has no direct connection to the waste oil used as raw material itself.
+
+3.In response to the opposition between "natural" and "man-made" reflected in the view that "Only natural products are truly healthy. Microbial-derived ingredients can't compare with those extracted from sharks or plants", we clarify from a microscopic perspective that squalene synthesized by microorganisms is chemically identical to its natural counterpart. It is not only environmentally friendly but also ensures a stable supply of high-purity raw materials.
+
+This collaborative achievement significantly enhanced the accuracy and reach of science communication, demonstrating the social responsibility and professional commitment of iGEM teams in the field of scientific outreach.
 
 ## 2.Communication 
 ### 2.1 Communicate with BIT-China iGEM team
@@ -84,4 +102,3 @@ The HUST-China team was awarded the National Gold Award for its previous project
 
 The competition provided us with a platform to interact with outstanding synthetic biology teams from across the nation. It served as an opportunity to discuss projects and share knowledge. Through these exchanges, we gained new technical insights and interdisciplinary perspectives, which have been incorporated into the refinement of this year's project plan.
 
-All the pages are under construction, please check [description](description) page for more information about this year's project briefly.
