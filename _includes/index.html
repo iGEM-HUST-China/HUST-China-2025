@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | iGEM HUST-China 2025</title>
     <style>
-        /* 加载动画样式 - 修改为WebP动图 */
+        /* 加载动画样式 */
         #loading-animation {
             position: fixed;
             top: 0;
@@ -30,7 +31,7 @@
             visibility: hidden;
         }
         
-        /* 原有样式保持不变 */
+        /* 基础样式 */
         * {
             margin: 0;
             padding: 0;
@@ -59,7 +60,7 @@
             cursor: none;
         }
 
-        /* 优化后的鼠标指针 - 金色水滴形状 */
+        /* 自定义鼠标指针 */
         .custom-cursor {
             position: fixed;
             top: 0;
@@ -84,7 +85,6 @@
             height: 100%;
             background: radial-gradient(circle at 50% 70%, var(--light-gold) 0%, var(--gold) 100%);
             border-radius: 50% 50% 50% 50%;
-            /* 水滴形状 - 上尖下圆 */
             clip-path: polygon(
                 50% 0%, 
                 65% 15%,
@@ -116,12 +116,12 @@
             }
         }
 
-        /* 悬停时的效果 */
         .custom-cursor.hover {
             transform: scale(1.3);
             filter: brightness(1.2);
         }
 
+        /* 导航栏样式 */
         .navbar {
             position: fixed;
             top: 0;
@@ -157,13 +157,12 @@
             transition: transform 0.6s ease;
         }
 
-        /* 导航栏链接容器 - 疯狂左移 */
         .nav-links-container {
             display: flex;
             justify-content: flex-end;
             flex: 1;
             padding-right: 8.8rem;
-}
+        }
 
         .nav-links {
             display: flex;
@@ -194,7 +193,7 @@
         }
 
         .nav-link:hover {
-            color: #0e391d; /* 悬停时变为 #4A7C51 */
+            color: #0e391d;
         }
 
         .nav-link.current {
@@ -202,15 +201,9 @@
         }
 
         .nav-link.current:hover {
-            color: #0e391d; /* 当前项悬停也变为 #4A7C51 */
+            color: #0e391d;
         }
 
-        /* 移除底部的绿色线 */
-        .nav-link::after {
-            display: none;
-        }
-
-        /* 下拉箭头样式 */
         .nav-link .icon-down {
             display: inline-block;
             vertical-align: middle;
@@ -225,7 +218,6 @@
             transform: rotate(180deg);
         }
 
-        /* 下拉菜单样式 */
         .dropdown {
             position: absolute;
             top: 100%;
@@ -254,7 +246,7 @@
         .dropdown-link {
             display: block;
             padding: 0.8rem 1.5rem;
-            color: #28b17f; /* 初始颜色改为 #28b17f */
+            color: #28b17f;
             text-decoration: none;
             transition: all 0.3s ease;
             font-size: 1.1rem;
@@ -265,107 +257,11 @@
         }
 
         .dropdown-link:hover {
-            color: #0e391d; /* 悬停时变为 #0e391d */
-            background: rgba(248, 244, 233, 0.95); /* 移除绿色背景，保持原背景 */
-            padding-left: 0.8rem; /* 恢复原始padding */
-            padding-right: 1.5rem; /* 恢复原始padding */
-        }
-
-        /* 移动端响应式样式 */
-        .button--nav {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
             color: #0e391d;
-            font-size: 1.5rem;
+            background: rgba(248, 244, 233, 0.95);
+            padding-left: 0.8rem;
+            padding-right: 1.5rem;
         }
-
-        @media screen and (max-width: 640px) {
-            .navbar {
-                display: flex;
-                flex-direction: column;
-                padding: 0.5rem 0;
-            }
-    
-        .button--nav {
-            display: inline-block;
-            box-shadow: none !important;
-            position: absolute;
-            right: 1.5rem;
-            top: 1.5rem;
-        }
-    
-        .nav-logo {
-            padding-left: 2rem;
-            align-self: flex-start;
-        }
-    
-        .nav-logo img {
-            height: 80px;
-        }
-    
-        .nav-links-container {
-            width: 100%;
-            max-width: 100%;
-            display: none;
-            padding-right: 0;
-            margin-left: 0; /* 移动端恢复正常位置 */
-        }
-    
-        .nav-links-container.active {
-            display: flex;
-        }
-    
-        .nav-links {
-            flex-direction: column;
-            width: 100%;
-            gap: 0;
-            padding: 1rem 0;
-        }
-    
-        .nav-item {
-            width: 100%;
-            text-align: center;
-            padding: 0.8rem 0;
-        }
-    
-        .nav-link {
-            justify-content: center;
-            font-size: 1.3rem;
-            font-weight: 500;
-        }
-    
-        .dropdown {
-            position: static;
-            width: 90%;
-            margin: 0.5rem auto;
-            transform: none;
-            opacity: 1;
-            visibility: visible;
-            display: none;
-            background: rgba(248, 244, 233, 0.8);
-        }
-    
-        .nav-item:hover .dropdown,
-        .nav-item.active .dropdown {
-            display: block;
-        }
-    
-        .dropdown-link {
-            text-align: center;
-            padding: 0.7rem 1rem;
-            font-size: 1.1rem;
-            font-weight: 400;
-        }
-    }
-
-    @media screen and (min-width: 640px) {
-        .button--nav {
-            display: none;
-        }
-    }
 
         /* 滚动指示器 */
         .scroll-indicator {
@@ -542,7 +438,7 @@
             background-image: url('https://static.igem.wiki/teams/5569/index/gongchang.webp');
         }
 
-        /* 各场景背景 - 统一背景图与内容图 */
+        /* 各场景背景 */
         #cover::before {
             background-image: url('https://static.igem.wiki/teams/5569/description/fengmiannew1.webp');
             opacity: 1;
@@ -592,7 +488,7 @@
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
-            padding-top: 3rem; /* 增加顶部内边距避免被导航栏遮挡 */
+            padding-top: 3rem;
         }
 
         .section-title {
@@ -666,19 +562,18 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
-        /* 图片切换器样式 - 添加放大镜效果 */
+        /* 图片切换器样式 */
         .image-switcher {
             position: relative;
             cursor: pointer;
             display: inline-block;
-            overflow: visible; /* 允许延伸线超出容器 */
+            overflow: visible;
         }
 
-        /* 延伸线和扩展图片容器 */
         .image-extension {
             position: absolute;
             top: 50%;
-            right: -20px; /* 从图片右侧开始 */
+            right: -20px;
             transform: translateY(-50%);
             opacity: 0;
             visibility: hidden;
@@ -692,10 +587,9 @@
         .image-switcher.active .image-extension {
             opacity: 1;
             visibility: visible;
-            right: -100px; /* 移动到图片右侧适当距离 */
+            right: -100px;
         }
 
-        /* 延伸线 */
         .extension-line {
             width: 40px;
             height: 2px;
@@ -721,7 +615,6 @@
             50% { transform: translateX(70px); opacity: 0.3; }
         }
 
-        /* 扩展图片 */
         .extension-image {
             width: 300px;
             height: 200px;
@@ -791,7 +684,7 @@
             50% { border-color: #2E5D32; }
         }
 
-        /* 多样化布局样式 */
+        /* 分屏布局样式 */
         .split-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -800,7 +693,7 @@
             height: 100%;
             padding: 4rem;
             align-items: center;
-            padding-top: 5rem; /* 增加顶部内边距避免被导航栏遮挡 */
+            padding-top: 5rem;
         }
 
         .split-text {
@@ -813,7 +706,7 @@
             align-items: center;
         }
 
-        /* 马赛克布局样式 - 已修改为与其它页面一致的格式 */
+        /* 马赛克布局样式 */
         .mosaic-layout {
             display: flex;
             flex-direction: column;
@@ -822,7 +715,7 @@
             padding: 4rem;
             position: relative;
             justify-content: center;
-            padding-top: 3rem; /* 增加顶部内边距避免被导航栏遮挡 */
+            padding-top: 3rem;
         }
 
         .mosaic-content {
@@ -883,7 +776,7 @@
         .cover-content {
             text-align: center;
             z-index: 2;
-            margin-top: 4rem; /* 下移避免被导航栏遮挡 */
+            margin-top: 4rem;
         }
 
         .cover-title {
@@ -933,7 +826,7 @@
             background: var(--light-cream);
             position: relative;
             padding: 4rem;
-            display: none; /* 初始隐藏 */
+            display: none;
         }
 
         .long-scroll-section.active {
@@ -946,7 +839,7 @@
             padding: 2rem;
         }
 
-        /* 交替布局 - 修复左右交替效果，添加向中间靠拢的动画 */
+        /* 交替布局 */
         .alternating-layout {
             display: flex;
             align-items: center;
@@ -976,7 +869,7 @@
             padding: 2rem;
             opacity: 0;
             transform: translateX(-50px);
-            transition: all 0.8s ease 0.3s; /* 延迟出现 */
+            transition: all 0.8s ease 0.3s;
         }
 
         .alternating-image {
@@ -986,7 +879,7 @@
             align-items: center;
             opacity: 0;
             transform: translateX(50px);
-            transition: all 0.8s ease 0.3s; /* 延迟出现 */
+            transition: all 0.8s ease 0.3s;
         }
 
         .alternating-layout.visible .alternating-text,
@@ -1019,7 +912,8 @@
             line-height: 1.7;
             color: #444;
         }
-        /* 导航图片样式调整 - 五张并排 */
+
+        /* 导航图片样式 */
         .nav-images {
             display: flex;
             justify-content: center;
@@ -1036,11 +930,11 @@
             padding: 1rem;
             border-radius: 0px;
             background: transparent;
-            flex-shrink: 0; /* 防止图片被压缩 */
+            flex-shrink: 0;
         }
 
         .nav-image-item img {
-            width: 170px; /* 调整为适合五张并排的大小 */
+            width: 170px;
             height: 255px;
             margin-bottom: 0rem;
         }
@@ -1050,63 +944,34 @@
             font-weight: 600;
             color: #2E5D32;
             margin: 0;
-            white-space: nowrap; /* 防止文字换行 */
+            white-space: nowrap;
         }
 
-/* 响应式设计 - 在小屏幕上调整 */
-@media (max-width: 768px) {
-    .nav-images {
-        gap: 1rem;
-    }
-    
-    .nav-image-item img {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .nav-image-item p {
-        font-size: 0.9rem;
-    }
-}
-
-/* 响应式设计 - 在小屏幕上调整 */
-@media (max-width: 768px) {
-    .nav-images {
-        gap: 1rem;
-    }
-    
-    .nav-image-item img {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .nav-image-item p {
-        font-size: 0.9rem;
-    }
-}
-   
-    .video {
+        /* 视频样式 */
+        .video {
             display: flex;
-            justify-content: center; /* 水平居中 */
-            align-items: center;     /* 垂直居中 */
-            margin: 80px auto;       /* 上下80px，左右自动 */
+            justify-content: center;
+            align-items: center;
+            margin: 80px auto;
             flex-wrap: wrap;
             border-radius: 8px;
             width: 680px;
             height:435px;
-            padding: 10px; /* 边框厚度 */
+            padding: 10px;
             background: #ecc679;
         }
 
         /* 页脚样式 */
         .footer-container {
-            width: 100%;
-            margin-top: auto;
-            display: none; /* 初始隐藏 */
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            max-width: 100vw;
+            overflow: hidden;
+            display: none;
         }
         
         .footer-container.active {
-            display: block; /* 只有激活时才显示 */
+            display: block;
         }
         
         footer {
@@ -1114,21 +979,23 @@
             background-color: #aadec3;
             position: relative;
             overflow: hidden;
-            min-height: 80vh; /* 高度足够大，确保背景图显示 */
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
         }
         
-        /* 背景图样式 - 横向铺满，无左右边距 */
         .footer-bg {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 100vw;
             height: 100%;
             background-image: url('https://static.igem.wiki/teams/5569/description/ditu.webp');
-            background-size: cover; /* 铺满宽度，可能裁切上下 */
-            background-position: top center; /* 顶部居中 */
+            background-size: cover;
+            background-position: top center;
             background-repeat: no-repeat;
             z-index: 0;
         }
@@ -1140,7 +1007,7 @@
             justify-content: space-between;
             align-items: flex-end;
             flex-grow: 1;
-            padding: 40px 0 60px; /* 去掉左右 padding，避免背景留白 */
+            padding: 40px 0 60px;
             font-weight: bold;
         }
         
@@ -1148,7 +1015,7 @@
             display: flex;
             gap: 40px;
             align-items: flex-end;
-            padding-left: 20vw; /* 只给内容加左侧间距 */
+            padding-left: 20vw;
         }
         
         .logos img {
@@ -1162,7 +1029,7 @@
         .contact-info {
             text-align: right;
             color: #0c0c0c;
-            padding-right: 2vw; /* 只给内容加右侧间距 */
+            padding-right: 2vw;
         }
         
         .contact-info h3 {
@@ -1205,99 +1072,113 @@
         }
 
         /* 响应式设计 */
-        @media (max-width: 768px) {
-            .clean-layout, .split-layout, .mosaic-layout {
-                padding: 2rem;
-                padding-top: 4rem; /* 移动端也保持顶部内边距 */
+        @media (max-width: 1200px) {
+            .nav-logo {
+                padding-left: 4rem;
             }
-            
+            .nav-links-container {
+                padding-right: 4rem;
+            }
             .section-title {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
-            
             .section-text {
                 font-size: 1.4rem;
             }
-            
-            .navbar {
-                padding: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-logo {
+                padding-left: 2rem;
             }
-            
-            .nav-links {
-                display: none;
+            .nav-links-container {
+                padding-right: 2rem;
             }
-            
-            .custom-cursor {
-                display: none;
+            .section-title {
+                font-size: 2.5rem;
             }
-            
-            .scroll-indicator {
-                right: 1rem;
+            .section-text {
+                font-size: 1.2rem;
             }
-            
             .cover-title {
                 font-size: 3rem;
             }
-            
-            .cover-subtitle {
-                font-size: 1.5rem;
-            }
-            
             .split-layout {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
             }
-            
             .mosaic-grid {
                 grid-template-columns: 1fr;
-                grid-template-rows: auto;
             }
-            
+            .navbar {
+                flex-direction: column;
+                padding: 0.5rem 0;
+            }
+            .nav-links-container {
+                width: 100%;
+                padding-right: 0;
+            }
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                gap: 0;
+            }
+            .nav-item {
+                width: 100%;
+                text-align: center;
+            }
+            .dropdown {
+                position: static;
+                width: 90%;
+                margin: 0.5rem auto;
+                transform: none;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+            }
+            .nav-item:hover .dropdown,
+            .nav-item.active .dropdown {
+                display: block;
+            }
+            .custom-cursor {
+                display: none;
+            }
+            .scroll-indicator {
+                right: 1rem;
+            }
             .back-to-top {
                 bottom: 20px;
                 right: 20px;
                 width: 45px;
                 height: 45px;
             }
-            
             .alternating-layout {
                 flex-direction: column;
                 margin-bottom: 4rem;
             }
-            
             .alternating-layout.reverse {
                 flex-direction: column;
             }
-            
             .alternating-text, .alternating-image {
                 padding: 1rem;
             }
-            
             .alternating-title {
                 font-size: 2rem;
             }
-            
             .nav-images {
                 grid-template-columns: 1fr;
             }
-            
             .nav-image-item img {
                 width: 120px;
                 height: 120px;
             }
-            
             .typewriter-text {
                 font-size: 1.4rem;
             }
-            
-            /* 移动端调整放大镜和延伸线效果 */
             .image-extension {
-                display: none; /* 移动端隐藏延伸效果 */
+                display: none;
             }
-            
-            .image-switcher:hover::after {
-                display: none; /* 移动端隐藏放大镜 */
-            }
-            
             footer {
                 min-height: 70vh;
             }
@@ -1321,15 +1202,36 @@
                 padding-right: 0;
             }
         }
+
+        @media (max-width: 480px) {
+            .nav-logo {
+                padding-left: 1rem;
+            }
+            .nav-links-container {
+                padding-right: 1rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .section-text {
+                font-size: 1rem;
+            }
+            .cover-title {
+                font-size: 2.5rem;
+            }
+            .clean-layout, .split-layout, .mosaic-layout {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- 加载动画 - 修改为WebP动图 -->
+    <!-- 加载动画 -->
     <div id="loading-animation">
         <img id="loading-gif" src="https://static.igem.wiki/teams/5569/description/jiazaizaizaizaizai.webp" alt="Loading animation">
     </div>
 
-    <!-- 自定义鼠标指针 - 优化后的金色油滴形状 -->
+    <!-- 自定义鼠标指针 -->
     <div class="custom-cursor">
         <div class="cursor-inner"></div>
     </div>
@@ -1426,8 +1328,8 @@
             <div class="clean-layout">
                 <div class="content-block">
                     <h2 class="section-title">The Squalene Story</h2>
-                    <p class="section-text text-line"><span class="highlight">Squalene</span> is a natural lipid compound found in shark liver and some plants.</p>
-                    <p class="section-text text-line">When hydrogenated, it becomes <span class="highlight">squalane</span> - a prized ingredient in premium skincare.</p>
+                    <p class="section-text text-line">In the list of core ingredients for high-end cosmetics and personal care products, the premium skincare ingredient squalane has always held a prominent position. And the starting point of it all stems from its precursor—squalene.</p>
+                    <p class="section-text text-line">Through a single hydrogenation step, squalene is transformed into the well-known skincare star, squalane.</p>
                     <div class="image-container">
                         <img src="https://static.igem.wiki/teams/5569/description/huazhuangpinnew.webp" alt="Squalene" class="section-image image-animated glowing">
                     </div>
@@ -1440,9 +1342,9 @@
             <div class="split-layout">
                 <div class="split-text">
                     <h2 class="section-title">Perfect Moisturization</h2>
-                    <p class="section-text text-line">Squalane creates a <span class="highlight">protective barrier</span> that locks in moisture while allowing skin to breathe.</p>
-                    <p class="section-text text-line">Exceptional compatibility with all skin types, from dry to oily.</p>
-                    <p class="section-text text-line">Rapidly absorbed without leaving a greasy residue.</p>
+                    <p class="section-text text-line">Squalane quickly penetrates the skin, forming a natural moisture-locking barrier and strengthening the skin barrier, while being suitable for almost all skin types.</p>
+                    <p class="section-text text-line">Such an ideal ingredient is favored by consumers worldwide.</p>
+                    <p class="section-text text-line">So, what kind of rapidly growing market is supporting the squalene that fuels its production?</p>
                 </div>
                 <div class="split-image">
                     <div class="image-switcher">
@@ -1463,7 +1365,8 @@
                 <div class="content-block">
                     <h2 class="section-title">Growing Demand</h2>
                     <p class="section-text text-line">The global squalene market is expanding at <span class="highlight"><span class="number-counter" data-target="7.5">0</span>% annually</span>.</p>
-                    <p class="section-text text-line">Driven by rising demand for natural skincare products and premium cosmetics.</p>
+                    <p class="section-text text-line">The global demand for squalene continues to rise, and its market size is expected to maintain significant growth in the coming years.</p>
+                    <p class="section-text text-line">Yet behind this trend lies a supply chain issue that cannot be overlooked: where exactly does the squalene supporting all this come from?</p>
                     <div class="image-container">
                         <img src="https://static.igem.wiki/teams/5569/description/squlanechart.webp" alt="Market" class="section-image image-animated">
                     </div>
@@ -1592,7 +1495,7 @@
     <!-- 长页滚动内容 -->
     <section id="details" class="long-scroll-section">
         <div class="scroll-content">
-            <!-- 第一个图文内容 - 添加向中间靠拢的动画 -->
+            <!-- 第一个图文内容 -->
             <div class="alternating-layout">
                 <div class="alternating-text">
                     <h2 class="alternating-title">Our Mission</h2>
@@ -1641,34 +1544,36 @@
                 <iframe title="HUST-China: SQUOILENE：Sustainable Squalene from Oil-based Waste via Engineered Y... (2025) - Project Promotion [English]" width="660" height="415" src="https://video.igem.org/videos/embed/3fBo6frtXKvvvnoY8pZHDP" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
             </div>
 
-            <!-- 导航图片部分 - 修改为5个导航项 -->
-        <div style="text-align: center; margin: 4rem 0;">
-            <h2 class="section-title">Explore More</h2>
-            <p class="section-text" style="max-width: 800px; margin: 0 auto 2rem;">Click on the sections below to learn more about different aspects of our project</p>
-    
-            <div class="nav-images">
-                <a href="description" class="nav-image-item">
-                    <img src="https://static.igem.wiki/teams/5569/description/description.webp" alt="Description">
-                    <p></p>
-                </a>
-                <a href="design" class="nav-image-item">
-                    <img src="https://static.igem.wiki/teams/5569/description/design.webp" alt="Design">
-                    <p></p>
-                </a>
-                <a href="hardware" class="nav-image-item">
-                    <img src="https://static.igem.wiki/teams/5569/description/hardware.webp" alt="Hardware">
-                    <p></p>
-                </a>
-                <a href="human-practices" class="nav-image-item">
-                    <img src="https://static.igem.wiki/teams/5569/description/human-practice.webp" alt="Human Practices">
-                    <p></p>
-                </a>
-                <a href="members" class="nav-image-item">
-                    <img src="https://static.igem.wiki/teams/5569/description/team.webp" alt="Team">
-                    <p></p>
-                </a>
+            <!-- 导航图片部分 -->
+            <div style="text-align: center; margin: 4rem 0;">
+                <h2 class="section-title">Explore More</h2>
+                <p class="section-text" style="max-width: 800px; margin: 0 auto 2rem;">Click on the sections below to learn more about different aspects of our project</p>
+        
+                <div class="nav-images">
+                    <a href="description" class="nav-image-item">
+                        <img src="https://static.igem.wiki/teams/5569/description/description.webp" alt="Description">
+                        <p></p>
+                    </a>
+                    <a href="design" class="nav-image-item">
+                        <img src="https://static.igem.wiki/teams/5569/description/design.webp" alt="Design">
+                        <p></p>
+                    </a>
+                    <a href="hardware" class="nav-image-item">
+                        <img src="https://static.igem.wiki/teams/5569/description/hardware.webp" alt="Hardware">
+                        <p></p>
+                    </a>
+                    <a href="human-practices" class="nav-image-item">
+                        <img src="https://static.igem.wiki/teams/5569/description/human-practice.webp" alt="Human Practices">
+                        <p></p>
+                    </a>
+                    <a href="members" class="nav-image-item">
+                        <img src="https://static.igem.wiki/teams/5569/description/team.webp" alt="Team">
+                        <p></p>
+                    </a>
+                </div>
             </div>
         </div>
+    
     
     <!-- 页脚 -->
     <div class="footer-container" id="footerContainer">
@@ -1695,14 +1600,18 @@
                 <p>&copy; iGEM HUST-China 2025</p>
                 <p>Licenced under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></p>
                 <p>You can find our project on <a href="https://gitlab.igem.org/2025/hust-china" target="_blank">iGEM GitLab</a>.</p>
-                    <p style="display: flex;">
+                <p style="display: flex; justify-content: center; align-items: center;">
                     Pipeline status: <a href="https://gitlab.igem.org/2025/hust-china/-/pipelines" target="_blank">
                         <img src="https://gitlab.igem.org/2025/hust-china/badges/main/pipeline.svg">
                     </a>
-                    </p>
+                </p>
             </div>
+        </footer>
+    </div>
+    </section>
+
     <script>
-        // 加载动画控制 - 修改为动图版本
+        // 加载动画控制
         document.addEventListener('DOMContentLoaded', function() {
             const loadingAnimation = document.getElementById('loading-animation');
             const loadingGif = document.getElementById('loading-gif');
@@ -1744,7 +1653,6 @@
                 const textLines = document.querySelectorAll('.text-line');
                 const images = document.querySelectorAll('.image-animated');
                 const mosaicItems = document.querySelectorAll('.mosaic-item');
-                const navBoxes = document.querySelectorAll('[data-target]');
                 const navbar = document.querySelector('.navbar');
                 const navLogo = document.querySelector('#navLogo');
                 const customCursor = document.querySelector('.custom-cursor');
@@ -1758,7 +1666,6 @@
                 const footerContainer = document.getElementById('footerContainer');
                 const faceImage = document.getElementById('faceImage');
                 const imageSwitcher = document.querySelector('.image-switcher');
-                const imageExtension = document.querySelector('.image-extension');
                 
                 let currentSection = 0;
                 let currentHorizontalPage = 0;
@@ -1790,7 +1697,7 @@
                 const faceImage1 = 'https://static.igem.wiki/teams/5569/description/face11.webp';
                 const faceImage2 = 'https://static.igem.wiki/teams/5569/description/face2.webp';
     
-                // 新增打字机效果
+                // 打字机效果
                 const typewriterText = document.getElementById('typewriter-text');
                 const texts = [
                     "Sustainable squalene production from waste oil",
@@ -1836,7 +1743,7 @@
                 // 启动打字机效果
                 setTimeout(typeWriter, 1000);
     
-                // 图片切换功能 - 点击后显示延伸线和扩展图片
+                // 图片切换功能
                 let isExtensionVisible = false;
                 
                 imageSwitcher.addEventListener('click', function() {
@@ -1873,7 +1780,7 @@
                     scrollToSection(currentSection);
                 });
     
-                // 数字计数器函数 - 加快速度
+                // 数字计数器函数
                 function animateNumberCounter(counter, target, duration = 800) {
                     let start = 0;
                     const increment = target / (duration / 16); // 16ms per frame
@@ -1910,7 +1817,7 @@
                 });
     
                 // 为可交互元素添加悬停效果
-                const interactiveElements = document.querySelectorAll('a, button, .indicator-dot, [data-target], .back-to-top, .nav-image-item, .image-switcher');
+                const interactiveElements = document.querySelectorAll('a, button, .indicator-dot, .back-to-top, .nav-image-item, .image-switcher');
     
                 interactiveElements.forEach(element => {
                     element.addEventListener('mouseenter', () => {
@@ -1931,7 +1838,7 @@
                     customCursor.style.transform = 'scale(1)';
                 });
     
-                // 导航栏滚动效果 - 修复：始终显示导航栏
+                // 导航栏滚动效果
                 function handleNavbarScroll() {
                     const currentScrollY = window.scrollY;
                     
@@ -2208,13 +2115,13 @@
                             }
                         }
                     } else {
-                        // 竖屏滚动 - 修复所有section的滚动逻辑
+                        // 竖屏滚动
                         if (e.deltaY > 0 && currentSection < sections.length - 1) {
                             // 向下滚动到下一节
                             currentSection++;
                             scrollToSection(currentSection);
                         } else if (e.deltaY < 0 && currentSection > 0) {
-                            // 向上滚动到上一节 - 这是关键修复！
+                            // 向上滚动到上一节
                             currentSection--;
                             scrollToSection(currentSection);
                         } else if (e.deltaY > 0 && currentSection === sections.length - 1) {
@@ -2273,37 +2180,6 @@
                         // 设置停止计时器
                         clearTimeout(window.rotationStopTimer);
                         window.rotationStopTimer = setTimeout(stopRotation, 500);
-                    });
-                });
-    
-                // 导航盒子点击事件 - 移除alert弹窗
-                navBoxes.forEach(box => {
-                    box.addEventListener('click', () => {
-                        const target = box.getAttribute('data-target');
-                        // 这里可以添加实际导航逻辑
-                        // 移除了alert弹窗
-                    });
-                });
-    
-                // 导航图片点击事件
-                navImageItems.forEach(item => {
-                    item.addEventListener('click', () => {
-                        const target = item.getAttribute('data-target');
-                        // 根据目标导航到相应页面
-                        switch(target) {
-                            case 'design':
-                                window.location.href = 'design.html';
-                                break;
-                            case 'hardware':
-                                window.location.href = 'hardware';
-                                break;
-                            case 'human-practices':
-                                window.location.href = 'human-practices';
-                                break;
-                            case 'description':
-                                window.location.href = 'description';
-                                break;
-                        }
                     });
                 });
     
@@ -2405,3 +2281,5 @@
                 }
             });
         </script>
+</body>
+</html>
