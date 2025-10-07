@@ -385,7 +385,7 @@ We conducted multiple user tests and interviews, gathering diverse feedback on t
 
 All design information, 3D printing data, electronic schematics, parts lists, and assembly instructions for the final prototype have been fully documented and released in a format easily accessible for replication.
 
-(Data for replication)
-
 In summary, we have developed and demonstrated an automated crude cell extraction device integrating fermentation, centrifugation, and shaking, effectively addressing challenges in synthetic biology development and application.
+
+We are more than willing to provide the source code and model for reference by future iGEM teams. You can contact us via email.
 
