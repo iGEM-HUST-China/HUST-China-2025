@@ -2,7 +2,7 @@
 title: Education & Communication
 permalink: /education/
 feature_text: |
-feature_image: "https://static.igem.wiki/teams/5569/description/edct.webp"
+feature_image: "https://static.igem.wiki/teams/5569/description/edctcmct.webp"
 excerpt: ""
 
 
