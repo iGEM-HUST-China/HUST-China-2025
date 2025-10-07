@@ -20,20 +20,14 @@ images02:
 ## Overview
 In the current fields of molecular biology, synthetic biology, proteomics, and biopharmaceuticals, microbial cultivation and the extraction of intracellular active substances constitute fundamental and critical experimental steps. However, existing technical workflows face significant bottlenecks:
 
-{% include dropdown.html
-   title="1. High equipment cost"
-   content="Our field research indicates that mainstream micro-fermentation tank equipment on the market is expensive, creating a significant barrier to entry."
-%}
+**1. High equipment cost**
+Our field research indicates that mainstream micro-fermentation tank equipment on the market is expensive, creating a significant barrier to entry.
 
-{% include dropdown.html
-   title="2. Complex operation and challenging real-time monitoring"
-   content="During experiments, we found that real-time monitoring remains difficult with such equipment. Researchers must still invest significant time in manual operations and prolonged monitoring, especially requiring continuous oversight during nighttime hours. This substantially impacts experimental efficiency and increase researcher workload. Furthermore, existing workflows rely on multiple disparate devices working in tandem, resulting in cumbersome procedures with poor reproducibility."
-%}
+**2. Complex operation and challenging real-time monitoring**
+During experiments, we found that real-time monitoring remains difficult with such equipment. Researchers must still invest significant time in manual operations and prolonged monitoring, especially requiring continuous oversight during nighttime hours. This substantially impacts experimental efficiency and increase researcher workload. Furthermore, existing workflows rely on multiple disparate devices working in tandem, resulting in cumbersome procedures with poor reproducibility.
 
-{% include dropdown.html
-   title="3. High contamination risk"
-   content="Both existing shake flask and micro-fermentation methods require manual sampling, resulting in elevated overall contamination risks that severely compromise research stability and efficiency."
-%}
+**3. High contamination risk**
+Both existing shake flask and micro-fermentation methods require manual sampling, resulting in elevated overall contamination risks that severely compromise research stability and efficiency.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure1.1	Overall Presentation Diagram" %}
 
@@ -47,21 +41,30 @@ Throughout development, we strictly adhered to standard hardware development pro
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h36.webp" caption="Figure 1.2 R&D Process Diagram" %}
 
-**Phase 1: Defining Requirements and Pain Points**
-The primary task in this phase is to precisely identify core issues within the current laboratory workflow. Through researcher interviews and observation of experimental procedures, we pinpointed the project's pain points Based on this, we defined the core design requirements for the device and established the ultimate objectives to be achieved. All design decisions stem from these requirements.
+{% include dropdown.html
+   title="1: Defining Requirements and Pain Points"
+   content="The primary task in this phase is to precisely identify core issues within the current laboratory workflow. Through researcher interviews and observation of experimental procedures, we pinpointed the project's pain points Based on this, we defined the core design requirements for the device and established the ultimate objectives to be achieved. All design decisions stem from these requirements."
+%}
 
-**Phase 2: Existing Solutions and Technology Research**
-This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative single-motor-driven multi-mode switching" solution.
+{% include dropdown.html
+   title="2: Existing Solutions and Technology Research"
+   content="This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative single-motor-driven multi-mode switching" solution."
+%}
+
+{% include dropdown.html
+   title="3: Mechanical and System Prototyping"
+   content="In this phase, we translated concepts into concrete engineering designs. Using SolidWorks software for 3D modeling, we meticulously considered the dimensions, materials, and compatibility of all components. This iterative process involved multiple design revisions and improvements based on team discussions and feedback."
+%}
+
+{% include dropdown.html
+   title="4: Prototype Manufacturing and Integration Testing"
+   content="This phase marks the critical transition from virtual to physical reality. We manufacture all custom parts via methods like 3D printing, procure standard components, and complete the assembly and debugging of the first prototype. Subsequently, rigorous system integration testing is conducted in the wet lab. This testing phase is crucial for identifying any design flaws, performance limitations, or unexpected behaviors. The validation results from the wet lab provide insights for further design iterations and refinements."
+%}
  
-**Phase 3: Mechanical and System Prototyping**
-In this phase, we translated concepts into concrete engineering designs. Using SolidWorks software for 3D modeling, we meticulously considered the dimensions, materials, and compatibility of all components. This iterative process involved multiple design revisions and improvements based on team discussions and feedback.
- 
-**Phase 4: Prototype Manufacturing and Integration Testing**
-This phase marks the critical transition from virtual to physical reality. We manufacture all custom parts via methods like 3D printing, procure standard components, and complete the assembly and debugging of the first prototype. Subsequently, rigorous system integration testing is conducted in the wet lab. This testing phase is crucial for identifying any design flaws, performance limitations, or unexpected behaviors. The validation results from the wet lab provide insights for further design iterations and refinements.
-
-**Phase 5: Comprehensive Feedback and Design Optimization**
-During this phase, we invited target users (other iGEM teammates, lab peers, faculty members) to experience the device operation and gathered feedback on **human- machine interaction, operational safety,** and structural stability. This feedback directly informed the final design iterations. Ultimately, all design files, code, and bill of materials were finalized, and comprehensive assembly guides and user manuals were developed to ensure project replicability.
-
+{% include dropdown.html
+   title="5: Comprehensive Feedback and Design Optimization"
+   content="During this phase, we invited target users (other iGEM teammates, lab peers, faculty members) to experience the device operation and gathered feedback on human- machine interaction, operational safety, and structural stability. This feedback directly informed the final design iterations. Ultimately, all design files, code, and bill of materials were finalized, and comprehensive assembly guides and user manuals were developed to ensure project replicability."
+%}
 
 ## Requirement and Cost Analysis
 
