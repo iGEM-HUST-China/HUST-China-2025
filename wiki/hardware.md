@@ -41,43 +41,34 @@ Throughout development, we strictly adhered to standard hardware development pro
  **Phase 1: Defining Requirements and Pain Points**
 {% include dropdown.html 
    title="Click here to see the details" 
-   content="The primary task in this phase is to precisely identify core issues within the current laboratory workflow. Through researcher interviews and observation of experimental procedures, we pinpointed the project's pain points Based on this, we defined the core design requirements for the device and established the ultimate objectives to be achieved. All design decisions stem from these requirements." 
-%}
-
+   content="The primary task in this phase is to precisely identify core issues within the current laboratory workflow. Through researcher interviews and observation of experimental procedures, we pinpointed the project's pain points Based on this, we defined the core design requirements for the device and established the ultimate objectives to be achieved. All design decisions stem from these requirements." %}
 
 
  **Phase 2: Existing Solutions and Technology Research**
 {% include dropdown.html 
    title="Click here to see the details" 
-   content="This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative "single-motor-driven multi-mode switching" solution." 
-%}
-
-This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative "single-motor-driven multi-mode switching" solution.
+   content="This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative "single-motor-driven multi-mode switching" solution." %}
 
  **Phase 3: Mechanical and System Prototyping**
 {% include dropdown.html 
    title="Click here to see the details" 
-   content="In this phase, we translated concepts into concrete engineering designs. Using SolidWorks software for 3D modeling, we meticulously considered the dimensions, materials, and compatibility of all components. This iterative process involved multiple design revisions and improvements based on team discussions and feedback." 
-%}
-In this phase, we translated concepts into concrete engineering designs. Using SolidWorks software for 3D modeling, we meticulously considered the dimensions, materials, and compatibility of all components. This iterative process involved multiple design revisions and improvements based on team discussions and feedback.
+   content="In this phase, we translated concepts into concrete engineering designs. Using SolidWorks software for 3D modeling, we meticulously considered the dimensions, materials, and compatibility of all components. This iterative process involved multiple design revisions and improvements based on team discussions and feedback." %}
 
  **Phase 4: Prototype Manufacturing and Integration Testing**
 {% include dropdown.html 
    title="Click here to see the details" 
-   content="This phase marks the critical transition from virtual to physical reality. We manufacture all custom parts via methods like 3D printing, procure standard components, and complete the assembly and debugging of the first prototype. Subsequently, rigorous system integration testing is conducted in the wet lab. This testing phase is crucial for identifying any design flaws, performance limitations, or unexpected behaviors. The validation results from the wet lab provide insights for further design iterations and refinements." 
-%}
+   content="This phase marks the critical transition from virtual to physical reality. We manufacture all custom parts via methods like 3D printing, procure standard components, and complete the assembly and debugging of the first prototype. Subsequently, rigorous system integration testing is conducted in the wet lab. This testing phase is crucial for identifying any design flaws, performance limitations, or unexpected behaviors. The validation results from the wet lab provide insights for further design iterations and refinements." %}
 
 
  **Phase 5: Comprehensive Feedback and Design Optimization**
 {% include dropdown.html 
    title="Click here to see the details" 
-   content="During this phase, we invited target users (other iGEM teammates, lab peers, faculty members) to experience the device operation and gathered feedback on **human- machine interaction, operational safety,** and structural stability. This feedback directly informed the final design iterations. Ultimately, all design files, code, and bill of materials were finalized, and comprehensive assembly guides and user manuals were developed to ensure project replicability." 
-%}
+   content="During this phase, we invited target users (other iGEM teammates, lab peers, faculty members) to experience the device operation and gathered feedback on **human- machine interaction, operational safety,** and structural stability. This feedback directly informed the final design iterations. Ultimately, all design files, code, and bill of materials were finalized, and comprehensive assembly guides and user manuals were developed to ensure project replicability." %}
 
 ## Requirement and Cost Analysis
 
 Through interviews with multiple laboratory researchers, we discovered that the process of extracting substances in laboratories consumes significant time.Simultaneously, the need to move between different instruments significantly increases the error rate. Based on this, we conducted research into traditional laboratory processes and the problems inherent within them.
-to five phases.
+
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h24.webp" caption="Figure 1.3 Flowchart for Laboratory Shaker Culture and Miniature Fermentation Methods" %}
 
@@ -394,7 +385,7 @@ We conducted multiple user tests and interviews, gathering diverse feedback on t
 
 All design information, 3D printing data, electronic schematics, parts lists, and assembly instructions for the final prototype have been fully documented and released in a format easily accessible for replication.
 
-(Data for replication)
-
 In summary, we have developed and demonstrated an automated crude cell extraction device integrating fermentation, centrifugation, and shaking, effectively addressing challenges in synthetic biology development and application.
+
+We are more than willing to provide the source code and model for reference by future iGEM teams. You can contact us via email.
 
