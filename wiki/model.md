@@ -585,6 +585,8 @@ and (2) expanding the dataset to include multiple carbon sources and nutrient re
 
 Overall, this framework establishes a generalizable approach for predictive and interpretable growth modelling in *Y. lipolytica*, which can be further enhanced by integrating dynamic information and environmental complexity.
 
+{% include button.html link="https://gitlab.igem.org/2025/software-tools/hust-china" text="Click to learn more about our software-tools" %}
+
 ## References
 1. Gould SJ, Keller GA, Hosken N, Wilkinson J, Subramani S. *A conserved tripeptide sorts proteins to peroxisomes.* **J Cell Biol.** 1989;108(5):1657–1664.  
 2. Brocard C, Hartig A. *Peroxisome targeting signal 1: Is it really a simple tripeptide?* **Biochim Biophys Acta.** 2006;1763(12):1565–1573.  
