@@ -4,6 +4,16 @@ permalink: /education/
 feature_text: |
 feature_image: "https://static.igem.wiki/teams/5569/description/edctcmct.webp"
 excerpt: ""
+images02:
+  - src: https://static.igem.wiki/teams/5569/hp/e1-soconvert.webp
+    alt: Fake news one
+    caption: Fake news one
+  - src: https://static.igem.wiki/teams/5569/hp/e2-soconvert.webp
+    alt: Fake news two
+    caption: Fake news two
+  - src: https://static.igem.wiki/teams/5569/hp/e3-soconvert.webp
+    alt: Fake news three
+    caption: Fake news three
 
 
 ---
@@ -11,6 +21,7 @@ excerpt: ""
 ## 1.Education 
 ### 1.1Advancing New Quality Productive Forces through Synthetic Biology
 #### A specialized interview on "New Quality Productive Forces"
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp/1.webp" caption="Fig 1.1 Zou is being interviewed" %}
 
 HUST-China was invited to discuss the role of synthetic biology in driving the development of new-quality productive forces. As one of the team leaders, Zou Wanting introduced our team's background and achievements, elaborating in detail on how synthetic biology aligns with new-quality productive forces by promoting technological innovation and sustainable development.
 
@@ -29,10 +40,13 @@ Throughout our human practices activities, we have identified a significant know
 #### 1.2.1 “Huaxiaomiao” Classroom Fun Enlightenment: Gene Expression Structure and Components
 
 In the "Huaxiaomiao" weekend class organized by the University Youth League Committee, Labor Union, and School of Life Science, we conducted engaging science outreach on synthetic biology for 28 science-loving primary students. Through well-designed interactive games and vivid analogies, we transformed complex gene expression structures and functional parts into comprehensible modules, allowing children to experience the unique appeal of synthetic biology in areas like environmental remediation through hands-on activities, sowing the seeds for future scientific talent.
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp/2.webp" caption="Fig 1.2.1 Interaction between team members and children" %}
 
 #### 1.2.2 Liren Community Summer Camp: Hands-on Experience in Genetic Design
 
 During the Liren Community Summer Camp, we innovatively presented principles of synthetic biology through game-based formats that appeal to children. During the activity, we deconstructed plasmid components into separate modular stickers, such as promoters, terminators, and functional genes. After acquiring essential theoretical knowledge before the game, the children could freely unleash their imagination—starting by building plasmids with basic functions and eventually combining various plasmids of different sizes and functions, transforming into junior "synthetic biology researchers." Depending on specific gene segments, some of the plasmids they created could absorb heavy metals, while others produced pigments, and so on. By simplifying functional units like promoters and genes into building block-like modules, we guided children to assemble these modules into "cells" after understanding basic concepts. This approach not only cultivated their systematic thinking and creativity but also demonstrated the core design philosophy of standardization and modularization in synthetic biology.
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp/3.webp" caption="Fig 1.2.2 We imparted knowledge to the participants at Liren Community Summer Camp
+Fig 1.2.3  Demonstrating the use of biological instruments at Tianmen Middle School" %}
 
 #### 1.2.3 Professional Knowledge Seminar at Tianmen Middle School
 
@@ -40,6 +54,7 @@ In the school science festival extension activity, we visited Tianmen Middle Sch
 
 #### 1.2.4 Promotional Tour at Wen Deng and Jiangxi Affiliated High Schools
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp/4.webp" caption="Fig 1.2.4 On-campus Outreach Talk" %}
 Several team members utilized winter break to revisit Wen Deng New First Middle School and Jiangxi Normal University Affiliated High School, delivering specialized presentations on synthetic biology to students and parents. At the project introduction session of Wen Deng District University Student Union and the promotion event at the affiliated high school, team members presented our team's annual work and achievements in iGEM competitions. Through systematic introduction of the discipline's research fields and development prospects, along with specific project explanations, they effectively enhanced middle school students' understanding of biotechnology. The enthusiastic interactions following the sessions reflected the young generation's strong interest in cutting-edge technology, establishing a solid foundation for talent development in this discipline.
 
 #### 1.2.5 Contributing to the "Debunking Synthetic Biology Myths" Collaborative Project
@@ -56,10 +71,12 @@ In this manual, we debunk three myths related to synthetic biology:
 
 This collaborative achievement significantly enhanced the accuracy and reach of science communication, demonstrating the social responsibility and professional commitment of iGEM teams in the field of scientific outreach.
 
+{% include figure3.html images=page.images02 %}
+
 ## 2.Communication 
 ### 2.1 Communicate with BIT-China iGEM team
 #### 2.1.1 Introduction
-{% include figure.html image="https://static.igem.wiki/teams/5569/hp/hp1.webp" caption="Fig 2.1 Communicate with BIT-China iGEM team" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp/5.webp" caption="Fig 2.1 Communicate with BIT-China iGEM team" %}
 In July, 2025, we engaged in a productive exchange with the BIT-China iGEM team. Both teams presented their project progress and shared insights on experimental design and practical implementation, which brought valuable inspiration and ideas.
 
 #### 2.1.2 Sharing of experience
@@ -70,6 +87,7 @@ A key part of our discussion focused on social practice and human practices. We 
 During the exchange between iGEM teams, we not only shared project progress but also exchanged new ideas and perspectives. Besides, by sharing experiences, we provided insights into each other's social and human practices, which broadened our horizons and offered valuable references for allocating focus in subsequent work.
 
 ### 2.2 The 12th Conference of China iGEMer Community (CCiC)
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp/6.webp" caption="Fig 2.2 The team members are demonstrating and communicating" %}
 #### 2.2.1 Introduction
 
 CCiC is a premier event initiated by iGEM teams in mainland China, designed to provide a platform for resource sharing, mutual learning, and communication. During the critical preparation period in August, the HUST-China team attended the 12th Conference of China iGEMer Community (CCiC) in Beijing, engaging with top domestic teams to exchange ideas, gain valuable experience, and broaden our perspectives.
@@ -90,6 +108,7 @@ We also actively engaged with other teams' progress and delved into in-depth dis
 The CCiC conference has clearly charted the course for our subsequent work through learning from our peers, while enabling us to reflect on the shortcomings and issues within our project design and engage in developing practical solutions.
 
 ### 2.3 Synbio Challenges 2025
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp/7.webp" caption="Fig 2.3 HUST-China in Synbio Challenges 2025" %}
 #### 2.3.1 Introduction
 
 Together with the 2024 HUST-China team members, we participated in the Synbio Challenges 2025. This competition, organized by the Chinese Society of Biotechnology (CSBT), brought together over 200 teams from domestic and international universities, comprising nearly 1,900 young talents.
