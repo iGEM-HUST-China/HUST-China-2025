@@ -6,8 +6,8 @@ feature_image: "https://static.igem.wiki/teams/5569/description/ctbtion.webp"
 excerpt: ""
 ---
 
-## Overview
-# Project Contribution: Converting Waste Cooking Oil to High-Value Squalene
+
+## Project Contribution: Converting Waste Cooking Oil to High-Value Squalene
 
 **This project aims to efficiently convert waste cooking oil into high-value squalene through synthetic biology technology.**
 
