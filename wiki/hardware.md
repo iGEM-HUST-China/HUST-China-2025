@@ -8,7 +8,7 @@ excerpt: ""
 
 
 images02:
-  - src: https://static.igem.wiki/teams/5569/hardware/open-by-shunzhuan-soconvert.webp
+  - src: https://static.igem.wiki/teams/5569/hw2/absah.webp
     alt: Turn clockwise to open the flow switch
     caption: Turn clockwise to open the flow switch
   - src: https://static.igem.wiki/teams/5569/hardware/jiaosoconvert.webp
