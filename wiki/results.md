@@ -75,8 +75,8 @@ One day after inoculation, the entire A plate appeared yellow, while the hydroly
 
 **Different group of different cultivation times**
 
-> (A)Po1f-TLL+24h (B)Po1f-TLL+8h (C)Po1f-TLL+4h
-> (D)Po1f-WT+24h (E)Po1f-WT+8h (F)Po1f-WT+4h
+> (A)Po1f-TLL+24h     (B)Po1f-TLL+8h     (C)Po1f-TLL+4h
+> (D)Po1f-WT+24h      (E)Po1f-WT+8h      (F)Po1f-WT+4h
 
 According to the medium color, it is obvious that the hydrolysis circle expand as the cultivation time increase. Compared to the wild type ,the Po1f that secrete TLL has larger hydrolysis circle. We conclude that TLL can efficiently degrade the lipid,which produce the fatty acid and contribute to the color change of phenol red, which shows red in high pH condition while yellow in low pH condition. It is also noticeable that when the cultivation time comes to 24h, the hydrolysis circle faded or even disappear, we explain this by the growth of yeast that absorb the fatty acids. However, there is still a hydrolysis in Po1f-tll plate, indicating that the TLL expand and degrade the lipid around the yeast.
 
