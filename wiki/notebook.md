@@ -10,4 +10,4 @@ excerpt: ""
 
 You can explore our detailed Notebook PDF here:
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/document/notebook.pdf" caption="Notebook" %}
+{% include button.html link="https://static.igem.wiki/teams/5569/document/notebook.pdf" text="check the Notebook of ours" %}
