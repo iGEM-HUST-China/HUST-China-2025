@@ -21,30 +21,36 @@ excerpt: ""
 
 ## Part I: Problem Definition & Value Discovery
 
-### Confirming the Unsustainability of Animal-Derived Squalene
+{% include dropdown.html
+   title="Confirming the Unsustainability of Animal-Derived Squalene"
+   content="Who we contacted: Fisherman Uncle Sun from Weihai, Shandong; Oceana reports; Policies from China's Ministry of Agriculture and Rural Affairs.
 
-**Who we contacted:** Fisherman Uncle Sun from Weihai, Shandong; Oceana reports; Policies from China's Ministry of Agriculture and Rural Affairs.
+Why: To understand from the source whether large-scale commercial shark fishing for squalene exists in China's coastal areas.
 
-**Why:** To understand from the source whether large-scale commercial shark fishing for squalene exists in China's coastal areas.
-
-**What we learned:**
+What we learned:
 - No specialized shark fishing industry in Chinese coastal waters
 - Sharks caught are mostly "bycatch" during deep-sea operations
 - Oceana reports reveal threat to shark populations from cosmetics industry
 - National policies prohibit new construction of vessels primarily targeting sharks
 
-**How we adapted:** Strengthened our fundamental stance on finding alternatives, anchoring project value in ecological protection and sustainable development.
+How we adapted: Strengthened our fundamental stance on finding alternatives, anchoring project value in ecological protection and sustainable development."
+%}
 
-### Clarifying Industry Demand for Sustainable Ingredients
+{% include dropdown.html
+   title="Who we contacted: Proya Cosmetics, Wuhan Berca Biomedical, Hubei Hongfuda Biotechnology, and other industry players.
 
-**Who we contacted:** Proya Cosmetics, Wuhan Berca Biomedical, Hubei Hongfuda Biotechnology, and other industry players.
-
-**What we learned:**
+What we learned:
 - Market strongly prefers "non-animal derived" ingredients
 - Extreme requirements for safety and stability
 - Insufficient supply is a real industry pain point
 
-**How we adapted:** Defined final product as squalene and planned full third-party safety testing procedures.
+**How we adapted:** Defined final product as squalene and planned full third-party safety testing procedures."
+%}
+
+
+### 
+
+
 
 ### Discovering High-Value Conversion Potential of Waste Oil
 
