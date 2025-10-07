@@ -388,8 +388,7 @@ V3.0 achieved a high level of automation and intelligence, but tests and user fe
 #### Learn
 
 Reliability and control precision are key to productization. We recognized that while pursuing functional innovation, we must select components with matching performance and consider the mechanical strength of materials.
-
-    {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh6.webp" caption="Figure 3.3.1 Schematic of the First-Generation Model" }
+ {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh6.webp" caption="Figure 3.3.1 Schematic of the First-Generation Model" %}
 ### Final Outcome (V4.0)
 
 Based on the learnings from the third cycle, we finally replaced the top motor with a stepper motor capable of precise positioning, and planned to replace key components such as gears with metal parts, thus creating the final version of the iFPS device with stable performance and smooth operation. Through these three closely linked engineering cycles, we successfully iterated a conceptual idea into a mature hardware product capable of solving practical pain points.
