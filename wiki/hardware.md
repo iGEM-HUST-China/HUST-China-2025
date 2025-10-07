@@ -133,7 +133,7 @@ Our hardware team has consistently focused on addressing practical challenges en
 
 - According to the spectrophotometric formula:
 
--                                           *A* = *ε* • *c* • *l*
+-                                          *A* = *ε* • *c* • *l*
 
 - *A* : Absorbance; *ε*  : Molar absorptivity (L/(mol·cm)); *c*: Solution concentration (mol/L); *l*: Optical path length (cm)
 
