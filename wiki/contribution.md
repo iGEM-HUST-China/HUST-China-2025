@@ -99,7 +99,7 @@ During the first measurement of strain concentration in oily medium, we were sur
 
 ## Part 3: Hardware
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh40.webp" caption="Figure 2 iFPS Schematic Diagram" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure 2 iFPS Schematic Diagram" %}
 
 During the project advancement, we identified a significant technological gap between traditional laboratory shake flask cultivation and industrial fermentation. To address this, we independently designed and developed an Integrated Fermentation & Processing System (iFPS). This system innovatively integrates microbial fermentation, cell centrifugation and collection, and mechanical disruption/lysis functions into a compact desktop device. Through automated control, it achieves the entire process operation from inoculation to obtaining crude lysate. Our device is available for all teams to replicate and use, hoping to provide a viable solution for the iGEM community and the field of synthetic biology regarding micro-fermentation issues, thereby promoting the development of synthetic biology.
 
