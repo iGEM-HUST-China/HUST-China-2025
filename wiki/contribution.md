@@ -59,10 +59,10 @@ excerpt: ""
   These parts catalyze the final steps from IPP to squalene, including IPP isomerization, the stepwise synthesis of FPP, and the condensation of two FPP molecules into squalene, with the complete pathway localized to the peroxisome.
 
 - **Composite Parts for Modular MVA Pathway Assembly:**
-  - *Hp4d-Kozak-POX2-XPR2_term-Hp4d-Kozak-MFE1-XPR2_term-Hp4d-Kozak-POT1-XPR2_term*
-  - *Hp4d-Kozak-ERG10-PTS1-XPR2_term-Hp4d-Kozak-ERG13-PTS1-XPR2_term-Hp4d-Kozak-tHMGR-PTS1-XPR2_term-Hp4d-Kozak-NADH_HMGR-PTS1-XPR2_term*
-  - *Hp4d-Kozak-ERG12-PTS1-XPR2_term-Hp4d-Kozak-ERG8-PTS1-XPR2_term-Hp4d-Kozak-ERG19-PTS1-XPR2_term*
-  - *Hp4d-Kozak-E9-PTS1-XPR2_term-Hp4d-Kozak-IDI-PTS1-XPR2_term-Hp4d-Kozak-E20-PTS1-XPR2_term*
+  -**Hp4d-Kozak-POX2-XPR2_term-Hp4d-Kozak-MFE1-XPR2_term-Hp4d-Kozak-POT1-XPR2_term**
+  -**Hp4d-Kozak-ERG10-PTS1-XPR2_term-Hp4d-Kozak-ERG13-PTS1-XPR2_term-Hp4d-Kozak-tHMGR-PTS1-XPR2_term-Hp4d-Kozak-NADH_HMGR-PTS1-XPR2_term**
+  - **Hp4d-Kozak-ERG12-PTS1-XPR2_term-Hp4d-Kozak-ERG8-PTS1-XPR2_term-Hp4d-Kozak-ERG19-PTS1-XPR2_term**
+  - **Hp4d-Kozak-E9-PTS1-XPR2_term-Hp4d-Kozak-IDI-PTS1-XPR2_term-Hp4d-Kozak-E20-PTS1-XPR2_term**
 
   **Modular MVA Pathway Assembly:**
   We divided the complete compartmentalized MVA pathway into four functional plasmids for modular assembly, greatly simplifying genetic operations and providing convenience for subsequent industrial applications and pathway optimization.

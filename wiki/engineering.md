@@ -393,5 +393,5 @@ Reliability and control precision are key to productization. We recognized that 
 
 Based on the learnings from the third cycle, we finally replaced the top motor with a stepper motor capable of precise positioning, and planned to replace key components such as gears with metal parts, thus creating the final version of the iFPS device with stable performance and smooth operation. Through these three closely linked engineering cycles, we successfully iterated a conceptual idea into a mature hardware product capable of solving practical pain points.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh40.webp" caption="Figure 3.3.1 Schematic of the First-Generation Model" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure 3.3.1 Schematic of the First-Generation Model" %}
 
