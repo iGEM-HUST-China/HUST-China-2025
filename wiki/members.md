@@ -87,7 +87,7 @@ excerpt: ""
 {% include members-people.html 
    name="Wanting Zou" 
    major="-Biological Sciences-"
-   description="Grow in silence." 
+   description="To love life is to embrace every ray of sunlight, whether it’s a sunny day or a rainy one. Engaging with friends is not just about sharing knowledge and insights, but also about finding the direction forward through the clash of ideas." 
    image="https://static.igem.wiki/teams/5569/description/menber/zwt.webp" 
    image_position="right" %}
 
