@@ -40,6 +40,8 @@ excerpt: ""
 
 (3) The growth curves did not conform to the standard S-shaped curve of microbial growth; although there was an upward trend, adjacent data fluctuated significantly.
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/fatase-sdspage.webp" caption="1" %}
+
 ### Cycle 1.1.2 Optimization of Hydrolysis Zone Verification
 
 #### Design
