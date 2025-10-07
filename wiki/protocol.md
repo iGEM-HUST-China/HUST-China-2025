@@ -16,3 +16,17 @@ All the pages are under construction, please check [description](description) pa
    title="click here" 
    content="you are very good！" 
 %}
+
+## 蛋白质序列比对分析
+
+### 交互式比对视图
+
+<iframe 
+    src="https://your-username.github.io/your-repo-name/t-HMGR_alignment_blue_gray.html" 
+    width="100%" 
+    height="700"
+    frameborder="0"
+    style="border: 1px solid #ddd;">
+</iframe>
+
+[全屏查看](https://your-username.github.io/your-repo-name/t-HMGR_alignment_blue_gray.html)
