@@ -6,7 +6,6 @@ feature_image: "https://static.igem.wiki/teams/5569/description/ppsdipmt.webp"
 excerpt: ""
 ---
 
-## Welcome to iGEM HUST-China 2025 wiki!
+## This page is our proposed implementation.
 
-You can download our detailed Proposed Implementation here:
-[Download the Proposed Implementation PDF](https://gitlab.igem.org/2025/hust-china/-/blob/main/Protocols.pdf)
+
