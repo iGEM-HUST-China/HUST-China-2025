@@ -31,7 +31,7 @@ excerpt: ""
 {% include members-people.html
    name="Kang Ning" 
    description="Professor of College of Life Sci. & Tech., HUST. His main research area is bioinformatics. Thanks for his suggestions to our modeling." 
-   image="https://static.igem.wiki/teams/5569/description/menber/nk.webp" 
+   image="https://static.igem.wiki/teams/5569/description/menber/nkk.webp" 
    image_position="right" %}
 
 {% include members-people.html
@@ -51,7 +51,7 @@ excerpt: ""
 {% include members-people.html 
    name="Bohan Wang" 
    description="Doctor in College of Life Sci. & Tech., HUST. This year, he provided us with a lot of human-practice guidance and helped us make a integrated social research for our project." 
-   image="https://static.igem.wiki/teams/5569/description/menber/wbh.webp"
+   image="https://static.igem.wiki/teams/5569/description/menber/wbhh.webp"
    image_position="left" %}
 
 ## Advisors
@@ -94,7 +94,7 @@ excerpt: ""
 {% include members-people.html
    name="Yuhan Huang"
    description="Not all those who wander are lost. It's just wanderlust."
-   image="https://static.igem.wiki/teams/5569/description/menber/hyh.webp"
+   image="https://static.igem.wiki/teams/5569/description/menber/hyhh.webp"
    image_position="left" %}
 
 {% include members-people.html
@@ -178,7 +178,7 @@ excerpt: ""
 {% include members-people.html
    name="Huangpeng Xie"
    description="Just do it！"
-   image="https://static.igem.wiki/teams/5569/description/menber/xhp.webp"
+   image="https://static.igem.wiki/teams/5569/description/menber/xhpp.webp"
    image_position="left" %}
 
 {% include members-people.html
