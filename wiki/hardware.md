@@ -37,8 +37,9 @@ To systematically address these challenges, our project team innovatively propos
 Throughout development, we strictly adhered to standard hardware development procedures and the iGEM-advocated Design-Test-Learn-Build cycle, structured into five phases.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h36.webp" caption="Figure 1.2 R&D Process Diagram" %}
-
- **Phase 1: Defining Requirements and Pain Points**
+{% include dropdown.html
+  title="click here to see the details"
+  content=" **Phase 1: Defining Requirements and Pain Points**
 The primary task in this phase is to precisely identify core issues within the current laboratory workflow. Through researcher interviews and observation of experimental procedures, we pinpointed the project's pain points Based on this, we defined the core design requirements for the device and established the ultimate objectives to be achieved. All design decisions stem from these requirements.
 
 
@@ -54,6 +55,8 @@ This phase marks the critical transition from virtual to physical reality. We ma
 
  **Phase 5: Comprehensive Feedback and Design Optimization**
 During this phase, we invited target users (other iGEM teammates, lab peers, faculty members) to experience the device operation and gathered feedback on **human- machine interaction, operational safety,** and structural stability. This feedback directly informed the final design iterations. Ultimately, all design files, code, and bill of materials were finalized, and comprehensive assembly guides and user manuals were developed to ensure project replicability.
+"}
+
 
 ## Requirement and Cost Analysis
 
