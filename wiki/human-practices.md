@@ -6,11 +6,9 @@ feature_image: "https://static.igem.wiki/teams/5569/description/hpbg.webp"
 excerpt: ""
 ---
 
-## Welcome to iGEM HUST-China 2025 wiki!
+## Human Practices: From Waste Oil to Sustainable Squalane
 
-# Human Practices: From Waste Oil to Sustainable Squalane
-
-## Stakeholder Engagement Overview
+### Stakeholder Engagement Overview
 
 | Stakeholder Type | Specific Representatives | Role in Ensuring Values |
 |------------------|--------------------------|-------------------------|

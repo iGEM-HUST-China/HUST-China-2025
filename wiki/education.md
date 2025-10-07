@@ -4,6 +4,16 @@ permalink: /education/
 feature_text: |
 feature_image: "https://static.igem.wiki/teams/5569/description/edctcmct.webp"
 excerpt: ""
+images02:
+  - src: https://static.igem.wiki/teams/5569/hp/e1-soconvert.webp
+    alt: Fake news one
+    caption: Fake news one
+  - src: https://static.igem.wiki/teams/5569/hp/e2-soconvert.webp
+    alt: Fake news two
+    caption: Fake news two
+  - src: https://static.igem.wiki/teams/5569/hp/e3-soconvert.webp
+    alt: Fake news three
+    caption: Fake news three
 
 
 ---
@@ -60,6 +70,8 @@ In this manual, we debunk three myths related to synthetic biology:
 3.In response to the opposition between "natural" and "man-made" reflected in the view that "Only natural products are truly healthy. Microbial-derived ingredients can't compare with those extracted from sharks or plants", we clarify from a microscopic perspective that squalene synthesized by microorganisms is chemically identical to its natural counterpart. It is not only environmentally friendly but also ensures a stable supply of high-purity raw materials.
 
 This collaborative achievement significantly enhanced the accuracy and reach of science communication, demonstrating the social responsibility and professional commitment of iGEM teams in the field of scientific outreach.
+
+{% include figure3.html images=page.images02 %}
 
 ## 2.Communication 
 ### 2.1 Communicate with BIT-China iGEM team
