@@ -118,7 +118,7 @@ Through this integrated three‑layer modelling system, we achieved a closed‑l
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 11. Model design of our project" %}
 
-{% include button.html link="../Model/" text="Go to Model Page" %}
+{% include button.html link="../model/" text="Go to Model Page" %}
 
 ### Hardware
 
@@ -128,7 +128,7 @@ To address this challenge, we propose the design of an Integrated Fermentation &
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure 12. 3D model of iFPS" %}
 
-{% include button.html link="../Hardware/" text="Go to Hardware Page" %}
+{% include button.html link="../hardware/" text="Go to Hardware Page" %}
 
 ## Reference
 
