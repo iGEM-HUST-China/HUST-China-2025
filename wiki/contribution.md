@@ -17,6 +17,8 @@ excerpt: ""
 
 **These parts are crucial for constructing the squalene synthesis pathway. Our project has registered several basic parts, achieving efficient conversion from waste cooking oil to squalene through the combination of the following modules.**
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/20251007222710-2089-153.webp" caption="Figure 1 All plasmid maps" %}
+
 ### 1.1 Metabolic Pathway Optimization Module
 
 - **Hp4d-Kozak-tHMGr-XPR2_term**
@@ -97,10 +99,13 @@ During the first measurement of strain concentration in oily medium, we were sur
 
 ## Part 3: Hardware
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh40.webp" caption="Figure 2 iFPS Schematic Diagram" %}
+
 During the project advancement, we identified a significant technological gap between traditional laboratory shake flask cultivation and industrial fermentation. To address this, we independently designed and developed an Integrated Fermentation & Processing System (iFPS). This system innovatively integrates microbial fermentation, cell centrifugation and collection, and mechanical disruption/lysis functions into a compact desktop device. Through automated control, it achieves the entire process operation from inoculation to obtaining crude lysate. Our device is available for all teams to replicate and use, hoping to provide a viable solution for the iGEM community and the field of synthetic biology regarding micro-fermentation issues, thereby promoting the development of synthetic biology.
 
 ## Part 4: Modeling
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m1.webp" caption="Figure3. Molecular_docking" %}
 **The functions and value our model can provide to other researchers or teams:**
 The Model digital twin modeling system we built not only serves the metabolic reprogramming research of this project but also provides a universal framework and reusable tools for other teams engaged in microbial metabolic engineering and systems modeling.
 
