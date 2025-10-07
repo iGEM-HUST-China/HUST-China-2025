@@ -65,7 +65,7 @@ Over the three-day conference, our team gained immensely：
 
 3.During the parallel project presentation and poster sessions, we introduced our Squalene project to teams nationwide, garnering significant attention. While observing the presentations of multiple teams, we learned narrative techniques crucial for effectively communicating a project's core value and creative points.
 
-We also actively engaged with other teams' progress and delved into in-depth discussions at the poster zone, where vibrant conversations on experimental design, modeling, and human practices led to constructive feedback and the sharing of invaluable experiences.
+We also actively engaged with other teams' progress and delved into in-depth discussions at the poster zone, where vibrant conversations on experimental design, modeling, and human practices led to constructive feedback and the sharing of invaluable experiences.
 
 #### 2.2.3 The value of collaborative communication
 
