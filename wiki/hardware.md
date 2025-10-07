@@ -20,11 +20,20 @@ images02:
 ## Overview
 In the current fields of molecular biology, synthetic biology, proteomics, and biopharmaceuticals, microbial cultivation and the extraction of intracellular active substances constitute fundamental and critical experimental steps. However, existing technical workflows face significant bottlenecks:
 
-  **1. High equipment cost:** Our field research indicates that mainstream micro-fermentation tank equipment on the market is expensive, creating a significant barrier to entry.
+{% include dropdown.html
+   title="1. High equipment cost:"
+   content="Our field research indicates that mainstream micro-fermentation tank equipment on the market is expensive, creating a significant barrier to entry."
+%}
 
-  **2. Complex operation and challenging real-time monitoring:** During experiments, we found that real-time monitoring remains difficult with such equipment. Researchers must still invest significant time in manual operations and prolonged monitoring, especially requiring continuous oversight during nighttime hours. This substantially impacts experimental efficiency and increase researcher workload. Furthermore, existing workflows rely on multiple disparate devices working in tandem, resulting in cumbersome procedures with poor reproducibility.
+{% include dropdown.html
+   title="2. Complex operation and challenging real-time monitoring:"
+   content="During experiments, we found that real-time monitoring remains difficult with such equipment. Researchers must still invest significant time in manual operations and prolonged monitoring, especially requiring continuous oversight during nighttime hours. This substantially impacts experimental efficiency and increase researcher workload. Furthermore, existing workflows rely on multiple disparate devices working in tandem, resulting in cumbersome procedures with poor reproducibility."
+%}
 
-  **3. High contamination risk:** Both existing shake flask and micro-fermentation methods require manual sampling, resulting in elevated overall contamination risks that severely compromise research stability and efficiency.
+{% include dropdown.html
+   title="3. High contamination risk:"
+   content="Both existing shake flask and micro-fermentation methods require manual sampling, resulting in elevated overall contamination risks that severely compromise research stability and efficiency."
+%}
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure1.1	Overall Presentation Diagram" %}
 
