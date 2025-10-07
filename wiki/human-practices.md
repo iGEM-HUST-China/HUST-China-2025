@@ -37,31 +37,28 @@ How we adapted: Strengthened our fundamental stance on finding alternatives, anc
 %}
 
 {% include dropdown.html
-   title="Who we contacted: Proya Cosmetics, Wuhan Berca Biomedical, Hubei Hongfuda Biotechnology, and other industry players.
+   title="Clarifying Industry Demand for Sustainable Ingredients"
+   content="Who we contacted: Proya Cosmetics, Wuhan Berca Biomedical, Hubei Hongfuda Biotechnology, and other industry players.
 
 What we learned:
-- Market strongly prefers "non-animal derived" ingredients
+- Market strongly prefers “non-animal derived” ingredients
 - Extreme requirements for safety and stability
 - Insufficient supply is a real industry pain point
 
-**How we adapted:** Defined final product as squalene and planned full third-party safety testing procedures."
+How we adapted: Defined final product as squalene and planned full third-party safety testing procedures."
 %}
 
+{% include dropdown.html
+   title="Discovering High-Value Conversion Potential of Waste Oil"
+   content="Who we contacted: Zhejiang Zhengda Environmental Protection, waste oil recycling managers.
 
-### 
-
-
-
-### Discovering High-Value Conversion Potential of Waste Oil
-
-**Who we contacted:** Zhejiang Zhengda Environmental Protection, waste oil recycling managers.
-
-**What we learned:**
+What we learned:
 - Current waste oil to biodiesel conversion has meager profits (~8.5 RMB/kg)
 - Industry urgently needs high-value conversion pathways
 - 20mg high-purity squalene worth 800 RMB vs 1kg biodiesel at 8.5 RMB
 
-**How we adapted:** Solidified core innovation of "upgrading waste oil to squalene," extending story from environmental protection to circular economy.
+How we adapted: Solidified core innovation of "upgrading waste oil to squalene," extending story from environmental protection to circular economy."
+%}
 
 ### Project Positioning in "Fashion" Track
 
