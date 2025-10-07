@@ -39,24 +39,40 @@ Throughout development, we strictly adhered to standard hardware development pro
 {% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h36.webp" caption="Figure 1.2 R&D Process Diagram" %}
 
  **Phase 1: Defining Requirements and Pain Points**
+{% include dropdown.html 
+   title="Click here to see the details" 
+   content="The primary task in this phase is to precisely identify core issues within the current laboratory workflow. Through researcher interviews and observation of experimental procedures, we pinpointed the project's pain points Based on this, we defined the core design requirements for the device and established the ultimate objectives to be achieved. All design decisions stem from these requirements." 
+%}
 
-The primary task in this phase is to precisely identify core issues within the current laboratory workflow. Through researcher interviews and observation of experimental procedures, we pinpointed the project's pain points Based on this, we defined the core design requirements for the device and established the ultimate objectives to be achieved. All design decisions stem from these requirements.
+
 
  **Phase 2: Existing Solutions and Technology Research**
+{% include dropdown.html 
+   title="Click here to see the details" 
+   content="This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative "single-motor-driven multi-mode switching" solution." 
+%}
 
 This phase involved a comprehensive review of existing technical solutions. We analyzed the strengths and weaknesses of commercially available stand alone equipment (shakers, centrifuges, homogenizers) and conducted in-depth research on hardware solutions related to automation and miniaturization from previous iGEM projects. This approach avoided redundant work while providing inspiration and technical feasibility validation for our innovative "single-motor-driven multi-mode switching" solution.
 
  **Phase 3: Mechanical and System Prototyping**
-
+{% include dropdown.html 
+   title="Click here to see the details" 
+   content="In this phase, we translated concepts into concrete engineering designs. Using SolidWorks software for 3D modeling, we meticulously considered the dimensions, materials, and compatibility of all components. This iterative process involved multiple design revisions and improvements based on team discussions and feedback." 
+%}
 In this phase, we translated concepts into concrete engineering designs. Using SolidWorks software for 3D modeling, we meticulously considered the dimensions, materials, and compatibility of all components. This iterative process involved multiple design revisions and improvements based on team discussions and feedback.
 
  **Phase 4: Prototype Manufacturing and Integration Testing**
+{% include dropdown.html 
+   title="Click here to see the details" 
+   content="This phase marks the critical transition from virtual to physical reality. We manufacture all custom parts via methods like 3D printing, procure standard components, and complete the assembly and debugging of the first prototype. Subsequently, rigorous system integration testing is conducted in the wet lab. This testing phase is crucial for identifying any design flaws, performance limitations, or unexpected behaviors. The validation results from the wet lab provide insights for further design iterations and refinements." 
+%}
 
-This phase marks the critical transition from virtual to physical reality. We manufacture all custom parts via methods like 3D printing, procure standard components, and complete the assembly and debugging of the first prototype. Subsequently, rigorous system integration testing is conducted in the wet lab. This testing phase is crucial for identifying any design flaws, performance limitations, or unexpected behaviors. The validation results from the wet lab provide insights for further design iterations and refinements.
 
  **Phase 5: Comprehensive Feedback and Design Optimization**
-
-During this phase, we invited target users (other iGEM teammates, lab peers, faculty members) to experience the device operation and gathered feedback on **human- machine interaction, operational safety,** and structural stability. This feedback directly informed the final design iterations. Ultimately, all design files, code, and bill of materials were finalized, and comprehensive assembly guides and user manuals were developed to ensure project replicability.
+{% include dropdown.html 
+   title="Click here to see the details" 
+   content="During this phase, we invited target users (other iGEM teammates, lab peers, faculty members) to experience the device operation and gathered feedback on **human- machine interaction, operational safety,** and structural stability. This feedback directly informed the final design iterations. Ultimately, all design files, code, and bill of materials were finalized, and comprehensive assembly guides and user manuals were developed to ensure project replicability." 
+%}
 
 ## Requirement and Cost Analysis
 
@@ -129,11 +145,7 @@ Our hardware team has consistently focused on addressing practical challenges en
 -                                           *A* = *ε* • *c* • *l*
 
 - *A* : Absorbance; *ε*  : Molar absorptivity (L/(mol·cm)); *c*: Solution concentration (mol/L); *l*: Optical path length (cm)
-<center>
-  $$
-    \mathrm{2H_2O} + 2 e^- \rightarrow \mathrm{H_2} + \mathrm{OH^-}
-  $$
-</center>
+
 - It is evident that absorbance is directly proportional to solution concentration. A lower A value indicates a lower cell concentration in the supernatant. Therefore, our optimization objective is to achieve the lowest A value using the minimum rotational speed and shortest duration. The A contour plot indicates that all regions outside the shaded area represent viable [rotational speed: time] combinations.
 
 - The maximum speed of the purchased brushless motor under load, measured by an infrared sensor, is 840 rpm. Through a 1:3 speed reduction gear set, the speed can reach 2520 rpm. At this speed, centrifugation requires only about 3 minutes, maximizing economic efficiency.
