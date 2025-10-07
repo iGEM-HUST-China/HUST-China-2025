@@ -62,7 +62,7 @@ Overnight-cultured Po1f-fatase and wild-type strains were inoculated into phenol
 
 The hydrolysis zone of Po1f-fatase was significantly larger and yellower than that of the wild-type strain. Both yeasts showed a trend of increasing hydrolysis zones and colonies over time, indicating that Po1f-fatase could degrade fats well and absorb them.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/en/fatase-sdspage.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/hong.webp" caption="1" %}
 
 ### Cycle 1.2.1 Growth Condition Exploration
 
@@ -85,6 +85,8 @@ Oil-containing media were reconfigured using different types of oils.
 #### Learn
 
 Growth curves obtained from most media conformed to the standard S-shaped curve of microorganisms, indicating that the constructed Po1f-fatase strain could grow well in various oils. However, the fitting effect of a small number of growth curves was still poor.
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/growth-curve-wrong-vision.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/knock-errg1-growth-curve.webp" caption="1" %}
 
 ### Cycle 1.2.2 improvement of growth curve measurement
 
@@ -107,6 +109,8 @@ After measuring a certain amount of data, the algorithm was used to predict the 
 (1) The predicted curves conformed to the desired S-shaped curve, proving that the algorithm's prediction was relatively consistent with reality.
 
 (2) The platform phase at the front end of some curves was very short, and the yeast quickly entered the logarithmic growth phase, indicating that the yeast utilized oil well.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/growth-curve-ph-t.webp" caption="1" %}
 
 ## Cycle2 enhancement of mva pathway
 
@@ -138,6 +142,9 @@ After measuring a certain amount of data, the algorithm was used to predict the 
 
 (2) The improvement effect was limited, far below our expectations. We inferred that although beta-oxidation can promote fatty acid conversion, most of the generated energy is carried by NADH, which cannot be well utilized by the MVA pathway.
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/mva-overexpression.webp" caption="1" %}
+
+
 ### Cycle 2.2.1 Overexpression of the enzymes in mva pathway
 
 #### Design
@@ -167,6 +174,8 @@ After measuring a certain amount of data, the algorithm was used to predict the 
 (2) Contrary to expectations, the squalene yield of the engineering strains decreased instead. We inferred that overexpressing a large number of genes caused the engineering strains to consume too much energy for growth, thereby slowing down the rate of substance synthesis.
 
 Insert data showing that the squalene content of wild-type strains was 4 times higher than that of engineering strains in the first measurement
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/squalene-mva-po1f-fatase.webp" caption="1" %}
 
 ### Cycle 2.2.2 remove of the restriction of rate-limiting reaction and enhancement of squalene preservation
 
@@ -198,6 +207,10 @@ Insert data showing that the squalene content of wild-type strains was 4 times h
 
 (2) The knockout strains could not grow normally on the plate. We inferred that the blockage of subsequent metabolic pathways prevented yeast from synthesizing substances required for normal metabolic growth, leading to death. Additionally, paper reviews indicated that massive accumulation of squalene in the cytoplasm would cause cytotoxicity.
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/squalene-thmgr-nadhhmgr-oil.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/qiao.webp" caption="1" %}
+
+
 ### Cycle 2.2.3 relocation of mva pathway
 
 #### Design
@@ -222,6 +235,10 @@ Insert data showing that the squalene content of wild-type strains was 4 times h
 
 Regrettably, due to the large number of genes and limited time, the project of constructing the complete MVA pathway in peroxisomes is still in progress. However, based on previous experimental results, we believe that the squalene yield of strains with the complete pathway will be significantly increased.
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/jiaotu1.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/jiaotu2.webp" caption="1" %}
+
+
 ### Cycle 2.2.4 reconstruction of the structure of rate-limiting enzymes
 
 #### Design
@@ -237,6 +254,8 @@ De novo sequence redesign was performed using ProteinMPNN, and Rosetta FastRelax
 #### Test
 
 Due to time constraints, we regretfully failed to complete the introduction and verification of the redesigned rate-limiting enzyme. However, we believe that through hardware technology and prediction, we can obtain the optimized protein and contribute to the goal of squalene accumulation.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/movie9-soconvert-5.webp" caption="1" %}
 
 ## Cycle3 peroxisomes positioning and enhancement
 
@@ -262,6 +281,9 @@ Nile red staining was used to label lipid-containing parts of yeast cells, and c
 
 GFP did partially enter peroxisomes, confirming the effectiveness of the targeting peptide; however, we expected higher efficiency of the targeting peptide to increase the amount of target protein entering peroxisomes.
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/pts1-gfp.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/pts1-vision1.webp" caption="1" %}
+
 ### Cycle 3.1.2 signal peptide improvement
 
 #### Design
@@ -281,6 +303,8 @@ GFP did partially enter peroxisomes, confirming the effectiveness of the targeti
 #### Test
 
 Unfortunately, due to time constraints, we failed to verify whether the modified targeting peptide TWY could better import the target protein into peroxisomes compared to SKL. However, based on previous experiments, we believe that TWY will have better localization ability.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m1.webp" caption="Figure3. Molecular_docking" %}
 
 ### Cycle 3.2 Peroxisome Proliferation and Expansion
 
@@ -322,6 +346,8 @@ Tests on V1.0 verified the feasibility of the integrated design, but the entire 
 
 We recognized that insufficient automation was the core issue. To achieve true full automation, two key points must be addressed: first, realizing automated fluid control, and second, achieving seamless automatic switching between centrifugation and oscillation modes.
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh4.webp" caption="Figure 3.3.1 Schematic of the First-Generation Model" %}
+
 ### Cycle 4.2: Implementation of Core Automation Functions and Identification of Bottlenecks (V2.0 → V3.0)
 
 #### Design
@@ -339,6 +365,8 @@ V2.0 successfully realized the core function of "single-motor-driven multi-mode 
 #### Learn
 
 The automated mechanical structure is feasible, but liquid handling processes and user experience have become new optimization priorities. We learned that an innovative liquid handling solution is needed to address balancing and transfer issues, and the mode-switching mechanism needs to be optimized to achieve true oscillation effects.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh5.webp" caption="Figure 3.3.1 Schematic of the First-Generation Model" %}
 
 ### Cycle 4.3: Intelligent Control and User-Friendliness Upgrade (V3.0 → V4.0)
 
@@ -358,6 +386,10 @@ V3.0 achieved a high level of automation and intelligence, but tests and user fe
 
 Reliability and control precision are key to productization. We recognized that while pursuing functional innovation, we must select components with matching performance and consider the mechanical strength of materials.
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh6.webp" caption="Figure 3.3.1 Schematic of the First-Generation Model" %}
+
 ### Final Outcome (V4.0)
 
 Based on the learnings from the third cycle, we finally replaced the top motor with a stepper motor capable of precise positioning, and planned to replace key components such as gears with metal parts, thus creating the final version of the iFPS device with stable performance and smooth operation. Through these three closely linked engineering cycles, we successfully iterated a conceptual idea into a mature hardware product capable of solving practical pain points.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/hh40.webp" caption="Figure 3.3.1 Schematic of the First-Generation Model" %}
