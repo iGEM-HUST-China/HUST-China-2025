@@ -6,8 +6,6 @@ feature_image: "https://static.igem.wiki/teams/5569/description/egnr.webp"
 excerpt: ""
 ---
 
-## Welcome to iGEM HUST-China 2025 wiki!
-
 ## Cycle 1 Construction of effective oil-degradation yeast
 
 ### Cycle 1.1.1 engineer suitable stain for oil degradation
