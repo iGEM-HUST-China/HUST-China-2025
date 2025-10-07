@@ -1,13 +1,14 @@
 <!-- _includes/dropdown.html -->
 <div class="dropdown {% if include.class %}{{ include.class }}{% endif %}">
-    <button class="dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
+  <button class="dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
       {{ include.title | default: "点击展开" }}
-    </button>
-    <div class="dropdown-content">
-      {{ include.content }}
-    </div>
+  </button>
+  <div class="dropdown-content markdown-body">
+      {{ include.content | markdownify }}
   </div>
-  
+</div>
+
+<!-- 样式同上 -->
   <style>
   .dropdown {
     border: 1px solid #e1e8ed;
