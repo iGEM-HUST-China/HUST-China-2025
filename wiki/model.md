@@ -245,6 +245,10 @@ Future work will address these limitations by:
 
 
 # II. Protein Design and Optimization
+ 
+**Structure prediction · Active-site engineering · Stability refinement**
+
+
 
 ## 2.1 Background
 
@@ -344,6 +348,9 @@ Future extensions include:
 
 
 # III. Machine Learning Growth Modeling
+
+**Gompertz fitting · Parameter prediction · Environmental optimization**
+
 
 ## 3.1 Background
 
