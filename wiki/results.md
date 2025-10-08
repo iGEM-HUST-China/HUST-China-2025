@@ -43,7 +43,6 @@ For the three types of fatty acids, the order of superiority among the three rat
 
 ***To further refine our experimental setup, we compared squalene yield produced by *Y. lipolytica* cultivated in either standard YPD or YPD supplemented with olive oil ([see protocol](https://2025.igem.wiki/hust-china/protocol)). The results are as follows.***
 
-
 {% include figure.html image="https://static.igem.wiki/teams/5569/result/3.webp" caption="Figure 5 The squalene contents of po1f-fatase and po1f-fatase+oil" %}
 
 **Squalene yield (mg L⁻¹) of *Yarrowia lipolytica* Po1f wild-type (WT) grown in YPD and YPD supplemented with olive oil.** Error bars represent standard deviations from two to three independent cultures.
