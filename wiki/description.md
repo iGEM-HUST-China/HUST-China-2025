@@ -19,22 +19,10 @@ images02:
 
 During a holiday in 2024, one of our team members, Wanting ZOU, noticed a lipstick labeled “natural plant-derived squalane” while shopping in a mall. She was puzzled by the juxtaposition of the term “plant” with the shark-derived component and its description as “natural.” This observation piqued our curiosity and prompted us to investigate the compound, through which we learned about squalene, a high-value ingredient used in cosmetics.
 
-> Squalene V.S. Squalane: Squalane is a saturated form of squalene in which the double bonds have been eliminated by hydrogenation. 
-> The hydrogenation process creates a stable form of the molecule, while also making the oil softer, thinner, and more skin-friendly. Because squalane is less susceptible to oxidation, is odorless, and has a longer efficacy, it is more commonly used in personal care products than squalene.
+## Squalane: The Star Ingredient in the Beauty Field
 
-## Why Squalene? —Squalene’s Indispensable Role in the Market
-
-### Squalene
-
-Squalene (C₃₀H₅₀) is a 30‑carbon triterpenoid containing six isoprenoid double bonds. It is a naturally occurring lipid found in various plants and animals, including human sebum. As a moisturising agent, squalene is non‑greasy, has a pleasant sensory feel, exhibits excellent solubility, and remains stable even under extreme temperatures.
-
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/zongshu.webp" caption="Figure 1. Squalene" %}
-
-### Favoured in Skincare
-
-With increasing age, endogenous production of squalene declines, leading to reduced moisture retention in the skin and resulting in dryness and roughness. Cosmetics compensate for this natural decline by supplementing with squalene. Squalane, which has been demonstrated to prevent transepidermal water loss, diminish the appearance of fine lines and help prevent wrinkles, has therefore become a highly coveted ingredient <sup>1</sup>.
-
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/squlene-fix.webp" caption="Figure 2. Schematic illustration of the role of squalene in skin hydration and repair." %}
+Squalane is the hydrogenated, saturated form of squalene. This process makes it extremely stable, resistant to oxidation, with a lighter texture and better skin compatibility. It effectively mimics human sebum, forming a moisturizing barrier to prevent water loss and aid in skin repair. Consequently, it has become a core raw material in high-end skincare products for achieving efficient moisturization, anti-wrinkle, and repair effects.<sup>1</sup>
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/squlane-fix.webp" caption="Figure 1. Schematic illustration of the role of squalene in skin hydration and repair." %}
 
 ### Expanding Market for Moisturizers
 
@@ -44,27 +32,26 @@ In the same year, the global market for moisturizing creams was valued at 11.0
 
 {% include figure2.html images=page.images02 %}
 
-In most moisturizing products on the market, squalene and its hydrogenated derivative, squalane, are universally employed to enhance the spreadability, sensory feel and absorption of creams and lotions, thereby markedly improving the moisturizing experience. As the beauty market continues to expand, demand for squalene is increasing rapidly, and its pivotal role in formulations is becoming ever more evident.
+In most moisturizing products on the market, squalane are universally employed to enhance the spreadability, sensory feel and absorption of creams and lotions, thereby markedly improving the moisturizing experience. As the beauty market continues to expand, demand for squalane is increasing rapidly, and its pivotal role in formulations is becoming ever more evident.
+Behind this huge market lies the ever-increasing demand for squalane and its sole precursor – **squalene**.
 
-Thus, squalene has become an indispensable foundational component underpinning the entire category of moisturizing products, and innovations aimed at efficient, economical and stable production processes are emerging as key drivers of advancement in the cosmetics industry.
+## The Foundation and Hidden Cost: The Squalene Supply Dilemma
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/zongshu.webp" caption="Figure 2. Squalene" %}
+However, the foundation supporting this "beauty" faces an unsustainable and harsh reality. Currently, commercial squalene primarily comes from the following three sources, each with severe challenges.
 
-## Do you know the secret behind how squalene is obtained? ——The Brutal Extraction Methods and the Unsustainable Reality
+### 1. Shark Liver Oil Extraction: An Ecological Catastrophe
 
-### Brutal Animal-Based Extraction Methods
-
-Prior to 1988, virtually all squalene worldwide was sourced from shark liver oil. To obtain this raw material, fishermen would discard the remainder of the shark carcass after removing the liver; this highly controversial practice is akin to shark livering.
-
-An investigation report by the marine conservation organization Bloom <sup>4</sup> further revealed the scale of this industry: more than one quarter—over fifty species—of shark populations have been overfished for commercial purposes; each year approximately 2.7 million sharks are captured and killed for their livers; in 2012, the global demand for shark liver oil was estimated at about 2,200 tonnes, 90 % of which was used in the cosmetics industry. On this basis, producing a single tonne of squalene requires roughly 3,000 sharks. This startling figure underscores squalene’s indispensable status within the cosmetics sector and highlights the long‑standing dependence of its supply chain on marine ecosystems.
+Prior to 1988, virtually all squalene worldwide was sourced from shark liver oil. An investigation report by the marine conservation organization Bloom <sup>4</sup> further revealed the scale of this industry: more than one quarter—over fifty species—of shark populations have been overfished for commercial purposes; each year approximately 2.7 million sharks are captured and killed for their livers; in 2012, the global demand for shark liver oil was estimated at about 2,200 tonnes, 90 % of which was used in the cosmetics industry. On this basis, producing a single tonne of squalene requires roughly 3,000 sharks. This startling figure underscores squalene’s indispensable status within the cosmetics sector and highlights the long‑standing dependence of its supply chain on marine ecosystems.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/description/shark-bg-1.webp" caption="Figure 5. Global status and ecological impact of shark hunting for the squalene industry." %}
 
-### Efforts to Find Alternative Sources
+### 2.Efforts to Find Alternative Sources
 
 As global consensus on biodiversity conservation has grown, many countries have adopted policies to tighten management of fishery resources. Our Human Practice field work has revealed that coastal regions have implemented more stringent bans and catch limits on deep-sea fish and sharks, along with seasonal fishing moratoria and quota systems. This regulatory environment has begun to reshape the sourcing structure for squalene: plant-derived sources now predominate, and microbial sources are also emerging. Worldwide, numerous research teams and companies are striving to reduce dependence on animal-derived squalene, developing alternative pathways from olive oil by-products, rice bran, amaranth seeds and sugarcane molasses. Nonetheless, a series of critical bottlenecks still needs to be overcome to realise these alternatives.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/description/squalene-source-1.webp" caption="Figure 6. Global squalene sources" %}
 
-### Complex Plant‑Based Extraction Processes
+#### 2.1 Plant-Based Extraction: An Inefficient Alternative
 
 Although plant‑derived squalene has become the predominant alternative source, its extraction is hampered by significant technical and economic bottlenecks. Taking olive oil as an example, squalene coexists with numerous unsaponifiable compounds of similar physical properties; achieving a high‑purity product requires multiple deep purification steps—saponification, washing, refining and molecular distillation under stringent conditions—<sup>5</sup>. These operations are complex, demand sophisticated equipment and yield low product output, which keeps production costs elevated. 
 
@@ -72,7 +59,7 @@ Over time, substantial resources, labour and energy have been invested, yet the 
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/description/plant-jiagong.webp" caption="Figure 7. The process of extracting squalene from olive" %}
 
-### Microbial Routes Inconsistent with Sustainable Development Principles
+#### 2.2 Traditional Microbial Fermentation: Bottlenecked Potential
 
 Against the backdrop of the high energy demands and elevated costs associated with plant extraction routes, microbial fermentation has been viewed as another important alternative for squalene production because of its controllability, environmental friendliness and sustainability. In recent years, both academia and industry have pursued active exploration in this field. However, our discussions with research teams and company representatives during Human Practice activities reveal that, despite high expectations for the controllability and sustainability of microbial fermentation, industrialisation of microbially derived squalene still faces key limitations.
 
