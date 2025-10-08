@@ -29,8 +29,8 @@ Globally, over 150 million tons of **waste oil (WO)** are generated annually. Im
 
 The degradation of waste oil produces large amounts of free fatty acids, which need to undergo β-oxidation to synthesize acetyl-CoA, the precursor for squalene. To enhance the supply of precursor substances, we overexpressed the key β-oxidation enzymes **POT1, MFE2, and POX2.**
 {% include figure.html image="https://static.igem.wiki/teams/5569/hw2/dd1.webp" caption="Figure 1. β-oxidation Enhancement" %}
-{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/z1.avif" caption="Figure 2.  β-oxidation Plasmid" %}
-.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/z1.avif" caption="Figure 2. β-oxidation Plasmid" %}
 
 ## 5. Mevalonate (MVA) Pathway Improvement
 ### 5.1 Modification of Rate-Limiting Enzymes
