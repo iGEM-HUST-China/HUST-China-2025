@@ -46,7 +46,9 @@ We knocked out ERG1 (the first enzyme downstream of squalene cyclase) with the e
 
 **At this stage, the molecular engineering of squalene synthesis seems to have reached a deadlock. Those modifications are only modest improvements. Three main limiting factors were identified:**
 >**1. Squalene is an intermediate, so metabolic flux is naturally directed downstream.**
+
 >**2. Endogenous HMG-CoA reductase in *Yarrowia lipolytica* is subject to negative feedback regulation.**
+
 >**3. High squalene accumulation may exert cytotoxic effects, reducing cellular metabolic rates.**
 
 **Upon analyzing these constraints, we realized that they primarily occur in the cytosol. This insight naturally led to a new strategy: Relocating the squalene biosynthetic pathway via compartmentalization.**
