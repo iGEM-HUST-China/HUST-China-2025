@@ -84,7 +84,7 @@ Through field visits and social surveys, we found that these wasted oil not only
 
 Currently, squalene production faces the dual challenges of the high costs associated with plant extraction and the reliance of microbial fermentation on food crops. To address both the environmental hazards posed by wasted oil (WO) and the need for a sustainable supply of squalene, we have designed SQUALENE—an integrated synthetic‑biology system aimed at upcycling waste.
 
-Our core strategy is to engineer Yarrowia lipolytica so that it can efficiently utilise WO as a carbon source. Building on this chassis, we have optimised secreted lipases, modified the rate‑limiting enzyme HMGR and incorporated a peroxisomal compartmentalisation strategy to reconstruct an efficient squalene biosynthetic pathway.
+Our core strategy is to engineer *Yarrowia lipolytica* so that it can efficiently utilise WO as a carbon source. Building on this chassis, we have optimised secreted lipases, modified the rate‑limiting enzyme HMGR and incorporated a peroxisomal compartmentalisation strategy to reconstruct an efficient squalene biosynthetic pathway.
 
 To solve the classic problems of metabolic flux dispersion and product toxicity in the cytoplasm, we innovatively localised the entire squalene synthesis pathway within the peroxisome, effectively isolating competing pathways and feedback inhibition.
 
@@ -104,7 +104,7 @@ At the enzyme‑engineering layer, focusing on the rate‑limiting enzyme t‑HM
 
 At the systems layer, to quantify the host’s metabolic responses under varying environmental conditions, we built a growth‑kinetics framework based on the Gompertz equation and machine‑learning models (Random Forest<sup>15</sup> and XGBoost<sup>16</sup>). This framework predicts how changes in pH and temperature affect growth rate and stationary phase, thereby guiding the optimisation of culture conditions.
 
-Through this integrated three‑layer modelling system, we achieved a closed‑loop design linking peroxisomal import optimisation, rate‑limiting enzyme refinement and growth‑environment prediction, transforming metabolic engineering of Y. lipolytica from empirical exploration to prediction‑driven design.
+Through this integrated three‑layer modelling system, we achieved a closed‑loop design linking peroxisomal import optimisation, rate‑limiting enzyme refinement and growth‑environment prediction, transforming metabolic engineering of *Y. lipolytica* from empirical exploration to prediction‑driven design.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 11. Model design of our project." %}
 
