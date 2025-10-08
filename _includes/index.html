@@ -1,37 +1,10 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | iGEM HUST-China 2025</title>
     <style>
-        /* 加载动画样式 */
-        #loading-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s ease, visibility 0.5s;
-        }
-        
-        #loading-gif {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .loaded #loading-animation {
-            opacity: 0;
-            visibility: hidden;
-        }
-        
-        /* 基础样式 */
+        /* 基础样式重置 */
         * {
             margin: 0;
             padding: 0;
@@ -57,68 +30,32 @@
             color: #333;
             overflow-x: hidden;
             line-height: 1.6;
-            cursor: none;
         }
 
-        /* 自定义鼠标指针 */
-        .custom-cursor {
+        /* 加载动画样式 */
+        #loading-animation {
             position: fixed;
             top: 0;
             left: 0;
-            width: 24px;
-            height: 32px;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.15s ease;
-            transform-origin: top center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .cursor-visible {
-            opacity: 1;
-        }
-
-        .cursor-inner {
-            position: absolute;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 50% 70%, var(--light-gold) 0%, var(--gold) 100%);
-            border-radius: 50% 50% 50% 50%;
-            clip-path: polygon(
-                50% 0%, 
-                65% 15%,
-                80% 30%,
-                90% 50%,
-                95% 70%,
-                90% 85%,
-                70% 95%,
-                50% 100%,
-                30% 95%,
-                10% 85%,
-                5% 70%,
-                10% 50%,
-                20% 30%,
-                35% 15%
-            );
-            box-shadow: 
-                0 0 8px rgba(212, 175, 55, 0.6),
-                inset 0 2px 4px rgba(255, 255, 255, 0.3);
-            animation: waterDrip 2.5s infinite ease-in-out;
+            background: #ffffff;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease, visibility 0.5s;
         }
-
-        @keyframes waterDrip {
-            0%, 100% {
-                transform: translateY(0) scale(1);
-            }
-            50% {
-                transform: translateY(-2px) scale(1.05);
-            }
+        
+        #loading-gif {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-
-        .custom-cursor.hover {
-            transform: scale(1.3);
-            filter: brightness(1.2);
+        
+        .loaded #loading-animation {
+            opacity: 0;
+            visibility: hidden;
         }
 
         /* 导航栏样式 */
@@ -127,7 +64,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(248, 244, 233, 0.9);
+            background: rgba(248, 244, 233, 0.95);
             z-index: 9000;
             padding: 0.6rem 0;
             display: flex;
@@ -137,22 +74,18 @@
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
             transform: translateY(0);
             transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .navbar.scrolled {
-            background: rgba(248, 244, 233, 0.95);
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            height: 80px;
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            padding-left: 7.5rem;
+            padding-left: 2rem;
             cursor: pointer;
         }
 
         .nav-logo img {
-            height: 95px;
+            height: 60px;
             width: auto;
             transition: transform 0.6s ease;
         }
@@ -161,7 +94,7 @@
             display: flex;
             justify-content: flex-end;
             flex: 1;
-            padding-right: 8.8rem;
+            padding-right: 2rem;
         }
 
         .nav-links {
@@ -180,7 +113,7 @@
         .nav-link {
             color: #28b17f;
             text-decoration: none;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
@@ -194,28 +127,6 @@
 
         .nav-link:hover {
             color: #0e391d;
-        }
-
-        .nav-link.current {
-            color: #a8adac;
-        }
-
-        .nav-link.current:hover {
-            color: #0e391d;
-        }
-
-        .nav-link .icon-down {
-            display: inline-block;
-            vertical-align: middle;
-            font-size: 0.9rem;
-            transform: rotate(0deg);
-            transform-origin: center center;
-            transition: transform 0.3s ease;
-            color: inherit;
-        }
-
-        .nav-item:hover .nav-link .icon-down {
-            transform: rotate(180deg);
         }
 
         .dropdown {
@@ -249,7 +160,7 @@
             color: #28b17f;
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 400;
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -266,7 +177,7 @@
         /* 滚动指示器 */
         .scroll-indicator {
             position: fixed;
-            right: 2rem;
+            right: 1.5rem;
             top: 50%;
             transform: translateY(-50%);
             z-index: 100;
@@ -293,27 +204,6 @@
         .indicator-dot:hover {
             background: var(--primary-green);
             transform: scale(1.5);
-        }
-
-        .indicator-dot::after {
-            content: attr(data-title);
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            white-space: nowrap;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .indicator-dot:hover::after {
-            opacity: 1;
         }
 
         /* 回到顶部按钮 */
@@ -367,6 +257,7 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            padding: 100px 20px 20px; /* 为导航栏留出空间 */
         }
 
         /* 背景模糊效果 */
@@ -390,22 +281,24 @@
             height: 100vh;
             overflow: hidden;
             position: relative;
+            padding: 100px 0 0; /* 为导航栏留出空间 */
         }
 
         .horizontal-pages {
             display: flex;
             width: 300vw;
-            height: 100vh;
+            height: 100%;
             transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .horizontal-page {
             width: 100vw;
-            height: 100vh;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
+            padding: 20px;
         }
 
         /* 为横屏页面添加背景 */
@@ -421,21 +314,6 @@
             filter: blur(8px);
             z-index: -1;
             opacity: 0.7;
-        }
-
-        /* 鲨鱼来源背景 */
-        .shark-bg::before {
-            background-image: url('https://static.igem.wiki/teams/5569/index/shark.webp');
-        }
-
-        /* 植物来源背景 */
-        .plant-bg::before {
-            background-image: url('https://static.igem.wiki/teams/5569/index/plant.webp');
-        }
-
-        /* 生物技术背景 */
-        .biotech-bg::before {
-            background-image: url('https://static.igem.wiki/teams/5569/index/gongchang.webp');
         }
 
         /* 各场景背景 */
@@ -479,22 +357,27 @@
             flex-direction: column;
             width: 100%;
             height: 100%;
-            padding: 4rem;
+            padding: 20px;
             position: relative;
             justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .content-block {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
             text-align: center;
-            padding-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .section-title {
-            font-size: 3.5rem;
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 700;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             background: linear-gradient(135deg, #2E5D32, #4A7C51);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -502,18 +385,20 @@
             line-height: 1.2;
             color: #2E5D32;
             font-family: 'Arial', serif;
+            text-align: center;
         }
 
         .section-text {
-            font-size: 1.6rem;
+            font-size: clamp(1rem, 2.5vw, 1.6rem);
             color: #222;
             line-height: 1.7;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
             font-weight: 400;
             font-family: 'Arial', sans-serif;
+            text-align: center;
         }
 
         .highlight {
@@ -523,34 +408,17 @@
             display: inline-block;
         }
 
-        .highlight::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 30%;
-            background: rgba(74, 124, 81, 0.2);
-            z-index: -1;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .highlight:hover::before {
-            transform: scaleX(1);
-        }
-
         .image-container {
-            margin-top: 3rem;
+            margin-top: 2rem;
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
         }
 
         .section-image {
-            max-width: 80%;
-            max-height: 60vh;
+            max-width: 85%;
+            max-height: 50vh;
             border-radius: 16px;
             transition: transform 0.5s ease, box-shadow 0.5s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -562,71 +430,139 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
-        /* 图片切换器样式 */
-        .image-switcher {
-            position: relative;
-            cursor: pointer;
-            display: inline-block;
-            overflow: visible;
-        }
-
-        .image-extension {
-            position: absolute;
-            top: 50%;
-            right: -20px;
-            transform: translateY(-50%);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            z-index: 20;
-            display: flex;
-            align-items: center;
+        /* 分屏布局样式 */
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 2rem;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .image-switcher.active .image-extension {
-            opacity: 1;
-            visibility: visible;
-            right: -100px;
+        .split-text {
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .extension-line {
-            width: 40px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--gold), var(--light-gold));
+        .split-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 马赛克布局样式 */
+        .mosaic-layout {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
             position: relative;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .extension-line::before {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: 0;
-            width: 8px;
-            height: 8px;
-            background: var(--gold);
-            border-radius: 50%;
-            animation: lineFlow 2s infinite;
+        .mosaic-content {
+            width: 100%;
+            text-align: center;
         }
 
-        @keyframes lineFlow {
-            0%, 100% { transform: translateX(0); opacity: 1; }
-            50% { transform: translateX(70px); opacity: 0.3; }
+        .mosaic-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
-        .extension-image {
-            width: 300px;
-            height: 200px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            object-fit: cover;
-            transition: transform 0.3s ease;
-            border: 3px solid var(--gold);
+        .mosaic-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
         }
 
-        .extension-image:hover {
-            transform: scale(1.05);
+        .mosaic-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mosaic-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .mosaic-title {
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #2E5D32;
+            font-family: 'Arial', serif;
+        }
+
+        .mosaic-text {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            color: #555;
+            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* 封面特殊样式 */
+        .cover-content {
+            text-align: center;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .cover-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #2E5D32, #4A7C51);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: #2E5D32;
+            font-family: 'Arial', serif;
+        }
+
+        .cover-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* 浮动动画 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
         }
 
         /* 文字渐次出现效果 */
@@ -665,10 +601,13 @@
             margin-top: 2rem;
             text-align: center;
             min-height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         .typewriter-text {
-            font-size: 1.8rem;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
             font-weight: 600;
             color: #2E5D32;
             border-right: 3px solid #2E5D32;
@@ -684,148 +623,13 @@
             50% { border-color: #2E5D32; }
         }
 
-        /* 分屏布局样式 */
-        .split-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            width: 100%;
-            height: 100%;
-            padding: 4rem;
-            align-items: center;
-            padding-top: 5rem;
-        }
-
-        .split-text {
-            text-align: left;
-        }
-
-        .split-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* 马赛克布局样式 */
-        .mosaic-layout {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            padding: 4rem;
-            position: relative;
-            justify-content: center;
-            padding-top: 3rem;
-        }
-
-        .mosaic-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .mosaic-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .mosaic-item {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.7);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: var(--transition);
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .mosaic-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .mosaic-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .mosaic-title {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #2E5D32;
-            font-family: 'Arial', serif;
-        }
-
-        .mosaic-text {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.6;
-            font-family: 'Arial', sans-serif;
-        }
-
-        /* 封面特殊样式 */
-        .cover-content {
-            text-align: center;
-            z-index: 2;
-            margin-top: 4rem;
-        }
-
-        .cover-title {
-            font-size: 4.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #2E5D32, #4A7C51);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            color: #2E5D32;
-            font-family: 'Arial', serif;
-        }
-
-        .cover-subtitle {
-            font-size: 1.8rem;
-            color: #333;
-            margin-bottom: 2rem;
-            font-weight: 400;
-            font-family: 'Arial', sans-serif;
-        }
-
-        /* 浮动动画 */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(74, 124, 81, 0.2); }
-            50% { box-shadow: 0 0 30px rgba(74, 124, 81, 0.4); }
-        }
-
-        .glowing {
-            animation: glow 3s ease-in-out infinite;
-        }
-
         /* 长页滚动内容 */
         .long-scroll-section {
             width: 100%;
             min-height: 100vh;
             background: var(--light-cream);
             position: relative;
-            padding: 4rem;
+            padding: 120px 20px 40px;
             display: none;
         }
 
@@ -836,7 +640,7 @@
         .scroll-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1rem;
         }
 
         /* 交替布局 */
@@ -844,7 +648,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 8rem;
+            margin-bottom: 4rem;
             opacity: 0;
             transform: translateX(-100px);
             transition: all 0.8s ease;
@@ -866,7 +670,7 @@
 
         .alternating-text {
             flex: 1;
-            padding: 2rem;
+            padding: 1rem;
             opacity: 0;
             transform: translateX(-50px);
             transition: all 0.8s ease 0.3s;
@@ -900,15 +704,15 @@
         }
 
         .alternating-title {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             color: #2E5D32;
             font-family: 'Arial', serif;
         }
 
         .alternating-content {
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
             line-height: 1.7;
             color: #444;
         }
@@ -918,8 +722,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 1.3rem;
-            margin: 4rem 0;
+            gap: 1rem;
+            margin: 3rem 0;
             flex-wrap: wrap;
         }
 
@@ -934,13 +738,14 @@
         }
 
         .nav-image-item img {
-            width: 170px;
-            height: 255px;
-            margin-bottom: 0rem;
+            width: clamp(120px, 20vw, 170px);
+            height: clamp(180px, 30vw, 255px);
+            margin-bottom: 0.5rem;
+            object-fit: cover;
         }
 
         .nav-image-item p {
-            font-size: 1rem;
+            font-size: clamp(0.9rem, 1.5vw, 1rem);
             font-weight: 600;
             color: #2E5D32;
             margin: 0;
@@ -952,20 +757,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 80px auto;
+            margin: 3rem auto;
             flex-wrap: wrap;
             border-radius: 8px;
-            width: 680px;
-            height:435px;
+            width: min(90%, 680px);
+            height: auto;
+            aspect-ratio: 16/9;
             padding: 10px;
             background: #ecc679;
         }
 
+        .video iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
         /* 页脚样式 */
         .footer-container {
-            width: 100vw;
-            margin-left: calc(-50vw + 50%);
-            max-width: 100vw;
+            width: 100%;
             overflow: hidden;
             display: none;
         }
@@ -982,7 +792,7 @@
             min-height: 80vh;
             display: flex;
             flex-direction: column;
-            width: 100vw;
+            width: 100%;
             margin: 0;
             padding: 0;
         }
@@ -991,7 +801,7 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100vw;
+            width: 100%;
             height: 100%;
             background-image: url('https://static.igem.wiki/teams/5569/description/ditu.webp');
             background-size: cover;
@@ -1009,13 +819,16 @@
             flex-grow: 1;
             padding: 40px 0 60px;
             font-weight: bold;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
         }
         
         .logos {
             display: flex;
             gap: 40px;
             align-items: flex-end;
-            padding-left: 20vw;
+            padding-left: 5%;
         }
         
         .logos img {
@@ -1029,20 +842,20 @@
         .contact-info {
             text-align: right;
             color: #0c0c0c;
-            padding-right: 2vw;
+            padding-right: 5%;
         }
         
         .contact-info h3 {
             color: #2d5a3c;
             margin-bottom: 20px;
-            font-size: 1.6rem;
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
             font-weight: bold;
         }
         
         .contact-info p {
             margin-bottom: 8px;
             line-height: 1.5;
-            font-size: 1.5rem;
+            font-size: clamp(1rem, 1.5vw, 1.5rem);
         }
         
         .contact-info a {
@@ -1061,7 +874,7 @@
         
         .footer-bottom p {
             margin: 5px 0;
-            font-size: 1.4rem;
+            font-size: clamp(1rem, 1.5vw, 1.4rem);
             color:#0c0c0c;
         }
         
@@ -1074,60 +887,49 @@
         /* 响应式设计 */
         @media (max-width: 1200px) {
             .nav-logo {
-                padding-left: 4rem;
+                padding-left: 1.5rem;
             }
             .nav-links-container {
-                padding-right: 4rem;
+                padding-right: 1.5rem;
             }
-            .section-title {
-                font-size: 3rem;
-            }
-            .section-text {
-                font-size: 1.4rem;
+            .logos {
+                padding-left: 3%;
             }
         }
 
         @media (max-width: 768px) {
-            .nav-logo {
-                padding-left: 2rem;
-            }
-            .nav-links-container {
-                padding-right: 2rem;
-            }
-            .section-title {
-                font-size: 2.5rem;
-            }
-            .section-text {
-                font-size: 1.2rem;
-            }
-            .cover-title {
-                font-size: 3rem;
-            }
-            .split-layout {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 2rem;
-            }
-            .mosaic-grid {
-                grid-template-columns: 1fr;
-            }
             .navbar {
                 flex-direction: column;
                 padding: 0.5rem 0;
+                height: auto;
+                min-height: 80px;
             }
+            
+            .nav-logo {
+                padding-left: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .nav-logo img {
+                height: 50px;
+            }
+            
             .nav-links-container {
                 width: 100%;
                 padding-right: 0;
             }
+            
             .nav-links {
                 flex-direction: column;
                 width: 100%;
                 gap: 0;
             }
+            
             .nav-item {
                 width: 100%;
                 text-align: center;
             }
+            
             .dropdown {
                 position: static;
                 width: 90%;
@@ -1137,57 +939,57 @@
                 visibility: visible;
                 display: none;
             }
+            
             .nav-item:hover .dropdown,
             .nav-item.active .dropdown {
                 display: block;
             }
-            .custom-cursor {
-                display: none;
-            }
+            
             .scroll-indicator {
                 right: 1rem;
             }
+            
             .back-to-top {
                 bottom: 20px;
                 right: 20px;
                 width: 45px;
                 height: 45px;
             }
+            
+            .split-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 1rem;
+            }
+            
+            .mosaic-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .alternating-layout {
                 flex-direction: column;
-                margin-bottom: 4rem;
+                margin-bottom: 3rem;
             }
+            
             .alternating-layout.reverse {
                 flex-direction: column;
             }
+            
             .alternating-text, .alternating-image {
                 padding: 1rem;
             }
-            .alternating-title {
-                font-size: 2rem;
-            }
-            .nav-images {
-                grid-template-columns: 1fr;
-            }
-            .nav-image-item img {
-                width: 120px;
-                height: 120px;
-            }
-            .typewriter-text {
-                font-size: 1.4rem;
-            }
-            .image-extension {
-                display: none;
-            }
+            
             footer {
                 min-height: 70vh;
             }
+            
             .footer-content {
                 flex-direction: column;
                 align-items: center;
                 gap: 40px;
                 padding: 40px 0 60px;
             }
+            
             .logos {
                 order: 2;
                 justify-content: center;
@@ -1195,32 +997,73 @@
                 padding-left: 0;
                 gap: 30px;
             }
+            
             .contact-info {
                 order: 1;
                 text-align: center;
                 width: 100%;
                 padding-right: 0;
             }
+            
+            .vertical-section, .horizontal-scroll-section {
+                padding: 120px 15px 15px;
+            }
         }
 
         @media (max-width: 480px) {
             .nav-logo {
-                padding-left: 1rem;
-            }
-            .nav-links-container {
-                padding-right: 1rem;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-            .section-text {
-                font-size: 1rem;
-            }
-            .cover-title {
-                font-size: 2.5rem;
+                padding-left: 0.5rem;
             }
             .clean-layout, .split-layout, .mosaic-layout {
-                padding: 1rem;
+                padding: 10px;
+            }
+            .long-scroll-section {
+                padding: 120px 10px 20px;
+            }
+            .nav-images {
+                gap: 0.5rem;
+            }
+            .nav-image-item {
+                padding: 0.5rem;
+            }
+            .logos {
+                gap: 20px;
+            }
+            .logos img {
+                max-height: 80px;
+                max-width: 100px;
+            }
+            .section-image {
+                max-width: 95%;
+            }
+        }
+        
+        /* 横屏设备优化 */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .vertical-section, .horizontal-scroll-section {
+                padding: 90px 15px 15px;
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .clean-layout, .split-layout, .mosaic-layout {
+                padding: 10px;
+            }
+            
+            .section-image {
+                max-height: 40vh;
+            }
+            
+            .content-block {
+                padding-top: 0.5rem;
+            }
+            
+            .navbar {
+                height: 70px;
+            }
+            
+            .nav-logo img {
+                height: 45px;
             }
         }
     </style>
@@ -1229,11 +1072,6 @@
     <!-- 加载动画 -->
     <div id="loading-animation">
         <img id="loading-gif" src="https://static.igem.wiki/teams/5569/description/jiazaizaizaizaizai.webp" alt="Loading animation">
-    </div>
-
-    <!-- 自定义鼠标指针 -->
-    <div class="custom-cursor">
-        <div class="cursor-inner"></div>
     </div>
 
     <!-- 回到顶部按钮 -->
@@ -1245,7 +1083,6 @@
     <nav class="navbar">
         <div class="nav-logo" id="navLogo">
             <img src="https://static.igem.wiki/teams/5569/index/logopic.webp" alt="iGEM HUST-China">
-            <div class="nav-logo-text"></div>
         </div>
         <div class="nav-links-container">
             <div class="nav-links">
@@ -1254,46 +1091,46 @@
                 <div class="nav-item">
                     <a href="#" class="nav-link">Project</a>
                     <div class="dropdown">
-                        <a href="description" class="dropdown-link"><i class="fas fa-file-alt"></i> Description</a>
-                        <a href="safety" class="dropdown-link"><i class="fas fa-shield-alt"></i> Safety</a>
-                        <a href="proposed-implementation" class="dropdown-link"><i class="fas fa-lightbulb"></i> Proposed Implementation</a>
+                        <a href="description" class="dropdown-link">Description</a>
+                        <a href="safety" class="dropdown-link">Safety</a>
+                        <a href="proposed-implementation" class="dropdown-link">Proposed Implementation</a>
                     </div>
                 </div>
                 
                 <div class="nav-item">
                     <a href="#" class="nav-link">Wet Lab</a>
                     <div class="dropdown">
-                        <a href="design" class="dropdown-link"><i class="fas fa-pencil-ruler"></i> Design</a>
-                        <a href="engineering" class="dropdown-link"><i class="fas fa-dna"></i> Engineering</a>
-                        <a href="protocol" class="dropdown-link"><i class="fas fa-flask"></i> Protocol</a>
-                        <a href="results" class="dropdown-link"><i class="fas fa-chart-line"></i> Results</a>
-                        <a href="notebook" class="dropdown-link"><i class="fas fa-book"></i> Notebook</a>
-                        <a href="parts" class="dropdown-link"><i class="fas fa-puzzle-piece"></i> Parts</a>
+                        <a href="design" class="dropdown-link">Design</a>
+                        <a href="engineering" class="dropdown-link">Engineering</a>
+                        <a href="protocol" class="dropdown-link">Protocol</a>
+                        <a href="results" class="dropdown-link">Results</a>
+                        <a href="notebook" class="dropdown-link">Notebook</a>
+                        <a href="parts" class="dropdown-link">Parts</a>
                     </div>
                 </div>
                 
                 <div class="nav-item">
                     <a href="#" class="nav-link">Dry Lab</a>
                     <div class="dropdown">
-                        <a href="model" class="dropdown-link"><i class="fas fa-gears"></i> Model</a>
-                        <a href="hardware" class="dropdown-link"><i class="fas fa-microchip"></i> Hardware</a>
+                        <a href="model" class="dropdown-link">Model</a>
+                        <a href="hardware" class="dropdown-link">Hardware</a>
                     </div>
                 </div>
                 
                 <div class="nav-item">
                     <a href="#" class="nav-link">HP</a>
                     <div class="dropdown">
-                        <a href="human-practices" class="dropdown-link"><i class="fas fa-users"></i> Human Practices</a>
-                        <a href="education" class="dropdown-link"><i class="fas fa-graduation-cap"></i> Education & Communication</a>
+                        <a href="human-practices" class="dropdown-link">Human Practices</a>
+                        <a href="education" class="dropdown-link">Education & Communication</a>
                     </div>
                 </div>
                 
                 <div class="nav-item">
                     <a href="#" class="nav-link">Team</a>
                     <div class="dropdown">
-                        <a href="members" class="dropdown-link"><i class="fas fa-user-friends"></i> Members</a>
-                        <a href="contribution" class="dropdown-link"><i class="fas fa-hands-helping"></i> Contribution</a>
-                        <a href="attributions" class="dropdown-link"><i class="fas fa-award"></i> Attributions</a>
+                        <a href="members" class="dropdown-link">Members</a>
+                        <a href="contribution" class="dropdown-link">Contribution</a>
+                        <a href="attributions" class="dropdown-link">Attributions</a>
                     </div>
                 </div>
             </div>
@@ -1310,7 +1147,6 @@
         <div class="indicator-dot" data-title="Problem" data-target="5"></div>
         <div class="indicator-dot" data-title="Solution" data-target="6"></div>
         <div class="indicator-dot" data-title="Detail" data-target="7"></div>
-        <!-- 新增页脚指示点 -->
         <div class="indicator-dot" data-title="Footer" data-target="8"></div>
     </div>
 
@@ -1329,11 +1165,11 @@
         <section id="intro" class="vertical-section">
             <div class="clean-layout">
                 <div class="content-block">
-                    <h2 class="section-title">The Squalene Story</h2>
+                    <h2 class="section-title"></h2>
                     <p class="section-text text-line">In the list of core ingredients for high-end cosmetics and personal care products, the premium skincare ingredient squalane has always held a prominent position. And the starting point of it all stems from its precursor—squalene.</p>
                     <p class="section-text text-line">Through a single hydrogenation step, squalene is transformed into the well-known skincare star, squalane.</p>
                     <div class="image-container">
-                        <img src="https://static.igem.wiki/teams/5569/description/huazhuangpinnew.webp" alt="Squalene" class="section-image image-animated glowing">
+                        <img src="https://static.igem.wiki/teams/5569/description/huazhuangpinnew.webp" alt="Squalene" class="section-image image-animated">
                     </div>
                 </div>
             </div>
@@ -1349,14 +1185,7 @@
                     <p class="section-text text-line">So, what kind of rapidly growing market is supporting the squalene that fuels its production?</p>
                 </div>
                 <div class="split-image">
-                    <div class="image-switcher">
-                        <img src="https://static.igem.wiki/teams/5569/description/face11.webp" alt="Benefits" class="section-image image-animated" id="faceImage">
-                        <!-- 添加延伸线和扩展图片 -->
-                        <div class="image-extension">
-                            <div class="extension-line"></div>
-                            <img src="https://static.igem.wiki/teams/5569/description/suoshuinew.webp" alt="锁水效果" class="extension-image">
-                        </div>
-                    </div>
+                    <img src="https://static.igem.wiki/teams/5569/description/face11.webp" alt="Benefits" class="section-image image-animated">
                 </div>
             </div>
         </section>
@@ -1380,7 +1209,7 @@
         <section id="sources" class="horizontal-scroll-section">
             <div class="horizontal-pages">
                 <!-- 页面1: 鲨鱼来源 -->
-                <div class="horizontal-page shark-bg">
+                <div class="horizontal-page">
                     <div class="split-layout">
                         <div class="split-image">
                             <img src="https://static.igem.wiki/teams/5569/index/shark.webp" alt="Shark Source" class="section-image image-animated">
@@ -1395,7 +1224,7 @@
                 </div>
 
                 <!-- 页面2: 植物来源 -->
-                <div class="horizontal-page plant-bg">
+                <div class="horizontal-page">
                     <div class="split-layout">
                         <div class="split-text">
                             <h2 class="section-title">Plant-Based Sources</h2>
@@ -1410,7 +1239,7 @@
                 </div>
 
                 <!-- 页面3: 生物技术 -->
-                <div class="horizontal-page biotech-bg">
+                <div class="horizontal-page">
                     <div class="clean-layout">
                         <div class="content-block">
                             <h2 class="section-title">Biotechnological Production</h2>
@@ -1440,7 +1269,7 @@
             </div>
         </section>
         
-        <!-- 技术 - 修改为与其他页面一致的格式 -->
+        <!-- 技术 - 马赛克布局 -->
         <section id="technology" class="vertical-section">
             <div class="mosaic-layout">
                 <div class="mosaic-content">
@@ -1656,7 +1485,6 @@
                 const mosaicItems = document.querySelectorAll('.mosaic-item');
                 const navbar = document.querySelector('.navbar');
                 const navLogo = document.querySelector('#navLogo');
-                const customCursor = document.querySelector('.custom-cursor');
                 const horizontalSection = document.querySelector('.horizontal-scroll-section');
                 const horizontalPages = document.querySelector('.horizontal-pages');
                 const backToTop = document.getElementById('backToTop');
@@ -1665,8 +1493,6 @@
                 const navImageItems = document.querySelectorAll('.nav-image-item');
                 const longScrollSection = document.getElementById('details');
                 const footerContainer = document.getElementById('footerContainer');
-                const faceImage = document.getElementById('faceImage');
-                const imageSwitcher = document.querySelector('.image-switcher');
                 
                 let currentSection = 0;
                 let currentHorizontalPage = 0;
@@ -1692,11 +1518,6 @@
                 let rotationSpeed = 0;
                 let isRotating = false;
                 let rotationAnimationId = null;
-    
-                // 图片切换状态
-                let isFaceImage1 = true;
-                const faceImage1 = 'https://static.igem.wiki/teams/5569/description/face11.webp';
-                const faceImage2 = 'https://static.igem.wiki/teams/5569/description/face2.webp';
     
                 // 打字机效果
                 const typewriterText = document.getElementById('typewriter-text');
@@ -1744,28 +1565,6 @@
                 // 启动打字机效果
                 setTimeout(typeWriter, 1000);
     
-                // 图片切换功能
-                let isExtensionVisible = false;
-                
-                imageSwitcher.addEventListener('click', function() {
-                    // 切换图片
-                    if (isFaceImage1) {
-                        faceImage.src = faceImage2;
-                        isFaceImage1 = false;
-                    } else {
-                        faceImage.src = faceImage1;
-                        isFaceImage1 = true;
-                    }
-                    
-                    // 切换延伸线和扩展图片的显示状态
-                    isExtensionVisible = !isExtensionVisible;
-                    if (isExtensionVisible) {
-                        imageSwitcher.classList.add('active');
-                    } else {
-                        imageSwitcher.classList.remove('active');
-                    }
-                });
-    
                 // 导航栏Logo点击跳转
                 navLogo.addEventListener('click', function() {
                     window.location.href = 'index.html';
@@ -1799,45 +1598,6 @@
                     
                     updateCounter();
                 }
-    
-                // 自定义鼠标指针移动
-                document.addEventListener('mousemove', function(e) {
-                    customCursor.style.left = e.clientX + 'px';
-                    customCursor.style.top = e.clientY + 'px';
-                    customCursor.classList.add('cursor-visible');
-                });
-    
-                // 鼠标离开窗口事件
-                document.addEventListener('mouseleave', () => {
-                    customCursor.classList.remove('cursor-visible');
-                });
-    
-                // 鼠标进入窗口事件
-                document.addEventListener('mouseenter', () => {
-                    customCursor.classList.add('cursor-visible');
-                });
-    
-                // 为可交互元素添加悬停效果
-                const interactiveElements = document.querySelectorAll('a, button, .indicator-dot, .back-to-top, .nav-image-item, .image-switcher');
-    
-                interactiveElements.forEach(element => {
-                    element.addEventListener('mouseenter', () => {
-                        customCursor.classList.add('hover');
-                    });
-                    
-                    element.addEventListener('mouseleave', () => {
-                        customCursor.classList.remove('hover');
-                    });
-                });
-    
-                // 点击时的效果
-                document.addEventListener('mousedown', () => {
-                    customCursor.style.transform = 'scale(0.8)';
-                });
-    
-                document.addEventListener('mouseup', () => {
-                    customCursor.style.transform = 'scale(1)';
-                });
     
                 // 导航栏滚动效果
                 function handleNavbarScroll() {
@@ -2288,5 +2048,3 @@
                 }
             });
         </script>
-</body>
-</html>
