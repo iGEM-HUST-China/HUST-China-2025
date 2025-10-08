@@ -19,7 +19,7 @@ images01:
 
 ## **Part 1 Multi-dimensional verification of scheme feasibility and exploration on the growth conditions**
 
-### **1.1 1.1 Exploration of different oil medium cultivation feasibility**
+### **1.1 Exploration of different oil medium cultivation feasibility**
 
 The liquid fatty acids in waste cooking oil form a mixed system, dominated by oleic acid and also containing other components such as linoleic acid and linolenic acid.
 
@@ -29,7 +29,7 @@ To confirm that our Yarrowia lipolytica can utilize lipids in waste cooking oil 
 
 Through the comparison and comprehensive analysis of data across all groups, it was found that Yarrowia lipolytica can grow well in fatty acid-rich environments. Furthermore, our experimental results revealed that Yarrowia lipolytica exhibits the optimal growth vigor when using oleic acid as the carbon source. Coincidentally, oleate accounts for the highest proportion (approximately 50%) of total lipids in various types of waste cooking oil. This finding further underscores the growth advantage of our strain in waste cooking oil.
 
-### **1.2 1.2 The effect of oil medium with different proportion of glycerol and fatty acid**
+### **1.2 The effect of oil medium with different proportion of glycerol and fatty acid**
 
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/result/2.webp" caption="Figure 4 Growth status under different proportions
@@ -81,7 +81,7 @@ One day after inoculation, the entire A plate appeared yellow, while the hydroly
 #### **2.2.2 Hydrolysis Circle-2**
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/6.webp" caption="Figure 8 Different groups of different cultivation times 
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/12345.webp" caption="Figure 8 Different groups of different cultivation times 
 	(A)Po1f-TLL+24h	(B)Po1f-TLL+8h		(C)Po1f-TLL+4h
 	(D)Po1f-WT+24h	(E)Po1f-WT+8h	(F)Po1f-WT+4h
 " %}
