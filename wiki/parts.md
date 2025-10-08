@@ -10,22 +10,22 @@ excerpt: ""
 
 Our project focuses on adopting various strategies to enhance the efficiency of squalene synthesis by Yarrowia Lipolytica using fatty acids as substrates. The project aims to utilize low-cost and abundant WCO (Waste cooking oil) for squalene synthesis, thereby meeting the growing demand of the cosmetics industry for squalene, an excellent raw material. To address the feedback inhibition and interference affecting the MVA pathway in the cytoplasm, we have proposed a compartmentalization strategy.
 
-To facilitate the application of this compartmentalization strategy in the actual production of squalene and the potential synthesis of other terpenoids in the future, we have developed a parts collection specifically for peroxisomal compartmentalization. This collection includes:
+To facilitate the application of this compartmentalization strategy in the actual production of squalene and the potential synthesis of other terpenoids in the future, we have developed a parts collection specifically for peroxisomal compartmentalization. ([UUID:6a1f3d92-50e1-4192-bd4f-e652a0293224](https://registry.igem.org/collections/6a1f3d92-50e1-4192-bd4f-e652a0293224))This collection includes:
 
-Overexpression parts for upregulating the beta-oxidation pathway that inherently exists in peroxisomes();
+Overexpression parts for upregulating the beta-oxidation pathway that inherently exists in peroxisomes ([BBa_25VW58NU](https://registry.igem.org/parts/bba-25vw58nu) );
 
-A set of multi-gene integration parts for compartmentalizing the MVA pathway via the PTS1 sequence();
+A set of multi-gene integration parts for compartmentalizing the MVA pathway via the PTS1 sequence([BBa_25T8A2CI](https://registry.igem.org/parts/bba-25t8a2ci)  [BBa_25KXC0C8](https://registry.igem.org/parts/bba-25kxc0c8)  [BBa_25P1VJS7](https://registry.igem.org/parts/bba-25p1vjs7));
 
-Dynamic regulatory parts that increase the size and quantity of peroxisomes().
+Dynamic regulatory parts that increase the size and quantity of peroxisomes([BBa_25OGDY94](https://registry.igem.org/parts/bba-25ogdy94)).
 
 By applying this series of parts, the compartmentalization process of the MVA pathway becomes simple and efficient. Against the backdrop of the increasing widespread application of squalene—as an antioxidant and moisturizing raw material—this compartmentalization scheme holds great promise. Meanwhile, it can serve as a cornerstone for almost all MVA pathway-related synthesis projects and is expected to become a key component of future solutions for terpenoid synthesis.
 
 In the context where the cosmetics industry is placing greater emphasis on environmental protection and sustainability, the parts collection developed in our project addresses the issue that environmental requirements have restricted the widespread application of squalene. It also aims to reduce the cost of squalene and provides a feasible strategy for the biosynthetic production of other raw materials in the fashion industry.
 
 We encourage and welcome other teams to use our parts collection for the compartmentalized synthesis of any products. Building on the foundation we have established, they can further characterize the enzyme properties in the pathway to optimize the compartment environment for improved reaction efficiency, or optimize the energy supply in peroxisomes and establish dynamic regulatory mechanisms. Such efforts will help refine this compartmentalization strategy.
-# iGEM 部件清单
+# iGEM part
 
-## 基础部件 (Basic Parts)
+## Basic Parts
 
 | Part Name | Registry Code | Part Type |
 |-----------|---------------|-----------|
@@ -58,7 +58,7 @@ We encourage and welcome other teams to use our parts collection for the compart
 | Kozak | [BBa_K5073037](https://registry.igem.org/parts/bba-k5073037) | Scar |
 | ylMFE1 | [BBa_K3909006](https://registry.igem.org/parts/bba-k3909006) | Coding |
 
-## 复合部件 (Composite Parts)
+## Composite Parts
 
 | Part Name | Registry Code | Part Type |
 |-----------|---------------|-----------|

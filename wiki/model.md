@@ -388,7 +388,7 @@ Altogether, the dataset contained approximately 6,000 high-resolution measuremen
 
 To transform the experimental OD₆₀₀ trajectories into interpretable kinetic descriptors, we first applied the Gompertz equation to fit all growth curves using non-linear least squares  
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m7.webp" caption=" Figure 7. Gompertz model fitting of Y. lipolytica growth under varied carbon-source conditions." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m7.webp" caption=" Figure 8. Gompertz model fitting of Y. lipolytica growth under varied carbon-source conditions." %}
 
 This classical model captures the sigmoidal microbial growth pattern and provides four biologically meaningful parameters: the initial biomass (A), the carrying capacity (K), the maximum specific growth rate (μₘₐₓ), and the lag-phase duration (λ). 
 
@@ -403,7 +403,7 @@ $$
 
 Each fit produced smooth trajectories and 95 % confidence intervals, providing robust parameter estimates.  
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m8.webp" caption=" Figure 7. Gompertz model fitting with 95% confidence intervals across multiple carbon sources." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m8.webp" caption=" Figure 9. Gompertz model fitting with 95% confidence intervals across multiple carbon sources." %}
 
 The fitted parameters were then reformulated as a multi-output regression task, with environmental conditions (pH, temperature, substrate) serving as inputs and the Gompertz parameter vector as outputs.  
 Model training minimized the L2 loss function , ensuring consistency between predicted and fitted parameters.  
@@ -471,20 +471,20 @@ $$
 In summary, this tri-layer modelling framework — **mechanistic fitting**, **data-driven regression**, and **empirical constraint** — ensures both interpretability and generalization, providing a robust tool for predictive modelling and optimization of microbial growth curves.  
 This hybrid approach bridges mechanistic insight with data-driven flexibility, enabling rational environmental optimization in bioprocess design.  
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m9.webp" caption=" Figure 7. Environmental adjustment of lipid growth curve (pH 6.0, 30 °C)." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m9.webp" caption=" Figure 10. Environmental adjustment of lipid growth curve (pH 6.0, 30 °C)." %}
 
 ### 3.4 Results and Model Verification
 
 After completing curve fitting and machine learning training, we systematically evaluated the overall performance and extrapolation capability of the model. All 144 growth curves (12 environmental conditions × 12 substrates) were successfully fitted without any failure, demonstrating the strong adaptability and numerical stability of the Gompertz equation within this system. The fitted curves closely overlapped with the experimental measurements, accurately capturing the initiation, exponential, and stationary phases of the typical sigmoidal growth pattern, confirming that the model can robustly describe microbial growth under diverse conditions.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m10-3.webp" caption=" Figure 7. System evaluation of growth fitting and model prediction." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m10-3.webp" caption=" Figure 11. System evaluation of growth fitting and model prediction." %}
 
 To assess the model’s generalization ability, fivefold cross-validation was conducted on the training dataset, and an independent test set was constructed for unseen conditions. The training dataset included combinations of pH 4.5, 5.5, 6.5, and 7.5 with temperatures of 24 °C, 28 °C, and 32 °C, while the test dataset comprised four new conditions (pH 6.0 and 6.8 × 26 °C and 30 °C). Cross-validation results showed that the Random Forest model achieved the best overall accuracy, with an average RMSE of approximately 0.0609 and R² of 0.93, whereas XGBoost yielded slightly higher error with a normalized RMSE of around 0.12. The predicted values of the four Gompertz parameters (A, K, μₘₐₓ, and λ) exhibited strong linear correlation with the fitted results, indicating that the model successfully learned the nonlinear mapping between environmental variables and growth kinetics.
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m11.webp" caption=" Figure 7. Predicted vs. true values for Gompertz parameters.." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m11.webp" caption=" Figure 12. Predicted vs. true values for Gompertz parameters.." %}
 
 In the independent test set, the predicted growth curves almost completely overlapped with the experimentally fitted ones. The onset of the exponential phase and the stationary plateau were consistent across curves, with deviations in onset time and maximum specific growth rate remaining within ±5 %. These results indicate that the learned mapping relationships can reliably extend to unseen environmental conditions, demonstrating excellent extrapolation performance.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m12.webp" caption=" Figure 7. Predicted vs. actual growth curve (unseen condition, 26 °C)." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m12.webp" caption=" Figure 13. Predicted vs. actual growth curve (unseen condition, 26 °C)." %}
 
 The reliability of the model was further confirmed through multiple validation strategies. Leave-one-condition-out analysis showed that removing any single condition still yielded predictions with an average R² above 0.9. Residual analysis revealed a normal distribution of prediction errors across different pH and temperature combinations, without systematic bias. Moreover, bootstrap resampling demonstrated that 90 % prediction intervals successfully encompassed over 90 % of the true parameter values, confirming the robustness and statistical confidence of the model.
 

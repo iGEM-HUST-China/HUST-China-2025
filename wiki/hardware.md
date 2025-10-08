@@ -33,7 +33,27 @@ Both existing shake flask and micro-fermentation methods require manual sampling
 
 To systematically address these challenges, our project team innovatively proposed the design of an "**Integrated Fermentation & Processing System (iFPS)**" based on real-world research needs. This system deeply integrates mechatronics and intelligent control technologies, seamlessly combining three core functional modules---micro-fermentation culture, high-speed centrifugal collection, and mechanical agitation disruption---into a single compact benchtop device. This achieves true end-to-end automation from "post-inoculation" to "crude lysate collection." The system not only significantly enhances experimental consistency and operational safety but also keeps equipment costs around **\$100**-**just 1% of the cost of existing micro-fermentation devices.** fundamentally solving problems points in synthetic biology practice---namely high costs, low efficiency, and heavy reliance on manual labor.
 
-
+<!-- ========================================================= -->
+<!-- ✅ MathJax Configuration for Centered Equations -->
+<!-- ========================================================= -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  svg: {
+    fontCache: 'global',
+    displayAlign: 'center',   // ✅ Center equations
+    displayIndent: '0em'
+  },
+  chtml: {
+    displayAlign: 'center',   // ✅ also ensures center alignment in HTML mode
+    displayIndent: '0em'
+  }
+};
+</script>
+<script async src="https://gitlab.igem.org/2025/hust-china/-/tree/main/wiki/static/model/js/tex-svg.js"></script>
 
 ## Device Development Process
 
@@ -135,7 +155,11 @@ Our hardware team has consistently focused on addressing practical challenges en
 
 - According to the spectrophotometric formula:
 
--                                          *A* = *ε* • *c* • *l*
+
+$$
+A = \varepsilon \cdot c \cdot l
+$$
+
 
 - *A* : Absorbance; *ε*  : Molar absorptivity (L/(mol·cm)); *c*: Solution concentration (mol/L); *l*: Optical path length (cm)
 
