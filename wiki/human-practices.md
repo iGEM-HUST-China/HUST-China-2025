@@ -7,19 +7,19 @@ excerpt: ""
 
 images01:
   - src: https://static.igem.wiki/teams/5569/hp-new/hp-1.avif
-    alt: Figure project inspiration-lipstick
-    caption: Figure project inspiration-lipstick
+    alt: Figure 1 project inspiration-lipstick
+    caption: Figure 1 project inspiration-lipstick
   - src: https://static.igem.wiki/teams/5569/hp-new/hp-2.avif
     alt: Figure 2 Words cloud
     caption: Figure 2 Words cloud
 
 images02:
   - src: https://static.igem.wiki/teams/5569/hp-new/hp-9.avif
-    alt: Figure 9 Professor Ning kang.
-    caption: Figure 9 Professor Ning kang.
+    alt: Figure 8 Professor Ning kang.
+    caption: Figure 8 Professor Ning kang.
   - src: https://static.igem.wiki/teams/5569/hp-new/hp-10.avif
-    alt: Figure 10 members with Ning kang
-    caption: Figure 10 members with Ning kang
+    alt: Figure 9 members with Ning kang
+    caption: Figure 9 members with Ning kang
 
 
 images03:
@@ -237,21 +237,21 @@ Our project thus embarked, aiming to create a green cycle "from waste oil to squ
 
 >We released a questionnaire about our project's product story, collecting 200+ valid responses. The results showed: over 70% of young consumers are willing to try sustainable skincare products "regenerated from waste oil," especially when the product story and environmental concept can be combined with fashion. This indicates that consumers not only want to pay for environmental protection but also hope this behavior can become a "social currency" that demonstrates their attitude and taste. Simply emphasizing technology or efficacy fails to resonate emotionally with mainstream young consumers. This also guided us to choose the fashion track.
 >
-{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-6.avif" caption="Figure 6 Interviewer finishng questionaire " %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-6.avif" caption="Figure 5 Interviewer finishng questionaire " %}
 
 ## Part 2: Construction of Technical Pathway & Key Iterations
 
 ### **Ideal Chassis Strain Selection:** 
 >In the early stages of the project, we contacted **Prof. Tang Qiang from the University of Science and Technology of China**. We explained our project goal: to find a microbial chassis that can survive in waste oil and efficiently utilize waste oils. After hearing our needs, Prof. Tang clearly stated: "***Yarrowia lipolytica*** is the ideal choice for your project. It is not only recognized as an 'oleaginous yeast,' naturally possessing strong lipid accumulation and metabolism capabilities, but more importantly, it itself has a complete **MVA pathway**, which is the foundation for squalene synthesis." We adopted Prof. Tang's advice, formally selected *Yarrowia lipolytica* as the project chassis, and began designing strategies to strengthen its endogenous MVA pathway.
 >
-{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-7.avif" caption="Figure 7 member Zou wanting with professor Wang qiang" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-7.avif" caption="Figure 6 member Zou wanting with professor Wang qiang" %}
 
 ### **Lipase Introduction:** 
 >However, in subsequent experiments, we encountered a bottleneck: 
 even when using relatively simple edible oil for fermentation, the oil degradation efficiency of our engineered strain did not meet expectations. With this new problem, we consulted **Prof. Yan Yunjun from HUST**, who has profound expertise in enzyme engineering and multi-enzyme catalysis. After analyzing our data, Prof. Yan pointed out incisively: "The intrinsic lipase activity of *Yarrowia lipolytica* might indeed be insufficient to support high yield requirements. I suggest you introduce an exogenous, efficient, and stable lipase as an 'enhancement module.' Consider introducing the **TLL enzyme from *Aspergillus oryzae***. This enzyme has good thermal stability and broad substrate specificity, with high hydrolytic activity against various triglycerides, effectively decomposing waste oil into free fatty acids." Ultimately, we chose the TLL enzyme to enhance waste oil degradation.
 >
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-8.avif" caption="Figure 8 member Zou wanting and Yuan tianxu with professor Yan yunjun" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-8.avif" caption="Figure 7 member Zou wanting and Yuan tianxu with professor Yan yunjun" %}
 
 ### **Rate-Limiting Enzyme Optimization:** 
 >To optimize the key rate-limiting step, we contacted Prof. Ning Kang from HUST. He suggested introducing ProteinMPNN and Rosetta. Integrating summer research progress and the team's existing technical stack, we finalized the optimization path: using ProteinMPNN for scaffold sequence redesign under structural constraints, supplemented by Frustratometer2 for quantitative assessment and iterative screening of local and global conformational frustration, and utilizing Rosetta for fastrelax. The goal is to reduce local frustration, smooth the energy landscape, and overall enhance the thermodynamic stability and folding robustness of tHMGR.
@@ -262,7 +262,7 @@ even when using relatively simple edible oil for fermentation, the oil degradati
 >As the project progressed, we committed to optimizing key enzymes in the squalene synthesis pathway through protein engineering. We wanted to first mine all proteins in nature with catalytic activity similar to HMGR using a certain method. Therefore, how to accurately and quickly screen the enzymes we want at the three-dimensional structural level and guide rational design? For this, we contacted Prof. Shi Mang from Sun Yat-sen University. The expert pointed out that the core of our problem lies in functional annotation from the perspective of structural homology. He explained that traditional tools like MMseqs2 primarily rely on amino acid sequence similarity, but their predictive power drops significantly when sequence identity is low. He recommended a powerful new tool – **Foldseek**. This tool can directly compare the 3D structures of proteins, effectively identifying structurally homologous and potentially functionally related proteins even when sequence similarity is low, greatly improving the accuracy of functional annotation. The expert also shared his team's successful experience, setting the structural consistency (TM-score) threshold at 90% as a reliable standard for functional inference.
 This consultation opened a new door for us. We immediately integrated Foldseek into our protein engineering workflow. The introduction of this tool moved our enzyme optimization work from "guessing" to "structure-based rational design," significantly improving the success rate and efficiency of our engineered strain design.
 >
-{% include figure.html image="https://static.igem.wiki/teams/5569/hp/shimang.avif" caption="Figure  Professor Shimang" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp/shimang.avif" caption="Figure 10  Professor Shimang" %}
 
 ### **Compartmentalization:** 
 >While strengthening the MVA pathway and knocking out downstream squalene pathways, we found that MVA pathway optimization did not significantly increase squalene yield, and knocking out downstream genes severely affected normal life activities. To solve this problem, we contacted Researcher Xie Xiaoman from HUST. She stated: "The cytoplasmic environment is complex; squalene accumulation might produce toxicity, and negative feedback regulation exists. She suggested adopting a **'compartmentalization'** strategy, transferring the synthesis pathway to independent organelles." We subsequently made a major technical route iteration, deciding to localize the entire MVA pathway **to the peroxisome**, creating a more optimized micro-reaction environment. The dry lab team immediately began systematically screening efficient signal peptides.

@@ -272,7 +272,7 @@ When co-expressing tHMGr and NADH-HMGr, we conducted tag recovery.
 
 
 ### **4.3 Impact of exogenous genes**
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/32.webp" caption="**Squalene yield of Po1f-fatase and Po1f-fatase<sup>Exogenous</sup>**" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/32.webp" caption="Figure 21 Squalene yield of Po1f-fatase and Po1f-fatase<sup>Exogenous</sup>" %}
 
 
 

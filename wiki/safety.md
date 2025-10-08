@@ -18,7 +18,7 @@ To prevent uncontrolled proliferation or release, we designed and utilized bioco
 
 We designed a intriguing suicide system which allowed the yeast to survive under room light but die under sunlight or single blue light.Comparing the difference of room light and sunlight,we discovered a slightly but important point that the modern lamps,LED for example,doesn’t produce far-red light. Hsp82 and Hsc82 have been verified as the significant protein for maintaining the structure of cell membrance of yeasts.When the kill switch is triggered,the Crispr will recognize the homologous sequence of Hsc82 and Hsp82 genes by the sgRNA and knock them down which can lead to the death of the yeasts.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/safetyy.avif" caption="system of light-inducibloe kill switch" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/safetyy.avif" caption="Figure system of light-inducibloe kill switch" %}
 
 ### Daily Laboratory Safety Practices
 

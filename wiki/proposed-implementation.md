@@ -131,7 +131,7 @@ To comprehensively evaluate its commercial feasibility and future development pa
 - Potential negative consumer perceptions from improper communication about "waste oil raw materials," affecting terminal brand reputation and market penetration
 - Complex regulatory barriers for cosmetic ingredients in different countries and regions, bringing uncertainty and high compliance costs for product globalization
 - Supply chain risks including equipment bottlenecks in large-scale production, instability of waste oil recycling networks, and logistics challenges
-{% include figure.html image="https://static.igem.wiki/teams/5569/hp/swot.webp" caption="SWOT Analysis Diagram" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp/swot.webp" caption="Figure SWOT Analysis Diagram" %}
 
 ## 5. Challenges
 

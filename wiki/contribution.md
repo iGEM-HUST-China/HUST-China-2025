@@ -105,7 +105,7 @@ During the project advancement, we identified a significant technological gap be
 
 ## Part 4: Modeling
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m1.webp" caption="Figure3. Molecular_docking" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m1.webp" caption="Figure 3 Molecular_docking" %}
 **The functions and value our model can provide to other researchers or teams:**
 The Model digital twin modeling system we built not only serves the metabolic reprogramming research of this project but also provides a universal framework and reusable tools for other teams engaged in microbial metabolic engineering and systems modeling.
 
