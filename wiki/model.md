@@ -313,7 +313,7 @@ Top-ranked variants were subsequently selected for experimental validation of fo
 <iframe title="HUST-China: Alignment of t-HMGR before and after optimization (2025)" width="460" height="215" src="https://video.igem.org/videos/embed/joCRDYNNTRjtMv2kHZpHLe" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
 </div>
 
-### 🔬 t-HMGR Structure Alignment (Interactive Viewer)
+###  t-HMGR Structure Alignment (Interactive Viewer)
 
 <iframe
   src="https://static.igem.wiki/teams/5569/model/t-HMGR_alignment_blue_gray.html"
