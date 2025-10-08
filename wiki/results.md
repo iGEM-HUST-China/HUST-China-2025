@@ -90,15 +90,6 @@ According to the medium color, it is obvious that the hydrolysis circle expand a
 
 ### **2.4 Exploration of the Optimal Activity Conditions of Lipase**
 
-| initial PH | enzyme activity |
-|------------|-----------------|
-| 5.5        | 390             |
-| 6          | 405             |
-| 6.5        | 375             |
-| 7          | 360             |
-| 7.5        | 330             |
-
-
 {% include figure.html image="https://static.igem.wiki/teams/5569/result/7.webp" caption="1" %}
 
 **Lipase activity under different pHs**
