@@ -130,7 +130,7 @@ To balance analytical accuracy, cost and throughput, a UV-spectrophotometric pro
 
 At the experimental-design stage, the nitrogen-feeding strategy was benchmarked against the previously acquired data; three feeding regimes were formulated and compared. The final results demonstrate that prolonging the feeding interval to create sustained oscillations of nitrogen within a defined concentration window exerts a positive effect on squalene synthesis in *Yarrowia lipolytica*, raising yield markedly and furnishing a pivotal reference for subsequent optimization of nitrogen-based control schemes in microbial squalene production.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/r3.webp" caption="Impact of Dynamic Nitrogen Content on Squalene Yield" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/r3.webp" caption="Figure10. Impact of Dynamic Nitrogen Content on Squalene Yield" %}
 
 **Squalene Yield under Dynamic Nitrogen Contents**
 
