@@ -131,11 +131,11 @@ To comprehensively evaluate its commercial feasibility and future development pa
 - Potential negative consumer perceptions from improper communication about "waste oil raw materials," affecting terminal brand reputation and market penetration
 - Complex regulatory barriers for cosmetic ingredients in different countries and regions, bringing uncertainty and high compliance costs for product globalization
 - Supply chain risks including equipment bottlenecks in large-scale production, instability of waste oil recycling networks, and logistics challenges
-{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/12.webp" caption="SWOT Analysis Diagram" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp/swot.webp" caption="SWOT Analysis Diagram" %}
 
 ## 5. Challenges
 
-1. **Yield and Conversion Rate Improvement**: Current squalene yield仍需进一步提高, future focus on **pathway optimization** and **fermentation process control**
+1. **Yield and Conversion Rate Improvement**: The current squalene yield still needs to be further improved, future focus on **pathway optimization** and **fermentation process control**
 
 2. **Process Scale-up and Stability**: Stable scale-up of laboratory processes to industrial scale is the core of successful industrialization, requiring close cooperation with fermentation engineering experts
 
