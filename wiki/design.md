@@ -6,7 +6,8 @@ feature_image: "https://static.igem.wiki/teams/5569/description/desn.webp"
 excerpt: ""
 ---
 
-# Design Description: Squalene Production from Waste Cooking Oil
+# Design Description: From Waste Oil to Sustainable Squalene
+
 
 ## 1. Introduction
 
@@ -16,20 +17,20 @@ Globally, over 150 million tons of **waste oil (WO)** are generated annually. Im
 
 **Squoilene** aims to transform WO into squalene efficiently, offering a low-cost and sustainable alternative for industrial applications. By optimizing exoenzyme activity, enhancing metabolic flux, and implementing a compartmentalized bioprocess in ***Yarrowia lipolytica***, we achieve integrated conversion of WO into high-purity squalene—realizing the combined goals of environmental protection, biomanufacturing, and advanced skincare.
 
-## 2. The "Squalene Alchemist" from Waste Cooking Oil: Chassis Strain Selection
+## 2. Our Selection of Chassis
 
 ***Yarrowia lipolytica*** is an oleaginous yeast named for its lipolytic (fat-breaking) properties; notably, it boasts **high tolerance to salt, low & high temperatures and low pH**, granting **strong adaptability to complex, unstable environments**. This yeast also utilizes diverse substrates for growth—including WO, ethanol, glucose and glycerol—while its cytoplasm contains **abundant lipid droplets and subcellular structures**, and it further benefits from well-developed gene editing tools and a clear genetic background.
 
 
-## 3. Lipase Secretion
+## 3. Lipase Secretion for Highly Degrade Lipids
 ***Thermomyces lanuginosus* lipase (TLL)** is a well-defined commercial lipase with high efficiency for lipid degradation. In this study, a recombinant plasmid containing the TLL gene sequence was kindly provided by our tutor.The core research objective was to construct a high-performance *Y. lipolytica* strain capable of strong adaptation in oily environments and efficient utilization of lipids as the sole carbon source, ultimately directing metabolic flux towards the biosynthesis of the target product.
 
-## 4. Enhanced Beta-Oxidation
+## 4. β-oxidation Enhancement to Get Abundant Acetyl-CoA
 
 The degradation of waste oil produces large amounts of free fatty acids, which need to undergo β-oxidation to synthesize acetyl-CoA, the precursor for squalene. To enhance the supply of precursor substances, we overexpressed the key β-oxidation enzymes **POT1, MFE2, and POX2.**
 .
 
-## 5. MVA Pathway Optimization
+## 5. Mevalonate (MVA) Pathway Improvement
 ### 5.1 Modification of Rate-Limiting Enzymes
 Through analysis of the entire MVA pathway, **HMG-CoA reductase (HMGR)** was identified as a key rate-limiting enzyme. Factors affecting its efficiency include ubiquitination degradation triggered by negative feedback from downstream products and limitation by its cofactor NADPH.  We introduced a codon-optimized **NADH-dependent HMGr** from *Silicibacter pomeroyi* and a **truncated HMGr (tHMGr)** lacking the feedback regulatory domain, thereby increasing MVA pathway flux. Using dry lab methods, we also de novo designed these enzymes to have lower free energy and increased stability.
 ### 5.2 Overexpression of Other Enzymes in MVA Pathway
@@ -48,12 +49,13 @@ We knocked out ERG1 (the first enzyme downstream of squalene cyclase) with the e
 **Upon analyzing these constraints, we realized that they primarily occur in the cytosol. This insight naturally led to a new strategy: Relocating the squalene biosynthetic pathway via compartmentalization.**
 
 ## 6. Peroxisomal Compartmentalization
+
 We targeted the non-HMGR enzymes of the MVA pathway, along with NADH-HMGR and tHMGR to the peroxisome to fully exploit the abundant acetyl-CoA and cofactors NADH within the peroxisome to synthesize the squalene efficiently.
 
 Enzyme targeting was achieved using the PTS1 signal peptide. In Model, we optimized the PTS1-SKL/G4SSKL/TYWIRFSKL sequences for precise protein localization.
 {% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 1. Model design of our project" %}
 
-## 7. Dynamic Regulation of Peroxisomes
+## 7.Dynamic Regulation of Peroxisomes
 
 We knocked out PEX23 (a negative regulator of peroxisomes) and overexpressed PEX10 (a protein responsible for matrix protein import) to increase peroxisome abundance and volume, thereby enhancing squalene biosynthetic capacity.
 
