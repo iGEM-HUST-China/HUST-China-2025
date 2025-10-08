@@ -171,9 +171,9 @@ Finally, it was concluded that the engineered yeast exhibits optimal growth unde
 Our standard cloning workflow begins with genomic DNA isolated from *Yarrowia lipolytica*. Target genes are amplified by PCR, digested with NotI and ClaI, and ligated into the likewise-cut 7166 backbone using T4 DNA ligase. The ligation mixture is transformed into *E. coli*, selected on ampicillin plates, verified by colony PCR, and the positive clone is propagated for plasmid recover
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/35.webp" caption="**PCR of POX2, the band is similar to the anticipated length 2139bp** <br>
-**PCR of POT1, the band is similar to the anticipated length 1281bp**<br>
-**PCR of MFE2, the band is similar to the anticipated length 2807bp**" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/35.webp" caption="PCR of POX2, the band is similar to the anticipated length 2139bp <br>
+PCR of POT1, the band is similar to the anticipated length 1281bp<br>
+PCR of MFE2, the band is similar to the anticipated length 2807bp" %}
 
 
 
@@ -237,17 +237,17 @@ In conclusion, our combined cloning and phenotypic analyses confirm that the thr
 
 ### **4.1 Plasmid construction**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/36.webp" caption="**PCR of ERG9, the band is similar to the anticipated length 1365bp**<br>
-**PCR of ERG8, the band is similar to the anticipated length 1284bp**<br>
-**PCR of ERG12, the band is similar to the anticipated length 1377bp**<br>
-**PCR of ERG13, the band is similar to the anticipated length 1369bp**<br>
-**PCR of ERG10, the band is similar to the anticipated length 1628bp**" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/36.webp" caption="PCR of ERG9, the band is similar to the anticipated length 1365bp<br>
+PCR of ERG8, the band is similar to the anticipated length 1284bp<br>
+PCR of ERG12, the band is similar to the anticipated length 1377bp<br>
+PCR of ERG13, the band is similar to the anticipated length 1369bp<br>
+PCR of ERG10, the band is similar to the anticipated length 1628bp" %}
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/37.webp" caption="**PCR of ERG19, the band is similar to the anticipated length 1191bp**<br>
-**PCR of tHMGr, the band is similar to the anticipated length 1533bp**<br>
-**PCR of NADH-HMGr, the band is similar to the anticipated length 1071bp**<br>
-**PCR of IDI, the band is similar to the anticipated length 840bp**<br>
-**PCR of ERG20, the band is similar to the anticipated length 1062bp**" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/37.webp" caption="PCR of ERG19, the band is similar to the anticipated length 1191bp<br>
+PCR of tHMGr, the band is similar to the anticipated length 1533bp<br>
+PCR of NADH-HMGr, the band is similar to the anticipated length 1071bp<br>
+PCR of IDI, the band is similar to the anticipated length 840bp<br>
+PCR of ERG20, the band is similar to the anticipated length 1062bp" %}
 
 ### **4.2 Optimization of the rate-limiting step**
 
@@ -259,15 +259,18 @@ In conclusion, our combined cloning and phenotypic analyses confirm that the thr
 
 
 
-(Strains were cultured in YPD + olive oil.)
+
 
 The bar graph compares intracellular squalene yields (mg L⁻¹) among four *Yarrowia lipolytica* variants grown in YPD plus olive oil.
 
-The PO1f-fatase control reaches ~20 mg L⁻¹. Expression of NADH-HMGR, which utilizes NADH as cofactor, lifts the yield to ~60 mg L⁻¹, while the feedback-insensitive t-HMGR alone achieves ~100 mg L⁻¹. Co-expressing both t-HMGR and NADH-HMGR further elevates squalene to ~120 mg L⁻¹, demonstrating that simultaneously bypassing negative feedback and increasing NADH supply synergistically boosts
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/32.webp" caption="Figure 20 Squalene yield of Po1f-fatase and Po1f-fatase" %}
+The PO1f-fatase control reaches ~20 mg L⁻¹. Expression of NADH-HMGR, which utilizes NADH as cofactor, lifts the yield to ~60 mg L⁻¹, while the feedback-insensitive t-HMGR alone achieves ~100 mg L⁻¹. Co-expressing both t-HMGR and NADH-HMGR further elevates squalene to ~120 mg L⁻¹, demonstrating that simultaneously bypassing negative feedback and increasing NADH supply synergistically boostssqualene accumulation.
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/31.webp" caption="Figure 20 Tag recovery
+A.MD-Leu plate  B.YPD plate
+" %}
 
 
-**Tag recovery**
+
+
 
 When co-expressing tHMGr and NADH-HMGr, we conducted tag recovery.
 
@@ -276,8 +279,9 @@ A.MD-Leu plate  B.YPD plate
 " %}
 
 ### **4.3 Impact of exogenous genes**
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/32.webp" caption="**Squalene yield of Po1f-fatase and Po1f-fatase<sup>Exogenous</sup>**" %}
 
-**Squalene yield of Po1f-fatase and Po1f-fatase^Exogenous^**
+
 
 Although it has been demonstrated that the introduction of exogenous genes such as tHMGr and NADH-HMGr can significantly promote the reactions of rate-limiting steps, the results of our yeast experiments are not as theoretically expected. This may be attributed to the increased metabolic burden imposed on yeast by the introduced exogenous genes, which disrupts its metabolic equilibrium and consequently leads to a reduction in squalene synthesis.
 
