@@ -6,7 +6,7 @@ feature_image: "https://static.igem.wiki/teams/5569/description/pats.webp"
 excerpt: ""
 ---
 
-## Collection Parts
+## Parts Collection
 
 Our project focuses on adopting various strategies to enhance the efficiency of squalene synthesis by Yarrowia Lipolytica using fatty acids as substrates. The project aims to utilize low-cost and abundant WCO (Waste cooking oil) for squalene synthesis, thereby meeting the growing demand of the cosmetics industry for squalene, an excellent raw material. To address the feedback inhibition and interference affecting the MVA pathway in the cytoplasm, we have proposed a compartmentalization strategy.
 
@@ -83,6 +83,6 @@ We encourage and welcome other teams to use our parts collection for the compart
 | Hp4d-Kozak-ERG12-PTS1-XPR2_term-Hp4d-Kozak-ERG8-PTS1-XPR2_term-Hp4d-Kozak-ERG19-PTS1-XPR2_term | [BBa_25P1VJS7](https://registry.igem.org/parts/bba-25p1vjs7) | Plasmid |
 | Hp4d-Kozak-E9-PTS1-XPR2_term-Hp4d-Kozak-IDI-PTS1-XPR2_term-Hp4d-Kozak-E20-PTS1-XPR2_term | [BBa_25KXC0C8](https://registry.igem.org/parts/bba-25kxc0c8) | Plasmid |
 | Modular Light-Controlled CRISPR | [BBa_25A20MN1](https://registry.igem.org/parts/bba-25a20mn1) | Plasmid |
-| HP4d-PhyB- XPR2_term -hp4d-PIF-XPR2_term-PIF_BP-LexA- XPR2_term | [BBa_25DPZ6QD](https://registry.igem.org/parts/bba-25dpz6qd) | Plasmid |                   |
+| HP4d-PhyB- XPR2_term -hp4d-PIF-XPR2_term-PIF_BP-LexA- XPR2_term | [BBa_25DPZ6QD](https://registry.igem.org/parts/bba-25dpz6qd) | Plasmid |
 
 
