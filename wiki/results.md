@@ -186,11 +186,11 @@ Our standard cloning workflow begins with genomic DNA isolated from *Yarrowia li
 
 ### **3.2 β-oxidization pathway verification**
 
-To illustrate the function of three genes (MFE2, Pox2, Pot1) which have significant function in the beta-oxidization progress of *Yarrowia lipolytica*, we assay the quantity of fatty acid with a series of experiment which reflect on the ability of converting the fatty acid into energy
+To illustrate the function of three genes (MFE2, Pox2, Pot1) which have significant functions in the beta-oxidization progress of *Yarrowia lipolytica*, we assay the quantity of fatty acid with a series of experiment which reflect on the ability of converting the fatty acid into energy
 
-First, we use three types of the engineering *Y.lipolytica*: po1f wild-type(WT), po1f lipase(FA), po1f beta oxidization (BO). TLLbe was introduced into FA and has been proved previously to enhance the lipid degradation, while BO has been introduced with MFE2, Pox2 and Pot1.
+First, we use three types of the engineering *Y.lipolytica*: po1f wild-type(WT), po1f lipase(FA), po1f beta oxidization (BO). FA is transformed with overexpressed mtll, which has been proven to enhance lipid degradation, while BO is transformed with overexpressed Pot1, MFE2, and Pox2, and this intervention led to enhanced β-oxidation and fatty acid utilization.
 
-We cultivate these three kinds of yeast after 24h, then centrifuge for separating the yeast and re-suspense with the olive oil emulsion for overnight cultivation
+We cultivate these three kinds of yeast for 24h, then centrifuge for separating the yeast and re-suspense with the olive oil emulsion for overnight cultivation.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/result/16.webp" caption="Figure 15 RT sedimentation (from left to right WT, FA, BO)" %}
 
