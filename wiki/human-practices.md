@@ -34,7 +34,7 @@ Throughout this process, we consistently listened and adapted, resulting not onl
 {% include dropdown.html
    title="Objectively Understanding the Broad Market Application Scale and Source Distribution of Squalane/Squalene"
    content="
-    **Who we contacted:** Proya Cosmetics Co., Ltd., Bloomage Bio, Zhejiang Lanhaixing Salt Products Co., Ltd., Wuhan Canuos Technology Company.
+   **Who we contacted:** Proya Cosmetics Co., Ltd., Bloomage Bio, Zhejiang Lanhaixing Salt Products Co., Ltd., Wuhan Canuos Technology Company.
    **Why:** To select leading cosmetics and beauty companies with diverse product lines and wide distribution, providing macro-market information on product ingredients.
    **What we learned:** Most major cosmetic companies include squalane and other humectants in their moisturizing series, indicating a very large application market. Procurement personnel from companies like Proya emphasize their squalane source is "non-animal." However, some intermediary manufacturers are unaware of or indifferent to raw material production, simply sourcing available products from different channels based on client specifications.
    **How we adapted our project:** Squalene is a valuable substance, confirming our project has a market. We clarified the need to enhance technological and productive capabilities and strengthen public education and communication to promote green and sustainable cosmetic ingredients.
@@ -178,28 +178,28 @@ Throughout this process, we consistently listened and adapted, resulting not onl
 
 Team members, during the summer vacation of 2024, became curious about the words "Natural Plant Squalane" on a cosmetic product at home. How could natural plants be linked to the animal attribute "squalane"? This curiosity led us to investigate, and we learned about a high-value cosmetic ingredient – Squalane/ene.
 
-![Squalane Product](media/image1.jpeg)
-![Squalene-based Cosmetics](media/image2.png)
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-1.avif" caption="Figure 1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-2.avif" caption="Figure 2" %}
 
 Through research, we found that in today's booming beauty and health industry, the traditional sources of the star ingredient squalene are in trouble: animal sources involve overfishing of sharks, raising ecological and ethical concerns; plant sources, due to the high environmental cost and price of olive cultivation, struggle to meet market demand.
 
-Regarding animal-derived squalene, Oceana has repeatedly exposed in its reports the threat posed by the cosmetic industry's use of shark squalene to shark populations. They pointed out that consumers, unknowingly, indirectly participate in the hunting of this endangered species by purchasing skincare products containing shark ingredients. Simultaneously, we noted that China's Ministry of Agriculture and Rural Affairs introduced a new policy in September 2024 explicitly stating "no new construction or renovation of fishing vessels primarily targeting sharks," further restricting the future of animal-derived squalene at the national level. To understand the specific situation, we interviewed fisherman Uncle Sun from the Nanhai New Area, Weihai City, Shandong Province, in August 2024. He mentioned that while sharks are present in the Yellow Sea, they are mostly in deep waters and less common near the shore. He emphasized that there is no specialized shark fishing industry locally, only occasional bycatch.
+## Regarding animal-derived squalene, 
+Oceana has repeatedly exposed in its reports the threat posed by the cosmetic industry's use of shark squalene to shark populations. They pointed out that consumers, unknowingly, indirectly participate in the hunting of this endangered species by purchasing skincare products containing shark ingredients. Simultaneously, we noted that China's Ministry of Agriculture and Rural Affairs introduced a new policy in September 2024 explicitly stating "no new construction or renovation of fishing vessels primarily targeting sharks," further restricting the future of animal-derived squalene at the national level. To understand the specific situation, we interviewed fisherman Uncle Sun from the Nanhai New Area, Weihai City, Shandong Province, in August 2024. He mentioned that while sharks are present in the Yellow Sea, they are mostly in deep waters and less common near the shore. He emphasized that there is no specialized shark fishing industry locally, only occasional bycatch.
 
-![Fisherman Interview](media/image3.jpeg)  
-*Links to section: **Confirming the Unsustainability of Animal-Derived Squalene***
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-3.avif" caption="Figure 3" %}
 
-Regarding plant-derived squalene issues:
+
+## Regarding plant-derived squalene issues:
 
 To gain a deeper understanding of the squalene market, we conducted phone interviews with Wuhan Bairka Biomedical Co., Ltd., Hubei Hongfuda Biotechnology Co., Ltd., Wuhan Canuos Company, Hubei Weideli Chemical Reagent Co., Ltd., and Canuos Technology. We learned that non-animal derived squalane is more favored by the market, and "insufficient production of non-animal squalane" is a real problem. We also contacted Engineer Jin Feng from Proya Chemical Co., Ltd. She explained that squalene and squalane appear in the high-end skincare series of companies like Proya, indicating clear demand. She also pointed out that the cosmetic industry has very high requirements for raw material safety; any new ingredient introduction requires strict entry approval and comprehensive technical index testing. This led us to define the final product as squalene and plan to introduce a complete third-party safety testing process to meet cosmetic industry needs.
 
-![Proya Communication](media/image4.jpeg)
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-4.avif" caption="Figure 4" %}
 
 At the same time, we noted that China produces tens of millions of tons of waste cooking oil ("gutter oil") annually, which is both an environmental and food safety hazard and an underutilized vast resource. Through contact with General Manager Xu Zhixin of Zhejiang Zhengda Environmental Protection Equipment Co., Ltd., we learned that even converting waste oil into biodiesel does not yield high economic profits. Manager Cai from waste oil recycling in Hong'an County, Hubei, also stated that current treatment methods offer meager profits, and there is a desire to explore new high-value conversion pathways.
 
 Common waste oil treatment produces biodiesel for energy use, with a market price of only about 8.5 RMB/kg, while every 20mg of high-purity squalene is worth 800 RMB. This huge price gap reveals a highly potential industry opportunity: in the era of resource recycling and sustainable development, can we break through traditional paths and redefine the value of waste resources?
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-5.avif" caption="Figure 5" %}  
 
-![Value Comparison](media/image5.png)  
-*Link: **Discovering the Great Potential for High-Value Transformation of Waste Oil***
 
 Our project thus embarked, aiming to create a green cycle "from waste oil to squalene," not only addressing environmental and social pain points but also striving to provide a new, sustainable solution for the beauty industry.
 
@@ -207,21 +207,22 @@ Our project thus embarked, aiming to create a green cycle "from waste oil to squ
 
 We released a questionnaire about our project's product story, collecting 200+ valid responses. The results showed: over 70% of young consumers are willing to try sustainable skincare products "regenerated from waste oil," especially when the product story and environmental concept can be combined with fashion. This indicates that consumers not only want to pay for environmental protection but also hope this behavior can become a "social currency" that demonstrates their attitude and taste. Simply emphasizing technology or efficacy fails to resonate emotionally with mainstream young consumers. This also guided us to choose the fashion track.
 
-![Questionnaire Results](media/image6.jpeg)
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-6.avif" caption="Figure 6" %}
 
 ## Part 2: Construction of Technical Pathway & Key Iterations
 
 **Ideal Chassis Strain Selection:** In the early stages of the project, we contacted **Prof. Tang Qiang from the University of Science and Technology of China**. We explained our project goal: to find a microbial chassis that can survive in waste oil and efficiently utilize waste oils. After hearing our needs, Prof. Tang clearly stated: "***Yarrowia lipolytica*** is the ideal choice for your project. It is not only recognized as an 'oleaginous yeast,' naturally possessing strong lipid accumulation and metabolism capabilities, but more importantly, it itself has a complete **MVA pathway**, which is the foundation for squalene synthesis." We adopted Prof. Tang's advice, formally selected *Yarrowia lipolytica* as the project chassis, and began designing strategies to strengthen its endogenous MVA pathway.
 
-![Yarrowia lipolytica](media/image7.png)
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-7.avif" caption="Figure 7" %}
 
 **Lipase Introduction:** **However, in subsequent experiments, we encountered a bottleneck:** even when using relatively simple edible oil for fermentation, the oil degradation efficiency of our engineered strain did not meet expectations. With this new problem, we consulted **Prof. Yan Yunjun from HUST**, who has profound expertise in enzyme engineering and multi-enzyme catalysis. After analyzing our data, Prof. Yan pointed out incisively: "The intrinsic lipase activity of *Yarrowia lipolytica* might indeed be insufficient to support high yield requirements. I suggest you introduce an exogenous, efficient, and stable lipase as an 'enhancement module.' Consider introducing the **TLL enzyme from *Aspergillus oryzae***. This enzyme has good thermal stability and broad substrate specificity, with high hydrolytic activity against various triglycerides, effectively decomposing waste oil into free fatty acids." Ultimately, we chose the TLL enzyme to enhance waste oil degradation.
 
-![Lipase Enhancement](media/image8.jpeg)
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-8.avif" caption="Figure 8" %}
 
 **Rate-Limiting Enzyme Optimization:** To optimize the key rate-limiting step, we contacted Prof. Ning Kang from HUST. He suggested introducing ProteinMPNN and Rosetta. Integrating summer research progress and the team's existing technical stack, we finalized the optimization path: using ProteinMPNN for scaffold sequence redesign under structural constraints, supplemented by Frustratometer2 for quantitative assessment and iterative screening of local and global conformational frustration, and utilizing Rosetta for fastrelax. The goal is to reduce local frustration, smooth the energy landscape, and overall enhance the thermodynamic stability and folding robustness of tHMGR.
 
-![Enzyme Optimization Tools](media/image9.png) ![Enzyme Optimization Process](media/image10.jpeg)
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-3.avif" caption="Figure 9" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-3.avif" caption="Figure 10" %}
 
 **Mining Novel HMGR Homologs Based on Structural Biology:** As the project progressed, we committed to optimizing key enzymes in the squalene synthesis pathway through protein engineering. We wanted to first mine all proteins in nature with catalytic activity similar to HMGR using a certain method. Therefore, how to accurately and quickly screen the enzymes we want at the three-dimensional structural level and guide rational design? For this, we contacted Prof. Shi Mang from Sun Yat-sen University. The expert pointed out that the core of our problem lies in functional annotation from the perspective of structural homology. He explained that traditional tools like MMseqs2 primarily rely on amino acid sequence similarity, but their predictive power drops significantly when sequence identity is low. He recommended a powerful new tool – **Foldseek**. This tool can directly compare the 3D structures of proteins, effectively identifying structurally homologous and potentially functionally related proteins even when sequence similarity is low, greatly improving the accuracy of functional annotation. The expert also shared his team's successful experience, setting the structural consistency (TM-score) threshold at 90% as a reliable standard for functional inference.
 
@@ -229,7 +230,7 @@ This consultation opened a new door for us. We immediately integrated Foldseek i
 
 **Compartmentalization:** While strengthening the MVA pathway and knocking out downstream squalene pathways, we found that MVA pathway optimization did not significantly increase squalene yield, and knocking out downstream genes severely affected normal life activities. To solve this problem, we contacted Researcher Xie Xiaoman from HUST. She stated: "The cytoplasmic environment is complex; squalene accumulation might produce toxicity, and negative feedback regulation exists. She suggested adopting a **'compartmentalization'** strategy, transferring the synthesis pathway to independent organelles." We subsequently made a major technical route iteration, deciding to localize the entire MVA pathway **to the peroxisome**, creating a more optimized micro-reaction environment. The dry lab team immediately began systematically screening efficient signal peptides.
 
-![Compartmentalization Strategy](media/image11.png)
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-11.avif" caption="Figure 11" %}
 
 ## Part 3: Product Positioning & Engineering Implementation
 
@@ -237,13 +238,17 @@ This consultation opened a new door for us. We immediately integrated Foldseek i
 
 > **During our research and experimental process, we found that when conducting micro-fermentation and substance extraction in the laboratory, the micro-fermentation equipment is very expensive and still cannot monitor fermentation conditions and related parameters in real-time. Our members once spent 36 consecutive hours sampling and measuring data. This process is not only cumbersome and time-consuming but also carries a high risk of contamination, greatly reducing experimental efficiency and accuracy.** We contacted **Yang Xuezhi from the National Bio-manufacturing Industry Innovation Center**, who suggested we design an integrated hardware device; Prof. Li Aitao from Hubei University suggested using grinding methods to break cells. This led us to design the iFPS.
 >
-> ![iFPS Design](media/image12.jpeg)
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-3.avif" caption="Figure 12" %}
 
 ### Achieving Hardware Material and Automation Upgrades
 
 > After the initial hardware design was completed, we contacted Wang Jinchun from the HUST Engineering Innovation Center to trial our device. Taking his advice, **he recommended using photosensitive resin** to improve device density, temperature resistance, and contamination resistance, and using PCB boards instead of breadboards and DuPont wires to improve circuit stability. With his help, we are integrating motors, sensors, and custom PCB control boards to improve device stability. We also contacted Dr. Chen Yulong from HUST, who has long researched microbial fermentation. He suggested we design a baffled fermentation device to increase dissolved oxygen; he also proposed new application scenarios, suggesting the device could be used for the collection and extraction of extracellular secreted fermentation products.
 >
-> ![Hardware Upgrade 1](media/image13.jpeg) ![Hardware Upgrade 2](media/image14.jpeg)
+> 
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-3.avif" caption="Figure 13" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-3.avif" caption="Figure 14" %}
+
 
 ## Part 4: Compliance, Safety & Future Planning
 
@@ -251,18 +256,21 @@ This consultation opened a new door for us. We immediately integrated Foldseek i
 
 Bloomage Bio is a famous synthetic biology company. We contacted Kan Hongling, Chief Formulator at Bloomage Bio, to ensure the technical solution can handle the complexity of real waste oil and meet the industry's highest safety standards. Experts reminded us that waste oils from domestic sources have complex compositions and may contain components like preservatives that **inhibit microbial growth**. They strongly emphasized that any raw material derived from waste oils must undergo extremely strict purification and safety verification before being accepted by the industry. **Therefore**, we will add a **waste oil pretreatment module** to our plan, and we established "completing a full set of safety assessments in cooperation with authoritative third-party testing institutions" as a **mandatory threshold** that must be met before product launch.
 
-![Bloomage Bio Communication](media/image15.jpeg)
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-15.avif" caption="Figure 15" %}
 
-![Safety Compliance](media/image16.png)
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-16.avif" caption="Figure 16" %}
+
 
 ### Recognizing Downstream Industrialization Engineering Bottlenecks
 
 To understand the practical problems that might be encountered when transitioning from a lab product to an industrial commodity, we contacted Ms. Wei Qin, General Manager of Zheyan Lanhaixing Products Co., Ltd., and Engineer Chen Wei. They took us **to visit the Zhejiang Lanhaixing filling line**. Downstream packaging stages might become efficiency bottlenecks due to product physical properties (like viscosity), visually demonstrating the engineering and design bottlenecks that might be encountered during the transition from laboratory technology to industrial production. They suggested testing under different pH, temperature, and viscosity conditions, and considering transportation and shelf-life requirements. Therefore, in hardware design and future planning, we will pay more attention to **compatibility and adaptability** with downstream industrial equipment.
 
-![Filling Line Visit](media/image17.jpeg)
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-17.avif" caption="Figure 17" %}
+
 
 ### Project Prospects
 
 We contacted Prof. Sylvain FISSON, Professor of Immunology (University of Evry Paris-Saclay). We detailed our project to him. Prof. FISSON saw great potential, stating that our project has significant practical meaning and scientific prospects, providing a comprehensive solution for squalene synthesis and waste oil recycling. We will continue to promote the project's development. Prof. FISSON also invited us to the University of Evry Paris-Saclay for discussions on the project's further development.
 
-![Prof. FISSON Communication](media/image18.jpeg)
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-18.avif" caption="Figure 18" %}
+
