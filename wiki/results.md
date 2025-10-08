@@ -268,15 +268,8 @@ The PO1f-fatase control reaches ~20 mg L⁻¹. Expression of NADH-HMGR, which ut
 A.MD-Leu plate  B.YPD plate
 " %}
 
-
-
-
-
 When co-expressing tHMGr and NADH-HMGr, we conducted tag recovery.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/31.webp" caption="Figure 21 Tag recovery
-A.MD-Leu plate  B.YPD plate
-" %}
 
 ### **4.3 Impact of exogenous genes**
 {% include figure.html image="https://static.igem.wiki/teams/5569/result/32.webp" caption="**Squalene yield of Po1f-fatase and Po1f-fatase<sup>Exogenous</sup>**" %}
