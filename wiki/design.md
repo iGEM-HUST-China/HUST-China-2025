@@ -29,8 +29,8 @@ Globally, over 150 million tons of **waste oil (WO)** are generated annually. Im
 
 The degradation of waste oil produces large amounts of free fatty acids, which need to undergo β-oxidation to synthesize acetyl-CoA, the precursor for squalene. To enhance the supply of precursor substances, we overexpressed the key β-oxidation enzymes **POT1, MFE2, and POX2.**
 {% include figure.html image="https://static.igem.wiki/teams/5569/hw2/dd1.webp" caption="Figure 1. β-oxidation Enhancement" %}
-{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/z1.avif" caption="Figure 2.  β-oxidation Plasmid" %}
-.
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/z1.avif" caption="Figure 2. β-oxidation Plasmid" %}
 
 ## 5. Mevalonate (MVA) Pathway Improvement
 ### 5.1 Modification of Rate-Limiting Enzymes
@@ -61,7 +61,6 @@ We knocked out ERG1 (the first enzyme downstream of squalene cyclase) with the e
 We targeted the non-HMGR enzymes of the MVA pathway, along with NADH-HMGR and tHMGR to the peroxisome to fully exploit the abundant acetyl-CoA and cofactors NADH within the peroxisome to synthesize the squalene efficiently.
 
 Enzyme targeting was achieved using the PTS1 signal peptide. In Model, we optimized the PTS1-SKL/G4SSKL/TYWIRFSKL sequences for precise protein localization.
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 7. Model design of our project" %}
 
 ## 7.Dynamic Regulation of Peroxisomes
 
@@ -74,7 +73,7 @@ We knocked out PEX23 (a negative regulator of peroxisomes) and overexpressed PEX
 
 We designed an innovative suicide system in which yeast survive under room light but die under sunlight or isolated blue light. Comparing room light and sunlight, we found a subtle yet critical difference: modern lamps, such as LEDs, do not emit far-red light. Blue light activates BL222, triggering CRISPR translation, whereas LexA can preemptively inhibit this process. Hsp82 and Hsc82 are essential proteins for maintaining yeast cell membrane integrity. When the kill switch is activated, CRISPR, guided by sgRNAs, targets and disrupts Hsp82 and Hsc82, leading to yeast cell death.
 {% include figure.html image="https://static.igem.wiki/teams/5569/hw2/d11.webp" caption="Figure8. Suicide Switch Principle" %}
-{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/z4.webp" caption="Figure9. Suicide Switch Plasmid" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/z4.avif" caption="Figure9. Suicide Switch Plasmid" %}
 
 ## 9. Hardware Design
 
