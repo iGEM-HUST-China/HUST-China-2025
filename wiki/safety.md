@@ -8,11 +8,11 @@ excerpt: ""
 
 ## Overview
 
-To ensure the highest safety standards throughout our project, we implemented a multi-layered biosafety strategy. Our engineered chassis, Yarrowia lipolytica and Escherichia coli are a BSL-1 organism approved by iGEM, and all experiments were conducted under strict containment protocols. Team members received certified safety training and adhered to standardized lab practices. Project-specific risks were mitigated through design features such as kill switches and environmental containment systems. All procedures were reviewed and supervised by our institutional biosafety committee, and no incidents occurred during our wet lab work. This comprehensive approach ensured full compliance with iGEM safety policies and maintained a zero-risk environment throughout our research.
+To ensure the highest safety standards throughout our project, we implemented a multi-layered biosafety strategy. Our engineered chassis, *Yarrowia lipolytica* and Escherichia coli are a BSL-1 organism approved by iGEM, and all experiments were conducted under strict containment protocols. Team members received certified safety training and adhered to standardized lab practices. Project-specific risks were mitigated through design features such as kill switches and environmental containment systems. All procedures were reviewed and supervised by our institutional biosafety committee, and no incidents occurred during our wet lab work. This comprehensive approach ensured full compliance with iGEM safety policies and maintained a zero-risk environment throughout our research.
 
 ### Biosafety and Safety Design
 
-Our engineered strains, Yarrowia lipolytica and Escherichia coli are well-characterized organisms listed on the iGEM White List and classified as a Biosafety Level 1 (BSL-1) chassis. From the design stage, we prioritized the use of non-toxic genetic parts and safe metabolic pathways to minimize any potential risks to human health and the environment.
+Our engineered strains, *Yarrowia lipolytica* and Escherichia coli are well-characterized organisms listed on the iGEM White List and classified as a Biosafety Level 1 (BSL-1) chassis. From the design stage, we prioritized the use of non-toxic genetic parts and safe metabolic pathways to minimize any potential risks to human health and the environment.
 
 To prevent uncontrolled proliferation or release, we designed and utilized biocontainment mechanisms, including inducible kill switches and auxotrophy-based safeguards.
 
