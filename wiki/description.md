@@ -84,13 +84,13 @@ Second, the feedstocks are not sustainable. Mainstream processes rely on agricul
 
 ## How do we address this challenge? ——Proposing Our Concept Based on the Current State of Waste Cooking Oil
 
-### Current Status of Waste Cooking Oil
+### Current Status of Waste Oil
 
-At present, waste cooking oil (WCO) has become a global environmental pollutant. According to data from industry sources, the annual global generation of WCO is approximately 41–67 million tonnes <sup>8</sup>, with supply far exceeding demand and making it easy to obtain. Industry reports indicate that, in Europe for example, the assessed market price of waste cooking oil between 2024 and 2025 fluctuated between 885 dollars and 1222 dollars per tonne <sup>9</sup>, rendering it relatively inexpensive. Meanwhile, studies show that only about 40 % of waste cooking oil worldwide is recycled <sup>10</sup>; the remainder is improperly managed, leading to severe water pollution and posing a threat to marine ecosystems. Nevertheless, WCO is rich in triglycerides and fatty acids and thus represents a highly promising reservoir of renewable carbon.
+At present, waste cooking oil (WCO) has become a global environmental pollutant. According to data from industry sources, the annual global generation of WCO is approximately 41–67 million tonnes <sup>8</sup>, with supply far exceeding demand and making it easy to obtain. Industry reports indicate that, in Europe for example, the assessed market price of waste oil between 2024 and 2025 fluctuated between 885 dollars and 1222 dollars per tonne <sup>9</sup>, rendering it relatively inexpensive. Meanwhile, studies show that only about 40 % of waste cooking oil worldwide is recycled <sup>10</sup>; the remainder is improperly managed, leading to severe water pollution and posing a threat to marine ecosystems. Nevertheless, WCO is rich in triglycerides and fatty acids and thus represents a highly promising reservoir of renewable carbon.
 
-Through field visits and social surveys, we found that these waste oils not only originate from diverse and inexpensive sources but also possess significant potential for biotransformation. If they can be exploited via biosynthetic and metabolic engineering approaches, waste oils could be efficiently converted into high‑value molecules, offering environmental, economic and social benefits and presenting broad prospects for future development.
+Through field visits and social surveys, we found that these waste oil not only originate from diverse and inexpensive sources but also possess significant potential for biotransformation. If they can be exploited via biosynthetic and metabolic engineering approaches, waste oil could be efficiently converted into high‑value molecules, offering environmental, economic and social benefits and presenting broad prospects for future development.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/waste-oil-bg.webp" caption="Figure 9. Composition and environmental issues of WCO (wasted cooked oil)." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/waste-oil-bg.webp" caption="Figure 9. Composition and environmental issues of WO (waste oil)." %}
 
 ### Our Solution
 
@@ -102,7 +102,7 @@ To solve the classic problems of metabolic flux dispersion and product toxicity 
 
 Ultimately, we have created a microbial cell factory capable of efficiently converting harmful WCO into high‑value squalene, thereby providing the cosmetics industry with a new low‑cost, sustainable source of raw materials.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/d1.webp" caption="Figure 10. Metabolic mechanism of our design" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/12121.webp" caption="Figure 10. Metabolic mechanism of our design" %}
 
 {% include button.html link="../design/" text="Go to Model Page" %}
 

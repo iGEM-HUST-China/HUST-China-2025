@@ -25,14 +25,10 @@ To bridge this gap, we established a **hierarchical in silico pipeline** that ac
 <br>
 By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine learning–based systems modeling** into a unified framework, our model enables *in silico* prototyping of peroxisomal targeting and metabolic rewiring. This **model-driven strategy** transforms the traditional **Design–Build–Test–Learn (DBTL)** cycle into a predictive, knowledge-guided process, substantially reducing experimental overhead while accelerating the path toward high-yield, industrially robust strains.
 
-
-
-## PART 1 · Linker–Signal Peptide System Docking
-
-- Simulated interactions of *SKL*, *GGGSSKL*, and *TYWIRFSKL* with MVA-pathway enzymes using **HADDOCK**.
-- Identified the **structural** and **energetic** principles governing efficient **PEX5**-mediated import.
-- Generated **docking clusters** to guide selection of linker–signal peptide combinations.
-
+{% include dropdown.html
+   title="1: Click this to read more"
+   content=" Simulated interactions of *SKL*, *GGGSSKL*, and *TYWIRFSKL* with MVA-pathway enzymes using **HADDOCK**.Identified the **structural** and **energetic** principles governing efficient **PEX5**-mediated import.Generated **docking clusters** to guide selection of linker–signal peptide combinations."
+%}
 
 ## PART 2 · Computational Enzyme Engineering
 

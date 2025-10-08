@@ -4,6 +4,18 @@ permalink: /results/
 feature_text: |
 feature_image: "https://static.igem.wiki/teams/5569/description/rst.webp"
 excerpt: ""
+
+images01:
+  - src: https://static.igem.wiki/teams/5569/result/bbb.webp
+    alt: figure1
+    caption: figure1
+  - src: https://static.igem.wiki/teams/5569/result/aaa.webp
+    alt: High-Cloud Quintet
+    caption: High-Cloud Quintet
+  - src: https://static.igem.wiki/teams/5569/result/ccc.webp
+    alt: March 7th
+    caption: March 7th
+
 ---
 
 ## **Part 1 Multi-dimensional verification of scheme feasibility and exploration on the growth conditions**
@@ -14,7 +26,7 @@ The liquid fatty acids in waste cooking oil form a mixed system, dominated by ol
 
 To confirm that our Yarrowia lipolytica can utilize lipids in waste cooking oil for normal growth, we prepared culture media using glycerol and fatty acids as carbon source combinations---with the total carbon content precisely calculated and kept consistent. For experimental simplification, we directly used the hydrolyzed products of triglycerides to simulate the lipid composition in waste cooking oil. The cultivation was conducted under the standard culture conditions for the wild-type Yarrowia lipolytica strain PO1f, i.e., pH 6.5 and 28°C.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/1.webp" caption="Figure1. Gompertz model fitting of Yarrowia lipolytica growth curves under different fatty acid conditions." %}
+{% include figure3.html images=page.images01 %}
 
 Through the comparison and comprehensive analysis of data across all groups, it was found that Yarrowia lipolytica can grow well in fatty acid-rich environments. Furthermore, our experimental results revealed that Yarrowia lipolytica exhibits the optimal growth vigor when using oleic acid as the carbon source. Coincidentally, oleate accounts for the highest proportion (approximately 50%) of total lipids in various types of waste cooking oil. This finding further underscores the growth advantage of our strain in waste cooking oil.
 
@@ -59,7 +71,7 @@ The Po1f-TLL band(about 20KDa) is located between 25KDa band and 35KDa band, sup
 #### **2.2.1 Hydrolysis Circle-1**
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/5.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/sicheng.webp" caption="1" %}
 
 **Different inoculation approaches of different cultivation times**
 
@@ -89,15 +101,6 @@ According to the medium color, it is obvious that the hydrolysis circle expand a
 *sample: adding 1 ml corresponding supernatant into 4 ml TE(blank for 5 ml) and 10 ml olive oil emulsion, react under 60 degree in 10 min. After that, add 95% ethanol to cease the reaction immediately. Add 0.5mM phenol to indicate the pH.*
 
 ### **2.4 Exploration of the Optimal Activity Conditions of Lipase**
-
-| initial PH | enzyme activity |
-|------------|-----------------|
-| 5.5        | 390             |
-| 6          | 405             |
-| 6.5        | 375             |
-| 7          | 360             |
-| 7.5        | 330             |
-
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/result/7.webp" caption="1" %}
 
@@ -171,13 +174,11 @@ Finally, it was concluded that the engineered yeast exhibits optimal growth unde
 Our standard cloning workflow begins with genomic DNA isolated from *Yarrowia lipolytica*. Target genes are amplified by PCR, digested with NotI and ClaI, and ligated into the likewise-cut 7166 backbone using T4 DNA ligase. The ligation mixture is transformed into *E. coli*, selected on ampicillin plates, verified by colony PCR, and the positive clone is propagated for plasmid recover
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/35.webp" caption="1" %}
-
-**PCR of POX2, the band is similar to the anticipated length 2139bp**
-
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/35.webp" caption="**PCR of POX2, the band is similar to the anticipated length 2139bp**
 **PCR of POT1, the band is similar to the anticipated length 1281bp**
+**PCR of MFE2, the band is similar to the anticipated length 2807bp**" %}
 
-**PCR of MFE2, the band is similar to the anticipated length 2807bp**
+
 
 
 
@@ -249,30 +250,22 @@ In conclusion, our combined cloning and phenotypic analyses confirm that the thr
 
 ### **4.1 Plasmid construction**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/36.webp" caption="1" %}
-
-
-**PCR of ERG9, the band is similar to the anticipated length 1365bp**
-
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/36.webp" caption="**PCR of ERG9, the band is similar to the anticipated length 1365bp**
 **PCR of ERG8, the band is similar to the anticipated length 1284bp**
-
 **PCR of ERG12, the band is similar to the anticipated length 1377bp**
-
 **PCR of ERG13, the band is similar to the anticipated length 1369bp**
+**PCR of ERG10, the band is similar to the anticipated length 1628bp**" %}
 
-**PCR of ERG10, the band is similar to the anticipated length 1628bp**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/37.webp" caption="1" %}
 
-**PCR of ERG19, the band is similar to the anticipated length 1191bp**
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/37.webp" caption="**PCR of ERG19, the band is similar to the anticipated length 1191bp**
 **PCR of tHMGr, the band is similar to the anticipated length 1533bp**
-
 **PCR of NADH-HMGr, the band is similar to the anticipated length 1071bp**
-
 **PCR of IDI, the band is similar to the anticipated length 840bp**
+**PCR of ERG20, the band is similar to the anticipated length 1062bp**" %}
 
-**PCR of ERG20, the band is similar to the anticipated length 1062bp**
+
 
 
 
@@ -359,7 +352,7 @@ Finally, the engineered strains Po1f-GFP-PTS and Po1f-GFP were stained with Nile
 
 These results demonstrate that the enhanced peroxisomal targeting signal PTS can efficiently mediate the targeted localization of proteins to peroxisomes. This finding is consistent with the results reported by DeLoache et al., who successfully achieved the targeting of proteins to peroxisomes in Saccharomyces cerevisiae.
 
-### **4.3 Conclusion**
+## **6 Conclusion**
 
 To date, we have successfully accomplished the design, introduction, and functional verification of the peroxisomal targeting signal 1 (PTS1) peptide. Moreover, we have obtained all small plasmids with each target gene fused to PTS1. Currently, we are proceeding with tag recovery to facilitate the construction of large plasmids.
 
