@@ -350,7 +350,7 @@ Finally, the engineered strains Po1f-GFP-PTS and Po1f-GFP were stained with Nile
 
 These results demonstrate that the enhanced peroxisomal targeting signal PTS can efficiently mediate the targeted localization of proteins to peroxisomes. This finding is consistent with the results reported by DeLoache et al., who successfully achieved the targeting of proteins to peroxisomes in Saccharomyces cerevisiae.
 
-### **4.3 Conclusion**
+## **6 Conclusion**
 
 To date, we have successfully accomplished the design, introduction, and functional verification of the peroxisomal targeting signal 1 (PTS1) peptide. Moreover, we have obtained all small plasmids with each target gene fused to PTS1. Currently, we are proceeding with tag recovery to facilitate the construction of large plasmids.
 

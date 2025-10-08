@@ -88,7 +88,7 @@ Oil-containing media were reconfigured using different types of oils.
 Growth curves obtained from most media conformed to the standard S-shaped curve of microorganisms, indicating that the constructed Po1f-fatase strain could grow well in various oils. However, the fitting effect of a small number of growth curves was still poor.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/en/growth-curve-wrong-vision.webp" caption="Figure 3 Growth Curves of Different Fatty Acids" %}
-{% include figure.html image="https://static.igem.wiki/teams/5569/en/knock-errg1-growth-curve.webp" caption="Figure 4 Growth Curves for Different Glycerol:Oleic Acid Ratios" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/growth-curve-yousuan-1-1-3-5.webp" caption="Figure 4 Growth Curves for Different Glycerol:Oleic Acid Ratios" %}
 
 
 ### Cycle 1.2.2 improvement of growth curve measurement
