@@ -27,16 +27,16 @@ Squalane is the hydrogenated, saturated form of squalene. This process makes it 
 
 ### 2.1 Expanding Market for Moisturizers
 
-The fashion and beauty sector is experiencing unprecedented growth and globalization. In 2024, the beauty market—defined to include skincare, fragrances, make‑up and hair‑care products—generated approximately US$ 491 billion in revenue and is projected to reach around US$ 1,127 billion by 2035, with an estimated annual growth rate of about 6 % <sup>2</sup>.
+The fashion and beauty sector is experiencing unprecedented growth and globalization. In 2024, the beauty market—defined to include skincare, fragrances, make‑up and hair‑care products—generated approximately US\$ 491 billion in revenue and is projected to reach around US\$ 1,127 billion by 2035, with an estimated annual growth rate of about 6 % <sup>2</sup>.
 
-In the same year, the global market for moisturizing creams was valued at US$ 11.02 billion; it is forecast to grow to US$ 11.47 billion in 2025 and to US$ 19.63 billion by 2035, corresponding to a compound annual growth rate of 5.52 %<sup>3</sup>.
+In the same year, the global market for moisturizing creams was valued at US\$ 11.02 billion; it is forecast to grow to US\$ 11.47 billion in 2025 and to US\$ 19.63 billion by 2035, corresponding to a compound annual growth rate of 5.52 %<sup>3</sup>.
 
 {% include figure2.html images=page.images02 %}
 
-In most moisturizing products on the market, squalane are universally employed to enhance the spreadability, sensory feel and absorption of creams and lotions, thereby markedly improving the moisturizing experience. As the beauty market continues to expand, demand for squalane is increasing rapidly, and its pivotal role in formulations is becoming ever more evident.
+In most moisturizing products on the market, squalane is universally employed to enhance the spreadability, sensory feel and absorption of creams and lotions, thereby markedly improving the moisturizing experience. As the beauty market continues to expand, demand for squalane is increasing rapidly, and its pivotal role in formulations is becoming ever more evident.
 Behind this huge market lies the ever-increasing demand for squalane and its sole precursor – **squalene**.
 
-## 3 The Foundation and Hidden Cost: The Squalene Supply Dilemma
+## 3. The Foundation and Hidden Cost: The Squalene Supply Dilemma
 {% include figure.html image="https://static.igem.wiki/teams/5569/description/zongshu.webp" caption="Figure 4. Squalene" %}
 However, the foundation supporting this "beauty" faces an unsustainable and harsh reality. Currently, commercial squalene primarily comes from the following three sources, each with severe challenges.
 
@@ -50,7 +50,7 @@ Prior to 1988, virtually all squalene worldwide was sourced from shark liver oil
 
 As global consensus on biodiversity conservation has grown, many countries have adopted policies to tighten management of fishery resources. Our Human Practice field work has revealed that coastal regions have implemented more stringent bans and catch limits on deep-sea fish and sharks, along with seasonal fishing moratoria and quota systems. This regulatory environment has begun to reshape the sourcing structure for squalene: plant-derived sources now predominate, and microbial sources are also emerging. Worldwide, numerous research teams and companies are striving to reduce dependence on animal-derived squalene, developing alternative pathways from olive oil by-products, rice bran, amaranth seeds and sugarcane molasses. Nonetheless, a series of critical bottlenecks still needs to be overcome to realise these alternatives.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/squalene-source-1.webp" caption="Figure 6. Global squalene sources" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/squalene-source-1.webp" caption="Figure 6. Global squalene sources." %}
 
 #### 3.2.1  Plant-Based Extraction: An Inefficient Alternative
 
@@ -58,13 +58,13 @@ Although plant‑derived squalene has become the predominant alternative source,
 
 Over time, substantial resources, labour and energy have been invested, yet the resultant output remains limited, leading to inefficient production and further inflating product costs. Based on our Human Practice interviews and publicly available data, the overall capital costs of plant‑based routes are typically about 30 % higher than those of traditional animal‑derived routes, resulting in high price sensitivity and limited capacity to support sustained, large‑scale supply.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/plant-jiagong.webp" caption="Figure 7. The process of extracting squalene from olive" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/plant-jiagong.webp" caption="Figure 7. The process of extracting squalene from olive." %}
 
 #### 3.2.2 Traditional Microbial Fermentation: Bottlenecked Potential
 
 Against the backdrop of the high energy demands and elevated costs associated with plant extraction routes, microbial fermentation has been viewed as another important alternative for squalene production because of its controllability, environmental friendliness and sustainability. In recent years, both academia and industry have pursued active exploration in this field. However, our discussions with research teams and company representatives during Human Practice activities reveal that, despite high expectations for the controllability and sustainability of microbial fermentation, industrialisation of microbially derived squalene still faces key limitations.
 
-First, there is a lack of target‑oriented synthesis pathways. Current metabolic frameworks often result in squalene being passively accumulated as a by‑product of sterol synthesis, or they require indirect chemical catalysis to obtain squalene, leading to low yields and an absence of efficient continuous production systems <sup>6,7</sup>.
+First, there is a lack of target‑oriented synthesis pathways. Current metabolic frameworks often result in squalene being passively accumulated as a by‑product of sterol synthesis, or they require indirect chemical catalysis to obtain squalene, leading to low yields and an absence of efficient continuous production systems <sup>6</sup>,</sup>7</sup>.
 
 Second, the feedstocks are not sustainable. Mainstream processes rely on agricultural commodities such as sucrose and corn syrup; this not only increases costs but also potentially competes with human food resources, making it difficult to meet the core requirements of sustainable development and unsupportable in the long term <sup>6</sup>.
 
@@ -74,23 +74,23 @@ Second, the feedstocks are not sustainable. Mainstream processes rely on agricul
 
 ### 4.1 Current Status of Waste Oil
 
-At present, waste cooking oil (WCO) has become a global environmental pollutant. According to data from industry sources, the annual global generation of WCO is approximately 41–67 million tonnes <sup>8</sup>, with supply far exceeding demand and making it easy to obtain. Industry reports indicate that, in Europe for example, the assessed market price of waste oil between 2024 and 2025 fluctuated between 885 dollars and 1222 dollars per tonne <sup>9</sup>, rendering it relatively inexpensive. Meanwhile, studies show that only about 40 % of waste cooking oil worldwide is recycled <sup>10</sup>; the remainder is improperly managed, leading to severe water pollution and posing a threat to marine ecosystems. Nevertheless, WCO is rich in triglycerides and fatty acids and thus represents a highly promising reservoir of renewable carbon.
+At present, wasted oil (WO) has become a global environmental pollutant. According to data from industry sources, the annual global generation of WO is approximately 41–67 million tonnes <sup>8</sup>, with supply far exceeding demand and making it easy to obtain. Industry reports indicate that, in Europe for example, the assessed market price of wasted oil between 2024 and 2025 fluctuated between 885 dollars and 1222 dollars per tonne <sup>9</sup>, rendering it relatively inexpensive. Meanwhile, studies show that only about 40 % of wasted oil worldwide is recycled <sup>10</sup>; the remainder is improperly managed, leading to severe water pollution and posing a threat to marine ecosystems. Nevertheless, WO is rich in triglycerides and fatty acids and thus represents a highly promising reservoir of renewable carbon.
 
-Through field visits and social surveys, we found that these waste oil not only originate from diverse and inexpensive sources but also possess significant potential for biotransformation. If they can be exploited via biosynthetic and metabolic engineering approaches, waste oil could be efficiently converted into high‑value molecules, offering environmental, economic and social benefits and presenting broad prospects for future development.
+Through field visits and social surveys, we found that these wasted oil not only originate from diverse and inexpensive sources but also possess significant potential for biotransformation. If they can be exploited via biosynthetic and metabolic engineering approaches, wasted oil could be efficiently converted into high‑value molecules, offering environmental, economic and social benefits and presenting broad prospects for future development.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/waste-oil-bg.webp" caption="Figure 9. Composition and environmental issues of WO (waste oil)." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/waste-oil-bg.webp" caption="Figure 9. Composition and environmental issues of WO (wasted oil)." %}
 
 ### 4.2 Our Solution
 
-Currently, squalene production faces the dual challenges of the high costs associated with plant extraction and the reliance of microbial fermentation on food crops. To address both the environmental hazards posed by waste cooking oil (WCO) and the need for a sustainable supply of squalene, we have designed SQUALENE—an integrated synthetic‑biology system aimed at upcycling waste.
+Currently, squalene production faces the dual challenges of the high costs associated with plant extraction and the reliance of microbial fermentation on food crops. To address both the environmental hazards posed by wasted oil (WO) and the need for a sustainable supply of squalene, we have designed SQUALENE—an integrated synthetic‑biology system aimed at upcycling waste.
 
-Our core strategy is to engineer Yarrowia lipolytica so that it can efficiently utilise WCO as a carbon source. Building on this chassis, we have optimised secreted lipases, modified the rate‑limiting enzyme HMGR and incorporated a peroxisomal compartmentalisation strategy to reconstruct an efficient squalene biosynthetic pathway.
+Our core strategy is to engineer Yarrowia lipolytica so that it can efficiently utilise WO as a carbon source. Building on this chassis, we have optimised secreted lipases, modified the rate‑limiting enzyme HMGR and incorporated a peroxisomal compartmentalisation strategy to reconstruct an efficient squalene biosynthetic pathway.
 
 To solve the classic problems of metabolic flux dispersion and product toxicity in the cytoplasm, we innovatively localised the entire squalene synthesis pathway within the peroxisome, effectively isolating competing pathways and feedback inhibition.
 
-Ultimately, we have created a microbial cell factory capable of efficiently converting harmful WCO into high‑value squalene, thereby providing the cosmetics industry with a new low‑cost, sustainable source of raw materials.
+Ultimately, we have created a microbial cell factory capable of efficiently converting harmful WO into high‑value squalene, thereby providing the cosmetics industry with a new low‑cost, sustainable source of raw materials.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/12121.webp" caption="Figure 10. Metabolic mechanism of our design" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/12121.webp" caption="Figure 10. Metabolic mechanism of our design." %}
 
 {% include button.html link="../design/" text="Go to Design Page" %}
 
@@ -106,7 +106,7 @@ At the systems layer, to quantify the host’s metabolic responses under varying
 
 Through this integrated three‑layer modelling system, we achieved a closed‑loop design linking peroxisomal import optimisation, rate‑limiting enzyme refinement and growth‑environment prediction, transforming metabolic engineering of Y. lipolytica from empirical exploration to prediction‑driven design.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 11. Model design of our project" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 11. Model design of our project." %}
 
 {% include button.html link="../model/" text="Go to Model Page" %}
 
@@ -116,7 +116,7 @@ In the squalene extraction experiments, our practical experience and surveys rev
 
 To address this challenge, we propose the design of an Integrated Fermentation & Processing System (iFPS). This compact device integrates three functional modules—micro‑fermentation cultivation, high‑speed centrifugation collection and mechanical agitation‑based disruption—into a single unit. It substantially enhances experimental consistency and operational safety while keeping the equipment cost at about US$ 100. In essence, the iFPS provides a fundamental solution to the micro‑fermentation challenges encountered in synthetic biology.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure 12. 3D model of iFPS" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h40.webp" caption="Figure 12. 3D model of iFPS." %}
 
 {% include button.html link="../hardware/" text="Go to Hardware Page" %}
 
