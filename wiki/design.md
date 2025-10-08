@@ -29,16 +29,19 @@ Globally, over 150 million tons of **waste oil (WO)** are generated annually. Im
 
 The degradation of waste oil produces large amounts of free fatty acids, which need to undergo β-oxidation to synthesize acetyl-CoA, the precursor for squalene. To enhance the supply of precursor substances, we overexpressed the key β-oxidation enzymes **POT1, MFE2, and POX2.**
 {% include figure.html image="https://static.igem.wiki/teams/5569/hw2/dd1.webp" caption="Figure 1. β-oxidation Enhancement" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/z1.avif" caption="Figure 2.  β-oxidation Enhancement Plasmid" %}
 .
 
 ## 5. Mevalonate (MVA) Pathway Improvement
 ### 5.1 Modification of Rate-Limiting Enzymes
 Through analysis of the entire MVA pathway, **HMG-CoA reductase (HMGR)** was identified as a key rate-limiting enzyme. Factors affecting its efficiency include ubiquitination degradation triggered by negative feedback from downstream products and limitation by its cofactor NADPH.  We introduced a codon-optimized **NADH-dependent HMGr** from *Silicibacter pomeroyi* and a **truncated HMGr (tHMGr)** lacking the feedback regulatory domain, thereby increasing MVA pathway flux. Using dry lab methods, we also de novo designed these enzymes to have lower free energy and increased stability.
-{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/dd3.webp" caption="Figure 2. Modification of Rate-Limiting Enzymes" %}
-### 5.2 Overexpression of Other Enzymes in MVA Pathway
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/dd3.webp" caption="Figure 3. Modification of Rate-Limiting Enzymes" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/z2.avif" caption="Figure 4. Modification of Rate-Limiting Enzymes" %}
+### 5.2 Overexpression of Enzymes in MVA Pathway
 
 We constructed plasmids carrying the remaining enzymes of the MVA pathway under hp4d promoters and XPR2 terminators to enhance squalene synthesis through direct overexpression.
-{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/dd2.webp" caption="Figure 3. Overexpression of Other Enzymes in MVA Pathway" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/dd2.webp" caption="Figure 5. Overexpression of Enzymes in MVA Pathway" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/z3.avif" caption="Figure 6. MVA Pathway Plasmid" %}
 
 ### 5.3 Limiting Downstream Flux
 
