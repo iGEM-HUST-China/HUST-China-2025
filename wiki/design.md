@@ -61,7 +61,6 @@ We knocked out ERG1 (the first enzyme downstream of squalene cyclase) with the e
 We targeted the non-HMGR enzymes of the MVA pathway, along with NADH-HMGR and tHMGR to the peroxisome to fully exploit the abundant acetyl-CoA and cofactors NADH within the peroxisome to synthesize the squalene efficiently.
 
 Enzyme targeting was achieved using the PTS1 signal peptide. In Model, we optimized the PTS1-SKL/G4SSKL/TYWIRFSKL sequences for precise protein localization.
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 7. Model design of our project" %}
 
 ## 7.Dynamic Regulation of Peroxisomes
 

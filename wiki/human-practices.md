@@ -32,10 +32,13 @@ Throughout this process, we consistently listened and adapted, resulting not onl
 ## Part I: Problem Definition & Value Discovery
 
 {% include dropdown.html
-   title="**Who we contacted:** Proya Cosmetics Co., Ltd., Bloomage Bio, Zhejiang Lanhaixing Salt Products Co., Ltd., Wuhan Canuos Technology Company.
-  **Why:** To select leading cosmetics and beauty companies with diverse product lines and wide distribution, providing macro-market information on product ingredients.
-  **What we learned:** Most major cosmetic companies include squalane and other humectants in their moisturizing series, indicating a very large application market. Procurement personnel from companies like Proya emphasize their squalane source is "non-animal." However, some intermediary manufacturers are unaware of or indifferent to raw material production, simply sourcing available products from different channels based on client specifications.
-  **How we adapted our project:** Squalene is a valuable substance, confirming our project has a market. We clarified the need to enhance technological and productive capabilities and strengthen public education and communication to promote green and sustainable cosmetic ingredients."
+   title="Objectively Understanding the Broad Market Application Scale and Source Distribution of Squalane/Squalene"
+   content="
+    **Who we contacted:** Proya Cosmetics Co., Ltd., Bloomage Bio, Zhejiang Lanhaixing Salt Products Co., Ltd., Wuhan Canuos Technology Company.
+   **Why:** To select leading cosmetics and beauty companies with diverse product lines and wide distribution, providing macro-market information on product ingredients.
+   **What we learned:** Most major cosmetic companies include squalane and other humectants in their moisturizing series, indicating a very large application market. Procurement personnel from companies like Proya emphasize their squalane source is "non-animal." However, some intermediary manufacturers are unaware of or indifferent to raw material production, simply sourcing available products from different channels based on client specifications.
+   **How we adapted our project:** Squalene is a valuable substance, confirming our project has a market. We clarified the need to enhance technological and productive capabilities and strengthen public education and communication to promote green and sustainable cosmetic ingredients.
+"
 %}
 
 {% include dropdown.html
@@ -129,8 +132,7 @@ Throughout this process, we consistently listened and adapted, resulting not onl
    **Who we contacted:** Yang Xuezhi from the National Bio-manufacturing Industry Innovation Center, Prof. Li Aitao from Hubei University.
    **Why:** Existing micro-fermentation devices are expensive, experimental operations are complex and time-consuming.
    **What we learned:** Yang Xuezhi suggested that if a single reaction process is fixed, an integrated hardware device could be used. Prof. Li Aitao mentioned that grinding methods could be used to break cells and extract products.
-   **How we adapted our project:** We integrated and built an **Integrated Fermentation & Processing System (iFPS)**.
-"
+   **How we adapted our project:** We integrated and built an **Integrated Fermentation & Processing System (iFPS)**."
 %}
 
 {% include dropdown.html
@@ -139,8 +141,7 @@ Throughout this process, we consistently listened and adapted, resulting not onl
    **Who we contacted:** Wang Jinchun from HUST Engineering Innovation Practice Center, Dr. Chen Yulong from HUST School of Life Science and Technology.
    **Why:** To integrate our biochemical reaction process into a stable, efficient, and automated prototype device, verifying the engineering feasibility of the technical route.
    **What we learned:** **Photosensitive resin** material can significantly improve device density, temperature resistance, and contamination resistance at similar cost. Baffled fermentation devices increase dissolved oxygen.
-   **How we adapted our project:** We iterated the hardware design, changing the core component material to photosensitive resin, and designed a baffled fermentation module. Simultaneously, with Wang Jinchun's help, we are integrating motors, sensors, and custom PCB control boards to improve device stability.
-"
+   **How we adapted our project:** We iterated the hardware design, changing the core component material to photosensitive resin, and designed a baffled fermentation module. Simultaneously, with Wang Jinchun's help, we are integrating motors, sensors, and custom PCB control boards to improve device stability."
 %}
 
 ## Part IV:Compliance, Safety & Future Planning
@@ -160,8 +161,7 @@ Throughout this process, we consistently listened and adapted, resulting not onl
    **Who we contacted:** Ms. Wei Qin, General Manager of Zheyan Lanhaixing Products Co., Ltd., Engineer Chen Wei, **visited Zhejiang Lanhaixing filling line**.
    **Why:** To understand the practical problems that might be encountered when transitioning from a lab product to an industrial commodity.
    **What we learned:** Downstream packaging stages might become efficiency bottlenecks due to product physical properties (like viscosity).
-   **How we adapted our project:** In hardware design and future planning, we will pay more attention to **compatibility and adaptability** with downstream industrial equipment.
-"
+   **How we adapted our project:** In hardware design and future planning, we will pay more attention to **compatibility and adaptability** with downstream industrial equipment."
 %}
 
 {% include dropdown.html
