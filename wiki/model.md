@@ -61,7 +61,7 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    [click to learn more](#iii-machine-learning-growth-modeling)"
 %}
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure1. MODEL PEPLINE" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 1. MODEL PEPLINE" %}
 
 # I. Linker–Signal Peptide System Docking
 
@@ -84,6 +84,8 @@ The design rationale was that a **flexible linker (GGGGS)** could increase acces
 These three peptide designs were fused to the eight key enzymes of the **MVA pathway** (*Erg8, Erg9, Erg10, Erg12, Erg13, Erg20, Hmgr* and *Idi*), providing the foundation for subsequent molecular docking analysis.
 
  *An animation illustrates this process: enzyme–SKL forms a complex with PEX5, which then docks with PEX14 and PEX13; IDRs of PEX13 undergo liquid–liquid phase separation to generate a transient liquid cavity that facilitates import.*
+
+ {% include figure.html image="https://static.igem.wiki/teams/5569/hw2/mf.webp" caption="Figure 2. Molecular Mechanism of PEX5-Mediated Peroxisomal Import" %}
 
 <!-- ========================================================= -->
 <!-- ✅ MathJax Configuration for Centered Equations -->
@@ -171,7 +173,7 @@ Thus, HADDOCK scoring integrates both atomic-level physical interactions and exp
 
 ## Structure Preparation
 
-To systematically investigate peroxisomal targeting, we collected structural information for the eight key enzymes of the *Yarrowia lipolytica* MVA pathway (*Erg8, Erg9, Erg10, Erg13, Erg20, Hmgr, Idi, Merg12*). Experimental structures were retrieved from the PDB database, and missing structures were completed by homology modeling.  
+To systematically investigate peroxisomal targeting, we collected structural information for the eight key enzymes of the *Yarrowia lipolytica* MVA pathway (*Erg8, Erg9, Erg10, Erg13, Erg12, Erg20, Hmgr, Idi*). Experimental structures were retrieved from the PDB database, and missing structures were completed by homology modeling.  
 
 We designed three C-terminal signal peptide tags: the canonical SKL motif, the flexible extended GGGGSSKL, and the aromatic-rich TYWIRFSKL. These tags were fused to the eight enzymes, and complete inputs were generated with AlphaFold predictions.
 
@@ -195,7 +197,7 @@ Docking results were evaluated with the HADDOCK scoring function, which integrat
 Representative complexes were visualized in PyMOL and ChimeraX to illustrate hydrogen-bond networks and structural overlays. The results confirmed the plausibility of docking poses and highlighted distinct recognition patterns between the minimal and extended signal peptides at the PEX5 interface.
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m1.webp" caption="Figure3. Molecular_docking" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m1.webp" caption="Figure 3. Molecular_docking" %}
 
 # 1.2 Energy Analysis
 
