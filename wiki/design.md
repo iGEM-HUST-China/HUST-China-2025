@@ -80,3 +80,25 @@ The Squalene project presents a complete and feasible peroxisomal compartmentali
 
 Through its strategies and iterative designs for squalene biosynthesis, the project aims to inspire iGEM teams to explore the cosmetic industry and pursue innovative solutions. While practical implementation still faces challenges, we believe this initiative demonstrates the untapped potential of synthetic biology in the fashion sector and promotes greater sustainability and environmental responsibility.
 
+## References
+1. Gould SJ, Keller GA, Hosken N, Wilkinson J, Subramani S. A conserved tripeptide sorts proteins to peroxisomes. *J Cell Biol.* 1989;108(5):1657–1664. doi:10.1083/jcb.108.5.1657  
+2. Ma Y, Shang Y, Stephanopoulos G. Engineering peroxisomal biosynthetic pathways for maximization of triterpene production in *Yarrowia lipolytica*. *Proc Natl Acad Sci U S A.* 2024;121(5):e2314798121. doi:10.1073/pnas.2314798121  
+3. Liu G-S, Li T, Zhou W, Jiang M, Tao X. The yeast peroxisome: a dynamic storage depot and subcellular factory for squalene overproduction. *Metab Eng.* 2020;57:151–161. doi:10.1016/j.ymben.2019.11.001  
+4. DeLoache WC, Russ ZN, Dueber JE. Towards repurposing the yeast peroxisome for compartmentalizing heterologous metabolic pathways. *Nat Commun.* 2016;7:11152. doi:10.1038/ncomms11152  
+5. Friesen JA, Rodwell VW. The 3-hydroxy-3-methylglutaryl coenzyme-A (HMG-CoA) reductases. *Genome Biol.* 2004;5(11):248. doi:10.1186/gb-2004-5-11-248  
+6. Donald KA, Hampton RY, Fritz IB. Effects of overproduction of the catalytic domain of 3-hydroxy-3-methylglutaryl coenzyme A reductase on squalene synthesis in *Saccharomyces cerevisiae*. *Appl Environ Microbiol.* 1997;63(9):3341–3344. doi:10.1128/aem.63.9.3341-3344.1997  
+7. Paramasivan K, Mutturi S. Regeneration of NADPH coupled with HMG-CoA reductase activity increases squalene synthesis in *Saccharomyces cerevisiae*. *J Agric Food Chem.* 2017;65(37):8162–8170. doi:10.1021/acs.jafc.7b02945  
+8. Azahar WNAW, Bujang M, Jaya RP, Hainin MR. The potential of waste cooking oil as bio-asphalt for alternative binder—An overview. *Jurnal Teknologi.* 2016;78(4):111–116. doi:10.11113/jt.v78.8007  
+9. Jiao L, Li W, Li Y, Zhou Q, Zhu M, Zhao G, Zhang H, Yan Y. Employing engineered enolase promoter for efficient expression of *Thermomyces lanuginosus* lipase in *Yarrowia lipolytica* via a self-excisable vector. *Int J Mol Sci.* 2023;24(1):719. doi:10.3390/ijms24010719  
+10. 专利：CN113881677B. 一种解脂耶氏酵母杂合启动子及其应用.  
+11. Paramasivan K, Rajagopal K, Mutturi S. Studies on squalene biosynthesis and the standardization of its extraction methodology from *Saccharomyces cerevisiae*. *Appl Biochem Biotechnol.* 2019;187:691–707. doi:10.1007/s12010-018-2845-9  
+12. Lin W-B, Chen H, Song Z-Q, Pan Y-Q, Hu P-C, et al. Cost-effective production of squalene using *Yarrowia lipolytica* via metabolic and fermentation engineering. *Biotechnol Lett.* 2025;47(3):49. doi:10.1007/s10529-025-03591-7  
+13. Liu W, Liang Y, Zhang X, Shi J. Combinatorial metabolic engineering for overproduction of squalene in *Saccharomyces cerevisiae*. *Syst Microbiol Biomanuf.* 2025. doi:10.1007/s43393-025-00340-9  
+14. Grabowska D, Karst F, Szkopińska A. Effect of squalene synthase gene disruption on synthesis of polyprenols in *Saccharomyces cerevisiae*. *FEBS Lett.* 1998;434(3):406–408. doi:10.1016/S0014-5793(98)01019-9  
+15. Kerkhoven EJ, Pomraning KR, Baker SE, Nielsen J. Regulation of amino acid metabolism controls flux to lipid in *Yarrowia lipolytica*. *npj Syst Biol Appl.* 2016;2:16005. doi:10.1038/npjsba.2016.5  
+16. Wei L-J, et al. Increased accumulation of squalene in engineered *Yarrowia lipolytica* through deletion of *PEX10* and *URE2*. *Appl Environ Microbiol.* 2021;87(17):e00481-21. doi:10.1128/AEM.00481-21  
+17. Bellou S, et al. High lipid accumulation in *Yarrowia lipolytica* cultivated under double limitation of nitrogen and magnesium. *J Biotechnol.* 2016;234:116–126. doi:10.1016/j.jbiotec.2016.08.001  
+18. Liu H, et al. Genetic and bioprocess engineering to improve squalene production in *Yarrowia lipolytica*. *Bioresour Technol.* 2020;323:124652. doi:10.1016/j.biortech.2020.124652  
+19. Borkovich KA, Farrelly FW, Finkelstein DB, et al. hsp82 is an essential protein that is required in higher concentrations for growth of cells at higher temperature. *Mol Cell Biol.* 1989;9(9):3919–3930. doi:10.1128/mcb.9.9.3919-3930.1989  
+20. Yamada M, Nagasaki SC, Ozawa T, Imayoshi I. Light-mediated control of gene expression in mammalian cells. *Neurosci Res.* 2020;152:66–77. doi:10.1016/j.neures.2019.12.018  
+21. Nash AI, McNulty R, Shillito ME, et al. Structural basis of photosensitivity in a bacterial light-oxygen-voltage/helix-turn-helix (LOV-HTH) DNA-binding protein. *Proc Natl Acad Sci U S A.* 2011;108(23):9449–9454. doi:10.1073/pnas.1100262108  
