@@ -10,9 +10,9 @@ excerpt: ""
 
 Our project focuses on adopting various strategies to enhance the efficiency of squalene synthesis by Yarrowia Lipolytica using fatty acids as substrates. The project aims to utilize low-cost and abundant WCO (Waste cooking oil) for squalene synthesis, thereby meeting the growing demand of the cosmetics industry for squalene, an excellent raw material. To address the feedback inhibition and interference affecting the MVA pathway in the cytoplasm, we have proposed a compartmentalization strategy.
 
-To facilitate the application of this compartmentalization strategy in the actual production of squalene and the potential synthesis of other terpenoids in the future, we have developed a parts collection specifically for peroxisomal compartmentalization. This collection includes:[UUID:6a1f3d92-50e1-4192-bd4f-e652a0293224](https://registry.igem.org/collections/6a1f3d92-50e1-4192-bd4f-e652a0293224)
+To facilitate the application of this compartmentalization strategy in the actual production of squalene and the potential synthesis of other terpenoids in the future, we have developed a parts collection specifically for peroxisomal compartmentalization. ([UUID:6a1f3d92-50e1-4192-bd4f-e652a0293224](https://registry.igem.org/collections/6a1f3d92-50e1-4192-bd4f-e652a0293224))This collection includes:
 
-Overexpression parts for upregulating the beta-oxidation pathway that inherently exists in peroxisomes [BBa_25VW58NU](https://registry.igem.org/parts/bba-25vw58nu) ;
+Overexpression parts for upregulating the beta-oxidation pathway that inherently exists in peroxisomes ([BBa_25VW58NU](https://registry.igem.org/parts/bba-25vw58nu) );
 
 A set of multi-gene integration parts for compartmentalizing the MVA pathway via the PTS1 sequence([BBa_25T8A2CI](https://registry.igem.org/parts/bba-25t8a2ci)  [BBa_25KXC0C8](https://registry.igem.org/parts/bba-25kxc0c8)  [BBa_25P1VJS7](https://registry.igem.org/parts/bba-25p1vjs7));
 

@@ -237,17 +237,17 @@ In conclusion, our combined cloning and phenotypic analyses confirm that the thr
 
 ### **4.1 Plasmid construction**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/36.webp" caption="PCR of ERG9, the band is similar to the anticipated length 1365bp<br>
-PCR of ERG8, the band is similar to the anticipated length 1284bp<br>
-PCR of ERG12, the band is similar to the anticipated length 1377bp<br>
-PCR of ERG13, the band is similar to the anticipated length 1369bp<br>
-PCR of ERG10, the band is similar to the anticipated length 1628bp" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/36.webp" caption="PCR of ERG9, the band is similar to the anticipated length 1365bp
+PCR of ERG8, <br>the band is similar to the anticipated length 1284bp
+PCR of ERG12, <br>the band is similar to the anticipated length 1377bp
+PCR of ERG13,<br> the band is similar to the anticipated length 1369bp
+PCR of ERG10, <br>the band is similar to the anticipated length 1628bp" %}
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/37.webp" caption="PCR of ERG19, the band is similar to the anticipated length 1191bp<br>
-PCR of tHMGr, the band is similar to the anticipated length 1533bp<br>
-PCR of NADH-HMGr, the band is similar to the anticipated length 1071bp<br>
-PCR of IDI, the band is similar to the anticipated length 840bp<br>
-PCR of ERG20, the band is similar to the anticipated length 1062bp" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/37.webp" caption="PCR of ERG19, the band is similar to the anticipated length 1191bp
+PCR of tHMGr, <br>the band is similar to the anticipated length 1533bp
+PCR of NADH-HMGr, <br>the band is similar to the anticipated length 1071bp
+PCR of IDI, <br>the band is similar to the anticipated length 840bp
+PCR of ERG20,<br> the band is similar to the anticipated length 1062bp" %}
 
 ### **4.2 Optimization of the rate-limiting step**
 
