@@ -24,20 +24,20 @@ images02:
 
 images03:
   - src: https://static.igem.wiki/teams/5569/hp-new/hp-13.avif
-    alt: Figure 13 hardware member communicate with teacher Wang jinchun
-    caption: Figure 13 hardware member communicate with teacher Wang jinchun
+    alt: Figure 14 hardware member communicate with teacher Wang jinchun
+    caption: Figure 14 hardware member communicate with teacher Wang jinchun
   - src: https://static.igem.wiki/teams/5569/hp-new/hp-14.avif
-    alt: Figure 14 Communication with Professor Chen yulong
-    caption: Figure 14 Communication with Professor Chen yulong
+    alt: Figure 15 Communication with Professor Chen yulong
+    caption: Figure 15 Communication with Professor Chen yulong
 
 
 images04:
   - src: https://static.igem.wiki/teams/5569/hp-new/hp15.avif
-    alt: Figure 15 member Zhao shijing visit Bloomage Biotech
-    caption: Figure 15 member Zhao shijing visit Bloomage Biotech
+    alt: Figure 16 member Zhao shijing visit Bloomage Biotech
+    caption: Figure 16 member Zhao shijing visit Bloomage Biotech
   - src: https://static.igem.wiki/teams/5569/hp-new/hp16.avif
-    alt: Figure 16 Formulator Kan hong
-    caption: Figure 16 Formulator Kan hong
+    alt: Figure 17 Formulator Kan hong
+    caption: Figure 17 Formulator Kan hong
 ---
 
 # Human Practices: From Waste Oil to Sustainable Squalane
@@ -228,13 +228,13 @@ even when using relatively simple edible oil for fermentation, the oil degradati
 >As the project progressed, we committed to optimizing key enzymes in the squalene synthesis pathway through protein engineering. We wanted to first mine all proteins in nature with catalytic activity similar to HMGR using a certain method. Therefore, how to accurately and quickly screen the enzymes we want at the three-dimensional structural level and guide rational design? For this, we contacted Prof. Shi Mang from Sun Yat-sen University. The expert pointed out that the core of our problem lies in functional annotation from the perspective of structural homology. He explained that traditional tools like MMseqs2 primarily rely on amino acid sequence similarity, but their predictive power drops significantly when sequence identity is low. He recommended a powerful new tool – **Foldseek**. This tool can directly compare the 3D structures of proteins, effectively identifying structurally homologous and potentially functionally related proteins even when sequence similarity is low, greatly improving the accuracy of functional annotation. The expert also shared his team's successful experience, setting the structural consistency (TM-score) threshold at 90% as a reliable standard for functional inference.
 This consultation opened a new door for us. We immediately integrated Foldseek into our protein engineering workflow. The introduction of this tool moved our enzyme optimization work from "guessing" to "structure-based rational design," significantly improving the success rate and efficiency of our engineered strain design.
 >
-{% include figure.html image="https://static.igem.wiki/teams/5569/hp/shimang.avif" caption="Figure  Professor Shimang" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp/shimang.avif" caption="Figure 11 Professor Shimang" %}
 
 ### **Compartmentalization:** 
 >While strengthening the MVA pathway and knocking out downstream squalene pathways, we found that MVA pathway optimization did not significantly increase squalene yield, and knocking out downstream genes severely affected normal life activities. To solve this problem, we contacted Researcher Xie Xiaoman from HUST. She stated: "The cytoplasmic environment is complex; squalene accumulation might produce toxicity, and negative feedback regulation exists. She suggested adopting a **'compartmentalization'** strategy, transferring the synthesis pathway to independent organelles." We subsequently made a major technical route iteration, deciding to localize the entire MVA pathway **to the peroxisome**, creating a more optimized micro-reaction environment. The dry lab team immediately began systematically screening efficient signal peptides.
 >
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-11.avif" caption="Figure 11 Professor Xie xiaoman" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-11.avif" caption="Figure 12 Professor Xie xiaoman" %}
 
 ## Part 3: Product Positioning & Engineering Implementation
 
@@ -243,7 +243,7 @@ This consultation opened a new door for us. We immediately integrated Foldseek i
 > **During our research and experimental process, we found that when conducting micro-fermentation and substance extraction in the laboratory, the micro-fermentation equipment is very expensive and still cannot monitor fermentation conditions and related parameters in real-time. Our members once spent 36 consecutive hours sampling and measuring data. This process is not only cumbersome and time-consuming but also carries a high risk of contamination, greatly reducing experimental efficiency and accuracy.** We contacted **Yang Xuezhi from the National Bio-manufacturing Industry Innovation Center**, who suggested we design an integrated hardware device; Prof. Li Aitao from Hubei University suggested using grinding methods to break cells. This led us to design the iFPS.
 >
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-12.avif" caption="Figure 12 Professor Li aitao" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-12.avif" caption="Figure 13 Professor Li aitao" %}
 
 ### Achieving Hardware Material and Automation Upgrades
 
@@ -264,11 +264,11 @@ This consultation opened a new door for us. We immediately integrated Foldseek i
 
 >To understand the practical problems that might be encountered when transitioning from a lab product to an industrial commodity, we contacted Ms. Wei Qin, General Manager of Zheyan Lanhaixing Products Co., Ltd., and Engineer Chen Wei. They took us **to visit the Zhejiang Lanhaixing filling line**. Downstream packaging stages might become efficiency bottlenecks due to product physical properties (like viscosity), visually demonstrating the engineering and design bottlenecks that might be encountered during the transition from laboratory technology to industrial production. They suggested testing under different pH, temperature, and viscosity conditions, and considering transportation and shelf-life requirements. Therefore, in hardware design and future planning, we will pay more attention to **compatibility and adaptability** with downstream industrial equipment.
 >
-{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp17.avif" caption="Figure 17 member Ma yichuang visit Zhejiang blue starfish salt product CO.LTD" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp17.avif" caption="Figure 18 member Ma yichuang visit Zhejiang blue starfish salt product CO.LTD" %}
 
 ### Project Prospects
 
 >We contacted Prof. Sylvain FISSON, Professor of Immunology (University of Evry Paris-Saclay). We detailed our project to him. Prof. FISSON saw great potential, stating that our project has significant practical meaning and scientific prospects, providing a comprehensive solution for squalene synthesis and waste oil recycling. We will continue to promote the project's development. Prof. FISSON also invited us to the University of Evry Paris-Saclay for discussions on the project's further development.
 >
-{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp18.avif" caption="Figure 18 member Zhao haixi communicate with Professor Sylvain" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp18.avif" caption="Figure 19 member Zhao haixi communicate with Professor Sylvain" %}
 
