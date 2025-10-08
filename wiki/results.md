@@ -19,7 +19,7 @@ images01:
 
 ## **Part 1 Multi-dimensional verification of scheme feasibility and exploration on the growth conditions**
 
-### **1.1 Different Types of pure Oil**
+### **1.1 1.1 Exploration of different oil medium cultivation feasibility**
 
 The liquid fatty acids in waste cooking oil form a mixed system, dominated by oleic acid and also containing other components such as linoleic acid and linolenic acid.
 
@@ -29,7 +29,7 @@ To confirm that our Yarrowia lipolytica can utilize lipids in waste cooking oil 
 
 Through the comparison and comprehensive analysis of data across all groups, it was found that Yarrowia lipolytica can grow well in fatty acid-rich environments. Furthermore, our experimental results revealed that Yarrowia lipolytica exhibits the optimal growth vigor when using oleic acid as the carbon source. Coincidentally, oleate accounts for the highest proportion (approximately 50%) of total lipids in various types of waste cooking oil. This finding further underscores the growth advantage of our strain in waste cooking oil.
 
-### **1.2 Glycerol and fatty acids in different proportions**
+### **1.2 1.2 The effect of oil medium with different proportion of glycerol and fatty acid**
 
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/result/2.webp" caption="Figure 4 Growth status under different proportions
@@ -57,7 +57,7 @@ The bar graph compares the squalene yields of wild-type *Yarrowia lipolytica* un
 
 *To verify whether our Po1f yeast can discrete lipase which transforms lipid into fatty acid, we conducted several experiments on the secreted Thermomyces lanuginosus lipase (TLL) in engineered Po1f yeast. Through a combination of qualitative plate assays, SDS-PAGE profiling, and quantitative alkalimetric titration, we demonstrate that Po1f -TLL exhibits robust, time-dependent lipid-hydrolytic activity, yielding fatty acids that both acidify the medium and form conspicuous hydrolysis halos. The recombinant strain secretes the ~20 kDa TLL at high levels without appreciable background proteins, and it catalyzes the release of significantly more protonated fatty acids than the wild-type control. Collectively, the data establish Po1f -TLL as an efficient, cleanly secreted biocatalyst for lipid degradation.*
 
-### **2.1 SDS-PAGE**
+### **2.1 SDS-PAGE protein electrophoresis**
 
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/result/4.webp" caption="Figure 6 SDS-Page Result(from right to left lane : supernatant of po1f-WT,supernatant of Po1f-tll,supernatant of Po1f-tll,marker)" %}
@@ -66,7 +66,7 @@ The bar graph compares the squalene yields of wild-type *Yarrowia lipolytica* un
 
 The Po1f-TLL band(about 20KDa) is located between 25KDa band and 35KDa band, supporting the band is the TLL protein. Also, it can be conclude that Po1f don't secrete other protein much, and the TLL proteins are successfully secreted in large quantity.
 
-### **2.2 Hydrolysis Circles**
+### **2.2 Hydrolysis circle of oil degradation**
 
 #### **2.2.1 Hydrolysis Circle-1**
 
@@ -108,7 +108,7 @@ According to the medium color, it is obvious that the hydrolysis circle expand a
 
 To discover the effect of pH condition for tll, we formulate oil cultivation media with several different initial pH.The data shows that tll has the highest activity under pH6.0 condition.
 
-### **2.5 Nitrogen**
+### **2.5 Exploration for the best  C/N ratio in medium for cultivation**
 
 Through literature surveys, we have noted the micro- and macro-level effects of nitrogen limitation on *Yarrowia lipolytica*. To feed data into hardware-based feeding algorithms and other control strategies, we designed a tightly linked series of experiments whose key variable was the C:N ratio.
 
@@ -135,7 +135,7 @@ At the experimental-design stage, the nitrogen-feeding strategy was benchmarked 
 
 Finally, we determined that 0.2 g of nitrogen should be fed every 24 h, equivalent to 0.943 g of ammonium sulfate.
 
-### **2.6 Grow in waste of oil from school canteen**
+### **2.6 Growth curve of waste oil medium from school canteen**
 
 After constructing the strain capable of efficiently expressing lipase, we intended to test and compare its growth performance under different environmental conditions. Specifically, we selected three types of media for investigating the growth status of the engineered yeast: the general complete medium for yeast (YPD medium), the medium with a 1:1 mixture of oleic acid and glycerol as the carbon source, and the medium using waste cooking oil obtained from the university canteen as the carbon source.
 
@@ -147,7 +147,7 @@ After constructing the strain capable of efficiently expressing lipase, we inten
 
 As indicated by the experimental results, the engineered yeast can grow well in the waste cooking oil from the canteen, and its abundance during the plateau phase is higher than that when cultured in YPD medium (with glucose as the carbon source).
 
-### **2.7 Different PHs & Temperatures**
+### **2.7 Exploration for the best pH and temperature for cultivation**
 
 In the industrial production process, the pH value can be adjusted during the pretreatment of waste cooking oil, and the temperature of the fermenter can be controlled. Therefore, using waste cooking oil from the canteen as the carbon source, we investigated the optimal growth pH and temperature of yeast with the modified strain PO1f-fatase. The pH gradient was set as follows: 4.0, 5.0, 6.0, and 7.0; the temperature gradient included the commonly used values: 28°C, 30°C, and 37°C.
 
@@ -205,7 +205,7 @@ Adding 75 ul phenolphthalein solution into 5 ml sample, use 50mM NaOH solution t
 |-------------|------|------|------|
 | 0.5nM NaOH/ml | 3.64 | 0.85 | 0.72 |
 
-### **3.4 Lipid extract**
+### **3.4 lipid extraction**
 
 Adding 15 ml petroleum ether into 5mL sample, after 20min ultrasonic oscillation, centrifuge at 9000 rpm for 10 min. Collect the oil phase which is at the top of the solution and put the falcon tube into oven, then wait until the weight is constant.
 
