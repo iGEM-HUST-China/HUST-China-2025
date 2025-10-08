@@ -26,22 +26,28 @@ To bridge this gap, we established a **hierarchical in silico pipeline** that ac
 By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine learning–based systems modeling** into a unified framework, our model enables *in silico* prototyping of peroxisomal targeting and metabolic rewiring. This **model-driven strategy** transforms the traditional **Design–Build–Test–Learn (DBTL)** cycle into a predictive, knowledge-guided process, substantially reducing experimental overhead while accelerating the path toward high-yield, industrially robust strains.
 
 {% include dropdown.html
-   title="1: Click this to read more"
-   content=" Simulated interactions of *SKL*, *GGGSSKL*, and *TYWIRFSKL* with MVA-pathway enzymes using **HADDOCK**.Identified the **structural** and **energetic** principles governing efficient **PEX5**-mediated import.Generated **docking clusters** to guide selection of linker–signal peptide combinations."
+   title="PART 1 · Linker–Signal Peptide System Docking"
+   content=" 
+   - Simulated interactions of *SKL*, *GGGSSKL*, and *TYWIRFSKL* with MVA-pathway enzymes using **HADDOCK**.<br>
+   - Identified the **structural** and **energetic** principles governing efficient **PEX5**-mediated import.<br>
+   - Generated **docking clusters** to guide selection of linker–signal peptide combinations."
 %}
 
-## PART 2 · Computational Enzyme Engineering
+{% include dropdown.html
+   title="PART 2 · Computational Enzyme Engineering"
+   content=" 
+   - Focused on the **MVA pathway’s rate-limiting enzyme** as the metabolic bottleneck.<br>
+   - Applied **ProteinMPNN** for amino-acid sequence redesign; selected the sequence with the **lowest frustration energy** using **Frustratometer2**.<br>
+   - Refined conformations with **Rosetta FastRelax** to obtain stable, high-activity variants."
+%}
 
-- Focused on the **MVA pathway’s rate-limiting enzyme** as the metabolic bottleneck.
-- Applied **ProteinMPNN** for amino-acid sequence redesign; selected the sequence with the **lowest frustration energy** using **Frustratometer2**.
-- Refined conformations with **Rosetta FastRelax** to obtain stable, high-activity variants.
-
-
-## PART 3 · Machine Learning Growth Modeling
-
-- Collected **OD₆₀₀** growth data under multiple culture conditions.
-- Extracted kinetic parameters (**μₘₐₓ**, **λ**, **K**) via **Gompertz** and **spline** fits.
-- Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.
+{% include dropdown.html
+   title="PART 3 · Machine Learning Growth Modeling"
+   content=" 
+   - Collected **OD₆₀₀** growth data under multiple culture conditions.<br>
+   - Extracted kinetic parameters (**μₘₐₓ**, **λ**, **K**) via **Gompertz** and **spline** fits.<br>
+   - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions."
+%}
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure1. MODEL PEPLINE" %}
 
