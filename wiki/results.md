@@ -7,15 +7,14 @@ excerpt: ""
 
 images01:
   - src: https://static.igem.wiki/teams/5569/result/bbb.webp
-    alt: figure1
-    caption: figure1
+    alt: Figure 1 Growth curves of different proportion oil medium glycerol:fatty acids=1:1
+    caption: Figure 1 Growth curves of different proportion oil medium glycerol:fatty acids=1:1
   - src: https://static.igem.wiki/teams/5569/result/aaa.webp
-    alt: High-Cloud Quintet
-    caption: High-Cloud Quintet
+    alt: Figure 2 Growth curves of different proportion oil medium glycerol:fatty acids=1:5
+    caption: Figure 2 Growth curves of different proportion oil medium glycerol:fatty acids=1:5
   - src: https://static.igem.wiki/teams/5569/result/ccc.webp
-    alt: March 7th
-    caption: March 7th
-
+    alt: Figure 3 Growth curves of different proportion oil medium glycerol:fatty acids=1:3
+    caption: Figure 3 Growth curves of different proportion oil medium glycerol:fatty acids=1:3
 ---
 
 ## **Part 1 Multi-dimensional verification of scheme feasibility and exploration on the growth conditions**
@@ -33,7 +32,9 @@ Through the comparison and comprehensive analysis of data across all groups, it 
 ### **1.2 Glycerol and fatty acids in different proportions**
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/2.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/2.webp" caption="Figure 4 Growth status under different proportions
+(includes:glycerol:fatty acids=1:1,1:3,1:5)
+" %}
 In practical production, yeast decomposes lipids into one molecule of glycerol and three molecules of fatty acids: glycerol tends to support cell growth, while fatty acids tend to drive the high-flux operation of squalene synthesis. We aim to investigate whether artificial supplementation of glycerol can alter the ratio of glycerol to fatty acids, thereby enhancing the bacterial growth rate or increasing squalene production. Therefore, under the premise of maintaining a constant total carbon content in the medium, we adjusted the ratio of added glycerol to fatty acids and set up three control groups with glycerol-to-fatty acid ratios of 1:1, 1:3, and 1:5.
 
 **Growth status under different proportions**
@@ -43,7 +44,7 @@ For the three types of fatty acids, the order of superiority among the three rat
 ***To further refine our experimental setup, we compared squalene yield produced by *Y. lipolytica* cultivated in either standard YPD or YPD supplemented with olive oil (see protocol). The results are as follows.***
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/3.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/3.webp" caption="Figure 5 The squalene contents of po1f-fatase and po1f-fatase+oil" %}
 
 **Squalene yield (mg L⁻¹) of *Yarrowia lipolytica* Po1f wild-type (WT) grown in YPD and YPD supplemented with olive oil.** Error bars represent standard deviations from two to three independent cultures.
 
@@ -60,7 +61,7 @@ The bar graph compares the squalene yields of wild-type *Yarrowia lipolytica* un
 ### **2.1 SDS-PAGE**
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/4.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/4.webp" caption="Figure 6 SDS-Page Result(from right to left lane : supernatant of po1f-WT,supernatant of Po1f-tll,supernatant of Po1f-tll,marker)" %}
 
 **SDS-Page Result**
 
@@ -71,9 +72,11 @@ The Po1f-TLL band(about 20KDa) is located between 25KDa band and 35KDa band, sup
 #### **2.2.1 Hydrolysis Circle-1**
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/sicheng.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/sicheng.webp" caption="Figure 7 Different inoculation approaches of different cultivation times
+	(A)Spread plate+1d		(B)Blank+1d
+	(C)Central spot+1d		(D)Central spot+8h
+" %}
 
-**Different inoculation approaches of different cultivation times**
 
 (A)Spread plate+1d (B)Blank+1d
 (C)Central spot+1d (D)Central spot+8h
@@ -83,9 +86,11 @@ One day after inoculation, the entire A plate appeared yellow, while the hydroly
 #### **2.2.2 Hydrolysis Circle-2**
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/6.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/6.webp" caption="Figure 8 Different groups of different cultivation times 
+	(A)Po1f-TLL+24h	(B)Po1f-TLL+8h		(C)Po1f-TLL+4h
+	(D)Po1f-WT+24h	(E)Po1f-WT+8h	(F)Po1f-WT+4h
+" %}
 
-**Different group of different cultivation times**
 
 > (A)Po1f-TLL+24h     (B)Po1f-TLL+8h     (C)Po1f-TLL+4h
 > (D)Po1f-WT+24h      (E)Po1f-WT+8h      (F)Po1f-WT+4h
@@ -102,9 +107,9 @@ According to the medium color, it is obvious that the hydrolysis circle expand a
 
 ### **2.4 Exploration of the Optimal Activity Conditions of Lipase**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/7.webp" caption="1" %}
-
-**Lipase activity under different pHs**
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/7.webp" caption="Figure 9 Lipase activity under different pH
+(includes pH=5.5,6.0,6.5,7.0,7.5)
+" %}
 
 *The decrease weight of reactant*
 *enzyme activity=___________________________*
@@ -118,9 +123,9 @@ Through literature surveys, we have noted the micro- and macro-level effects of 
 
 To guarantee experimental accuracy, we first determined the optimum C:N ratio for *Y. lipolytica* growth: media with C:N ratios from 10 to 80 were prepared, inoculated with pre-cultured cells, and incubated. The results showed that a C:N ratio of 10 gave the highest yield, with the OD600/OD800 ratio remaining maximal throughout the entire cultivation period.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/r1.webp" caption="Figure8.Effect of Initial Carbon-to-Nitrogen Ratio on Biomass Density" %}
-
-**Biomass Density under Initial Carbon-to-Nitrogen Ratios**
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/r1.webp" caption="Figure 10 Biomass Density under Initial Carbon-to-Nitrogen Ratios 
+(includes:C/N=10,20,40,60,80)
+" %}
 
 To establish a baseline for dynamic changes in nitrogen content, the nitrogen-consumption rate was also determined: using C/N = 10 medium, the ammonia-depletion rate was measured to support the design of a dynamic nitrogen-feeding regime. Semi-quantitative analysis with a water-quality test kit and repeated sampling showed that 250 mL of culture consumed ≈ 0.2 g NH₄⁺-N every 24 h.
 
@@ -128,14 +133,14 @@ Building on these key parameters, we next investigated how dynamic shifts in nit
 
 To balance analytical accuracy, cost and throughput, a UV-spectrophotometric protocol for squalene was developed in-house based on published principles. The workflow covers sample preparation, measurement and data processing. A calibration curve constructed with authentic squalene standards at 219.5 nm provided the quantitative basis for determining squalene yield.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/r2.webp" caption="Figure9.Standard Curve of Squalene: Concentration vs. Absorbance at 219.5 nm" %}
-**Standard Curve of Squalene (Absorbance at 219.5 nm)**
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/r2.webp" caption="Figure 11 Standard Curve of Squalene (Absorbance at 219.5 nm)" %}
+
 
 At the experimental-design stage, the nitrogen-feeding strategy was benchmarked against the previously acquired data; three feeding regimes were formulated and compared. The final results demonstrate that prolonging the feeding interval to create sustained oscillations of nitrogen within a defined concentration window exerts a positive effect on squalene synthesis in *Yarrowia lipolytica*, raising yield markedly and furnishing a pivotal reference for subsequent optimization of nitrogen-based control schemes in microbial squalene production.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/r3.webp" caption="Figure10. Impact of Dynamic Nitrogen Content on Squalene Yield" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/r3.webp" caption="Figure 12	Squalene yield under Dynamic Nitrogen Contents" %}
 
-**Squalene Yield under Dynamic Nitrogen Contents**
+
 
 Finally, we determined that 0.2 g of nitrogen should be fed every 24 h, equivalent to 0.943 g of ammonium sulfate.
 
@@ -143,9 +148,11 @@ Finally, we determined that 0.2 g of nitrogen should be fed every 24 h, equivale
 
 After constructing the strain capable of efficiently expressing lipase, we intended to test and compare its growth performance under different environmental conditions. Specifically, we selected three types of media for investigating the growth status of the engineered yeast: the general complete medium for yeast (YPD medium), the medium with a 1:1 mixture of oleic acid and glycerol as the carbon source, and the medium using waste cooking oil obtained from the university canteen as the carbon source.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/11.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/11.webp" caption="Figure 13 Growth status in different oil conditions
+(includes:YPD,Waste-oil,Oleic acid(1:1))
+" %}
 
-**Growth status in different oil conditions**
+
 
 As indicated by the experimental results, the engineered yeast can grow well in the waste cooking oil from the canteen, and its abundance during the plateau phase is higher than that when cultured in YPD medium (with glucose as the carbon source).
 
@@ -153,9 +160,8 @@ As indicated by the experimental results, the engineered yeast can grow well in 
 
 In the industrial production process, the pH value can be adjusted during the pretreatment of waste cooking oil, and the temperature of the fermenter can be controlled. Therefore, using waste cooking oil from the canteen as the carbon source, we investigated the optimal growth pH and temperature of yeast with the modified strain PO1f-fatase. The pH gradient was set as follows: 4.0, 5.0, 6.0, and 7.0; the temperature gradient included the commonly used values: 28°C, 30°C, and 37°C.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/12.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/12.webp" caption="Figure 14 Growth status with different pHs and Temperatures" %}
 
-**Growth status with different pHs and Temperatures**
 
 Finally, it was concluded that the engineered yeast exhibits optimal growth under the conditions of 28°C and an initial pH of 6.0.
 
@@ -190,20 +196,19 @@ First, we use three types of the engineering *Y.lipolytica*: po1f wild-type(WT),
 
 We cultivate these three kinds of yeast after 24h, then centrifuge for separating the yeast and re-suspense with the olive oil emulsion for overnight cultivation
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/16.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/16.webp" caption="Figure 15 RT sedimentation (from left to right WT, FA, BO)" %}
 
 
 
-**Fig. RT sedimentation (from left to right WT, FA, BO)**
+
 
 ### **3.3 Alkalimetric titration**
 
 Adding 75 ul phenolphthalein solution into 5 ml sample, use 50mM NaOH solution to titrate.
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/17.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/17.webp" caption="Figure 16 Titration result (from left to right WT, FA, BO)" %}
 
-**Table. Titration result (from left to right WT, FA, BO)**
 
 |             | WT   | FA   | BO   |
 |-------------|------|------|------|
@@ -214,20 +219,17 @@ Adding 75 ul phenolphthalein solution into 5 ml sample, use 50mM NaOH solution t
 Adding 15 ml petroleum ether into 5mL sample, after 20min ultrasonic oscillation, centrifuge at 9000 rpm for 10 min. Collect the oil phase which is at the top of the solution and put the falcon tube into oven, then wait until the weight is constant.
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/18.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/18.webp" caption="Figure 17 centrifuge result(from left to right WT,FA,BO)" %}
 **yeast sediment**
 
 **water phase**
 
 **oil phase**
 
-**centrifuge result(from left to right WT,FA,BO)**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/19.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/19.webp" caption="Figure 18 extraction result(from left to right WT, FA, BO)" %}
 
-**oil**
 
-**extraction result(from left to right WT, FA, BO)**
 
 |                | WT   | FA   | BO   |
 |----------------|------|------|------|
@@ -275,24 +277,27 @@ In conclusion, our combined cloning and phenotypic analyses confirm that the thr
 
 **Squalene yields (mg L⁻¹) of *Yarrowia lipolytica* expressing feedback-resistant or cofactor-switched HMGR isoenzymes.**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/30.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/30.webp" caption="Figure 19 Squalene yields with different HMG-CoA reductase
+(includes:po1f-fatase,NADH-HMGr,tHMGr,tHMGr+NADH-HMGr)
+" %}
 
 
-**Squalene yields with different HMG-CoA reductase**
 
 (Strains were cultured in YPD + olive oil.)
 
 The bar graph compares intracellular squalene yields (mg L⁻¹) among four *Yarrowia lipolytica* variants grown in YPD plus olive oil.
 
 The PO1f-fatase control reaches ~20 mg L⁻¹. Expression of NADH-HMGR, which utilizes NADH as cofactor, lifts the yield to ~60 mg L⁻¹, while the feedback-insensitive t-HMGR alone achieves ~100 mg L⁻¹. Co-expressing both t-HMGR and NADH-HMGR further elevates squalene to ~120 mg L⁻¹, demonstrating that simultaneously bypassing negative feedback and increasing NADH supply synergistically boosts
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/31.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/31.webp" caption="Figure 20 Squalene yield of Po1f-fatase and Po1f-fatase" %}
 
 
 **Tag recovery**
 
 When co-expressing tHMGr and NADH-HMGr, we conducted tag recovery.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/32.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/32.webp" caption="Figure 21 Tag recovery
+A.MD-Leu plate  B.YPD plate
+" %}
 
 ### **4.3 Impact of exogenous genes**
 
@@ -304,15 +309,13 @@ Although it has been demonstrated that the introduction of exogenous genes such 
 
 To channel carbon flux toward squalene, we knocked out the downstream genes responsible for converting squalene to cholesterol in the cytosolic MVA pathway. The resulting knockout strain and the wild-type control were cultivated in parallel, and both growth and intracellular squalene yields were monitored over time.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/33.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/33.webp" caption="Figure 22 Growth curve of WT and erg- Po1f" %}
 
-![Growth curve of WT and erg^-^ Po1f]
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/34.webp" caption="1" %}
 
-**Survival status of WT and erg^-^Po1f**
-
-(A) erg^+^Po1f(WT) (B)erg^-^Po1f
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/34.webp" caption="Figure 23 Survival status of WT and erg-Po1f
+(A)	erg+Po1f(WT)  (B)erg-Po1f
+" %}
 
 Surprisingly, after knocking out the downstream gene of squalene metabolism, the yeast growth was impaired and the squalene yield will be decreased. Upon consulting the literature, we found that squalene exerts negative feedback regulation and possesses cytotoxicity. Addressing these issues has become our top priority.
 
@@ -336,11 +339,10 @@ To solve these problems, we decided to use compartmentalization to move the enti
 
 Thanks to the work being done by dry lab, we acquired the sequence of PTS, which guides proteins into peroxisome.
 
-***E.coli* colony PCR of MVA pathway genes linked with SKL**
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/38.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/38.webp" caption="Figure 24 eletrohrophoreisof MVA pathway genes linked with SKL" %}
 
-**Distribution of gfp with and without PTS1**
-{% include figure.html image="https://static.igem.wiki/teams/5569/en/pts1-gfp.webp" caption="1" %}
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/pts1-gfp.webp" caption="Figure 25 Distribution of gfp with and without PTS1" %}
 
 (A)The engineered strains, transfected with GFP lacking peptide(SKL) ,cultured PA for 24 hours, were stained with Nile red and photographed with a laser confocal microscope.
 
@@ -360,5 +362,5 @@ Moving forward, we will continue to advance the project: we plan to generate squ
 
 Additionally, we anticipate contributing valuable insights into peroxisomal compartmentalization and related synthetic biology tools to the iGEM community, aiming to support and inspire future research in this field.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/en/20251007222710-2089-153.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/20251007222710-2089-153.webp" caption="Figure 26 sets of our parts" %}
 
