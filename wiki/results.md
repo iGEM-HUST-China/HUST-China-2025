@@ -115,7 +115,7 @@ Through literature surveys, we have noted the micro- and macro-level effects of 
 
 To guarantee experimental accuracy, we first determined the optimum C:N ratio for *Y. lipolytica* growth: media with C:N ratios from 10 to 80 were prepared, inoculated with pre-cultured cells, and incubated. The results showed that a C:N ratio of 10 gave the highest yield, with the OD600/OD800 ratio remaining maximal throughout the entire cultivation period.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/8.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/r1.webp" caption="Effect of Initial Carbon-to-Nitrogen Ratio on Biomass Density" %}
 
 **Biomass Density under Initial Carbon-to-Nitrogen Ratios**
 
@@ -125,12 +125,12 @@ Building on these key parameters, we next investigated how dynamic shifts in nit
 
 To balance analytical accuracy, cost and throughput, a UV-spectrophotometric protocol for squalene was developed in-house based on published principles. The workflow covers sample preparation, measurement and data processing. A calibration curve constructed with authentic squalene standards at 219.5 nm provided the quantitative basis for determining squalene yield.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/9.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/r2.webp" caption="Standard Curve of Squalene: Concentration vs. Absorbance at 219.5 nm" %}
 **Standard Curve of Squalene (Absorbance at 219.5 nm)**
 
 At the experimental-design stage, the nitrogen-feeding strategy was benchmarked against the previously acquired data; three feeding regimes were formulated and compared. The final results demonstrate that prolonging the feeding interval to create sustained oscillations of nitrogen within a defined concentration window exerts a positive effect on squalene synthesis in *Yarrowia lipolytica*, raising yield markedly and furnishing a pivotal reference for subsequent optimization of nitrogen-based control schemes in microbial squalene production.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/10.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/r3.webp" caption="Impact of Dynamic Nitrogen Content on Squalene Yield" %}
 
 **Squalene Yield under Dynamic Nitrogen Contents**
 
