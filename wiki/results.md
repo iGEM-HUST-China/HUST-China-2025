@@ -4,6 +4,18 @@ permalink: /results/
 feature_text: |
 feature_image: "https://static.igem.wiki/teams/5569/description/rst.webp"
 excerpt: ""
+
+images01:
+  - src: https://static.igem.wiki/teams/5569/result/bbb.webp
+    alt: figure1
+    caption: figure1
+  - src: https://static.igem.wiki/teams/5569/result/aaa.webp
+    alt: High-Cloud Quintet
+    caption: High-Cloud Quintet
+  - src: https://static.igem.wiki/teams/5569/result/ccc.webp
+    alt: March 7th
+    caption: March 7th
+
 ---
 
 ## **Part 1 Multi-dimensional verification of scheme feasibility and exploration on the growth conditions**
@@ -14,7 +26,7 @@ The liquid fatty acids in waste cooking oil form a mixed system, dominated by ol
 
 To confirm that our Yarrowia lipolytica can utilize lipids in waste cooking oil for normal growth, we prepared culture media using glycerol and fatty acids as carbon source combinations---with the total carbon content precisely calculated and kept consistent. For experimental simplification, we directly used the hydrolyzed products of triglycerides to simulate the lipid composition in waste cooking oil. The cultivation was conducted under the standard culture conditions for the wild-type Yarrowia lipolytica strain PO1f, i.e., pH 6.5 and 28°C.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/santu.webp" caption="Figure1. Gompertz model fitting of Yarrowia lipolytica growth curves under different fatty acid conditions." %}
+{% include figure3.html images=page.images01 %}
 
 Through the comparison and comprehensive analysis of data across all groups, it was found that Yarrowia lipolytica can grow well in fatty acid-rich environments. Furthermore, our experimental results revealed that Yarrowia lipolytica exhibits the optimal growth vigor when using oleic acid as the carbon source. Coincidentally, oleate accounts for the highest proportion (approximately 50%) of total lipids in various types of waste cooking oil. This finding further underscores the growth advantage of our strain in waste cooking oil.
 
