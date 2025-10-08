@@ -349,7 +349,7 @@ Future extensions include:
 
 # III. Machine Learning Growth Modeling
 
-**Gompertz fitting · Parameter prediction · Environmental optimization**
+**Gompertz fitting · Parameter prediction · Environmental restraint**
 
 
 ## 3.1 Background
