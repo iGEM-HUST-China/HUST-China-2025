@@ -41,10 +41,9 @@ We constructed plasmids carrying the remaining enzymes of the MVA pathway under 
 We knocked out ERG1 (the first enzyme downstream of squalene cyclase) with the expectation of increasing squalene production. However, unexpectedly, the **ERG1^-^ strain** exhibited severely impaired growth and almost no proliferation in the culture medium, resulting in a reduced squalene yield.
 
 **At this stage, the molecular engineering of squalene synthesis seems to have reached a deadlock. Those modifications are only modest improvements. Three main limiting factors were identified:**
-
-   **1. Squalene is an intermediate, so metabolic flux is naturally directed downstream.**
-   **2. Endogenous HMG-CoA reductase in *Yarrowia lipolytica* is subject to negative feedback regulation.**
-   **3. High squalene accumulation may exert cytotoxic effects, reducing cellular metabolic rates.**
+>**1. Squalene is an intermediate, so metabolic flux is naturally directed downstream.**
+>**2. Endogenous HMG-CoA reductase in *Yarrowia lipolytica* is subject to negative feedback regulation.**
+>**3. High squalene accumulation may exert cytotoxic effects, reducing cellular metabolic rates.**
 
 **Upon analyzing these constraints, we realized that they primarily occur in the cytosol. This insight naturally led to a new strategy: Relocating the squalene biosynthetic pathway via compartmentalization.**
 
@@ -52,6 +51,7 @@ We knocked out ERG1 (the first enzyme downstream of squalene cyclase) with the e
 We targeted the non-HMGR enzymes of the MVA pathway, along with NADH-HMGR and tHMGR to the peroxisome to fully exploit the abundant acetyl-CoA and cofactors NADH within the peroxisome to synthesize the squalene efficiently.
 
 Enzyme targeting was achieved using the PTS1 signal peptide. In Model, we optimized the PTS1-SKL/G4SSKL/TYWIRFSKL sequences for precise protein localization.
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure 1. Model design of our project" %}
 
 ## 7. Dynamic Regulation of Peroxisomes
 
