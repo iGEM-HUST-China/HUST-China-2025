@@ -1310,6 +1310,8 @@
         <div class="indicator-dot" data-title="Problem" data-target="5"></div>
         <div class="indicator-dot" data-title="Solution" data-target="6"></div>
         <div class="indicator-dot" data-title="Detail" data-target="7"></div>
+        <!-- 新增页脚指示点 -->
+        <div class="indicator-dot" data-title="Footer" data-target="8"></div>
     </div>
 
     <!-- 滚动容器 -->
@@ -1573,7 +1575,7 @@
                 </div>
             </div>
         </div>
-    
+    </section>
     
     <!-- 页脚 -->
     <div class="footer-container" id="footerContainer">
@@ -1608,7 +1610,6 @@
             </div>
         </footer>
     </div>
-    </section>
 
     <script>
         // 加载动画控制
@@ -1982,6 +1983,14 @@
                                 behavior: 'smooth',
                                 block: 'start'
                             });
+                        } else if (isInLongScroll && !isInFooter) {
+                            // 从长页滚动进入页脚
+                            isInFooter = true;
+                            footerContainer.classList.add('active');
+                            footerContainer.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
                         }
                     } else {
                         // 向上滑动 - 上一页
@@ -1994,6 +2003,14 @@
                             longScrollSection.classList.remove('active');
                             currentSection = 7; // 返回到Navigation部分
                             scrollToSection(currentSection);
+                        } else if (isInFooter) {
+                            // 从页脚返回长页滚动
+                            isInFooter = false;
+                            footerContainer.classList.remove('active');
+                            longScrollSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'end'
+                            });
                         }
                     }
                 }
@@ -2142,16 +2159,6 @@
                         const targetIndex = parseInt(dot.getAttribute('data-target'));
                         
                         if (targetIndex === 8) {
-                            // 长页滚动部分
-                            isInLongScroll = true;
-                            isInFooter = false;
-                            longScrollSection.classList.add('active');
-                            footerContainer.classList.remove('active');
-                            longScrollSection.scrollIntoView({
-                                behavior: 'smooth',
-                                block: 'start'
-                            });
-                        } else if (targetIndex === 9) {
                             // 页脚部分
                             isInFooter = true;
                             isInLongScroll = false;
@@ -2220,11 +2227,11 @@
                     
                     if (isInFooter) {
                         // 找到页脚对应的指示点
-                        const footerDot = document.querySelector('.indicator-dot[data-target="9"]');
+                        const footerDot = document.querySelector('.indicator-dot[data-target="8"]');
                         if (footerDot) footerDot.classList.add('active');
                     } else if (isInLongScroll) {
                         // 找到长页滚动对应的指示点
-                        const longScrollDot = document.querySelector('.indicator-dot[data-target="8"]');
+                        const longScrollDot = document.querySelector('.indicator-dot[data-target="7"]');
                         if (longScrollDot) longScrollDot.classList.add('active');
                     } else {
                         indicators[currentSection].classList.add('active');

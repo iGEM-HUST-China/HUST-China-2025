@@ -30,7 +30,8 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    content=" 
    - Simulated interactions of *SKL*, *GGGSSKL*, and *TYWIRFSKL* with MVA-pathway enzymes using **HADDOCK**.<br>
    - Identified the **structural** and **energetic** principles governing efficient **PEX5**-mediated import.<br>
-   - Generated **docking clusters** to guide selection of linker–signal peptide combinations."
+   - Generated **docking clusters** to guide selection of linker–signal peptide combinations.<br>
+   [click to learn more](#i-linkersignal-peptide-system-docking)"
 %}
 
 {% include dropdown.html
@@ -38,7 +39,8 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    content=" 
    - Focused on the **MVA pathway’s rate-limiting enzyme** as the metabolic bottleneck.<br>
    - Applied **ProteinMPNN** for amino-acid sequence redesign; selected the sequence with the **lowest frustration energy** using **Frustratometer2**.<br>
-   - Refined conformations with **Rosetta FastRelax** to obtain stable, high-activity variants."
+   - Refined conformations with **Rosetta FastRelax** to obtain stable, high-activity variants.<br>
+   [click to learn more](#ii-protein-design-and-optimization)"
 %}
 
 {% include dropdown.html
@@ -46,7 +48,8 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    content=" 
    - Collected **OD₆₀₀** growth data under multiple culture conditions.<br>
    - Extracted kinetic parameters (**μₘₐₓ**, **λ**, **K**) via **Gompertz** and **spline** fits.<br>
-   - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions."
+   - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.<br>
+   [click to learn more](#iii-machine-learning-growth-modeling)"
 %}
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/model/m02.webp" caption="Figure1. MODEL PEPLINE" %}
@@ -242,6 +245,10 @@ Future work will address these limitations by:
 
 
 # II. Protein Design and Optimization
+ 
+**Structure prediction · Active-site engineering · Stability refinement**
+
+
 
 ## 2.1 Background
 
@@ -342,7 +349,10 @@ Future extensions include:
 
 # III. Machine Learning Growth Modeling
 
-## Background
+**Gompertz fitting · Parameter prediction · Environmental restraint**
+
+
+## 3.1 Background
 
 Understanding the quantitative relationship between environmental factors and microbial growth dynamics is essential for optimizing bioprocesses and designing predictive cultivation strategies.  
 In this study, *Yarrowia lipolytica* was chosen as a model organism owing to its exceptional environmental tolerance and remarkable lipid-producing capacity, making it a versatile chassis for metabolic engineering.  

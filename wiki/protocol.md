@@ -10,4 +10,4 @@ excerpt: ""
 
 You can explore our detailed protocol PDF here:
 
-{% include button.html link="https://static.igem.wiki/teams/5569/document/protocols.pdf" text="check the Prtocol of ours" %}
+{% include button.html link="https://static.igem.wiki/teams/5569/document/protocols.pdf" text="check the Protocol of ours" %}
