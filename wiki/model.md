@@ -298,7 +298,7 @@ FastRelax is typically employed as a post-design refinement step to further opti
 
 ## 2.3 Design Workflow
 
-To systematically explore the sequence landscape of tHMGR, we established a three-step design–optimization workflow (Figure 2-1):  
+To systematically explore the sequence landscape of tHMGR, we established a three-step design–optimization workflow (Figure 7):  
 
 1 **Sequence Sampling:**  
 ProteinMPNN generates approximately 100 candidate sequences conditioned on the tHMGR backbone.  
@@ -320,9 +320,9 @@ All ProteinMPNN-designed sequences aligned well with the target backbone, confir
 
 Frustratometer2 analysis revealed that several designed variants exhibited a slight reduction (~2%) in highly frustrated regions and a corresponding increase in minimally frustrated contacts compared with the wild-type template.  
 
-After Rosetta FastRelax refinement, the total energy decreased by approximately 15–25%, and the local energy landscape in the core folding regions became smoother (Figure 2-3).  
+After Rosetta FastRelax refinement, the total energy decreased by approximately 15–25%, and the local energy landscape in the core folding regions became smoother .  
 During the relaxation process, the backbone RMSD gradually converged from 14.52 Å to 1.34 Å (calculated over 2796 atoms).  
-The RMSD values for the five relaxation cycles were 14.52, 5.10, 2.75, 2.08, and 1.67 Å respectively (Figure 2-4), illustrating the progressive elimination of energetic strain through iterative minimization and side-chain repacking.  
+The RMSD values for the five relaxation cycles were 14.52, 5.10, 2.75, 2.08, and 1.67 Å respectively , illustrating the progressive elimination of energetic strain through iterative minimization and side-chain repacking.  
 
 The final RMSD of ~1.3 Å indicates that structural refinement mainly affected local regions—particularly side chains and flexible loops—while maintaining the global fold.  
 In the interactive NGLView visualization, the pre-relaxation model (grey) and post-relaxation model (cyan) clearly demonstrate local rearrangements and reduced steric clashes, confirming the effectiveness of the FastRelax refinement.  
