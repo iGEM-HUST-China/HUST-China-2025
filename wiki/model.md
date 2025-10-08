@@ -31,6 +31,7 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    - Simulated interactions of *SKL*, *GGGSSKL*, and *TYWIRFSKL* with MVA-pathway enzymes using **HADDOCK**.<br>
    - Identified the **structural** and **energetic** principles governing efficient **PEX5**-mediated import.<br>
    - Generated **docking clusters** to guide selection of linker–signal peptide combinations.<br>
+   - **Contribution to project:** By screening different **linker–signal peptide** combinations and comparing their import performance, we identified optimal designs that significantly improved enzyme translocation into peroxisomes; this established a rational foundation for **peroxisomal targeting** of MVA-pathway enzymes and laid the molecular basis for **compartmentalized metabolic regulation**.<br>
    [click to learn more](#i-linkersignal-peptide-system-docking)"
 %}
 
@@ -40,6 +41,7 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    - Focused on the **MVA pathway’s rate-limiting enzyme** as the metabolic bottleneck.<br>
    - Applied **ProteinMPNN** for amino-acid sequence redesign; selected the sequence with the **lowest frustration energy** using **Frustratometer2**.<br>
    - Refined conformations with **Rosetta FastRelax** to obtain stable, high-activity variants.<br>
+   - **Contribution to project:** Optimized the **rate-limiting enzyme t-HMGR** in the MVA pathway, improving catalytic efficiency and supporting higher metabolic flux for enhanced squalene production.<br>
    [click to learn more](#ii-protein-design-and-optimization)"
 %}
 
@@ -49,6 +51,7 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    - Collected **OD₆₀₀** growth data under multiple culture conditions.<br>
    - Extracted kinetic parameters (**μₘₐₓ**, **λ**, **K**) via **Gompertz** and **spline** fits.<br>
    - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.<br>
+   - **Contribution to project:** Developed a **digital-twin prediction platform** for *Yarrowia lipolytica* that not only guides experimental optimization but also serves as an **open and reusable modeling framework** for other teams to explore growth–environment relationships.<br>
    [click to learn more](#iii-machine-learning-growth-modeling)"
 %}
 
