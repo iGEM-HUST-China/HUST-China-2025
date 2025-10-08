@@ -9,12 +9,12 @@ images01:
   - src: https://static.igem.wiki/teams/5569/result/bbb.webp
     alt: Figure 1 Growth curves of different proportion oil medium glycerol:fatty acids=1:1
     caption: Figure 1 Growth curves of different proportion oil medium glycerol:fatty acids=1:1
-  - src: https://static.igem.wiki/teams/5569/result/aaa.webp
-    alt: Figure 2 Growth curves of different proportion oil medium glycerol:fatty acids=1:5
-    caption: Figure 2 Growth curves of different proportion oil medium glycerol:fatty acids=1:5
   - src: https://static.igem.wiki/teams/5569/result/ccc.webp
-    alt: Figure 3 Growth curves of different proportion oil medium glycerol:fatty acids=1:3
-    caption: Figure 3 Growth curves of different proportion oil medium glycerol:fatty acids=1:3
+    alt: Figure 2 Growth curves of different proportion oil medium glycerol:fatty acids=1:3
+    caption: Figure 2 Growth curves of different proportion oil medium glycerol:fatty acids=1:3
+  - src: https://static.igem.wiki/teams/5569/result/aaa.webp
+    alt: Figure 3 Growth curves of different proportion oil medium glycerol:fatty acids=1:5
+    caption: Figure 3 Growth curves of different proportion oil medium glycerol:fatty acids=1:5
 ---
 
 ## **Part 1 Multi-dimensional verification of scheme feasibility and exploration on the growth conditions**
