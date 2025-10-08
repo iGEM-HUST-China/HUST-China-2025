@@ -27,9 +27,9 @@ Squalane is the hydrogenated, saturated form of squalene. This process makes it 
 
 ### 2.1 Expanding Market for Moisturizers
 
-The fashion and beauty sector is experiencing unprecedented growth and globalization. In 2024, the beauty market—defined to include skincare, fragrances, make-up and hair-care products—generated approximately US dollars 491 billion in revenue and is projected to reach around US dollars 1,127 billion by 2035, with an estimated annual growth rate of about 6 %<sup>2</sup>.
+The fashion and beauty sector is experiencing unprecedented growth and globalization. In 2024, the beauty market—defined to include skincare, fragrances, make-up and hair-care products—generated approximately US dollar 491 billion in revenue and is projected to reach around US dollar 1,127 billion by 2035, with an estimated annual growth rate of about 6 %<sup>2</sup>.
 
-In the same year, the global market for moisturizing creams was valued at US dollars 11.02 billion; it is forecast to grow to US dollars 11.47 billion in 2025 and to US dollars 19.63 billion by 2035, corresponding to a compound annual growth rate of 5.52 %<sup>3</sup>.
+In the same year, the global market for moisturizing creams was valued at US dollar 11.02 billion; it is forecast to grow to US dollars 11.47 billion in 2025 and to US dollar 19.63 billion by 2035, corresponding to a compound annual growth rate of 5.52 %<sup>3</sup>.
 
 {% include figure2.html images=page.images02 %}
 
