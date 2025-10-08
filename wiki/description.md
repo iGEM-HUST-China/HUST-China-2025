@@ -7,11 +7,11 @@ excerpt: ""
 
 images02:
   - src: https://static.igem.wiki/teams/5569/description/meizhuang.webp
-    alt: Figure 3. Growth of the beauty market
-    caption: Figure 3. Growth of the beauty market
+    alt: Figure 2. Growth of the beauty market
+    caption: Figure 2. Growth of the beauty market
   - src: https://static.igem.wiki/teams/5569/description/baoshi.webp
-    alt: Figure 4. Growth of the moisturizer market
-    caption: Figure 4. Growth of the moisturizer market
+    alt: Figure 3. Growth of the moisturizer market
+    caption: Figure 3. Growth of the moisturizer market
 
 ---
 
@@ -37,7 +37,7 @@ In most moisturizing products on the market, squalane are universally employed t
 Behind this huge market lies the ever-increasing demand for squalane and its sole precursor – **squalene**.
 
 ## The Foundation and Hidden Cost: The Squalene Supply Dilemma
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/zongshu.webp" caption="Figure 2. Squalene" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/zongshu.webp" caption="Figure 4. Squalene" %}
 However, the foundation supporting this "beauty" faces an unsustainable and harsh reality. Currently, commercial squalene primarily comes from the following three sources, each with severe challenges.
 
 ### 1. Shark Liver Oil Extraction: An Ecological Catastrophe

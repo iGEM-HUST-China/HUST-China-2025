@@ -28,10 +28,12 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
 {% include dropdown.html
    title="PART 1 · Linker–Signal Peptide System Docking"
    content=" 
-   - Simulated interactions of *SKL*, *GGGSSKL*, and *TYWIRFSKL* with MVA-pathway enzymes using **HADDOCK**.<br>
+   - Simulated interactions of *SKL*, *GGGGSSKL*, and *TYWIRFSKL* with MVA-pathway enzymes using **HADDOCK**.<br>
    - Identified the **structural** and **energetic** principles governing efficient **PEX5**-mediated import.<br>
    - Generated **docking clusters** to guide selection of linker–signal peptide combinations.<br>
    - **Contribution to project:** By screening different **linker–signal peptide** combinations and comparing their import performance, we identified optimal designs that significantly improved enzyme translocation into peroxisomes; this established a rational foundation for **peroxisomal targeting** of MVA-pathway enzymes and laid the molecular basis for **compartmentalized metabolic regulation**.<br>
+   - **Innovation:** Established the first *structure–energy coupled modeling framework* for predicting **PTS1 import efficiency**, integrating molecular docking energy analysis with linker–signal peptide design. This approach transformed qualitative observation into **quantitative, designable import modeling**, providing a transferable paradigm for compartmentalized metabolic engineering.<br>
+
    [click to learn more](#i-linkersignal-peptide-system-docking)"
 %}
 
@@ -42,6 +44,8 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    - Applied **ProteinMPNN** for amino-acid sequence redesign; selected the sequence with the **lowest frustration energy** using **Frustratometer2**.<br>
    - Refined conformations with **Rosetta FastRelax** to obtain stable, high-activity variants.<br>
    - **Contribution to project:** Optimized the **rate-limiting enzyme t-HMGR** in the MVA pathway, improving catalytic efficiency and supporting higher metabolic flux for enhanced squalene production.<br>
+   - **Innovation:** Developed an integrated **sequence–structure–energy design pipeline** that synergizes *ProteinMPNN*’s statistical potential with *Rosetta*’s physical energy refinement. This enables **directed energy landscape remodeling** of the active site, representing a methodological leap from protein prediction to **rational structural reprogramming**.<br>
+
    [click to learn more](#ii-protein-design-and-optimization)"
 %}
 
@@ -52,6 +56,8 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    - Extracted kinetic parameters (**μₘₐₓ**, **λ**, **K**) via **Gompertz** and **spline** fits.<br>
    - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.<br><br>
    - **Contribution to project:** Developed a **digital-twin prediction platform** for *Yarrowia lipolytica* that not only guides experimental optimization but also serves as an **open and reusable modeling framework** for other teams to explore growth–environment relationships.<br>
+   - **Innovation:** Introduced a **machine learning–driven dynamic constraint modeling framework** that couples interpretable Gompertz kinetics with data-driven prediction. It achieves **parameter transfer learning across environments**, establishing a scalable digital-twin platform for predictive metabolic optimization.<br>
+
    [click to learn more](#iii-machine-learning-growth-modeling)"
 %}
 
@@ -72,8 +78,8 @@ This complex docks at the peroxisomal membrane through interactions with **PEX13
 After cargo translocation, **PEX5** is recycled to the cytosol for subsequent transport cycles.
 
 To engineer efficient peroxisomal targeting in *Yarrowia lipolytica*, we incorporated the classical **PTS1 (–SKL)** signal at the C-terminus of peptides.  
-Beyond the minimal SKL motif, we designed two extended variants—**GGGSSKL** and **TYWIRFSKL**—to systematically evaluate how linker length and composition affect **PEX5** recognition.  
-The design rationale was that a **flexible linker (GGGS)** could increase accessibility of the SKL motif, while an **aromatic-rich segment (TYWIRF)** might provide additional stabilizing interactions.
+Beyond the minimal SKL motif, we designed two extended variants—**GGGGSSKL** and **TYWIRFSKL**—to systematically evaluate how linker length and composition affect **PEX5** recognition.  
+The design rationale was that a **flexible linker (GGGGS)** could increase accessibility of the SKL motif, while an **aromatic-rich segment (TYWIRF)** might provide additional stabilizing interactions.
 
 These three peptide designs were fused to the eight key enzymes of the **MVA pathway** (*Erg8, Erg9, Erg10, Erg13, Erg20, Hmgr, Idi,* and *Merg12*), providing the foundation for subsequent molecular docking analysis.
 
@@ -167,7 +173,7 @@ Thus, HADDOCK scoring integrates both atomic-level physical interactions and exp
 
 To systematically investigate peroxisomal targeting, we collected structural information for the eight key enzymes of the *Yarrowia lipolytica* MVA pathway (*Erg8, Erg9, Erg10, Erg13, Erg20, Hmgr, Idi, Merg12*). Experimental structures were retrieved from the PDB database, and missing structures were completed by homology modeling.  
 
-We designed three C-terminal signal peptide tags: the canonical SKL motif, the flexible extended GGGSSKL, and the aromatic-rich TYWIRFSKL. These tags were fused to the eight enzymes, and complete inputs were generated with AlphaFold predictions.
+We designed three C-terminal signal peptide tags: the canonical SKL motif, the flexible extended GGGGSSKL, and the aromatic-rich TYWIRFSKL. These tags were fused to the eight enzymes, and complete inputs were generated with AlphaFold predictions.
 
 
 ## Docking Workflow
@@ -197,12 +203,12 @@ To comprehensively evaluate docking outcomes, we analyzed both global scores and
 
 Boxplot comparisons across all peptide–enzyme complexes revealed a clear hierarchy: the extended **TYWIRFSKL** consistently achieved the most favorable HADDOCK scores, the canonical **SKL** reproducibly ranked lowest, and **GGGGSSKL** showed intermediate values. This ordering was robust across replicates and reflected a systematic advantage for the aromatic-rich extension.
 
-When HADDOCK scores were resolved for each enzyme partner (barplot analysis), the same pattern emerged: **TYWIRFSKL** outperformed **SKL** in nearly every case, often with large margins, whereas **GGGSSKL** tracked between the two. These results demonstrate that the effect is not restricted to a single target but represents a general enhancement of binding across the enzyme panel.
+When HADDOCK scores were resolved for each enzyme partner (barplot analysis), the same pattern emerged: **TYWIRFSKL** outperformed **SKL** in nearly every case, often with large margins, whereas **GGGGSSKL** tracked between the two. These results demonstrate that the effect is not restricted to a single target but represents a general enhancement of binding across the enzyme panel.
 
 {% include figure2.html images=page.images02 %}
 
 
-We next examined the energetic basis for these differences. Donut plots visualizing HADDOCK scoring weights highlighted distinct stabilization mechanisms. For **TYWIRFSKL**, improved binding arose primarily from enhanced electrostatics and van der Waals packing, which favor tighter and more specific interfaces. By contrast, **SKL** complexes relied disproportionately on desolvation contributions, reflecting weaker direct interactions and more solvent-mediated stabilization. **GGGSSKL** again showed an intermediate profile, suggesting that the flexible linker partially compensates but cannot substitute for the aromatic contacts.
+We next examined the energetic basis for these differences. Donut plots visualizing HADDOCK scoring weights highlighted distinct stabilization mechanisms. For **TYWIRFSKL**, improved binding arose primarily from enhanced electrostatics and van der Waals packing, which favor tighter and more specific interfaces. By contrast, **SKL** complexes relied disproportionately on desolvation contributions, reflecting weaker direct interactions and more solvent-mediated stabilization. **GGGGSSKL** again showed an intermediate profile, suggesting that the flexible linker partially compensates but cannot substitute for the aromatic contacts.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/model/m3.webp" caption="Figure 5. Energetic decomposition showing relative contributions of electrostatics, vdW, and desolvation terms (donut plots)." %}
 
