@@ -65,19 +65,21 @@ Throughout this process, we consistently listened and adapted, resulting not onl
 "
 %}
 
+
+
 {% include dropdown.html
    title="Confirming the Unsustainability of Animal-Derived Squalene"
    content="
-   **Who we contacted:** Fisherman Uncle Sun from Weihai, Shandong; Oceana reports; Policies from China's Ministry of Agriculture and Rural Affairs.
-   **Why:** To understand from the source and specific locations whether large-scale commercial shark fishing for squalene exists in China's coastal areas, assessing the industrial reality and ecological ethics of animal-derived squalene.
-   **What we learned:** Uncle Sun clearly stated that there is currently no large-scale shark fishing industry specifically targeting sharks in China's coastal waters; the sharks caught are mostly "bycatch" during deep-sea operations. Oceana has repeatedly exposed the threat posed by the cosmetic industry's use of shark squalene to shark populations. The Ministry of Agriculture and Rural Affairs introduced policies explicitly stating "no new construction or renovation of fishing vessels primarily targeting sharks."
-   **How we adapted our project:** This interview convinced us that animal-derived squalene is not only an ecological and ethical issue globally but also an unsustainable path in China due to policy restrictions. This **strengthened our project's fundamental stance of seeking alternatives** and anchored our project's value firmly in ecological protection and sustainable development."
+   **Who we contacted:** Fisherman Uncle Sun from Weihai, Shandong; Oceana reports; Policies from China's Ministry of Agriculture and Rural Affairs<br>
+   **Why:** To understand from the source and specific locations whether large-scale commercial shark fishing for squalene exists in China's coastal areas, assessing the industrial reality and ecological ethics of animal-derived squalene.<br>
+   **What we learned:** Uncle Sun clearly stated that there is currently no large-scale shark fishing industry specifically targeting sharks in China's coastal waters; the sharks caught are mostly "bycatch" during deep-sea operations. Oceana has repeatedly exposed the threat posed by the cosmetic industry's use of shark squalene to shark populations. The Ministry of Agriculture and Rural Affairs introduced policies explicitly stating "no new construction or renovation of fishing vessels primarily targeting sharks."<br>
+   **How we adapted our project:** This interview convinced us that animal-derived squalene is not only an ecological and ethical issue globally but also an unsustainable path in China due to policy restrictions. This **strengthened our project's fundamental stance of seeking alternatives** and anchored our project's value firmly in ecological protection and sustainable development."<br>
 %}
 
 {% include dropdown.html
    title="Clarifying the Industry's Thirst for Sustainable Raw Materials and High Standards"
    content="
-   **Who we contacted:** Engineer Jin Feng from Proya Cosmetics Company, Wuhan Bairka Biomedical Co., Ltd., Hubei Hongfuda Biotechnology Co., Ltd., Wuhan Canuos Company, Hubei Weideli Chemical Reagent Co., Ltd., Canuos Technology.
+   **Who we contacted:** Engineer Jin Feng from Proya Cosmetics Company, Wuhan Bairka Biomedical Co., Ltd., Hubei Hongfuda Biotechnology Co., Ltd., Wuhan Canuos Company, Hubei Weideli Chemical Reagent Co., Ltd., Canuos Technology.<br>
    **Why:** To understand the specific demands and entry standards of the **end market** for squalene and squalane raw materials.
    **What we learned:** The market has extreme requirements for safety and stability, and supply shortage is a real industry pain point.
    **How we adapted our project:** We decided to target **squalene** as the final product and planned a **full set of third-party safety testing** procedures."
