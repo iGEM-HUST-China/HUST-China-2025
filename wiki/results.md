@@ -60,7 +60,7 @@ The bar graph compares the squalene yields of wild-type *Yarrowia lipolytica* un
 ### **2.1 SDS-PAGE protein electrophoresis**
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/4.webp" caption="Figure 6 SDS-Page Result(from right to left lane : supernatant of po1f-WT,supernatant of Po1f-tll,supernatant of Po1f-tll,marker)" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/jiao.avif" caption="Figure 6 SDS-Page Result(from right to left lane : supernatant of po1f-WT,supernatant of Po1f-tll,supernatant of Po1f-tll,marker)" %}
 
 **SDS-Page Result**
 
