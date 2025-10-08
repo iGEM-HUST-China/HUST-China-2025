@@ -74,7 +74,7 @@ We knocked out PEX23 (a negative regulator of peroxisomes) and overexpressed PEX
 
 We designed an innovative suicide system in which yeast survive under room light but die under sunlight or isolated blue light. Comparing room light and sunlight, we found a subtle yet critical difference: modern lamps, such as LEDs, do not emit far-red light. Blue light activates BL222, triggering CRISPR translation, whereas LexA can preemptively inhibit this process. Hsp82 and Hsc82 are essential proteins for maintaining yeast cell membrane integrity. When the kill switch is activated, CRISPR, guided by sgRNAs, targets and disrupts Hsp82 and Hsc82, leading to yeast cell death.
 {% include figure.html image="https://static.igem.wiki/teams/5569/hw2/d11.webp" caption="Figure8. Suicide Switch Principle" %}
-{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/z4.webp" caption="Figure9. Suicide Switch Plasmid" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/z4.avif" caption="Figure9. Suicide Switch Plasmid" %}
 
 ## 9. Hardware Design
 
