@@ -22,7 +22,8 @@ During a holiday in 2024, one of our team members, Wanting ZOU, noticed a lipsti
 ## Squalane: The Star Ingredient in the Beauty Field
 
 Squalane is the hydrogenated, saturated form of squalene. This process makes it extremely stable, resistant to oxidation, with a lighter texture and better skin compatibility. It effectively mimics human sebum, forming a moisturizing barrier to prevent water loss and aid in skin repair. Consequently, it has become a core raw material in high-end skincare products for achieving efficient moisturization, anti-wrinkle, and repair effects.<sup>1</sup>
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/squlane-fix.webp" caption="Figure 1. Schematic illustration of the role of squalene in skin hydration and repair." %}
+
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/squlene-fix.webp" caption="Figure 1. Schematic illustration of the role of squalene in skin hydration and repair." %}
 
 ### Expanding Market for Moisturizers
 
@@ -91,7 +92,7 @@ Ultimately, we have created a microbial cell factory capable of efficiently conv
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hw2/12121.webp" caption="Figure 10. Metabolic mechanism of our design" %}
 
-{% include button.html link="../design/" text="Go to Model Page" %}
+{% include button.html link="../design/" text="Go to design Page" %}
 
 ### Model
 
