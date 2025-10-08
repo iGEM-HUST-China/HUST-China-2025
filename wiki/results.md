@@ -77,10 +77,6 @@ The Po1f-TLL band(about 20KDa) is located between 25KDa band and 35KDa band, sup
 	(C)Central spot+1d		(D)Central spot+8h
 " %}
 
-
-(A)Spread plate+1d (B)Blank+1d
-(C)Central spot+1d (D)Central spot+8h
-
 One day after inoculation, the entire A plate appeared yellow, while the hydrolysis zone of the C plate emerged in the center and showed a tendency of expansion with increasing time. Phenol red turns red under high pH conditions and yellow otherwise. The analysis revealed that there was a large amount of secreted lipase in the fermentation broth; the lipase degraded tributyrin, leading to a decrease in the pH of the plate.
 
 #### **2.2.2 Hydrolysis Circle-2**
