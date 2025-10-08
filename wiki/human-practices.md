@@ -4,6 +4,30 @@ permalink: /human-practices/
 feature_text: |
 feature_image: "https://static.igem.wiki/teams/5569/description/hpbg.webp"
 excerpt: ""
+
+images02:
+  - src: https://static.igem.wiki/teams/5569/hp-new/hp-9.avif
+    alt: Turn clockwise to open the flow switch
+    caption: Turn clockwise to open the flow switch
+  - src: https://static.igem.wiki/teams/5569/hp-new/hp-10.avif
+    alt: Reverse continuous stirring
+    caption: Reverse continuous stirring
+
+images03:
+  - src: https://static.igem.wiki/teams/5569/hp-new/hp-13.avif
+    alt: Turn clockwise to open the flow switch
+    caption: Turn clockwise to open the flow switch
+  - src: https://static.igem.wiki/teams/5569/hp-new/hp-14.avif
+    alt: Reverse continuous stirring
+    caption: Reverse continuous stirring
+
+images04:
+  - src: https://static.igem.wiki/teams/5569/hp-new/hp-15.avif
+    alt: Turn clockwise to open the flow switch
+    caption: Turn clockwise to open the flow switch
+  - src: https://static.igem.wiki/teams/5569/hp-new/hp-16.avif
+    alt: Reverse continuous stirring
+    caption: Reverse continuous stirring
 ---
 
 ## Human Practices: From Waste Oil to Sustainable Squalane
@@ -198,8 +222,6 @@ To gain a deeper understanding of the squalene market, we conducted phone interv
 At the same time, we noted that China produces tens of millions of tons of waste cooking oil ("gutter oil") annually, which is both an environmental and food safety hazard and an underutilized vast resource. Through contact with General Manager Xu Zhixin of Zhejiang Zhengda Environmental Protection Equipment Co., Ltd., we learned that even converting waste oil into biodiesel does not yield high economic profits. Manager Cai from waste oil recycling in Hong'an County, Hubei, also stated that current treatment methods offer meager profits, and there is a desire to explore new high-value conversion pathways.
 
 Common waste oil treatment produces biodiesel for energy use, with a market price of only about 8.5 RMB/kg, while every 20mg of high-purity squalene is worth 800 RMB. This huge price gap reveals a highly potential industry opportunity: in the era of resource recycling and sustainable development, can we break through traditional paths and redefine the value of waste resources?
-{% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-5.avif" caption="Figure 5" %}  
-
 
 Our project thus embarked, aiming to create a green cycle "from waste oil to squalene," not only addressing environmental and social pain points but also striving to provide a new, sustainable solution for the beauty industry.
 
