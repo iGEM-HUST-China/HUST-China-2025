@@ -9,7 +9,7 @@ excerpt: ""
 
 ## 1. Raw Material Sources
 
-The core innovation of our project lies in converting Waste Cooking Oil (WCO) into high-value squalene, achieving "turning waste into treasure." Our project's success relies on a stable, reliable, and scalable raw material supply chain. Waste oil is the raw material we use to produce squalene, and we have three main sources:
+The core innovation of our project lies in converting Waste Oil (WO) into high-value squalene, achieving "turning waste into treasure." Our project's success relies on a stable, reliable, and scalable raw material supply chain. Waste oil is the raw material we use to produce squalene, and we have three main sources:
 
 **A. Catering Industry**
 - Restaurants and school canteens are our current main sources of waste oil
@@ -114,8 +114,8 @@ To comprehensively evaluate its commercial feasibility and future development pa
 **Weaknesses**
 - Main challenges: technical maturity and difficulties in scale-up production
 - Key technical bottlenecks: stable scale-up of laboratory results to industrial scale, ensuring purification efficiency and product batch consistency
-- Fluctuations in waste cooking oil raw materials (source, composition, impurity content) may affect fermentation stability and product yield, posing higher requirements for quality control
-- Market education costs needed to eliminate some consumers' concerns about product safety regarding the "source from waste cooking oil" concept
+- Fluctuations in wasted oil raw materials (source, composition, impurity content) may affect fermentation stability and product yield, posing higher requirements for quality control
+- Market education costs needed to eliminate some consumers' concerns about product safety regarding the "source from waste oil" concept
 - Strict regulatory approval and long market access cycles as a new cosmetic ingredient
 
 **Opportunities**

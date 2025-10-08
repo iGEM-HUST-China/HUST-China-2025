@@ -104,6 +104,8 @@ Ultimately, we have created a microbial cell factory capable of efficiently conv
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/description/d1.webp" caption="Figure 10. Metabolic mechanism of our design" %}
 
+{% include button.html link="../design/" text="Go to Model Page" %}
+
 ### Model
 
 At the modelling level, we established a Digital Twin Pipeline spanning molecular, enzymatic and system layers, with the model serving as the central driver for iterative design and experimentation.

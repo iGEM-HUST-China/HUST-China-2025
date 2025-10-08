@@ -187,7 +187,7 @@ Representative complexes were visualized in PyMOL and ChimeraX to illustrate hyd
 
 To comprehensively evaluate docking outcomes, we analyzed both global scores and underlying energetic contributions.
 
-Boxplot comparisons across all peptide–enzyme complexes revealed a clear hierarchy: the extended **TYWIRFSKL** consistently achieved the most favorable HADDOCK scores, the canonical **SKL** reproducibly ranked lowest, and **GGGSSKL** showed intermediate values. This ordering was robust across replicates and reflected a systematic advantage for the aromatic-rich extension.
+Boxplot comparisons across all peptide–enzyme complexes revealed a clear hierarchy: the extended **TYWIRFSKL** consistently achieved the most favorable HADDOCK scores, the canonical **SKL** reproducibly ranked lowest, and **GGGGSSKL** showed intermediate values. This ordering was robust across replicates and reflected a systematic advantage for the aromatic-rich extension.
 
 When HADDOCK scores were resolved for each enzyme partner (barplot analysis), the same pattern emerged: **TYWIRFSKL** outperformed **SKL** in nearly every case, often with large margins, whereas **GGGSSKL** tracked between the two. These results demonstrate that the effect is not restricted to a single target but represents a general enhancement of binding across the enzyme panel.
 
@@ -312,15 +312,6 @@ Top-ranked variants were subsequently selected for experimental validation of fo
 <div class="video">
 <iframe title="HUST-China: Alignment of t-HMGR before and after optimization (2025)" width="460" height="215" src="https://video.igem.org/videos/embed/joCRDYNNTRjtMv2kHZpHLe" allow="fullscreen" sandbox="allow-same-origin allow-scripts allow-popups allow-forms" style="border: 0px;"></iframe>
 </div>
-
-### 🔬 t-HMGR Structure Alignment (Interactive Viewer)
-
-<iframe
-  src="https://static.igem.wiki/teams/5569/model/t-HMGR_alignment_blue_gray.html"
-  width="100%"
-  height="600"
-  style="border:none; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1);">
-</iframe>
 
 
 

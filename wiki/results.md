@@ -14,7 +14,7 @@ The liquid fatty acids in waste cooking oil form a mixed system, dominated by ol
 
 To confirm that our Yarrowia lipolytica can utilize lipids in waste cooking oil for normal growth, we prepared culture media using glycerol and fatty acids as carbon source combinations---with the total carbon content precisely calculated and kept consistent. For experimental simplification, we directly used the hydrolyzed products of triglycerides to simulate the lipid composition in waste cooking oil. The cultivation was conducted under the standard culture conditions for the wild-type Yarrowia lipolytica strain PO1f, i.e., pH 6.5 and 28°C.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/1.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/1.webp" caption="Figure1. Gompertz model fitting of Yarrowia lipolytica growth curves under different fatty acid conditions." %}
 
 Through the comparison and comprehensive analysis of data across all groups, it was found that Yarrowia lipolytica can grow well in fatty acid-rich environments. Furthermore, our experimental results revealed that Yarrowia lipolytica exhibits the optimal growth vigor when using oleic acid as the carbon source. Coincidentally, oleate accounts for the highest proportion (approximately 50%) of total lipids in various types of waste cooking oil. This finding further underscores the growth advantage of our strain in waste cooking oil.
 
@@ -115,7 +115,7 @@ Through literature surveys, we have noted the micro- and macro-level effects of 
 
 To guarantee experimental accuracy, we first determined the optimum C:N ratio for *Y. lipolytica* growth: media with C:N ratios from 10 to 80 were prepared, inoculated with pre-cultured cells, and incubated. The results showed that a C:N ratio of 10 gave the highest yield, with the OD600/OD800 ratio remaining maximal throughout the entire cultivation period.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/8.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/r1.webp" caption="Figure8.Effect of Initial Carbon-to-Nitrogen Ratio on Biomass Density" %}
 
 **Biomass Density under Initial Carbon-to-Nitrogen Ratios**
 
@@ -125,12 +125,12 @@ Building on these key parameters, we next investigated how dynamic shifts in nit
 
 To balance analytical accuracy, cost and throughput, a UV-spectrophotometric protocol for squalene was developed in-house based on published principles. The workflow covers sample preparation, measurement and data processing. A calibration curve constructed with authentic squalene standards at 219.5 nm provided the quantitative basis for determining squalene yield.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/9.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/r2.webp" caption="Figure9.Standard Curve of Squalene: Concentration vs. Absorbance at 219.5 nm" %}
 **Standard Curve of Squalene (Absorbance at 219.5 nm)**
 
 At the experimental-design stage, the nitrogen-feeding strategy was benchmarked against the previously acquired data; three feeding regimes were formulated and compared. The final results demonstrate that prolonging the feeding interval to create sustained oscillations of nitrogen within a defined concentration window exerts a positive effect on squalene synthesis in *Yarrowia lipolytica*, raising yield markedly and furnishing a pivotal reference for subsequent optimization of nitrogen-based control schemes in microbial squalene production.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/10.webp" caption="1" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/r3.webp" caption="Figure10. Impact of Dynamic Nitrogen Content on Squalene Yield" %}
 
 **Squalene Yield under Dynamic Nitrogen Contents**
 

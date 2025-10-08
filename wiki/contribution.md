@@ -9,13 +9,13 @@ excerpt: ""
 
 ## Project Contribution: Converting Waste Cooking Oil to High-Value Squalene
 
-**This project aims to efficiently convert waste cooking oil into high-value squalene through synthetic biology technology.**
+**This project aims to efficiently convert waste oil into high-value squalene through synthetic biology technology.**
 
 **Through systematic metabolic engineering, we introduced high-efficiency lipases for waste oil degradation, improved the squalene synthesis pathway in *Yarrowia lipolytica*, and innovatively adopted a peroxisomal compartmentalization strategy using the optimal peroxisomal targeting peptide identified by model-based algorithms to enhance yield. Additionally, we developed a low-cost, automated fermentation processing system, providing a complete solution for the scalable production of squalene.**
 
 ## Part 1: Parts
 
-**These parts are crucial for constructing the squalene synthesis pathway. Our project has registered several basic parts, achieving efficient conversion from waste cooking oil to squalene through the combination of the following modules.**
+**These parts are crucial for constructing the squalene synthesis pathway. Our project has registered several basic parts, achieving efficient conversion from waste oil to squalene through the combination of the following modules.**
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/en/20251007222710-2089-153.webp" caption="Figure 1 All plasmid maps" %}
 
