@@ -40,9 +40,9 @@ images04:
     caption: Figure 16 Formulator Kan hong
 ---
 
-## Human Practices: From Waste Oil to Sustainable Squalane
+# Human Practices: From Waste Oil to Sustainable Squalane
 
-##Overview
+## Overview
 Our project began with curiosity about the ingredient "Natural Plant Squalane" on a lipstick label. This simple observation prompted us to explore the hidden ecological costs behind cosmetic ingredients and inspired our mission to create sustainable alternatives.
 To ensure our solution is both scientifically rigorous and socially responsible, we engaged in in-depth exchanges with numerous experts from academia, industry, business, government, and civil society, as well as staff and iGEM teams. We also listened to public opinions and suggestions regarding biotechnology as a new productive force for sustainable development. Each interaction provided unique insights, clarified our project's social value, and significantly influenced our progress.
 Discussions with local fishermen confirmed the unsustainability of shark-derived squalane. Dialogues with cosmetic companies like Proya and Bloomage Bio revealed the industry's strong preference for non-animal sources and the critical importance of safety standards. Conversations with waste oil recyclers highlighted the environmental burden of used cooking oil and its untapped potential as a valuable resource. These diverse perspectives prompted us to learn from research experts and continuously refine our technical approach—from enhancing lipase secretion for efficient waste oil degradation and peroxisomal compartmentalization for high-yield squalene synthesis, to developing our software and integrated hardware system. Every piece of feedback was carefully considered and incorporated, allowing us to optimize the "Squoilene" product into a solution that achieves both scientific innovation and meets practical application needs.
