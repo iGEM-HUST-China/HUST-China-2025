@@ -81,7 +81,7 @@ To engineer efficient peroxisomal targeting in *Yarrowia lipolytica*, we incorpo
 Beyond the minimal SKL motif, we designed two extended variants—**GGGGSSKL** and **TYWIRFSKL**—to systematically evaluate how linker length and composition affect **PEX5** recognition.  
 The design rationale was that a **flexible linker (GGGGS)** could increase accessibility of the SKL motif, while an **aromatic-rich segment (TYWIRF)** might provide additional stabilizing interactions.
 
-These three peptide designs were fused to the eight key enzymes of the **MVA pathway** (*Erg8, Erg9, Erg10, Erg13, Erg20, Hmgr, Idi,* and *Merg12*), providing the foundation for subsequent molecular docking analysis.
+These three peptide designs were fused to the eight key enzymes of the **MVA pathway** (*Erg8, Erg9, Erg10, Erg12, Erg13, Erg20, Hmgr* and *Idi*), providing the foundation for subsequent molecular docking analysis.
 
  *An animation illustrates this process: enzyme–SKL forms a complex with PEX5, which then docks with PEX14 and PEX13; IDRs of PEX13 undergo liquid–liquid phase separation to generate a transient liquid cavity that facilitates import.*
 
