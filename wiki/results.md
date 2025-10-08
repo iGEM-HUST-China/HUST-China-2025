@@ -91,10 +91,6 @@ One day after inoculation, the entire A plate appeared yellow, while the hydroly
 	(D)Po1f-WT+24h	(E)Po1f-WT+8h	(F)Po1f-WT+4h
 " %}
 
-
-> (A)Po1f-TLL+24h     (B)Po1f-TLL+8h     (C)Po1f-TLL+4h
-> (D)Po1f-WT+24h      (E)Po1f-WT+8h      (F)Po1f-WT+4h
-
 According to the medium color, it is obvious that the hydrolysis circle expand as the cultivation time increase. Compared to the wild type ,the Po1f that secrete TLL has larger hydrolysis circle. We conclude that TLL can efficiently degrade the lipid,which produce the fatty acid and contribute to the color change of phenol red, which shows red in high pH condition while yellow in low pH condition. It is also noticeable that when the cultivation time comes to 24h, the hydrolysis circle faded or even disappear, we explain this by the growth of yeast that absorb the fatty acids. However, there is still a hydrolysis in Po1f-tll plate, indicating that the TLL expand and degrade the lipid around the yeast.
 
 ### **2.3 Alkalimetric titration**
@@ -111,8 +107,8 @@ According to the medium color, it is obvious that the hydrolysis circle expand a
 (includes pH=5.5,6.0,6.5,7.0,7.5)
 " %}
 
-*The decrease weight of reactant*
-*enzyme activity=___________________________*
+
+*enzyme activity=The decrease weight of reactant/time*
 *time*
 
 To discover the effect of pH condition for tll, we formulate oil cultivation media with several different initial pH.The data shows that tll has the highest activity under pH6.0 condition.
@@ -180,8 +176,8 @@ Finally, it was concluded that the engineered yeast exhibits optimal growth unde
 Our standard cloning workflow begins with genomic DNA isolated from *Yarrowia lipolytica*. Target genes are amplified by PCR, digested with NotI and ClaI, and ligated into the likewise-cut 7166 backbone using T4 DNA ligase. The ligation mixture is transformed into *E. coli*, selected on ampicillin plates, verified by colony PCR, and the positive clone is propagated for plasmid recover
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/35.webp" caption="**PCR of POX2, the band is similar to the anticipated length 2139bp**
-**PCR of POT1, the band is similar to the anticipated length 1281bp**
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/35.webp" caption="**PCR of POX2, the band is similar to the anticipated length 2139bp** <br>
+**PCR of POT1, the band is similar to the anticipated length 1281bp**<br>
 **PCR of MFE2, the band is similar to the anticipated length 2807bp**" %}
 
 
@@ -220,12 +216,6 @@ Adding 15 ml petroleum ether into 5mL sample, after 20min ultrasonic oscillation
 
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/result/18.webp" caption="Figure 17 centrifuge result(from left to right WT,FA,BO)" %}
-**yeast sediment**
-
-**water phase**
-
-**oil phase**
-
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/result/19.webp" caption="Figure 18 extraction result(from left to right WT, FA, BO)" %}
 
@@ -252,26 +242,17 @@ In conclusion, our combined cloning and phenotypic analyses confirm that the thr
 
 ### **4.1 Plasmid construction**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/36.webp" caption="**PCR of ERG9, the band is similar to the anticipated length 1365bp**
-**PCR of ERG8, the band is similar to the anticipated length 1284bp**
-**PCR of ERG12, the band is similar to the anticipated length 1377bp**
-**PCR of ERG13, the band is similar to the anticipated length 1369bp**
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/36.webp" caption="**PCR of ERG9, the band is similar to the anticipated length 1365bp**<br>
+**PCR of ERG8, the band is similar to the anticipated length 1284bp**<br>
+**PCR of ERG12, the band is similar to the anticipated length 1377bp**<br>
+**PCR of ERG13, the band is similar to the anticipated length 1369bp**<br>
 **PCR of ERG10, the band is similar to the anticipated length 1628bp**" %}
 
-
-
-
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/37.webp" caption="**PCR of ERG19, the band is similar to the anticipated length 1191bp**
-**PCR of tHMGr, the band is similar to the anticipated length 1533bp**
-**PCR of NADH-HMGr, the band is similar to the anticipated length 1071bp**
-**PCR of IDI, the band is similar to the anticipated length 840bp**
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/37.webp" caption="**PCR of ERG19, the band is similar to the anticipated length 1191bp**<br>
+**PCR of tHMGr, the band is similar to the anticipated length 1533bp**<br>
+**PCR of NADH-HMGr, the band is similar to the anticipated length 1071bp**<br>
+**PCR of IDI, the band is similar to the anticipated length 840bp**<br>
 **PCR of ERG20, the band is similar to the anticipated length 1062bp**" %}
-
-
-
-
-
-
 
 ### **4.2 Optimization of the rate-limiting step**
 
@@ -288,14 +269,14 @@ In conclusion, our combined cloning and phenotypic analyses confirm that the thr
 The bar graph compares intracellular squalene yields (mg L⁻¹) among four *Yarrowia lipolytica* variants grown in YPD plus olive oil.
 
 The PO1f-fatase control reaches ~20 mg L⁻¹. Expression of NADH-HMGR, which utilizes NADH as cofactor, lifts the yield to ~60 mg L⁻¹, while the feedback-insensitive t-HMGR alone achieves ~100 mg L⁻¹. Co-expressing both t-HMGR and NADH-HMGR further elevates squalene to ~120 mg L⁻¹, demonstrating that simultaneously bypassing negative feedback and increasing NADH supply synergistically boosts
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/31.webp" caption="Figure 20 Squalene yield of Po1f-fatase and Po1f-fatase" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/32.webp" caption="Figure 20 Squalene yield of Po1f-fatase and Po1f-fatase" %}
 
 
 **Tag recovery**
 
 When co-expressing tHMGr and NADH-HMGr, we conducted tag recovery.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/32.webp" caption="Figure 21 Tag recovery
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/31.webp" caption="Figure 21 Tag recovery
 A.MD-Leu plate  B.YPD plate
 " %}
 
@@ -342,11 +323,9 @@ Thanks to the work being done by dry lab, we acquired the sequence of PTS, which
 {% include figure.html image="https://static.igem.wiki/teams/5569/result/38.webp" caption="Figure 24 eletrohrophoreisof MVA pathway genes linked with SKL" %}
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/en/pts1-gfp.webp" caption="Figure 25 Distribution of gfp with and without PTS1" %}
-
-(A)The engineered strains, transfected with GFP lacking peptide(SKL) ,cultured PA for 24 hours, were stained with Nile red and photographed with a laser confocal microscope.
-
-(B) The engineered strains, transfected with GFP containing peptide(SKL) ,cultured PA for 24 hours, were stained with Nile red and photographed with a laser confocal microscope
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/pts1-gfp.webp" caption="Figure 25 Distribution of gfp with and without PTS1<br>
+(A)The engineered strains, transfected with GFP lacking peptide(SKL) ,cultured PA for 24 hours, were stained with Nile red and photographed with a laser confocal microscope.<br>
+(B) The engineered strains, transfected with GFP containing peptide(SKL) ,cultured PA for 24 hours, were stained with Nile red and photographed with a laser confocal microscope" %}
 
 We investigated the localization of proteins to peroxisomes mediated by the peroxisomal targeting signal (PTS). Firstly, the PTS amino acid sequence SKL is fused with green fluorescent protein (GFP) via amplification to generate the GFP-PTS gene fragment. Subsequently, the gene fragments (GFP and GFP-PTS) were recombined with plasmid 7166, resulting in the construction of recombinant plasmids, namely 7166-GFP-PTS and 7166-GFP . These recombinant plasmids were then linearized and cloned into the genome of Yarrowia lipolytica strain Po1f, leading to the generation of GFP-engineered strains: Po1f-GFP-PTS and Po1f-GFP.
 
