@@ -30,7 +30,7 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    content=" 
    - Simulated interactions of *SKL*, *GGGSSKL*, and *TYWIRFSKL* with MVA-pathway enzymes using **HADDOCK**.<br>
    - Identified the **structural** and **energetic** principles governing efficient **PEX5**-mediated import.<br>
-   - Generated **docking clusters** to guide selection of linker–signal peptide combinations.
+   - Generated **docking clusters** to guide selection of linker–signal peptide combinations.<br>
    [click to learn more](#i-linkersignal-peptide-system-docking)"
 %}
 
@@ -39,7 +39,7 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    content=" 
    - Focused on the **MVA pathway’s rate-limiting enzyme** as the metabolic bottleneck.<br>
    - Applied **ProteinMPNN** for amino-acid sequence redesign; selected the sequence with the **lowest frustration energy** using **Frustratometer2**.<br>
-   - Refined conformations with **Rosetta FastRelax** to obtain stable, high-activity variants.
+   - Refined conformations with **Rosetta FastRelax** to obtain stable, high-activity variants.<br>
    [click to learn more](#ii-protein-design-and-optimization)"
 %}
 
@@ -48,7 +48,7 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    content=" 
    - Collected **OD₆₀₀** growth data under multiple culture conditions.<br>
    - Extracted kinetic parameters (**μₘₐₓ**, **λ**, **K**) via **Gompertz** and **spline** fits.<br>
-   - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.
+   - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.<br>
    [click to learn more](#iii-machine-learning-growth-modeling)"
 %}
 
