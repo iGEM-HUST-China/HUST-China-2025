@@ -162,13 +162,11 @@ Finally, it was concluded that the engineered yeast exhibits optimal growth unde
 Our standard cloning workflow begins with genomic DNA isolated from *Yarrowia lipolytica*. Target genes are amplified by PCR, digested with NotI and ClaI, and ligated into the likewise-cut 7166 backbone using T4 DNA ligase. The ligation mixture is transformed into *E. coli*, selected on ampicillin plates, verified by colony PCR, and the positive clone is propagated for plasmid recover
 
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/35.webp" caption="1" %}
-
-**PCR of POX2, the band is similar to the anticipated length 2139bp**
-
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/35.webp" caption="**PCR of POX2, the band is similar to the anticipated length 2139bp**
 **PCR of POT1, the band is similar to the anticipated length 1281bp**
+**PCR of MFE2, the band is similar to the anticipated length 2807bp**" %}
 
-**PCR of MFE2, the band is similar to the anticipated length 2807bp**
+
 
 
 
@@ -240,30 +238,22 @@ In conclusion, our combined cloning and phenotypic analyses confirm that the thr
 
 ### **4.1 Plasmid construction**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/36.webp" caption="1" %}
-
-
-**PCR of ERG9, the band is similar to the anticipated length 1365bp**
-
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/36.webp" caption="**PCR of ERG9, the band is similar to the anticipated length 1365bp**
 **PCR of ERG8, the band is similar to the anticipated length 1284bp**
-
 **PCR of ERG12, the band is similar to the anticipated length 1377bp**
-
 **PCR of ERG13, the band is similar to the anticipated length 1369bp**
+**PCR of ERG10, the band is similar to the anticipated length 1628bp**" %}
 
-**PCR of ERG10, the band is similar to the anticipated length 1628bp**
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/37.webp" caption="1" %}
 
-**PCR of ERG19, the band is similar to the anticipated length 1191bp**
 
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/37.webp" caption="**PCR of ERG19, the band is similar to the anticipated length 1191bp**
 **PCR of tHMGr, the band is similar to the anticipated length 1533bp**
-
 **PCR of NADH-HMGr, the band is similar to the anticipated length 1071bp**
-
 **PCR of IDI, the band is similar to the anticipated length 840bp**
+**PCR of ERG20, the band is similar to the anticipated length 1062bp**" %}
 
-**PCR of ERG20, the band is similar to the anticipated length 1062bp**
+
 
 
 

@@ -321,7 +321,7 @@ We presented the initial prototype to Professor Wang Jinchun at the Engineering 
 
 To address these issues, we have developed corresponding improvement plans: After structural validation, critical bearings and moving parts will be replaced with metal materials to enhance longevity and operational stability; a removable, independently sterilizable "reaction inner chamber" will be designed to effectively resolve cleaning and sealing challenges; a dedicated PCB board will be developed to integrate circuits, improving system safety and anti-interference capabilities.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h44.webp" caption=": Figure 3.5.1 Discussion with Professor Wang Jinchun" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h44.webp" caption="Figure 3.5.1 Discussion with Professor Wang Jinchun" %}
 
 
 ### Expanding Application Scenarios and Functional Optimization
