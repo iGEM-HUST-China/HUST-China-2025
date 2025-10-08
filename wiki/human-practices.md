@@ -67,20 +67,21 @@ Throughout this process, we consistently listened and adapted, resulting not onl
 
 {% include dropdown.html
    title="Objectively Understanding the Broad Market Application Scale and Source Distribution of Squalane/Squalene"
-   content="
-   - **Who we contacted:** Proya Cosmetics Co., Ltd., Bloomage Bio, Zhejiang Lanhaixing Salt Products Co., Ltd., Wuhan Canuos Technology Company.
-   - **Why:** To select leading cosmetics and beauty companies with diverse product lines and wide distribution, providing macro-market information on product ingredients.
-   - **What we learned:** Most major cosmetic companies include squalane and other humectants in their moisturizing series, indicating a very large application market. Procurement personnel from companies like Proya emphasize their squalane source is "non-animal." However, some intermediary manufacturers are unaware of or indifferent to raw material production, simply sourcing available products from different channels based on client specifications.
-   - **How we adapted our project:** Squalene is a valuable substance, confirming our project has a market. We clarified the need to enhance technological and productive capabilities and strengthen public education and communication to promote green and sustainable cosmetic ingredients.
-"
+   content="Who we contacted: Proya Cosmetics Co., Ltd., Bloomage Bio, Zhejiang Lanhaixing Salt Products Co., Ltd., Wuhan Canuos Technology Company.
+   Why: To select leading cosmetics and beauty companies with diverse product lines and wide distribution, providing macro-market information on product ingredients.
+   What we learned： Most major cosmetic companies include squalane and other humectants in their moisturizing series, indicating a very large application market. Procurement personnel from companies like Proya emphasize their squalane source is "non-animal." However, some intermediary manufacturers are unaware of or indifferent to raw material production, simply sourcing available products from different channels based on client specifications.
+   How we adapted our project:Squalene is a valuable substance, confirming our project has a market. We clarified the need to enhance technological and productive capabilities and strengthen public education and communication to promote green and sustainable cosmetic ingredients."
 %}
 
+{% include dropdown.html
+   title="1: Defining Requirements and Pain Points"
+   content="The primary task in this phase is to precisely identify core issues within the current laboratory workflow. Through researcher interviews and observation of experimental procedures, we pinpointed the project's pain points Based on this, we defined the core design requirements for the device and established the ultimate objectives to be achieved. All design decisions stem from these requirements."
+%}
 
 
 {% include dropdown.html
    title="Confirming the Unsustainability of Animal-Derived Squalene"
-   content="
-   - **Who we contacted:** Fisherman Uncle Sun from Weihai, Shandong; Oceana reports; Policies from China's Ministry of Agriculture and Rural Affairs
+   content=" **Who we contacted:** Fisherman Uncle Sun from Weihai, Shandong; Oceana reports; Policies from China's Ministry of Agriculture and Rural Affairs
    - **Why:** To understand from the source and specific locations whether large-scale commercial shark fishing for squalene exists in China's coastal areas, assessing the industrial reality and ecological ethics of animal-derived squalene.
    - **What we learned:** Uncle Sun clearly stated that there is currently no large-scale shark fishing industry specifically targeting sharks in China's coastal waters; the sharks caught are mostly "bycatch" during deep-sea operations. Oceana has repeatedly exposed the threat posed by the cosmetic industry's use of shark squalene to shark populations. The Ministry of Agriculture and Rural Affairs introduced policies explicitly stating "no new construction or renovation of fishing vessels primarily targeting sharks."
    - **How we adapted our project:** This interview convinced us that animal-derived squalene is not only an ecological and ethical issue globally but also an unsustainable path in China due to policy restrictions. This **strengthened - our project's fundamental stance of seeking alternatives** and anchored our project's value firmly in ecological protection and sustainable development."
