@@ -23,11 +23,11 @@ images01:
 
 The liquid fatty acids in waste cooking oil form a mixed system, dominated by oleic acid and also containing other components such as linoleic acid and linolenic acid.
 
-To confirm that our Yarrowia lipolytica can utilize lipids in waste cooking oil for normal growth, we prepared culture media using glycerol and fatty acids as carbon source combinations---with the total carbon content precisely calculated and kept consistent. For experimental simplification, we directly used the hydrolyzed products of triglycerides to simulate the lipid composition in waste cooking oil. The cultivation was conducted under the standard culture conditions for the wild-type Yarrowia lipolytica strain PO1f, i.e., pH 6.5 and 28°C.
+To confirm that our *Yarrowia lipolytica* can utilize lipids in waste cooking oil for normal growth, we prepared culture media using glycerol and fatty acids as carbon source combinations---with the total carbon content precisely calculated and kept consistent. For experimental simplification, we directly used the hydrolyzed products of triglycerides to simulate the lipid composition in waste cooking oil. The cultivation was conducted under the standard culture conditions for the wild-type *Yarrowia lipolytica* strain PO1f, i.e., pH 6.5 and 28°C.
 
 {% include figure3.html images=page.images01 %}
 
-Through the comparison and comprehensive analysis of data across all groups, it was found that Yarrowia lipolytica can grow well in fatty acid-rich environments. Furthermore, our experimental results revealed that Yarrowia lipolytica exhibits the optimal growth vigor when using oleic acid as the carbon source. Coincidentally, oleate accounts for the highest proportion (approximately 50%) of total lipids in various types of waste cooking oil. This finding further underscores the growth advantage of our strain in waste cooking oil.
+Through the comparison and comprehensive analysis of data across all groups, it was found that *Yarrowia lipolytica* can grow well in fatty acid-rich environments. Furthermore, our experimental results revealed that Yarrowia lipolytica exhibits the optimal growth vigor when using oleic acid as the carbon source. Coincidentally, oleate accounts for the highest proportion (approximately 50%) of total lipids in various types of waste cooking oil. This finding further underscores the growth advantage of our strain in waste cooking oil.
 
 ### **1.2 The effect of oil medium with different proportion of glycerol and fatty acid**
 
@@ -226,7 +226,7 @@ We hypothesize that the increase is limited due to its transport. When all of th
 
 ### **3.5 Conclusion**
 
-In conclusion, our combined cloning and phenotypic analyses confirm that the three-step β-oxidation module (MFE2, POX2, POT1) from Yarrowia lipolytica was successfully assembled and is functionally active in PO1f. After 24 h of growth on olive-oil emulsion, the engineered "BO" strain consumed 15 % more fatty acid than the lipase-only "FA" control, as independently quantified by alkalimetric titration (0.72 vs. 0.85 mM NaOH mL⁻¹) and gravimetric lipid extraction (0.47 vs. 0.56 g residual oil). The wild-type strain retained the most lipid (0.72 g), underscoring the necessity of both enhanced lipolysis and downstream β-oxidation for maximal fat utilization.
+In conclusion, our combined cloning and phenotypic analyses confirm that the three-step β-oxidation module (MFE2, POX2, POT1) from *Yarrowia lipolytica* was successfully assembled and is functionally active in PO1f. After 24 h of growth on olive-oil emulsion, the engineered "BO" strain consumed 15 % more fatty acid than the lipase-only "FA" control, as independently quantified by alkalimetric titration (0.72 vs. 0.85 mM NaOH mL⁻¹) and gravimetric lipid extraction (0.47 vs. 0.56 g residual oil). The wild-type strain retained the most lipid (0.72 g), underscoring the necessity of both enhanced lipolysis and downstream β-oxidation for maximal fat utilization.
 
 ---
 
@@ -272,7 +272,7 @@ When co-expressing tHMGr and NADH-HMGr, we conducted tag recovery.
 
 
 ### **4.3 Impact of exogenous genes**
-{% include figure.html image="https://static.igem.wiki/teams/5569/result/32.webp" caption="**Squalene yield of Po1f-fatase and Po1f-fatase<sup>Exogenous</sup>**" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/32.webp" caption="Figure 21 Squalene yield of Po1f-fatase and Po1f-fatase<sup>Exogenous</sup>" %}
 
 
 
@@ -319,7 +319,7 @@ Thanks to the work being done by dry lab, we acquired the sequence of PTS, which
 (A)The engineered strains, transfected with GFP lacking peptide(SKL) ,cultured PA for 24 hours, were stained with Nile red and photographed with a laser confocal microscope.<br>
 (B) The engineered strains, transfected with GFP containing peptide(SKL) ,cultured PA for 24 hours, were stained with Nile red and photographed with a laser confocal microscope" %}
 
-We investigated the localization of proteins to peroxisomes mediated by the peroxisomal targeting signal (PTS). Firstly, the PTS amino acid sequence SKL is fused with green fluorescent protein (GFP) via amplification to generate the GFP-PTS gene fragment. Subsequently, the gene fragments (GFP and GFP-PTS) were recombined with plasmid 7166, resulting in the construction of recombinant plasmids, namely 7166-GFP-PTS and 7166-GFP . These recombinant plasmids were then linearized and cloned into the genome of Yarrowia lipolytica strain Po1f, leading to the generation of GFP-engineered strains: Po1f-GFP-PTS and Po1f-GFP.
+We investigated the localization of proteins to peroxisomes mediated by the peroxisomal targeting signal (PTS). Firstly, the PTS amino acid sequence SKL is fused with green fluorescent protein (GFP) via amplification to generate the GFP-PTS gene fragment. Subsequently, the gene fragments (GFP and GFP-PTS) were recombined with plasmid 7166, resulting in the construction of recombinant plasmids, namely 7166-GFP-PTS and 7166-GFP . These recombinant plasmids were then linearized and cloned into the genome of *Yarrowia lipolytica* strain Po1f, leading to the generation of GFP-engineered strains: Po1f-GFP-PTS and Po1f-GFP.
 
 Finally, the engineered strains Po1f-GFP-PTS and Po1f-GFP were stained with Nile Red. Observations under a laser scanning confocal microscope (LSCM) revealed that the green fluorescent foci derived from GFP-PTS expression completely overlapped with the large red fluorescent regions (which correspond to lipids accumulated in peroxisomes), producing bright yellow fluorescence. In contrast, the green fluorescent foci from GFP expression showed minimal overlap with the red Nile Red-stained regions; in some cases, an almost opposite distribution pattern is observed. For instance, in the leftmost cell of Figure B, the The distribution of bright green fluorescent (formed by the concentrated distribution of GFP) is highly diffuse and are largely separated from the regions where red Nile Red-stained lipids are concentrated.
 

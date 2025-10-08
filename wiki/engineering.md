@@ -6,7 +6,7 @@ feature_image: "https://static.igem.wiki/teams/5569/description/egnr.webp"
 excerpt: ""
 ---
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/en/cycle4.avif" caption="Figure 1. Engineering cycle overview" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/en/cycle4.avif" caption="Figure 1 Engineering cycle overview" %}
 ## Cycle 1 Construction of effective oil-degradation yeast
 
 {% include dropdown.html
@@ -218,7 +218,7 @@ excerpt: ""
    Unfortunately, due to time constraints, we failed to verify whether the modified targeting peptide TWY could better import the target protein into peroxisomes compared to SKL. However, based on previous experiments, we believe that TWY will have better localization ability."
 %}
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m1.webp" caption="Figure 16. improvement of signal peptide structures" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m1.webp" caption="Figure 16 improvement of signal peptide structures" %}
 
 {% include dropdown.html
    title="Cycle 3.2 Peroxisome Proliferation and Expansion"
