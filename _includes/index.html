@@ -559,8 +559,8 @@
         }
 
         .section-image {
-            max-width: 70%;
-            max-height: 45vh;
+            max-width: 85%;
+            max-height: 65vh;
             border-radius: 16px;
             transition: transform 0.5s ease, box-shadow 0.5s ease;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -694,17 +694,26 @@
             50% { border-color: #2E5D32; }
         }
 
-        /* 分屏布局样式 */
+        /* 分屏布局样式 - 左右交替 */
         .split-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 3rem;
             width: 100%;
             height: 100%;
             padding: 2rem;
             align-items: center;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+        }
+
+        /* 左右交替布局 */
+        .split-layout.alternate .split-text {
+            order: 2;
+        }
+        
+        .split-layout.alternate .split-image {
+            order: 1;
         }
 
         .split-text {
@@ -713,6 +722,25 @@
             flex-direction: column;
             justify-content: center;
             height: 100%;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        /* 磨砂玻璃效果 */
+        .glass-container {
+            background: rgba(234, 254, 221, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: all 0.3s ease;
+        }
+
+        .glass-container:hover {
+            background: rgba(255, 251, 175, 0.8);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
         }
 
         .split-image {
@@ -864,29 +892,22 @@
             padding: 2rem;
         }
 
-        /* 交替布局 */
+        /* 交替布局 - 修改为左右布局 */
         .alternating-layout {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 8rem;
             opacity: 0;
-            transform: translateX(-100px);
+            transform: translateY(50px);
             transition: all 0.8s ease;
+            min-height: 60vh;
+            gap: 4rem;
         }
 
         .alternating-layout.visible {
             opacity: 1;
-            transform: translateX(0);
-        }
-
-        .alternating-layout.reverse {
-            flex-direction: row-reverse;
-            transform: translateX(100px);
-        }
-
-        .alternating-layout.reverse.visible {
-            transform: translateX(0);
+            transform: translateY(0);
         }
 
         .alternating-text {
@@ -895,6 +916,10 @@
             opacity: 0;
             transform: translateX(-50px);
             transition: all 0.8s ease 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
         }
 
         .alternating-image {
@@ -905,6 +930,7 @@
             opacity: 0;
             transform: translateX(50px);
             transition: all 0.8s ease 0.3s;
+            height: 80%;
         }
 
         .alternating-layout.visible .alternating-text,
@@ -915,9 +941,11 @@
 
         .alternating-image img {
             max-width: 90%;
+            max-height: 70vh;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: transform 0.5s ease;
+            object-fit: contain;
         }
 
         .alternating-image img:hover {
@@ -1117,6 +1145,10 @@
                 gap: 1.5rem;
                 padding: 1.5rem;
             }
+            .alternating-layout {
+                gap: 2rem;
+                margin-bottom: 6rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1150,6 +1182,10 @@
             .split-layout {
                 grid-template-columns: 1fr;
                 gap: 1rem;
+            }
+            .split-layout.alternate .split-text,
+            .split-layout.alternate .split-image {
+                order: 0;
             }
             .mosaic-grid {
                 grid-template-columns: 1fr;
@@ -1201,9 +1237,8 @@
             .alternating-layout {
                 flex-direction: column;
                 margin-bottom: 4rem;
-            }
-            .alternating-layout.reverse {
-                flex-direction: column;
+                gap: 2rem;
+                min-height: auto;
             }
             .alternating-text, .alternating-image {
                 padding: 1rem;
@@ -1279,6 +1314,10 @@
             }
             .content-block {
                 padding: 0.5rem;
+            }
+            .alternating-layout {
+                gap: 1rem;
+                margin-bottom: 3rem;
             }
         }
     </style>
@@ -1383,28 +1422,32 @@
             </div>
         </section>
 
-        <!-- 介绍 - 简洁布局 -->
+        <!-- 介绍 - 左文右图 -->
         <section id="intro" class="vertical-section">
-            <div class="clean-layout">
-                <div class="content-block">
-                    <h2 class="section-title"></h2>
-                    <p class="section-text text-line"> <br>In the list of core ingredients for high-end cosmetics and personal care products, squalane—an elite skincare component—has always held a prominent position.</p>
-                    <p class="section-text text-line">And the starting point of it all lies in its precursor: squalene. Through a single hydrogenation step, squalene is converted into squalane, the well-known skincare star we are familiar with.</p>
-                    <div class="image-container">
-                        <img src="https://static.igem.wiki/teams/5569/description/huazhuangpinnew.webp" alt="Squalene" class="section-image image-animated glowing">
+            <div class="split-layout">
+                <div class="split-text">
+                    <div class="glass-container">
+                        <h2 class="section-title">Introduction</h2>
+                        <p class="section-text text-line">In the list of core ingredients for high-end cosmetics and personal care products, squalane—an elite skincare component—has always held a prominent position.</p>
+                        <p class="section-text text-line">And the starting point of it all lies in its precursor: squalene. Through a single hydrogenation step, squalene is converted into squalane, the well-known skincare star we are familiar with.</p>
                     </div>
+                </div>
+                <div class="split-image">
+                    <img src="https://static.igem.wiki/teams/5569/description/huazhuangpinnew.webp" alt="Squalene" class="section-image image-animated glowing">
                 </div>
             </div>
         </section>
 
-        <!-- 益处 - 分屏布局 -->
+        <!-- 益处 - 左图右文 -->
         <section id="benefits" class="vertical-section">
-            <div class="split-layout">
+            <div class="split-layout alternate">
                 <div class="split-text">
-                    <h2 class="section-title"></h2>
-                    <p class="section-text text-line">Squalane can quickly penetrate the skin to form a natural moisture-locking barrier, strengthen the skin barrier, and is suitable for almost all skin types.</p>
-                    <p class="section-text text-line">Such an ideal ingredient is favored by consumers worldwide. </p>
-                    <p class="section-text text-line">Then, what kind of rapidly growing market is squalene— the substance that supports its production—facing?</p>
+                    <div class="glass-container">
+                        <h2 class="section-title">Benefits</h2>
+                        <p class="section-text text-line">Squalane can quickly penetrate the skin to form a natural moisture-locking barrier, strengthen the skin barrier, and is suitable for almost all skin types.</p>
+                        <p class="section-text text-line">Such an ideal ingredient is favored by consumers worldwide. </p>
+                        <p class="section-text text-line">Then, what kind of rapidly growing market is squalene— the substance that supports its production—facing?</p>
+                    </div>
                 </div>
                 <div class="split-image">
                     <div class="image-switcher">
@@ -1419,17 +1462,19 @@
             </div>
         </section>
 
-        <!-- 市场 - 简洁布局 -->
+        <!-- 市场 - 左文右图 -->
         <section id="market" class="vertical-section">
-            <div class="clean-layout">
-                <div class="content-block">
-                    <h2 class="section-title"></h2>
-                    <p class="section-text text-line"> <br> <br>The global demand for squalene continues to grow, and its market size is expected to maintain a significant growth rate in the coming years; </p>
-                    <p class="section-text text-line">it is projected that the squalene market share will reach <span class="highlight"><span class="number-counter" data-target="236.59">0</span>USD billion by 2035</span>.</p>
-                    <p class="section-text text-line">However, behind this growth hides a supply chain issue that cannot be ignored: where exactly does the squalene supporting all this come from?</p>
-                    <div class="image-container">
-                        <img src="https://static.igem.wiki/teams/5569/description/squlanechart.webp" alt="Market" class="section-image image-animated">
+            <div class="split-layout">
+                <div class="split-text">
+                    <div class="glass-container">
+                        <h2 class="section-title">Market</h2>
+                        <p class="section-text text-line">The global demand for squalene continues to grow, and its market size is expected to maintain a significant growth rate in the coming years.</p>
+                        <p class="section-text text-line">It is projected that the squalene market share will reach <span class="highlight"><span class="number-counter" data-target="236.59">0</span>USD billion by 2035</span>.</p>
+                        <p class="section-text text-line">However, behind this growth hides a supply chain issue that cannot be ignored: where exactly does the squalene supporting all this come from?</p>
                     </div>
+                </div>
+                <div class="split-image">
+                    <img src="https://static.igem.wiki/teams/5569/description/squlanechart.webp" alt="Market" class="section-image image-animated">
                 </div>
             </div>
         </section>
@@ -1437,28 +1482,32 @@
         <!-- 横屏滚动部分 - 来源分析 -->
         <section id="sources" class="horizontal-scroll-section">
             <div class="horizontal-pages">
-                <!-- 页面1: 鲨鱼来源 -->
+                <!-- 页面1: 鲨鱼来源 - 左图右文 -->
                 <div class="horizontal-page shark-bg">
                     <div class="split-layout">
                         <div class="split-image">
                             <img src="https://static.igem.wiki/teams/5569/index/shark.webp" alt="Shark Source" class="section-image image-animated">
                         </div>
                         <div class="split-text">
-                            <h2 class="section-title">Extraction from shark liver oil</h2>
-                            <p class="section-text text-line">Accounting for <span class="highlight">24.4%</span> of squalene production. Nearly<span class="highlight"><span class="number-counter" data-target="3000000">0</span></span> deep-sea sharks are hunted and killed annually for this purpose.</p>
-                            <p class="section-text text-line">Multiple shark species have become endangered due to overfishing, inflicting irreversible damage to the marine ecosystem.</p>
+                            <div class="glass-container">
+                                <h2 class="section-title">Extraction from shark liver oil</h2>
+                                <p class="section-text text-line">Accounting for <span class="highlight">24.4%</span> of squalene production. Nearly<span class="highlight"><span class="number-counter" data-target="3000000">0</span></span> deep-sea sharks are hunted and killed annually for this purpose.</p>
+                                <p class="section-text text-line">Multiple shark species have become endangered due to overfishing, inflicting irreversible damage to the marine ecosystem.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 页面2: 植物来源 -->
+                <!-- 页面2: 植物来源 - 左文右图 -->
                 <div class="horizontal-page plant-bg">
-                    <div class="split-layout">
+                    <div class="split-layout alternate">
                         <div class="split-text">
-                            <h2 class="section-title">Extraction from plant sources</h2>
-                            <p class="section-text text-line">Representing <span class="highlight">58.2%</span> of production, squalene is extracted from plants such as olives.</p>
-                            <p class="section-text text-line">The yield is extremely low—up to <span class="highlight">2,000 to 3,000 kilograms of olives</span> are needed to extract just 1 kilogram of squalene. </p>
-                            <p class="section-text text-line">This process consumes enormous amounts of land and freshwater resources, making true large-scale production difficult.</p>
+                            <div class="glass-container">
+                                <h2 class="section-title">Extraction from plant sources</h2>
+                                <p class="section-text text-line">Representing <span class="highlight">58.2%</span> of production, squalene is extracted from plants such as olives.</p>
+                                <p class="section-text text-line">The yield is extremely low—up to <span class="highlight">2,000 to 3,000 kilograms of olives</span> are needed to extract just 1 kilogram of squalene. </p>
+                                <p class="section-text text-line">This process consumes enormous amounts of land and freshwater resources, making true large-scale production difficult.</p>
+                            </div>
                         </div>
                         <div class="split-image">
                             <img src="https://static.igem.wiki/teams/5569/index/plant.webp" alt="Plant Source" class="section-image image-animated">
@@ -1466,16 +1515,18 @@
                     </div>
                 </div>
 
-                <!-- 页面3: 生物技术 -->
+                <!-- 页面3: 生物技术 - 左图右文 -->
                 <div class="horizontal-page biotech-bg">
-                    <div class="clean-layout">
-                        <div class="content-block">
-                            <h2 class="section-title">  <br> <br>Traditional microbial fermentation</h2>
-                            <p class="section-text text-line">Contributing <span class="highlight">24.4%</span> of squalene output.</p>
-                            <p class="section-text text-line">The squalene yield of existing bacterial strains is extremely low, and the production cost is high, resulting in products that are completely uncompetitive in terms of price compared to those from traditional sources.</p>
-                            <p class="section-text text-line">This has kept this technology confined to the laboratory stage for years, with no impactful commercial application achieved.</p>
-                            <div class="image-container">
-                                <img src="https://static.igem.wiki/teams/5569/index/gongchang.webp" alt="Biotech" class="section-image image-animated">
+                    <div class="split-layout">
+                        <div class="split-image">
+                            <img src="https://static.igem.wiki/teams/5569/index/gongchang.webp" alt="Biotech" class="section-image image-animated">
+                        </div>
+                        <div class="split-text">
+                            <div class="glass-container">
+                                <h2 class="section-title">Traditional microbial fermentation</h2>
+                                <p class="section-text text-line">Contributing <span class="highlight">24.4%</span> of squalene output.</p>
+                                <p class="section-text text-line">The squalene yield of existing bacterial strains is extremely low, and the production cost is high, resulting in products that are completely uncompetitive in terms of price compared to those from traditional sources.</p>
+                                <p class="section-text text-line">This has kept this technology confined to the laboratory stage for years, with no impactful commercial application achieved.</p>
                             </div>
                         </div>
                     </div>
@@ -1483,27 +1534,34 @@
             </div>
         </section>
 
-        <!-- 解决方案 - 简洁布局 -->
+        <!-- 解决方案 - 左文右图 -->
         <section id="solution" class="vertical-section">
-            <div class="clean-layout">
-                <div class="content-block">
-                    <h2 class="section-title"></h2>
-                    <p class="section-text text-line">At the same time, we have found that millions of tons of waste oil enter the environment every year, causing severe environmental pollution—the volume of polluted water is <span class="highlight">100 times that of the waste itself.</span> </p>
-                    <p class="section-text text-line">This represents a huge waste of resources and a dual burden on the environment.</p>
-                    <div class="image-container">
-                        <img src="https://static.igem.wiki/teams/5569/description/youwu.webp" alt="Solution" class="section-image image-animated">
+            <div class="split-layout">
+                <div class="split-text">
+                    <div class="glass-container">
+                        <h2 class="section-title">Solution</h2>
+                        <p class="section-text text-line">At the same time, we have found that millions of tons of waste oil enter the environment every year, causing severe environmental pollution—the volume of polluted water is <span class="highlight">100 times that of the waste itself.</span> </p>
+                        <p class="section-text text-line">This represents a huge waste of resources and a dual burden on the environment.</p>
                     </div>
+                </div>
+                <div class="split-image">
+                    <img src="https://static.igem.wiki/teams/5569/description/youwu.webp" alt="Solution" class="section-image image-animated">
                 </div>
             </div>
         </section>
         
-        <!-- 技术 - 修改为与其他页面一致的格式 -->
+        <!-- 技术 - 左图右文 -->
         <section id="technology" class="vertical-section">
-            <div class="mosaic-layout">
-                <div class="mosaic-content">
-                    <h2 class="section-title"></h2>
-                    <p class="section-text text-line">On one side, there are ecological, resource, and technological bottlenecks brought about by shark liver oil extraction, plant extraction, and inefficient fermentation; </p>
-                    <p class="section-text text-line">On the other side, there is the heavy environmental burden caused by millions of tons of waste oil. Can we transform the biggest environmental burden into the most valuable resource?</p>
+            <div class="split-layout alternate">
+                <div class="split-text">
+                    <div class="glass-container">
+                        <h2 class="section-title">Technology</h2>
+                        <p class="section-text text-line">On one side, there are ecological, resource, and technological bottlenecks brought about by shark liver oil extraction, plant extraction, and inefficient fermentation.</p>
+                        <p class="section-text text-line">On the other side, there is the heavy environmental burden caused by millions of tons of waste oil. Can we transform the biggest environmental burden into the most valuable resource?</p>
+                    </div>
+                </div>
+                <div class="split-image">
+                    <img src="https://static.igem.wiki/teams/5569/description/feiyou.webp" alt="Technology" class="section-image image-animated">
                 </div>
             </div>
         </section>
@@ -1527,12 +1585,12 @@
     <!-- 长页滚动内容 -->
     <section id="details" class="long-scroll-section">
         <div class="scroll-content">
-            <!-- 第一个图文内容 -->
+            <!-- 第一个图文内容 - 左右布局 -->
             <div class="alternating-layout">
                 <div class="alternating-text">
                     <h2 class="alternating-title">Selection of chassis cells</h2>
                     <div class="alternating-content">
-                        <p>We have chosen Yarrowia lipolytica as our "cell factory". </p>
+                        <p>We have chosen <i>Yarrowia lipolytica</i> as our "cell factory". </p>
                         <p>It is a generally recognized safe microorganism, inherently capable of efficiently metabolizing waste oil, making it the perfect starting point for waste oil conversion.</p>
                     </div>
                 </div>
@@ -1541,8 +1599,11 @@
                 </div>
             </div>
 
-            <!-- 第二个图文内容 -->
-            <div class="alternating-layout reverse">
+            <!-- 第二个图文内容 - 左右布局 -->
+            <div class="alternating-layout">
+                <div class="alternating-image">
+                    <img src="https://static.igem.wiki/teams/5569/description/feiyou.webp" alt="Technical Innovation">
+                </div>
                 <div class="alternating-text">
                     <h2 class="alternating-title">Metabolic pathway reconstruction</h2>
                     <div class="alternating-content">
@@ -1550,12 +1611,10 @@
                         <p>We have lifted the cell's inherent metabolic inhibition to ensure that carbon flux can efficiently flow from waste oil to the target product (squalene).</p>
                     </div>
                 </div>
-                <div class="alternating-image">
-                    <img src="https://static.igem.wiki/teams/5569/description/feiyou.webp" alt="Technical Innovation">
-                </div>
+                
             </div>
 
-            <!-- 第三个图文内容 -->
+            <!-- 第三个图文内容 - 左右布局 -->
             <div class="alternating-layout">
                 <div class="alternating-text">
                     <h2 class="alternating-title">Optimization of fermentation process</h2>

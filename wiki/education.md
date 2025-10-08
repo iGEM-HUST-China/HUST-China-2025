@@ -45,7 +45,7 @@ In the "Huaxiaomiao" weekend class organized by the University Youth League Comm
 #### 1.2.2 Liren Community Summer Camp: Hands-on Experience in Genetic Design
 
 During the Liren Community Summer Camp, we innovatively presented principles of synthetic biology through game-based formats that appeal to children. During the activity, we deconstructed plasmid components into separate modular stickers, such as promoters, terminators, and functional genes. After acquiring essential theoretical knowledge before the game, the children could freely unleash their imagination—starting by building plasmids with basic functions and eventually combining various plasmids of different sizes and functions, transforming into junior "synthetic biology researchers." Depending on specific gene segments, some of the plasmids they created could absorb heavy metals, while others produced pigments, and so on. By simplifying functional units like promoters and genes into building block-like modules, we guided children to assemble these modules into "cells" after understanding basic concepts. This approach not only cultivated their systematic thinking and creativity but also demonstrated the core design philosophy of standardization and modularization in synthetic biology.
-{% include figure.html image="https://static.igem.wiki/teams/5569/hp/3.webp" caption="Figure 1.2.2 We imparted knowledge to the participants at Liren Community Summer Camp
+{% include figure.html image="https://static.igem.wiki/teams/5569/hp/3.webp" caption="Figure 1.2.2 We imparted knowledge to the participants at Liren Community Summer Camp<br>
 Figure 1.2.3  Demonstrating the use of biological instruments at Tianmen Middle School" %}
 
 #### 1.2.3 Professional Knowledge Seminar at Tianmen Middle School

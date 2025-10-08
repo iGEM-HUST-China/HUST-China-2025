@@ -6,7 +6,7 @@ feature_image: "https://static.igem.wiki/teams/5569/description/pats.webp"
 excerpt: ""
 ---
 
-## Overview
+## Collection Parts
 
 Our project focuses on adopting various strategies to enhance the efficiency of squalene synthesis by Yarrowia Lipolytica using fatty acids as substrates. The project aims to utilize low-cost and abundant WCO (Waste cooking oil) for squalene synthesis, thereby meeting the growing demand of the cosmetics industry for squalene, an excellent raw material. To address the feedback inhibition and interference affecting the MVA pathway in the cytoplasm, we have proposed a compartmentalization strategy.
 
@@ -23,7 +23,6 @@ By applying this series of parts, the compartmentalization process of the MVA pa
 In the context where the cosmetics industry is placing greater emphasis on environmental protection and sustainability, the parts collection developed in our project addresses the issue that environmental requirements have restricted the widespread application of squalene. It also aims to reduce the cost of squalene and provides a feasible strategy for the biosynthetic production of other raw materials in the fashion industry.
 
 We encourage and welcome other teams to use our parts collection for the compartmentalized synthesis of any products. Building on the foundation we have established, they can further characterize the enzyme properties in the pathway to optimize the compartment environment for improved reaction efficiency, or optimize the energy supply in peroxisomes and establish dynamic regulatory mechanisms. Such efforts will help refine this compartmentalization strategy.
-# iGEM part
 
 ## Basic Parts
 
