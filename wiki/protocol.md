@@ -12,3 +12,9 @@ You can explore our detailed protocol PDF here:
 
 {% include button.html link="https://static.igem.wiki/teams/5569/document/protocols.pdf" text="check the Prtocol of ours" %}
 
+<iframe src="https://static.igem.wiki/teams/5569/document/protocols.pdf" 
+                width="100%" 
+                height="100%" 
+                frameborder="0">
+        </iframe>
+
