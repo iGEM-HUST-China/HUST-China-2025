@@ -32,6 +32,8 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    - Identified the **structural** and **energetic** principles governing efficient **PEX5**-mediated import.<br>
    - Generated **docking clusters** to guide selection of linker–signal peptide combinations.<br>
    - **Contribution to project:** By screening different **linker–signal peptide** combinations and comparing their import performance, we identified optimal designs that significantly improved enzyme translocation into peroxisomes; this established a rational foundation for **peroxisomal targeting** of MVA-pathway enzymes and laid the molecular basis for **compartmentalized metabolic regulation**.<br>
+   - **Innovation:** Established the first *structure–energy coupled modeling framework* for predicting **PTS1 import efficiency**, integrating molecular docking energy analysis with linker–signal peptide design. This approach transformed qualitative observation into **quantitative, designable import modeling**, providing a transferable paradigm for compartmentalized metabolic engineering.<br>
+
    [click to learn more](#i-linkersignal-peptide-system-docking)"
 %}
 
@@ -42,6 +44,8 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    - Applied **ProteinMPNN** for amino-acid sequence redesign; selected the sequence with the **lowest frustration energy** using **Frustratometer2**.<br>
    - Refined conformations with **Rosetta FastRelax** to obtain stable, high-activity variants.<br>
    - **Contribution to project:** Optimized the **rate-limiting enzyme t-HMGR** in the MVA pathway, improving catalytic efficiency and supporting higher metabolic flux for enhanced squalene production.<br>
+   - **Innovation:** Developed an integrated **sequence–structure–energy design pipeline** that synergizes *ProteinMPNN*’s statistical potential with *Rosetta*’s physical energy refinement. This enables **directed energy landscape remodeling** of the active site, representing a methodological leap from protein prediction to **rational structural reprogramming**.<br>
+
    [click to learn more](#ii-protein-design-and-optimization)"
 %}
 
@@ -52,6 +56,8 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    - Extracted kinetic parameters (**μₘₐₓ**, **λ**, **K**) via **Gompertz** and **spline** fits.<br>
    - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.<br><br>
    - **Contribution to project:** Developed a **digital-twin prediction platform** for *Yarrowia lipolytica* that not only guides experimental optimization but also serves as an **open and reusable modeling framework** for other teams to explore growth–environment relationships.<br>
+   - **Innovation:** Introduced a **machine learning–driven dynamic constraint modeling framework** that couples interpretable Gompertz kinetics with data-driven prediction. It achieves **parameter transfer learning across environments**, establishing a scalable digital-twin platform for predictive metabolic optimization.<br>
+
    [click to learn more](#iii-machine-learning-growth-modeling)"
 %}
 
