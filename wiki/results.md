@@ -41,7 +41,7 @@ In practical production, yeast decomposes lipids into one molecule of glycerol a
 
 For the three types of fatty acids, the order of superiority among the three ratios varies. However, from the perspective of oleic acid--- the main component of hydrolyzed waste cooking oil--- the yeast exhibits the optimal growth when the ratio of glycerol to oleic acid is 1:1. Therefore, it can be concluded that when the cost of supplementary glycerol is lower than the economic value brought by the increased squalene yield, an appropriate amount of glycerol can be added to enhance squalene production.
 
-***To further refine our experimental setup, we compared squalene yield produced by *Y. lipolytica* cultivated in either standard YPD or YPD supplemented with olive oil (see protocol). The results are as follows.***
+***To further refine our experimental setup, we compared squalene yield produced by *Y. lipolytica* cultivated in either standard YPD or YPD supplemented with olive oil ([see protocol](protocol)). The results are as follows.***
 
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/result/3.webp" caption="Figure 5 The squalene contents of po1f-fatase and po1f-fatase+oil" %}
