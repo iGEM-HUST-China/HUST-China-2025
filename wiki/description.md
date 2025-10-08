@@ -15,7 +15,7 @@ images02:
 
 ---
 
-## 1. The inspiration of our project
+## 1. The Inspiration of Our Project
 
 During a holiday in 2024, one of our team members, Wanting ZOU, noticed a lipstick labeled “natural plant-derived squalane” while shopping in a mall. She was puzzled by the juxtaposition of the term “plant” with the shark-derived component and its description as “natural.” This observation piqued our curiosity and prompted us to investigate the compound, through which we learned about squalene, a high-value ingredient used in cosmetics.
 
@@ -37,7 +37,7 @@ In most moisturizing products on the market, squalane is universally employed to
 Behind this huge market lies the ever-increasing demand for squalane and its sole precursor – **squalene**.
 
 ## 3. The Foundation and Hidden Cost: The Squalene Supply Dilemma
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/zongshu.webp" caption="Figure 4. Squalene" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/zongshu.webp" caption="Figure 4. The sources and properties of squalene." %}
 However, the foundation supporting this "beauty" faces an unsustainable and harsh reality. Currently, commercial squalene primarily comes from the following three sources, each with severe challenges.
 
 ### 3.1 Shark Liver Oil Extraction: An Ecological Catastrophe
@@ -52,7 +52,7 @@ As global consensus on biodiversity conservation has grown, many countries have 
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/description/squalene-source-1.webp" caption="Figure 6. Global squalene sources." %}
 
-#### 3.2.1  Plant-Based Extraction: An Inefficient Alternative
+#### 3.2.1 Plant-Based Extraction: An Inefficient Alternative
 
 Although plant‑derived squalene has become the predominant alternative source, its extraction is hampered by significant technical and economic bottlenecks. Taking olive oil as an example, squalene coexists with numerous unsaponifiable compounds of similar physical properties; achieving a high‑purity product requires multiple deep purification steps—saponification, washing, refining and molecular distillation under stringent conditions—<sup>5</sup>. These operations are complex, demand sophisticated equipment and yield low product output, which keeps production costs elevated. 
 
