@@ -27,14 +27,14 @@ Squalane is the hydrogenated, saturated form of squalene. This process makes it 
 
 ### 2.1 Expanding Market for Moisturizers
 
-The fashion and beauty sector is experiencing unprecedented growth and globalization. In 2024, the beauty market—defined to include skincare, fragrances, make‑up and hair‑care products—generated approximately US\$ 491 billion in revenue and is projected to reach around US\$ 1,127 billion by 2035, with an estimated annual growth rate of about 6 %<sup>2</sup>.
+The fashion and beauty sector is experiencing unprecedented growth and globalization. In 2024, the beauty market—defined to include skincare, fragrances, make-up and hair-care products—generated approximately US dollars 491 billion in revenue and is projected to reach around US dollars 1,127 billion by 2035, with an estimated annual growth rate of about 6 %<sup>2</sup>.
 
-In the same year, the global market for moisturizing creams was valued at US\$ 11.02 billion; it is forecast to grow to US\$ 11.47 billion in 2025 and to US\$ 19.63 billion by 2035, corresponding to a compound annual growth rate of 5.52 %<sup>3</sup>.
+In the same year, the global market for moisturizing creams was valued at US dollars 11.02 billion; it is forecast to grow to US dollars 11.47 billion in 2025 and to US dollars 19.63 billion by 2035, corresponding to a compound annual growth rate of 5.52 %<sup>3</sup>.
 
 {% include figure2.html images=page.images02 %}
 
 In most moisturizing products on the market, squalane is universally employed to enhance the spreadability, sensory feel and absorption of creams and lotions, thereby markedly improving the moisturizing experience. As the beauty market continues to expand, demand for squalane is increasing rapidly, and its pivotal role in formulations is becoming ever more evident.
-Behind this huge market lies the ever-increasing demand for squalane and its sole precursor – **squalene**.
+Behind this huge market lies the ever-increasing demand for squalane and its sole precursor–**squalene**.
 
 ## 3. The Foundation and Hidden Cost: The Squalene Supply Dilemma
 {% include figure.html image="https://static.igem.wiki/teams/5569/description/zongshu.webp" caption="Figure 4. The sources and properties of squalene." %}
@@ -64,7 +64,7 @@ Over time, substantial resources, labour and energy have been invested, yet the 
 
 Against the backdrop of the high energy demands and elevated costs associated with plant extraction routes, microbial fermentation has been viewed as another important alternative for squalene production because of its controllability, environmental friendliness and sustainability. In recent years, both academia and industry have pursued active exploration in this field. However, our discussions with research teams and company representatives during Human Practice activities reveal that, despite high expectations for the controllability and sustainability of microbial fermentation, industrialisation of microbially derived squalene still faces key limitations.
 
-First, there is a lack of target‑oriented synthesis pathways. Current metabolic frameworks often result in squalene being passively accumulated as a by‑product of sterol synthesis, or they require indirect chemical catalysis to obtain squalene, leading to low yields and an absence of efficient continuous production systems <sup>6,</sup></sup>7</sup>.
+First, there is a lack of target‑oriented synthesis pathways. Current metabolic frameworks often result in squalene being passively accumulated as a by‑product of sterol synthesis, or they require indirect chemical catalysis to obtain squalene, leading to low yields and an absence of efficient continuous production systems <sup>6,7</sup>.
 
 Second, the feedstocks are not sustainable. Mainstream processes rely on agricultural commodities such as sucrose and corn syrup; this not only increases costs but also potentially competes with human food resources, making it difficult to meet the core requirements of sustainable development and unsupportable in the long term <sup>6</sup>.
 
