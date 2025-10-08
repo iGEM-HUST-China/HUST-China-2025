@@ -254,7 +254,7 @@ In conclusion, our combined cloning and phenotypic analyses confirm that the thr
 
 **PCR of ERG9, the band is similar to the anticipated length 1365bp**
 
-**PCR of ERG8, the band is similar to the anticipated length 1284bp(缺图)**
+**PCR of ERG8, the band is similar to the anticipated length 1284bp**
 
 **PCR of ERG12, the band is similar to the anticipated length 1377bp**
 
@@ -344,9 +344,7 @@ To solve these problems, we decided to use compartmentalization to move the enti
 Thanks to the work being done by dry lab, we acquired the sequence of PTS, which guides proteins into peroxisome.
 
 ***E.coli* colony PCR of MVA pathway genes linked with SKL**
-
-![PTS1------result picture](media/image48.png){width="5.7625in" height="2.5055555555555555in"}
-### **4.2 PTS verification**
+{% include figure.html image="https://static.igem.wiki/teams/5569/result/38.webp" caption="1" %}
 
 **Distribution of gfp with and without PTS1**
 {% include figure.html image="https://static.igem.wiki/teams/5569/en/pts1-gfp.webp" caption="1" %}
