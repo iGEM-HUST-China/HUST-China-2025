@@ -15,34 +15,34 @@ images02:
 
 ---
 
-## 1. The inspiration of our project
+## 1. The Inspiration of Our Project
 
 During a holiday in 2024, one of our team members, Wanting ZOU, noticed a lipstick labeled “natural plant-derived squalane” while shopping in a mall. She was puzzled by the juxtaposition of the term “plant” with the shark-derived component and its description as “natural.” This observation piqued our curiosity and prompted us to investigate the compound, through which we learned about squalene, a high-value ingredient used in cosmetics.
 
 ## 2. Squalane: The Star Ingredient in the Beauty Field
 
-Squalane is the hydrogenated, saturated form of squalene. This process makes it extremely stable, resistant to oxidation, with a lighter texture and better skin compatibility. It effectively mimics human sebum, forming a moisturizing barrier to prevent water loss and aid in skin repair. Consequently, it has become a core raw material in high-end skincare products for achieving efficient moisturization, anti-wrinkle, and repair effects.<sup>1</sup>
+Squalane is the hydrogenated, saturated form of squalene. This process makes it extremely stable, resistant to oxidation, with a lighter texture and better skin compatibility. It effectively mimics human sebum, forming a moisturizing barrier to prevent water loss and aid in skin repair. Consequently, it has become a core raw material in high-end skincare products for achieving efficient moisturization, anti-wrinkle, and repair effects<sup>1</sup>.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/description/squlene-fix.webp" caption="Figure 1. Schematic illustration of the role of squalene in skin hydration and repair." %}
 
 ### 2.1 Expanding Market for Moisturizers
 
-The fashion and beauty sector is experiencing unprecedented growth and globalization. In 2024, the beauty market—defined to include skincare, fragrances, make‑up and hair‑care products—generated approximately US\$ 491 billion in revenue and is projected to reach around US\$ 1,127 billion by 2035, with an estimated annual growth rate of about 6 % <sup>2</sup>.
+The fashion and beauty sector is experiencing unprecedented growth and globalization. In 2024, the beauty market—defined to include skincare, fragrances, make-up and hair-care products—generated approximately US dollars 491 billion in revenue and is projected to reach around US dollars 1,127 billion by 2035, with an estimated annual growth rate of about 6 %<sup>2</sup>.
 
-In the same year, the global market for moisturizing creams was valued at US\$ 11.02 billion; it is forecast to grow to US\$ 11.47 billion in 2025 and to US\$ 19.63 billion by 2035, corresponding to a compound annual growth rate of 5.52 %<sup>3</sup>.
+In the same year, the global market for moisturizing creams was valued at US dollars 11.02 billion; it is forecast to grow to US dollars 11.47 billion in 2025 and to US dollars 19.63 billion by 2035, corresponding to a compound annual growth rate of 5.52 %<sup>3</sup>.
 
 {% include figure2.html images=page.images02 %}
 
 In most moisturizing products on the market, squalane is universally employed to enhance the spreadability, sensory feel and absorption of creams and lotions, thereby markedly improving the moisturizing experience. As the beauty market continues to expand, demand for squalane is increasing rapidly, and its pivotal role in formulations is becoming ever more evident.
-Behind this huge market lies the ever-increasing demand for squalane and its sole precursor – **squalene**.
+Behind this huge market lies the ever-increasing demand for squalane and its sole precursor–**squalene**.
 
 ## 3. The Foundation and Hidden Cost: The Squalene Supply Dilemma
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/zongshu.webp" caption="Figure 4. Squalene" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/zongshu.webp" caption="Figure 4. The sources and properties of squalene." %}
 However, the foundation supporting this "beauty" faces an unsustainable and harsh reality. Currently, commercial squalene primarily comes from the following three sources, each with severe challenges.
 
 ### 3.1 Shark Liver Oil Extraction: An Ecological Catastrophe
 
-Prior to 1988, virtually all squalene worldwide was sourced from shark liver oil. An investigation report by the marine conservation organization Bloom <sup>4</sup> further revealed the scale of this industry: more than one quarter—over fifty species—of shark populations have been overfished for commercial purposes; each year approximately 2.7 million sharks are captured and killed for their livers; in 2012, the global demand for shark liver oil was estimated at about 2,200 tonnes, 90 % of which was used in the cosmetics industry. On this basis, producing a single tonne of squalene requires roughly 3,000 sharks. This startling figure underscores squalene’s indispensable status within the cosmetics sector and highlights the long‑standing dependence of its supply chain on marine ecosystems.
+Prior to 1988, virtually all squalene worldwide was sourced from shark liver oil. An investigation report by the marine conservation organization Bloom<sup>4</sup> further revealed the scale of this industry: more than one quarter—over fifty species—of shark populations have been overfished for commercial purposes; each year approximately 2.7 million sharks are captured and killed for their livers; in 2012, the global demand for shark liver oil was estimated at about 2,200 tonnes, 90 % of which was used in the cosmetics industry. On this basis, producing a single tonne of squalene requires roughly 3,000 sharks. This startling figure underscores squalene’s indispensable status within the cosmetics sector and highlights the long‑standing dependence of its supply chain on marine ecosystems.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/description/shark-bg-1.webp" caption="Figure 5. Global status and ecological impact of shark hunting for the squalene industry." %}
 
@@ -52,9 +52,9 @@ As global consensus on biodiversity conservation has grown, many countries have 
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/description/squalene-source-1.webp" caption="Figure 6. Global squalene sources." %}
 
-#### 3.2.1  Plant-Based Extraction: An Inefficient Alternative
+#### 3.2.1 Plant-Based Extraction: An Inefficient Alternative
 
-Although plant‑derived squalene has become the predominant alternative source, its extraction is hampered by significant technical and economic bottlenecks. Taking olive oil as an example, squalene coexists with numerous unsaponifiable compounds of similar physical properties; achieving a high‑purity product requires multiple deep purification steps—saponification, washing, refining and molecular distillation under stringent conditions—<sup>5</sup>. These operations are complex, demand sophisticated equipment and yield low product output, which keeps production costs elevated. 
+Although plant‑derived squalene has become the predominant alternative source, its extraction is hampered by significant technical and economic bottlenecks. Taking olive oil as an example, squalene coexists with numerous unsaponifiable compounds of similar physical properties; achieving a high‑purity product requires multiple deep purification steps—saponification, washing, refining and molecular distillation under stringent conditions<sup>5</sup>. These operations are complex, demand sophisticated equipment and yield low product output, which keeps production costs elevated. 
 
 Over time, substantial resources, labour and energy have been invested, yet the resultant output remains limited, leading to inefficient production and further inflating product costs. Based on our Human Practice interviews and publicly available data, the overall capital costs of plant‑based routes are typically about 30 % higher than those of traditional animal‑derived routes, resulting in high price sensitivity and limited capacity to support sustained, large‑scale supply.
 
@@ -64,7 +64,7 @@ Over time, substantial resources, labour and energy have been invested, yet the 
 
 Against the backdrop of the high energy demands and elevated costs associated with plant extraction routes, microbial fermentation has been viewed as another important alternative for squalene production because of its controllability, environmental friendliness and sustainability. In recent years, both academia and industry have pursued active exploration in this field. However, our discussions with research teams and company representatives during Human Practice activities reveal that, despite high expectations for the controllability and sustainability of microbial fermentation, industrialisation of microbially derived squalene still faces key limitations.
 
-First, there is a lack of target‑oriented synthesis pathways. Current metabolic frameworks often result in squalene being passively accumulated as a by‑product of sterol synthesis, or they require indirect chemical catalysis to obtain squalene, leading to low yields and an absence of efficient continuous production systems <sup>6</sup>,</sup>7</sup>.
+First, there is a lack of target‑oriented synthesis pathways. Current metabolic frameworks often result in squalene being passively accumulated as a by‑product of sterol synthesis, or they require indirect chemical catalysis to obtain squalene, leading to low yields and an absence of efficient continuous production systems <sup>6,7</sup>.
 
 Second, the feedstocks are not sustainable. Mainstream processes rely on agricultural commodities such as sucrose and corn syrup; this not only increases costs but also potentially competes with human food resources, making it difficult to meet the core requirements of sustainable development and unsupportable in the long term <sup>6</sup>.
 
@@ -74,7 +74,7 @@ Second, the feedstocks are not sustainable. Mainstream processes rely on agricul
 
 ### 4.1 Current Status of Waste Oil
 
-At present, wasted oil (WO) has become a global environmental pollutant. According to data from industry sources, the annual global generation of WO is approximately 41–67 million tonnes <sup>8</sup>, with supply far exceeding demand and making it easy to obtain. Industry reports indicate that, in Europe for example, the assessed market price of wasted oil between 2024 and 2025 fluctuated between 885 dollars and 1222 dollars per tonne <sup>9</sup>, rendering it relatively inexpensive. Meanwhile, studies show that only about 40 % of wasted oil worldwide is recycled <sup>10</sup>; the remainder is improperly managed, leading to severe water pollution and posing a threat to marine ecosystems. Nevertheless, WO is rich in triglycerides and fatty acids and thus represents a highly promising reservoir of renewable carbon.
+At present, wasted oil (WO) has become a global environmental pollutant. According to data from industry sources, the annual global generation of WO is approximately 41–67 million tonnes<sup>8</sup>, with supply far exceeding demand and making it easy to obtain. Industry reports indicate that, in Europe for example, the assessed market price of wasted oil between 2024 and 2025 fluctuated between 885 dollars and 1222 dollars per tonne<sup>9</sup>, rendering it relatively inexpensive. Meanwhile, studies show that only about 40 % of wasted oil worldwide is recycled<sup>10</sup>; the remainder is improperly managed, leading to severe water pollution and posing a threat to marine ecosystems. Nevertheless, WO is rich in triglycerides and fatty acids and thus represents a highly promising reservoir of renewable carbon.
 
 Through field visits and social surveys, we found that these wasted oil not only originate from diverse and inexpensive sources but also possess significant potential for biotransformation. If they can be exploited via biosynthetic and metabolic engineering approaches, wasted oil could be efficiently converted into high‑value molecules, offering environmental, economic and social benefits and presenting broad prospects for future development.
 
@@ -98,11 +98,11 @@ Ultimately, we have created a microbial cell factory capable of efficiently conv
 
 At the modelling level, we established a Digital Twin Pipeline spanning molecular, enzymatic and system layers, with the model serving as the central driver for iterative design and experimentation.
 
-At the molecular layer, to achieve metabolic compartmentalisation, we used the HADDOCK docking simulation platform <sup>11</sup> to analyse the binding energies and conformational differences of PEX5 with three signal peptides (SKL, GGGSSKL and TYWIRFSKL). By screening for the optimal import sequence combinations, we ensured that enzymes in the MVA pathway could be efficiently targeted to the peroxisome.
+At the molecular layer, to achieve metabolic compartmentalisation, we used the HADDOCK docking simulation platform<sup>11</sup> to analyse the binding energies and conformational differences of PEX5 with three signal peptides (SKL, GGGSSKL and TYWIRFSKL). By screening for the optimal import sequence combinations, we ensured that enzymes in the MVA pathway could be efficiently targeted to the peroxisome.
 
-At the enzyme‑engineering layer, focusing on the rate‑limiting enzyme t‑HMGR in the MVA pathway, we combined ProteinMPNN <sup>12</sup>, Frustratometer 2 <sup>13</sup> and Rosetta FastRelax <sup>14</sup> for sequence design and energy refinement, yielding candidate variants that surpassed the wild type in both stability and catalytic efficiency and thus laying the foundation for increased pathway flux.
+At the enzyme‑engineering layer, focusing on the rate‑limiting enzyme t‑HMGR in the MVA pathway, we combined ProteinMPNN<sup>12</sup>, Frustratometer 2<sup>13</sup> and Rosetta FastRelax<sup>14</sup> for sequence design and energy refinement, yielding candidate variants that surpassed the wild type in both stability and catalytic efficiency and thus laying the foundation for increased pathway flux.
 
-At the systems layer, to quantify the host’s metabolic responses under varying environmental conditions, we built a growth‑kinetics framework based on the Gompertz equation and machine‑learning models (Random Forest <sup>15</sup> and XGBoost <sup>16</sup>). This framework predicts how changes in pH and temperature affect growth rate and stationary phase, thereby guiding the optimisation of culture conditions.
+At the systems layer, to quantify the host’s metabolic responses under varying environmental conditions, we built a growth‑kinetics framework based on the Gompertz equation and machine‑learning models (Random Forest<sup>15</sup> and XGBoost<sup>16</sup>). This framework predicts how changes in pH and temperature affect growth rate and stationary phase, thereby guiding the optimisation of culture conditions.
 
 Through this integrated three‑layer modelling system, we achieved a closed‑loop design linking peroxisomal import optimisation, rate‑limiting enzyme refinement and growth‑environment prediction, transforming metabolic engineering of Y. lipolytica from empirical exploration to prediction‑driven design.
 
