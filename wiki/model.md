@@ -50,7 +50,7 @@ By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine le
    content=" 
    - Collected **OD₆₀₀** growth data under multiple culture conditions.<br>
    - Extracted kinetic parameters (**μₘₐₓ**, **λ**, **K**) via **Gompertz** and **spline** fits.<br>
-   - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.<br>
+   - Trained **Random Forest** and **XGBoost** models to predict growth under novel carbon-source conditions.<br><br>
    - **Contribution to project:** Developed a **digital-twin prediction platform** for *Yarrowia lipolytica* that not only guides experimental optimization but also serves as an **open and reusable modeling framework** for other teams to explore growth–environment relationships.<br>
    [click to learn more](#iii-machine-learning-growth-modeling)"
 %}
