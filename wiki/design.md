@@ -10,56 +10,68 @@ excerpt: ""
 
 ## 1. Introduction
 
-Squalene is a terpene compound with significant development potential. With its excellent bioactivity and safety profile, squalene is highly suitable for applications in cosmetics, food, and nutritional supplements. However, due to high production costs and complex purification processes, the widespread adoption of squalene-related products remains limited, making it difficult for the general public to access them conveniently.
+**Squalene** is a high-value terpene known for its **excellent biocompatibility** and diverse applications in cosmetics, food, and nutraceuticals. However, current production methods—primarily shark-derived extraction and food crop-based synthesis—pose serious sustainability and ethical concerns.
 
-Meanwhile, approximately 150 million tons of Waste Cooking Oil (WCO) are generated globally each year. Improper disposal can lead to a dual crisis: environmentally, WCO can cause water pollution, potentially affecting water volumes up to 1 million times its own weight; regarding safety, the re-entry of "gutter oil" into the food service industry poses significant public health risks. Particularly in China, the issue of WCO urgently needs addressing, both in terms of generation volume and disposal methods.
+Globally, over 150 million tons of **waste oil (WO)** are generated annually. Improper disposal can cause severe environmental pollution—contaminating water volumes up to a million times that of the waste—and its illegal reuse poses significant public health risks. In our country, addressing the WO problem has become increasingly urgent.
 
-**Squoilene** is dedicated to efficiently degrading hazardous WCO and converting it into squalene, providing cosmetic manufacturers and other related industries with cost-effective squalene products that offer both strong moisturizing properties and excellent antioxidant functions. Through optimization of extracellular enzymes, enhancement of metabolic flux, and continuous advancement of compartmentalization strategies, we genetically engineer *Yarrowia lipolytica* and cultivate it using an integrated crude extraction device, ultimately achieving the triple objectives of environmental protection, biomanufacturing, and high-end skincare.
+**Squoilene** aims to transform WO into squalene efficiently, offering a low-cost and sustainable alternative for industrial applications. By optimizing exoenzyme activity, enhancing metabolic flux, and implementing a compartmentalized bioprocess in ***Yarrowia lipolytica***, we achieve integrated conversion of WO into high-purity squalene—realizing the combined goals of environmental protection, biomanufacturing, and advanced skincare.
 
 ## 2. The "Squalene Alchemist" from Waste Cooking Oil: Chassis Strain Selection
 
-*Yarrowia lipolytica* is an oleaginous yeast, named for its lipolytic (fat-decomposing) characteristics. Notably, this yeast exhibits high tolerance to salt, low temperatures, and low pH, enabling it to demonstrate strong adaptability in complex and unstable environments like WCO. Furthermore, this yeast can grow utilizing various substrates (including WCO, ethanol, glucose, and glycerol). Its cytoplasm is rich in lipid droplets and unique subcellular structures, and it also comes with a well-established set of genetic editing tools and a clear genetic background—all these features enhance its scientific research and industrial application value.
+***Yarrowia lipolytica*** is an oleaginous yeast named for its lipolytic (fat-breaking) properties; notably, it boasts **high tolerance to salt, low & high temperatures and low pH**, granting **strong adaptability to complex, unstable environments**. This yeast also utilizes diverse substrates for growth—including WO, ethanol, glucose and glycerol—while its cytoplasm contains **abundant lipid droplets and subcellular structures**, and it further benefits from well-developed gene editing tools and a clear genetic background.
+
 
 ## 3. Lipase Secretion
-
-*Thermomyces lanuginosus* lipase (Tll) is a well-characterized, mature commercial lipase known for its outstanding catalytic efficiency in lipid degradation. In this study, we first obtained a recombinant plasmid carrying the *tll* gene sequence. The core research objective was to construct a high-performance yeast strain capable of strong adaptation in oily environments and efficient utilization of lipids as the sole carbon source, ultimately directing metabolic flux towards the biosynthesis of the target product.
+***Thermomyces lanuginosus* lipase (TLL)** is a well-defined commercial lipase with high efficiency for lipid degradation. In this study, a recombinant plasmid containing the TLL gene sequence was kindly provided by our tutor.The core research objective was to construct a high-performance *Y. lipolytica* strain capable of strong adaptation in oily environments and efficient utilization of lipids as the sole carbon source, ultimately directing metabolic flux towards the biosynthesis of the target product.
 
 ## 4. Enhanced Beta-Oxidation
 
-The degradation of waste oil produces large amounts of free fatty acids, which need to undergo β-oxidation to synthesize acetyl-CoA, the precursor for squalene. To enhance the supply of precursor substances, we overexpressed the key β-oxidation enzymes POT1, MFE2, and POX2.
+The degradation of waste oil produces large amounts of free fatty acids, which need to undergo β-oxidation to synthesize acetyl-CoA, the precursor for squalene. To enhance the supply of precursor substances, we overexpressed the key β-oxidation enzymes **POT1, MFE2, and POX2.**
+.
 
 ## 5. MVA Pathway Optimization
+### 5.1 Modification of Rate-Limiting Enzymes
+Through analysis of the entire MVA pathway, **HMG-CoA reductase (HMGR)** was identified as a key rate-limiting enzyme. Factors affecting its efficiency include ubiquitination degradation triggered by negative feedback from downstream products and limitation by its cofactor NADPH.  We introduced a codon-optimized **NADH-dependent HMGr** from *Silicibacter pomeroyi* and a **truncated HMGr (tHMGr)** lacking the feedback regulatory domain, thereby increasing MVA pathway flux. Using dry lab methods, we also de novo designed these enzymes to have lower free energy and increased stability.
+### 5.2 Overexpression of Other Enzymes in MVA Pathway
 
-Through analysis of the entire MVA pathway, **HMG-CoA reductase (HMGR)** was identified as a key rate-limiting enzyme. Factors affecting its efficiency include ubiquitination degradation triggered by negative feedback from downstream products and limitation by its cofactor NADPH. HMGR is widely present in nature, providing a rich resource of variants for selection. By introducing a codon-optimized NADH-dependent HMGR from *Silicibacter pomeroyi* and a tHMGR lacking the negative feedback regulatory domain, we increased the flux through the MVA pathway and raised the squalene content. Using dry lab methods, we also de novo designed these enzymes to have lower free energy and increased stability.
+We constructed plasmids carrying the remaining enzymes of the MVA pathway under hp4d promoters and XPR2 terminators to enhance squalene synthesis through direct overexpression.
 
-Since squalene is a precursor for many terpenoids, we recognized the difficulty of accumulating large amounts of squalene in engineered bacteria. To increase squalene accumulation, we knocked out *ERG1*, the first enzyme (squalene monooxygenase) involved in the subsequent downstream reactions of squalene, expecting a significant increase in squalene yield. However, unexpectedly, the *erg1* knockout strain grew very poorly, showing almost no proliferation in the medium, and the final squalene yield even decreased.
+### 5.3 Limiting Downstream Flux
 
-**At this point, molecular modifications targeting squalene seemed to have reached an impasse. The improvements achieved solely by replacing the rate-limiting enzyme and modifying the lipase were not entirely satisfactory. Three factors hindered our engineering efforts:**
+We knocked out ERG1 (the first enzyme downstream of squalene cyclase) with the expectation of increasing squalene production. However, unexpectedly, the **ERG1^-^ strain** exhibited severely impaired growth and almost no proliferation in the culture medium, resulting in a reduced squalene yield.
 
-1.  Squalene is merely an intermediate product, so metabolic flux tends to flow downstream.
-2.  The endogenous HMG-CoA reductase in yeast is subject to negative feedback regulation.
-3.  Significant accumulation of squalene might produce cytotoxicity, affecting the cellular metabolic rate.
+**At this stage, the molecular engineering of squalene synthesis seems to have reached a deadlock. Those modifications are only modest improvements. Three main limiting factors were identified:**
 
-**After identifying these problems, we realized these influencing factors exist primarily in the cytosolic matrix. Thus, a new idea emerged naturally: change the location of the pathway required for squalene synthesis – compartmentalization.**
+   **1. Squalene is an intermediate, so metabolic flux is naturally directed downstream.**
+   **2. Endogenous HMG-CoA reductase in *Yarrowia lipolytica* is subject to negative feedback regulation.**
+   **3. High squalene accumulation may exert cytotoxic effects, reducing cellular metabolic rates.**
 
-## 6. Compartmentalization
+**Upon analyzing these constraints, we realized that they primarily occur in the cytosol. This insight naturally led to a new strategy: Relocating the squalene biosynthetic pathway via compartmentalization.**
 
-To direct enzymes into the peroxisome, we selected the PTS1 signal as the targeting peptide. Through dry lab simulations, we attempted to screen for the targeting signal sequence PTS1-SKL that achieves precise protein localization. Preliminary experiments verified that Green Fluorescent Protein (GFP) could be successfully expressed in the peroxisomes of *Yarrowia lipolytica*, laying the foundation for achieving compartmentalized synthesis. Subsequently, we added our designed SKL sequence to the target genes, aiming to successfully achieve squalene synthesis within the peroxisomes.
+## 6. Peroxisomal Compartmentalization
+We targeted the non-HMGR enzymes of the MVA pathway, along with NADH-HMGR and tHMGR to the peroxisome to fully exploit the abundant acetyl-CoA and cofactors NADH within the peroxisome to synthesize the squalene efficiently.
 
-## 7. Peroxisome Regulation
+Enzyme targeting was achieved using the PTS1 signal peptide. In Model, we optimized the PTS1-SKL/G4SSKL/TYWIRFSKL sequences for precise protein localization.
 
-While considering synthesizing squalene in peroxisomes, we also proposed the idea of dynamically regulating the number and size of peroxisomes. Therefore, we attempted to knock out *PEX23*, a negative regulator of peroxisomes, and overexpressed *PEX10*, a gene responsible for matrix protein import, aiming to increase the volume and number of peroxisomes, thereby further expanding the capacity for squalene synthesis.
+## 7. Dynamic Regulation of Peroxisomes
+
+We knocked out PEX23 (a negative regulator of peroxisomes) and overexpressed PEX10 (a protein responsible for matrix protein import) to increase peroxisome abundance and volume, thereby enhancing squalene biosynthetic capacity.
+
+
+**After those design, combining efficient lipases for WO degradation with peroxisomal compartmentalization strategies markedly enhanced the capacity of *Yarrowia lipolytica* for squalene biosynthesis.**
 
 ## 8. Suicide Switch Design
 
-**We designed an intriguing suicide system that allows the yeast to survive under indoor light but causes its death under sunlight or specific blue light. By comparing indoor light and sunlight, we identified a subtle but crucial difference: modern light sources (e.g., LEDs) do not produce far-red light. Blue light can activate BL222 to trigger the translation of the CRISPR system, while LexA can preemptively block this process. Hsp82 and Hsc82 have been confirmed as essential proteins for maintaining yeast cell membrane structure. When the kill switch is triggered, CRISPR identifies the homologous sequences of the *HSC82* and *HSP82* genes via sgRNA and knocks them out, leading to yeast death.**
+We designed an innovative suicide system in which yeast survive under room light but die under sunlight or isolated blue light. Comparing room light and sunlight, we found a subtle yet critical difference: modern lamps, such as LEDs, do not emit far-red light. Blue light activates BL222, triggering CRISPR translation, whereas LexA can preemptively inhibit this process. Hsp82 and Hsc82 are essential proteins for maintaining yeast cell membrane integrity. When the kill switch is activated, CRISPR, guided by sgRNAs, targets and disrupts Hsp82 and Hsc82, leading to yeast cell death.
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/d11.webp" caption="Figure3. Suicide Switch Principle" %}
 
 ## 9. Hardware Design
 
-**During our research and experimental process, we found that laboratory-scale micro-fermentation equipment is very expensive and still cannot monitor fermentation conditions and relevant parameters in real-time. Our team members once spent 36 hours continuously sampling and measuring data. This process was not only cumbersome and time-consuming but also posed a significant contamination risk, greatly reducing experimental efficiency and accuracy. To address this issue in the field of micro-fermentation, we integrated and built an Integrated Fermentation & Processing System (iFPS), achieving full automation from "post-inoculation" to "lysis-ready" for less than $100.**
+During our research and experimental work, we found that laboratory-scale fermentation equipment is prohibitively expensive and unable to monitor fermentation conditions and relevant parameters in real time. Our team once conducted continuous sampling and measurements for 36 hours, a process that was labor-intensive, time-consuming, and carried a high risk of contamination, significantly reducing experimental efficiency and accuracy. To address these challenges in miniature fermentation, we developed an **Integrated Fermentation & Processing System (iFPS)**, which automates the entire workflow from inoculation to cell lysate preparation for under $100.
 
 ## 10. Beyond Squalene
 
-The Squoilene project provides a complete and feasible compartmentalization strategy for the MVA pathway. Using squalene as a precursor, numerous terpenoids have the potential to be produced through the construction of subcellular factories using compartmentalization strategies. Many terpenes currently sourced from plants, animals, or the chemical industry for cosmetics and other sectors could be obtained in a more environmentally friendly and stable manner. We hope that the strategies and iterative solutions developed by Squoilene for squalene synthesis will inspire more iGEM teams to focus on the cosmetics industry and motivate them to undertake more creative work. Although many factors still affect practical application, we believe this will unlock the often-overlooked potential of synthetic biology in the fashion field and promote the greening and sustainability of the fashion industry.
+The Squalene project presents a complete and feasible peroxisomal compartmentalization strategy for the MVA pathway. Using squalene as a precursor, this approach enables the construction of subcellular factories for diverse terpenoids. Compounds traditionally sourced from plants, animals, or chemical synthesis can now be produced more sustainably and reliably for the cosmetics and related industries.
 
+Through its strategies and iterative designs for squalene biosynthesis, the project aims to inspire iGEM teams to explore the cosmetic industry and pursue innovative solutions. While practical implementation still faces challenges, we believe this initiative demonstrates the untapped potential of synthetic biology in the fashion sector and promotes greater sustainability and environmental responsibility.
 
