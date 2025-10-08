@@ -22,7 +22,7 @@ To bridge this gap, we established a **hierarchical in silico pipeline** that ac
 
 
 #### Integration and Impact
-
+<br>
 By fusing **molecular docking**, **AI-guided enzyme redesign**, and **machine learning–based systems modeling** into a unified framework, our model enables *in silico* prototyping of peroxisomal targeting and metabolic rewiring. This **model-driven strategy** transforms the traditional **Design–Build–Test–Learn (DBTL)** cycle into a **predictive, knowledge-guided process, substantially reducing experimental overhead while accelerating the path toward high-yield, industrially robust strains.**
 
 
