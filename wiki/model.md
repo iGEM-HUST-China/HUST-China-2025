@@ -390,7 +390,7 @@ Altogether, the dataset contained approximately 6,000 high-resolution measuremen
 
 To transform the experimental OD₆₀₀ trajectories into interpretable kinetic descriptors, we first applied the Gompertz equation to fit all growth curves using non-linear least squares  
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/model/m7.webp" caption=" Figure 8. Gompertz model fitting of Y. lipolytica growth under varied carbon-source conditions." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/model/m7.webp" caption=" Figure 8. Gompertz model fitting of *Y. lipolytica* growth under varied carbon-source conditions." %}
 
 This classical model captures the sigmoidal microbial growth pattern and provides four biologically meaningful parameters: the initial biomass (A), the carrying capacity (K), the maximum specific growth rate (μₘₐₓ), and the lag-phase duration (λ). 
 

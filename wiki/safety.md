@@ -36,7 +36,7 @@ Some experimental steps involved the use of intermediate metabolites with potent
 
 All new constructs, strain modifications, or high-risk procedures were subject to an internal biosafety review process and required approval from both our team’s safety officer and the institutional biosafety committee.
 
-Prior to any scale-up experiments or non-standard cultivation, we conducted rigorous safety evaluations to ensure that the engineered Y. lipolytica strains remained stable and non-invasive under all tested conditions.
+Prior to any scale-up experiments or non-standard cultivation, we conducted rigorous safety evaluations to ensure that the engineered *Y. lipolytica* strains remained stable and non-invasive under all tested conditions.
 
 ### Environmental Containment & Application Safety
 
