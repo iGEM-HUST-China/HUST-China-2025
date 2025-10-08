@@ -9,11 +9,11 @@ excerpt: ""
 
 images02:
   - src: https://static.igem.wiki/teams/5569/hw2/absah.webp
-    alt: Turn clockwise to open the flow switch
-    caption: Turn clockwise to open the flow switch
+    alt: Figure 3.2.3 Turn clockwise to open the flow switch
+    caption: Figure 3.2.3 Turn clockwise to open the flow switch
   - src: https://static.igem.wiki/teams/5569/hardware/jiaosoconvert.webp
-    alt: Reverse continuous stirring
-    caption: Reverse continuous stirring
+    alt: Figure 3.2.3 Reverse continuous stirring
+    caption: Figure 3.2.3 Reverse continuous stirring
 
 ---
 
@@ -298,7 +298,7 @@ Figure 3.4.5(a) A 200 ml fermentation vessel enables larger-scale fermentation a
 2.  Open the top lid, add the culture medium, and inoculate the microbial strain.
 3.  Connect the power cord and press buttons in sequence to activate corresponding functions.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h2.webp" caption="Figure 4.1 Button Layout Diagram" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hardware/h2.webp" caption="Figure 3.4.6 Button Layout Diagram" %}
 
 The red button powers on the device and illuminates the display. The yellow button activates the upper motor for continuous clockwise rotation. The left white button controls the upper motor for 30° counterclockwise rotation. The blue button controls the lower motor rotation. The white button reverses the lower motor rotation direction. The green button activates the nutrient replenishment system.
 
