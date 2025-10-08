@@ -68,7 +68,7 @@ First, there is a lack of target‑oriented synthesis pathways. Current metaboli
 
 Second, the feedstocks are not sustainable. Mainstream processes rely on agricultural commodities such as sucrose and corn syrup; this not only increases costs but also potentially competes with human food resources, making it difficult to meet the core requirements of sustainable development and unsupportable in the long term <sup>6</sup>.
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/description/sdgs-1.webp" caption="Figure 8. Sustainable development goals." %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/description/sdgs-1.avif" caption="Figure 8. The bottlenecked potential of microbial fermentation." %}
 
 ## 4. From Waste Streams to Beauty: Our Concept for Sustainable Squalene Production
 
