@@ -11,18 +11,18 @@ excerpt: ""
 
 The core innovation of our project lies in converting Waste Oil (WO) into high-value squalene, achieving "turning waste into treasure." Our project's success relies on a stable, reliable, and scalable raw material supply chain. Waste oil is the raw material we use to produce squalene, and we have three main sources:
 
-**A. Catering Industry**
+**Catering Industry**
 - Restaurants and school canteens are our current main sources of waste oil
 - The catering industry covers a vast number of restaurants, hotel kitchens, schools, and corporate canteens in cities, providing wide sources
 
-**B. Food Processing Factories**
+**Food Processing Factories**
 - Food processing plants are important sources of waste oil
 - Large factories producing instant noodles, potato chips, fried snacks, etc., regularly replace large amounts of frying oil
 - Cooperation with a few large factories can provide substantial raw materials
 - Significantly reduces logistics costs and complexity of collection and transportation
 - Ensures stable supply
 
-**C. Residential Communities**
+**Residential Communities**
 - Establish community waste oil recycling stations
 - Enhance environmental awareness through public education
 - Expand raw material sources while increasing project social impact and public participation
