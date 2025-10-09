@@ -15,8 +15,8 @@ images01:
 
 images02:
   - src: https://static.igem.wiki/teams/5569/hp-new/hp-9.avif
-    alt: Figure 8 Professor Ning kang.
-    caption: Figure 8 Professor Ning kang.
+    alt: Figure 8 Professor Ning kang
+    caption: Figure 8 Professor Ning kang
   - src: https://static.igem.wiki/teams/5569/hp-new/hp-10.avif
     alt: Figure 9 members with Ning kang
     caption: Figure 9 members with Ning kang
@@ -203,7 +203,7 @@ Throughout this process, we consistently listened and adapted, resulting not onl
    **How we adapted our project:** We will continue to promote the project's development. Prof. FISSON also invited us to the University of Evry Paris-Saclay for discussions on the project's further development."
 %}
 
-## Part I: Problem Definition & Value Disco
+## Part 1: Problem Definition & Value Disco
 
 ### Project Initiation
 
