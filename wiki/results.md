@@ -137,7 +137,7 @@ Finally, we determined that 0.2 g of nitrogen should be fed every 24 h, equivale
 
 ### **2.6 Growth curve of waste oil medium from school canteen**
 
-After constructing the strain capable of efficiently expressing lipase, we intended to test and compare its growth performance under different environmental conditions. Specifically, we selected three types of media for investigating the growth status of the engineered yeast: the general complete medium for yeast (YPD medium), the medium with a 1:1 mixture of oleic acid and glycerol as the carbon source, and the medium using waste cooking oil obtained from the university canteen as the carbon source.
+After constructing the strain capable of efficiently expressing lipase, we intended to test and compare its growth performance under different environmental conditions. To investigate the impact of different media on the growth status of the engineered yeast, we specifically selected three types of media under varying environmental conditions: the general complete medium for yeast (YPD medium), the medium with a 1:1 mixture of oleic acid and glycerol as the carbon source, and the medium using waste cooking oil obtained from the university canteen as the carbon source.
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/result/11.webp" caption="Figure 13 Growth status in different oil conditions
 (includes:YPD,Waste-oil,Oleic acid(1:1))

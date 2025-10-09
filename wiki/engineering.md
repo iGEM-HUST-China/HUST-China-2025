@@ -29,7 +29,7 @@ excerpt: ""
    (3) The growth curves did not conform to the standard S-shaped curve of microbial growth; although there was an upward trend, adjacent data fluctuated significantly."
 %}
 
-{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/jiao.avif" caption="Figure 2 LSDS-Page Result(from right to left lane : supernatant of po1f-WT,supernatant of Po1f-tll,supernatant of Po1f-tll,marker)" %}
+{% include figure.html image="https://static.igem.wiki/teams/5569/hw2/jiao.avif" caption="Figure 2 SDS-Page Result(from right to left lane : supernatant of po1f-WT,supernatant of Po1f-tll,supernatant of Po1f-tll,marker)" %}
 
 {% include dropdown.html
    title="Cycle 1.1.2 Optimization of Hydrolysis Zone Verification"
