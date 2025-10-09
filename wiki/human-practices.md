@@ -23,12 +23,12 @@ images02:
 
 
 images03:
-  - src: https://static.igem.wiki/teams/5569/hp-new/hp-13.avif
-    alt: Figure 13 hardware member communicate with teacher Wang jinchun
-    caption: Figure 14 hardware member communicate with teacher Wang jinchun
   - src: https://static.igem.wiki/teams/5569/hp-new/hp-14.avif
+    alt: Figure 13 hardware member communicate with teacher Wang jinchun
+    caption: Figure 13 hardware member communicate with teacher Wang jinchun
+  - src: https://static.igem.wiki/teams/5569/hp-new/hp-13.avif
     alt: Figure 14 Communication with Ph.D Chen yulong
-    caption: Figure 13 Communication with Ph.D Chen yulong
+    caption: Figure 14 Communication with Ph.D Chen yulong
 
 
 images04:
