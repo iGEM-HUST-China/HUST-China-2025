@@ -25,7 +25,7 @@ Squalane is the hydrogenated, saturated form of squalene. This process makes it 
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/description/squlene-fix.webp" caption="Figure 1 Schematic illustration of the role of squalene in skin hydration and repair." %}
 
-### Expanding Market for Moisturizers
+### 2.1 Expanding Market for Moisturizers
 
 The fashion and beauty sector is experiencing unprecedented growth and globalization. In 2024, the beauty market—defined to include skincare, fragrances, make-up and hair-care products—generated approximately US dollars 491 billion in revenue and is projected to reach around US dollars 1,127 billion by 2035, with an estimated annual growth rate of about 6 %<sup>2</sup>.
 
