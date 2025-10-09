@@ -213,13 +213,13 @@ Throughout this process, we consistently listened and adapted, resulting not onl
 Through research, we found that in today's booming beauty and health industry, the traditional sources of the star ingredient squalene are in trouble: animal sources involve overfishing of sharks, raising ecological and ethical concerns; plant sources, due to the high environmental cost and price of olive cultivation, struggle to meet market demand.
 >
 
-### Regarding animal-derived squalene, 
+### Regarding animal-derived squalene
 >Oceana has repeatedly exposed in its reports the threat posed by the cosmetic industry's use of shark squalene to shark populations. They pointed out that consumers, unknowingly, indirectly participate in the hunting of this endangered species by purchasing skincare products containing shark ingredients. Simultaneously, we noted that China's Ministry of Agriculture and Rural Affairs introduced a new policy in September 2024 explicitly stating "no new construction or renovation of fishing vessels primarily targeting sharks," further restricting the future of animal-derived squalene at the national level. To understand the specific situation, we interviewed fisherman Uncle Sun from the Nanhai New Area, Weihai City, Shandong Province, in August 2024. He mentioned that while sharks are present in the Yellow Sea, they are mostly in deep waters and less common near the shore. He emphasized that there is no specialized shark fishing industry locally, only occasional bycatch.
 >
 
 {% include figure.html image="https://static.igem.wiki/teams/5569/hp-new/hp-3.avif" caption="Figure 3 member Yu ziheng with fisherman in Shangdong,China" %}
 
-### Regarding plant-derived squalene issues:
+### Regarding plant-derived squalene issues
 
 >To gain a deeper understanding of the squalene market, we conducted phone interviews with Wuhan Bairka Biomedical Co., Ltd., Hubei Hongfuda Biotechnology Co., Ltd., Wuhan Canuos Company, Hubei Weideli Chemical Reagent Co., Ltd., and Canuos Technology. We learned that non-animal derived squalane is more favored by the market, and "insufficient production of non-animal squalane" is a real problem. We also contacted Engineer Jin Feng from Proya Chemical Co., Ltd. She explained that squalene and squalane appear in the high-end skincare series of companies like Proya, indicating clear demand. She also pointed out that the cosmetic industry has very high requirements for raw material safety; any new ingredient introduction requires strict entry approval and comprehensive technical index testing. This led us to define the final product as squalene and plan to introduce a complete third-party safety testing process to meet cosmetic industry needs.
 >
